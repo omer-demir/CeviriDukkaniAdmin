@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "Şirket Ekle";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Areas/Admin/css/validate.css" rel="stylesheet" />
+@section breadcrumbs{
+    <div id="breadcrumbs-wrapper">
+        <!-- Search for small screen -->
+        <div class="header-search-wrapper grey hide-on-large-only">
+            <i class="mdi-action-search active"></i>
+            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <h5 class="breadcrumbs-title">Şirket Ekle</h5>
+                    <ol class="breadcrumbs">
+                        <li>
+                            <a href="/Admin/Home">Anasayfa</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index")">Şirket Listesi</a>
+                        </li>
+                        <li class="active">Şirket Ekle</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="section">
+    <p class="caption">Şirket eklemek için kullanılır.</p>
+    <div class="divider"></div>
+    <div id="basic-form" class="section">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="card-panel">
+                    <h4 class="header2">Şirket Ekle</h4>
+                    <div class="row">
+                        <form class="formValidate" id="formValidate">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <label for="name">Şirket Adı*</label>
+                                    <input id="txtName" name="name" type="text" data-error=".errorTxt1">
+                                    <div class="errorTxt1"></div>
+                                </div>
+                                <div class="input-field col s12">
+                                    <label for="email">Yetkili E-Mail *</label>
+                                    <input id="txtAuthorizedEmail" type="email" name="email" data-error=".errorTxt2">
+                                    <div class="errorTxt2"></div>
+                                </div>
+                                <div class="input-field col s12">
+                                    <label for="authorizedFullName">Yetkili Adsoyad*</label>
+                                    <input id="txtAuthorizedFullName" name="authorizedFullName" type="text" data-error=".errorTxt3">
+                                    <div class="errorTxt3"></div>
+                                </div>
+                                <div class="input-field col s12">
+                                    <label for="mobile-phone">Yetkili Cep Telefonu</label>
+                                    <input id="txtAuthorizedMobilePhone" type="text" name="mobile-phone" data-error=".errorTxt4">
+                                    <div class="errorTxt4"></div>
+                                </div>
+                                @*//TODO: logo*@
+                                <div class="input-field col s12">
+                                    <label for="phone">Sabit Telefon</label>
+                                    <input id="txtPhone" type="text" name="phone">
+                                </div>
+                                <div class="input-field col s12">
+                                    <label for="extensionNumber">Dahili</label>
+                                    <input id="txtExtensionNumber" type="text" name="extensionNumber">
+                                </div>
+                                <div class="input-field col s12">
+                                    <label for="accountingEmail">Muhasebe E-Mail</label>
+                                    <input id="txtAccountingEmail" type="email" name="accountingEmail">
+                                </div>
+                                <div class="input-field col s12" style="margin-bottom: 10px;">
+                                    <input type="checkbox" id="chkUsedPO" />
+                                    <label for="chkUsedPO">PO Kullanıyor mu?</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <label for="taxNumber">Vergi Numarası</label>
+                                    <input id="txtTaxNumber" type="text" name="taxNumber">
+                                </div>
+                                <div class="input-field col s12">
+                                    <label for="taxOffice">Vergi Dairesi</label>
+                                    <input id="txtTaxOffice" type="text" name="taxOffice">
+                                </div>
+                                <div class="input-field col s12" style="margin-bottom: 10px;">
+                                    <input type="checkbox" id="chkContractPrice" />
+                                    <label for="chkContractPrice">Anlaşmalı Fiyat var mı?</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <label for="address">Adres</label>
+                                    <input id="txtAddress" type="text" name="address">
+                                </div>
+                                <div class="input-field col s12">
+                                    <button id="btnSave" class="btn waves-effect waves-light right submit" type="button">
+                                        Kaydet
+                                        <i class="mdi-content-send right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script data-main="/Areas/Admin/Scripts/app/page-scripts/company/create.page.js" src="~/Scripts/require.js"></script>
+}

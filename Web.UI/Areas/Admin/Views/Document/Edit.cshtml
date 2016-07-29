@@ -1,0 +1,99 @@
+﻿@model TangentIdeas.CeviriDukkani.Core.Dto.Document.TranslationDocumentDto
+
+@{
+    ViewBag.Title = "Doküman Düzenle";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section breadcrumbs{
+    <div id="breadcrumbs-wrapper">
+        <!-- Search for small screen -->
+        <div class="header-search-wrapper grey hide-on-large-only">
+            <i class="mdi-action-search active"></i>
+            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="ara">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <h5 class="breadcrumbs-title">Doküman Ekle</h5>
+                    <ol class="breadcrumbs">
+                        <li>
+                            <a href="@Url.Action("Index", "Home")">Anasayfa</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Document")">Doküman Listesi</a>
+                        </li>
+                        <li class="active">Doküman Düzenle</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="section">
+    <p class="caption">Doküman düzenlemek için kullanılır.</p>
+    <div class="divider"></div>
+    <div id="basic-form" class="section">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="card-panel">
+                    <h4 class="header2">Doküman Ekle</h4>
+                    <div class="row">
+                        <form class="formValidate" id="formValidate" method="post" enctype="multipart/form-data">
+                            <input id="hdnId" type="hidden" value="@Model.Id"/>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <div>
+                                        <div class="file-field input-field ">
+                                            <div class="btn">
+                                                <span>Dosya</span>
+                                                @Html.TextBoxFor(x=> x.Path, new { type = "file" })
+                                            </div>
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path validate" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="errorTxt1"></div>
+                                </div>
+
+                                <div class="input-field col s12">
+                                    <label for="txtName" class="active">Doküman ismi</label>
+                                    <input id="txtName" name="Name" type="text" data-error=".errorTxt2" value="@Model.Name">
+                                </div>
+
+                                <div class="input-field col s12">
+                                    <label for="txtPageCount" class="active">Sayfa Sayısı </label>
+                                    <input id="txtPageCount" type="text" data-error=".errorTxt3" value="@Model.PageCount" readonly="readonly">
+                                </div>
+
+                                <div class="input-field col s12">
+                                    <label for="txtCharCount" class="active">Karakter Sayısı</label>
+                                    <input id="txtCharCount" type="text" name="mobile-phone" value="@Model.CharCount" readonly="readonly">
+                                </div>
+
+                                <div class="input-field col s12">
+                                    <label for="txtCharCountWithSpaces" class="active">Karakter Sayısı ( Boşluklar Dahil )</label>
+                                    <input id="txtCharCountWithSpaces" type="text" name="mobile-phone" value="@Model.CharCountWithSpaces" readonly="readonly">
+                                </div>
+
+                                <div class="col s12">
+                                    <button id="btnSave" class="btn waves-effect waves-light right submit" type="button">
+                                        Kaydet
+                                        <i class="mdi-content-send right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script data-main="/Areas/Admin/Scripts/app/page-scripts/document/edit.page.js" src="~/Scripts/require.js"></script>
+}
+

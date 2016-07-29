@@ -1,0 +1,91 @@
+﻿@using TangentIdeas.CeviriDukkani.Core.Dto
+@using TangentIdeas.CeviriDukkani.Core.Dto.Common
+
+@{
+    ViewBag.Title = "Şirket-Terminoloji Ekle";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Areas/Admin/css/validate.css" rel="stylesheet" />
+@*<link href="~/Areas/Admin/Theme/js/plugins/dropzone/dropzone.min.css" rel="stylesheet" />*@
+@section breadcrumbs{
+    <div id="breadcrumbs-wrapper">
+        <!-- Search for small screen -->
+        <div class="header-search-wrapper grey hide-on-large-only">
+            <i class="mdi-action-search active"></i>
+            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <h5 class="breadcrumbs-title">Şirket-Terminoloji Ekle</h5>
+                    <ol class="breadcrumbs">
+                        <li>
+                            <a href="/Admin/Home">Anasayfa</a>
+                        </li>
+                        <li>
+                            <a href="/Admin/Common/CompanyTerminologies">Şirket-Terminoloji Listesi</a>
+                        </li>
+                        <li class="active">Şirket-Terminoloji Ekle</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="section">
+    <p class="caption">Şirket-Terminoloji eklemek için kullanılır.</p>
+    <div class="divider"></div>
+    <div id="basic-form" class="section">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="card-panel">
+                    <h4 class="header2">Şirket-Terminoloji Ekle</h4>
+                    <div class="row">
+                        <form class="formValidate" id="formValidate">
+                            <div class="row">
+                                <div class="col s12">
+                                    <label for="company">Şirket</label>
+                                    <select class="error browser-default" id="ddlCompanies" name="company">
+                                        <option value="">Lütfen Seçiniz</option>
+                                        @{
+                                            foreach (var item in (List<CompanyDto>)ViewBag.Companies)
+                                            {
+                                                <option value="@item.Id">@item.Name</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="input-field col s12">
+                                    <label for="name">Terminoloji Adı*</label>
+                                    <input id="txtName" name="name" type="text" data-error=".errorTxt2">
+                                    <div class="errorTxt2"></div>
+                                </div>
+                                <div class="input-field col s12">
+                                    <div class="col s12 m4 l3">
+                                        <p>Terminoloji Dökümanını Yükle<i class="fa fa-info-circle tooltips" data-container="body" data-placement="top" data-original-title="4 resim ve 1 video yükleyebilirsiniz. Fotoğraf boyutları max 400px - 200px olmalıdır"></i></p>
+                                    </div>
+                                    <div class="col s12 m8 l9">
+                                        <div class="dropzone dropzone-file-area" id="my-dropzone">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="input-field col s12">
+                                    <button id="btnSave" class="btn waves-effect waves-light right submit" type="button">
+                                        Kaydet
+                                        <i class="mdi-content-send right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script data-main="/Areas/Admin/Scripts/app/page-scripts/common/company.terminology.create.page.js" src="~/Scripts/require.js"></script>
+}

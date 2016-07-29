@@ -1,0 +1,159 @@
+﻿@using TangentIdeas.CeviriDukkani.Core.Dto.Common
+
+@{
+    ViewBag.Title = "Kullanıcı Ekle";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Areas/Admin/css/validate.css" rel="stylesheet" />
+@section breadcrumbs{
+    <div id="breadcrumbs-wrapper">
+        <!-- Search for small screen -->
+        <div class="header-search-wrapper grey hide-on-large-only">
+            <i class="mdi-action-search active"></i>
+            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <h5 class="breadcrumbs-title">Kullanıcı Ekle</h5>
+                    <ol class="breadcrumbs">
+                        <li>
+                            <a href="/Admin/Home">Anasayfa</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index")">Kullanıcı Listesi</a>
+                        </li>
+                        <li class="active">Kullanıcı Ekle</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="section">
+    <p class="caption">Kullanıcı eklemek için kullanılır. Kullanıcının diğer bilgilerini girmek için öncelikle kullanıcıyı sisteme kaydetmelisiniz. Daha sonra Kullanıcı Düzenle sayfasından diğer bilgilerini kaydedebilirsiniz.</p>
+    <div class="divider"></div>
+    <!--Basic Tabs-->
+    <div id="basic-tabs" class="section">
+        <h4 class="header">Kullanıcı Ekle</h4>
+        <div class="row">
+            @*<div class="col s12 m4 l3">
+                    <p>When you click on each tab, only the container with the corresponding tab id will become visible.</p>
+                </div>*@
+            <div class="col s12 m12 l12">
+
+                <div class="row">
+                    <div class="col s12">
+                        <ul class="tabs tab-demo z-depth-1">
+                            <li class="tab col s3">
+                                <a class="active" href="#test1">Genel Bilgiler</a>
+                            </li>
+                            @*<li class="tab col s3">
+                                <a href="#test2">İletişim Bilgileri</a>
+                            </li>
+                            <li class="tab col s3">
+                                <a href="#test3">Yetenek Bilgileri</a>
+                            </li>*@
+                        </ul>
+                    </div>
+                    <div class="col s12">
+                        <div id="test1">
+                            <div class="card-panel">
+                                <form class="formValidate" id="formValidate">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <label for="name">Adı*</label>
+                                            <input id="txtName" name="name" type="text" data-error=".errorTxt1">
+                                            <div class="errorTxt1"></div>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label for="surname">Soyadı*</label>
+                                            <input id="txtSurname" name="surname" type="text" data-error=".errorTxt2">
+                                            <div class="errorTxt2"></div>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label for="birthDate">Doğum Tarihi*</label>
+                                            <input id="txtBirthDate" name="birthDate" type="date" class="datepicker" data-error=".errorTxt9">
+                                            <div class="errorTxt9"></div>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label for="email">E-Mail *</label>
+                                            <input id="txtEmail" type="email" name="email" data-error=".errorTxt3">
+                                            <div class="errorTxt3"></div>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label for="mobile-phone">Cep Telefonu</label>
+                                            <input id="txtMobilePhone" type="text" name="mobile-phone">
+                                        </div>
+
+                                        <div class="input-field col s12">
+                                            <label for="password">Şifre *</label>
+                                            <input id="txtPassword" type="text" name="password" data-error=".errorTxt4">
+                                            <div class="errorTxt4"></div>
+                                        </div>
+                                        <div class="col s12 dvUserRoles">
+                                            <label for="role">Kullanıcı Tipi *</label>
+                                            <select multiple id="ddlUserRole">
+                                                <option value="" disabled selected>Lütfen seçiniz.</option>
+                                                @foreach (var item in (List<UserRoleTypeDto>)ViewBag.UserRoleTypes)
+                                                {
+                                                <option value="@item.Id">@item.Name</option>
+                                                }
+                                                @*<option value="1">Admin</option>
+                                                    <option value="2">Translator</option>
+                                                    <option value="3">Editor</option>
+                                                    <option value="4">ProofReader</option>
+                                                    <option value="5">FreelanceTranslator</option>*@
+                                            </select>
+                                            @*<input type="hidden" id="hdnUserRoleNames" />*@
+                                            <input type="hidden" id="hdnUserRoleTypes" />
+                                            @*@Html.Hidden("hdnUserRoleNames", string.Join(",", Model.UserRoles.Select(s => s.UserRoleType)))
+                                                @Html.Hidden("hdnUserRoleTypes", string.Join(",", Model.UserRoles.Select(s => (int)s.UserRoleType)))*@
+                                            <div class="input-field">
+                                                <div class="errorTxt6"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col s12">
+                                            <label for="genter_select">Cinsiyet *</label>
+                                            <p>
+                                                <input value="1" name="cgender" type="radio" id="gender_male" data-error=".errorTxt8" />
+                                                <label for="gender_male">Bay</label>
+                                            </p>
+                                            <p>
+                                                <input value="2" name="cgender" type="radio" id="gender_female" value="f" />
+                                                <label for="gender_female">Bayan</label>
+                                            </p>
+                                            <div class="input-field">
+                                                <div class="errorTxt8"></div>
+                                            </div>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <button id="btnSave" class="btn waves-effect waves-light right submit" type="button">
+                                                Kaydet
+                                                <i class="mdi-content-send right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                        @*<div id="test2">
+                            <div class="card-panel">
+                            </div>
+                        </div>
+                        <div id="test3">
+                            <div class="card-panel">
+                            </div>
+                        </div>*@
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+@section scripts{
+    <script data-main="/Areas/Admin/Scripts/app/page-scripts/user/create.page.js" src="~/Scripts/require.js"></script>
+}

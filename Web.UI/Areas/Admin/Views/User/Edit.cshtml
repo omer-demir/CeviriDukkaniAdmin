@@ -1,0 +1,580 @@
+﻿@using TangentIdeas.CeviriDukkani.Core.Dto.Common
+@using TangentIdeas.CeviriDukkani.Core.Dto.Enums
+@using TangentIdeas.CeviriDukkani.Core.Entities.Common
+@model TangentIdeas.CeviriDukkani.Core.Dto.System.UserDto
+@{
+    ViewBag.Title = "Kullanıcı Düzenle";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Areas/Admin/css/validate.css" rel="stylesheet" />
+<style>
+    a.aLink {
+        cursor: pointer;
+    }
+    .responsive-table tr.trHead td {
+        font-weight: bold;   
+    }
+    .responsive-table td {
+        border: 1px solid #eee;
+    }
+</style>
+@section breadcrumbs{
+    <div id="breadcrumbs-wrapper">
+        <!-- Search for small screen -->
+        <div class="header-search-wrapper grey hide-on-large-only">
+            <i class="mdi-action-search active"></i>
+            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <h5 class="breadcrumbs-title">Kullanıcı Düzenle</h5>
+                    <ol class="breadcrumbs">
+                        <li>
+                            <a href="/Admin/Home">Anasayfa</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index")">Kullanıcı Listesi</a>
+                        </li>
+                        <li class="active">Kullanıcı Düzenle</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="section">
+    <p class="caption">Kullanıcı düzenlemek için kullanılır.</p>
+    <div class="divider"></div>
+    <!--Basic Tabs-->
+    <div id="basic-tabs" class="section">
+        <h4 class="header">Kullanıcı Düzenle</h4>
+        <div class="row">
+            @*<div class="col s12 m4 l3">
+                    <p>When you click on each tab, only the container with the corresponding tab id will become visible.</p>
+                </div>*@
+            <div class="col s12 m12 l12">
+
+                <div class="row">
+                    <div class="col s12">
+                        <ul class="tabs tab-demo z-depth-1">
+                            <li class="tab col s3">
+                                <a class="active" href="#test1">Genel Bilgiler</a>
+                            </li>
+                            <li class="tab col s3">
+                                <a href="#test2">İletişim Bilgileri</a>
+                            </li>
+                            <li class="tab col s3">
+                                <a href="#test3">Yetenek Bilgileri</a>
+                            </li>
+                            <li class="tab col s3">
+                                <a href="#test4">Ödeme Bilgileri</a>
+                            </li>
+                            <li class="tab col s3">
+                                <a href="#test5">Rates</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col s12">
+                        <div id="test1">
+                            <div class="card-panel">
+                                <form class="formValidate" id="formValidate">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <label for="Name">Adı*</label>
+                                            @Html.TextBoxFor(m => m.Name, new { id = "txtName", type = "text", data_error = ".errorTxt1" })
+                                            <div class="errorTxt1"></div>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label for="SurName">Soyadı*</label>
+                                            @Html.TextBoxFor(m => m.SurName, new { id = "txtSurname", type = "text", data_error = ".errorTxt2" })
+                                            <div class="errorTxt2"></div>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label for="BirthDate">Doğum Tarihi*</label>
+                                            @Html.TextBoxFor(m => m.BirthDate, "{0:dd MMMM, yyyy}", new { id = "txtBirthDate", type = "date", @class = "datepicker", data_error = ".errorTxt9" })
+                                            <div class="errorTxt9"></div>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label for="Email">E-Mail *</label>
+                                            @Html.TextBoxFor(m => m.Email, new { id = "txtEmail", type = "email", data_error = ".errorTxt3" })
+                                            <div class="errorTxt3"></div>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label for="MobilePhone">Cep Telefonu</label>
+                                            @Html.TextBoxFor(m => m.MobilePhone, new { id = "txtMobilePhone", type = "text" })
+                                        </div>
+
+                                        <div class="input-field col s12">
+                                            <label for="password">Şifre *</label>
+                                            @Html.TextBoxFor(m => m.Password, new { id = "txtPassword", type = "text", data_error = ".errorTxt4" })
+                                            <div class="errorTxt4"></div>
+                                        </div>
+                                        <div class="col s12 dvUserRoles">
+                                            <label for="role">Kullanıcı Tipi *</label>
+                                            <select multiple id="ddlUserRole">
+                                                <option value="" disabled selected>Lütfen seçiniz.</option>
+                                                @foreach (var item in (List<UserRoleTypeDto>)ViewBag.UserRoleTypes)
+                                                {
+                                                    <option value="@item.Id">@item.Name</option>
+                                                }
+                                            </select>
+                                            @Html.Hidden("hdnUserRoleNames", string.Join(", ", Model.UserRoles.Select(s => s.UserRoleType.Name)))
+                                            @Html.Hidden("hdnUserRoleTypes", string.Join(",", Model.UserRoles.Select(s => s.UserRoleType.Id)))
+                                            <div class="input-field">
+                                                <div class="errorTxt6"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col s12">
+                                            <label for="genter_select">Cinsiyet *</label>
+                                            <p>
+                                                @Html.RadioButtonFor(m => m.GenderType, GenderEnum.Male, new { id = "Male", data_error = ".errorTxt8", data_value = "1" }) <label for="@GenderEnum.Male">Bay</label>
+                                            </p>
+                                            <p>
+                                                @Html.RadioButtonFor(m => m.GenderType, GenderEnum.Female, new { id = "Female", data_value = "2" }) <label for="@GenderEnum.Female">Bayan</label>
+                                            </p>
+                                            <div class="input-field">
+                                                <div class="errorTxt8"></div>
+                                            </div>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            @Html.HiddenFor(m => m.Id, new { id = "hdnUserId" })
+                                            <button id="btnSave" class="btn waves-effect waves-light right submit" type="button">
+                                                Kaydet
+                                                <i class="mdi-content-send right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="test2">
+                            <div class="card-panel">
+                                <form class="formValidate" id="formValidateContact">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <label>Alternatif Email</label>
+                                            @Html.TextBoxFor(m => m.UserContact.AlternativeEmail, new { id = "txtAlternativeEmail" })
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label>Alternatif Telefon 1</label>
+                                            @Html.TextBoxFor(m => m.UserContact.AlternativePhone1, new { id = "txtAlternativePhone1" })
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label>Alternatif Telefon 2</label>
+                                            @Html.TextBoxFor(m => m.UserContact.AlternativePhone2, new { id = "txtAlternativePhone2" })
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label>Faks</label>
+                                            @Html.TextBoxFor(m => m.UserContact.Fax, new { id = "txtFax" })
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label>Skype</label>
+                                            @Html.TextBoxFor(m => m.UserContact.Skype, new { id = "txtSkype" })
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label>Posta Kodu</label>
+                                            @Html.TextBoxFor(m => m.UserContact.PostalCode, new { id = "txtPostalCode" })
+                                        </div>
+                                        <div class="col s12">
+                                            <label>Ülke</label>
+                                            <select id="ddlCountry">
+                                                <option value="" disabled selected>Lütfen seçiniz.</option>
+                                            </select>
+                                            @Html.HiddenFor(m => m.UserContact.District.City.CountryId, new { id = "hdnCountryId" })
+                                        </div>
+                                        <div class="col s12">
+                                            <label>İl</label>
+                                            <select id="ddlCity">
+                                                <option value="" disabled selected>Lütfen seçiniz.</option>
+                                            </select>
+                                            @Html.HiddenFor(m => m.UserContact.District.CityId, new { id = "hdnCityId" })
+                                        </div>
+                                        <div class="col s12">
+                                            <label for="ddlDistrict">İlçe *</label>
+                                            <select id="ddlDistrict" name="ddlDistrict" data-error=".errorContact1" class="error">
+                                                <option value="" disabled selected>Lütfen seçiniz.</option>
+                                            </select>
+                                            <div class="input-field">
+                                                <div class="errorContact1"></div>
+                                            </div>
+                                            @Html.HiddenFor(m => m.UserContact.DistrictId, new { id = "hdnDistrictId" })
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label>Adres</label>
+                                            @Html.TextAreaFor(m => m.UserContact.Address, new { id = "txtAddress", @class = "materialize-textarea" })
+                                        </div>
+                                        <div class="input-field col s12">
+                                            @Html.HiddenFor(m => m.UserContactId, new { id = "hdnUserContactId" })
+                                            <button id="btnSaveContact" class="btn waves-effect waves-light right submit" type="button">
+                                                Kaydet
+                                                <i class="mdi-content-send right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="test3">
+                            <div class="card-panel">
+                                <form class="formValidate" id="formValidateAbility">
+                                    <div class="row">
+                                        <div class="col s12">
+                                            <label>Mother Tongue</label>
+                                            <select id="ddlMotherTongue">
+                                                <option value="" disabled selected>Lütfen seçiniz.</option>
+                                            </select>
+                                            @Html.HiddenFor(m => m.UserAbility.MotherTongueId, new { id = "hdnMotherTongueId" })
+                                        </div>
+                                        <div class="col s12">
+                                            <label>Bilingual Tongue (only if really)</label>
+                                            <select id="ddlBilingualTongue">
+                                                <option value="" disabled selected>Lütfen seçiniz.</option>
+                                            </select>
+                                            @Html.HiddenFor(m => m.UserAbility.BilingualTongueId, new { id = "hdnBilingualTongueId" })
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label>Years of experience in translation</label>
+                                            @Html.TextBoxFor(m => m.UserAbility.YearsOfExperience, new { id = "txtYearsOfExperience" })
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label>Qualifications</label>
+                                            @Html.TextBoxFor(m => m.UserAbility.Qualifications, new { id = "txtQualifications" })
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label>Main Clients</label>
+                                            @Html.TextBoxFor(m => m.UserAbility.MainClients, new { id = "txtMainClients" })
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label>Introduce yourself briefly</label>
+                                            @Html.TextAreaFor(m => m.UserAbility.QualityEnsureDescription, new { id = "txtQualityEnsureDescription", @class = "materialize-textarea" })
+                                        </div>
+                                        <br />
+                                        <br />
+                                        <h4 class="header2">Günlük Kapasite</h4>
+
+                                        @Html.HiddenFor(m => m.UserAbility.CapacityId, new { id = "hdnCapacityId" })
+                                        <div class="input-field col s12">
+                                            <label>Translation</label>
+                                            @Html.TextBoxFor(m => m.UserAbility.Capacity.Translation, new { id = "txtTranslation", type = "number" })
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label>Review</label>
+                                            @Html.TextBoxFor(m => m.UserAbility.Capacity.Reviews, new { id = "txtReviews", type = "number" })
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label>ProofReading</label>
+                                            @Html.TextBoxFor(m => m.UserAbility.Capacity.ProofReading, new { id = "txtProofReading", type = "number" })
+                                        </div>
+
+                                        <div class="col s12 dvSpecializations">
+                                            <label>Primary Specialization</label>
+                                            <select multiple id="ddlSpecializations">
+                                                <option value="" disabled selected>Lütfen seçiniz.</option>
+                                                @foreach (var item in (List<TerminologyDto>)ViewBag.Terminologies)
+                                                {
+                                                    <option value="@item.Id">@item.Name</option>
+                                                }
+                                            </select>
+                                            @Html.Hidden("hdnSpecializations", Model.UserAbility != null ? Model.UserAbility.TerminologyIdString : "")
+                                        </div>
+                                        <h4 class="header2">Add my software detail</h4>
+                                        <div class="col s4">
+                                            <div class="row">
+                                                <div class="col s12 dvSpecializations">
+                                                    <label>Translation Software</label>
+                                                    <select id="ddlSoftwares">
+                                                        <option value="" disabled selected>Lütfen seçiniz.</option>
+                                                        @foreach (var item in (List<SoftwareDto>)ViewBag.Softwares)
+                                                        {
+                                                            <option value="@item.Id">@item.Name</option>
+                                                        }
+                                                    </select>
+                                                    @Html.Hidden("hdnSoftwares", Model.UserAbility != null ? Model.UserAbility.SoftwareIdString : "")
+                                                </div>
+                                                <div class="input-field col s12">
+                                                    <label>Tool Version</label>
+                                                    <input type="text" id="txtSoftwareVersion" />
+                                                </div>
+                                                <div class="input-field col s12">
+                                                    <label>Operating System</label>
+                                                    <input type="text" id="txtOperatingSystem" />
+                                                </div>
+                                                <div class="col s4">
+                                                    <label>Rating (out of 5)</label>
+                                                    <select id="ddlRating">
+                                                        <option value="1" selected>1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col s4"></div>
+                                                <div class="col s4">
+                                                    <button id="btnSaveTech" class="btn waves-effect waves-light left submit" type="button">
+                                                        Ekle
+                                                        <i class="mdi-content-add right"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col s8">
+                                            <table id="data-table-tech" class="responsive-table display" cellspacing="0">
+                                                <tr class="trHead">
+                                                    <td>Software</td>
+                                                    <td>Tool Version</td>
+                                                    <td>Operating System</td>
+                                                    <td>Rating</td>
+                                                    <td>İşlem</td>
+                                                </tr>
+                                                <tbody id="tbTech"></tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="input-field col s12">
+                                            <input type="hidden" id="hdnTechnologyKnowledgeId" />
+                                            @Html.HiddenFor(m => m.UserAbilityId, new { id = "hdnUserAbilityId" })
+                                            <button id="btnSaveAbility" class="btn waves-effect waves-light right submit" type="button">
+                                                Kaydet
+                                                <i class="mdi-content-send right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="test4">
+                            <div class="card-panel">
+                                <form class="formValidate" id="formValidatePayment">
+                                    <div class="row">
+                                        <div class="col s12">
+                                            <div class="col s12">
+                                                <label>I have</label>
+                                                @foreach (var item in (List<BankAccountTypeDto>)ViewBag.BankAccountTypes)
+                                                {
+                                                    <p>
+                                                        <input @(item == ((List<BankAccountTypeDto>)ViewBag.BankAccountTypes).First() ? "checked=true" : "") type="radio" name="BankAccountType" id="BankAccountType_@item.Id" value="@item.Id" />
+                                                        <label for="BankAccountType_@item.Id">@item.Name</label>
+                                                    </p>
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="col s12 bankAccount" id="dvPaypalAccount" style="display: none;">
+                                            <h4 class="header2">Paypal Account</h4>
+                                            <div class="input-field col s12">
+                                                <label>Paypal Email Address</label>
+                                                @Html.TextBoxFor(m => m.UserPayment.BankAccount.PaypalEmailAddress, new { id = "txtPaypalEmailAddress" })
+                                            </div>
+                                        </div>
+                                        <div class="col s12 bankAccount" id="dvTurkishAccount" style="display: none;">
+                                            <h4 class="header2">Paypal Account</h4>
+                                            <div class="input-field col s12">
+                                                <label>Bank Name *</label>
+                                                @Html.TextBoxFor(m => m.UserPayment.BankAccount.BankName, new { id = "txtBankName" })
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <label>Beneficiary Account Holder *</label>
+                                                @Html.TextBoxFor(m => m.UserPayment.BankAccount.AccountHolderFullName, new { id = "txtAccountHolderFullName" })
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <label>IBAN Number *</label>
+                                                @Html.TextBoxFor(m => m.UserPayment.BankAccount.IBAN, new { id = "txtIBAN" })
+                                            </div>
+                                        </div>
+                                        <div class="col s12 bankAccount" id="dvEuropeanAccount" style="display: none;">
+                                            <h4 class="header2">European Accounts</h4>
+                                            <div class="input-field col s12">
+                                                <label>Bank Name *</label>
+                                                @Html.TextBoxFor(m => m.UserPayment.BankAccount.BankName, new { id = "txtBankNameEurop" })
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <label>Beneficiary Account Holder *</label>
+                                                @Html.TextBoxFor(m => m.UserPayment.BankAccount.AccountHolderFullName, new { id = "txtAccountHolderFullNameEurop" })
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <label>Beneficiary Address *</label>
+                                                @Html.TextBoxFor(m => m.UserPayment.BankAccount.BeneficiaryAddress, new { id = "txtBeneficiaryAddress" })
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <label>IBAN Number *</label>
+                                                @Html.TextBoxFor(m => m.UserPayment.BankAccount.IBAN, new { id = "txtIBANEurop" })
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <label>Account Number *</label>
+                                                @Html.TextBoxFor(m => m.UserPayment.BankAccount.AccountNumber, new { id = "txtAccountNumber" })
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <label>Swif / BIC Code *</label>
+                                                @Html.TextBoxFor(m => m.UserPayment.BankAccount.SwiftBicCode, new { id = "txtSwiftBicCode" })
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <label>City and Country of the Bank *</label>
+                                                @Html.TextBoxFor(m => m.UserPayment.BankAccount.CityCountryBank, new { id = "txtCityCountryBank" })
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <label>Bank Address *</label>
+                                                @Html.TextBoxFor(m => m.UserPayment.BankAccount.BankAddress, new { id = "txtBankAddress" })
+                                            </div>
+                                        </div>
+                                        <div class="col s12" id="dvPaymentDetials">
+                                            <h4 class="header2">Payment Details</h4>
+                                            <div class="input-field col s12">
+                                                <label>VAT/TAX No</label>
+                                                @Html.TextBoxFor(m => m.UserPayment.VatTaxNo, new { id = "txtVatTaxNo" })
+                                            </div>
+                                            <div class="col s12">
+                                                <label>Currency</label>
+                                                <select id="ddlCurrencies">
+
+                                                    @foreach (var item in (List<CurrencyDto>)ViewBag.Currencies)
+                                                    {
+                                                        <option value="@item.Id" @(Model.UserPayment != null && item.Id == Model.UserPayment.CurrencyId ? "selected" : "")>@item.Name</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                            <div class="col s12">
+                                                <label>Working Type</label>
+                                                <select id="ddlWorkingTypes">
+                                                    @foreach (var item in (List<WorkingTypeDto>)ViewBag.WorkingTypes)
+                                                    {
+                                                        <option value="@item.Id" @(Model.UserPayment != null && item.Id == Model.UserPayment.WorkingTypeId ? "selected" : "")>@item.Name</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <label>Min. Charge Amount *</label>
+                                                @Html.TextBoxFor(m => m.UserPayment.MinimumChargeAmount, new { id = "txtMinimumChargeAmount" })
+                                            </div>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            @*<input type="hidden" id="hdnTechnologyKnowledgeId"/>*@
+                                            @Html.HiddenFor(m => m.UserPaymentId, new { id = "hdnUserPaymentId" })
+                                            @Html.HiddenFor(m => m.UserPayment.BankAccountId, new { id = "hdnBankAccountId" })
+                                            <button id="btnSavePayment" class="btn waves-effect waves-light right submit" type="button">
+                                                Kaydet
+                                                <i class="mdi-content-send right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="test5">
+                            <div class="card-panel">
+                                <form class="formValidate" id="formValidateRates">
+                                    <div class="row">
+
+                                        <h4 class="header2">Add my Language Details</h4>
+                                        <div class="col s4">
+                                            <div class="row">
+                                                <div class="col s12">
+                                                    <label>Service Type</label>
+                                                    <select id="ddlServiceTypes">
+                                                        <option value="" disabled selected>Lütfen seçiniz.</option>
+                                                        @foreach (var item in (List<ServiceTypeDto>)ViewBag.ServiceTypes)
+                                                        {
+                                                            <option value="@item.Id" @(item.Id == Model.UserRateId ? "selected" : "")>@item.Name</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                                <div class="col s12">
+                                                    <label>Source Language</label>
+                                                    <select id="ddlSourceLanguages">
+                                                        <option value="" disabled selected>Lütfen seçiniz.</option>
+                                                        @foreach (var item in (List<LanguageDto>)ViewBag.Languages)
+                                                        {
+                                                            <option value="@item.Id">@item.Name</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                                <div class="col s12">
+                                                    <label>Target Language</label>
+                                                    <select id="ddlTargetLanguages">
+                                                        <option value="" disabled selected>Lütfen seçiniz.</option>
+                                                        @foreach (var item in (List<LanguageDto>)ViewBag.Languages)
+                                                        {
+                                                            <option value="@item.Id">@item.Name</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                                <div class="input-field col s12">
+                                                    <label>Price</label>
+                                                    <input type="text" id="txtPrice" />
+                                                </div>
+                                                <div class="col s4"></div>
+                                                <div class="col s4">
+                                                    <button id="btnSaveRateItem" class="btn waves-effect waves-light left submit" type="button">
+                                                        Ekle
+                                                        <i class="mdi-content-add right"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col s8">
+                                            <table class="responsive-table display" cellspacing="0">
+                                                <tr class="trHead">
+                                                    <td>Service Type</td>
+                                                    <td>Source Lang.</td>
+                                                    <td>Target Lang.</td>
+                                                    <td>Price</td>
+                                                    <td>Sworn Translation</td>
+                                                    <td>Certificate</td>
+                                                    <td>İşlem</td>
+                                                </tr>
+                                                <tbody id="tbRateItem"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <h4 class="header2">Other Details</h4>
+                                        <div class="input-field col s12">
+                                            <label>DTP (Desktop Publishing) - $ / page</label>
+                                            @Html.TextBoxFor(m => m.UserRate.DtpRate, new { id = "txtDtpRate" })
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label>Glossary Creatin - $ / hour</label>
+                                            @Html.TextBoxFor(m => m.UserRate.GlossaryCreationRate, new { id = "txtGlossaryCreationRate" })
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label>Translation Memory (TM) Management - $ / hour</label>
+                                            @Html.TextBoxFor(m => m.UserRate.TranslationMemoryManagementRate, new { id = "txtTranslationMemoryManagementRate" })
+                                        </div><div class="input-field col s12">
+                                            <label>Terminology Extraction - $ / hour</label>
+                                            @Html.TextBoxFor(m => m.UserRate.TerminologyExtractionRate, new { id = "txtTerminologyExtractionRate" })
+                                        </div><div class="input-field col s12">
+                                            <label>Review SME (Subject Matter Expert) - $ / hour</label>
+                                            @Html.TextBoxFor(m => m.UserRate.ReviewSmeRate, new { id = "txtReviewSmeRate" })
+                                        </div><div class="input-field col s12">
+                                            <label>Linguistic Testing - $ / hour</label>
+                                            @Html.TextBoxFor(m => m.UserRate.LinguisticTestingRate, new { id = "txtLinguisticTestingRate" })
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label>Review LQA (Language Quality Assurance) - $ / hour</label>
+                                            @Html.TextBoxFor(m => m.UserRate.ReviewLqaRate, new { id = "txtReviewLqaRate" })
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <input type="hidden" id="hdnRateItemId" />
+                                            @Html.HiddenFor(m => m.UserRateId, new { id = "hdnUserRateId" })
+                                            <button id="btnSaveRates" class="btn waves-effect waves-light right submit" type="button">
+                                                Kaydet
+                                                <i class="mdi-content-send right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+@section scripts{
+    <script data-main="/Areas/Admin/Scripts/app/page-scripts/user/edit.page.js" src="~/Scripts/require.js"></script>
+}
