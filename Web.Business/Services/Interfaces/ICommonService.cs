@@ -9,7 +9,7 @@ using Tangent.CeviriDukkani.Domain.Dto.Translation;
 namespace Web.Business.Services.Interfaces {
     public interface ICommonService {
         ServiceResult Login(LoginRequestDto loginRequest);
-        ServiceResult ChangePassword(string email, string oldPassword, string newPassword);
+        ServiceResult ChangePassword(ChangePasswordRequestDto changePasswordRequest);
         ServiceResult AddMessage(MessageDto messageDto, int createdBy);
         ServiceResult GetIncomingMessages(int userId);
         ServiceResult GetSentMessages(int userId);

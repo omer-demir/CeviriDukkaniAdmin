@@ -26,7 +26,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             var response = new HttpResponseMessage();
 
 
-            ServiceResult serviceResult = _commonService.ChangePassword(changePasswordRequest.Email, changePasswordRequest.OldPassword, changePasswordRequest.NewPassword);
+            ServiceResult serviceResult = _commonService.ChangePassword(changePasswordRequest);
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
             {
                 response.StatusCode = HttpStatusCode.Forbidden;

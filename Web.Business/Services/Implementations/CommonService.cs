@@ -10,191 +10,227 @@ using Tangent.CeviriDukkani.Domain.Dto.Translation;
 using Web.Business.Services.Interfaces;
 
 namespace Web.Business.Services.Implementations {
-    public class CommonService : ICommonService {
+    public class CommonService : BaseService,ICommonService {
         #region Implementation of ICommonService
 
         public ServiceResult Login(LoginRequestDto loginRequest) {
-            var serviceEndpoint = "http://localhost:8001/";
-            var httpClient = new HttpClient {
-                BaseAddress = new Uri(serviceEndpoint)
-            };
-            httpClient.DefaultRequestHeaders.Accept.Clear();
-            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-            var response = httpClient.PostAsJsonAsync("api/commonapi/login", loginRequest).Result;
-            return response.Content.ReadAsAsync<ServiceResult>().Result;
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync(httpClient, "api/commonapi/login", loginRequest);
         }
 
-        public ServiceResult ChangePassword(string email, string oldPassword, string newPassword) {
-            throw new System.NotImplementedException();
+        public ServiceResult ChangePassword(ChangePasswordRequestDto changePasswordRequest) {
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync(httpClient, "api/commonapi/changePassword", changePasswordRequest);
         }
 
         public ServiceResult AddMessage(MessageDto messageDto, int createdBy) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync(httpClient, "api/commonapi/addMessage", messageDto);
         }
 
         public ServiceResult GetIncomingMessages(int userId) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, $"api/commonapi/getIncomingMessages?userId={userId}");
         }
 
         public ServiceResult GetSentMessages(int userId) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, $"api/commonapi/getSentMessages?userId={userId}");
         }
 
         public ServiceResult GetMessage(int messageId) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, $"api/commonapi/getMessage?messageId={messageId}");
         }
 
         public ServiceResult UpdateMessageForReadDate(int messageId) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, $"api/commonapi/updateMessageForReadDate?messageId={messageId}");
         }
 
         public ServiceResult DeleteSentMessage(int messageId) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, $"api/commonapi/deleteSentMessage?messageId={messageId}");
         }
 
         public ServiceResult DeleteIncomingMessage(int messageId) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, $"api/commonapi/deleteIncomingMessage?messageId={messageId}");
         }
 
         public ServiceResult GetCompanies() {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, $"api/commonapi/getCompanies");
         }
 
         public ServiceResult AddCompany(CompanyDto companyDto, int userId) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync(httpClient, "api/commonapi/addCompany", companyDto,userId);
         }
 
         public ServiceResult UpdateCompany(CompanyDto companyDto, int userId) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync(httpClient, "api/commonapi/editCompany", companyDto,userId);
         }
 
         public ServiceResult GetCompany(int companyId) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, $"api/commonapi/getCompany?companyId={companyId}");
         }
 
         public ServiceResult GetLanguages() {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, $"api/commonapi/getLanguages");
         }
 
         public ServiceResult AddLanguage(LanguageDto languageDto, int createdBy) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync(httpClient, "api/commonapi/addLanguage", languageDto,createdBy);
         }
 
         public ServiceResult UpdateLanguage(LanguageDto languageDto, int createdBy) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync(httpClient, "api/commonapi/editLanguage", languageDto, createdBy);
         }
 
         public ServiceResult GetLanguage(int languageId) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, $"api/commonapi/getLanguage?languageId={languageId}");
         }
 
         public ServiceResult GetTargetLanguages(int sourceLanguageId) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, $"api/commonapi/getTargetLanguages?sourceLanguageId={sourceLanguageId}");
         }
 
         public ServiceResult AddSourceTargetLanguages(SourceTargetLanguageDto sourceTargetLanguageDto, int createdBy) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync(httpClient, "api/commonapi/addSourceTargetLanguages", sourceTargetLanguageDto, createdBy);
         }
 
         public ServiceResult DeleteSourceTargetLanguages(SourceTargetLanguageDto sourceTargetLanguageDto) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync(httpClient, $"api/commonapi/deleteSourceTargetLanguages", sourceTargetLanguageDto);
         }
 
         public ServiceResult GetTerminologies() {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, $"api/commonapi/getTerminologies");
         }
 
         public ServiceResult AddTerminology(TerminologyDto terminologyDto, int createdBy) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync(httpClient, "api/commonapi/addTerminology", terminologyDto, createdBy);
         }
 
         public ServiceResult UpdateTerminology(TerminologyDto terminologyDto, int createdBy) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync(httpClient, "api/commonapi/editTerminology", terminologyDto, createdBy);
         }
 
         public ServiceResult GetTerminology(int terminologyId) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, $"api/commonapi/getTerminologies?terminologyId={terminologyId}");
         }
 
         public ServiceResult GetPriceLists() {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, $"api/commonapi/getPriceLists");
         }
 
         public ServiceResult AddPriceList(PriceListDto priceListDto, int createdBy) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync(httpClient, $"api/commonapi/addPriceList", priceListDto, createdBy);
         }
 
         public ServiceResult UpdatePriceList(PriceListDto priceListDto, int createdBy) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync(httpClient, "api/commonapi/editPriceList", priceListDto, createdBy);
         }
 
         public ServiceResult GetPriceList(int priceListId) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, $"api/commonapi/getPriceList?priceListId={priceListId}");
         }
 
         public ServiceResult GetCompanyTerminologies() {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, $"api/commonapi/getCompanyTerminologies");
         }
 
         public ServiceResult AddCompanyTerminology(CompanyTerminologyDto companyTerminologyDto, int createdBy) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync(httpClient, "api/commonapi/addCompanyTerminology", companyTerminologyDto, createdBy);
         }
 
         public ServiceResult UpdateCompanyTerminology(CompanyTerminologyDto companyTerminologyDto, int createdBy) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync(httpClient, "api/commonapi/editCompanyTerminology", companyTerminologyDto, createdBy);
         }
 
         public ServiceResult DeleteCompanyTerminology(int companyTerminologyId) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, $"api/commonapi/deleteCompanyTerminology?companyTerminologyId={companyTerminologyId}");
         }
 
         public ServiceResult GetCompanyTerminology(int companyTerminologyId) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, $"api/commonapi/getCompanyTerminology?companyTerminologyId={companyTerminologyId}");
         }
 
         public ServiceResult<List<UserRoleTypeDto>> GetUserRoleTypes() {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync<List<UserRoleTypeDto>>(httpClient, $"api/commonapi/getUserRoleTypes");
         }
 
         public ServiceResult<List<CountryDto>> GetCountries() {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync<List<CountryDto>>(httpClient, $"api/commonapi/getCountries");
         }
 
         public ServiceResult<List<CityDto>> GetCitiesByCountryId(int countryId) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync<List<CityDto>>(httpClient, $"api/commonapi/getCitiesByCountryId?countryId={countryId}");
         }
 
         public ServiceResult<List<DistrictDto>> GetDistrictByCityId(int cityId) {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync<List<DistrictDto>>(httpClient, $"api/commonapi/getDistrictByCityId?cityId={cityId}");
         }
 
         public ServiceResult GetTongues() {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, "api/commonapi/getTongues");
         }
 
         public ServiceResult GetSpecializations() {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, "api/commonapi/getSpecializations");
         }
 
         public ServiceResult GetSoftwares() {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, "api/commonapi/getSoftwares");
         }
 
         public ServiceResult GetBankAccountTypes() {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, "api/commonapi/getBankAccountTypes");
         }
 
         public ServiceResult GetCurrencies() {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, "api/commonapi/getCurrencies");
         }
 
         public ServiceResult GetWorkingTypes() {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, "api/commonapi/getWorkingTypes");
         }
 
         public ServiceResult GetServiceTypes() {
-            throw new System.NotImplementedException();
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync(httpClient, "api/commonapi/getServiceTypes");
         }
 
         #endregion
