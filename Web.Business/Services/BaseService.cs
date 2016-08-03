@@ -1,7 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Net.Http;
+using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
+using System.Text.RegularExpressions;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Tangent.CeviriDukkani.Domain.Common;
 
 namespace Web.Business.Services {
@@ -42,14 +48,20 @@ namespace Web.Business.Services {
         }
 
         protected ServiceResult GetAsAsync(HttpClient httpClient, string action, int userId = 0) {
-            EnchaneRequestWithUserInfo(httpClient,userId);
+            EnchaneRequestWithUserInfo(httpClient, userId);
             var response = httpClient.GetAsync(action).Result;
             return GetContentAsServiceResult(response);
         }
 
-        protected ServiceResult<T> GetAsAsync<T>(HttpClient httpClient, string action, int userId = 0) where T:class {
+        protected ServiceResult<T> GetAsAsync<T>(HttpClient httpClient, string action, int userId = 0) where T : class {
             EnchaneRequestWithUserInfo(httpClient, userId);
             var response = httpClient.GetAsync(action).Result;
+            return GetContentAsServiceResult<T>(response);
+        }
+
+        protected ServiceResult<T> PostAsAsync<T>(HttpClient httpClient, string action, object data, int userId = 0) where T : class {
+            EnchaneRequestWithUserInfo(httpClient, userId);
+            var response = httpClient.PostAsJsonAsync(action, data).Result;
             return GetContentAsServiceResult<T>(response);
         }
 
@@ -63,11 +75,17 @@ namespace Web.Business.Services {
         }
 
         private ServiceResult GetContentAsServiceResult(HttpResponseMessage response) {
-            return response.Content.ReadAsAsync<ServiceResult>().Result;
+            var result= Regex.Unescape(response.Content.ReadAsStringAsync().Result.Replace(@"\", ""));
+            var deserializedObject = new JavaScriptSerializer().Deserialize<ServiceResult>(result);
+            return deserializedObject;
         }
 
-        private ServiceResult<T> GetContentAsServiceResult<T>(HttpResponseMessage response) where T:class {
-            return response.Content.ReadAsAsync<ServiceResult<T>>().Result;
+        private ServiceResult<T> GetContentAsServiceResult<T>(HttpResponseMessage response) where T : class {
+            var serializerSettings = new JsonSerializerSettings {
+                ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                MetadataPropertyHandling = MetadataPropertyHandling.ReadAhead
+            };
+            return JsonConvert.DeserializeObject<ServiceResult<T>>(response.Content.ReadAsStringAsync().Result, serializerSettings);
         }
 
         private void EnchaneRequestWithUserInfo(HttpClient httpClient, int userId) {

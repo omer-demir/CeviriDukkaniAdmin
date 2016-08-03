@@ -54,10 +54,12 @@ namespace Web.UI.Areas.Admin.Controllers
         {
             return View();
         }
+
         public ActionResult CompanyTerminologies()
         {
             return View();
         }
+
         public ActionResult CompanyTerminologyCreate()
         {
             GetCompanies();

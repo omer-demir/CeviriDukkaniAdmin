@@ -6,6 +6,7 @@ using Tangent.CeviriDukkani.Domain.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Request;
 using Tangent.CeviriDukkani.Domain.Dto.Sale;
+using Tangent.CeviriDukkani.Domain.Dto.System;
 using Tangent.CeviriDukkani.Domain.Dto.Translation;
 using Web.Business.Services.Interfaces;
 
@@ -13,9 +14,9 @@ namespace Web.Business.Services.Implementations {
     public class CommonService : BaseService,ICommonService {
         #region Implementation of ICommonService
 
-        public ServiceResult Login(LoginRequestDto loginRequest) {
+        public ServiceResult<UserDto> Login(LoginRequestDto loginRequest) {
             var httpClient = GetClient(ServiceUrl.System);
-            return PostAsAsync(httpClient, "api/commonapi/login", loginRequest);
+            return PostAsAsync<UserDto>(httpClient, "api/commonapi/login", loginRequest);
         }
 
         public ServiceResult ChangePassword(ChangePasswordRequestDto changePasswordRequest) {
