@@ -97,6 +97,12 @@ namespace Web.UI.Areas.Admin.Controllers
             return View();
         }
 
+        public ActionResult UserFilter()
+        {
+            GetUserRoleTypes();
+            return View();
+        }
+
         public ActionResult Create()
         {
             GetUserRoleTypes();

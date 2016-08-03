@@ -227,6 +227,7 @@
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\detail.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\user\create.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\user\edit.page.js" />
+    <Content Include="Areas\Admin\Scripts\app\page-scripts\user\filter.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\user\index.page.js" />
     <Content Include="Areas\Admin\Scripts\app\utility.js" />
     <Content Include="Areas\Admin\Scripts\css.js" />
@@ -1133,6 +1134,7 @@
     <Content Include="Areas\Admin\Views\Order\OrderDetail.cshtml" />
     <Content Include="Areas\Admin\Views\Order\WaitingOrders.cshtml" />
     <Content Include="Areas\Admin\Views\Order\ResponsePendingOrders.cshtml" />
+    <Content Include="Areas\Admin\Views\User\UserFilter.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dx\css\dx.android5.light.css" />
     <Content Include="Scripts\dx\css\dx.common.css" />

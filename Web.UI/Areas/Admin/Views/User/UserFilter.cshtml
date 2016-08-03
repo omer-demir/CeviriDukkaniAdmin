@@ -1,0 +1,66 @@
+﻿@using Tangent.CeviriDukkani.Domain.Dto.Common
+
+@{
+    ViewBag.Title = "Kullanıcı Listesi";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section breadcrumbs{
+    <div id="breadcrumbs-wrapper">
+        <!-- Search for small screen -->
+        <div class="header-search-wrapper grey hide-on-large-only">
+            <i class="mdi-action-search active"></i>
+            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <h5 class="breadcrumbs-title">Kullanıcı Listesi</h5>
+                    <ol class="breadcrumbs">
+                        <li>
+                            <a href="/Admin/Home">Anasayfa</a>
+                        </li>
+                        <li class="active">Kullanıcı Listesi</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="section">
+    <p class="caption">Kullanıcı Listesi görüntülenmektedir.</p>
+    <div class="row">
+        <div class="col s6 dvUserRoles">
+            <label for="role">Kullanıcı Tipi *</label>
+            <select multiple id="ddlUserRole">
+                <option value="" disabled selected>Lütfen seçiniz.</option>
+                @foreach (var item in (List<UserRoleTypeDto>)ViewBag.UserRoleTypes)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+            <input type="hidden" id="hdnUserRoleTypes" />
+            <div class="input-field">
+                <div class="errorTxt6"></div>
+            </div>
+        </div>
+        <div class="col s6">
+            <button id="btnFilter" class="btn waves-effect waves-light right submit" type="button">
+                Göster
+                <i class="mdi-content-send right"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div id="userListGrid"></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script data-main="/Areas/Admin/Scripts/app/page-scripts/user/filter.page.js" src="~/Scripts/require.js"></script>
+}

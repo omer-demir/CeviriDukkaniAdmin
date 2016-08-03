@@ -1,19 +1,22 @@
-﻿using Tangent.CeviriDukkani.Domain.Common;
+﻿using System.Collections.Generic;
+using Tangent.CeviriDukkani.Domain.Common;
+using Tangent.CeviriDukkani.Domain.Dto.Enums;
 using Tangent.CeviriDukkani.Domain.Dto.System;
 
 namespace Web.Business.Services.Interfaces {
     public interface IUserService {
-        ServiceResult AddUser(UserDto user, int createdBy);
-        ServiceResult GetUser(int userId);
-        ServiceResult EditUser(UserDto userDto, int createdBy);
-        ServiceResult GetUsers();
-        ServiceResult GetTranslatorsAccordingToOrderTranslationQuality(int orderId);
+        ServiceResult<UserDto> AddUser(UserDto user, int createdBy);
+        ServiceResult<UserDto> GetUser(int userId);
+        ServiceResult<UserDto> EditUser(UserDto userDto, int createdBy);
+        ServiceResult<List<UserDto>> GetUsers();
+        ServiceResult<List<UserDto>> GetUsersByUserRoleTypes(List<int> userRoleTypeEnums);
+        ServiceResult<List<UserDto>> GetTranslatorsAccordingToOrderTranslationQuality(int orderId);
         ServiceResult CreateUser(UserDto user);
-        ServiceResult AddOrUpdateUserContact(UserDto userDto, int createdBy);
-        ServiceResult AddOrUpdateUserAbility(UserDto userDto, int createdBy);
-        ServiceResult AddOrUpdateUserPayment(UserDto userDto, int createdBy);
-        ServiceResult AddOrUpdateUserRate(UserDto userDto, int createdBy);
-        ServiceResult GetTechnologyKnowledgesByUserAbilityId(int userAbilityId);
-        ServiceResult GetRateItemsByUserRateId(int userRateId);
+        ServiceResult<UserDto> AddOrUpdateUserContact(UserDto userDto, int createdBy);
+        ServiceResult<UserDto> AddOrUpdateUserAbility(UserDto userDto, int createdBy);
+        ServiceResult<UserDto> AddOrUpdateUserPayment(UserDto userDto, int createdBy);
+        ServiceResult<UserDto> AddOrUpdateUserRate(UserDto userDto, int createdBy);
+        ServiceResult<List<TechnologyKnowledgeDto>> GetTechnologyKnowledgesByUserAbilityId(int userAbilityId);
+        ServiceResult<List<RateItemDto>> GetRateItemsByUserRateId(int userRateId);
     }
 }

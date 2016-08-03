@@ -1,10 +1,12 @@
-﻿using System.Net;
+﻿using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Tangent.CeviriDukkani.Domain.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Request;
 using Tangent.CeviriDukkani.Domain.Dto.Sale;
+using Tangent.CeviriDukkani.Domain.Dto.System;
 using Tangent.CeviriDukkani.Domain.Dto.Translation;
 using Web.Business.Services.Interfaces;
 
@@ -26,7 +28,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             var response = new HttpResponseMessage();
 
 
-            ServiceResult serviceResult = _commonService.ChangePassword(changePasswordRequest);
+            var serviceResult = _commonService.ChangePassword(changePasswordRequest);
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
             {
                 response.StatusCode = HttpStatusCode.Forbidden;
@@ -139,7 +141,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
         public HttpResponseMessage GetTargetLanguages([FromUri]int sourceLanguageId)
         {
             var response = new HttpResponseMessage();
-            ServiceResult serviceResult = _commonService.GetTargetLanguages(sourceLanguageId);
+            var serviceResult = _commonService.GetTargetLanguages(sourceLanguageId);
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
             {
                 response.StatusCode = HttpStatusCode.InternalServerError;

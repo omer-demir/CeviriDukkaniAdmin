@@ -9,48 +9,56 @@ using Tangent.CeviriDukkani.Domain.Dto.Translation;
 namespace Web.Business.Services.Interfaces {
     public interface ICommonService {
         ServiceResult<UserDto> Login(LoginRequestDto loginRequest);
-        ServiceResult ChangePassword(ChangePasswordRequestDto changePasswordRequest);
-        ServiceResult AddMessage(MessageDto messageDto, int createdBy);
-        ServiceResult GetIncomingMessages(int userId);
-        ServiceResult GetSentMessages(int userId);
-        ServiceResult GetMessage(int messageId);
-        ServiceResult UpdateMessageForReadDate(int messageId);
-        ServiceResult DeleteSentMessage(int messageId);
-        ServiceResult DeleteIncomingMessage(int messageId);
-        ServiceResult GetCompanies();
-        ServiceResult AddCompany(CompanyDto companyDto, int userId);
-        ServiceResult UpdateCompany(CompanyDto companyDto, int userId);
-        ServiceResult GetCompany(int companyId);
-        ServiceResult GetLanguages();
-        ServiceResult AddLanguage(LanguageDto languageDto, int createdBy);
-        ServiceResult UpdateLanguage(LanguageDto languageDto, int createdBy);
-        ServiceResult GetLanguage(int languageId);
-        ServiceResult GetTargetLanguages(int sourceLanguageId);
-        ServiceResult AddSourceTargetLanguages(SourceTargetLanguageDto sourceTargetLanguageDto, int createdBy);
+        ServiceResult<UserDto> ChangePassword(ChangePasswordRequestDto changePasswordRequest);
+        ServiceResult<MessageDto> AddMessage(MessageDto messageDto, int createdBy);
+        ServiceResult<List<MessageDto>> GetIncomingMessages(int userId);
+        ServiceResult<List<MessageDto>> GetSentMessages(int userId);
+        ServiceResult<MessageDto> GetMessage(int messageId);
+        ServiceResult<MessageDto> UpdateMessageForReadDate(int messageId);
+        ServiceResult<MessageDto> DeleteSentMessage(int messageId);
+        ServiceResult<MessageDto> DeleteIncomingMessage(int messageId);
+
+        ServiceResult<List<CompanyDto>> GetCompanies();
+        ServiceResult<CompanyDto> AddCompany(CompanyDto companyDto, int userId);
+        ServiceResult<CompanyDto> UpdateCompany(CompanyDto companyDto, int userId);
+        ServiceResult<CompanyDto> GetCompany(int companyId);
+
+        ServiceResult<List<LanguageDto>> GetLanguages();
+        ServiceResult<LanguageDto> AddLanguage(LanguageDto languageDto, int createdBy);
+        ServiceResult<LanguageDto> UpdateLanguage(LanguageDto languageDto, int createdBy);
+        ServiceResult<LanguageDto> GetLanguage(int languageId);
+
+        ServiceResult<List<SourceTargetLanguageDto>> GetTargetLanguages(int sourceLanguageId);
+        ServiceResult<SourceTargetLanguageDto> AddSourceTargetLanguages(SourceTargetLanguageDto sourceTargetLanguageDto, int createdBy);
         ServiceResult DeleteSourceTargetLanguages(SourceTargetLanguageDto sourceTargetLanguageDto);
-        ServiceResult GetTerminologies();
-        ServiceResult AddTerminology(TerminologyDto terminologyDto, int createdBy);
-        ServiceResult UpdateTerminology(TerminologyDto terminologyDto, int createdBy);
-        ServiceResult GetTerminology(int terminologyId);
-        ServiceResult GetPriceLists();
-        ServiceResult AddPriceList(PriceListDto priceListDto, int createdBy);
-        ServiceResult UpdatePriceList(PriceListDto priceListDto, int createdBy);
-        ServiceResult GetPriceList(int priceListId);
-        ServiceResult GetCompanyTerminologies();
-        ServiceResult AddCompanyTerminology(CompanyTerminologyDto companyTerminologyDto, int createdBy);
-        ServiceResult UpdateCompanyTerminology(CompanyTerminologyDto companyTerminologyDto, int createdBy);
-        ServiceResult DeleteCompanyTerminology(int companyTerminologyId);
-        ServiceResult GetCompanyTerminology(int companyTerminologyId);
+
+        ServiceResult<List<TerminologyDto>> GetTerminologies();
+        ServiceResult<TerminologyDto> AddTerminology(TerminologyDto terminologyDto, int createdBy);
+        ServiceResult<TerminologyDto> UpdateTerminology(TerminologyDto terminologyDto, int createdBy);
+        ServiceResult<TerminologyDto> GetTerminology(int terminologyId);
+
+        ServiceResult<List<PriceListDto>> GetPriceLists();
+        ServiceResult<PriceListDto> AddPriceList(PriceListDto priceListDto, int createdBy);
+        ServiceResult<PriceListDto> UpdatePriceList(PriceListDto priceListDto, int createdBy);
+        ServiceResult<PriceListDto> GetPriceList(int priceListId);
+
+        ServiceResult<List<CompanyTerminologyDto>> GetCompanyTerminologies();
+        ServiceResult<CompanyTerminologyDto> AddCompanyTerminology(CompanyTerminologyDto companyTerminologyDto, int createdBy);
+        ServiceResult<CompanyTerminologyDto> UpdateCompanyTerminology(CompanyTerminologyDto companyTerminologyDto, int createdBy);
+        ServiceResult<CompanyTerminologyDto> DeleteCompanyTerminology(int companyTerminologyId);
+        ServiceResult<CompanyTerminologyDto> GetCompanyTerminology(int companyTerminologyId);
+
         ServiceResult<List<UserRoleTypeDto>> GetUserRoleTypes();
+
         ServiceResult<List<CountryDto>> GetCountries();
         ServiceResult<List<CityDto>> GetCitiesByCountryId(int countryId);
         ServiceResult<List<DistrictDto>> GetDistrictByCityId(int cityId);
-        ServiceResult GetTongues();
-        ServiceResult GetSpecializations();
-        ServiceResult GetSoftwares();
-        ServiceResult GetBankAccountTypes();
-        ServiceResult GetCurrencies();
-        ServiceResult GetWorkingTypes();
-        ServiceResult GetServiceTypes();
+        ServiceResult<List<TongueDto>> GetTongues();
+        ServiceResult<List<SpecializationDto>> GetSpecializations();
+        ServiceResult<List<SoftwareDto>> GetSoftwares();
+        ServiceResult<List<BankAccountTypeDto>> GetBankAccountTypes();
+        ServiceResult<List<CurrencyDto>> GetCurrencies();
+        ServiceResult<List<WorkingTypeDto>> GetWorkingTypes();
+        ServiceResult<List<ServiceTypeDto>> GetServiceTypes();
     }
 }
