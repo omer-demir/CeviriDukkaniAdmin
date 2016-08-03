@@ -23,7 +23,7 @@
                             type: 'POST',
                             dataType: "json",
                             contentType: "application/json; charset=utf-8",
-                            data: userRoleTypeEnums 
+                            data: JSON.stringify(userRoleTypeEnums)
                         });
                     };
                     //events
