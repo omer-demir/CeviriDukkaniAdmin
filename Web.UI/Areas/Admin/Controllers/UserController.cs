@@ -137,7 +137,7 @@ namespace Web.UI.Areas.Admin.Controllers
                 return View("Index");
             }
 
-            return View((UserDto)serviceResult.Data);
+            return View(serviceResult.Data);
         }
 
         public ActionResult Detail()
