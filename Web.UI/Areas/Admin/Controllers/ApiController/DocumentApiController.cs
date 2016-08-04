@@ -8,7 +8,6 @@ using Tangent.CeviriDukkani.Domain.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Document;
 using Tangent.CeviriDukkani.Domain.Dto.Response;
 using Web.Business.Services.Interfaces;
-using Web.UI.Areas.Admin.Helpers;
 
 namespace Web.UI.Areas.Admin.Controllers.ApiController
 {
