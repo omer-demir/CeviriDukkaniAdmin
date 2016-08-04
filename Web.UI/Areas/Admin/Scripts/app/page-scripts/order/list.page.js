@@ -18,7 +18,7 @@
                         });
                     };
                     var initPage = function () {
-                        utilityObj.blockElement('#orderListGrid');
+                        //utilityObj.blockElement('#orderListGrid');
                         getOrders().success(function (orderList) {
 
                                 var gridOpts = $.extend(true,
@@ -78,7 +78,7 @@
 
                                 $('#orderListGrid').dxDataGrid(gridOpts);
                                 $('#orderListGrid').dxDataGrid('instance');
-                                utilityObj.unblockElement('#orderListGrid');
+                                //utilityObj.unblockElement('#orderListGrid');
                             });
                     };
 

@@ -13,7 +13,7 @@
         'lodash': 'plugins/lodash/lodash',
         'dxdatagrid': '../../../Scripts/dx/js/dx.webappjs',
         'dataTable': '../Theme/js/plugins/data-tables/js/jquery.dataTables.min',
-        
+        'ckeditor': '../Theme/js/plugins/ckeditor/ckeditor'
     },
     shim: {
         'jqueryValidate': {

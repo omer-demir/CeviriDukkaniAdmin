@@ -1,22 +1,24 @@
-﻿using Tangent.CeviriDukkani.Domain.Common;
+﻿using System.Collections.Generic;
+using Tangent.CeviriDukkani.Domain.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Document;
 using Tangent.CeviriDukkani.Domain.Dto.Response;
 
 namespace Web.Business.Services.Interfaces {
     public interface IDocumentService {
-        ServiceResult AddTranslationDocument(TranslationDocumentDto documentDto);
-        ServiceResult EditTranslationDocument(TranslationDocumentDto documentDto);
-        ServiceResult GetTranslationDocuments();
-        ServiceResult GetTranslationDocument(int id);
-        ServiceResult AddGeneralDocument(GeneralDocumentDto documentDto);
-        ServiceResult EditGeneralDocument(GeneralDocumentDto documentDto);
-        ServiceResult GetGeneralDocuments();
-        ServiceResult GetGeneralDocument(int id);
-        ServiceResult AddUserDocument(UserDocumentDto documentDto);
-        ServiceResult EditUserDocument(UserDocumentDto documentDto);
-        ServiceResult GetUserDocuments();
-        ServiceResult GetUserDocument(int id);
-        ServiceResult GetDocumentPartsNormalized(int translationDocumentId, int partCount);
+        ServiceResult<TranslationDocumentDto> AddTranslationDocument(TranslationDocumentDto documentDto);
+        ServiceResult<TranslationDocumentDto> EditTranslationDocument(TranslationDocumentDto documentDto);
+        ServiceResult<List<TranslationDocumentDto>> GetTranslationDocuments();
+        ServiceResult<TranslationDocumentDto> GetTranslationDocument(int id);
+        ServiceResult<GeneralDocumentDto> AddGeneralDocument(GeneralDocumentDto documentDto);
+        ServiceResult<GeneralDocumentDto> EditGeneralDocument(GeneralDocumentDto documentDto);
+        ServiceResult<List<GeneralDocumentDto>> GetGeneralDocuments();
+        ServiceResult<GeneralDocumentDto> GetGeneralDocument(int id);
+        ServiceResult<UserDocumentDto> AddUserDocument(UserDocumentDto documentDto);
+        ServiceResult<UserDocumentDto> EditUserDocument(UserDocumentDto documentDto);
+        ServiceResult<List<UserDocumentDto>> GetUserDocuments();
+        ServiceResult<UserDocumentDto> GetUserDocument(int id);
+        ServiceResult<List<TranslationDocumentPartDto>> GetDocumentPartsNormalized(int translationDocumentId, int partCount);
         ServiceResult<DocumentUploadResponseDto> AnalyzeDocument(string localFolder, string fileName);
+        ServiceResult<TranslationDocumentPartDto> GetTranslationDocumentPartById(int translationDocumentPartId);
     }
 }
