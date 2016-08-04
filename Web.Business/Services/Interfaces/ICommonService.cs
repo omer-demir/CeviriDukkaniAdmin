@@ -1,19 +1,23 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using Tangent.CeviriDukkani.Domain.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Request;
 using Tangent.CeviriDukkani.Domain.Dto.Sale;
 using Tangent.CeviriDukkani.Domain.Dto.System;
 using Tangent.CeviriDukkani.Domain.Dto.Translation;
+using Tangent.CeviriDukkani.Domain.Entities.Common;
 
 namespace Web.Business.Services.Interfaces {
     public interface ICommonService {
         ServiceResult<UserDto> Login(LoginRequestDto loginRequest);
         ServiceResult<UserDto> ChangePassword(ChangePasswordRequestDto changePasswordRequest);
-        ServiceResult<MessageDto> AddMessage(MessageDto messageDto, int createdBy);
-        ServiceResult<List<MessageDto>> GetIncomingMessages(int userId);
-        ServiceResult<List<MessageDto>> GetSentMessages(int userId);
+        ServiceResult<MessageDto> AddMessage(MessageRequestDto messageDto, int createdBy);
+        ServiceResult<List<MessageDto>> GetIncomingMessagesByUser(int userId);
+        ServiceResult<List<MessageDto>> GetSentMessagesByUser(int userId);
         ServiceResult<MessageDto> GetMessage(int messageId);
+        ServiceResult<List<MessageDto>> GetMessageByQuery(Expression<Func<Message, bool>> expression);
         ServiceResult<MessageDto> UpdateMessageForReadDate(int messageId);
         ServiceResult<MessageDto> DeleteSentMessage(int messageId);
         ServiceResult<MessageDto> DeleteIncomingMessage(int messageId);

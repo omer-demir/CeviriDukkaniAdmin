@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Tangent.CeviriDukkani.Domain.Common;
@@ -8,6 +9,7 @@ using Tangent.CeviriDukkani.Domain.Dto.Request;
 using Tangent.CeviriDukkani.Domain.Dto.Sale;
 using Tangent.CeviriDukkani.Domain.Dto.System;
 using Tangent.CeviriDukkani.Domain.Dto.Translation;
+using Tangent.CeviriDukkani.Domain.Entities.Common;
 using Web.Business.Services.Interfaces;
 
 namespace Web.Business.Services.Implementations {
@@ -24,24 +26,30 @@ namespace Web.Business.Services.Implementations {
             return PostAsAsync<UserDto>(httpClient, "api/commonapi/changePassword", changePasswordRequest);
         }
 
-        public ServiceResult<MessageDto> AddMessage(MessageDto messageDto, int createdBy) {
+        public ServiceResult<MessageDto> AddMessage(MessageRequestDto messageDto, int createdBy) {
             var httpClient = GetClient(ServiceUrl.System);
             return PostAsAsync<MessageDto>(httpClient, "api/commonapi/addMessage", messageDto);
         }
 
-        public ServiceResult<List<MessageDto>> GetIncomingMessages(int userId) {
+        public ServiceResult<List<MessageDto>> GetIncomingMessagesByUser(int userId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync<List<MessageDto>>(httpClient, $"api/commonapi/getIncomingMessages?userId={userId}");
+            return GetAsAsync<List<MessageDto>>(httpClient, $"api/commonapi/getIncomingMessagesByUser?userId={userId}");
         }
 
-        public ServiceResult<List<MessageDto>> GetSentMessages(int userId) {
+        public ServiceResult<List<MessageDto>> GetSentMessagesByUser(int userId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync<List<MessageDto>>(httpClient, $"api/commonapi/getSentMessages?userId={userId}");
+            return GetAsAsync<List<MessageDto>>(httpClient, $"api/commonapi/getSentMessagesByUser?userId={userId}");
         }
 
         public ServiceResult<MessageDto> GetMessage(int messageId) {
             var httpClient = GetClient(ServiceUrl.System);
             return GetAsAsync<MessageDto>(httpClient, $"api/commonapi/getMessage?messageId={messageId}");
+        }
+
+        public ServiceResult<List<MessageDto>> GetMessageByQuery(Expression<Func<Message, bool>> expression)
+        {
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync<List<MessageDto>>(httpClient, "api/commonapi/getMessageByQuery", expression);
         }
 
         public ServiceResult<MessageDto> UpdateMessageForReadDate(int messageId) {

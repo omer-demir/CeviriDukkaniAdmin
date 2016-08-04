@@ -1,5 +1,5 @@
 ﻿require(['../../common'], function (common) {
-    require(['jquery', , 'jqueryValidate'], function () {
+    require([], function () {
         $(function () {
 
             //variables

@@ -9,6 +9,7 @@ using Tangent.CeviriDukkani.Domain.Dto.Sale;
 using Tangent.CeviriDukkani.Domain.Dto.System;
 using Tangent.CeviriDukkani.Domain.Dto.Translation;
 using Web.Business.Services.Interfaces;
+using Web.UI.Areas.Admin.Helpers;
 
 namespace Web.UI.Areas.Admin.Controllers.ApiController
 {
@@ -345,7 +346,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
         }
 
         [HttpPost, Route("addMessage")]
-        public HttpResponseMessage AddMessage(MessageDto messageDto)
+        public HttpResponseMessage AddMessage(MessageRequestDto messageDto)
         {
             var response = new HttpResponseMessage();
             var serviceResult = _commonService.AddMessage(messageDto, 1);
@@ -360,11 +361,11 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
-        [HttpGet, Route("getIncomingMessages")]
-        public HttpResponseMessage GetIncomingMessages([FromUri]int userId)
+        [HttpGet, Route("getIncomingMessagesByUser")]
+        public HttpResponseMessage GetIncomingMessagesByUser([FromUri]int userId)
         {
             var response = new HttpResponseMessage();
-            var serviceResult = _commonService.GetIncomingMessages(userId);
+            var serviceResult = _commonService.GetIncomingMessagesByUser(userId);
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
             {
                 response.StatusCode = HttpStatusCode.InternalServerError;
@@ -375,11 +376,11 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
-        [HttpGet, Route("getSentMessages")]
-        public HttpResponseMessage GetSentMessages([FromUri]int userId)
+        [HttpGet, Route("getSentMessagesByUser")]
+        public HttpResponseMessage GetSentMessagesByUser([FromUri]int userId)
         {
             var response = new HttpResponseMessage();
-            var serviceResult = _commonService.GetSentMessages(userId);
+            var serviceResult = _commonService.GetSentMessagesByUser(userId);
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
             {
                 response.StatusCode = HttpStatusCode.InternalServerError;
