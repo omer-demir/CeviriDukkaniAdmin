@@ -1,7 +1,9 @@
-﻿using System.Net;
+﻿using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Tangent.CeviriDukkani.Domain.Common;
+using Tangent.CeviriDukkani.Domain.Dto.Enums;
 using Tangent.CeviriDukkani.Domain.Dto.System;
 using Web.Business.Services.Interfaces;
 
@@ -63,6 +65,23 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             }
             //var userDtoList = new List<UserDto> { new UserDto { Name = "Ahmet", Id = 1 } };
             //serviceResult.Data = userDtoList;
+            response.StatusCode = HttpStatusCode.OK;
+            response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
+            return response;
+        }
+
+        [HttpPost, Route("getUsersByUserRoleTypes")]
+        public HttpResponseMessage GetUsersByUserRoleTypes(List<int> userRoleTypeEnums)
+        {
+            var response = new HttpResponseMessage();
+
+            //var list = new List<UserRoleTypeEnum> { UserRoleTypeEnum.FreelanceTranslator };
+            var serviceResult = _userService.GetUsersByUserRoleTypes(userRoleTypeEnums);
+            if (serviceResult.ServiceResultType != ServiceResultType.Success)
+            {
+                response.StatusCode = HttpStatusCode.InternalServerError;
+                return response;
+            }
             response.StatusCode = HttpStatusCode.OK;
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;

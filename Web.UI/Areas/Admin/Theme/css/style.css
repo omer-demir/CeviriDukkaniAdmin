@@ -737,7 +737,7 @@ ul.side-nav .collapsible-header {
 #chat-out .chat-out-list {
   padding: 5px;
   margin: 0;
-  border-bottom: 1px solid #e0e0e0;
+  /*border-bottom: 1px solid #e0e0e0;*/
 }
 
 #chat-out .favorite-associate-list .circle {

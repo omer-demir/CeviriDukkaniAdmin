@@ -1,13 +1,6 @@
 ﻿require(['../../common'],
     function (common) {
-        require(
-            [
-                'utility',
-                'css!../../../Scripts/dx/css/dx.common.css',
-                'css!../../../Scripts/dx/css/dx.light.css',
-                'jquery',
-                '../../../Scripts/dx/js/dx.webappjs'
-            ],
+        require(['utility', 'dxdatagrid'],
             function (utility) {
                 var utilityObj = new utility();
                 $(function () {

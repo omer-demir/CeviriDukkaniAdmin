@@ -175,6 +175,9 @@
                                             <li>
                                                 <a href="/Admin/User">Kullanıcı Listesi</a>
                                             </li>
+                                            <li>
+                                                <a href="/Admin/User/UserFilter">Çevirmen Listesi</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </li>
@@ -607,142 +610,48 @@
                         <a href="#" data-activates="chat-out" class="chat-close-collapse right"><i class="mdi-navigation-close"></i></a>
                         <div id="right-search" class="row">
                             <div class="col s12">
-                                <div class="input-field">
-                                    <i class="mdi-action-search prefix"></i>
-                                    <input id="icon_prefix" type="text" class="validate">
-                                    <label for="icon_prefix">Search</label>
-                                </div>
+                                @*<div class="input-field">
+                                <i class="mdi-action-search prefix"></i>
+                                <input id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">Search</label>
+                            </div>*@
+                                <p><a class="waves-effect waves-light btn modal-trigger  teal " href="#new-message">Yeni Mesaj</a>
                             </div>
                         </div>
                     </li>
                     <li class="li-hover">
                         <ul class="chat-collapsible" data-collapsible="expandable">
                             <li>
-                                <div class="collapsible-header teal white-text active"><i class="mdi-social-whatshot"></i>Recent Activity</div>
-                                <div class="collapsible-body recent-activity">
-                                    <div class="recent-activity-list chat-out-list row">
-                                        <div class="col s3 recent-activity-list-icon">
-                                            <i class="mdi-action-add-shopping-cart"></i>
-                                        </div>
-                                        <div class="col s9 recent-activity-list-text">
-                                            <a href="#">just now</a>
-                                            <p>Jim Doe Purchased new equipments for zonal office.</p>
-                                        </div>
-                                    </div>
-                                    <div class="recent-activity-list chat-out-list row">
-                                        <div class="col s3 recent-activity-list-icon">
-                                            <i class="mdi-device-airplanemode-on"></i>
-                                        </div>
-                                        <div class="col s9 recent-activity-list-text">
-                                            <a href="#">Yesterday</a>
-                                            <p>Your Next flight for USA will be on 15th August 2015.</p>
-                                        </div>
-                                    </div>
-                                    <div class="recent-activity-list chat-out-list row">
-                                        <div class="col s3 recent-activity-list-icon">
-                                            <i class="mdi-action-settings-voice"></i>
-                                        </div>
-                                        <div class="col s9 recent-activity-list-text">
-                                            <a href="#">5 Days Ago</a>
-                                            <p>Natalya Parker Send you a voice mail for next conference.</p>
-                                        </div>
-                                    </div>
-                                    <div class="recent-activity-list chat-out-list row">
-                                        <div class="col s3 recent-activity-list-icon">
-                                            <i class="mdi-action-store"></i>
-                                        </div>
-                                        <div class="col s9 recent-activity-list-text">
-                                            <a href="#">Last Week</a>
-                                            <p>Jessy Jay open a new store at S.G Road.</p>
-                                        </div>
-                                    </div>
-                                    <div class="recent-activity-list chat-out-list row">
-                                        <div class="col s3 recent-activity-list-icon">
-                                            <i class="mdi-action-settings-voice"></i>
-                                        </div>
-                                        <div class="col s9 recent-activity-list-text">
-                                            <a href="#">5 Days Ago</a>
-                                            <p>Natalya Parker Send you a voice mail for next conference.</p>
-                                        </div>
-                                    </div>
+                                <div class="collapsible-header green white-text">
+                                    <i class="mdi-content-inbox"></i>Gelen Mesajlar
                                 </div>
-                            </li>
-                            <li>
-                                <div class="collapsible-header light-blue white-text active"><i class="mdi-editor-attach-money"></i>Sales Repoart</div>
-                                <div class="collapsible-body sales-repoart">
-                                    <div class="sales-repoart-list  chat-out-list row">
-                                        <div class="col s8">Target Salse</div>
-                                        <div class="col s4">
-                                            <span id="sales-line-1"></span>
-                                        </div>
-                                    </div>
-                                    <div class="sales-repoart-list chat-out-list row">
-                                        <div class="col s8">Payment Due</div>
-                                        <div class="col s4">
-                                            <span id="sales-bar-1"></span>
-                                        </div>
-                                    </div>
-                                    <div class="sales-repoart-list chat-out-list row">
-                                        <div class="col s8">Total Delivery</div>
-                                        <div class="col s4">
-                                            <span id="sales-line-2"></span>
-                                        </div>
-                                    </div>
-                                    <div class="sales-repoart-list chat-out-list row">
-                                        <div class="col s8">Total Progress</div>
-                                        <div class="col s4">
-                                            <span id="sales-bar-2"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="collapsible-header red white-text"><i class="mdi-action-stars"></i>Favorite Associates</div>
                                 <div class="collapsible-body favorite-associates">
-                                    <div class="favorite-associate-list chat-out-list row">
-                                        <div class="col s4">
-                                            <img src="~/Areas/Admin/Theme/images/avatar.jpg" alt="" class="circle responsive-img online-user valign profile-image">
-                                        </div>
-                                        <div class="col s8">
-                                            <p>Eileen Sideways</p>
-                                            <p class="place">Los Angeles, CA</p>
-                                        </div>
+                                    <div class="favorite-associate-list chat-out-list row" id="incoming-message">
+                                        @*<div class="col s4">
+                                        <img src="~/Areas/Admin/Theme/images/avatar.jpg" alt="" class="circle responsive-img online-user valign profile-image">
+                                    </div>*@
+                                        @*<div class="col s8">
+                                        <p>Eileen Sideways</p>
+                                        <p>Eileen Sideways</p>
+                                        <p class="place">Los Angeles, CA</p>
+                                    </div>*@
+                                        Gelen kutusu boş.
                                     </div>
-                                    <div class="favorite-associate-list chat-out-list row">
-                                        <div class="col s4">
-                                            <img src="~/Areas/Admin/Theme/images/avatar.jpg" alt="" class="circle responsive-img online-user valign profile-image">
-                                        </div>
-                                        <div class="col s8">
-                                            <p>Zaham Sindil</p>
-                                            <p class="place">San Francisco, CA</p>
-                                        </div>
-                                    </div>
-                                    <div class="favorite-associate-list chat-out-list row">
-                                        <div class="col s4">
-                                            <img src="~/Areas/Admin/Theme/images/avatar.jpg" alt="" class="circle responsive-img offline-user valign profile-image">
-                                        </div>
-                                        <div class="col s8">
-                                            <p>Renov Leongal</p>
-                                            <p class="place">Cebu City, Philippines</p>
-                                        </div>
-                                    </div>
-                                    <div class="favorite-associate-list chat-out-list row">
-                                        <div class="col s4">
-                                            <img src="~/Areas/Admin/Theme/images/avatar.jpg" alt="" class="circle responsive-img online-user valign profile-image">
-                                        </div>
-                                        <div class="col s8">
-                                            <p>Weno Carasbong</p>
-                                            <p>Tokyo, Japan</p>
-                                        </div>
-                                    </div>
-                                    <div class="favorite-associate-list chat-out-list row">
-                                        <div class="col s4">
-                                            <img src="~/Areas/Admin/Theme/images/avatar.jpg" alt="" class="circle responsive-img offline-user valign profile-image">
-                                        </div>
-                                        <div class="col s8">
-                                            <p>Nusja Nawancali</p>
-                                            <p class="place">Bangkok, Thailand</p>
-                                        </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header red white-text"><i class="mdi-content-send"></i>Gönderilen Mesajlar</div>
+                                <div class="collapsible-body favorite-associates">
+                                    <div class="favorite-associate-list chat-out-list row" id="sent-message">
+                                        @*<div class="col s4">
+                                        <img src="~/Areas/Admin/Theme/images/avatar.jpg" alt="" class="circle responsive-img online-user valign profile-image">
+                                    </div>*@
+                                        @*<div class="col s8">
+                                        <p>Eileen Sideways</p>
+                                        <p>Eileen Sideways</p>
+                                        <p class="place">Los Angeles, CA</p>
+                                    </div>*@
+                                        Gönderilen kutusu boş.
                                     </div>
                                 </div>
                             </li>
@@ -780,7 +689,77 @@
             </div>
         </div>
     </footer>
-    <!-- END FOOTER -->
+<!-- END FOOTER -->
+    <div id="new-message" class="modal">
+        <div class="modal-content white-text" style="padding: 0; color: black !important;">
+            <div id="basic-form" class="section">
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <div class="card-panel">
+                            <h4 class="header2">Mesaj Gönder</h4>
+                            <div class="row">
+                                <form class="formValidate" id="formValidate">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <label for="email" class="lblMail">E-Mail *</label>
+                                            <input id="txtEmail" type="email" name="email" data-error=".errorTxt3">
+                                            <div class="errorTxt3"></div>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <label for="subject">Konu*</label>
+                                            <input id="txtSubject" name="subject" type="text" data-error=".errorTxt2">
+                                            <div class="errorTxt2"></div>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <textarea id="txtMessage" name="message" placeholder="Mesaj" data-error=".errorTxt3"></textarea>
+                                            <div class="errorTxt3"></div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer lighten-4">
+            <a href="#" class="waves-effect waves-red btn-flat" id="btnSave">Gönder<i class="mdi-content-send right"></i></a>
+            <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Kapat</a>
+        </div>
+    </div>
+    <div id="reply-message" class="modal">
+        <div class="modal-content white-text" style="padding: 0; color: black !important;">
+            <div id="basic-form" class="section">
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <div class="row" id="dvMessageDetail" style="display:none">
+                            <div><b>Kimden : <span id="spnMessageUserName">Ömer Faruk</span></b></div>
+                            <div class="message-title">Konu    : <span id="spnMessageSubject"></span></div>
+                            <div>Mesaj  : <span id="spnMessageText"></span></div>
+                            <input type="hidden" id="hdnEmail" />
+                        </div>
+                        <div class="card-panel">
+                            <h4 class="header2">Yanıtla</h4>
+                            <div class="row">
+                                <form class="formValidate" id="formValidate2">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <textarea id="txtReplyMessage" name="replymessage" placeholder="Mesaj" data-error=".errorTxt3" style="height: 100px;"></textarea>
+                                            <div class="errorTxt3"></div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer lighten-4">
+            <a href="#" class="waves-effect waves-red btn-flat" id="btnReply">Gönder<i class="mdi-content-send right"></i></a>
+            <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Kapat</a>
+        </div>
+    </div>
     <!-- ================================================
     Scripts
     ================================================ -->
@@ -809,6 +788,7 @@
 
 
     @RenderSection("scripts", false)
+    <script data-main="/Areas/Admin/Scripts/app/page-scripts/common/layout.page.js" src="~/Scripts/require.js"></script>
     <!-- Toast Notification -->
     <script type="text/javascript">
         // Toast Notification

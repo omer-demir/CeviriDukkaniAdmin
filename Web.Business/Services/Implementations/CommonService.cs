@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Tangent.CeviriDukkani.Domain.Common;
@@ -8,6 +9,7 @@ using Tangent.CeviriDukkani.Domain.Dto.Request;
 using Tangent.CeviriDukkani.Domain.Dto.Sale;
 using Tangent.CeviriDukkani.Domain.Dto.System;
 using Tangent.CeviriDukkani.Domain.Dto.Translation;
+using Tangent.CeviriDukkani.Domain.Entities.Common;
 using Web.Business.Services.Interfaces;
 
 namespace Web.Business.Services.Implementations {
@@ -19,94 +21,100 @@ namespace Web.Business.Services.Implementations {
             return PostAsAsync<UserDto>(httpClient, "api/commonapi/login", loginRequest);
         }
 
-        public ServiceResult ChangePassword(ChangePasswordRequestDto changePasswordRequest) {
+        public ServiceResult<UserDto> ChangePassword(ChangePasswordRequestDto changePasswordRequest) {
             var httpClient = GetClient(ServiceUrl.System);
-            return PostAsAsync(httpClient, "api/commonapi/changePassword", changePasswordRequest);
+            return PostAsAsync<UserDto>(httpClient, "api/commonapi/changePassword", changePasswordRequest);
         }
 
-        public ServiceResult AddMessage(MessageDto messageDto, int createdBy) {
+        public ServiceResult<MessageDto> AddMessage(MessageRequestDto messageDto, int createdBy) {
             var httpClient = GetClient(ServiceUrl.System);
-            return PostAsAsync(httpClient, "api/commonapi/addMessage", messageDto);
+            return PostAsAsync<MessageDto>(httpClient, "api/commonapi/addMessage", messageDto);
         }
 
-        public ServiceResult GetIncomingMessages(int userId) {
+        public ServiceResult<List<MessageDto>> GetIncomingMessagesByUser(int userId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, $"api/commonapi/getIncomingMessages?userId={userId}");
+            return GetAsAsync<List<MessageDto>>(httpClient, $"api/commonapi/getIncomingMessagesByUser?userId={userId}");
         }
 
-        public ServiceResult GetSentMessages(int userId) {
+        public ServiceResult<List<MessageDto>> GetSentMessagesByUser(int userId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, $"api/commonapi/getSentMessages?userId={userId}");
+            return GetAsAsync<List<MessageDto>>(httpClient, $"api/commonapi/getSentMessagesByUser?userId={userId}");
         }
 
-        public ServiceResult GetMessage(int messageId) {
+        public ServiceResult<MessageDto> GetMessage(int messageId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, $"api/commonapi/getMessage?messageId={messageId}");
+            return GetAsAsync<MessageDto>(httpClient, $"api/commonapi/getMessage?messageId={messageId}");
         }
 
-        public ServiceResult UpdateMessageForReadDate(int messageId) {
+        public ServiceResult<List<MessageDto>> GetMessageByQuery(Expression<Func<Message, bool>> expression)
+        {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, $"api/commonapi/updateMessageForReadDate?messageId={messageId}");
+            return PostAsAsync<List<MessageDto>>(httpClient, "api/commonapi/getMessageByQuery", expression);
         }
 
-        public ServiceResult DeleteSentMessage(int messageId) {
+        public ServiceResult<MessageDto> UpdateMessageForReadDate(int messageId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, $"api/commonapi/deleteSentMessage?messageId={messageId}");
+            return GetAsAsync<MessageDto>(httpClient, $"api/commonapi/updateMessageForReadDate?messageId={messageId}");
         }
 
-        public ServiceResult DeleteIncomingMessage(int messageId) {
+        public ServiceResult<MessageDto> DeleteSentMessage(int messageId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, $"api/commonapi/deleteIncomingMessage?messageId={messageId}");
+            return GetAsAsync<MessageDto>(httpClient, $"api/commonapi/deleteSentMessage?messageId={messageId}");
         }
 
-        public ServiceResult GetCompanies() {
+        public ServiceResult<MessageDto> DeleteIncomingMessage(int messageId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, $"api/commonapi/getCompanies");
+            return GetAsAsync<MessageDto>(httpClient, $"api/commonapi/deleteIncomingMessage?messageId={messageId}");
         }
 
-        public ServiceResult AddCompany(CompanyDto companyDto, int userId) {
+        public ServiceResult<List<CompanyDto>> GetCompanies() {
             var httpClient = GetClient(ServiceUrl.System);
-            return PostAsAsync(httpClient, "api/commonapi/addCompany", companyDto,userId);
+            return GetAsAsync<List<CompanyDto>>(httpClient, $"api/commonapi/getCompanies");
         }
 
-        public ServiceResult UpdateCompany(CompanyDto companyDto, int userId) {
+        public ServiceResult<CompanyDto> AddCompany(CompanyDto companyDto, int userId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return PostAsAsync(httpClient, "api/commonapi/editCompany", companyDto,userId);
+            return PostAsAsync<CompanyDto>(httpClient, "api/commonapi/addCompany", companyDto,userId);
         }
 
-        public ServiceResult GetCompany(int companyId) {
+        public ServiceResult<CompanyDto> UpdateCompany(CompanyDto companyDto, int userId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, $"api/commonapi/getCompany?companyId={companyId}");
+            return PostAsAsync<CompanyDto>(httpClient, "api/commonapi/editCompany", companyDto,userId);
         }
 
-        public ServiceResult GetLanguages() {
+        public ServiceResult<CompanyDto> GetCompany(int companyId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, $"api/commonapi/getLanguages");
+            return GetAsAsync<CompanyDto>(httpClient, $"api/commonapi/getCompany?companyId={companyId}");
         }
 
-        public ServiceResult AddLanguage(LanguageDto languageDto, int createdBy) {
+        public ServiceResult<List<LanguageDto>> GetLanguages() {
             var httpClient = GetClient(ServiceUrl.System);
-            return PostAsAsync(httpClient, "api/commonapi/addLanguage", languageDto,createdBy);
+            return GetAsAsync<List<LanguageDto>>(httpClient, $"api/commonapi/getLanguages");
         }
 
-        public ServiceResult UpdateLanguage(LanguageDto languageDto, int createdBy) {
+        public ServiceResult<LanguageDto> AddLanguage(LanguageDto languageDto, int createdBy) {
             var httpClient = GetClient(ServiceUrl.System);
-            return PostAsAsync(httpClient, "api/commonapi/editLanguage", languageDto, createdBy);
+            return PostAsAsync<LanguageDto>(httpClient, "api/commonapi/addLanguage", languageDto,createdBy);
         }
 
-        public ServiceResult GetLanguage(int languageId) {
+        public ServiceResult<LanguageDto> UpdateLanguage(LanguageDto languageDto, int createdBy) {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, $"api/commonapi/getLanguage?languageId={languageId}");
+            return PostAsAsync<LanguageDto>(httpClient, "api/commonapi/editLanguage", languageDto, createdBy);
         }
 
-        public ServiceResult GetTargetLanguages(int sourceLanguageId) {
+        public ServiceResult<LanguageDto> GetLanguage(int languageId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, $"api/commonapi/getTargetLanguages?sourceLanguageId={sourceLanguageId}");
+            return GetAsAsync<LanguageDto>(httpClient, $"api/commonapi/getLanguage?languageId={languageId}");
         }
 
-        public ServiceResult AddSourceTargetLanguages(SourceTargetLanguageDto sourceTargetLanguageDto, int createdBy) {
+        public ServiceResult<List<SourceTargetLanguageDto>> GetTargetLanguages(int sourceLanguageId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return PostAsAsync(httpClient, "api/commonapi/addSourceTargetLanguages", sourceTargetLanguageDto, createdBy);
+            return GetAsAsync<List<SourceTargetLanguageDto>>(httpClient, $"api/commonapi/getTargetLanguages?sourceLanguageId={sourceLanguageId}");
+        }
+
+        public ServiceResult<SourceTargetLanguageDto> AddSourceTargetLanguages(SourceTargetLanguageDto sourceTargetLanguageDto, int createdBy) {
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync<SourceTargetLanguageDto>(httpClient, "api/commonapi/addSourceTargetLanguages", sourceTargetLanguageDto, createdBy);
         }
 
         public ServiceResult DeleteSourceTargetLanguages(SourceTargetLanguageDto sourceTargetLanguageDto) {
@@ -114,69 +122,69 @@ namespace Web.Business.Services.Implementations {
             return PostAsAsync(httpClient, $"api/commonapi/deleteSourceTargetLanguages", sourceTargetLanguageDto);
         }
 
-        public ServiceResult GetTerminologies() {
+        public ServiceResult<List<TerminologyDto>> GetTerminologies() {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, $"api/commonapi/getTerminologies");
+            return GetAsAsync<List<TerminologyDto>>(httpClient, $"api/commonapi/getTerminologies");
         }
 
-        public ServiceResult AddTerminology(TerminologyDto terminologyDto, int createdBy) {
+        public ServiceResult<TerminologyDto> AddTerminology(TerminologyDto terminologyDto, int createdBy) {
             var httpClient = GetClient(ServiceUrl.System);
-            return PostAsAsync(httpClient, "api/commonapi/addTerminology", terminologyDto, createdBy);
+            return PostAsAsync<TerminologyDto>(httpClient, "api/commonapi/addTerminology", terminologyDto, createdBy);
         }
 
-        public ServiceResult UpdateTerminology(TerminologyDto terminologyDto, int createdBy) {
+        public ServiceResult<TerminologyDto> UpdateTerminology(TerminologyDto terminologyDto, int createdBy) {
             var httpClient = GetClient(ServiceUrl.System);
-            return PostAsAsync(httpClient, "api/commonapi/editTerminology", terminologyDto, createdBy);
+            return PostAsAsync<TerminologyDto>(httpClient, "api/commonapi/editTerminology", terminologyDto, createdBy);
         }
 
-        public ServiceResult GetTerminology(int terminologyId) {
+        public ServiceResult<TerminologyDto> GetTerminology(int terminologyId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, $"api/commonapi/getTerminologies?terminologyId={terminologyId}");
+            return GetAsAsync<TerminologyDto>(httpClient, $"api/commonapi/getTerminologies?terminologyId={terminologyId}");
         }
 
-        public ServiceResult GetPriceLists() {
+        public ServiceResult<List<PriceListDto>> GetPriceLists() {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, $"api/commonapi/getPriceLists");
+            return GetAsAsync<List<PriceListDto>>(httpClient, $"api/commonapi/getPriceLists");
         }
 
-        public ServiceResult AddPriceList(PriceListDto priceListDto, int createdBy) {
+        public ServiceResult<PriceListDto> AddPriceList(PriceListDto priceListDto, int createdBy) {
             var httpClient = GetClient(ServiceUrl.System);
-            return PostAsAsync(httpClient, $"api/commonapi/addPriceList", priceListDto, createdBy);
+            return PostAsAsync<PriceListDto>(httpClient, $"api/commonapi/addPriceList", priceListDto, createdBy);
         }
 
-        public ServiceResult UpdatePriceList(PriceListDto priceListDto, int createdBy) {
+        public ServiceResult<PriceListDto> UpdatePriceList(PriceListDto priceListDto, int createdBy) {
             var httpClient = GetClient(ServiceUrl.System);
-            return PostAsAsync(httpClient, "api/commonapi/editPriceList", priceListDto, createdBy);
+            return PostAsAsync<PriceListDto>(httpClient, "api/commonapi/editPriceList", priceListDto, createdBy);
         }
 
-        public ServiceResult GetPriceList(int priceListId) {
+        public ServiceResult<PriceListDto> GetPriceList(int priceListId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, $"api/commonapi/getPriceList?priceListId={priceListId}");
+            return GetAsAsync<PriceListDto>(httpClient, $"api/commonapi/getPriceList?priceListId={priceListId}");
         }
 
-        public ServiceResult GetCompanyTerminologies() {
+        public ServiceResult<List<CompanyTerminologyDto>> GetCompanyTerminologies() {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, $"api/commonapi/getCompanyTerminologies");
+            return GetAsAsync<List<CompanyTerminologyDto>>(httpClient, $"api/commonapi/getCompanyTerminologies");
         }
 
-        public ServiceResult AddCompanyTerminology(CompanyTerminologyDto companyTerminologyDto, int createdBy) {
+        public ServiceResult<CompanyTerminologyDto> AddCompanyTerminology(CompanyTerminologyDto companyTerminologyDto, int createdBy) {
             var httpClient = GetClient(ServiceUrl.System);
-            return PostAsAsync(httpClient, "api/commonapi/addCompanyTerminology", companyTerminologyDto, createdBy);
+            return PostAsAsync<CompanyTerminologyDto>(httpClient, "api/commonapi/addCompanyTerminology", companyTerminologyDto, createdBy);
         }
 
-        public ServiceResult UpdateCompanyTerminology(CompanyTerminologyDto companyTerminologyDto, int createdBy) {
+        public ServiceResult<CompanyTerminologyDto> UpdateCompanyTerminology(CompanyTerminologyDto companyTerminologyDto, int createdBy) {
             var httpClient = GetClient(ServiceUrl.System);
-            return PostAsAsync(httpClient, "api/commonapi/editCompanyTerminology", companyTerminologyDto, createdBy);
+            return PostAsAsync<CompanyTerminologyDto>(httpClient, "api/commonapi/editCompanyTerminology", companyTerminologyDto, createdBy);
         }
 
-        public ServiceResult DeleteCompanyTerminology(int companyTerminologyId) {
+        public ServiceResult<CompanyTerminologyDto> DeleteCompanyTerminology(int companyTerminologyId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, $"api/commonapi/deleteCompanyTerminology?companyTerminologyId={companyTerminologyId}");
+            return GetAsAsync<CompanyTerminologyDto>(httpClient, $"api/commonapi/deleteCompanyTerminology?companyTerminologyId={companyTerminologyId}");
         }
 
-        public ServiceResult GetCompanyTerminology(int companyTerminologyId) {
+        public ServiceResult<CompanyTerminologyDto> GetCompanyTerminology(int companyTerminologyId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, $"api/commonapi/getCompanyTerminology?companyTerminologyId={companyTerminologyId}");
+            return GetAsAsync<CompanyTerminologyDto>(httpClient, $"api/commonapi/getCompanyTerminology?companyTerminologyId={companyTerminologyId}");
         }
 
         public ServiceResult<List<UserRoleTypeDto>> GetUserRoleTypes() {
@@ -199,39 +207,39 @@ namespace Web.Business.Services.Implementations {
             return GetAsAsync<List<DistrictDto>>(httpClient, $"api/commonapi/getDistrictByCityId?cityId={cityId}");
         }
 
-        public ServiceResult GetTongues() {
+        public ServiceResult<List<TongueDto>> GetTongues() {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, "api/commonapi/getTongues");
+            return GetAsAsync<List<TongueDto>>(httpClient, "api/commonapi/getTongues");
         }
 
-        public ServiceResult GetSpecializations() {
+        public ServiceResult<List<SpecializationDto>> GetSpecializations() {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, "api/commonapi/getSpecializations");
+            return GetAsAsync<List<SpecializationDto>>(httpClient, "api/commonapi/getSpecializations");
         }
 
-        public ServiceResult GetSoftwares() {
+        public ServiceResult<List<SoftwareDto>> GetSoftwares() {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, "api/commonapi/getSoftwares");
+            return GetAsAsync<List<SoftwareDto>>(httpClient, "api/commonapi/getSoftwares");
         }
 
-        public ServiceResult GetBankAccountTypes() {
+        public ServiceResult<List<BankAccountTypeDto>> GetBankAccountTypes() {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, "api/commonapi/getBankAccountTypes");
+            return GetAsAsync<List<BankAccountTypeDto>>(httpClient, "api/commonapi/getBankAccountTypes");
         }
 
-        public ServiceResult GetCurrencies() {
+        public ServiceResult<List<CurrencyDto>> GetCurrencies() {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, "api/commonapi/getCurrencies");
+            return GetAsAsync<List<CurrencyDto>>(httpClient, "api/commonapi/getCurrencies");
         }
 
-        public ServiceResult GetWorkingTypes() {
+        public ServiceResult<List<WorkingTypeDto>> GetWorkingTypes() {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, "api/commonapi/getWorkingTypes");
+            return GetAsAsync<List<WorkingTypeDto>>(httpClient, "api/commonapi/getWorkingTypes");
         }
 
-        public ServiceResult GetServiceTypes() {
+        public ServiceResult<List<ServiceTypeDto>> GetServiceTypes() {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync(httpClient, "api/commonapi/getServiceTypes");
+            return GetAsAsync<List<ServiceTypeDto>>(httpClient, "api/commonapi/getServiceTypes");
         }
 
         #endregion

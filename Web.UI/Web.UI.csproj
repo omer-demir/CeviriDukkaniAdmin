@@ -128,7 +128,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="Tangent.CeviriDukkani.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CeviriDükkanıCommon.1.0.2.17\lib\Tangent.CeviriDukkani.Domain.dll</HintPath>
+      <HintPath>..\packages\CeviriDükkanıCommon.1.0.2.24\lib\Tangent.CeviriDukkani.Domain.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease">
@@ -210,6 +210,7 @@
     <Content Include="Areas\Admin\Scripts\app\page-scripts\common\company.terminology.create.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\common\company.terminology.list.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\common\language.manage.page.js" />
+    <Content Include="Areas\Admin\Scripts\app\page-scripts\common\layout.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\common\price.list.manage.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\common\source.target.languages.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\common\terminology.manage.page.js" />
@@ -229,6 +230,7 @@
     <Content Include="Areas\Admin\Scripts\app\page-scripts\translation\translate.content.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\user\create.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\user\edit.page.js" />
+    <Content Include="Areas\Admin\Scripts\app\page-scripts\user\filter.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\user\index.page.js" />
     <Content Include="Areas\Admin\Scripts\app\utility.js" />
     <Content Include="Areas\Admin\Scripts\css.js" />
@@ -1521,6 +1523,7 @@
     <Content Include="Areas\Admin\Theme\js\plugins\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
     <Content Include="Areas\Admin\Theme\js\plugins\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="Areas\Admin\Theme\js\plugins\ckeditor\skins\moono\readme.md" />
+    <Content Include="Areas\Admin\Views\User\UserFilter.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dx\css\dx.android5.light.css" />
     <Content Include="Scripts\dx\css\dx.common.css" />
