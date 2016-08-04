@@ -39,7 +39,7 @@ namespace Web.Business.Services.Implementations {
 
         public ServiceResult<List<UserDto>> GetTranslatorsAccordingToOrderTranslationQuality(int orderId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync< List<UserDto>>(httpClient, "api/userapi/getTranslatorsAccordingToOrderTranslationQuality?userId={userId}");
+            return GetAsAsync< List<UserDto>>(httpClient, $"api/userapi/getTranslatorsAccordingToOrderTranslationQuality?orderId={orderId}");
         }
 
         public ServiceResult CreateUser(UserDto user) {
@@ -70,12 +70,12 @@ namespace Web.Business.Services.Implementations {
 
         public ServiceResult<List<TechnologyKnowledgeDto>> GetTechnologyKnowledgesByUserAbilityId(int userAbilityId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync<List<TechnologyKnowledgeDto>>(httpClient, "api/userapi/getTechnologyKnowledgesByUserAbilityId?userAbilityId={userAbilityId}");
+            return GetAsAsync<List<TechnologyKnowledgeDto>>(httpClient, $"api/userapi/getTechnologyKnowledgesByUserAbilityId?userAbilityId={userAbilityId}");
         }
 
         public ServiceResult<List<RateItemDto>> GetRateItemsByUserRateId(int userRateId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync<List<RateItemDto>>(httpClient, "api/userapi/getRateItemsByUserRateId?userRateId={userRateId}");
+            return GetAsAsync<List<RateItemDto>>(httpClient, $"api/userapi/getRateItemsByUserRateId?userRateId={userRateId}");
         }
 
         #endregion
