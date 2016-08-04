@@ -128,7 +128,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="Tangent.CeviriDukkani.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CeviriDükkanıCommon.1.0.2.24\lib\Tangent.CeviriDukkani.Domain.dll</HintPath>
+      <HintPath>..\packages\CeviriDükkanıCommon.1.0.2.26\lib\Tangent.CeviriDukkani.Domain.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease">
@@ -156,6 +156,7 @@
     <Compile Include="Areas\Admin\Controllers\ApiController\CustomerApiController.cs" />
     <Compile Include="Areas\Admin\Controllers\ApiController\DocumentApiController.cs" />
     <Compile Include="Areas\Admin\Controllers\ApiController\OrderApiController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ApiController\TranslationApiController.cs" />
     <Compile Include="Areas\Admin\Controllers\ApiController\UserApiController.cs" />
     <Compile Include="Areas\Admin\Controllers\CommonController.cs" />
     <Compile Include="Areas\Admin\Controllers\CompanyController.cs" />
