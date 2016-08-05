@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Tangent.CeviriDukkani.Domain.Common;
+using Tangent.CeviriDukkani.Domain.Dto.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Request;
 using Tangent.CeviriDukkani.Domain.Dto.Translation;
 using Web.Business.Services.Interfaces;
@@ -61,6 +62,36 @@ namespace Web.Business.Services.Implementations {
         public ServiceResult GetProofReadContent(int translationDocumentPartId, int userId) {
             var httpClient = GetClient(ServiceUrl.Ts);
             return GetAsAsync(httpClient, $"api/translationapi/getProofReadContent?translationDocumentPartId={translationDocumentPartId}&userId={userId}");
+        }
+
+        public ServiceResult AddCommentToTranslationOperation(CreateCommentRequestDto request) {
+            var httpClient = GetClient(ServiceUrl.Ts);
+            return PostAsAsync(httpClient, $"api/translationapi/addCommentToTranslationOperation", request);
+        }
+
+        public ServiceResult AddCommentToEditionOperation(CreateCommentRequestDto request) {
+            var httpClient = GetClient(ServiceUrl.Ts);
+            return PostAsAsync(httpClient, $"api/translationapi/addCommentToEditionOperation", request);
+        }
+
+        public ServiceResult<List<CommentDto>> GetTranslationOperationComments(int translationDocumentPartId) {
+            var httpClient = GetClient(ServiceUrl.Ts);
+            return GetAsAsync<List<CommentDto>>(httpClient, $"api/translationapi/getTranslationOperationComments?translationDocumentPartId={translationDocumentPartId}");
+        }
+
+        public ServiceResult MarkTranslatingAsFinished(MarkOperationAsFinishedRequestDto request) {
+            var httpClient = GetClient(ServiceUrl.Ts);
+            return PostAsAsync(httpClient, $"api/translationapi/markTranslatingAsFinished", request);
+        }
+
+        public ServiceResult MarkEditingAsFinished(MarkOperationAsFinishedRequestDto request) {
+            var httpClient = GetClient(ServiceUrl.Ts);
+            return PostAsAsync(httpClient, $"api/translationapi/markEditingAsFinished", request);
+        }
+
+        public ServiceResult MarkProofReadingAsFinished(MarkOperationAsFinishedRequestDto request) {
+            var httpClient = GetClient(ServiceUrl.Ts);
+            return PostAsAsync(httpClient, $"api/translationapi/markProofReadingAsFinished", request);
         }
 
         #endregion

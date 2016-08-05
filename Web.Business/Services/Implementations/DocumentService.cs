@@ -94,7 +94,7 @@ namespace Web.Business.Services.Implementations {
 
         public ServiceResult<TranslationDocumentPartDto> GetTranslationDocumentPartById(int translationDocumentPartId) {
             var httpClient = GetClient(ServiceUrl.Dms);
-            return GetAsAsync<TranslationDocumentPartDto>(httpClient, $"api/documentapi/getTranslationDocumentPartById?{translationDocumentPartId}");
+            return GetAsAsync<TranslationDocumentPartDto>(httpClient, $"api/documentapi/getTranslationDocumentPartById?translationDocumentPartId={translationDocumentPartId}");
         }
 
         #endregion

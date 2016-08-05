@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Tangent.CeviriDukkani.Domain.Common;
+using Tangent.CeviriDukkani.Domain.Dto.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Request;
 using Tangent.CeviriDukkani.Domain.Dto.Translation;
 
@@ -16,5 +17,11 @@ namespace Web.Business.Services.Interfaces {
         ServiceResult GetTranslatedContent(int translationDocumentPartId, int userId);
         ServiceResult GetEditedContent(int translationDocumentPartId, int userId);
         ServiceResult GetProofReadContent(int translationDocumentPartId, int userId);
+        ServiceResult AddCommentToTranslationOperation(CreateCommentRequestDto request);
+        ServiceResult AddCommentToEditionOperation(CreateCommentRequestDto request);
+        ServiceResult<List<CommentDto>> GetTranslationOperationComments(int translationDocumentPartId);
+        ServiceResult MarkTranslatingAsFinished(MarkOperationAsFinishedRequestDto request);
+        ServiceResult MarkEditingAsFinished(MarkOperationAsFinishedRequestDto request);
+        ServiceResult MarkProofReadingAsFinished(MarkOperationAsFinishedRequestDto request);
     }
 }

@@ -23,10 +23,10 @@
                     });
                 }
 
-                function getTranslatedContent(translationDocumentPartId, userId) {
+                function getEditedContent(translationDocumentPartId, userId) {
                     $.ajax({
                         type: 'GET',
-                        url: '/api/v1/translationapi/getTranslatedContent',
+                        url: '/api/v1/translationapi/getEditedContent',
                         data: { translationDocumentPartId: translationDocumentPartId, userId: userId }
                     }).success(function (result) {
                         CKEDITOR.instances['translator'].setData(result.data);
@@ -71,7 +71,7 @@
                 function updateContent(data) {
                     $.ajax({
                         type: 'POST',
-                        url: '/api/v1/translationapi/updateTranslatedDocumentPart',
+                        url: '/api/v1/translationapi/updateEditedDocumentPart',
                         data: data
                     }).success(function (result) {
                         Materialize.toast('İçerik başarıyla Güncellendi', 3000);
@@ -83,7 +83,7 @@
                 function markAsFinished(data) {
                     $.ajax({
                         type: 'POST',
-                        url: '/api/v1/translationapi/markTranslatingAsFinished',
+                        url: '/api/v1/translationapi/markEditingAsFinished',
                         data: data
                     }).success(function (result) {
                         Materialize.toast('İşlem tamamlandı', 3000);
@@ -123,7 +123,7 @@
                     CKEDITOR.replace('original');
                     CKEDITOR.replace('translator');
                     getTranslationDocumentPart(params[0]);
-                    getTranslatedContent(params[0], params[1]);
+                    getEditedContent(params[0], params[1]);
                     getTranslationOperationComments(params[0]);
                 });
             });

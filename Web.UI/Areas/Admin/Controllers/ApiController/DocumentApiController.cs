@@ -9,23 +9,18 @@ using Tangent.CeviriDukkani.Domain.Dto.Document;
 using Tangent.CeviriDukkani.Domain.Dto.Response;
 using Web.Business.Services.Interfaces;
 
-namespace Web.UI.Areas.Admin.Controllers.ApiController
-{
+namespace Web.UI.Areas.Admin.Controllers.ApiController {
     [RoutePrefix("api/v1/documentapi")]
-    public class DocumentApiController : BaseApiController
-    {
+    public class DocumentApiController : BaseApiController {
         private readonly IDocumentService _documentService;
 
-        public DocumentApiController(IDocumentService documentService)
-        {
+        public DocumentApiController(IDocumentService documentService) {
             _documentService = documentService;
         }
 
         [HttpPost, Route("uploadDocument")]
-        public HttpResponseMessage UploadDocument(HttpRequestMessage request)
-        {
-            try
-            {
+        public HttpResponseMessage UploadDocument(HttpRequestMessage request) {
+            try {
                 var httpRequest = HttpContext.Current.Request;
                 if (httpRequest.Files.Count != 1)
                     throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
@@ -42,17 +37,14 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
 
                 // Send OK Response along with saved file names to the client.
                 return Request.CreateResponse(HttpStatusCode.OK, uploadResponseDto);
-            }
-            catch (System.Exception e)
-            {
+            } catch (System.Exception e) {
                 return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
             }
         }
 
 
         [HttpPost, Route("addTranslationDocument")]
-        public HttpResponseMessage AddTranslationDocument(TranslationDocumentDto documentDto)
-        {
+        public HttpResponseMessage AddTranslationDocument(TranslationDocumentDto documentDto) {
             var serviceResult = _documentService.AddTranslationDocument(documentDto);
 
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
@@ -62,8 +54,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
         }
 
         [HttpPost, Route("editTranslationDocument")]
-        public HttpResponseMessage EditTranslationDocument(TranslationDocumentDto documentDto)
-        {
+        public HttpResponseMessage EditTranslationDocument(TranslationDocumentDto documentDto) {
             var serviceResult = _documentService.EditTranslationDocument(documentDto);
 
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
@@ -73,8 +64,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
         }
 
         [HttpGet, Route("getTranslationDocuments")]
-        public HttpResponseMessage GetTranslationDocuments()
-        {
+        public HttpResponseMessage GetTranslationDocuments() {
             var serviceResult = _documentService.GetTranslationDocuments();
 
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
@@ -84,8 +74,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
         }
 
         [HttpGet, Route("getTranslationDocument/{id}")]
-        public HttpResponseMessage GetTranslationDocument(int id)
-        {
+        public HttpResponseMessage GetTranslationDocument(int id) {
             var serviceResult = _documentService.GetTranslationDocument(id);
 
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
@@ -95,8 +84,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
         }
 
         [HttpPost, Route("addGeneralDocument")]
-        public HttpResponseMessage AddGeneralDocument(GeneralDocumentDto documentDto)
-        {
+        public HttpResponseMessage AddGeneralDocument(GeneralDocumentDto documentDto) {
             var serviceResult = _documentService.AddGeneralDocument(documentDto);
 
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
@@ -106,8 +94,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
         }
 
         [HttpPost, Route("editGeneralDocument")]
-        public HttpResponseMessage EditGeneralDocument(GeneralDocumentDto documentDto)
-        {
+        public HttpResponseMessage EditGeneralDocument(GeneralDocumentDto documentDto) {
             var serviceResult = _documentService.EditGeneralDocument(documentDto);
 
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
@@ -117,8 +104,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
         }
 
         [HttpGet, Route("getGeneralDocuments")]
-        public HttpResponseMessage GetGeneralDocuments()
-        {
+        public HttpResponseMessage GetGeneralDocuments() {
             var serviceResult = _documentService.GetGeneralDocuments();
 
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
@@ -128,8 +114,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
         }
 
         [HttpGet, Route("getGeneralDocument/{id}")]
-        public HttpResponseMessage GetGeneralDocument(int id)
-        {
+        public HttpResponseMessage GetGeneralDocument(int id) {
             var serviceResult = _documentService.GetGeneralDocument(id);
 
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
@@ -139,8 +124,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
         }
 
         [HttpPost, Route("addUserDocument")]
-        public HttpResponseMessage AddUserDocument(UserDocumentDto documentDto)
-        {
+        public HttpResponseMessage AddUserDocument(UserDocumentDto documentDto) {
             var serviceResult = _documentService.AddUserDocument(documentDto);
 
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
@@ -150,8 +134,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
         }
 
         [HttpPost, Route("editUserDocument")]
-        public HttpResponseMessage EditUserDocument(UserDocumentDto documentDto)
-        {
+        public HttpResponseMessage EditUserDocument(UserDocumentDto documentDto) {
             var serviceResult = _documentService.EditUserDocument(documentDto);
 
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
@@ -161,8 +144,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
         }
 
         [HttpGet, Route("getUserDocuments")]
-        public HttpResponseMessage GetUserDocuments()
-        {
+        public HttpResponseMessage GetUserDocuments() {
             var serviceResult = _documentService.GetUserDocuments();
 
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
@@ -172,8 +154,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
         }
 
         [HttpGet, Route("getUserDocument/{id}")]
-        public HttpResponseMessage GetUserDocument(int id)
-        {
+        public HttpResponseMessage GetUserDocument(int id) {
             var serviceResult = _documentService.GetUserDocument(id);
 
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
@@ -183,8 +164,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
         }
 
         [HttpPost, Route("getDocumentPartsNormalized")]
-        public HttpResponseMessage GetDocumentPartsNormalized(int translationDocumentId, int partCount)
-        {
+        public HttpResponseMessage GetDocumentPartsNormalized(int translationDocumentId, int partCount) {
             var serviceResult = _documentService.GetDocumentPartsNormalized(translationDocumentId, partCount);
 
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
@@ -193,5 +173,14 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             return OK(serviceResult.Data);
         }
 
+        [HttpGet, Route("getTranslationDocumentPartById")]
+        public HttpResponseMessage GetTranslationDocumentPartById([FromUri]int translationDocumentPartId) {
+            var serviceResult = _documentService.GetTranslationDocumentPartById(translationDocumentPartId);
+            if (serviceResult.ServiceResultType != ServiceResultType.Success) {
+                return Error(serviceResult);
+            }
+
+            return OK(serviceResult);
+        }
     }
 }

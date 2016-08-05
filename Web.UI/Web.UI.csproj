@@ -128,7 +128,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="Tangent.CeviriDukkani.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CeviriDükkanıCommon.1.0.2.26\lib\Tangent.CeviriDukkani.Domain.dll</HintPath>
+      <HintPath>..\packages\CeviriDükkanıCommon.1.0.2.32\lib\Tangent.CeviriDukkani.Domain.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease">
@@ -228,6 +228,8 @@
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\pending.response.order.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\waiting.order.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\detail.page.js" />
+    <Content Include="Areas\Admin\Scripts\app\page-scripts\translation\proof.reader.content.page.js" />
+    <Content Include="Areas\Admin\Scripts\app\page-scripts\translation\editor.content.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\translation\translate.content.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\user\create.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\user\edit.page.js" />
