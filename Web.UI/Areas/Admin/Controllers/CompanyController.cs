@@ -1,6 +1,5 @@
 ﻿using System.Web.Mvc;
 using Tangent.CeviriDukkani.Domain.Common;
-using Tangent.CeviriDukkani.Domain.Dto.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Enums;
 using Web.Business.Services.Interfaces;
 using Web.UI.Areas.Admin.Helpers;
@@ -34,7 +33,7 @@ namespace Web.UI.Areas.Admin.Controllers
                 return View("Index");
             }
 
-            return View((CompanyDto)serviceResult.Data);
+            return View(serviceResult.Data);
         }
         public ActionResult Detail()
         {

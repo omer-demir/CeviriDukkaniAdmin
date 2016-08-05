@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Tangent.CeviriDukkani.Domain.Common;
-using Tangent.CeviriDukkani.Domain.Dto.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Enums;
 using Web.Business.Services.Interfaces;
 using Web.UI.Areas.Admin.Helpers;
@@ -25,7 +23,7 @@ namespace Web.UI.Areas.Admin.Controllers
             var serviceResult = _commonService.GetCompanies();
             if (serviceResult.ServiceResultType == ServiceResultType.Success)
             {
-                ViewBag.Companies = serviceResult.Data as List<CompanyDto>;
+                ViewBag.Companies = serviceResult.Data;
             }
         }
 
@@ -47,7 +45,7 @@ namespace Web.UI.Areas.Admin.Controllers
                 return Redirect("/Admin/Home");
             }
 
-            return View((List<LanguageDto>)serviceResult.Data);
+            return View(serviceResult.Data);
         }
 
         public ActionResult PriceList()

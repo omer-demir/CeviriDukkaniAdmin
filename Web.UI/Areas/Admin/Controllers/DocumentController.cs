@@ -48,5 +48,6 @@ namespace Web.UI.Areas.Admin.Controllers
 
             return View(serviceResult.Data);
         }
+        
     }
 }
