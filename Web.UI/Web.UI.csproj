@@ -1527,6 +1527,7 @@
     <Content Include="Areas\Admin\Theme\js\plugins\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="Areas\Admin\Theme\js\plugins\ckeditor\skins\moono\readme.md" />
     <Content Include="Areas\Admin\Views\User\UserFilter.cshtml" />
+    <Content Include="Areas\Admin\Views\Document\History.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dx\css\dx.android5.light.css" />
     <Content Include="Scripts\dx\css\dx.common.css" />

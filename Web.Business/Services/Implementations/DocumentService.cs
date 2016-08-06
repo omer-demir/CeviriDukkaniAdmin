@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Tangent.CeviriDukkani.Domain.Common;
+using Tangent.CeviriDukkani.Domain.Dto.Audit;
 using Tangent.CeviriDukkani.Domain.Dto.Document;
 using Tangent.CeviriDukkani.Domain.Dto.Response;
 using Web.Business.Services.Interfaces;
@@ -95,6 +96,12 @@ namespace Web.Business.Services.Implementations {
         public ServiceResult<TranslationDocumentPartDto> GetTranslationDocumentPartById(int translationDocumentPartId) {
             var httpClient = GetClient(ServiceUrl.Dms);
             return GetAsAsync<TranslationDocumentPartDto>(httpClient, $"api/documentapi/getTranslationDocumentPartById?translationDocumentPartId={translationDocumentPartId}");
+        }
+
+        public ServiceResult<List<DocumentAuditDto>> GetDocumentAudits(int documentId)
+        {
+            var httpClient = GetClient(ServiceUrl.Dms);
+            return GetAsAsync<List<DocumentAuditDto>>(httpClient, $"api/documentapi/getDocumentAudits?documentId={documentId}");
         }
 
         #endregion
