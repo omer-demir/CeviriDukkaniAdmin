@@ -15,7 +15,7 @@
             };
             var uploadDocument = function (file) {
                 return $.ajax({
-                    url: '/api/v1/documentapi/uploadDocument',
+                    url: 'http://localhost:8003/api/documentapi/uploadDocument',
                     type: 'POST',
                     data: file,
                     contentType: false,

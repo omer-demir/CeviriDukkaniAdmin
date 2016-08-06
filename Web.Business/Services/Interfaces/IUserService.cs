@@ -11,7 +11,6 @@ namespace Web.Business.Services.Interfaces {
         ServiceResult<List<UserDto>> GetUsers();
         ServiceResult<List<UserDto>> GetUsersByUserRoleTypes(List<int> userRoleTypeEnums);
         ServiceResult<List<UserDto>> GetTranslatorsAccordingToOrderTranslationQuality(int orderId);
-        ServiceResult CreateUser(UserDto user);
         ServiceResult<UserDto> AddOrUpdateUserContact(UserDto userDto, int createdBy);
         ServiceResult<UserDto> AddOrUpdateUserAbility(UserDto userDto, int createdBy);
         ServiceResult<UserDto> AddOrUpdateUserPayment(UserDto userDto, int createdBy);
