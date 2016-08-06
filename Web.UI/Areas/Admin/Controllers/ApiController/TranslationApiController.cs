@@ -23,9 +23,27 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController {
             return OK(serviceResult);
         }
 
+        [HttpGet, Route("getTranslatedContentForEditor")]
+        public HttpResponseMessage GetTranslatedContentForEditor([FromUri]int translationDocumentPartId, [FromUri]int userId) {
+            var serviceResult = _translationService.GetTranslatedContentForEditor(translationDocumentPartId, userId);
+            if (serviceResult.ServiceResultType != ServiceResultType.Success) {
+                return Error(serviceResult);
+            }
+            return OK(serviceResult);
+        }
+
         [HttpGet, Route("getEditedContent")]
         public HttpResponseMessage GetEditedContent([FromUri]int translationDocumentPartId, [FromUri]int userId) {
             var serviceResult = _translationService.GetEditedContent(translationDocumentPartId, userId);
+            if (serviceResult.ServiceResultType != ServiceResultType.Success) {
+                return Error(serviceResult);
+            }
+            return OK(serviceResult);
+        }
+
+        [HttpGet, Route("getEditedContentForProofReader")]
+        public HttpResponseMessage GetEditedContentForProofReader([FromUri]int translationDocumentPartId, [FromUri]int userId) {
+            var serviceResult = _translationService.GetEditedContentForProofReader(translationDocumentPartId, userId);
             if (serviceResult.ServiceResultType != ServiceResultType.Success) {
                 return Error(serviceResult);
             }
@@ -112,12 +130,43 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController {
             }
             return OK(serviceResult);
         }
+
         [HttpPost, Route("markProofReadingAsFinished")]
         public HttpResponseMessage MarkProofReadingAsFinished([FromBody]MarkOperationAsFinishedRequestDto request) {
             var serviceResult = _translationService.MarkProofReadingAsFinished(request);
             if (serviceResult.ServiceResultType != ServiceResultType.Success) {
                 return Error(serviceResult);
             }
+            return OK(serviceResult);
+        }
+
+        [HttpGet, Route("getAssignedJobsAsTranslator")]
+        public HttpResponseMessage GetAssignedJobsAsTranslator([FromUri]int userId) {
+            var serviceResult = _translationService.GetAssignedJobsAsTranslator(userId);
+            if (serviceResult.ServiceResultType != ServiceResultType.Success) {
+                return Error(serviceResult);
+            }
+
+            return OK(serviceResult);
+        }
+
+        [HttpGet, Route("getAssignedJobsAsEditor")]
+        public HttpResponseMessage GetAssignedJobsAsEditor([FromUri]int userId) {
+            var serviceResult = _translationService.GetAssignedJobsAsEditor(userId);
+            if (serviceResult.ServiceResultType != ServiceResultType.Success) {
+                return Error(serviceResult);
+            }
+
+            return OK(serviceResult);
+        }
+
+        [HttpGet, Route("getAssignedJobsAsProofReader")]
+        public HttpResponseMessage GetAssignedJobsAsProofReader([FromUri]int userId) {
+            var serviceResult = _translationService.GetAssignedJobsAsProofReader(userId);
+            if (serviceResult.ServiceResultType != ServiceResultType.Success) {
+                return Error(serviceResult);
+            }
+
             return OK(serviceResult);
         }
     }

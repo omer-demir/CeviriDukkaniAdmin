@@ -42,7 +42,8 @@
                             <li>
                                 <a class="btn-floating waves-effect waves-light btn modal-trigger" href="#addComment" tooltip="Yorum Ekle"><i class="large mdi-content-add"></i></a>
                             </li>
-                        } else if (SessionUser.IsEditor) {
+                        }
+                        else if (SessionUser.IsEditor) {
                             <li>
                                 <a class="btn-floating yellow darken-1 waves-effect waves-light btn" href="" tooltip="Güncelle" id="updateContent"><i class="large mdi-action-autorenew"></i></a>
                             </li>
@@ -61,6 +62,11 @@
                 <textarea name="editor1" id="original" rows="10" cols="40"></textarea>
             </div>
             <div class="col s6 m6 l6">
+                <textarea name="editor1" id="translatedContent" rows="10" cols="40"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m12 l12">
                 <textarea name="editor1" id="translator" rows="10" cols="40"></textarea>
             </div>
         </div>

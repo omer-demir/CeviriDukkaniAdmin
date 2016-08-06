@@ -18,6 +18,7 @@
                         data: { translationDocumentPartId: translationDocumentPartId }
                     }).success(function (result) {
                         CKEDITOR.instances['original'].setData(result.data.content);
+                        CKEDITOR.instances['original'].setReadOnly(true);
                     }).fail(function (erro) {
 
                     });

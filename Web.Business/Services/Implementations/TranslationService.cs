@@ -54,9 +54,19 @@ namespace Web.Business.Services.Implementations {
             return GetAsAsync(httpClient, $"api/translationapi/getTranslatedContent?translationDocumentPartId={translationDocumentPartId}&userId={userId}");
         }
 
+        public ServiceResult GetTranslatedContentForEditor(int translationDocumentPartId, int userId) {
+            var httpClient = GetClient(ServiceUrl.Ts);
+            return GetAsAsync(httpClient, $"api/translationapi/getTranslatedContentForEditor?translationDocumentPartId={translationDocumentPartId}&userId={userId}");
+        }
+
         public ServiceResult GetEditedContent(int translationDocumentPartId, int userId) {
             var httpClient = GetClient(ServiceUrl.Ts);
             return GetAsAsync(httpClient, $"api/translationapi/getEditedContent?translationDocumentPartId={translationDocumentPartId}&userId={userId}");
+        }
+
+        public ServiceResult GetEditedContentForProofReader(int translationDocumentPartId, int userId) {
+            var httpClient = GetClient(ServiceUrl.Ts);
+            return GetAsAsync(httpClient, $"api/translationapi/getEditedContentForProofReader?translationDocumentPartId={translationDocumentPartId}&userId={userId}");
         }
 
         public ServiceResult GetProofReadContent(int translationDocumentPartId, int userId) {
@@ -92,6 +102,21 @@ namespace Web.Business.Services.Implementations {
         public ServiceResult MarkProofReadingAsFinished(MarkOperationAsFinishedRequestDto request) {
             var httpClient = GetClient(ServiceUrl.Ts);
             return PostAsAsync(httpClient, $"api/translationapi/markProofReadingAsFinished", request);
+        }
+
+        public ServiceResult<List<TranslationOperationDto>> GetAssignedJobsAsTranslator(int userId) {
+            var httpClient = GetClient(ServiceUrl.Ts);
+            return GetAsAsync<List<TranslationOperationDto>>(httpClient, $"api/translationapi/getAssignedJobsAsTranslator?userId={userId}");
+        }
+
+        public ServiceResult<List<TranslationOperationDto>> GetAssignedJobsAsEditor(int userId) {
+            var httpClient = GetClient(ServiceUrl.Ts);
+            return GetAsAsync<List<TranslationOperationDto>>(httpClient, $"api/translationapi/getAssignedJobsAsEditor?userId={userId}");
+        }
+
+        public ServiceResult<List<TranslationOperationDto>> GetAssignedJobsAsProofReader(int userId) {
+            var httpClient = GetClient(ServiceUrl.Ts);
+            return GetAsAsync<List<TranslationOperationDto>>(httpClient, $"api/translationapi/getAssignedJobsAsProofReader?userId={userId}");
         }
 
         #endregion

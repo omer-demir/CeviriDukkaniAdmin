@@ -15,7 +15,9 @@ namespace Web.Business.Services.Interfaces {
         ServiceResult FinishEditing(FinishDocumentPartRequestDto request);
         ServiceResult FinishProofReading(FinishDocumentPartRequestDto request);
         ServiceResult GetTranslatedContent(int translationDocumentPartId, int userId);
+        ServiceResult GetTranslatedContentForEditor(int translationDocumentPartId, int userId);
         ServiceResult GetEditedContent(int translationDocumentPartId, int userId);
+        ServiceResult GetEditedContentForProofReader(int translationDocumentPartId, int userId);
         ServiceResult GetProofReadContent(int translationDocumentPartId, int userId);
         ServiceResult AddCommentToTranslationOperation(CreateCommentRequestDto request);
         ServiceResult AddCommentToEditionOperation(CreateCommentRequestDto request);
@@ -23,5 +25,8 @@ namespace Web.Business.Services.Interfaces {
         ServiceResult MarkTranslatingAsFinished(MarkOperationAsFinishedRequestDto request);
         ServiceResult MarkEditingAsFinished(MarkOperationAsFinishedRequestDto request);
         ServiceResult MarkProofReadingAsFinished(MarkOperationAsFinishedRequestDto request);
+        ServiceResult<List<TranslationOperationDto>> GetAssignedJobsAsTranslator(int userId);
+        ServiceResult<List<TranslationOperationDto>> GetAssignedJobsAsEditor(int userId);
+        ServiceResult<List<TranslationOperationDto>> GetAssignedJobsAsProofReader(int userId);
     }
 }
