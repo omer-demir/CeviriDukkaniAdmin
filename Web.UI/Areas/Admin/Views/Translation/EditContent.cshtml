@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "Sipariş Listesi";
+﻿@using Web.UI.Areas.Admin.Helpers
+@{
+    ViewBag.Title = "Edit İşlemi";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -13,12 +14,12 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 m12 l12">
-                    <h5 class="breadcrumbs-title">Sipariş Listesi</h5>
+                    <h5 class="breadcrumbs-title">Edit İşlemi</h5>
                     <ol class="breadcrumbs">
                         <li>
                             <a href="/Admin/Home">Anasayfa</a>
                         </li>
-                        <li class="active">Sipariş Listesi</li>
+                        <li class="active">Edit İşlemi</li>
                     </ol>
                 </div>
             </div>
@@ -27,17 +28,71 @@
 }
 
 <div class="section">
-    <p class="caption">Sipariş Listesi görüntülenmektedir.</p>
+    <p class="caption">Edit İşlemi görüntülenmektedir.</p>
     <div class="divider"></div>
     <div class="section">
         <div class="row">
-            <div class="col s12 m12 l12">
-                <div id="orderListGrid"></div>
+            <div style="position: relative;">
+                <div class="fixed-action-btn horizontal" style="position: absolute; display: inline-block; right: 19px;">
+                    <a class="btn-floating btn-large">
+                        <i class="mdi-navigation-menu"></i>
+                    </a>
+                    <ul>
+                        @if (SessionUser.IsProofReader) {
+                            <li>
+                                <a class="btn-floating waves-effect waves-light btn modal-trigger" href="#addComment" tooltip="Yorum Ekle"><i class="large mdi-content-add"></i></a>
+                            </li>
+                        } else if (SessionUser.IsEditor) {
+                            <li>
+                                <a class="btn-floating yellow darken-1 waves-effect waves-light btn" href="" tooltip="Güncelle" id="updateContent"><i class="large mdi-action-autorenew"></i></a>
+                            </li>
+
+                            <li>
+                                <a class="btn-floating yellow darken-1 waves-effect waves-light btn" href="" tooltip="Güncelle" id="finishContent"><i class="large mdi-action-done"></i></a>
+                            </li>
+                        }
+                        <li>
+                            <a class="btn-floating yellow darken-1 waves-effect waves-light btn modal-trigger" href="#comments" tooltip="Yorumları Göster"><i class="large mdi-content-archive"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col s6 m6 l6">
+                <textarea name="editor1" id="original" rows="10" cols="40"></textarea>
+            </div>
+            <div class="col s6 m6 l6">
+                <textarea name="editor1" id="translator" rows="10" cols="40"></textarea>
             </div>
         </div>
     </div>
 </div>
 
+<div id="comments" class="modal">
+    <div class="modal-content">
+        <ul class="collection" id="commentCollection"></ul>
+    </div>
+    <div class="modal-footer  teal lighten-4">
+        <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close">Kapat</a>
+    </div>
+</div>
+
+<div id="addComment" class="modal">
+    <div class="modal-content">
+        <div class="col s12 m12 l6">
+            <div class="input-field col s12">
+                <textarea placeholder="Yorum İçeriği" id="content" class="materialize-textarea"></textarea>
+                <label for="content" class="active">İçerik</label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer  teal lighten-4">
+        <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close">İptal</a>
+        <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close" id="addCommentBtn">Ekle</a>
+    </div>
+</div>
+
+
+<input type="hidden" value="@SessionUser.User.Id" id="userId" />
 @section scripts{
-    <script data-main="/Areas/Admin/Scripts/app/page-scripts/order/list.page.js" src="~/Scripts/require.js"></script>
+    <script data-main="/Areas/Admin/Scripts/app/page-scripts/translation/editor.content.page.js" src="~/Scripts/require.js"></script>
 }

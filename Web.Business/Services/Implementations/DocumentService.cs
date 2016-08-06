@@ -4,10 +4,8 @@ using Tangent.CeviriDukkani.Domain.Dto.Document;
 using Tangent.CeviriDukkani.Domain.Dto.Response;
 using Web.Business.Services.Interfaces;
 
-namespace Web.Business.Services.Implementations
-{
-    public class DocumentService : BaseService, IDocumentService
-    {
+namespace Web.Business.Services.Implementations {
+    public class DocumentService:BaseService,IDocumentService {
         #region Implementation of IDocumentService
 
         public ServiceResult<TranslationDocumentDto> AddTranslationDocument(TranslationDocumentDto documentDto)
@@ -94,10 +92,9 @@ namespace Web.Business.Services.Implementations
             return GetAsAsync<DocumentUploadResponseDto>(client, $"api/documentapi/analyzeDocument?localFolder={localFolder}&fileName={fileName}");
         }
 
-        public ServiceResult<TranslationDocumentPartDto> GetTranslationDocumentPartById(int translationDocumentPartId)
-        {
-            var client = GetClient(ServiceUrl.Dms);
-            return GetAsAsync<TranslationDocumentPartDto>(client, $"api/documentapi/getTranslationDocumentPartById?translationDocumentPartId={translationDocumentPartId}");
+        public ServiceResult<TranslationDocumentPartDto> GetTranslationDocumentPartById(int translationDocumentPartId) {
+            var httpClient = GetClient(ServiceUrl.Dms);
+            return GetAsAsync<TranslationDocumentPartDto>(httpClient, $"api/documentapi/getTranslationDocumentPartById?translationDocumentPartId={translationDocumentPartId}");
         }
 
         #endregion
