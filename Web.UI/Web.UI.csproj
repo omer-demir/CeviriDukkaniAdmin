@@ -1531,6 +1531,7 @@
     <Content Include="Areas\Admin\Theme\js\plugins\ckeditor\skins\moono\readme.md" />
     <Content Include="Areas\Admin\Views\User\UserFilter.cshtml" />
     <Content Include="Areas\Admin\Views\Translation\TranslationOperations.cshtml" />
+    <Content Include="Areas\Admin\Views\Document\History.cshtml" />
     <Content Include="Areas\Admin\Views\Translation\EditOperations.cshtml" />
     <Content Include="Areas\Admin\Views\Translation\ProofReadingOperations.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Tangent.CeviriDukkani.Domain.Common;
-using Tangent.CeviriDukkani.Domain.Dto.Enums;
 using Tangent.CeviriDukkani.Domain.Dto.System;
 using Web.Business.Services.Interfaces;
 
@@ -15,10 +13,8 @@ namespace Web.Business.Services.Implementations {
         }
 
         public ServiceResult<UserDto> GetUser(int userId) {
-            //var httpClient = GetClient(ServiceUrl.System);
-            //return GetAsAsync(httpClient, $"api/userapi/login?userId={userId}");
-            throw new NotImplementedException();
-
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync<UserDto>(httpClient, $"api/userapi/getUser?userId={userId}");
         }
 
         public ServiceResult<UserDto> EditUser(UserDto userDto, int createdBy) {
@@ -41,13 +37,7 @@ namespace Web.Business.Services.Implementations {
             var httpClient = GetClient(ServiceUrl.System);
             return GetAsAsync< List<UserDto>>(httpClient, $"api/userapi/getTranslatorsAccordingToOrderTranslationQuality?orderId={orderId}");
         }
-
-        public ServiceResult CreateUser(UserDto user) {
-            //var httpClient = GetClient(ServiceUrl.System);
-            //return PostAsAsync(httpClient, "api/userapi/login", loginRequest);
-            throw new NotImplementedException();
-        }
-
+        
         public ServiceResult<UserDto> AddOrUpdateUserContact(UserDto userDto, int createdBy) {
             var httpClient = GetClient(ServiceUrl.System);
             return PostAsAsync<UserDto>(httpClient, "api/userapi/editUserContact", userDto, userId: createdBy);
