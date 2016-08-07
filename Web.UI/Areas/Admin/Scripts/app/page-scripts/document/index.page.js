@@ -76,18 +76,12 @@
                                         function (ev) {
                                             var id = $(this).data("id");
                                             $($(this).attr('href')).modal('show');
+
                                             getAudits(id)
                                                 .success(function (response) {
 
                                                     var gridOpts = $.extend(true,
                                                     {
-                                                        filterRow: {
-                                                            visible: true,
-                                                            applyFilter: "auto"
-                                                        },
-                                                        headerFilter: {
-                                                            visible: true
-                                                        },
                                                         dataSource: response.data,
                                                         paging: { pageSize: 10 },
                                                         columns: [{
