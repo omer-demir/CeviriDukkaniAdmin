@@ -48,17 +48,5 @@ namespace Web.UI.Areas.Admin.Controllers
 
             return View(serviceResult.Data);
         }
-
-        public ActionResult History(int documentId)
-        {
-            var serviceResult = _documentService.GetDocumentAudits(documentId);
-
-            if (serviceResult.ServiceResultType != ServiceResultType.Success)
-            {
-                return View("Index");
-            }
-
-            return View(serviceResult.Data);
-        }
     }
 }

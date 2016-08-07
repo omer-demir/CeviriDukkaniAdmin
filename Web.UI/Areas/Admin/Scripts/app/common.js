@@ -1,4 +1,7 @@
 ﻿require.config({
+    config: {
+        documentUploadUrl: 'http://localhost:8003/api/documentapi/uploadDocument'
+    },
     baseUrl: '/Areas/Admin/Scripts',
     map: {
         '*': {

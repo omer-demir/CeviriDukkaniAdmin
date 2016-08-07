@@ -1,12 +1,20 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Formatting;
+using System.Web;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Tangent.CeviriDukkani.Domain.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Audit;
 using Tangent.CeviriDukkani.Domain.Dto.Document;
 using Tangent.CeviriDukkani.Domain.Dto.Response;
 using Web.Business.Services.Interfaces;
 
-namespace Web.Business.Services.Implementations {
-    public class DocumentService:BaseService,IDocumentService {
+namespace Web.Business.Services.Implementations
+{
+    public class DocumentService : BaseService, IDocumentService
+    {
         #region Implementation of IDocumentService
 
         public ServiceResult<TranslationDocumentDto> AddTranslationDocument(TranslationDocumentDto documentDto)
@@ -93,7 +101,8 @@ namespace Web.Business.Services.Implementations {
             return GetAsAsync<DocumentUploadResponseDto>(client, $"api/documentapi/analyzeDocument?localFolder={localFolder}&fileName={fileName}");
         }
 
-        public ServiceResult<TranslationDocumentPartDto> GetTranslationDocumentPartById(int translationDocumentPartId) {
+        public ServiceResult<TranslationDocumentPartDto> GetTranslationDocumentPartById(int translationDocumentPartId)
+        {
             var httpClient = GetClient(ServiceUrl.Dms);
             return GetAsAsync<TranslationDocumentPartDto>(httpClient, $"api/documentapi/getTranslationDocumentPartById?translationDocumentPartId={translationDocumentPartId}");
         }
@@ -102,6 +111,27 @@ namespace Web.Business.Services.Implementations {
         {
             var httpClient = GetClient(ServiceUrl.Dms);
             return GetAsAsync<List<DocumentAuditDto>>(httpClient, $"api/documentapi/getDocumentAudits?documentId={documentId}");
+        }
+
+        public ServiceResult<DocumentUploadResponseDto> UploadDocument(HttpRequest request)
+        {
+            //var httpClient = GetClient(ServiceUrl.Dms);
+            ////EnchaneRequestWithUserInfo(httpClient, 1);
+            //var jsonSerializerSettings = new JsonSerializerSettings
+            //{
+            //    ContractResolver = new CamelCasePropertyNamesContractResolver(),
+            //    PreserveReferencesHandling = PreserveReferencesHandling.Objects
+            //};
+
+            //var objectContent=new ObjectContent(request.GetType(),request,new JsonMediaTypeFormatter
+            //{
+            //    SerializerSettings = jsonSerializerSettings
+            //});
+
+            //var response = httpClient.PostAsync("api/documentapi/uploadDocument", objectContent).Result;
+
+            //return JsonConvert.DeserializeObject<ServiceResult<DocumentUploadResponseDto>>(response.Content.ReadAsStringAsync().Result, jsonSerializerSettings);
+            throw new NotImplementedException();
         }
 
         #endregion

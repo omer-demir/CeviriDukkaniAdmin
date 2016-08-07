@@ -1,4 +1,4 @@
-﻿require(['../../common'], function (common) {
+﻿require(['../../common', '../../constants'], function (common, constants) {
     require(['jquery', , 'jqueryValidate'], function () {
         $(function () {
 
@@ -8,14 +8,14 @@
             var editDocument = function (documentDto) {
 
                 return $.ajax({
-                    url: '/api/v1/documentapi/editDocument',
+                    url: '/api/v1/documentapi/editTranslationDocument',
                     type: 'POST',
                     data: documentDto
                 });
             };
             var uploadDocument = function (file) {
                 return $.ajax({
-                    url: '/api/v1/documentapi/uploadDocument',
+                    url: constants.documentUploadUrl,
                     type: 'POST',
                     data: file,
                     contentType: false,
