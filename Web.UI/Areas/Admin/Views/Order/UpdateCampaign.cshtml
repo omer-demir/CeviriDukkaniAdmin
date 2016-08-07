@@ -33,7 +33,8 @@
         <h3>@ViewBag.Message</h3>
     } else {
         <div class="row">
-            <form class="col s12" method="post" action="/Order/UpdateCampaign">
+            <form class="col s12">
+                <input type="hidden" id="itemId" value="@Model.Id"/>
                 <div class="row">
                     <div class="input-field col s12">
                         <input placeholder="Kod" id="code" type="text" name="Code" value="@Model.Code">
@@ -66,32 +67,27 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <div class="switch">
-                            Kullanım Durumu :
-                            <label>
-                                Hayır
-                                <input type="checkbox" name="Used" value="@Model.Used">
-                                <span class="lever"></span> Evet
-                            </label>
-                        </div>
+                        @{
+                            var durum = Model.Used ? "checked=\"checked\"" : "";
+                        }
+                        <input type="checkbox" id="isUsed" @durum>
+                        <label for="isUsed">Kullanılma Durumu</label>
                     </div>
                 </div>
                 <div class="row">
-                    
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <button class="btn cyan waves-effect waves-light right" type="submit" name="action">
-                                Güncelle
-                                <i class="mdi-content-send right"></i>
-                            </button>
-                        </div>
+                    <div class="input-field col s12">
+                        <a class="btn cyan waves-effect waves-light right" id="action">
+                            Güncelle
+                            <i class="mdi-content-send right"></i>
+                        </a>
                     </div>
                 </div>
             </form>
         </div>
-    }
+                            }
 </div>
 
 @section scripts{
     <script data-main="/Areas/Admin/Scripts/app/page-scripts/order/campaign.update.page.js" src="~/Scripts/require.js"></script>
 }
+
