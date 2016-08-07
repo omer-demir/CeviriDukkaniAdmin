@@ -109,16 +109,16 @@ namespace Web.UI.Areas.Admin.Controllers
             return View();
         }
 
-        [HttpPost]
-        public JsonResult Create(UserDto user)
-        {
-            var serviceResult = _userService.AddUser(user,1);
-            if (serviceResult.ServiceResultType != ServiceResultType.Success)
-            {
-                return Json("Error", JsonRequestBehavior.AllowGet);
-            }
-            return Json("Ok", JsonRequestBehavior.AllowGet);            
-        }
+        //[HttpPost]
+        //public JsonResult Create(UserDto user)
+        //{
+        //    var serviceResult = _userService.CreateUser(user);
+        //    if (serviceResult.ServiceResultType != ServiceResultType.Success)
+        //    {
+        //        return Json("Error", JsonRequestBehavior.AllowGet);
+        //    }
+        //    return Json("Ok", JsonRequestBehavior.AllowGet);            
+        //}
 
         public ActionResult Edit(int id)
         {

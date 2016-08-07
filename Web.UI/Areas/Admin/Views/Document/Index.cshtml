@@ -38,6 +38,22 @@
     </div>
 </div>
 
+
+<div class="modal fade" tabindex="-1" role="dialog" id="auditModal2" style="z-index: 100000; top:100px">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Döküman Geçmişi</h4>
+            </div>
+            <div class="modal-body">
+                <div id="documentAuditGrid"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 @section scripts{
     <script data-main="/Areas/Admin/Scripts/app/page-scripts/document/index.page.js" src="~/Scripts/require.js"></script>
 }

@@ -1,21 +1,20 @@
-﻿require(['../../common'], function (common) {
+﻿require(['../../common', '../../constants'], function (common, constants) {
     require([], function () {
         $(function () {
-
             //variables
 
             //private funcs
             var addDocument = function (documentDto) {
 
                 return $.ajax({
-                    url: '/api/v1/documentapi/addDocument',
+                    url: '/api/v1/documentapi/addTranslationDocument',
                     type: 'POST',
                     data: documentDto
                 });
             };
             var uploadDocument = function (file) {
                 return $.ajax({
-                    url: 'http://localhost:8003/api/documentapi/uploadDocument',
+                    url: constants.documentUploadUrl,
                     type: 'POST',
                     data: file,
                     contentType: false,
@@ -33,7 +32,7 @@
 
                     uploadDocument(formData)
                         .success(function (response) {
-
+                            console.log(response);
                             var documentDto = {
                                 Name: $("#txtName").val(),
                                 Path: response.Data.FilePath,
