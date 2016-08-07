@@ -112,7 +112,7 @@ namespace Web.UI.Areas.Admin.Controllers
         [HttpPost]
         public JsonResult Create(UserDto user)
         {
-            var serviceResult = _userService.CreateUser(user);
+            var serviceResult = _userService.AddUser(user,1);
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
             {
                 return Json("Error", JsonRequestBehavior.AllowGet);

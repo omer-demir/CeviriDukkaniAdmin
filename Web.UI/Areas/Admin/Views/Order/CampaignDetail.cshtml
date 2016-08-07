@@ -1,0 +1,59 @@
+﻿@model Tangent.CeviriDukkani.Domain.Dto.Sale.CampaignItemDto
+
+@{
+    ViewBag.Title = "Kampanya Detay";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section breadcrumbs{
+    <div id="breadcrumbs-wrapper">
+        <!-- Search for small screen -->
+        <div class="header-search-wrapper grey hide-on-large-only">
+            <i class="mdi-action-search active"></i>
+            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <h5 class="breadcrumbs-title">Kampanya Detay</h5>
+                    <ol class="breadcrumbs">
+                        <li>
+                            <a href="/Admin/Home">Anasayfa</a>
+                        </li>
+                        <li class="active">Kampanya Detay</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="section">
+    @if (ViewBag.Message != null) {
+        <h3>@ViewBag.Message</h3>
+    } else {
+        <div class="row">
+            <div class="col s12">
+                <ul class="tabs tab-demo z-depth-1" style="width: 100%;">
+                    <li class="tab col s3">
+                        <a href="#customer" class="active">Genel Bilgileri</a>
+                    </li>
+                    <div class="indicator" style="right: 2px; left: 903px;"></div>
+                    <div class="indicator" style="right: 2px; left: 903px;"></div>
+                </ul>
+            </div>
+            <div class="col s12">
+                <div id="customer" class="col s12">
+                    <h5>Genel Bilgiler</h5>
+                    <p><span class="label">Kod:</span> @Model.Code</p>
+                    <p><span class="label">Açıklama:</span> @Model.Description</p>
+                    <p><span class="label">İndirim Oranı:</span> @Model.DiscountRate</p>
+                    <p><span class="label">Başlangıç Zamanı:</span> @Model.StartTime</p>
+                    <p><span class="label">Bitiş Zamanı:</span> @Model.EndTime</p>
+                    <p><span class="label">Kullanım Durumu:</span> @Model.Used</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

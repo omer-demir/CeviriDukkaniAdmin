@@ -12,14 +12,13 @@
                 var utilityObj = new utility();
                 $(function () {
                     //private funcs
-                    var getOrders = function () {
+                    var getCampaigns = function () {
                         return $.ajax({
-                            url: '/api/v1/orderapi/getOrder'
+                            url: '/api/v1/orderapi/getCampaigns'
                         });
                     };
                     var initPage = function () {
-                        //utilityObj.blockElement('#orderListGrid');
-                        getOrders().success(function (orderList) {
+                        getCampaigns().success(function (orderList) {
 
                                 var gridOpts = $.extend(true,
                                 {
@@ -33,26 +32,23 @@
                                     dataSource: orderList.data,
                                     paging: { pageSize: 10 },
                                     columns: [{
-                                            dataField: 'customer.name',
-                                            caption: 'Müşteri Adı'
+                                            dataField: 'code',
+                                            caption: 'Kampany Kodu'
                                         }, {
-                                            dataField: 'sourceLanguage.name',
-                                            caption: 'Sipariş İstek Dili'
+                                            dataField: 'description',
+                                            caption: 'Açıklama'
                                         }, {
-                                            dataField: 'terminology.name',
-                                            caption: 'Terminoloji Adı'
+                                            dataField: 'discountRate',
+                                            caption: 'İndirim Oranı'
                                         }, {
-                                            dataField: 'translationQuality.name',
-                                            caption: 'Kalite'
+                                            dataField: 'used',
+                                            caption: 'Kullanılma Durumu'
                                         }, {
-                                            dataField: 'calculatedPrice',
-                                            caption: 'Hesaplanan Tutar'
+                                            dataField: 'startTime',
+                                            caption: 'Başlangıç Tarihi'
                                         }, {
-                                            dataField: 'orderStatus.name',
-                                            caption: 'Sipariş Durumu'
-                                        }, {
-                                            dataField: 'createdAt',
-                                            caption: 'Oluşturulma Tarihi'
+                                            dataField: 'endTime',
+                                            caption: 'Bitiş Tarihi'
                                         }, {
                                             dataField: 'active',
                                             caption: 'Aktif'
@@ -61,7 +57,8 @@
                                             caption: 'Aksiyon',
                                             alignment: 'left',
                                             cellTemplate: function(container, cellInfo) {
-                                                var actions = '<a class="custom-link" href="/Admin/Order/OrderDetail/{Id}" title="Sipariş Detay"><i class="mdi-action-info-outline"></i></a>';
+                                                var actions = '<a class="custom-link" href="/Admin/Order/UpdateCampaign/{Id}" title="Kampanya düzenle"><i class="mdi-editor-mode-edit"></i></a>' +
+                                                    '<a class="custom-link" href="/Admin/Order/CampaignDetail/{Id}" title="Kampanya Detay"><i class="mdi-action-info-outline"></i></a>';
                                                 $(actions.supplant({ Id: cellInfo.value })).appendTo(container);
                                             }
                                         }
@@ -75,9 +72,8 @@
                                 }, utilityObj.baseGridOptions);
 
 
-                                $('#orderListGrid').dxDataGrid(gridOpts);
-                                $('#orderListGrid').dxDataGrid('instance');
-                                //utilityObj.unblockElement('#orderListGrid');
+                                $('#campaignListGrid').dxDataGrid(gridOpts);
+                                $('#campaignListGrid').dxDataGrid('instance');
                             });
                     };
 

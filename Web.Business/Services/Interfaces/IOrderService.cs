@@ -14,5 +14,9 @@ namespace Web.Business.Services.Interfaces {
         ServiceResult DeactivateOrder(int orderId);
         ServiceResult<List<OrderDto>> GetWaitingOrders();
         ServiceResult<List<OrderDto>> GetResponsePendingOrders();
+        ServiceResult<List<CampaignItemDto>> GetCampaigns();
+        ServiceResult<CampaignItemDto> GetCampaign(int campaingItemId);
+        ServiceResult<CampaignItemDto> UpdateCampaign(CampaignItemDto campaignItem);
+        ServiceResult DeleteCampaign(int campaingItemId);
     }
 }
