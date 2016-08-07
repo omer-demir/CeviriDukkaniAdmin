@@ -26,7 +26,7 @@ namespace Web.Business.Services.Implementations {
 
         public ServiceResult<OrderDto> GetOrderById(int orderId) {
             var httpClient = GetClient(ServiceUrl.Oms);
-            return GetAsAsync<OrderDto>(httpClient, $"api/orderapi/getOrderById?{orderId}");
+            return GetAsAsync<OrderDto>(httpClient, $"api/orderapi/getOrderById?orderId={orderId}");
         }
 
         public ServiceResult<OrderDto> UpdateOrder(OrderDto order) {
@@ -36,7 +36,7 @@ namespace Web.Business.Services.Implementations {
 
         public ServiceResult DeactivateOrder(int orderId) {
             var httpClient = GetClient(ServiceUrl.Oms);
-            return GetAsAsync(httpClient, $"api/orderapi/deactivateOrder?{orderId}");
+            return GetAsAsync(httpClient, $"api/orderapi/deactivateOrder?orderId={orderId}");
         }
 
         public ServiceResult<List<OrderDto>> GetWaitingOrders() {
@@ -47,6 +47,26 @@ namespace Web.Business.Services.Implementations {
         public ServiceResult<List<OrderDto>> GetResponsePendingOrders() {
             var httpClient = GetClient(ServiceUrl.Oms);
             return GetAsAsync<List<OrderDto>>(httpClient, "api/orderapi/getResponsePendingOrders");
+        }
+
+        public ServiceResult<List<CampaignItemDto>> GetCampaigns() {
+            var httpClient = GetClient(ServiceUrl.Oms);
+            return GetAsAsync<List<CampaignItemDto>>(httpClient, "api/orderapi/GetCampaigns");
+        }
+
+        public ServiceResult<CampaignItemDto> GetCampaign(int campaingItemId) {
+            var httpClient = GetClient(ServiceUrl.Oms);
+            return GetAsAsync<CampaignItemDto>(httpClient, $"api/orderapi/GetCampaign?campaingItemId={campaingItemId}");
+        }
+
+        public ServiceResult<CampaignItemDto> UpdateCampaign(CampaignItemDto campaignItem) {
+            var httpClient = GetClient(ServiceUrl.Oms);
+            return PostAsAsync<CampaignItemDto>(httpClient, "api/orderapi/UpdateCampaign", campaignItem);
+        }
+
+        public ServiceResult DeleteCampaign(int campaingItemId) {
+            var httpClient = GetClient(ServiceUrl.Oms);
+            return GetAsAsync(httpClient, $"api/orderapi/DeleteCampaign?campaingItemId={campaingItemId}");
         }
 
         #endregion

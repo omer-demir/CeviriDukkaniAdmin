@@ -84,5 +84,42 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController {
 
             return OK(serviceResult);
         }
+
+        [HttpGet, Route("getCampaigns")]
+        public HttpResponseMessage GetCampaigns() {
+            var serviceResult = _orderService.GetCampaigns();
+            if (serviceResult.ServiceResultType != ServiceResultType.Success) {
+                return Error(serviceResult);
+            }
+
+            return OK(serviceResult);
+        }
+        [HttpGet, Route("getCampaign")]
+        public HttpResponseMessage GetCampaign([FromUri] int campaignId) {
+            var serviceResult = _orderService.GetCampaign(campaignId);
+            if (serviceResult.ServiceResultType != ServiceResultType.Success) {
+                return Error(serviceResult);
+            }
+
+            return OK(serviceResult);
+        }
+        [HttpPost, Route("updateCampaign")]
+        public HttpResponseMessage UpdateCampaign([FromBody]CampaignItemDto request) {
+            var serviceResult = _orderService.UpdateCampaign(request);
+            if (serviceResult.ServiceResultType != ServiceResultType.Success) {
+                return Error(serviceResult);
+            }
+
+            return OK(serviceResult);
+        }
+        [HttpGet, Route("deleteCampaign")]
+        public HttpResponseMessage DeleteCampaign([FromUri] int campaignId) {
+            var serviceResult = _orderService.DeleteCampaign(campaignId);
+            if (serviceResult.ServiceResultType != ServiceResultType.Success) {
+                return Error(serviceResult);
+            }
+
+            return OK(serviceResult);
+        }
     }
 }

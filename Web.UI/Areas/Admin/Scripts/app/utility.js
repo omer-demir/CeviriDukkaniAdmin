@@ -26,6 +26,11 @@
             },
             paging: {
                 pageSize: 10
+            },
+            "export": {
+                enabled: true,
+                fileName: "Exported",
+                allowExportSelectedData: true
             }
             //,editing: {
             //    insertEnabled: true,

@@ -1,0 +1,97 @@
+﻿@model Tangent.CeviriDukkani.Domain.Dto.Sale.CampaignItemDto
+
+@{
+    ViewBag.Title = "Kampanya Güncelleme";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section breadcrumbs{
+    <div id="breadcrumbs-wrapper">
+        <!-- Search for small screen -->
+        <div class="header-search-wrapper grey hide-on-large-only">
+            <i class="mdi-action-search active"></i>
+            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <h5 class="breadcrumbs-title">Kampanya Güncelleme</h5>
+                    <ol class="breadcrumbs">
+                        <li>
+                            <a href="/Admin/Home">Anasayfa</a>
+                        </li>
+                        <li class="active">Kampanya Güncelleme</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="section">
+    @if (ViewBag.Message != null) {
+        <h3>@ViewBag.Message</h3>
+    } else {
+        <div class="row">
+            <form class="col s12" method="post" action="/Order/UpdateCampaign">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Kod" id="code" type="text" name="Code" value="@Model.Code">
+                        <label for="code" class="active">Kod</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea placeholder="Açıklama" id="description" class="materialize-textarea" name="Description" value="@Model.Description"></textarea>
+                        <label for="description" class="active">Açıklama</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="İndirim" id="discount" type="text" name="DiscountRate" value="@Model.DiscountRate">
+                        <label for="discount" class="active">İndirim Oranı</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Başlangıç Zamanı" id="startTime" type="text" class="datepicker" name="StartTime" value="@Model.StartTime">
+                        <label for="startTime" class="active">Başlangıç Tarihi</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Bitiş Zamanı" id="endTime" type="text" class="datepicker" name="EndTime" value="@Model.EndTime">
+                        <label for="endTime" class="active">Bitiş Tarihi</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <div class="switch">
+                            Kullanım Durumu :
+                            <label>
+                                Hayır
+                                <input type="checkbox" name="Used" value="@Model.Used">
+                                <span class="lever"></span> Evet
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button class="btn cyan waves-effect waves-light right" type="submit" name="action">
+                                Güncelle
+                                <i class="mdi-content-send right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    }
+</div>
+
+@section scripts{
+    <script data-main="/Areas/Admin/Scripts/app/page-scripts/order/campaign.update.page.js" src="~/Scripts/require.js"></script>
+}

@@ -18,6 +18,20 @@
                         data: { translationDocumentPartId: translationDocumentPartId }
                     }).success(function (result) {
                         CKEDITOR.instances['original'].setData(result.data.content);
+                        CKEDITOR.instances['original'].setReadOnly(true);
+                    }).fail(function (erro) {
+
+                    });
+                }
+
+                function getTranslatedContent(translationDocumentPartId, userId) {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/api/v1/translationapi/getTranslatedContentForEditor',
+                        data: { translationDocumentPartId: translationDocumentPartId, userId: userId }
+                    }).success(function (result) {
+                        CKEDITOR.instances['translatedContent'].setData(result.data);
+                        CKEDITOR.instances['translatedContent'].setReadOnly(true);
                     }).fail(function (erro) {
 
                     });
@@ -122,8 +136,10 @@
                 $(function () {
                     CKEDITOR.replace('original');
                     CKEDITOR.replace('translator');
+                    CKEDITOR.replace('translatedContent');
                     getTranslationDocumentPart(params[0]);
                     getEditedContent(params[0], params[1]);
+                    getTranslatedContent(params[0], params[1]);
                     getTranslationOperationComments(params[0]);
                 });
             });

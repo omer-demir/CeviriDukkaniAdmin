@@ -12,14 +12,14 @@
                 var utilityObj = new utility();
                 $(function () {
                     //private funcs
-                    var getOrders = function () {
+                    var getTranslationOperations = function () {
                         return $.ajax({
-                            url: '/api/v1/orderapi/getOrder'
+                            url: '/api/v1/translationapi/getAssignedJobsAsEditor',
+                            data: { userId: $('#userId').val() }
                         });
                     };
                     var initPage = function () {
-                        //utilityObj.blockElement('#orderListGrid');
-                        getOrders().success(function (orderList) {
+                        getTranslationOperations().success(function (list) {
 
                                 var gridOpts = $.extend(true,
                                 {
@@ -30,26 +30,17 @@
                                     headerFilter: {
                                         visible: true
                                     },
-                                    dataSource: orderList.data,
+                                    dataSource: list.data,
                                     paging: { pageSize: 10 },
                                     columns: [{
-                                            dataField: 'customer.name',
-                                            caption: 'Müşteri Adı'
+                                        dataField: 'translationDocumentPart.translationDocumentId',
+                                            caption: 'Dosya Id'
                                         }, {
-                                            dataField: 'sourceLanguage.name',
-                                            caption: 'Sipariş İstek Dili'
+                                            dataField: 'translationOperationStatus.name',
+                                            caption: 'İşlem Durumu'
                                         }, {
-                                            dataField: 'terminology.name',
-                                            caption: 'Terminoloji Adı'
-                                        }, {
-                                            dataField: 'translationQuality.name',
-                                            caption: 'Kalite'
-                                        }, {
-                                            dataField: 'calculatedPrice',
-                                            caption: 'Hesaplanan Tutar'
-                                        }, {
-                                            dataField: 'orderStatus.name',
-                                            caption: 'Sipariş Durumu'
+                                            dataField: 'translationProgressStatus.name',
+                                            caption: 'Devam Durumu'
                                         }, {
                                             dataField: 'createdAt',
                                             caption: 'Oluşturulma Tarihi'
@@ -61,7 +52,8 @@
                                             caption: 'Aksiyon',
                                             alignment: 'left',
                                             cellTemplate: function(container, cellInfo) {
-                                                var actions = '<a class="custom-link" href="/Admin/Order/OrderDetail/{Id}" title="Sipariş Detay"><i class="mdi-action-info-outline"></i></a>';
+                                                var actions = '<a class="custom-link" href="/Admin/Order/Edit/{Id}" title="Sipariş düzenle"><i class="mdi-editor-mode-edit"></i></a>' +
+                                                    '<a class="custom-link" href="/Admin/Order/Detail/{Id}" title="Sipariş Detay"><i class="icon-cog7"></i></a>';
                                                 $(actions.supplant({ Id: cellInfo.value })).appendTo(container);
                                             }
                                         }
@@ -75,8 +67,8 @@
                                 }, utilityObj.baseGridOptions);
 
 
-                                $('#orderListGrid').dxDataGrid(gridOpts);
-                                $('#orderListGrid').dxDataGrid('instance');
+                                $('#dataListGrid').dxDataGrid(gridOpts);
+                                $('#dataListGrid').dxDataGrid('instance');
                                 //utilityObj.unblockElement('#orderListGrid');
                             });
                     };

@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Tangent.CeviriDukkani.Domain.Dto.Sale.OrderDto
+
+@{
     ViewBag.Title = "Sipariş Detay";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
@@ -13,12 +15,12 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 m12 l12">
-                    <h5 class="breadcrumbs-title">Doküman Listesi</h5>
+                    <h5 class="breadcrumbs-title">Sipariş Detay</h5>
                     <ol class="breadcrumbs">
                         <li>
                             <a href="/Admin/Home">Anasayfa</a>
                         </li>
-                        <li class="active">Doküman Listesi</li>
+                        <li class="active">Sipariş Detay</li>
                     </ol>
                 </div>
             </div>
@@ -27,17 +29,70 @@
 }
 
 <div class="section">
-    <p class="caption">Döküman Listesi görüntülenmektedir.</p>
-    <div class="divider"></div>
-    <div class="section">
+    @if (ViewBag.Message != null) {
+        <h3>@ViewBag.Message</h3>
+    } else {
         <div class="row">
-            <div class="col s12 m12 l12">
-                <div id="documentListGrid"></div>
+            <div class="col s12">
+                <ul class="tabs tab-demo z-depth-1" style="width: 100%;">
+                    <li class="tab col s3">
+                        <a href="#customer" class="active">Müşteri Bilgileri</a>
+                    </li>
+                    <li class="tab col s3">
+                        <a href="#translation" class="">Çeviri Bilgileri</a>
+                    </li>
+                    <li class="tab col s3">
+                        <a href="#details" class="">Detay Bilgileri</a>
+                    </li>
+                    <div class="indicator" style="right: 2px; left: 903px;"></div>
+                    <div class="indicator" style="right: 2px; left: 903px;"></div>
+                </ul>
+            </div>
+            <div class="col s12">
+                <div id="customer" class="col s12">
+                    <h5>Genel Bilgiler</h5>
+                    <p><span class="label">Ad-Soyad:</span> @Model.Customer.Name @Model.Customer.Surname</p>
+                    <p><span class="label">Firma:</span> @Model.Customer.Company.Name</p>
+                    <p><span class="label">Kod:</span> @Model.Customer.InstitutionCode</p>
+                    <p><span class="label">Üyelik Türü:</span> @Model.Customer.MembershipType.Name</p>
+                    <div class="divider"></div>
+                    <h5>İletişim Bilgileri</h5>
+                    <p><span class="label">Email:</span> @Model.Customer.Email</p>
+                    <p><span class="label">Cep Tel.:</span> @Model.Customer.MobilePhone</p>
+                </div>
+                <div id="translation" class="col s12" style="display: none;">
+                    <p><span class="label">Sipariş Durumu:</span> @Model.OrderStatus.Name</p>
+                    <p><span class="label">Çeviri Kaynak Dili:</span> @Model.SourceLanguage.Name</p>
+                    <p><span class="label">Çevirilecek Diller:</span> @String.Join(",", @Model.TargetLanguages.Select(a => a.Language.Name))</p>
+                    <p><span class="label">Seçili Terminoloji:</span> @Model.Terminology.Name</p>
+                    <p><span class="label">Seçili Çeviri Kalitesi:</span> @Model.TranslationQuality.Name</p>
+                    <div class="divider"></div>
+                    <h5>Fiyat Bilgileri</h5>
+                    <p><span class="label">Hesaplanan Fiyat:</span> @Model.CalculatedPrice</p>
+                    <p><span class="label">Vergi Oranı:</span> @Model.VatPrice</p>
+                    @if (Model.CampaignItem != null) {
+                        <div class="divider"></div>
+                            <h5>Kampanya Bilgiler</h5>
+                            <p><span class="label">Uygulanan Kampanya Kodu:</span> @Model.CampaignItem.Code</p>
+                            <p><span class="label">Uygulanan Kampanya Açıklaması</span> @Model.CampaignItem.Description</p>
+                            <p><span class="label">Uygulanan Kampanya İndirim Yüzdesi</span> @Model.CampaignItem.DiscountRate</p>
+                    }
+                </div>
+                <div id="details" class="col s12" style="display: none;">
+                    @foreach (var orderDetailDto in Model.OrderDetails) {
+                        <p><span class="label">Çevirmen:</span> @orderDetailDto.TranslationOperation.Translator.Name - @orderDetailDto.TranslationOperation.Translator.SurName</p>
+                            <p><span class="label">Çevirmen Fiyat:</span> @orderDetailDto.AcceptedPrice</p>
+                            <p><span class="label">Editor:</span> @orderDetailDto.TranslationOperation.Editor.Name - @orderDetailDto.TranslationOperation.Editor.SurName</p>
+                            <p><span class="label">Editor Fiyat:</span> @orderDetailDto.EditorAcceptedPrice</p>
+                            <p><span class="label">Proof Reader:</span> @orderDetailDto.TranslationOperation.ProofReader.Name - @orderDetailDto.TranslationOperation.ProofReader.SurName</p>
+                            <p><span class="label">Proof Reader Fiyat:</span> @orderDetailDto.ProofReaderAcceptedPrice</p>
+                            <div class="divider"></div>
+                            <p><span class="label">İşlem Durumu:</span> @orderDetailDto.TranslationOperation.TranslationOperationStatus.Name</p>
+                            <p><span class="label">İlerleme Durumu:</span> @orderDetailDto.TranslationOperation.TranslationProgressStatus.Name</p>
+                    }
+                </div>
             </div>
         </div>
-    </div>
+    }
 </div>
 
-@section scripts{
-    <script data-main="/Areas/Admin/Scripts/app/page-scripts/document/index.page.js" src="~/Scripts/require.js"></script>
-}

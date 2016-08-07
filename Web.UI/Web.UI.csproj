@@ -136,7 +136,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="Tangent.CeviriDukkani.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CeviriDükkanıCommon.1.0.2.32\lib\Tangent.CeviriDukkani.Domain.dll</HintPath>
+      <HintPath>..\packages\CeviriDükkanıCommon.1.0.2.36\lib\Tangent.CeviriDukkani.Domain.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease">
@@ -233,10 +233,15 @@
     <Content Include="Areas\Admin\Scripts\app\page-scripts\document\create.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\document\edit.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\document\index.page.js" />
+    <Content Include="Areas\Admin\Scripts\app\page-scripts\order\campaign.update.page.js" />
+    <Content Include="Areas\Admin\Scripts\app\page-scripts\order\campaign.list.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\list.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\pending.response.order.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\waiting.order.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\detail.page.js" />
+    <Content Include="Areas\Admin\Scripts\app\page-scripts\translation\edit.operation.page.js" />
+    <Content Include="Areas\Admin\Scripts\app\page-scripts\translation\proofreader.operation.page.js" />
+    <Content Include="Areas\Admin\Scripts\app\page-scripts\translation\translation.operation.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\translation\proof.reader.content.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\translation\editor.content.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\translation\translate.content.page.js" />
@@ -1536,6 +1541,13 @@
     <Content Include="Areas\Admin\Theme\js\plugins\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="Areas\Admin\Theme\js\plugins\ckeditor\skins\moono\readme.md" />
     <Content Include="Areas\Admin\Views\User\UserFilter.cshtml" />
+    <Content Include="Areas\Admin\Views\Translation\TranslationOperations.cshtml" />
+    <Content Include="Areas\Admin\Views\Document\History.cshtml" />
+    <Content Include="Areas\Admin\Views\Translation\EditOperations.cshtml" />
+    <Content Include="Areas\Admin\Views\Translation\ProofReadingOperations.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Campaigns.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\CampaignDetail.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\UpdateCampaign.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dx\css\dx.android5.light.css" />
     <Content Include="Scripts\dx\css\dx.common.css" />
