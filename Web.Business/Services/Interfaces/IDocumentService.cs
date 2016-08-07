@@ -1,11 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.Web;
 using Tangent.CeviriDukkani.Domain.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Audit;
 using Tangent.CeviriDukkani.Domain.Dto.Document;
 using Tangent.CeviriDukkani.Domain.Dto.Response;
 
-namespace Web.Business.Services.Interfaces {
-    public interface IDocumentService {
+namespace Web.Business.Services.Interfaces
+{
+    public interface IDocumentService
+    {
         ServiceResult<TranslationDocumentDto> AddTranslationDocument(TranslationDocumentDto documentDto);
         ServiceResult<TranslationDocumentDto> EditTranslationDocument(TranslationDocumentDto documentDto);
         ServiceResult<List<TranslationDocumentDto>> GetTranslationDocuments();
@@ -22,5 +25,6 @@ namespace Web.Business.Services.Interfaces {
         ServiceResult<DocumentUploadResponseDto> AnalyzeDocument(string localFolder, string fileName);
         ServiceResult<TranslationDocumentPartDto> GetTranslationDocumentPartById(int translationDocumentPartId);
         ServiceResult<List<DocumentAuditDto>> GetDocumentAudits(int documentId);
+        ServiceResult<DocumentUploadResponseDto> UploadDocument(HttpRequest request);
     }
 }

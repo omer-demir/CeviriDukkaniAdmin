@@ -68,11 +68,19 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
@@ -208,6 +216,7 @@
     <Content Include="Areas\Admin\css\main.css" />
     <Content Include="Areas\Admin\css\validate.css" />
     <Content Include="Areas\Admin\Scripts\app\common.js" />
+    <Content Include="Areas\Admin\Scripts\app\constants.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\common\company.terminology.create.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\common\company.terminology.list.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\common\language.manage.page.js" />
@@ -1527,7 +1536,6 @@
     <Content Include="Areas\Admin\Theme\js\plugins\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="Areas\Admin\Theme\js\plugins\ckeditor\skins\moono\readme.md" />
     <Content Include="Areas\Admin\Views\User\UserFilter.cshtml" />
-    <Content Include="Areas\Admin\Views\Document\History.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dx\css\dx.android5.light.css" />
     <Content Include="Scripts\dx\css\dx.common.css" />

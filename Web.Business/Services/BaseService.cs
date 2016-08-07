@@ -34,7 +34,7 @@ namespace Web.Business.Services {
         protected HttpClient GetClient(ServiceUrl serviceUrl) {
             var serviceEndpoint = GetBaseUrl(serviceUrl);
             var httpClient = new HttpClient {
-                BaseAddress = new Uri(serviceEndpoint)
+                BaseAddress = new Uri(serviceEndpoint),
             };
             httpClient.DefaultRequestHeaders.Accept.Clear();
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
