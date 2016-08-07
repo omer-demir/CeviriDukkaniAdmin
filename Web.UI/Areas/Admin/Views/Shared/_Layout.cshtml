@@ -156,10 +156,11 @@
                                 </ul>
                                 <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">@SessionUser.User.Name @SessionUser.User.SurName<i class="mdi-navigation-arrow-drop-down right"></i></a>
                                 <p class="user-roal">@string.Join(", ", SessionUser.User.UserRoles.Select(x => x.UserRoleType.Name).ToArray())</p>
+                                <input type="hidden" id="hdnUserId" value="@SessionUser.User.Id" />
                             </div>
                         </div>
                     </li>
-                    <li class="bold active">
+                    <li class="bold">
                         <a href="@Url.Action("Index","Home")" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Anasayfa</a>
                     </li>
                     @if (SessionUser.IsAdmin) {
@@ -786,10 +787,10 @@
     <script src="~/Areas/Admin/Theme/js/plugins/loaders/pace.min.js"></script>
     <script type="text/javascript" src="~/Areas/Admin/Theme/js/plugins/loaders/blockui.min.js"></script>
     <script type="text/javascript" src="~/Areas/Admin/Theme/js/plugins/ui/prism.min.js"></script>
-
+    <script src="~/Areas/Admin/Scripts/app/page-scripts/common/layout.page.js"></script>
 
     @RenderSection("scripts", false)
-    <script data-main="/Areas/Admin/Scripts/app/page-scripts/common/layout.page.js" src="~/Scripts/require.js"></script>
+    @*<script data-main="/Areas/Admin/Scripts/app/page-scripts/common/layout.page.js" src="~/Scripts/require.js"></script>*@
     <!-- Toast Notification -->
     <script type="text/javascript">
         // Toast Notification

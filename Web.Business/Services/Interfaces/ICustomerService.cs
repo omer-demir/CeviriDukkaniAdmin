@@ -1,12 +1,13 @@
-﻿using Tangent.CeviriDukkani.Domain.Common;
+﻿using System.Collections.Generic;
+using Tangent.CeviriDukkani.Domain.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Sale;
 
 namespace Web.Business.Services.Interfaces {
     public interface ICustomerService {
-        ServiceResult AddCustomer(CustomerDto customerDto, int createdBy);
-        ServiceResult GetCustomer(int userId);
-        ServiceResult EditCustomer(CustomerDto customerDto, int createdBy);
-        ServiceResult GetCustomers();
-        ServiceResult GetCustomersByCompanyId(int companyId);
+        ServiceResult<CustomerDto> AddCustomer(CustomerDto customerDto, int createdBy);
+        ServiceResult<CustomerDto> GetCustomer(int userId);
+        ServiceResult<CustomerDto> EditCustomer(CustomerDto customerDto, int createdBy);
+        ServiceResult<List<CustomerDto>> GetCustomers();
+        ServiceResult<List<CustomerDto>> GetCustomersByCompanyId(int companyId);
     }
 }

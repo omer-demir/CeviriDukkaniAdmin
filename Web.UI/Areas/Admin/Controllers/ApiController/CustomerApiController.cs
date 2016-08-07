@@ -54,7 +54,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
         public HttpResponseMessage GetCustomers(int? companyId)
         {
             var response = new HttpResponseMessage();
-            ServiceResult serviceResult = companyId.HasValue ?
+            var serviceResult = companyId.HasValue ?
                 _customerService.GetCustomersByCompanyId(companyId.Value) :
                 _customerService.GetCustomers();
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
