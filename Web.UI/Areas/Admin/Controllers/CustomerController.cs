@@ -8,7 +8,7 @@ using Web.UI.Areas.Admin.Helpers;
 namespace Web.UI.Areas.Admin.Controllers
 {
     [SessionControl(new[] { UserRoleTypeEnum.Admin })]
-    public class CustomerController : Controller
+    public class CustomerController : BaseController
     {
         private readonly ICustomerService _customerService;
         private readonly ICommonService _commonService;

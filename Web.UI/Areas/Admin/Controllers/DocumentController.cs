@@ -7,7 +7,7 @@ using Web.UI.Areas.Admin.Helpers;
 namespace Web.UI.Areas.Admin.Controllers
 {
     [SessionControl(new[] { UserRoleTypeEnum.Admin })]
-    public class DocumentController : Controller
+    public class DocumentController : BaseController
     {
         private readonly IDocumentService _documentService;
 

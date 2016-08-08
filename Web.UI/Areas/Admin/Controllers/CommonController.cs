@@ -8,7 +8,7 @@ namespace Web.UI.Areas.Admin.Controllers
 {
     [SessionControl(new[] { UserRoleTypeEnum.Admin })]
 
-    public class CommonController : Controller
+    public class CommonController : BaseController
     {
         // GET: Admin/Common
         private readonly ICommonService _commonService;

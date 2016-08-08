@@ -2,7 +2,8 @@
 using Web.UI.Areas.Admin.Helpers;
 
 namespace Web.UI.Areas.Admin.Controllers {
-    public class TranslationController : Controller {
+    public class TranslationController : BaseController
+    {
         public ActionResult TranslateContent(int translationDocumentPartId, int translatorId) {
             return View();
         }

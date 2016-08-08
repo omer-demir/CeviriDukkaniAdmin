@@ -1,4 +1,5 @@
 ﻿@using Web.UI.Areas.Admin.Helpers
+@using Resources;
 @{
     Layout = null;
 }
@@ -77,17 +78,17 @@
                     <!-- translation-button -->
                     <ul id="translation-dropdown" class="dropdown-content">
                         <li>
-                            <a href="#!"><img src="~/Areas/Admin/Theme/images/flag-icons/United-States.png" alt="English" />  <span class="language-select">English</span></a>
+                            <a href="@Url.Action("ChangeCulture","Home", new {cultureName = "en-us"})"><img src="~/Areas/Admin/Theme/images/flag-icons/United-States.png" alt="English" />  <span class="language-select">English</span></a>
                         </li>
                         <li>
-                            <a href="#!"><img src="~/Areas/Admin/Theme/images/flag-icons/France.png" alt="French" />  <span class="language-select">French</span></a>
+                            <a href="@Url.Action("ChangeCulture","Home", new {cultureName = "tr-TR"})"><img src="~/Areas/Admin/Theme/images/flag-icons/Turkey.png" alt="Turkish" />  <span class="language-select">Türkçe</span></a>
                         </li>
-                        <li>
+                        @*<li>
                             <a href="#!"><img src="~/Areas/Admin/Theme/images/flag-icons/China.png" alt="Chinese" />  <span class="language-select">Chinese</span></a>
                         </li>
                         <li>
                             <a href="#!"><img src="~/Areas/Admin/Theme/images/flag-icons/Germany.png" alt="German" />  <span class="language-select">German</span></a>
-                        </li>
+                        </li>*@
                     </ul>
                     <!-- notifications-dropdown -->
                     <ul id="notifications-dropdown" class="dropdown-content">
@@ -137,7 +138,7 @@
                             <div class="col col s8 m8 l8">
                                 <ul id="profile-dropdown" class="dropdown-content">
                                     <li>
-                                        <a href="#"><i class="mdi-action-face-unlock"></i> Profilim</a>
+                                        <a href="#"><i class="mdi-action-face-unlock"></i> @CDResource.Profilim</a>
                                     </li>
                                     @*
                                         <li>
@@ -151,7 +152,7 @@
                                             <a href="#"><i class="mdi-action-lock-outline"></i> Lock</a>
                                         </li>*@
                                     <li>
-                                        <a href="/Admin/Account/Logout"><i class="mdi-hardware-keyboard-tab"></i> Çıkış</a>
+                                        <a href="/Admin/Account/Logout"><i class="mdi-hardware-keyboard-tab"></i> @CDResource.Cikis</a>
                                     </li>
                                 </ul>
                                 <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">@SessionUser.User.Name @SessionUser.User.SurName<i class="mdi-navigation-arrow-drop-down right"></i></a>
@@ -161,23 +162,23 @@
                         </div>
                     </li>
                     <li class="bold">
-                        <a href="@Url.Action("Index","Home")" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Anasayfa</a>
+                        <a href="@Url.Action("Index","Home")" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> @CDResource.Anasayfa</a>
                     </li>
                     @if (SessionUser.IsAdmin) {
                         <li class="no-padding">
                             <ul class="collapsible collapsible-accordion">
                                 <li class="bold">
-                                    <a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-circle"></i> Kullanıcı</a>
+                                    <a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-circle"></i> @CDResource.Kullanici</a>
                                     <div class="collapsible-body">
                                         <ul>
                                             <li>
-                                                <a href="/Admin/User/Create">Kullanıcı Ekle</a>
+                                                <a href="/Admin/User/Create">@CDResource.KullaniciEkle</a>
                                             </li>
                                             <li>
-                                                <a href="/Admin/User">Kullanıcı Listesi</a>
+                                                <a href="/Admin/User">@CDResource.KullaniciListesi</a>
                                             </li>
                                             <li>
-                                                <a href="/Admin/User/UserFilter">Çevirmen Listesi</a>
+                                                <a href="/Admin/User/UserFilter">@CDResource.CevirmenListesi</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -187,14 +188,14 @@
                         <li class="no-padding">
                             <ul class="collapsible collapsible-accordion">
                                 <li class="bold">
-                                    <a class="collapsible-header waves-effect waves-cyan"><i class="mdi-social-people"></i> Müşteri</a>
+                                    <a class="collapsible-header waves-effect waves-cyan"><i class="mdi-social-people"></i> @CDResource.Musteri</a>
                                     <div class="collapsible-body">
                                         <ul>
                                             <li>
-                                                <a href="/Admin/Customer/Create">Müşteri Ekle</a>
+                                                <a href="/Admin/Customer/Create">@CDResource.MusteriEkle</a>
                                             </li>
                                             <li>
-                                                <a href="/Admin/Customer">Müşteri Listesi</a>
+                                                <a href="/Admin/Customer">@CDResource.MusteriListesi</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -204,14 +205,14 @@
                         <li class="no-padding">
                             <ul class="collapsible collapsible-accordion">
                                 <li class="bold">
-                                    <a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-home"></i> Şirket</a>
+                                    <a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-home"></i> @CDResource.Sirket</a>
                                     <div class="collapsible-body">
                                         <ul>
                                             <li>
-                                                <a href="/Admin/Company/Create">Şirket Ekle</a>
+                                                <a href="/Admin/Company/Create">@CDResource.SirketEkle</a>
                                             </li>
                                             <li>
-                                                <a href="/Admin/Company">Şirket Listesi</a>
+                                                <a href="/Admin/Company">@CDResource.SirketListesi</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -221,14 +222,14 @@
                         <li class="no-padding">
                             <ul class="collapsible collapsible-accordion">
                                 <li class="bold">
-                                    <a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-language"></i> Dil</a>
+                                    <a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-language"></i> @CDResource.Dil</a>
                                     <div class="collapsible-body">
                                         <ul>
                                             <li>
-                                                <a href="/Admin/Common/Languages">Dil Yönetimi</a>
+                                                <a href="/Admin/Common/Languages">@CDResource.DilYonetimi</a>
                                             </li>
                                             <li>
-                                                <a href="/Admin/Common/SourceTargetLanguages">Hedef Dil Yönetimi</a>
+                                                <a href="/Admin/Common/SourceTargetLanguages">@CDResource.HedefDilYonetimi</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -238,17 +239,17 @@
                         <li class="no-padding">
                             <ul class="collapsible collapsible-accordion">
                                 <li class="bold">
-                                    <a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-language"></i> Terminoloji</a>
+                                    <a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-language"></i> @CDResource.Terminoloji</a>
                                     <div class="collapsible-body">
                                         <ul>
                                             <li>
-                                                <a href="/Admin/Common/Terminologies">Terminoloji Yönetimi</a>
+                                                <a href="/Admin/Common/Terminologies">@CDResource.TerminolojiYonetimi</a>
                                             </li>
                                             <li>
-                                                <a href="/Admin/Common/CompanyTerminologies">Şirket-Terminoloji List.</a>
+                                                <a href="/Admin/Common/CompanyTerminologies">@CDResource.SirketTerminolojiList</a>
                                             </li>
                                             <li>
-                                                <a href="/Admin/Common/CompanyTerminologyCreate">Şirket-Terminoloji Ekle</a>
+                                                <a href="/Admin/Common/CompanyTerminologyCreate">@CDResource.SirketTerminolojiEkle</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -258,14 +259,14 @@
                         <li class="no-padding">
                             <ul class="collapsible collapsible-accordion">
                                 <li class="bold">
-                                    <a class="collapsible-header waves-effect waves-cyan"><i class="mdi-file-folder-open"></i> Doküman</a>
+                                    <a class="collapsible-header waves-effect waves-cyan"><i class="mdi-file-folder-open"></i> @CDResource.Dokuman</a>
                                     <div class="collapsible-body">
                                         <ul>
                                             <li>
-                                                <a href="/Admin/Document/Index">Doküman Yönetimi</a>
+                                                <a href="/Admin/Document/Index">@CDResource.DokumanYonetimi</a>
                                             </li>
                                             <li>
-                                                <a href="/Admin/Document/Create">Doküman Ekle</a>
+                                                <a href="/Admin/Document/Create">@CDResource.DokumanEkle</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -275,11 +276,11 @@
                         <li class="no-padding">
                             <ul class="collapsible collapsible-accordion">
                                 <li class="bold">
-                                    <a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-settings"></i> Araçlar</a>
+                                    <a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-settings"></i> @CDResource.Araclar</a>
                                     <div class="collapsible-body">
                                         <ul>
                                             <li>
-                                                <a href="/Admin/Common/PriceList">Fiyat Listesi</a>
+                                                <a href="/Admin/Common/PriceList">@CDResource.FiyatListesi</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -616,7 +617,7 @@
                                 <input id="icon_prefix" type="text" class="validate">
                                 <label for="icon_prefix">Search</label>
                             </div>*@
-                                <p><a class="waves-effect waves-light btn modal-trigger  teal " href="#new-message">Yeni Mesaj</a>
+                                <p><a class="waves-effect waves-light btn modal-trigger  teal " href="#new-message">@CDResource.YeniMesaj</a>
                             </div>
                         </div>
                     </li>
@@ -624,7 +625,7 @@
                         <ul class="chat-collapsible" data-collapsible="expandable">
                             <li>
                                 <div class="collapsible-header green white-text">
-                                    <i class="mdi-content-inbox"></i>Gelen Mesajlar
+                                    <i class="mdi-content-inbox"></i>@CDResource.GelenMesajlar
                                 </div>
                                 <div class="collapsible-body favorite-associates">
                                     <div class="favorite-associate-list chat-out-list row" id="incoming-message">
@@ -636,12 +637,12 @@
                                         <p>Eileen Sideways</p>
                                         <p class="place">Los Angeles, CA</p>
                                     </div>*@
-                                        Gelen kutusu boş.
+                                        @CDResource.GelenKutusuBos
                                     </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="collapsible-header red white-text"><i class="mdi-content-send"></i>Gönderilen Mesajlar</div>
+                                <div class="collapsible-header red white-text"><i class="mdi-content-send"></i>@CDResource.GonderilenMesajlar</div>
                                 <div class="collapsible-body favorite-associates">
                                     <div class="favorite-associate-list chat-out-list row" id="sent-message">
                                         @*<div class="col s4">
@@ -652,7 +653,7 @@
                                         <p>Eileen Sideways</p>
                                         <p class="place">Los Angeles, CA</p>
                                     </div>*@
-                                        Gönderilen kutusu boş.
+                                        @CDResource.GonderilenKutusuBos
                                     </div>
                                 </div>
                             </li>
@@ -697,17 +698,17 @@
                 <div class="row">
                     <div class="col s12 m12 l12">
                         <div class="card-panel">
-                            <h4 class="header2">Mesaj Gönder</h4>
+                            <h4 class="header2">@CDResource.MesajGonder</h4>
                             <div class="row">
                                 <form class="formValidate" id="formValidate">
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <label for="email" class="lblMail">E-Mail *</label>
+                                            <label for="email" class="lblMail">@CDResource.EMail *</label>
                                             <input id="txtEmail" type="email" name="email" data-error=".errorTxt3">
                                             <div class="errorTxt3"></div>
                                         </div>
                                         <div class="input-field col s12">
-                                            <label for="subject">Konu*</label>
+                                            <label for="subject">@CDResource.Konu *</label>
                                             <input id="txtSubject" name="subject" type="text" data-error=".errorTxt2">
                                             <div class="errorTxt2"></div>
                                         </div>
@@ -724,8 +725,8 @@
             </div>
         </div>
         <div class="modal-footer lighten-4">
-            <a href="#" class="waves-effect waves-red btn-flat" id="btnSave">Gönder<i class="mdi-content-send right"></i></a>
-            <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Kapat</a>
+            <a href="#" class="waves-effect waves-red btn-flat" id="btnSave">@CDResource.Gonder<i class="mdi-content-send right"></i></a>
+            <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">@CDResource.Kapat</a>
         </div>
     </div>
     <div id="reply-message" class="modal">
@@ -734,13 +735,13 @@
                 <div class="row">
                     <div class="col s12 m12 l12">
                         <div class="row" id="dvMessageDetail" style="display:none">
-                            <div><b>Kimden : <span id="spnMessageUserName">Ömer Faruk</span></b></div>
-                            <div class="message-title">Konu    : <span id="spnMessageSubject"></span></div>
-                            <div>Mesaj  : <span id="spnMessageText"></span></div>
+                            <div><b>@CDResource.Kimden : <span id="spnMessageUserName">Ömer Faruk</span></b></div>
+                            <div class="message-title">@CDResource.Konu    : <span id="spnMessageSubject"></span></div>
+                            <div>@CDResource.Mesaj  : <span id="spnMessageText"></span></div>
                             <input type="hidden" id="hdnEmail" />
                         </div>
                         <div class="card-panel">
-                            <h4 class="header2">Yanıtla</h4>
+                            <h4 class="header2">@CDResource.Yanitla</h4>
                             <div class="row">
                                 <form class="formValidate" id="formValidate2">
                                     <div class="row">
@@ -757,8 +758,8 @@
             </div>
         </div>
         <div class="modal-footer lighten-4">
-            <a href="#" class="waves-effect waves-red btn-flat" id="btnReply">Gönder<i class="mdi-content-send right"></i></a>
-            <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Kapat</a>
+            <a href="#" class="waves-effect waves-red btn-flat" id="btnReply">@CDResource.Gonder<i class="mdi-content-send right"></i></a>
+            <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">@CDResource.Kapat</a>
         </div>
     </div>
     <!-- ================================================
