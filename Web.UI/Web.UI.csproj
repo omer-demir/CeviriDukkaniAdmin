@@ -150,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Models\" />
   </ItemGroup>
@@ -188,7 +189,6 @@
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Helpers\SessionControlAttribute.cs" />
     <Compile Include="Areas\Admin\Helpers\SessionUser.cs" />
-    <Compile Include="Areas\Admin\Models\CustomMultipartFormDataStreamProvider.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
     <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
@@ -243,7 +243,6 @@
     <Content Include="Areas\Admin\Scripts\app\page-scripts\customer\edit.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\customer\index.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\document\create.page.js" />
-    <Content Include="Areas\Admin\Scripts\app\page-scripts\document\edit.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\document\index.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\campaign.update.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\campaign.list.page.js" />
@@ -1494,7 +1493,6 @@
     <Content Include="Areas\Admin\Theme\sass\themes\skye\_theme.scss" />
     <Content Include="Areas\Admin\Theme\sass\themes\skye\_typography.scss" />
     <Content Include="Areas\Admin\Theme\sass\themes\skye\_variables.scss" />
-    <Content Include="Areas\Admin\Uploads\ExPThinkWeek2009Public.pdf" />
     <Content Include="Areas\Admin\Views\Account\Login.cshtml" />
     <Content Include="Areas\Admin\Views\Common\CompanyTerminologies.cshtml" />
     <Content Include="Areas\Admin\Views\Common\CompanyTerminologyCreate.cshtml" />
@@ -1511,8 +1509,6 @@
     <Content Include="Areas\Admin\Views\Customer\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Customer\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Document\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Document\Detail.cshtml" />
-    <Content Include="Areas\Admin\Views\Document\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Document\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
