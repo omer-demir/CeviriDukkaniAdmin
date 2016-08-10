@@ -5,8 +5,7 @@ using Tangent.CeviriDukkani.Domain.Entities.Sale;
 using Web.Business.Services.Interfaces;
 
 namespace Web.UI.Areas.Admin.Controllers {
-    public class OrderController : BaseController
-    {
+    public class OrderController : Controller {
         private readonly IOrderService _orderService;
 
         public OrderController(IOrderService orderService) {
