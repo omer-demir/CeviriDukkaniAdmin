@@ -22,7 +22,7 @@ namespace Web.Business.Services.Interfaces
         ServiceResult<List<UserDocumentDto>> GetUserDocuments();
         ServiceResult<UserDocumentDto> GetUserDocument(int id);
         ServiceResult<List<TranslationDocumentPartDto>> GetDocumentPartsNormalized(int translationDocumentId, int partCount);
-        ServiceResult<DocumentUploadResponseDto> AnalyzeDocument(string localFolder, string fileName);
+        ServiceResult<DocumentUploadResponseDto> AnalyzeDocument(string fileFullPath);
         ServiceResult<TranslationDocumentPartDto> GetTranslationDocumentPartById(int translationDocumentPartId);
         ServiceResult<List<DocumentAuditDto>> GetDocumentAudits(int documentId);
         ServiceResult<DocumentUploadResponseDto> UploadDocument(HttpRequest request);

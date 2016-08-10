@@ -95,10 +95,10 @@ namespace Web.Business.Services.Implementations
             return GetAsAsync<List<TranslationDocumentPartDto>>(client, $"api/documentapi/getDocumentPartsNormalized?translationDocumentId={translationDocumentId}&partCount={partCount}");
         }
 
-        public ServiceResult<DocumentUploadResponseDto> AnalyzeDocument(string localFolder, string fileName)
+        public ServiceResult<DocumentUploadResponseDto> AnalyzeDocument(string fileFullPath)
         {
             var client = GetClient(ServiceUrl.Dms);
-            return GetAsAsync<DocumentUploadResponseDto>(client, $"api/documentapi/analyzeDocument?localFolder={localFolder}&fileName={fileName}");
+            return GetAsAsync<DocumentUploadResponseDto>(client, $"api/documentapi/analyzeDocument?fileFullPath={fileFullPath}");
         }
 
         public ServiceResult<TranslationDocumentPartDto> GetTranslationDocumentPartById(int translationDocumentPartId)
