@@ -1,11 +1,12 @@
-﻿require(['../../common', '../../constants', '../../../../Theme/js/plugins/dropzone'], function (common, constants, Dropzone) {
-    require([], function () {
+﻿require(['../../common', '../../constants'], function (common, constants) {
+    require(['dropzone'], function () {
+        Dropzone.autoDiscover = false;
+
         $(function () {
             //variables
 
-            Dropzone.autoDiscover = false;
 
-            var myDropzone = new Dropzone("input#file", {
+            var myDropzone = new Dropzone("#file", {
                 url: constants.documentUploadUrl,
                 uploadMultiple: true,
                 parallelUploads: 1,

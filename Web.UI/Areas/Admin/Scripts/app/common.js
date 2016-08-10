@@ -1,7 +1,4 @@
 ﻿require.config({
-    config: {
-        documentUploadUrl: 'http://localhost:8003/api/documentapi/uploadDocument'
-    },
     baseUrl: '/Areas/Admin/Scripts',
     map: {
         '*': {
@@ -16,27 +13,16 @@
         'lodash': 'plugins/lodash/lodash',
         'dxdatagrid': '../../../Scripts/dx/js/dx.webappjs',
         'dataTable': '../Theme/js/plugins/data-tables/js/jquery.dataTables.min',
-        'ckeditor': '../Theme/js/plugins/ckeditor/ckeditor'
+        'ckeditor': '../Theme/js/plugins/ckeditor/ckeditor',
     },
     shim: {
         'jqueryValidate': {
             deps: ['jquery'],
             exports: 'jquery'
         },
-        'dropzone': ['css!../Theme/js/plugins/dropzone/dropzone.min.css'],
+        'dropzone': ['css!../Theme/js/plugins/dropzone/dropzone.min.css', 'css!../Theme/js/plugins/dropzone/basic.min.css'],
         'dxdatagrid': ['css!../../../Scripts/dx/css/dx.common.css', 'css!../../../Scripts/dx/css/dx.light.css'],
         'dataTable': ['css!../Theme/js/plugins/data-tables/css/jquery.dataTables.min.css']
     }
 });
 
-if (!String.prototype.supplant) {
-    String.prototype.supplant = function (o) {
-        return this.replace(
-            /{([^{}]*)}/g,
-            function (a, b) {
-                var r = o[b];
-                return typeof r === 'string' || typeof r === 'number' ? r : "";
-            }
-        );
-    };
-}
