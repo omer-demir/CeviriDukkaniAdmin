@@ -10,8 +10,7 @@ namespace Web.UI.Areas.Admin.Controllers
 {
     [SessionControl(new[] { UserRoleTypeEnum.Admin })]
 
-    public class HomeController : BaseController
-    {
+    public class HomeController : Controller {
         
         // GET: Admin/Home
         public ActionResult Index()

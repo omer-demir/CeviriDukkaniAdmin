@@ -6,7 +6,7 @@ using Web.Business.Services.Interfaces;
 
 namespace Web.UI.Areas.Admin.Controllers
 {
-    public class AccountController : BaseController
+    public class AccountController : Controller
     {
         // GET: Admin/Account
         private readonly ICommonService _commonService;
