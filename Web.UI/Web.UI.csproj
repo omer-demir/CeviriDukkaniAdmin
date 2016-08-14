@@ -155,6 +155,16 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\CDResource.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CDResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\CDResource.en.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CDResource.en.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -168,6 +178,7 @@
     <Compile Include="Areas\Admin\Controllers\ApiController\OrderApiController.cs" />
     <Compile Include="Areas\Admin\Controllers\ApiController\TranslationApiController.cs" />
     <Compile Include="Areas\Admin\Controllers\ApiController\UserApiController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\CommonController.cs" />
     <Compile Include="Areas\Admin\Controllers\CompanyController.cs" />
     <Compile Include="Areas\Admin\Controllers\CustomerController.cs" />
@@ -327,6 +338,9 @@
     <Content Include="Areas\Admin\Theme\images\flag-icons\Cote-dIvoire.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\Croatia.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\Cuba.png" />
+    <Content Include="Areas\Admin\Theme\images\flag-icons\culture_.png" />
+    <Content Include="Areas\Admin\Theme\images\flag-icons\culture_en-US.png" />
+    <Content Include="Areas\Admin\Theme\images\flag-icons\culture_tr-TR.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\Curacao.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\Cyprus.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\Czech-Republic.png" />

@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "Dil Listesi";
+﻿@using Resources;
+@{
+    ViewBag.Title = CDResource.DilListesi;
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 @section breadcrumbs{
@@ -12,12 +13,12 @@
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
-                <h5 class="breadcrumbs-title">Dil Listesi</h5>
+                <h5 class="breadcrumbs-title">@CDResource.DilListesi</h5>
                 <ol class="breadcrumbs">
                     <li>
-                        <a href="/Admin/Home">Anasayfa</a>
+                        <a href="/Admin/Home">@CDResource.Anasayfa</a>
                     </li>
-                    <li class="active">Dil Listesi</li>
+                    <li class="active">@CDResource.DilListesi</li>
                 </ol>
             </div>
         </div>
@@ -25,7 +26,7 @@
 </div>
 }
 <div class="section">
-    <p class="caption">Dil Listesi görüntülenmektedir.</p>
+    <p class="caption">@CDResource.DilListesiGoruntulenmektedir</p>
     <div class="divider"></div>
     <div class="section">
         <div class="row">

@@ -61,7 +61,7 @@
                     </div>
                     <ul class="right hide-on-med-and-down">
                         <li>
-                            <a href="javascript:void(0);" class="waves-effect waves-block waves-light translation-button" data-activates="translation-dropdown"><img src="~/Areas/Admin/Theme/images/flag-icons/United-States.png" alt="USA" /></a>
+                            <a href="javascript:void(0);" class="waves-effect waves-block waves-light translation-button" data-activates="translation-dropdown"><img src="~/Areas/Admin/Theme/images/flag-icons/culture_@(Request.Cookies["_culture"]?.Value).png" alt="USA" /></a>
                         </li>
                         <li>
                             <a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen"><i class="mdi-action-settings-overscan"></i></a>
@@ -78,10 +78,10 @@
                     <!-- translation-button -->
                     <ul id="translation-dropdown" class="dropdown-content">
                         <li>
-                            <a href="@Url.Action("ChangeCulture","Home", new {cultureName = "en-us"})"><img src="~/Areas/Admin/Theme/images/flag-icons/United-States.png" alt="English" />  <span class="language-select">English</span></a>
+                            <a href="@Url.Action("ChangeCulture","Home", new {cultureName = "en-us"})"><img src="~/Areas/Admin/Theme/images/flag-icons/culture_en-US.png" alt="English" />  <span class="language-select">English</span></a>
                         </li>
                         <li>
-                            <a href="@Url.Action("ChangeCulture","Home", new {cultureName = "tr-TR"})"><img src="~/Areas/Admin/Theme/images/flag-icons/Turkey.png" alt="Turkish" />  <span class="language-select">Türkçe</span></a>
+                            <a href="@Url.Action("ChangeCulture","Home", new {cultureName = "tr-TR"})"><img src="~/Areas/Admin/Theme/images/flag-icons/culture_tr-TR.png" alt="Turkish" />  <span class="language-select">Türkçe</span></a>
                         </li>
                         @*<li>
                             <a href="#!"><img src="~/Areas/Admin/Theme/images/flag-icons/China.png" alt="Chinese" />  <span class="language-select">Chinese</span></a>

@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "Fiyat Listesi";
+﻿@using Resources;
+@{
+    ViewBag.Title = @CDResource.SirketTerminolojiListesi;
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -13,12 +14,12 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 m12 l12">
-                    <h5 class="breadcrumbs-title">Şirket-Teminoloji Listesi</h5>
+                    <h5 class="breadcrumbs-title">@CDResource.SirketTerminolojiListesi</h5>
                     <ol class="breadcrumbs">
                         <li>
-                            <a href="/Admin/Home">Anasayfa</a>
+                            <a href="/Admin/Home">@CDResource.Anasayfa</a>
                         </li>
-                        <li class="active">Şirket-Teminoloji Listesi</li>
+                        <li class="active">@CDResource.SirketTerminolojiListesi</li>
                     </ol>
                 </div>
             </div>
@@ -27,7 +28,7 @@
 }
 
 <div class="section">
-    <p class="caption">Şirket-Teminoloji Listesi görüntülenmektedir.</p>
+    <p class="caption">@CDResource.SirketTerminolojiListesiGoruntulenmektedir</p>
     <div class="divider"></div>
     <div class="section">
         <div class="row">

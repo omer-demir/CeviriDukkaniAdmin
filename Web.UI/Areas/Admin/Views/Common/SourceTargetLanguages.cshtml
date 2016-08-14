@@ -1,6 +1,7 @@
 ﻿@model List<Tangent.CeviriDukkani.Domain.Dto.Common.LanguageDto>
+    @using Resources;
 @{
-    ViewBag.Title = "Kaynak - Hedef Dil Yönetimi";
+    ViewBag.Title = CDResource.KaynakHedefDilYonetimi;
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 @section breadcrumbs{
@@ -13,12 +14,12 @@
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
-                <h5 class="breadcrumbs-title">Kaynak - Hedef Dil Yönetimi</h5>
+                <h5 class="breadcrumbs-title">@CDResource.KaynakHedefDilYonetimi</h5>
                 <ol class="breadcrumbs">
                     <li>
-                        <a href="/Admin/Home">Anasayfa</a>
+                        <a href="/Admin/Home">@CDResource.Anasayfa</a>
                     </li>
-                    <li class="active">Kaynak - Hedef Dil Yönetimi</li>
+                    <li class="active">@CDResource.KaynakHedefDilYonetimi</li>
                 </ol>
             </div>
         </div>
@@ -27,9 +28,9 @@
 }
 <div class="section">
     <div class="col s12">
-        <label for="role">Kaynak Dil</label>
+        <label for="role">@CDResource.KaynakDil</label>
         <select class="error browser-default" id="ddlLanguages" name="role">
-            <option value="">Lütfen Seçiniz</option>
+            <option value="">@CDResource.LutfenSeciniz</option>
             @{
             foreach (var item in Model)
                 {
@@ -41,7 +42,7 @@
     <div class="divider"></div>
     <div class="section">
         <div class="row">
-            <div class="input-field col l12 center"><b>Hedef Dil</b></div>
+            <div class="input-field col l12 center"><b>@CDResource.HedefDil</b></div>
                 @{
                     foreach (var item in Model)
                     {

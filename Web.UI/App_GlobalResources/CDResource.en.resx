@@ -117,11 +117,68 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccountNumber" xml:space="preserve">
+    <value>Account Number</value>
+  </data>
+  <data name="AddMyLanguageDetails" xml:space="preserve">
+    <value>Add my Language Details</value>
+  </data>
+  <data name="AddMySoftwareDetail" xml:space="preserve">
+    <value>Add my software detail</value>
+  </data>
+  <data name="Adi" xml:space="preserve">
+    <value>Adı</value>
+  </data>
+  <data name="Adres" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="AlternatifEmail" xml:space="preserve">
+    <value>Alternatif Email</value>
+  </data>
+  <data name="AlternatifTelefon" xml:space="preserve">
+    <value>Alternatif Telefon</value>
+  </data>
   <data name="Anasayfa" xml:space="preserve">
     <value>Home</value>
   </data>
+  <data name="AnlasmaliFiyatVarmi" xml:space="preserve">
+    <value>Anlaşmalı Fiyat var mı?</value>
+  </data>
   <data name="Araclar" xml:space="preserve">
     <value>Tools</value>
+  </data>
+  <data name="BankAddress" xml:space="preserve">
+    <value>Bank Address</value>
+  </data>
+  <data name="BankName" xml:space="preserve">
+    <value>Bank Name</value>
+  </data>
+  <data name="Bay" xml:space="preserve">
+    <value>Bay</value>
+  </data>
+  <data name="Bayan" xml:space="preserve">
+    <value>Bayan</value>
+  </data>
+  <data name="BeneficiaryAccountHolder" xml:space="preserve">
+    <value>Beneficiary Account Holder</value>
+  </data>
+  <data name="BeneficiaryAddress" xml:space="preserve">
+    <value>Beneficiary Address</value>
+  </data>
+  <data name="BeniHatirla" xml:space="preserve">
+    <value>Beni Hatırla</value>
+  </data>
+  <data name="BilingualTongue" xml:space="preserve">
+    <value>Bilingual Tongue</value>
+  </data>
+  <data name="Bireysel" xml:space="preserve">
+    <value>Bireysel</value>
+  </data>
+  <data name="CepTelefonu" xml:space="preserve">
+    <value>Cep Telefonu</value>
+  </data>
+  <data name="Certificate" xml:space="preserve">
+    <value>Certificate</value>
   </data>
   <data name="CevirmenListesi" xml:space="preserve">
     <value>Translator List</value>
@@ -129,11 +186,32 @@
   <data name="Cikis" xml:space="preserve">
     <value>Logout</value>
   </data>
+  <data name="Cinsiyet" xml:space="preserve">
+    <value>Cinsiyet</value>
+  </data>
+  <data name="CityAndCountryOfTheBank" xml:space="preserve">
+    <value>City and Country of the Bank</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="Dahili" xml:space="preserve">
+    <value>Dahili</value>
+  </data>
   <data name="Dil" xml:space="preserve">
     <value>Language</value>
   </data>
+  <data name="DilListesi" xml:space="preserve">
+    <value>Dil Listesi</value>
+  </data>
+  <data name="DilListesiGoruntulenmektedir" xml:space="preserve">
+    <value>Dil Listesi görüntülenmektedir</value>
+  </data>
   <data name="DilYonetimi" xml:space="preserve">
     <value>Language Manage</value>
+  </data>
+  <data name="DogumTarihi" xml:space="preserve">
+    <value>Doğum Tarihi</value>
   </data>
   <data name="Dokuman" xml:space="preserve">
     <value>Document</value>
@@ -144,8 +222,20 @@
   <data name="DokumanYonetimi" xml:space="preserve">
     <value>Document Manage</value>
   </data>
+  <data name="DTPDesktopPublishing" xml:space="preserve">
+    <value>DTP (Desktop Publishing)</value>
+  </data>
+  <data name="Ekle" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
   <data name="EMail" xml:space="preserve">
     <value>E-Mail</value>
+  </data>
+  <data name="EuropeanAccounts" xml:space="preserve">
+    <value>European Accounts</value>
+  </data>
+  <data name="Faks" xml:space="preserve">
+    <value>Faks</value>
   </data>
   <data name="FiyatListesi" xml:space="preserve">
     <value>Price List</value>
@@ -156,6 +246,15 @@
   <data name="GelenMesajlar" xml:space="preserve">
     <value>Gelen Mesajlar</value>
   </data>
+  <data name="GenelBilgiler" xml:space="preserve">
+    <value>Genel Bilgiler</value>
+  </data>
+  <data name="Giris" xml:space="preserve">
+    <value>Giriş</value>
+  </data>
+  <data name="GlossaryCreatin" xml:space="preserve">
+    <value>Glossary Creatin</value>
+  </data>
   <data name="Gonder" xml:space="preserve">
     <value>Send</value>
   </data>
@@ -165,11 +264,53 @@
   <data name="GonderilenMesajlar" xml:space="preserve">
     <value>Gönderilen Mesajlar</value>
   </data>
+  <data name="Goruntulenmektedir" xml:space="preserve">
+    <value>goruntulenmektedir.</value>
+  </data>
+  <data name="Goster" xml:space="preserve">
+    <value>Göster</value>
+  </data>
+  <data name="GunlukKapasite" xml:space="preserve">
+    <value>Günlük Kapasite</value>
+  </data>
+  <data name="HedefDil" xml:space="preserve">
+    <value>HedefDil</value>
+  </data>
   <data name="HedefDilYonetimi" xml:space="preserve">
     <value>Target Language Manage</value>
   </data>
+  <data name="IBANNumber" xml:space="preserve">
+    <value>IBAN Number</value>
+  </data>
+  <data name="Ihave" xml:space="preserve">
+    <value>I have</value>
+  </data>
+  <data name="Il" xml:space="preserve">
+    <value>İl</value>
+  </data>
+  <data name="Ilce" xml:space="preserve">
+    <value>İlçe</value>
+  </data>
+  <data name="IletisimBilgileri" xml:space="preserve">
+    <value>İletişim Bilgileri</value>
+  </data>
+  <data name="IntroduceYourselfBriefly" xml:space="preserve">
+    <value>Introduce yourself briefly</value>
+  </data>
+  <data name="Islem" xml:space="preserve">
+    <value>İşlem</value>
+  </data>
   <data name="Kapat" xml:space="preserve">
     <value>Close</value>
+  </data>
+  <data name="Kaydet" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="KaynakDil" xml:space="preserve">
+    <value>KaynakDil</value>
+  </data>
+  <data name="KaynakHedefDilYonetimi" xml:space="preserve">
+    <value>Kaynak - Hedef Dil Yönetimi</value>
   </data>
   <data name="Kimden" xml:space="preserve">
     <value>From</value>
@@ -180,11 +321,35 @@
   <data name="Kullanici" xml:space="preserve">
     <value>User</value>
   </data>
+  <data name="KullaniciDuzenle" xml:space="preserve">
+    <value>Kullanıcı Düzenle</value>
+  </data>
+  <data name="KullaniciDuzenlemekIcinKullanilir" xml:space="preserve">
+    <value>Kullanıcı düzenlemek için kullanılır.</value>
+  </data>
   <data name="KullaniciEkle" xml:space="preserve">
     <value>Add User</value>
   </data>
+  <data name="KullaniciEklemekIcinKullaniliKullanicininDigerBilgilerini" xml:space="preserve">
+    <value>Kullanıcı eklemek için kullanılır. Kullanıcının diğer bilgilerini girmek için öncelikle kullanıcıyı sisteme kaydetmelisiniz. Daha sonra Kullanıcı Düzenle sayfasından diğer bilgilerini kaydedebilirsiniz.</value>
+  </data>
   <data name="KullaniciListesi" xml:space="preserve">
     <value>User List</value>
+  </data>
+  <data name="KullaniciTipi" xml:space="preserve">
+    <value>Kullanıcı Tipi</value>
+  </data>
+  <data name="Kurumsal" xml:space="preserve">
+    <value>Kurumsal</value>
+  </data>
+  <data name="LinguisticTesting" xml:space="preserve">
+    <value>Linguistic Testing</value>
+  </data>
+  <data name="LutfenSeciniz" xml:space="preserve">
+    <value>Lütfen Seçiniz</value>
+  </data>
+  <data name="MainClients" xml:space="preserve">
+    <value>Main Clients</value>
   </data>
   <data name="Mesaj" xml:space="preserve">
     <value>Message</value>
@@ -192,23 +357,122 @@
   <data name="MesajGonder" xml:space="preserve">
     <value>Send Message</value>
   </data>
+  <data name="MinChargeAmount" xml:space="preserve">
+    <value>Min. Charge Amount</value>
+  </data>
+  <data name="MotherTongue" xml:space="preserve">
+    <value>Mother Tongue</value>
+  </data>
+  <data name="MuhasebeEmail" xml:space="preserve">
+    <value>Muhasebe E-Mail</value>
+  </data>
   <data name="Musteri" xml:space="preserve">
     <value>Customer</value>
+  </data>
+  <data name="MusteriDuzenle" xml:space="preserve">
+    <value>Müşteri Düzenle</value>
+  </data>
+  <data name="MusteriDuzenlemekIcinKullanilir" xml:space="preserve">
+    <value>Müşteri düzenlemek için kullanılır.</value>
   </data>
   <data name="MusteriEkle" xml:space="preserve">
     <value>Add Customer</value>
   </data>
+  <data name="MusteriEklemekIcinKullanilir" xml:space="preserve">
+    <value>Müşteri eklemek için kullanılır.</value>
+  </data>
   <data name="MusteriListesi" xml:space="preserve">
     <value>Customer List</value>
+  </data>
+  <data name="MusteriTipi" xml:space="preserve">
+    <value>Müşteri Tipi</value>
+  </data>
+  <data name="OdemeBilgileri" xml:space="preserve">
+    <value>Ödeme Bilgileri</value>
+  </data>
+  <data name="OnlyIfReally" xml:space="preserve">
+    <value>only if really</value>
+  </data>
+  <data name="OperatingSystem" xml:space="preserve">
+    <value>Operating System</value>
+  </data>
+  <data name="OtherDetails" xml:space="preserve">
+    <value>Other Details</value>
+  </data>
+  <data name="OutOf" xml:space="preserve">
+    <value>out of</value>
+  </data>
+  <data name="PaymentDetails" xml:space="preserve">
+    <value>Payment Details</value>
+  </data>
+  <data name="PaypalAccount" xml:space="preserve">
+    <value>Paypal Account</value>
+  </data>
+  <data name="PaypalEmailAddress" xml:space="preserve">
+    <value>Paypal Email Address</value>
+  </data>
+  <data name="PoKullaniyormu" xml:space="preserve">
+    <value>PO Kullanıyor mu?</value>
+  </data>
+  <data name="PostaKodu" xml:space="preserve">
+    <value>Posta Kodu</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="PrimarySpecialization" xml:space="preserve">
+    <value>Primary Specialization</value>
   </data>
   <data name="Profilim" xml:space="preserve">
     <value>My Profile</value>
   </data>
+  <data name="ProofReading" xml:space="preserve">
+    <value>ProofReading</value>
+  </data>
+  <data name="Qualifications" xml:space="preserve">
+    <value>Qualifications</value>
+  </data>
+  <data name="Rates" xml:space="preserve">
+    <value>Rates</value>
+  </data>
+  <data name="Rating" xml:space="preserve">
+    <value>Rating</value>
+  </data>
+  <data name="Review" xml:space="preserve">
+    <value>Review</value>
+  </data>
+  <data name="ReviewLQALanguageQualityAssurance" xml:space="preserve">
+    <value>Review LQA (Language Quality Assurance)</value>
+  </data>
+  <data name="ReviewSMESubjectMatterExpert" xml:space="preserve">
+    <value>Review SME (Subject Matter Expert)</value>
+  </data>
+  <data name="SabitTelefon" xml:space="preserve">
+    <value>Sabit Telefon</value>
+  </data>
+  <data name="ServiceType" xml:space="preserve">
+    <value>Service Type</value>
+  </data>
+  <data name="Sifre" xml:space="preserve">
+    <value>Şifre</value>
+  </data>
   <data name="Sirket" xml:space="preserve">
     <value>Company</value>
   </data>
+  <data name="SirketAdi" xml:space="preserve">
+    <value>Şirket Adı</value>
+  </data>
+  <data name="SirketDuzenle" xml:space="preserve">
+    <value>Şirket Düzenle</value>
+  </data>
+  <data name="SirketDuzenlemekIcinKullanilir" xml:space="preserve">
+    <value>Şirket düzenlemek için kullanılır.</value>
+  </data>
   <data name="SirketEkle" xml:space="preserve">
     <value>Add Company</value>
+  </data>
+  <data name="SirketEklemekIcinKullanilir" xml:space="preserve">
+    <value>Şirket eklemek için kullanılır.</value>
   </data>
   <data name="SirketListesi" xml:space="preserve">
     <value>Company List</value>
@@ -216,16 +480,106 @@
   <data name="SirketTerminolojiEkle" xml:space="preserve">
     <value>Add Company-Terminology</value>
   </data>
+  <data name="SirketTerminolojiEklemekIcinKullanilir" xml:space="preserve">
+    <value>Şirket-Terminoloji eklemek için kullanılır.</value>
+  </data>
   <data name="SirketTerminolojiList" xml:space="preserve">
     <value>Company-Terminology List.</value>
+  </data>
+  <data name="SirketTerminolojiListesi" xml:space="preserve">
+    <value>Şirket-Terminoloji Listesi</value>
+  </data>
+  <data name="SirketTerminolojiListesiGoruntulenmektedir" xml:space="preserve">
+    <value>Şirket-Teminoloji Listesi görüntülenmektedir.</value>
+  </data>
+  <data name="Skype" xml:space="preserve">
+    <value>Skype</value>
+  </data>
+  <data name="Software" xml:space="preserve">
+    <value>Software</value>
+  </data>
+  <data name="SourceLang" xml:space="preserve">
+    <value>Source Lang.</value>
+  </data>
+  <data name="SourceLanguage" xml:space="preserve">
+    <value>Source Language</value>
+  </data>
+  <data name="Soyadi" xml:space="preserve">
+    <value>Soyadı</value>
+  </data>
+  <data name="SwiftBICCode" xml:space="preserve">
+    <value>Swift / BIC Code</value>
+  </data>
+  <data name="SwornTranslation" xml:space="preserve">
+    <value>Sworn Translation</value>
+  </data>
+  <data name="TargetLang" xml:space="preserve">
+    <value>Target Lang.</value>
+  </data>
+  <data name="TargetLanguage" xml:space="preserve">
+    <value>Target Language</value>
+  </data>
+  <data name="TerminologyExtraction" xml:space="preserve">
+    <value>Terminology Extraction</value>
+  </data>
+  <data name="TerminolojiAdi" xml:space="preserve">
+    <value>Terminoloji Adı</value>
+  </data>
+  <data name="TerminolojiDokumaniniYukle" xml:space="preserve">
+    <value>Terminoloji Dökümanını Yükle</value>
+  </data>
+  <data name="TerminolojiListesi" xml:space="preserve">
+    <value>Terminoloji Listesi</value>
   </data>
   <data name="TerminolojiYonetimi" xml:space="preserve">
     <value>Terminology Manage</value>
   </data>
+  <data name="ToolVersion" xml:space="preserve">
+    <value>Tool Version</value>
+  </data>
+  <data name="Translation" xml:space="preserve">
+    <value>Translation</value>
+  </data>
+  <data name="TranslationMemoryTMManagement" xml:space="preserve">
+    <value>Translation Memory (TM) Management</value>
+  </data>
+  <data name="TranslationSoftware" xml:space="preserve">
+    <value>Translation Software</value>
+  </data>
+  <data name="Ulke" xml:space="preserve">
+    <value>Ülke</value>
+  </data>
+  <data name="VATTAXNo" xml:space="preserve">
+    <value>VAT/TAX No</value>
+  </data>
+  <data name="VergiDairesi" xml:space="preserve">
+    <value>Vergi Dairesi</value>
+  </data>
+  <data name="VergiNumarasi" xml:space="preserve">
+    <value>Vergi Numarası</value>
+  </data>
+  <data name="WorkingType" xml:space="preserve">
+    <value>Working Type</value>
+  </data>
   <data name="Yanitla" xml:space="preserve">
     <value>Reply</value>
   </data>
+  <data name="YearsOfExperienceInTranslation" xml:space="preserve">
+    <value>Years of experience in translation</value>
+  </data>
   <data name="YeniMesaj" xml:space="preserve">
     <value>Yeni Mesaj</value>
+  </data>
+  <data name="YetenekBilgileri" xml:space="preserve">
+    <value>Yetenek Bilgileri</value>
+  </data>
+  <data name="YetkiliAdsoyad" xml:space="preserve">
+    <value>Yetkili Adsoyad</value>
+  </data>
+  <data name="YetkiliCepTelefonu" xml:space="preserve">
+    <value>Yetkili Cep Telefonu</value>
+  </data>
+  <data name="YetkiliEmail" xml:space="preserve">
+    <value>Yetkili E-Mail</value>
   </data>
 </root>
