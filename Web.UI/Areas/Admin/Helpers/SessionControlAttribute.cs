@@ -13,12 +13,18 @@ namespace Web.UI.Areas.Admin.Helpers {
 
         public override void OnActionExecuting(ActionExecutingContext filterContext) {
             var sessionMember = SessionUser.User;
-            //if (sessionMember == null) {
-            //    filterContext.Result = new RedirectResult("/Admin/Account/Login");
-            //} else if (!sessionMember.UserRoles.Any(x => _userRoles.Any(y => (int)y == x.UserRoleTypeId))) {
-            //    if (filterContext.ActionDescriptor.ControllerDescriptor.ControllerName == "Home" && filterContext.ActionDescriptor.ActionName == "Index") {
+            if (sessionMember == null)
+            {
+                filterContext.Result = new RedirectResult("/Admin/Account/Login");
+            }
+            //else if (!sessionMember.UserRoles.Any(x => _userRoles.Any(y => (int)y == x.UserRoleTypeId)))
+            //{
+            //    if (filterContext.ActionDescriptor.ControllerDescriptor.ControllerName == "Home" && filterContext.ActionDescriptor.ActionName == "Index")
+            //    {
             //        filterContext.Result = new RedirectResult("/Admin/Account/Login");
-            //    } else {
+            //    }
+            //    else
+            //    {
             //        filterContext.Result = new RedirectResult("/Admin/Home/Index");
             //    }
             //}

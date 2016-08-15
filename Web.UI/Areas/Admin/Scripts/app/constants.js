@@ -1,7 +1,7 @@
 ﻿define([],
     function () {
         var constants = {
-            documentUploadUrl: "http://localhost:8003/api/documentapi/uploadDocument"
+            documentUploadUrl: "http://localhost:8003/api/documentapi/uploadTranslationDocument"
         };
 
         return constants;

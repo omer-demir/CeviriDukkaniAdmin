@@ -1,4 +1,4 @@
-﻿
+﻿@using Resources;
 @{
     Layout = null;
 }
@@ -58,7 +58,7 @@
                     <div class="input-field col s12">
                         <i class="mdi-social-person-outline prefix"></i>
                         <input id="email" type="email" name="email"  data-error=".errorTxt1">
-                        <label for="email" >Email</label>
+                        <label for="email" >@CDResource.EMail</label>
                         <div class="errorTxt1" style="margin-left: 3rem;"></div>
                     </div>
                 </div>
@@ -66,20 +66,20 @@
                     <div class="input-field col s12">
                         <i class="mdi-action-lock-outline prefix"></i>
                         <input id="password" type="password" name="password"  data-error=".errorTxt2">
-                        <label for="password">Şifre</label>
+                        <label for="password">@CDResource.Sifre</label>
                         <div class="errorTxt2" style="margin-left: 3rem;"></div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12 m12 l12  login-text">
                         <input type="checkbox" id="remember-me" />
-                        <label for="remember-me">Beni Hatırla</label>
+                        <label for="remember-me">@CDResource.BeniHatirla</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <button id="btnSave" class="btn waves-effect waves-light right submit" type="submit">
-                            Giriş
+                            @CDResource.Giris
                             <i class="mdi-content-send right"></i>
                         </button>
                     </div>

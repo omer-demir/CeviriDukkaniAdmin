@@ -1,6 +1,8 @@
-﻿@model Tangent.CeviriDukkani.Domain.Dto.Common.CompanyDto
+﻿@using Resources;
+@model Tangent.CeviriDukkani.Domain.Dto.Common.CompanyDto
+    
 @{
-    ViewBag.Title = "Şirket Düzenle";
+    ViewBag.Title = CDResource.SirketDuzenle;
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Areas/Admin/css/validate.css" rel="stylesheet" />
@@ -14,15 +16,15 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 m12 l12">
-                    <h5 class="breadcrumbs-title">Şirket Düzenle</h5>
+                    <h5 class="breadcrumbs-title">@CDResource.SirketDuzenle</h5>
                     <ol class="breadcrumbs">
                         <li>
-                            <a href="/Admin/Home">Anasayfa</a>
+                            <a href="/Admin/Home">@CDResource.Anasayfa</a>
                         </li>
                         <li>
-                            <a href="@Url.Action("Index")">Şirket Listesi</a>
+                            <a href="@Url.Action("Index")">@CDResource.SirketListesi</a>
                         </li>
-                        <li class="active">Şirket Düzenle</li>
+                        <li class="active">@CDResource.SirketDuzenle</li>
                     </ol>
                 </div>
             </div>
@@ -30,85 +32,74 @@
     </div>
 }
 <div class="section">
-    <p class="caption">Şirket düzenlemek için kullanılır.</p>
+    <p class="caption">@CDResource.SirketDuzenlemekIcinKullanilir</p>
     <div class="divider"></div>
     <div id="basic-form" class="section">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="card-panel">
-                    <h4 class="header2">Şirket Düzenle</h4>
+                    <h4 class="header2">@CDResource.SirketDuzenle</h4>
                     <div class="row">
                         <form class="formValidate" id="formValidate">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <label for="name">Şirket Adı*</label>
+                                    <label for="name">@CDResource.SirketAdi *</label>
                                     @Html.TextBoxFor(m => m.Name, new { id = "txtName", data_error = ".errorTxt1" })
-                                    @*<input id="txtName" name="name" type="text" data-error=".errorTxt1">*@
                                     <div class="errorTxt1"></div>
                                 </div>
                                 <div class="input-field col s12">
-                                    <label for="email">Yetkili E-Mail *</label>
+                                    <label for="email">@CDResource.YetkiliEmail *</label>
                                     @Html.TextBoxFor(m => m.AuthorizedEmail, new { id = "txtAuthorizedEmail", type = "email", data_error = ".errorTxt2" })
-                                    @*<input id="txtAuthorizedEmail" type="email" name="email" data-error=".errorTxt2">*@
                                     <div class="errorTxt2"></div>
                                 </div>
                                 <div class="input-field col s12">
-                                    <label for="authorizedFullName">Yetkili Adsoyad*</label>
+                                    <label for="authorizedFullName">@CDResource.YetkiliAdsoyad *</label>
                                     @Html.TextBoxFor(m => m.AuthorizedFullName, new { id = "txtAuthorizedFullName", data_error = ".errorTxt3" })
-                                    @*<input id="txtAuthorizedFullName" name="authorizedFullName" type="text" data-error=".errorTxt3">*@
                                     <div class="errorTxt3"></div>
                                 </div>
                                 <div class="input-field col s12">
-                                    <label for="mobile-phone">Yetkili Cep Telefonu</label>
+                                    <label for="mobile-phone">@CDResource.YetkiliCepTelefonu</label>
                                     @Html.TextBoxFor(m => m.AuthorizedMobilePhone, new { id = "txtAuthorizedMobilePhone", data_error = ".errorTxt4" })
-                                    @*<input id="txtAuthorizedMobilePhone" type="text" name="mobile-phone" data-error=".errorTxt4">*@
                                     <div class="errorTxt4"></div>
                                 </div>
                                 @*//TODO: logo*@
                                 <div class="input-field col s12">
-                                    <label for="phone">Sabit Telefon</label>
-                                    @*<input id="txtPhone" type="text" name="phone">*@
+                                    <label for="phone">@CDResource.SabitTelefon</label>
                                     @Html.TextBoxFor(m => m.Phone, new { id = "txtPhone" })
                                 </div>
                                 <div class="input-field col s12">
-                                    <label for="extensionNumber">Dahili</label>
+                                    <label for="extensionNumber">@CDResource.Dahili</label>
                                     @Html.TextBoxFor(m => m.ExtensionNumber, new { id = "txtExtensionNumber" })
-                                    @*<input id="txtExtensionNumber" type="text" name="extensionNumber">*@
                                 </div>
                                 <div class="input-field col s12">
-                                    <label for="accountingEmail">Muhasebe E-Mail</label>
+                                    <label for="accountingEmail">@CDResource.MuhasebeEmail</label>
                                     @Html.TextBoxFor(m => m.AccountingEmail, new { id = "txtAccountingEmail", type = "email" })
-                                    @*<input id="txtAccountingEmail" type="email" name="accountingEmail">*@
                                 </div>
-                                @*<input type="checkbox" id="chkUsedPO" />*@
                                 <p style="margin-left: 11px;">
                                     <input type="checkbox" id="chkUsedPO" checked="@Model.IsUsingPo">
-                                    <label for="chkUsedPO">PO Kullanıyor mu?</label>
+                                    <label for="chkUsedPO">@CDResource.PoKullaniyormu</label>
                                 </p>
 
                                 <div class="input-field col s12">
-                                    <label for="taxNumber">Vergi Numarası</label>
+                                    <label for="taxNumber">@CDResource.VergiNumarasi</label>
                                     @Html.TextBoxFor(m => m.TaxNumber, new { id = "txtTaxNumber" })
-                                    @*<input id="txtTaxNumber" type="text" name="taxNumber">*@
                                 </div>
                                 <div class="input-field col s12">
-                                    <label for="taxOffice">Vergi Dairesi</label>
+                                    <label for="taxOffice">@CDResource.VergiDairesi</label>
                                     @Html.TextBoxFor(m => m.TaxOffice, new { id = "txtTaxOffice" })
-                                    @*<input id="txtTaxOffice" type="text" name="taxOffice">*@
                                 </div>
                                 <p style="margin-left: 11px;">
                                     <input type="checkbox" id="chkContractPrice" checked="@Model.IsContractPrice">
-                                    <label for="chkContractPrice">PO Kullanıyor mu?</label>
+                                    <label for="chkContractPrice">@CDResource.AnlasmaliFiyatVarmi</label>
                                 </p>
                                 <div class="input-field col s12">
-                                    <label for="address">Adres</label>
+                                    <label for="address">@CDResource.Adres</label>
                                     @Html.TextBoxFor(m => m.Address, new { id = "txtAddress" })
-                                    @*<input id="txtAddress" type="text" name="address">*@
                                 </div>
                                 <div class="input-field col s12">
                                     @Html.HiddenFor(m => m.Id, new { id = "hdnUserId" })
                                     <button id="btnSave" class="btn waves-effect waves-light right submit" type="button">
-                                        Kaydet
+                                        @CDResource.Kaydet
                                         <i class="mdi-content-send right"></i>
                                     </button>
                                 </div>

@@ -1,7 +1,7 @@
 ﻿@using Tangent.CeviriDukkani.Domain.Dto.Common
-
+@using Resources;
 @{
-    ViewBag.Title = "Kullanıcı Listesi";
+    ViewBag.Title = CDResource.KullaniciListesi;
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 @section breadcrumbs{
@@ -14,12 +14,12 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 m12 l12">
-                    <h5 class="breadcrumbs-title">Kullanıcı Listesi</h5>
+                    <h5 class="breadcrumbs-title">@CDResource.KullaniciListesi</h5>
                     <ol class="breadcrumbs">
                         <li>
-                            <a href="/Admin/Home">Anasayfa</a>
+                            <a href="/Admin/Home">@CDResource.Anasayfa</a>
                         </li>
-                        <li class="active">Kullanıcı Listesi</li>
+                        <li class="active">@CDResource.KullaniciListesi</li>
                     </ol>
                 </div>
             </div>
@@ -27,12 +27,12 @@
     </div>
 }
 <div class="section">
-    <p class="caption">Kullanıcı Listesi görüntülenmektedir.</p>
+    <p class="caption">@CDResource.KullaniciListesi @CDResource.Goruntulenmektedir</p>
     <div class="row">
         <div class="col s6 dvUserRoles">
-            <label for="role">Kullanıcı Tipi *</label>
+            <label for="role">@CDResource.KullaniciTipi *</label>
             <select multiple id="ddlUserRole">
-                <option value="" disabled selected>Lütfen seçiniz.</option>
+                <option value="" disabled selected>@CDResource.LutfenSeciniz</option>
                 @foreach (var item in (List<UserRoleTypeDto>)ViewBag.UserRoleTypes)
                 {
                     <option value="@item.Id">@item.Name</option>
@@ -45,7 +45,7 @@
         </div>
         <div class="col s6">
             <button id="btnFilter" class="btn waves-effect waves-light right submit" type="button">
-                Göster
+                @CDResource.Goster
                 <i class="mdi-content-send right"></i>
             </button>
         </div>

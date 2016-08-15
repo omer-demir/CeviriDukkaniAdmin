@@ -150,10 +150,21 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\CDResource.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CDResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\CDResource.en.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CDResource.en.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -167,6 +178,7 @@
     <Compile Include="Areas\Admin\Controllers\ApiController\OrderApiController.cs" />
     <Compile Include="Areas\Admin\Controllers\ApiController\TranslationApiController.cs" />
     <Compile Include="Areas\Admin\Controllers\ApiController\UserApiController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\CommonController.cs" />
     <Compile Include="Areas\Admin\Controllers\CompanyController.cs" />
     <Compile Include="Areas\Admin\Controllers\CustomerController.cs" />
@@ -177,7 +189,6 @@
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Helpers\SessionControlAttribute.cs" />
     <Compile Include="Areas\Admin\Helpers\SessionUser.cs" />
-    <Compile Include="Areas\Admin\Models\CustomMultipartFormDataStreamProvider.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
     <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
@@ -232,7 +243,6 @@
     <Content Include="Areas\Admin\Scripts\app\page-scripts\customer\edit.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\customer\index.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\document\create.page.js" />
-    <Content Include="Areas\Admin\Scripts\app\page-scripts\document\edit.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\document\index.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\campaign.update.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\campaign.list.page.js" />
@@ -328,6 +338,9 @@
     <Content Include="Areas\Admin\Theme\images\flag-icons\Cote-dIvoire.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\Croatia.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\Cuba.png" />
+    <Content Include="Areas\Admin\Theme\images\flag-icons\culture_.png" />
+    <Content Include="Areas\Admin\Theme\images\flag-icons\culture_en-US.png" />
+    <Content Include="Areas\Admin\Theme\images\flag-icons\culture_tr-TR.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\Curacao.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\Cyprus.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\Czech-Republic.png" />
@@ -1631,7 +1644,6 @@
     <Content Include="Areas\Admin\Theme\sass\themes\skye\_theme.scss" />
     <Content Include="Areas\Admin\Theme\sass\themes\skye\_typography.scss" />
     <Content Include="Areas\Admin\Theme\sass\themes\skye\_variables.scss" />
-    <Content Include="Areas\Admin\Uploads\ExPThinkWeek2009Public.pdf" />
     <Content Include="Areas\Admin\Views\Account\Login.cshtml" />
     <Content Include="Areas\Admin\Views\Common\CompanyTerminologies.cshtml" />
     <Content Include="Areas\Admin\Views\Common\CompanyTerminologyCreate.cshtml" />
@@ -1648,8 +1660,6 @@
     <Content Include="Areas\Admin\Views\Customer\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Customer\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Document\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Document\Detail.cshtml" />
-    <Content Include="Areas\Admin\Views\Document\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Document\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
