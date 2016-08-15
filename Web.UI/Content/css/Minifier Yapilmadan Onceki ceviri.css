@@ -1,0 +1,676 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	color: #333;
+	background-color: #FFF;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+a{
+	text-decoration: none;
+	color:inherit;
+}
+
+*{
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.telefon_widget{
+	/*background: url('../images/telefon_widget.png');*/
+	width:168px;
+	height:40px;
+	position:absolute;
+	right:0px;
+	top:25px;
+	z-index: 400;
+}
+
+.buton{
+	background:#3d3d3d;
+	color:#fff;
+	border:none;
+	border-radius: 5px; /* Standart */
+	-moz-border-radius: 5px; /* Firefox */
+	-webkit-border-radius: 5px; /* Safari ve Chrome */
+	padding:10px 12px;
+	font-family: 'Oxygen', sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	-webkit-box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.9);
+	-moz-box-shadow:    2px 2px 1px 0px rgba(0, 0, 0, 0.9);
+	box-shadow:         2px 2px 1px 0px rgba(0, 0, 0, 0.9);
+}
+
+.buton2{
+	background:#28BFB6;
+	color:#fff;
+	border:none;
+	border-radius: 5px; /* Standart */
+	-moz-border-radius: 5px; /* Firefox */
+	-webkit-border-radius: 5px; /* Safari ve Chrome */
+	padding:10px 20px;
+	font-family: 'Oxygen', sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	-webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:    1px 1px 1px 0px rgba(0, 0, 0, 0.5);
+	box-shadow:         1px 1px 1px 0px rgba(0, 0, 0, 0.5);
+}
+
+.anasayfabutonu{
+    text-align:center;
+	margin-top:210px;
+	margin-left: -95px;
+	transform:rotate(-8deg);
+	-ms-transform:rotate(-8deg); /* IE 9 */
+	-webkit-transform:rotate(-8deg); /* Opera, Chrome, and Safari */
+    display:inline-block;
+}
+.anasayfabutonu:hover{
+	margin-top:210px;
+	margin-left: -95px;
+	transform:rotate(-8deg);
+	-ms-transform:rotate(-8deg); /* IE 9 */
+	-webkit-transform:rotate(-8deg); /* Opera, Chrome, and Safari */
+    display:inline-block;
+    background-color:#fec300;
+}
+
+.buton.sag{
+	margin-top:60px;
+	float:right;
+}
+.buton2.sag{
+	float:right;
+}
+
+.radio ul li{
+	float:left;
+	width:135px;
+	margin-top:10px;
+}
+
+.radio ul{
+	list-style: none;
+	margin:0;
+	padding:0;g
+ng-left: 25px;
+	margi
+}
+
+label {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	padding-left: 25px;
+	margin-right: 15px;
+	font-size: 11px;
+}
+
+input[type=radio],
+input[type=checkbox] {
+	display: none;
+}
+
+label:before {
+	content: "";
+	display: inline-block;
+
+	width: 16px;
+	height: 16px;
+
+	margin-right: 10px;
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+	background-color: #aaa;
+	box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+}
+
+.radio label:before {
+	border-radius: 8px;
+}
+.checkbox label {
+	margin-bottom: 10px;
+}
+.checkbox label:before {
+    border-radius: 3px;
+}
+
+input[type=radio]:checked + label:before {
+    content: "\2022";
+    color: #f3f3f3;
+    font-size: 30px;
+    text-align: center;
+    line-height: 14px;
+}
+
+input[type=checkbox]:checked + label:before {
+	content: "+";
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+	font-size: 15px;
+	color: #f3f3f3;
+	text-align: center;
+    line-height: 15px;
+}
+
+.clear:after
+{
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear
+{
+    zoom: 1;
+}
+
+
+.ortala{
+	width:960px;
+	margin-left: auto;
+	margin-right: auto;
+	height:auto;
+}
+
+.ustmenu_tasiyici{
+	width: 100%;
+	height: 100px;
+	z-index: 20;
+	position: relative;
+	background:url('../images/ustbg_artalan.png');
+}
+
+.ustmenu_alani{
+	height:100px;
+	background:url('../images/ustbg_menu.png');
+	font-family: 'Bree Serif', serif;
+	font-size: 15px;
+	color:#a5a5a5;
+}
+
+.ustmenu_alani ul{
+	float: right;
+	padding:0;
+	margin:0px 10px 0 0;
+}
+
+.ustmenu_alani ul li{
+	list-style: none;
+	float: left;
+	cursor: pointer;
+	padding:10px;
+	margin-left: 30px;
+}
+
+.ustmenu_alani ul li:hover{
+	color:#fff;
+}
+
+.uyebilgileri{
+	text-align: right;
+	font-size:12px;
+	color:#fff;
+	padding-top:4px;
+}
+
+.uyebilgileri img{
+	margin:0 5px 0 15px;
+}
+
+
+.profil_fotografi_kucuk{
+	width:25px;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+	vertical-align: middle;
+}
+
+.cevirinibaslat{
+	background:url('../images/cevirinibaslat_Bg.png');
+	height:143px;
+	margin-top:-57px; position:relative; z-index:500
+}
+
+.logo{
+	/*background:url('../images/logo-yeni.png');*/
+	width:286px;
+	height:159px;
+	margin:-25px 0 0 -50px;
+	float:left;
+}
+
+.slider_alani{
+	position:relative;
+	margin-top: -10px;
+	z-index: 10;
+	width:100%;
+	height:525px;
+	background:url('../images/slider1-yeni.jpg') center;
+}
+
+.ceviriformu-baslik{
+	font-family: 'Oxygen', sans-serif;
+	font-weight: bold;
+	background:#c9d4d8;
+	padding: 10px;
+	text-align: center;
+	color:#fff;
+	font-size: 24px;
+}
+
+.ceviriformu{
+	background:#f9f9f9;
+	border:10px solid #c9d4d8;
+	border-top:0px solid #c9d4d8;
+	height:395px;
+}
+
+.formblok{
+	float:left;
+	width:306px;
+	padding:20px 40px;
+}
+
+.formblok .daire{
+	background-color:#fffaeb;
+	text-align: center;
+	border-radius: 50px; /* Standart */
+	-moz-border-radius: 50px; /* Firefox */
+	-webkit-border-radius: 50px; /* Safari ve Chrome */
+	height:50px;
+	width:50px;
+	border:5px solid #fec300;
+	line-height: 38px;
+
+	font-family: 'Oxygen', sans-serif;
+	font-weight: bold;
+	float:left;
+	margin-bottom: 20px;
+	margin-left: -10px;
+	margin-right: 10px;
+	font-size: 35px;
+
+	color:#fec300;
+}
+
+.formblok .baslik{
+	font-family: 'Oxygen', sans-serif;
+	font-weight: bold;
+	float:left;
+	font-size: 16px;
+	color:#787266;
+	margin-top: 15px;
+}
+
+.anasayfakutu_tasiyici{
+	/* margin-bottom: 50px; */
+}
+
+.anasayfakutulari{
+	float:left;
+	width:305px;
+	height:165px;
+	margin-top:20px;
+	margin-bottom: 40px;
+	text-align: center;
+	border:5px solid #FEC300;
+}
+
+.anasayfakutulari div{
+	background-color:#FEC300;
+	padding:10px;
+	font-weight: bold;
+	width:200px;
+	text-align: left;
+	float:right;
+	margin-top:80px;
+}
+
+
+.tabgolge_tasiyici{
+	background:url('../images/tabgolge.png') bottom;
+	height:55px;
+	width:100%;
+	position:absolute;
+	z-index: 20;
+	margin-bottom: -55px;
+}
+
+.tabsapka_tasiyici{
+	width:960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.tabsapka{
+	background:url('../images/sapka.png') bottom;
+	height:142px;
+	width:293px;
+	position:absolute;
+	margin-left: 650px;
+	z-index: 21;
+	margin-top: -65px;
+}
+
+#content {
+	width: 960px;
+	}
+#tab-head{
+	background: url('../images/tabbg_gri.png');
+	height:57px;
+}
+#content ul { list-style-type: none; margin:0; padding:0; }
+#content ul li { float:left; padding-top: 15px; width:167px; height:77px; margin-bottom: -20px; position:relative; z-index: 100; text-align: center; margin-right: 15px; }
+#content ul li a { text-decoration: none; color: #989898; font-size: 16px;}
+.active {background:url('../images/tabbutonbg.png'); color:#fff;}
+.active a{color:#fff !important;}
+#tab-content { width: 960px; height:500px; z-index: 50; position:relative; margin-top:-2px;}
+#tab-content .content { height: 500px; background: #ccc; display: none;}
+
+#tab-content .content div{ width:100%; height:100%; position:absolute; z-index: 100; padding-top: 50px; font-size: 30px; color:#fff;}
+#tab-content .content div:first-child{ width:100%; height:100%; position:absolute; z-index: 50;}
+
+
+.siteharitasi_tasiyici{
+	margin-top:20px;
+	background:#f5f5f5;
+	height:100px;
+	width:100%;
+}
+
+.siteharitasi{
+	margin-top:100px;
+	padding-top: 20px;
+}
+
+.siteharitasi ul{
+	padding:0;
+}
+
+.siteharitasi ul li{
+	float:left;
+	list-style: none;
+	width:192px;
+	padding:5px 0;
+}
+
+.siteharitasi ul li a{
+	color:#a3a3a3;
+}
+
+.altbar_tasiyici{
+	background:#292929;
+	height:91px;
+	width:100%;
+}
+
+
+.altbar{
+	padding:10px;
+}
+
+
+
+
+
+/* ÜYELÝK BAÞLANGIÇ */
+
+.uyelikformu-baslik{
+	font-family: 'Oxygen', sans-serif;
+	background:#f2f2f2;
+	padding: 10px;
+	color:#b1ada2;
+	font-size: 20px;
+	width:450px;
+}
+
+.uyelikformu{
+	background:#f9f9f9;
+	border:10px solid #f2f2f2;
+	border-top:0px solid #f2f2f2;
+	padding:10px;
+	width:450px;
+	float:left;
+}
+.uyelikformsag{
+	float:left;
+	margin-left: 20px;
+	width:490px;
+	text-align: center;
+    margin-top:-60px;
+}
+
+.uyelikformsag p{
+	margin-top:60px;
+}
+.uyelikformsag p:first-child{
+	margin-top:20px;
+}
+
+/* ÜYELÝK BÝTÝÞ */
+
+
+
+/* TERCÜMAN PANELÝ BAÞLANGIÇ */
+
+.datagrid table {
+	border-collapse: collapse;
+	text-align: left;
+	width: 100%;
+}
+
+.datagrid {
+	background: #fff;
+	border: 3px solid #F2F2F2;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.datagrid table td, .datagrid table th {
+	padding: 3px 10px;
+}
+
+.datagrid table thead th {
+	background-color:#F2F2F2;
+	color:#000;
+	font-size: 15px;
+	font-weight: bold;
+	border-left: 1px solid #F2F2F2;
+}
+
+.datagrid table thead th:first-child {
+	border: none;
+}
+
+.datagrid table tbody td {
+	color: #000;
+	border-left: 3px solid #F2F2F2;
+	font-size: 13px;
+	font-style: italic;
+	border-bottom: 3px solid #F2F2F2;
+	padding:10px;
+	background-color:#f9f9f9;
+}
+
+.datagrid table tbody td:first-child {
+	border-left: none;
+
+}
+
+.datagrid table tbody tr:last-child td {
+	border-bottom: none;
+}
+
+.isial{
+	color:#007fa4;
+	margin-left: 10px;
+	font-style: normal;
+	font-size: 15px;
+	font-weight: bold;
+	background:url('../images/arti.png') no-repeat;
+	height:22px;
+	padding-left: 27px;
+}
+
+/* TERCÜMAN PANELÝ BÝTÝÞ */
+
+
+
+
+/* ÖDEME ONAYI BAÞLANGIÇ */
+
+.bilgibasarili{
+	margin-bottom: 20px;
+	padding:25px 25px 25px 100px;
+	border:2px solid #81dc00;
+	font-size: 20px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background:url('../images/basarili.png') no-repeat 25px center;
+}
+
+.bilgihatali{
+	margin-bottom: 20px;
+	padding:25px 25px 25px 100px;
+	border:2px solid #F84600;
+	font-size: 20px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background:url('../images/unlem-kucuk.png') no-repeat 25px center;
+}
+
+
+/* ÖDEME ONAYI BÝTÝÞ */
+
+
+/* ÇEVÝRÝ ÖZETÝ */
+.grikutu{
+	padding:25px 25px 25px 100px;
+	background-color: #f9f9f9;
+	margin-bottom: 20px;
+}
+
+.tarih{
+	background:url('../images/tarih.png') no-repeat 25px center  #f9f9f9;
+}
+
+.unlem{
+	background:url('../images/unlem-kucuk.png') no-repeat 25px center  #f9f9f9;
+}
+
+.kitap{
+	background:url('../images/kitap_ikon.png') no-repeat 25px center  #f9f9f9;
+}
+.makina{
+	background:url('../images/makina.png') no-repeat 25px center  #f9f9f9;
+}
+
+
+/* ÇEVÝRÝ ÖZETÝ */
+
+
+
+
+
+/* DASHBOARD */
+
+.kullanicibuton_tasiyici{
+	float:left;
+	width:80px;
+	text-align: center;
+	font-weight: bold;
+	margin-right: 30px;
+}
+
+.kullanicibuton_ikon{
+	margin-bottom: 5px;
+	width:80px;
+	height:80px;
+	text-align: center;
+	padding-top:19px;
+
+	-webkit-box-shadow: 0px 0px 4px 0px rgba(50, 50, 50, 0.30);
+	-moz-box-shadow:    0px 0px 4px 0px rgba(50, 50, 50, 0.30);
+	box-shadow:         0px 0px 4px 0px rgba(50, 50, 50, 0.30);
+
+	border-radius: 5px; /* Standart */
+	-moz-border-radius: 5px; /* Firefox */
+	-webkit-border-radius: 5px; /* Safari ve Chrome */
+}
+
+
+.kullanicibuton_tasiyici.kucuk{
+	float:left;
+	text-align: center;
+	font-weight: bold;
+	margin-right: 20px;
+	width:180px;
+	padding:7px 0;
+	color:#fff;
+	background-color: #19d8db;
+	-webkit-box-shadow: 0px 0px 4px 0px rgba(50, 50, 50, 0.30);
+	-moz-box-shadow:    0px 0px 4px 0px rgba(50, 50, 50, 0.30);
+	box-shadow:         0px 0px 4px 0px rgba(50, 50, 50, 0.30);
+
+	border-radius: 5px; /* Standart */
+	-moz-border-radius: 5px; /* Firefox */
+	-webkit-border-radius: 5px; /* Safari ve Chrome */
+}
+
+
+/* DASHBOARD */
+
+
+
+
+/* SUNDUÐUMUZ HÝZMETLER */
+.sundugumuz_menu{
+	width:260px; float:left; background-color:#f9f9f9
+}
+.sundugumuz_menu div{
+	border-bottom:1px solid #dcdcdc;
+	padding:10px;
+}
+.sundugumuz_menu div.aktif{
+	border-bottom:1px solid #dcdcdc;
+	padding:10px;
+	background-color: #dcdcdc;
+}
+/* SUNDUÐUMUZ HÝZMETLER */
+
+
+.nasil-calisiyoruz-daire{
+	background-color:#fff;
+	text-align: center;
+	border-radius: 50px; /* Standart */
+	-moz-border-radius: 50px; /* Firefox */
+	-webkit-border-radius: 50px; /* Safari ve Chrome */
+	height:70px;
+	width:70px;
+	border:5px solid #00D4E1;
+	line-height: 55px;
+	font-family: 'Oxygen', sans-serif;
+	font-weight: bold;
+	float:left;
+	margin-bottom: 20px;
+	margin-left: -10px;
+	margin-right: 10px;
+	font-size: 35px;
+	color:#00D4E1;
+}

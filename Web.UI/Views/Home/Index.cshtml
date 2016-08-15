@@ -1,8 +1,232 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<div class="slider_alani">
+    <a onclick="sayfa_buton('.ceviriformu-baslik');" href="#" name="gonder" class="buton2 anasayfabutonu" style="width: 200px; text-align: -webkit-center; font-size: 28px">ÇEVİRİNİ BAŞLAT!</a>
+    <%--<input onClick="sayfa_buton('.ceviriformu-baslik');" type="submit" name="gonder" value="HEMEN ÇEVİRİNİ YOLLA" class="buton2 anasayfabutonu" />--%>
+</div>
 
+<div class="cevirinibaslat">
+    <center>
+        <img onClick="sayfa_buton('.ceviriformu-baslik');" src="~/Content/images/cevirinibaslat.png" alt="çeviri yaptır" width="596" height="143" style="cursor:pointer" />
+    </center>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="formblok">
+            <div class="daire">1</div>
+            <span class="baslik">DİL SEÇ</span>
+            <img src="~/Content/images/sari1.png" width="103" height="8" alt="çeviri dükkanı" style="float: right; margin-top: 22px;" />
+            <div class="clear"></div>
+            <b>KAYNAK DİL</b><br />
+            <div class="sourceLanguages"></div>
+            <br />
+            <br />
+            <b>KAYNAK DİL</b><br />
+            <div class="multiTargetLanguages"></div>
+        </div>
+
+        <div class="formblok" style="width: 356px;">
+            <div class="daire">2</div>
+            <span class="baslik">DOSYA YÜKLE</span><img src="~/Content/images/sari1.png" alt="çeviri dükkanı" style="float: right; margin-top: 22px;" />
+            <div class="clear"></div>
+            <div class="uploadOrWriteText"></div>
+        </div>
+
+        <div class="formblok" style="width: 256px;">
+            <div class="daire">3</div>
+            <span class="baslik">ALAN SEÇ</span><img src="~/Content/images/sari3.png" alt="çeviri dükkanı" style="float: right; margin-top: 22px; margin-right: -30px;" />
+            <div class="clear"></div>
+            <div class="alanlar"></div>
+
+            <div class="clear"></div>
+            <a href="#" class="continue"></a>
+        </div>
+
+        <div style="clear: both"></div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="tab-head">
+            <ul>
+                <li><a href="javascript:;" data-tabid="#tab1">İndirim Fırsatı</a></li>
+                <li><a href="javascript:;" data-tabid="#tab2">Referanslarımız</a></li>
+                <li><a href="javascript:;" data-tabid="#tab3">Bize Katılın</a></li>
+            </ul>
+        </div>
+        <div style="clear: both;"></div>
+        <div id="tab-content">
+            <div id="tab1" class="content">
+                <div style="background: url(../../Content/images/tabsayfa1.jpg);"></div>
+                <div style="margin-left: 450px; margin-top: 100px; width: 440px; height: 200px; font-size: 15px">
+                    <span style="font-size: 19px; font-weight: bold">Daha önce bizimle hiçbir iş çevirmedin mi?</span><br />
+                    <br />
+                    İşte sana güzel bir fırsat!
+                    Çeviri Dükkanı sürpriz indirimlerinden faydalanmak için sitemizi takip etmeye devam edin.
+                </div>
+            </div>
+            <div id="tab2" class="content">
+                <div style="background: url(../../Content/images/referanslarimiz.jpg);"></div>
+                <div style="margin-left: 170px; margin-top: 10px; font-size: 15px;">
+                    <span style="font-size: 22px; font-weight: bold">İşte bizimle iş çeviren markalardan sadece bazıları!</span>
+                </div>
+            </div>
+            <div id="tab3" class="content">
+                <style>
+                    .unknown {
+                        margin-left: 230px;
+                        margin-top: 23px;
+                        width: 440px;
+                        height: 200px;
+                        font-size: 15px;
+                        background-color: rgba(254,196,0,0.7);
+                        padding: 25px;
+                        color: #fff;
+                    }
+                </style>
+
+                <div style="background: url(../../Content/images/bize-katil.jpg);"></div>
+                <div class="unknown">
+                    <span style="font-size: 19px; font-weight: bold">İş çevirme konusunda kendine güveniyor musun?</span><br />
+                    <br />
+                    Sana bir teklifimiz var!
+                    Çeviri ekibimizin bir parçası ol, en keyifli işleri birlikte çevirelim!<br />
+                    Çevirmen Başvuru Adresimiz: <a href="Tercuman-Ol-1" rel="external,nofollow"><u>Hemen Bize Katıl!</u></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <table style="text-align: center; margin-top: 0px;">
+            <tr>
+                <td valign="top" width="480" style="padding: 40px 40px 0 40px;">
+                    <h2 style="font-size: 17px">Yeminli çevirmenlerle işbirliği</h2>
+                    Dosyalarınızın öneminin farkındayız. Bu sebeple alanında uzman yeminli çevirmenlerle çalışıyoruz.
+                    <br />
+                    <img src="~/Content/images/iconset1.jpg" alt="yeminli çevirmenlerle iş birliği" width="120" style="margin-top: 20px;" />
+                </td>
+                <td valign="top" style="padding: 40px 40px 0 40px;">
+                    <h2 style="font-size: 17px">Noter onaylı kalite</h2>
+                    Kalitenin sizi temsil ettiğini biliyoruz. Çevirilerinizin kalite kontrol araçları ve uzman çevirmenlerce kontrolünü sağlıyor; noter onayına sunuyoruz.
+                    <br />
+                    <img src="~/Content/images/iconset2.jpg" alt="Noter onaylı kalite" width="120" style="margin-top: 20px;" />
+                </td>
+            </tr>
+            <tr>
+                <td valign="top" style="padding: 40px 40px 0 40px;">
+                    <h2 style="font-size: 17px">Zamanında teslimat</h2>
+                    İş planlamanıza önem veriyoruz. Planlamanızda sorun yaşamamanız için dosyalarınızı zamanında teslim ediyoruz.
+                    <br />
+                    <img src="~/Content/images/iconset3.jpg" alt="zamanında teslimat" width="120" style="margin-top: 20px;" />
+                </td>
+                <td valign="top" style="padding: 40px 40px 0 40px;">
+                    <h2 style="font-size: 17px">17 yıllık tecrübe</h2>
+                    Deneyimin önemini biliyoruz. 17 yıllık tecrübe ile çeviri teknolojilerini birleştiriyor; sizlere kaliteli hizmeti daha kısa sürede sunuyoruz.
+                    <br />
+                    <img src="~/Content/images/iconset5.jpg" alt="17 yıllık tecrübe" width="120" style="margin-top: 20px;" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="bx-wrapper" style="max-width: 9690px; margin: 0px auto;">
+            <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 44px;">
+                <style>
+                    .sliderUnknown {
+                        width: 1215%;
+                        position: relative;
+                        -webkit-transition: 0.5s;
+                        -moz-transition: 0.5s;
+                        -ms-transition: 0.5s;
+                        -o-transition: 0.5s;
+                        transition: 0.5s;
+                        -webkit-transform: translate3d(-1940px, 0px, 0px);
+                        -moz-transform: translate3d(-1940px, 0px, 0px);
+                        -ms-transform: translate3d(-1940px, 0px, 0px);
+                        -o-transform: translate3d(-1940px, 0px, 0);
+                        transform: translate3d(-1940px, 0px, 0px);
+                    }
+                </style>
+                <div class="slider_logolar sliderUnknown">
+                    <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                        <img src="~/Content/images/referanslar/acibadem.jpg" alt="acıbadem">
+                    </div>
+                    <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                        <img src="~/Content/images/referanslar/adidas.jpg" alt="adidas">
+                    </div>
+                    <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                        <img src="~/Content/images/referanslar/coca-cola.jpg" alt="coca cola">
+                    </div>
+                    <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                        <img src="~/Content/images/referanslar/calik.jpg" alt="çalık holding">
+                    </div>
+                    <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                        <img src="~/Content/images/referanslar/ulker.jpg" alt="ülker">
+                    </div>
+                    <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                        <img src="~/Content/images/referanslar/turkish-airlines.jpg" alt="turkish airlines">
+                    </div>
+                    <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                        <img src="~/Content/images/referanslar/medicalpark.jpg" alt="medical park">
+                    </div>
+                    <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                        <img src="~/Content/images/referanslar/abdi-ibrahim.jpg" alt="abdi ibrahim">
+                    </div>
+                    <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                        <img src="~/Content/images/referanslar/turkcell.jpg" alt="turkcell">
+                    </div>
+                    <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                        <img src="~/Content/images/referanslar/siemens.jpg" alt="siemens">
+                    </div>
+                    <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                        <img src="~/Content/images/referanslar/bp.jpg" alt="bp">
+                    </div>
+                    <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                        <img src="~/Content/images/referanslar/anadolu.jpg" alt="anadolu">
+                    </div>
+                    <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                        <img src="~/Content/images/referanslar/avea.jpg" alt="avea">
+                    </div>
+                    <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                        <img src="~/Content/images/referanslar/beko.jpg" alt="beko">
+                    </div>
+                    <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                        <img src="~/Content/images/referanslar/bp.jpg" alt="bp">
+                    </div>
+                    <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                        <img src="~/Content/images/referanslar/canon.jpg" alt="canon">
+                    </div>
+                    <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                        <img src="~/Content/images/referanslar/ege-yapi.jpg" alt="ege yapı">
+                    </div>
+                    <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                        <img src="~/Content/images/referanslar/ergo.jpg" alt="ergo">
+                    </div>
+                    <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                        <img src="~/Content/images/referanslar/ericsson.jpg" alt="ericsson">
+                    </div>
+                    <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                        <img src="~/Content/images/referanslar/eti-maden.jpg" alt="eti maden">
+                    </div>
+                </div>
+            </div>
+            <div class="bx-controls bx-has-controls-direction">
+                <div class="bx-controls-direction"><a class="bx-prev disabled" href="">Prev</a><a class="bx-next disabled" href="">Next</a></div>
+            </div>
+        </div>
+
+    </div>
+</div>
