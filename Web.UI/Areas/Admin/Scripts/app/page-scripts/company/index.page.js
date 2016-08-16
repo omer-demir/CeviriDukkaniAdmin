@@ -6,6 +6,7 @@
                     //variables
                     var utilityObj = new utility();
                     var dataGrid;
+                    var resources = null;
 
                     //private funcs
                     var getCompanies = function () {
@@ -41,37 +42,37 @@
                                             },
                                             {
                                                 dataField: 'name',
-                                                caption: 'Şirket Adı'
+                                                caption: resources.sirketAdi
                                             }, {
                                                 dataField: 'authorizedEmail',
-                                                caption: 'Yetkili Eposta'
+                                                caption: resources.yetkiliEmail
                                             }, {
                                                 dataField: 'authorizedFullName',
-                                                caption: 'Yetkili Adsoyad'
+                                                caption: resources.yetkiliAdsoyad
                                             }, {
                                                 dataField: 'authorizedMobilePhone',
-                                                caption: 'Yetkili Cep telefonu'
+                                                caption: resources.yetkiliCepTelefonu
                                             }, {
                                                 dataField: 'taxOffice',
-                                                caption: 'Vergi Dairesi'
+                                                caption: resources.vergiDairesi
                                             }, {
                                                 dataField: 'taxNumber',
-                                                caption: 'Vergi Numarası'
+                                                caption: resources.vergiNumarasi
                                             }, {
                                                 dataField: 'id',
-                                                caption: 'Aksiyon',
+                                                caption: resources.aksiyon,
                                                 alignment: 'left',
                                                 cellTemplate: function(container, cellInfo) {
                                                     var actions =
-                                                        '<a class="custom-link" href="/Admin/Customer/Index/{companyId}" title="Şirket üyelerini görüntüle"><i class="mdi-social-group-add"></i></a>  ' +
-                                                            '<a class="custom-link" href="/Admin/Company/Edit/{companyId}" title="Şirket bilgilerini düzenle"><i class="mdi-editor-mode-edit"></i></a>';
-                                                    $(actions.supplant({ companyId: cellInfo.value }))
+                                                        '<a class="custom-link" href="/Admin/Customer/Index/{companyId}" title="{showTitle}"><i class="mdi-social-group-add"></i></a>  ' +
+                                                            '<a class="custom-link" href="/Admin/Company/Edit/{companyId}" title="editTitle"><i class="mdi-editor-mode-edit"></i></a>';
+                                                    $(actions.supplant({ companyId: cellInfo.value, showTitle: resources.sirketUyeleriniGoruntule, editTitle: resources.sirketBilgileriniDuzenle }))
                                                         .appendTo(container);
                                                 }
                                             }
                                         ],
                                         editing: {
-                                            insertEnabled: true,
+                                            insertEnabled: true
                                         },
                                         onInitNewRow: function(e) {
                                             window.location.href = "/Admin/Company/Create";
@@ -85,7 +86,25 @@
                             });
                     };
 
-                    initPage();
+                    var getResources = function () {
+                        var keyList = [
+                            'SirketAdi',
+                            'YetkiliEmail',
+                            'YetkiliAdsoyad',
+                            'YetkiliCepTelefonu',
+                            'VergiDairesi',
+                            'VergiNumarasi',
+                            'Aksiyon',
+                            'SirketUyeleriniGoruntule',
+                            'SirketBilgileriniDuzenle'
+                        ];
+                        var resourceName = 'terminologyManage';
+                        $.when(utilityObj.initResources(keyList, resourceName)).then(function () {
+                            resources = JSON.parse(localStorage.getItem(resourceName));
+                            initPage();
+                        });
+                    };
+                    getResources();
                 });
             });
     });

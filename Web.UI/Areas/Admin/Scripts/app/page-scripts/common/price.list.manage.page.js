@@ -10,6 +10,7 @@
                     var dataGrid;
                     var priceList;
                     var languages;
+                    var resources = null;
                     //private funcs
                     var getPriceLists = function () {
                         return $.ajax({
@@ -70,12 +71,12 @@
                                         },
                                         {
                                             dataField: 'sourceLanguageId',
-                                            caption: 'Kaynak Dil',
+                                            caption: resources.kaynakDil,
                                             lookup: { dataSource: languages, valueExpr: 'id', displayExpr: 'name' }
                                         },
                                         {
                                             dataField: 'targetLanguageId',
-                                            caption: 'Hedef Dil',
+                                            caption: resources.hedefDil,
                                             lookup: { dataSource: languages, valueExpr: 'id', displayExpr: 'name' }
                                         },
                                         {
@@ -102,12 +103,12 @@
                                     onRowInserted: function (e) {
                                         //TODO validation
                                         //addPriceList(e.data).success(function (language) {
-                                        //    Materialize.toast('Kayıt başarılı.', 3000);
+                                        //    Materialize.toast(resources.kayitBasarili, 3000);
                                         //});
                                     },
                                     onRowUpdated: function (e) {
                                         //editPriceList(e.key).success(function (language) {
-                                        //    Materialize.toast('Kayıt başarılı.', 3000);
+                                        //    Materialize.toast(resources.kayitBasarili, 3000);
                                         //});
                                     },
                                     //onEditingStart: function (info) {
@@ -117,9 +118,9 @@
                                         insertEnabled: true,
                                         editEnabled: true,
                                         texts: {
-                                            editRow: 'Düzenle',
-                                            saveRowChanges: 'Kaydet',
-                                            cancelRowChanges: 'İptal'
+                                            editRow: resources.duzenle,
+                                            saveRowChanges: resources.kaydet,
+                                            cancelRowChanges: resources.iptal
                                         }
                                     }
                                 }, utilityObj.baseGridOptions);
@@ -130,7 +131,22 @@
                             });
                     };
                     
-                    initPage();
+                    var getResources = function () {
+                        var keyList = [
+                            'KaynakDil',
+                            'HedefDil',
+                            'KayitBasarili',
+                            'Duzenle',
+                            'Kaydet',
+                            'Iptal'
+                        ];
+                        var resourceName = 'priceListManage';
+                        $.when(utilityObj.initResources(keyList, resourceName)).then(function () {
+                            resources = JSON.parse(localStorage.getItem(resourceName));
+                            initPage();
+                        });
+                    };
+                    getResources();
                 });
             });
     });

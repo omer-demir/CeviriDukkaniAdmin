@@ -10,6 +10,7 @@
                     var utilityObj = new utility();
                     var companyId;
                     var dataGrid;
+                    var resources = null;
 
                     //private funcs
                     var getCustomers = function (companyId) {
@@ -58,22 +59,22 @@
                                         },
                                         {
                                             dataField: 'name',
-                                            caption: 'Adı'
+                                            caption: resources.adi
                                         }, {
                                             dataField: 'surname',
-                                            caption: 'Soyadı'
+                                            caption: resources.soyadi
                                         }, {
                                             dataField: 'email',
-                                            caption: 'Email'
+                                            caption: resources.email
                                         }, {
                                             dataField: 'mobilePhone',
-                                            caption: 'Telefon'
+                                            caption: resources.telefon
                                         }, {
                                             dataField: 'institutionCode',
-                                            caption: 'Şirket Kodu'
+                                            caption: resources.sirketKodu
                                         }, {
                                             dataField: 'companyId',
-                                            caption: 'Firma',
+                                            caption: resources.firma,
                                             lookup: {
                                                 dataSource: companies,
                                                 displayExpr: 'name',
@@ -81,7 +82,7 @@
                                             }
                                         }, {
                                             dataField: 'membershipTypeId',
-                                            caption: 'Müşteri Tipi',
+                                            caption: resources.musteriTipi,
                                             lookup: {
                                                 dataSource: utilityObj.membershipTypes,
                                                 displayExpr: 'text',
@@ -89,11 +90,11 @@
                                             }
                                         }, {
                                             dataField: 'id',
-                                            caption: 'Aksiyon',
+                                            caption: resources.aksiyon,
                                             alignment: 'left',
                                             cellTemplate: function (container, cellInfo) {
-                                                var actions = '<a class="custom-link" href="/Admin/Customer/Edit/{customerId}" title="Müşteri bilgilerini düzenle"><i class="mdi-editor-mode-edit"></i></a>';
-                                                $(actions.supplant({ customerId: cellInfo.value })).appendTo(container);
+                                                var actions = '<a class="custom-link" href="/Admin/Customer/Edit/{customerId}" title="{title}"><i class="mdi-editor-mode-edit"></i></a>';
+                                                $(actions.supplant({ customerId: cellInfo.value, title: resources.musteriBilgileriniDuzenle })).appendTo(container);
                                             }
                                         }
                                     ], editing: {
@@ -110,7 +111,25 @@
                             });
                     };
 
-                    initPage();
+                    var getResources = function () {
+                        var keyList = [
+                            'Adi',
+                            'Soyadi',
+                            'Email',
+                            'Telefon',
+                            'SirketKodu',
+                            'Firma',
+                            'MusteriTipi',
+                            'Aksiyon',
+                            'MusteriBilgileriniDuzenle'
+                        ];
+                        var resourceName = 'customerIndex';
+                        $.when(utilityObj.initResources(keyList, resourceName)).then(function () {
+                            resources = JSON.parse(localStorage.getItem(resourceName));
+                            initPage();
+                        });
+                    };
+                    getResources();
                 });
             });
     });

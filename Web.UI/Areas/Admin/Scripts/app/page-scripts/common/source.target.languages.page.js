@@ -5,6 +5,7 @@
 
                     //variables
                     var utilityObj = new utility();
+                    var resources = null;
 
                     //private funcs
                     var getTargetLanguages = function (sourceLanguageId) {
@@ -48,12 +49,12 @@
                     $('.chkLanguages').click(function (e) {
                         e.preventDefault();
                         var $chk = $(this);
-                        var title = 'Hedef listesine eklemek istediğinize emin misiniz ?', text = 'Dil hedef listesine eklenecektir.',confirmTitle='Eklendi.',confirmText = 'Dil hedef listesine eklendi.';
+                        var title = resources.hedefListesineEklemekIstediginizeEminmisiniz, text = resources.dilHedefListesineEklenecektir, confirmTitle = resources.eklendi, confirmText = resources.dilHedefListesineEklendi;
                         if (!$chk.prop('checked')) {
-                            title = 'Hedef listesinden çıkarmak istediğinize emin misiniz ?';
-                            text = 'Dil hedef listesinden çıkartılacaktır.';
-                            confirmTitle = "Silindi.";
-                            confirmText = "Dil hedef listesinden çıkartıldı.";
+                            title = resources.hedefListesindenCikarmakIstediginizeEminmisiniz;
+                            text = resources.dilHedefListesindenCikartilacaktir;
+                            confirmTitle = resources.silindi;
+                            confirmText = resources.dilHedefListesindenCikartildi;
                         }
                         swal({
                             title: title,
@@ -61,8 +62,8 @@
                             type: "warning",
                             showCancelButton: true,
                             confirmButtonColor: "#DD6B55",
-                            confirmButtonText: "Evet",
-                            cancelButtonText: "Hayır",
+                            confirmButtonText: resources.evet,
+                            cancelButtonText: resources.hayir,
                             closeOnConfirm: false,
                             closeOnCancel: true
                         },
@@ -89,7 +90,26 @@
                              }
                          });
                     });
-                    initPage();
+                    var getResources = function () {
+                        var keyList = [
+                            'HedefListesineEklemekIstediginizeEminmisiniz',
+                            'DilHedefListesineEklenecektir',
+                            'Eklendi',
+                            'DilHedefListesineEklendi',
+                            'HedefListesindenCikarmakIstediginizeEminmisiniz',
+                            'DilHedefListesindenCikartilacaktir',
+                            'Silindi',
+                            'DilHedefListesindenCikartildi',
+                            'Evet',
+                            'Hayir'
+                        ];
+                        var resourceName = 'sourceTargetLanguages';
+                        $.when(utilityObj.initResources(keyList, resourceName)).then(function () {
+                            resources = JSON.parse(localStorage.getItem(resourceName));
+                            initPage();
+                        });
+                    };
+                    getResources();
                 });
             });
     });

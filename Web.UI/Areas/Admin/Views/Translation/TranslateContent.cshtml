@@ -1,6 +1,7 @@
-﻿@using Web.UI.Areas.Admin.Helpers
+﻿@using Resources;
+@using Web.UI.Areas.Admin.Helpers
 @{
-    ViewBag.Title = "Çeviri İşlemi";
+    ViewBag.Title = CDResource.CeviriIslemi;
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -14,12 +15,12 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 m12 l12">
-                    <h5 class="breadcrumbs-title">Çeviri İşlemi</h5>
+                    <h5 class="breadcrumbs-title">@CDResource.CeviriIslemi</h5>
                     <ol class="breadcrumbs">
                         <li>
-                            <a href="/Admin/Home">Anasayfa</a>
+                            <a href="/Admin/Home">@CDResource.Anasayfa</a>
                         </li>
-                        <li class="active">Çeviri İşlemi</li>
+                        <li class="active">@CDResource.CeviriIslemi</li>
                     </ol>
                 </div>
             </div>
@@ -28,7 +29,7 @@
 }
 
 <div class="section">
-    <p class="caption">Çeviri İşlemi görüntülenmektedir.</p>
+    <p class="caption">@CDResource.CeviriIslemi @CDResource.Goruntulenmektedir.</p>
     <div class="divider"></div>
     <div class="section">
         <div class="row">
@@ -40,19 +41,19 @@
                     <ul>
                         @if (SessionUser.IsEditor || SessionUser.IsProofReader) {
                             <li>
-                                <a class="btn-floating waves-effect waves-light btn modal-trigger" href="#addComment" tooltip="Yorum Ekle"><i class="large mdi-content-add"></i></a>
+                                <a class="btn-floating waves-effect waves-light btn modal-trigger" href="#addComment" tooltip="@CDResource.YorumEkle"><i class="large mdi-content-add"></i></a>
                             </li>
                         } else if (SessionUser.IsFreelanceTranslator || SessionUser.IsTranslator) {
                             <li>
-                                <a class="btn-floating yellow darken-1 waves-effect waves-light btn" href="" tooltip="Güncelle" id="updateContent"><i class="large mdi-action-autorenew"></i></a>
+                                <a class="btn-floating yellow darken-1 waves-effect waves-light btn" href="" tooltip="@CDResource.Guncelle" id="updateContent"><i class="large mdi-action-autorenew"></i></a>
                             </li>
 
                             <li>
-                                <a class="btn-floating yellow darken-1 waves-effect waves-light btn" href="" tooltip="Güncelle" id="finishContent"><i class="large mdi-action-done"></i></a>
+                                <a class="btn-floating yellow darken-1 waves-effect waves-light btn" href="" tooltip="@CDResource.Guncelle" id="finishContent"><i class="large mdi-action-done"></i></a>
                             </li>
                         }
                         <li>
-                            <a class="btn-floating yellow darken-1 waves-effect waves-light btn modal-trigger" href="#comments"  tooltip="Yorumları Göster"><i class="large mdi-content-archive"></i></a>
+                            <a class="btn-floating yellow darken-1 waves-effect waves-light btn modal-trigger" href="#comments"  tooltip="@CDResource.YorumlariGoster"><i class="large mdi-content-archive"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -73,7 +74,7 @@
         </ul>
     </div>
     <div class="modal-footer  teal lighten-4">
-        <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close">Kapat</a>
+        <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close">@CDResource.Kapat</a>
     </div>
 </div>
 
@@ -82,13 +83,13 @@
         <div class="col s12 m12 l6">
             <div class="input-field col s12">
                 <textarea placeholder="Yorum İçeriği" id="content" class="materialize-textarea"></textarea>
-                <label for="content" class="active">İçerik</label>
+                <label for="content" class="active">@CDResource.Icerik</label>
             </div>
         </div>
     </div>
     <div class="modal-footer  teal lighten-4">
-        <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close">İptal</a>
-        <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close" id="addCommentBtn">Ekle</a>
+        <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close">@CDResource.Iptal</a>
+        <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close" id="addCommentBtn">@CDResource.Ekle</a>
     </div>
 </div>
 

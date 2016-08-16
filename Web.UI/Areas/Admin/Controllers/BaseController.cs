@@ -9,16 +9,12 @@ namespace Web.UI.Areas.Admin.Controllers
     {
         protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
         {
-            string cultureName = null;
+            string cultureName = "tr-TR";
 
             HttpCookie cultureCookie = Request.Cookies["_culture"];
             if (cultureCookie != null)
             {
                 cultureName = cultureCookie.Value;
-            }
-            else
-            {
-                cultureName = Request.UserLanguages != null && Request.UserLanguages.Length > 0 ? Request.UserLanguages[0] : null;
             }
 
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureName);
@@ -26,5 +22,6 @@ namespace Web.UI.Areas.Admin.Controllers
 
             return base.BeginExecuteCore(callback, state);
         }
+        
     }
 }

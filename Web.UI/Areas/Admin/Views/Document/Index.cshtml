@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "Döküman Listesi";
+﻿@using Resources;
+@{
+    ViewBag.Title = CDResource.DokumanListesi;
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -13,12 +14,12 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 m12 l12">
-                    <h5 class="breadcrumbs-title">Doküman Listesi</h5>
+                    <h5 class="breadcrumbs-title">@CDResource.DokumanListesi</h5>
                     <ol class="breadcrumbs">
                         <li>
-                            <a href="/Admin/Home">Anasayfa</a>
+                            <a href="/Admin/Home">@CDResource.Anasayfa</a>
                         </li>
-                        <li class="active">Doküman Listesi</li>
+                        <li class="active">@CDResource.DokumanListesi</li>
                     </ol>
                 </div>
             </div>
@@ -27,7 +28,7 @@
 }
 
 <div class="section">
-    <p class="caption">Döküman Listesi görüntülenmektedir.</p>
+    <p class="caption">@CDResource.DokumanListesi @CDResource.Goruntulenmektedir</p>
     <div class="divider"></div>
     <div class="section">
         <div class="row">
@@ -43,13 +44,13 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Döküman Geçmişi</h4>
+                <h4 class="modal-title">@CDResource.DokumanGecmisi</h4>
             </div>
             <div class="modal-body">
                 <div id="documentAuditGrid"></div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">@CDResource.Kapat</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
