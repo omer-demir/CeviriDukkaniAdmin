@@ -1,0 +1,65 @@
+﻿@using Web.UI.Areas.Admin.Helpers
+
+<ul class="nav navbar-nav m-x-auto" style="width: 960px;">
+    <li class="nav-item">
+        <img src="" alt="" class="nav-link"/>
+    </li>
+    @if (SessionUser.User != null) {
+        <li class="nav-item">
+            <a class="nav-link" href="/bireysel/Kullanici-Paneli">
+                Hoşgeldiniz,<span>Kullanıcı Adı</span>
+                <img src="~/Content/images/kullanici.png" class="profil_fotografi_kucuk" width="25" height="25" />
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="../hr" class="nav-link">HR PANELİ</a>
+        </li>
+        <li class="nav-item">
+            <a href="../Admin" class="nav-link">YÖNETİM PANELİ</a>
+        </li>
+        <li class="nav-item">
+            <a href="../translator" class="nav-link">TRANSLATOR PORTAL</a>
+        </li>
+        <li class="nav-item">
+            <a href="../editor" class="nav-link">EDITOR PANEL</a>
+        </li>
+        <li class="nav-item">
+            <a href="/Logout">Çıkış Yap</a>
+        </li>
+    } else {
+        <li class="nav-item">
+            <a href="../hr" class="nav-link">Üye Girişi</a>
+        </li>
+        <li class="nav-item">
+            <a href="../Admin" class="nav-link">Üye Ol</a>
+        </li>
+        <li class="nav-item">
+            <a href="../translator" class="nav-link">Tercüman Ol</a>
+        </li>
+        <li class="nav-item">
+            <a href="../editor" class="nav-link">Kariyer Fırsatları</a>
+        </li>
+    }
+</ul>
+
+<ul class="nav navbar-nav m-x-auto" style="width: 960px;">
+    <li class="nav-item">
+        <a href="#" class="nav-link">ANASAYFA</a>
+    </li>
+    <li style="color: #28BFB6;" class="nav-item">
+        <a href="#" class="nav-link">ÇEVİRİNİ BAŞLAT</a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">ÇEVİRİ DÜKKANI HAKKINDA</a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">TANITIM VİDEOMUZ</a>
+    </li>
+    <li style="color: #FF0000;" class="nav-item">
+        <a href="#" class="nav-link">BLOG</a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">İLETİŞİM</a>
+    </li>
+
+</ul>

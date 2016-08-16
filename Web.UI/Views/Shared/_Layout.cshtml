@@ -2,14 +2,84 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Çeviri Dükkanı</title>
+
+    <link rel="icon" href="~/Areas/Admin/Theme/images/favicon/favicon.ico" sizes="32x32">
+    <!-- Favicons-->
+    <link rel="apple-touch-icon-precomposed" href="~/Areas/Admin/Theme/images/favicon/apple-touch-icon-152x152.png">
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#00bcd4">
+    <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="Description" content="Türkiye'nin ilk online çeviri platformu. Profesyonel tercümanlardan 15 dilde kaliteli çeviri hizmeti. Dosyanı yükle,fiyat ve teslim tarihini gör,işi bize bırak!"/>
+    <title>Çeviri Dükkanı - Ana Dillerde Kaliteli Çeviri Hizmeti</title>
+
+    <link href="~/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="~/bower_components/tether/dist/css/tether.min.css" rel="stylesheet"/>
+    <link href="~/bower_components/tether/dist/css/tether-theme-basic.min.css" rel="stylesheet"/>
+    <link href="~/bower_components/tether/dist/css/tether-theme-arrows.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="~/Content/css/tooltipster.css"/>
+    <link rel="stylesheet" type="text/css" href="~/Content/css/jquery.bxslider.css"/>
+    <link href="~/Content/css/jquery.selectbox.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="~/Content/css/multiple-select.css"/>
+    <link href="~/Content/Site.css" rel="stylesheet"/>
+
+    <script src="~/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="~/bower_components/tether/dist/js/tether.min.js"></script>
+    <script src="~/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-<div>
-    @RenderBody()
-</div>
+    <div class="telefon_widget">
+        <a href="/iletisim">
+            <img src="~/Content/images/telefon_widget.png" alt="Çeviri Dükkanı Telefonu" width="168" height="40" />
+        </a>
+    </div>
+    <div class="container-fluid">
+        <nav class="navbar navbar-light navbar-full bg-faded">
+            <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse"
+                    data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                &#9776;
+            </button>
+            <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+                <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                    <img src="~/Content/images/logo-yeni.png" alt="çeviri dükkanı logosu" />
+                </a>
+                @{Html.RenderAction("UserMenu", "Common");}
 
-    @RenderSection("scripts",false)
+            </div>
+        </nav>
+
+        @RenderBody()
+
+        <div class="footer">
+            @{Html.RenderAction("Footer", "Common");}
+        </div>
+    </div>
+
+    <script type="text/javascript" src="~/Content/js/ceviri.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.selectbox-0.2.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.tooltipster.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/ddaccordion.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.bxslider.min.js"></script>
+    <script src="~/Content/js/myscript.js"></script>
+    <script src="~/Content/js/jquery.multiple.select.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slider_logolar').bxSlider({
+                slideWidth: 960,
+                minSlides: 10,
+                maxSlides: 10,
+                slideMargin: 10,
+                pager: false,
+                auto: true
+            });
+        });
+    </script>
+
+
+    @RenderSection("scripts", false)
 </body>
 </html>
