@@ -1353,6 +1353,8 @@
     <Content Include="Areas\Admin\Theme\js\plugins\xcharts\xcharts.min.js" />
     <Content Include="Areas\Admin\Theme\temp\js\materialize.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\css\ceviri.css" />
+    <Content Include="Content\css\font-faces.css" />
     <Content Include="Content\css\jquery.bxslider.css" />
     <Content Include="Content\css\jquery.selectbox.css" />
     <Content Include="Content\css\Minifier Yapilmadan Onceki ceviri.css" />
@@ -1495,6 +1497,7 @@
     <Content Include="Content\images\zincir_icon.png" />
     <Content Include="Content\images\_multiple-select.png" />
     <Content Include="Content\images\_slider1.jpg" />
+    <Content Include="Content\js\analytics.js" />
     <Content Include="Content\js\ceviri.js" />
     <Content Include="Content\js\ddaccordion.js" />
     <Content Include="Content\js\jquery-1.7.2.min.js" />
@@ -1820,6 +1823,17 @@
     <Content Include="service.config" />
     <Content Include="Views\Common\UserMenu.cshtml" />
     <Content Include="Views\Common\Footer.cshtml" />
+    <Content Include="Views\Home\QualityTranslation.cshtml" />
+    <Content Include="Views\Home\SecurityAndPrivacy.cshtml" />
+    <Content Include="Views\Home\BillingInfo.cshtml" />
+    <Content Include="Views\Home\ServiceAggrement.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\HowItWorks.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Career.cshtml" />
+    <Content Include="Views\Home\ApplyForAJob.cshtml" />
+    <Content Include="Views\Home\JobDetail.cshtml" />
+    <Content Include="Views\Home\Translation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Web.Business\Web.Business.csproj">
