@@ -165,11 +165,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CDResource.en.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\CDResource.en1.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CDResource.en.resx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -1353,8 +1348,86 @@
     <Content Include="Areas\Admin\Theme\js\plugins\xcharts\xcharts.min.js" />
     <Content Include="Areas\Admin\Theme\temp\js\materialize.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
-    <Content Include="Content\css\main.css" />
-    <Content Include="Content\fonts\et-line.svg" />
+    <Content Include="Content\css\animate.css" />
+    <Content Include="Content\css\bootstrap-rtl.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\calendar.css" />
+    <Content Include="Content\css\camera-rtl.css" />
+    <Content Include="Content\css\camera.css" />
+    <Content Include="Content\css\colors-rtl.css" />
+    <Content Include="Content\css\colors.css" />
+    <Content Include="Content\css\components\bs-datatable.css" />
+    <Content Include="Content\css\components\bs-editable.css" />
+    <Content Include="Content\css\components\bs-filestyle.css" />
+    <Content Include="Content\css\components\bs-rating.css" />
+    <Content Include="Content\css\components\bs-select.css" />
+    <Content Include="Content\css\components\bs-switches.css" />
+    <Content Include="Content\css\components\dark-components.css" />
+    <Content Include="Content\css\components\daterangepicker.css" />
+    <Content Include="Content\css\components\ion.rangeslider.css" />
+    <Content Include="Content\css\components\pricing-table.css" />
+    <Content Include="Content\css\components\radio-checkbox.css" />
+    <Content Include="Content\css\components\rangeslider\sprite-skin-nice.png" />
+    <Content Include="Content\css\components\select-boxes.css" />
+    <Content Include="Content\css\components\timepicker.css" />
+    <Content Include="Content\css\custom.css" />
+    <Content Include="Content\css\dark-rtl.css" />
+    <Content Include="Content\css\dark.css" />
+    <Content Include="Content\css\elastic.css" />
+    <Content Include="Content\css\font-icons-rtl.css" />
+    <Content Include="Content\css\font-icons-snapchat.css" />
+    <Content Include="Content\css\font-icons.css" />
+    <Content Include="Content\css\fonts.css" />
+    <Content Include="Content\css\fonts\font-icons-snapchat.svg" />
+    <Content Include="Content\css\fonts\font-icons.svg" />
+    <Content Include="Content\css\fonts\lined-icons.svg" />
+    <Content Include="Content\css\fonts\Simple-Line-Icons.dev.svg" />
+    <Content Include="Content\css\fonts\Simple-Line-Icons.svg" />
+    <Content Include="Content\css\imports\blog.css" />
+    <Content Include="Content\css\imports\content.css" />
+    <Content Include="Content\css\imports\events.css" />
+    <Content Include="Content\css\imports\extras.css" />
+    <Content Include="Content\css\imports\footer.css" />
+    <Content Include="Content\css\imports\header.css" />
+    <Content Include="Content\css\imports\helpers.css" />
+    <Content Include="Content\css\imports\layouts.css" />
+    <Content Include="Content\css\imports\pagetitle.css" />
+    <Content Include="Content\css\imports\portfolio.css" />
+    <Content Include="Content\css\imports\shop.css" />
+    <Content Include="Content\css\imports\shortcodes.css" />
+    <Content Include="Content\css\imports\shortcodes\alerts.css" />
+    <Content Include="Content\css\imports\shortcodes\buttons.css" />
+    <Content Include="Content\css\imports\shortcodes\carousel.css" />
+    <Content Include="Content\css\imports\shortcodes\clients.css" />
+    <Content Include="Content\css\imports\shortcodes\countdown.css" />
+    <Content Include="Content\css\imports\shortcodes\counter-skills.css" />
+    <Content Include="Content\css\imports\shortcodes\dividers.css" />
+    <Content Include="Content\css\imports\shortcodes\faqs.css" />
+    <Content Include="Content\css\imports\shortcodes\feature-box.css" />
+    <Content Include="Content\css\imports\shortcodes\headings.css" />
+    <Content Include="Content\css\imports\shortcodes\misc.css" />
+    <Content Include="Content\css\imports\shortcodes\overlay.css" />
+    <Content Include="Content\css\imports\shortcodes\pricing.css" />
+    <Content Include="Content\css\imports\shortcodes\process-steps.css" />
+    <Content Include="Content\css\imports\shortcodes\promo.css" />
+    <Content Include="Content\css\imports\shortcodes\social-icons.css" />
+    <Content Include="Content\css\imports\shortcodes\styled-icons.css" />
+    <Content Include="Content\css\imports\shortcodes\tabs.css" />
+    <Content Include="Content\css\imports\shortcodes\team.css" />
+    <Content Include="Content\css\imports\shortcodes\testimonials.css" />
+    <Content Include="Content\css\imports\shortcodes\toggles-accordions.css" />
+    <Content Include="Content\css\imports\shortcodes\youtubebg.css" />
+    <Content Include="Content\css\imports\sliders.css" />
+    <Content Include="Content\css\imports\topbar.css" />
+    <Content Include="Content\css\imports\typography.css" />
+    <Content Include="Content\css\imports\widgets.css" />
+    <Content Include="Content\css\intro-fonts.css" />
+    <Content Include="Content\css\magnific-popup.css" />
+    <Content Include="Content\css\nivo-slider.css" />
+    <Content Include="Content\css\responsive-rtl.css" />
+    <Content Include="Content\css\responsive.css" />
+    <Content Include="Content\css\swiper.css" />
+    <Content Include="Content\css\vmap.css" />
     <Content Include="Content\images\adres.png" />
     <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\american-express.jpg" />
@@ -1492,36 +1565,70 @@
     <Content Include="Content\images\zincir_icon.png" />
     <Content Include="Content\images\_multiple-select.png" />
     <Content Include="Content\images\_slider1.jpg" />
-    <Content Include="Content\js\custom.js" />
-    <Content Include="Content\js\jquery.easing.min.js" />
-    <Content Include="Content\plugins\animate.css\animate.css" />
-    <Content Include="Content\plugins\countTo\jquery.countTo.js" />
-    <Content Include="Content\plugins\Icons\et-line-font\et-line.dev.svg" />
-    <Content Include="Content\plugins\Icons\et-line-font\fonts\et-line.svg" />
-    <Content Include="Content\plugins\Icons\et-line-font\index.html" />
-    <Content Include="Content\plugins\Icons\et-line-font\lte-ie7.js" />
-    <Content Include="Content\plugins\Icons\et-line-font\Read Me.txt" />
-    <Content Include="Content\plugins\Icons\et-line-font\style.css" />
-    <Content Include="Content\plugins\inview\jquery.inview.js" />
-    <Content Include="Content\plugins\inview\jquery.inview.min.js" />
-    <Content Include="Content\plugins\Lightbox\dist\css\lightbox.css" />
-    <Content Include="Content\plugins\Lightbox\dist\images\close.png" />
-    <Content Include="Content\plugins\Lightbox\dist\images\loading.gif" />
-    <Content Include="Content\plugins\Lightbox\dist\images\next.png" />
-    <Content Include="Content\plugins\Lightbox\dist\images\prev.png" />
-    <Content Include="Content\plugins\Lightbox\dist\js\lightbox-plus-jquery.js" />
-    <Content Include="Content\plugins\Lightbox\dist\js\lightbox-plus-jquery.min.js" />
-    <Content Include="Content\plugins\Lightbox\dist\js\lightbox.js" />
-    <Content Include="Content\plugins\Lightbox\dist\js\lightbox.min.js" />
-    <Content Include="Content\plugins\owl-carousel\AjaxLoader.gif" />
-    <Content Include="Content\plugins\owl-carousel\grabbing.png" />
-    <Content Include="Content\plugins\owl-carousel\owl.carousel.css" />
-    <Content Include="Content\plugins\owl-carousel\owl.carousel.js" />
-    <Content Include="Content\plugins\owl-carousel\owl.carousel.min.js" />
-    <Content Include="Content\plugins\owl-carousel\owl.theme.css" />
-    <Content Include="Content\plugins\owl-carousel\owl.transitions.css" />
-    <Content Include="Content\plugins\WOW\dist\wow.js" />
-    <Content Include="Content\plugins\WOW\dist\wow.min.js" />
+    <Content Include="Content\js\canvas.slider.fade.js" />
+    <Content Include="Content\js\components\bs-datatable.js" />
+    <Content Include="Content\js\components\bs-editable.js" />
+    <Content Include="Content\js\components\bs-filestyle.js" />
+    <Content Include="Content\js\components\bs-select.js" />
+    <Content Include="Content\js\components\bs-switches.js" />
+    <Content Include="Content\js\components\daterangepicker.js" />
+    <Content Include="Content\js\components\moment.js" />
+    <Content Include="Content\js\components\rangeslider.min.js" />
+    <Content Include="Content\js\components\responsive-tabs.js" />
+    <Content Include="Content\js\components\select-boxes.js" />
+    <Content Include="Content\js\components\selectsplitter.js" />
+    <Content Include="Content\js\components\star-rating.js" />
+    <Content Include="Content\js\components\timepicker.js" />
+    <Content Include="Content\js\components\typehead.js" />
+    <Content Include="Content\js\events-data.js" />
+    <Content Include="Content\js\functions.js" />
+    <Content Include="Content\js\jquery-migrate.min.js" />
+    <Content Include="Content\js\jquery.calendario.js" />
+    <Content Include="Content\js\jquery.camera.js" />
+    <Content Include="Content\js\jquery.elastic.js" />
+    <Content Include="Content\js\jquery.gmap.js" />
+    <Content Include="Content\js\jquery.js" />
+    <Content Include="Content\js\jquery.mousewheel.min.js" />
+    <Content Include="Content\js\jquery.nivo.js" />
+    <Content Include="Content\js\jquery.vmap.js" />
+    <Content Include="Content\js\plugins.js" />
+    <Content Include="Content\js\plugins\jquery.bootstrap.js" />
+    <Content Include="Content\js\plugins\jquery.chart.js" />
+    <Content Include="Content\js\plugins\jquery.color.js" />
+    <Content Include="Content\js\plugins\jquery.cookie.js" />
+    <Content Include="Content\js\plugins\jquery.countdown.js" />
+    <Content Include="Content\js\plugins\jquery.countto.js" />
+    <Content Include="Content\js\plugins\jquery.dribbble.js" />
+    <Content Include="Content\js\plugins\jquery.fitvids.js" />
+    <Content Include="Content\js\plugins\jquery.flexslider.js" />
+    <Content Include="Content\js\plugins\jquery.flickrfeed.js" />
+    <Content Include="Content\js\plugins\jquery.form.js" />
+    <Content Include="Content\js\plugins\jquery.important.js" />
+    <Content Include="Content\js\plugins\jquery.infinitescroll.js" />
+    <Content Include="Content\js\plugins\jquery.instagram.js" />
+    <Content Include="Content\js\plugins\jquery.isotope.js" />
+    <Content Include="Content\js\plugins\jquery.magnific.js" />
+    <Content Include="Content\js\plugins\jquery.owlcarousel.js" />
+    <Content Include="Content\js\plugins\jquery.pagetransition.js" />
+    <Content Include="Content\js\plugins\jquery.paginate.js" />
+    <Content Include="Content\js\plugins\jquery.parallax.js" />
+    <Content Include="Content\js\plugins\jquery.piechart.js" />
+    <Content Include="Content\js\plugins\jquery.superfish.js" />
+    <Content Include="Content\js\plugins\jquery.swiper.js" />
+    <Content Include="Content\js\plugins\jquery.tabs.js" />
+    <Content Include="Content\js\plugins\jquery.textrotator.js" />
+    <Content Include="Content\js\plugins\jquery.toastr.js" />
+    <Content Include="Content\js\plugins\jquery.twitterfeed.js" />
+    <Content Include="Content\js\plugins\jquery.validation.js" />
+    <Content Include="Content\js\plugins\jquery.youtube.js" />
+    <Content Include="Content\style-import.css" />
+    <Content Include="Content\style-rtl.css" />
+    <Content Include="Content\style.css">
+      <DependentUpon>style.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\style.min.css">
+      <DependentUpon>style.css</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -1731,24 +1838,65 @@
     <Content Include="Areas\Admin\Views\Order\CampaignDetail.cshtml" />
     <Content Include="Areas\Admin\Views\Order\UpdateCampaign.cshtml" />
     <Content Include="Content\images\referanslar\Thumbs.db" />
-    <Content Include="Content\fonts\et-line.eot" />
-    <Content Include="Content\fonts\et-line.ttf" />
-    <Content Include="Content\fonts\et-line.woff" />
-    <Content Include="Content\plugins\Icons\et-line-font\.DS_Store" />
-    <Content Include="Content\plugins\Icons\et-line-font\fonts\.DS_Store" />
-    <Content Include="Content\plugins\Icons\et-line-font\fonts\et-line.eot" />
-    <Content Include="Content\plugins\Icons\et-line-font\fonts\et-line.ttf" />
-    <Content Include="Content\plugins\Icons\et-line-font\fonts\et-line.woff" />
-    <Content Include="Content\plugins\inview\LICENSE" />
-    <Content Include="Content\plugins\Lightbox\dist\images\Thumbs.db" />
-    <Content Include="Content\plugins\Lightbox\dist\js\lightbox-plus-jquery.min.map" />
-    <Content Include="Content\plugins\Lightbox\dist\js\lightbox.min.map" />
-    <Content Include="Content\sass\main.scss" />
-    <Content Include="Content\sass\partials\_base.scss" />
-    <Content Include="Content\sass\partials\_buttons.scss" />
-    <Content Include="Content\sass\partials\_colors.scss" />
-    <Content Include="Content\sass\partials\_layout.scss" />
-    <Content Include="Content\sass\partials\_typography.scss" />
+    <Content Include="Content\css\colors-rtl.php" />
+    <Content Include="Content\css\colors.php" />
+    <Content Include="Content\style.scss" />
+    <Content Include="Content\css\fonts\font-icons-snapchat.eot" />
+    <Content Include="Content\css\fonts\font-icons-snapchat.ttf" />
+    <Content Include="Content\css\fonts\font-icons-snapchat.woff" />
+    <Content Include="Content\css\fonts\font-icons.eot" />
+    <Content Include="Content\css\fonts\font-icons.ttf" />
+    <Content Include="Content\css\fonts\font-icons.woff" />
+    <Content Include="Content\css\fonts\lined-icons.eot" />
+    <Content Include="Content\css\fonts\lined-icons.ttf" />
+    <Content Include="Content\css\fonts\lined-icons.woff" />
+    <Content Include="Content\css\fonts\Simple-Line-Icons.eot" />
+    <Content Include="Content\css\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="Content\css\fonts\Simple-Line-Icons.woff" />
+    <Content Include="Content\sass\blog.scss" />
+    <Content Include="Content\sass\content.scss" />
+    <Content Include="Content\sass\events.scss" />
+    <Content Include="Content\sass\extras.scss" />
+    <Content Include="Content\sass\footer.scss" />
+    <Content Include="Content\sass\header.scss" />
+    <Content Include="Content\sass\helpers.scss" />
+    <Content Include="Content\sass\layouts.scss" />
+    <Content Include="Content\sass\mixins.scss" />
+    <Content Include="Content\sass\pagetitle.scss" />
+    <Content Include="Content\sass\portfolio.scss" />
+    <Content Include="Content\sass\shop.scss" />
+    <Content Include="Content\sass\shortcodes.scss" />
+    <Content Include="Content\sass\shortcodes\alerts.scss" />
+    <Content Include="Content\sass\shortcodes\buttons.scss" />
+    <Content Include="Content\sass\shortcodes\carousel.scss" />
+    <Content Include="Content\sass\shortcodes\clients.scss" />
+    <Content Include="Content\sass\shortcodes\countdown.scss" />
+    <Content Include="Content\sass\shortcodes\counter-skills.scss" />
+    <Content Include="Content\sass\shortcodes\dividers.scss" />
+    <Content Include="Content\sass\shortcodes\faqs.scss" />
+    <Content Include="Content\sass\shortcodes\feature-box.scss" />
+    <Content Include="Content\sass\shortcodes\headings.scss" />
+    <Content Include="Content\sass\shortcodes\misc.scss" />
+    <Content Include="Content\sass\shortcodes\overlay.scss" />
+    <Content Include="Content\sass\shortcodes\pricing.scss" />
+    <Content Include="Content\sass\shortcodes\process-steps.scss" />
+    <Content Include="Content\sass\shortcodes\promo.scss" />
+    <Content Include="Content\sass\shortcodes\social-icons.scss" />
+    <Content Include="Content\sass\shortcodes\styled-icons.scss" />
+    <Content Include="Content\sass\shortcodes\tabs.scss" />
+    <Content Include="Content\sass\shortcodes\team.scss" />
+    <Content Include="Content\sass\shortcodes\testimonials.scss" />
+    <Content Include="Content\sass\shortcodes\toggles-accordions.scss" />
+    <Content Include="Content\sass\shortcodes\youtubebg.scss" />
+    <Content Include="Content\sass\sliders.scss" />
+    <Content Include="Content\sass\topbar.scss" />
+    <Content Include="Content\sass\typography.scss" />
+    <Content Include="Content\sass\variables.scss" />
+    <Content Include="Content\sass\widgets.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dx\css\dx.android5.light.css" />
     <Content Include="Scripts\dx\css\dx.common.css" />
@@ -1838,9 +1986,7 @@
     <Content Include="Scripts\require.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1856,17 +2002,17 @@
     <Content Include="service.config" />
     <Content Include="Views\Common\UserMenu.cshtml" />
     <Content Include="Views\Common\Footer.cshtml" />
+    <Content Include="Views\Home\JobDetail.cshtml" />
     <Content Include="Views\Home\QualityTranslation.cshtml" />
     <Content Include="Views\Home\SecurityAndPrivacy.cshtml" />
-    <Content Include="Views\Home\BillingInfo.cshtml" />
     <Content Include="Views\Home\ServiceAggrement.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\HowItWorks.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Career.cshtml" />
-    <Content Include="Views\Home\ApplyForAJob.cshtml" />
-    <Content Include="Views\Home\JobDetail.cshtml" />
     <Content Include="Views\Home\Translation.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\ApplyForAJob.cshtml" />
+    <Content Include="Views\Home\BillingInfo.cshtml" />
+    <Content Include="Views\Home\Career.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\HowItWorks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Web.Business\Web.Business.csproj">
@@ -1885,8 +2031,8 @@
   <ItemGroup>
     <Content Include="App_GlobalResources\CDResource.en.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>CDResource.en.designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources</CustomToolNamespace>
-      <LastGenOutput>CDResource.en1.designer.cs</LastGenOutput>
     </Content>
     <Content Include="App_GlobalResources\CDResource.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
