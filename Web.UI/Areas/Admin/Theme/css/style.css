@@ -620,7 +620,8 @@ ul.side-nav.leftside-navigation li.active {
 ul.side-nav.leftside-navigation li a {
   font-size: 14px;
   font-weight: 400;
-  display:inline-table
+    display: inline-table;
+        width: 100%; 
 }
 
 ul.side-nav.leftside-navigation li.user-details {

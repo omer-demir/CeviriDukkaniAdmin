@@ -1,7 +1,8 @@
-﻿@model Tangent.CeviriDukkani.Domain.Dto.Sale.CampaignItemDto
+﻿@using Resources;
+@model Tangent.CeviriDukkani.Domain.Dto.Sale.CampaignItemDto
 
 @{
-    ViewBag.Title = "Kampanya Güncelleme";
+    ViewBag.Title = CDResource.KampanyaGuncelleme;
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -15,12 +16,12 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 m12 l12">
-                    <h5 class="breadcrumbs-title">Kampanya Güncelleme</h5>
+                    <h5 class="breadcrumbs-title">@CDResource.KampanyaGuncelleme</h5>
                     <ol class="breadcrumbs">
                         <li>
-                            <a href="/Admin/Home">Anasayfa</a>
+                            <a href="/Admin/Home">@CDResource.Anasayfa</a>
                         </li>
-                        <li class="active">Kampanya Güncelleme</li>
+                        <li class="active">@CDResource.KampanyaGuncelleme</li>
                     </ol>
                 </div>
             </div>
@@ -38,31 +39,31 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <input placeholder="Kod" id="code" type="text" name="Code" value="@Model.Code">
-                        <label for="code" class="active">Kod</label>
+                        <label for="code" class="active">@CDResource.Kod</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <textarea placeholder="Açıklama" id="description" class="materialize-textarea" name="Description" value="@Model.Description"></textarea>
-                        <label for="description" class="active">Açıklama</label>
+                        <label for="description" class="active">@CDResource.Aciklama</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <input placeholder="İndirim" id="discount" type="text" name="DiscountRate" value="@Model.DiscountRate">
-                        <label for="discount" class="active">İndirim Oranı</label>
+                        <label for="discount" class="active">@CDResource.IndirimOrani</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <input placeholder="Başlangıç Zamanı" id="startTime" type="text" class="datepicker" name="StartTime" value="@Model.StartTime">
-                        <label for="startTime" class="active">Başlangıç Tarihi</label>
+                        <label for="startTime" class="active">@CDResource.BaslangicTarihi</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <input placeholder="Bitiş Zamanı" id="endTime" type="text" class="datepicker" name="EndTime" value="@Model.EndTime">
-                        <label for="endTime" class="active">Bitiş Tarihi</label>
+                        <label for="endTime" class="active">@CDResource.BitisTarihi</label>
                     </div>
                 </div>
                 <div class="row">
@@ -71,13 +72,13 @@
                             var durum = Model.Used ? "checked=\"checked\"" : "";
                         }
                         <input type="checkbox" id="isUsed" @durum>
-                        <label for="isUsed">Kullanılma Durumu</label>
+                        <label for="isUsed">@CDResource.KullanilmaDurumu</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <a class="btn cyan waves-effect waves-light right" id="action">
-                            Güncelle
+                            @CDResource.Guncelle
                             <i class="mdi-content-send right"></i>
                         </a>
                     </div>

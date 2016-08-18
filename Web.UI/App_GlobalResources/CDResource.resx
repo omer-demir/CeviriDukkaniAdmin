@@ -585,4 +585,292 @@
   <data name="YetkiliEmail" xml:space="preserve">
     <value>Yetkili E-Mail</value>
   </data>
+  <data name="Aciklama" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
+  <data name="AdSoyad" xml:space="preserve">
+    <value>Ad-Soyad</value>
+  </data>
+  <data name="BaslangicTarihi" xml:space="preserve">
+    <value>Başlangıç Tarihi</value>
+  </data>
+  <data name="BeklemediSiparisler" xml:space="preserve">
+    <value>Beklemedeki Siparişler</value>
+  </data>
+  <data name="BitisTarihi" xml:space="preserve">
+    <value>Bitiş Tarihi</value>
+  </data>
+  <data name="BosluklarDahil" xml:space="preserve">
+    <value>Boşluklar Dahil</value>
+  </data>
+  <data name="CepTel" xml:space="preserve">
+    <value>Cep Tel.</value>
+  </data>
+  <data name="CevapBekleyenSiparisler" xml:space="preserve">
+    <value>Cevap Bekleyen Siparişler</value>
+  </data>
+  <data name="CeviriBilgileri" xml:space="preserve">
+    <value>Çeviri Bilgileri</value>
+  </data>
+  <data name="CeviriIslemi" xml:space="preserve">
+    <value>Çeviri İşlemi</value>
+  </data>
+  <data name="CeviriIslemListesi" xml:space="preserve">
+    <value>Çeviri İşlem Listesi</value>
+  </data>
+  <data name="CeviriKaynakDili" xml:space="preserve">
+    <value>Çeviri Kaynak Dili</value>
+  </data>
+  <data name="CevirilecekDiller" xml:space="preserve">
+    <value>Çevirilicek Diller</value>
+  </data>
+  <data name="Cevirmen" xml:space="preserve">
+    <value>Çevirmen</value>
+  </data>
+  <data name="CevirmenFiyat" xml:space="preserve">
+    <value>Çevirmen Fiyat</value>
+  </data>
+  <data name="DetayBilgileri" xml:space="preserve">
+    <value>Detay Bilgileri</value>
+  </data>
+  <data name="DokumanEklemekIcinKullanilir" xml:space="preserve">
+    <value>Doküman eklemek için kullanılır.</value>
+  </data>
+  <data name="DokumanGecmisi" xml:space="preserve">
+    <value>Döküman Geçmişi</value>
+  </data>
+  <data name="DokumanIsmi" xml:space="preserve">
+    <value>Doküman ismi</value>
+  </data>
+  <data name="DokumanListesi" xml:space="preserve">
+    <value>DökümanListesi</value>
+  </data>
+  <data name="EditIslemi" xml:space="preserve">
+    <value>Edit İşlemi</value>
+  </data>
+  <data name="Editor" xml:space="preserve">
+    <value>Editör</value>
+  </data>
+  <data name="EditorFiyat" xml:space="preserve">
+    <value>Editör Fiyat</value>
+  </data>
+  <data name="Firma" xml:space="preserve">
+    <value>Firma</value>
+  </data>
+  <data name="FiyatBilgileri" xml:space="preserve">
+    <value>Fiyat Bilgileri</value>
+  </data>
+  <data name="Guncelle" xml:space="preserve">
+    <value>Güncelle</value>
+  </data>
+  <data name="HataOlustu" xml:space="preserve">
+    <value>Hata Oluştu</value>
+  </data>
+  <data name="HesaplananFiyat" xml:space="preserve">
+    <value>Hesaplanan Fiyat</value>
+  </data>
+  <data name="Icerik" xml:space="preserve">
+    <value>İçerik</value>
+  </data>
+  <data name="IlerlemeDurumu" xml:space="preserve">
+    <value>İlerleme Durumu</value>
+  </data>
+  <data name="IndirimOrani" xml:space="preserve">
+    <value>İndirim Oranı</value>
+  </data>
+  <data name="Iptal" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="IptalEtmekIstediğinizeEminmisiniz" xml:space="preserve">
+    <value>İptal etmek istediğinize emin misiniz?</value>
+  </data>
+  <data name="IslemDurumu" xml:space="preserve">
+    <value>İşlem Durumu</value>
+  </data>
+  <data name="KampanyaBilgileri" xml:space="preserve">
+    <value>Kampanya Bilgileri</value>
+  </data>
+  <data name="KampanyaDetay" xml:space="preserve">
+    <value>Kampanya Detay</value>
+  </data>
+  <data name="KampanyaGuncelleme" xml:space="preserve">
+    <value>Kampanya Güncelleme</value>
+  </data>
+  <data name="KampanyaListesi" xml:space="preserve">
+    <value>Kampanya Listesi</value>
+  </data>
+  <data name="KarakterSayisi" xml:space="preserve">
+    <value>Karakter Sayısı</value>
+  </data>
+  <data name="Kod" xml:space="preserve">
+    <value>Kod</value>
+  </data>
+  <data name="KullanilmaDurumu" xml:space="preserve">
+    <value>Kullanılma Durumu</value>
+  </data>
+  <data name="MusteriBilgileri" xml:space="preserve">
+    <value>Müşteri Bilgileri</value>
+  </data>
+  <data name="ProofReader" xml:space="preserve">
+    <value>Proof Reader</value>
+  </data>
+  <data name="ProofReaderFiyat" xml:space="preserve">
+    <value>Proof Reader Fiyat</value>
+  </data>
+  <data name="ProofReaderIslemi" xml:space="preserve">
+    <value>Proof Reader İşlemi</value>
+  </data>
+  <data name="ProofReadingIslemListesi" xml:space="preserve">
+    <value>Proof Reading İşlem Listesi</value>
+  </data>
+  <data name="SayfaSayisi" xml:space="preserve">
+    <value>Sayfa Sayısı</value>
+  </data>
+  <data name="SeciliCeviriKalitesi" xml:space="preserve">
+    <value>Seçili Çeviri Kalitesi</value>
+  </data>
+  <data name="SeciliTerminoloji" xml:space="preserve">
+    <value>Seçili Terminoloji</value>
+  </data>
+  <data name="SiparisDetay" xml:space="preserve">
+    <value>Sipariş Detay</value>
+  </data>
+  <data name="SiparisDurumu" xml:space="preserve">
+    <value>Sipariş Durumu</value>
+  </data>
+  <data name="SiparisListesi" xml:space="preserve">
+    <value>Sipariş Listesi</value>
+  </data>
+  <data name="TarayicinizBuIcerigiGostermiyor" xml:space="preserve">
+    <value>Tarayıcınız bu içeriği gösteremiyor</value>
+  </data>
+  <data name="TerminolojiDokumanininBoyutuTanimlanandanYuksektir" xml:space="preserve">
+    <value>Terminoloji dökümanını boyutu tanımlanandan yüksektir</value>
+  </data>
+  <data name="TerminolojiDokumaniniSil" xml:space="preserve">
+    <value>Terminoloji Dökümanını Sil</value>
+  </data>
+  <data name="TerminolojiDokumaniniYuklemekIcinTıklayinYadaDosyayiSurukleyipBirakin" xml:space="preserve">
+    <value>Terminoloji dökümanını yüklemek için tıklayın ya da dosyayı sürükleyip bırakın</value>
+  </data>
+  <data name="ToplamYuklenebilirDosyaBoyutunuAstiniz" xml:space="preserve">
+    <value>Toplam yüklenebilir dosua boyutunu aştınız</value>
+  </data>
+  <data name="UyelikTuru" xml:space="preserve">
+    <value>Üyelik Türü</value>
+  </data>
+  <data name="UygulananKampanyaAciklamasi" xml:space="preserve">
+    <value>Uygulanan Kampanya Açıklaması</value>
+  </data>
+  <data name="UygulananKampanyaIndirimYuzdesi" xml:space="preserve">
+    <value>Uygulanan Kampanya İndirim Yüzdesi</value>
+  </data>
+  <data name="UygulananKampanyaKodu" xml:space="preserve">
+    <value>Uygulanan Kampanya Kodu</value>
+  </data>
+  <data name="UyumsuzDosyaTipi" xml:space="preserve">
+    <value>Uyumsuz dosya tipi</value>
+  </data>
+  <data name="VergiOrani" xml:space="preserve">
+    <value>Vergi Oranı</value>
+  </data>
+  <data name="YorumEkle" xml:space="preserve">
+    <value>Yorum Ekle</value>
+  </data>
+  <data name="YorumlariGoster" xml:space="preserve">
+    <value>Yorumları Göster</value>
+  </data>
+  <data name="YuklemeyiIptalEt" xml:space="preserve">
+    <value>Yüklemeyi iptal et</value>
+  </data>
+  <data name="Aksiyon" xml:space="preserve">
+    <value>Aksiyon</value>
+  </data>
+  <data name="Bilgi" xml:space="preserve">
+    <value>Bilgi</value>
+  </data>
+  <data name="DilAdiAlaniBosOlamaz" xml:space="preserve">
+    <value>Dil adı alanı boş olamaz.</value>
+  </data>
+  <data name="DilAdiAlaniHerKayitIcinTekOlmalidir" xml:space="preserve">
+    <value>Dil adı alanı her kayıt için tek olmalıdır.</value>
+  </data>
+  <data name="DilHedefListesindenCikartilacaktir" xml:space="preserve">
+    <value>Dil hedef listesinden çıkartılacaktır.</value>
+  </data>
+  <data name="DilHedefListesindenCikartildi" xml:space="preserve">
+    <value>Dil hedef listesinden çıkartıldı.</value>
+  </data>
+  <data name="DilHedefListesineEklendi" xml:space="preserve">
+    <value>Dil hedef listesine eklendi.</value>
+  </data>
+  <data name="DilHedefListesineEklenecektir" xml:space="preserve">
+    <value>Dil hedef listesine eklenecektir.</value>
+  </data>
+  <data name="DosyaAdi" xml:space="preserve">
+    <value>Dosya Adı</value>
+  </data>
+  <data name="Duzenle" xml:space="preserve">
+    <value>Düzenle</value>
+  </data>
+  <data name="Eklendi" xml:space="preserve">
+    <value>Eklendi.</value>
+  </data>
+  <data name="EklenmeTarihi" xml:space="preserve">
+    <value>Eklenme Tarihi</value>
+  </data>
+  <data name="Ekleyen" xml:space="preserve">
+    <value>Ekleyen</value>
+  </data>
+  <data name="Evet" xml:space="preserve">
+    <value>Evet</value>
+  </data>
+  <data name="Hata" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="Hayir" xml:space="preserve">
+    <value>Hayır</value>
+  </data>
+  <data name="HedefListesindenCikarmakIstediginizeEminmisiniz" xml:space="preserve">
+    <value>Hedef listesinden çıkarmak istediğinize emin misiniz ?</value>
+  </data>
+  <data name="HedefListesineEklemekIstediginizeEminmisiniz" xml:space="preserve">
+    <value>Hedef listesine eklemek istediğinize emin misiniz ?</value>
+  </data>
+  <data name="IndirmekIcinTiklayin" xml:space="preserve">
+    <value>İndirmek için tıklayın</value>
+  </data>
+  <data name="KayitBasarili" xml:space="preserve">
+    <value>Kayıt Başarılı.</value>
+  </data>
+  <data name="MesajinizGonderildi" xml:space="preserve">
+    <value>Mesajınız gönderildi</value>
+  </data>
+  <data name="MusteriBilgileriniDuzenle" xml:space="preserve">
+    <value>Müşteri bilgilerini düzenle</value>
+  </data>
+  <data name="Silindi" xml:space="preserve">
+    <value>Silindi.</value>
+  </data>
+  <data name="SirketBilgileriniDuzenle" xml:space="preserve">
+    <value>Şirket bilgilerini düzenle</value>
+  </data>
+  <data name="SirketUyeleriniGoruntule" xml:space="preserve">
+    <value>Şirket üyelerini görüntüle</value>
+  </data>
+  <data name="TerminolojiBasariylaSilindi" xml:space="preserve">
+    <value>Terminoloji başarıyla silindi.</value>
+  </data>
+  <data name="TerminolojiSil" xml:space="preserve">
+    <value>Terminoloji sil</value>
+  </data>
+  <data name="TerminolojiSilinirkenHataOlustu" xml:space="preserve">
+    <value>Terminoloji silinirken bir hata oluştu.</value>
+  </data>
+  <data name="TerminolojiyiSilmekIstediginizeEminmisiniz" xml:space="preserve">
+    <value>Terminolojiyi silmek istediğinize emin misiniz?</value>
+  </data>
+  <data name="Uyari" xml:space="preserve">
+    <value>UYARI</value>
+  </data>
 </root>

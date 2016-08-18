@@ -1,10 +1,13 @@
 ﻿require(['../../common'], function (common) {
-    require(['dropzone'], function () {
+    require(['utility', 'dropzone'], function (utility) {
         $(function () {
 
             //variables
             var fileName;
+            var resources = null;
+            var utilityObj = new utility();
             //private funcs
+            
             var addCompanyTerminology = function (companyTerminologyDto) {
                 return $.ajax({
                     url: '/api/v1/commonapi/addCompanyTerminology',
@@ -20,9 +23,8 @@
                             required: true,
                             minlength: 5
                         },
-                        company: 'required',
+                        company: 'required'
                     },
-                    //For custom messages
                     messages: {
                         name: {
                             required: "Enter a terminology name",
@@ -48,21 +50,40 @@
                     maxFiles: 1,
                     maxFilesize: 5,
                     //acceptedFiles: 'image/*,.avi,.mp4',
-                    dictDefaultMessage: 'Terminoloji dökümanını yüklemek için tıklayın ya da dosyayı sürükleyip bırakın',
-                    dictFallbackMessage: 'Tarayıcınız bu içeriği gösteremiyor',
+                    dictDefaultMessage: resources.terminolojiDokumaniniYuklemekIcinTıklayinYadaDosyayiSurukleyipBirakin,
+                    dictFallbackMessage: resources.tarayicinizBuIcerigiGostermiyor,
                     dictFallbackText: '',
-                    dictInvalidFileType: 'Uyumsuz dosya tipi',
-                    dictFileTooBig: 'Terminoloji dökümanını boyutu tanımlanandan yüksektir',
-                    dictResponseError: 'Hata oluştu',
-                    dictCancelUpload: 'Yüklemeyi iptal et',
-                    dictCancelUploadConfirmation: 'İptal etmek istediğinize emin misiniz?',
-                    dictRemoveFile: 'Terminoloji dökümanını sil',
-                    dictMaxFilesExceeded: 'Toplam yüklenebilir dosya sayısını aştınız'
+                    dictInvalidFileType: resources.uyumsuzDosyaTipi,
+                    dictFileTooBig: resources.terminolojiDokumanininBoyutuTanimlanandanYuksektir,
+                    dictResponseError: resources.hataOlustu,
+                    dictCancelUpload: resources.yuklemeyiIptalEt,
+                    dictCancelUploadConfirmation: resources.iptalEtmekIstediğinizeEminmisiniz,
+                    dictRemoveFile: resources.terminolojiDokumaniniSil,
+                    dictMaxFilesExceeded: resources.toplamYuklenebilirDosyaBoyutunuAstiniz
                 });
                 myDropzone.on('success', function (evt, serverResp) {
                     fileName = serverResp;
                 });
             };
+            var getResources = function () {
+                var keyList = [
+                    'TerminolojiDokumaniniYuklemekIcinTıklayinYadaDosyayiSurukleyipBirakin',
+                    'TarayicinizBuIcerigiGostermiyor',
+                    'UyumsuzDosyaTipi',
+                    'TerminolojiDokumanininBoyutuTanimlanandanYuksektir',
+                    'HataOlustu',
+                    'YuklemeyiIptalEt',
+                    'IptalEtmekIstediğinizeEminmisiniz',
+                    'TerminolojiDokumaniniSil',
+                    'ToplamYuklenebilirDosyaBoyutunuAstiniz'
+                ];
+                var resourceName = 'companyTerminologyCreate';
+                $.when(utilityObj.initResources(keyList, resourceName)).then(function () {
+                    resources = JSON.parse(localStorage.getItem(resourceName));
+                    initPage();
+                });
+            };
+
             //events
             $('#btnSave').click(function () {
                 if ($("#formValidate").valid()) {
@@ -78,9 +99,7 @@
                 }
             });
 
-            initPage();
-
-
+            getResources();
         });
     });
 });

@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "Doküman Ekle";
+﻿@using Resources;
+@{
+    ViewBag.Title = CDResource.DokumanEkle;
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -14,15 +15,15 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 m12 l12">
-                    <h5 class="breadcrumbs-title">Doküman Ekle</h5>
+                    <h5 class="breadcrumbs-title">@CDResource.DokumanEkle</h5>
                     <ol class="breadcrumbs">
                         <li>
-                            <a href="@Url.Action("Index", "Home")">Anasayfa</a>
+                            <a href="@Url.Action("Index", "Home")">@CDResource.Anasayfa</a>
                         </li>
                         <li>
-                            <a href="@Url.Action("Index", "Document")">Doküman Listesi</a>
+                            <a href="@Url.Action("Index", "Document")">@CDResource.DokumanListesi</a>
                         </li>
-                        <li class="active">Doküman Ekle</li>
+                        <li class="active">@CDResource.Anasayfa</li>
                     </ol>
                 </div>
             </div>
@@ -31,14 +32,14 @@
 }
 
 <div class="section">
-    <p class="caption">Doküman eklemek için kullanılır.</p>
+    <p class="caption">@CDResource.DokumanEklemekIcinKullanilir</p>
     <div class="divider"></div>
 
     <div id="basic-form" class="section">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="card-panel">
-                    <h4 class="header2">Doküman Ekle</h4>
+                    <h4 class="header2">@CDResource.Anasayfa</h4>
                     <div class="row">
                         <form class="formValidate" id="formValidate" method="post" enctype="multipart/form-data">
                             <div class="row">
@@ -47,28 +48,28 @@
                                 </div>
 
                                 <div class="input-field col s12">
-                                    <label for="txtName" class="active">Doküman ismi</label>
+                                    <label for="txtName" class="active">@CDResource.DokumanIsmi</label>
                                     <input id="txtName" name="Name" type="text" data-error=".errorTxt2">
                                 </div>
 
                                 <div class="input-field col s12">
-                                    <label for="txtPageCount" class="active">Sayfa Sayısı </label>
+                                    <label for="txtPageCount" class="active">@CDResource.SayfaSayisi </label>
                                     <input id="txtPageCount" type="text" data-error=".errorTxt3" readonly="readonly">
                                 </div>
 
                                 <div class="input-field col s12">
-                                    <label for="txtCharCount" class="active">Karakter Sayısı</label>
+                                    <label for="txtCharCount" class="active">@CDResource.KarakterSayisi</label>
                                     <input id="txtCharCount" type="text" name="mobile-phone" readonly="readonly">
                                 </div>
 
                                 <div class="input-field col s12">
-                                    <label for="txtCharCountWithSpaces" class="active">Karakter Sayısı ( Boşluklar Dahil )</label>
+                                    <label for="txtCharCountWithSpaces" class="active">@CDResource.KarakterSayisi ( @CDResource.BosluklarDahil )</label>
                                     <input id="txtCharCountWithSpaces" type="text" name="mobile-phone" readonly="readonly">
                                 </div>
 
                                 <div class="input-field col s12">
                                     <button id="btnSave" class="btn waves-effect waves-light right submit" type="button">
-                                        Kaydet
+                                        @CDResource.Kaydet
                                         <i class="mdi-content-send right"></i>
                                     </button>
                                 </div>

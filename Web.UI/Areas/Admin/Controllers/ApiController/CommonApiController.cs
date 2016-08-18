@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Resources;
 using Tangent.CeviriDukkani.Domain.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Request;
@@ -21,6 +23,19 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
         public CommonApiController(ICommonService commonService)
         {
             _commonService = commonService;
+        }
+
+        [Route("getResources"), HttpPost]
+        public HttpResponseMessage GetResources(List<string> resourceKeyList)
+        {
+            var resp = new HttpResponseMessage(HttpStatusCode.OK);
+
+            var returnList = new Dictionary<string, string>();
+
+            resourceKeyList.ForEach(a => returnList.Add(a, CDResource.ResourceManager.GetString(a)));
+
+            resp.Content = new ObjectContent(returnList.GetType(), returnList, Formatter);
+            return resp;
         }
 
         [Route("changePassword"), HttpPost]
@@ -339,7 +354,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
                 response.StatusCode = HttpStatusCode.InternalServerError;
                 return response;
             }
-            
+
             response.StatusCode = HttpStatusCode.OK;
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;

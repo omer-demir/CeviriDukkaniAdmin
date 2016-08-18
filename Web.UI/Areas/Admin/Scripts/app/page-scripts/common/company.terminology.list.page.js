@@ -8,6 +8,7 @@
                     var utilityObj = new utility();
                     var dataGrid;
                     var companies;
+                    var resources = null;
                     //private funcs
                     var getCompanyTerminologies = function () {
                         return $.ajax({
@@ -22,13 +23,13 @@
                     };
                     var deleteCompanyTerminology = function (companyTerminologyId) {
                         swal({
-                            title: 'UYARI',
-                            text: 'Terminolojiyi silmek istediğinize emin misiniz?',
+                            title: resources.uyari,
+                            text: resources.terminolojiyiSilmekIstediginizeEminmisiniz,
                             type: "warning",
                             showCancelButton: true,
                             confirmButtonColor: "#DD6B55",
-                            confirmButtonText: "Evet",
-                            cancelButtonText: "Hayır",
+                            confirmButtonText: resources.evet,
+                            cancelButtonText: resources.hayir,
                             closeOnConfirm: false,
                             closeOnCancel: true
                         },
@@ -37,16 +38,14 @@
                                  $.ajax({
                                      url: '/api/v1/commonapi/deleteCompanyTerminology?id=' + companyTerminologyId
                                  }).success(function (data) {
-                                     swal('Bilgi', 'Terminoloji başarıyla silindi.', "success");
+                                     swal(resources.bilgi, resources.terminolojiBasariylaSilindi, "success");
                                      window.location.href = '/Admin/Common/CompanyTerminologies';
                                  }).fail(function () {
-                                     swal('Hata', 'Terminoloji silinirken bir hata oluştu.', "error");
+                                     swal(resources.hata, resources.terminolojiSilinirkenHataOlustu, "error");
                                  });
-                                 //swal('Bilgi', 'Terminoloji başarıyla silindi.', "success");
-
                              }
                          });
-                        
+
                     };
                     var setCompanies = function () {
                         getCompanies()
@@ -83,14 +82,14 @@
                                         },
                                         {
                                             dataField: 'companyId',
-                                            caption: 'Şirket Adı',
+                                            caption: resources.sirketAdi,
                                             lookup: { dataSource: companies, valueExpr: 'id', displayExpr: 'name' }
                                         }, {
                                             dataField: 'name',
-                                            caption: 'Dosya Adı',
+                                            caption: resources.dosyaAdi,
                                             cellTemplate: function (container, cellInfo) {
                                                 var actions =
-                                                    '<a class="custom-link" href="{fileUrl}" title="İndirmek için tıklayın">{fileName}</a>';
+                                                    '<a class="custom-link" href="{fileUrl}" title="' + resources.indirmekIcinTiklayin + '">{fileName}</a>';
                                                 $(actions
                                                         .supplant({
                                                             fileUrl: cellInfo.data.fileUrl.replace('~', ''),
@@ -100,18 +99,18 @@
                                             }
                                         }, {
                                             dataField: 'createdBy',
-                                            caption: 'Ekleyen'
+                                            caption: resources.ekleyen
                                         }, {
                                             dataField: 'createdAt',
-                                            caption: 'Eklenme Tarihi'
+                                            caption: resources.eklenmeTarihi
                                         }
                                         , {
                                             dataField: 'id',
-                                            caption: 'Aksiyon',
+                                            caption: resources.aksiyon,
                                             alignment: 'left',
                                             cellTemplate: function (container, cellInfo) {
-                                                var actions = '<a class="custom-link deleteTerminology" href="javascript:void(0);" data-id="{id}" title="Terminoloji sil"><i class="mdi-action-delete"></i></a>';
-                                                $(actions.supplant({ id: cellInfo.value })).appendTo(container);
+                                                var actions = '<a class="custom-link deleteTerminology" href="javascript:void(0);" data-id="{id}" title="{title}"><i class="mdi-action-delete"></i></a>';
+                                                $(actions.supplant({ id: cellInfo.value, title: resources.terminolojiSil })).appendTo(container);
                                             }
                                         }
                                     ],
@@ -128,14 +127,37 @@
                                 dataGrid = $('#terminologyListGrid').dxDataGrid('instance');
                             });
                     };
-
+                    var getResources = function () {
+                        var keyList = [
+                            'TerminolojiyiSilmekIstediginizeEminmisiniz',
+                            'Uyari',
+                            'Evet',
+                            'Hayir',
+                            'Bilgi',
+                            'TerminolojiBasariylaSilindi',
+                            'TerminolojiSilinirkenHataOlustu',
+                            'DosyaAdi',
+                            'IndirmekIcinTiklayin',
+                            'Ekleyen',
+                            'EklenmeTarihi',
+                            'Aksiyon',
+                            'TerminolojiSil',
+                            'Hata',
+                            'SirketAdi'
+                        ];
+                        var resourceName = 'companyTerminologyCreateList';
+                        $.when(utilityObj.initResources(keyList, resourceName)).then(function () {
+                            resources = JSON.parse(localStorage.getItem(resourceName));
+                            initPage();
+                        });
+                    };
                     //events
                     $(document).on('click', 'a.deleteTerminology', function () {
                         var terminologyId = $(this).attr('data-id');
                         deleteCompanyTerminology(terminologyId);
                     });
 
-                    initPage();
+                    getResources();
                 });
             });
     });

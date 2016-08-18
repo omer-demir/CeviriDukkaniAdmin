@@ -10,6 +10,7 @@
                     var dataGrid;
                     var languages;
                     var editLang;
+                    var resources = null;
                     //private funcs
                     var getLanguages = function () {
                         return $.ajax({
@@ -57,15 +58,15 @@
                                         },
                                         {
                                             dataField: 'name',
-                                            caption: 'Adı',
+                                            caption: resources.adi,
                                             validationRules: [
                                             {
                                                 type: 'required',
-                                                message: 'Dil adı alanı boş olamaz.'
+                                                message: resources.dilAdiAlaniBosOlamaz
                                             },
                                             {
                                                 type: 'custom',
-                                                message: 'Dil adı alanı her kayıt için tek olmalıdır.',
+                                                message: resources.dilAdiAlaniHerKayitIcinTekOlmalidir,
                                                 validationCallback: function (o) {
                                                     if (_.filter(languages, function (item) { return item !== editLang && item.name.toLocaleLowerCase() === o.value.toLocaleLowerCase() }).length > 0) {
                                                         return false;
@@ -77,12 +78,12 @@
                                     ],
                                     onRowInserted: function (e) {
                                         addLanguage(e.data).success(function (language) {
-                                            Materialize.toast('Kayıt başarılı.', 3000);
+                                            Materialize.toast(resources.kayitBasarili, 3000);
                                         });
                                     },
                                     onRowUpdated: function (e) {
                                         editLanguage(e.key).success(function (language) {
-                                            Materialize.toast('Kayıt başarılı.', 3000);
+                                            Materialize.toast(resources.kayitBasarili, 3000);
                                         });
                                     },
                                     onEditingStart: function (info) {
@@ -92,9 +93,9 @@
                                         insertEnabled: true,
                                         editEnabled: true,
                                         texts: {
-                                            editRow: 'Düzenle',
-                                            saveRowChanges: 'Kaydet',
-                                            cancelRowChanges: 'İptal'
+                                            editRow: resources.duzenle,
+                                            saveRowChanges: resources.kaydet,
+                                            cancelRowChanges: resources.iptal
                                         }
                                     }
                                 }, utilityObj.baseGridOptions);
@@ -104,8 +105,23 @@
                                 dataGrid = $('#languageListGrid').dxDataGrid('instance');
                             });
                     };
-
-                    initPage();
+                    var getResources = function () {
+                        var keyList = [
+                            'Adi',
+                            'DilAdiAlaniBosOlamaz',
+                            'DilAdiAlaniHerKayitIcinTekOlmalidir',
+                            'KayitBasarili',
+                            'Duzenle',
+                            'Kaydet',
+                            'Iptal'
+                        ];
+                        var resourceName = 'languageManage';
+                        $.when(utilityObj.initResources(keyList, resourceName)).then(function () {
+                            resources = JSON.parse(localStorage.getItem(resourceName));
+                            initPage();
+                        });
+                    };
+                    getResources();
                 });
             });
     });

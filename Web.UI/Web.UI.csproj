@@ -165,6 +165,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CDResource.en.resx</DependentUpon>
     </Compile>
+    <Compile Include="App_GlobalResources\CDResource.en1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CDResource.en.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -1833,7 +1838,9 @@
     <Content Include="Scripts\require.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1849,6 +1856,17 @@
     <Content Include="service.config" />
     <Content Include="Views\Common\UserMenu.cshtml" />
     <Content Include="Views\Common\Footer.cshtml" />
+    <Content Include="Views\Home\QualityTranslation.cshtml" />
+    <Content Include="Views\Home\SecurityAndPrivacy.cshtml" />
+    <Content Include="Views\Home\BillingInfo.cshtml" />
+    <Content Include="Views\Home\ServiceAggrement.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\HowItWorks.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Career.cshtml" />
+    <Content Include="Views\Home\ApplyForAJob.cshtml" />
+    <Content Include="Views\Home\JobDetail.cshtml" />
+    <Content Include="Views\Home\Translation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Web.Business\Web.Business.csproj">
@@ -1867,8 +1885,8 @@
   <ItemGroup>
     <Content Include="App_GlobalResources\CDResource.en.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>CDResource.en.designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources</CustomToolNamespace>
+      <LastGenOutput>CDResource.en1.designer.cs</LastGenOutput>
     </Content>
     <Content Include="App_GlobalResources\CDResource.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>

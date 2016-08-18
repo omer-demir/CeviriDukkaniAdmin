@@ -8,6 +8,7 @@
                     //variables
                     var utilityObj = new utility();
                     var dataGrid;
+                    var resources = null;
 
                     //private funcs
                     var getTerminologies = function () {
@@ -56,27 +57,27 @@
                                         },
                                         {
                                             dataField: 'name',
-                                            caption: 'Adı'
+                                            caption: resources.adi
                                         }
                                     ],
                                     onRowInserted: function (e) {
                                         addTerminology(e.data).success(function (terminology) {
                                             //initPage();
-                                            Materialize.toast('Kayıt başarılı.', 3000);
+                                            Materialize.toast(resources.kayitBasarili, 3000);
                                         });
                                     },
                                     onRowUpdated: function (e) {
                                         editTerminology(e.key).success(function (terminology) {
-                                            Materialize.toast('Kayıt başarılı.', 3000);
+                                            Materialize.toast(resources.kayitBasarili, 3000);
                                         });
                                     }
                                     , editing: {
                                         insertEnabled: true,
                                         editEnabled: true,
                                         texts: {
-                                            editRow: 'Düzenle',
-                                            saveRowChanges: 'Kaydet',
-                                            cancelRowChanges: 'İptal'
+                                            editRow: resources.duzenle,
+                                            saveRowChanges: resources.kaydet,
+                                            cancelRowChanges: resources.iptal
                                         }
                                     }
                                 }, utilityObj.baseGridOptions);
@@ -87,7 +88,21 @@
                             });
                     };
 
-                    initPage();
+                    var getResources = function () {
+                        var keyList = [
+                            'Adi',
+                            'KayitBasarili',
+                            'Duzenle',
+                            'Kaydet',
+                            'Iptal'
+                        ];
+                        var resourceName = 'terminologyManage';
+                        $.when(utilityObj.initResources(keyList, resourceName)).then(function () {
+                            resources = JSON.parse(localStorage.getItem(resourceName));
+                            initPage();
+                        });
+                    };
+                    getResources();
                 });
             });
     });

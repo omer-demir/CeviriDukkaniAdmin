@@ -103,6 +103,28 @@
             var block = $(element).parent();
             $(block).unblock();
         };
+        utility.prototype.getResources = function (keyList) {
+            if (!keyList) {
+                throw new Error('No key or keys defined');
+            }
+            var promise = $.ajax({
+                url: '/api/v1/commonapi/getResources',
+                data: JSON.stringify(keyList),
+                contentType: 'application/json',
+                type: 'POST',
+                async: false
+            });
 
+            return promise;
+        };
+        utility.prototype.initResources = function (keyList, resourceName) {
+            localStorage.clear();//TODO: Güncellemelerin yansıması için şimdilik kalsın.
+            var tempResources = localStorage.getItem(resourceName);
+            if (tempResources == null) {
+                this.getResources(keyList).then(function (data) {
+                    localStorage.setItem(resourceName, JSON.stringify(data));
+                });
+            }
+        }
         return utility;
     });

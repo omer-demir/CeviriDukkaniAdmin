@@ -1,7 +1,8 @@
-﻿@model Tangent.CeviriDukkani.Domain.Dto.Sale.OrderDto
+﻿@using Resources;
+@model Tangent.CeviriDukkani.Domain.Dto.Sale.OrderDto
 
 @{
-    ViewBag.Title = "Sipariş Detay";
+    ViewBag.Title = CDResource.SiparisDetay;
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -15,12 +16,12 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 m12 l12">
-                    <h5 class="breadcrumbs-title">Sipariş Detay</h5>
+                    <h5 class="breadcrumbs-title">@CDResource.SiparisDetay</h5>
                     <ol class="breadcrumbs">
                         <li>
-                            <a href="/Admin/Home">Anasayfa</a>
+                            <a href="/Admin/Home">@CDResource.Anasayfa</a>
                         </li>
-                        <li class="active">Sipariş Detay</li>
+                        <li class="active">@CDResource.SiparisDetay</li>
                     </ol>
                 </div>
             </div>
@@ -36,13 +37,13 @@
             <div class="col s12">
                 <ul class="tabs tab-demo z-depth-1" style="width: 100%;">
                     <li class="tab col s3">
-                        <a href="#customer" class="active">Müşteri Bilgileri</a>
+                        <a href="#customer" class="active">@CDResource.MusteriBilgileri</a>
                     </li>
                     <li class="tab col s3">
-                        <a href="#translation" class="">Çeviri Bilgileri</a>
+                        <a href="#translation" class="">@CDResource.CeviriBilgileri</a>
                     </li>
                     <li class="tab col s3">
-                        <a href="#details" class="">Detay Bilgileri</a>
+                        <a href="#details" class="">@CDResource.DetayBilgileri</a>
                     </li>
                     <div class="indicator" style="right: 2px; left: 903px;"></div>
                     <div class="indicator" style="right: 2px; left: 903px;"></div>
@@ -50,45 +51,45 @@
             </div>
             <div class="col s12">
                 <div id="customer" class="col s12">
-                    <h5>Genel Bilgiler</h5>
-                    <p><span class="label">Ad-Soyad:</span> @Model.Customer.Name @Model.Customer.Surname</p>
-                    <p><span class="label">Firma:</span> @Model.Customer.Company.Name</p>
-                    <p><span class="label">Kod:</span> @Model.Customer.InstitutionCode</p>
-                    <p><span class="label">Üyelik Türü:</span> @Model.Customer.MembershipType.Name</p>
+                    <h5>@CDResource.GenelBilgiler</h5>
+                    <p><span class="label">@CDResource.AdSoyad:</span> @Model.Customer.Name @Model.Customer.Surname</p>
+                    <p><span class="label">@CDResource.Firma:</span> @Model.Customer.Company.Name</p>
+                    <p><span class="label">@CDResource.Kod:</span> @Model.Customer.InstitutionCode</p>
+                    <p><span class="label">@CDResource.UyelikTuru:</span> @Model.Customer.MembershipType.Name</p>
                     <div class="divider"></div>
-                    <h5>İletişim Bilgileri</h5>
-                    <p><span class="label">Email:</span> @Model.Customer.Email</p>
-                    <p><span class="label">Cep Tel.:</span> @Model.Customer.MobilePhone</p>
+                    <h5>@CDResource.IletisimBilgileri</h5>
+                    <p><span class="label">@CDResource.EMail:</span> @Model.Customer.Email</p>
+                    <p><span class="label">@CDResource.CepTel:</span> @Model.Customer.MobilePhone</p>
                 </div>
                 <div id="translation" class="col s12" style="display: none;">
-                    <p><span class="label">Sipariş Durumu:</span> @Model.OrderStatus.Name</p>
-                    <p><span class="label">Çeviri Kaynak Dili:</span> @Model.SourceLanguage.Name</p>
-                    <p><span class="label">Çevirilecek Diller:</span> @String.Join(",", @Model.TargetLanguages.Select(a => a.Language.Name))</p>
-                    <p><span class="label">Seçili Terminoloji:</span> @Model.Terminology.Name</p>
-                    <p><span class="label">Seçili Çeviri Kalitesi:</span> @Model.TranslationQuality.Name</p>
+                    <p><span class="label">@CDResource.SiparisDurumu:</span> @Model.OrderStatus.Name</p>
+                    <p><span class="label">@CDResource.CeviriKaynakDili:</span> @Model.SourceLanguage.Name</p>
+                    <p><span class="label">@CDResource.CevirilecekDiller:</span> @String.Join(",", @Model.TargetLanguages.Select(a => a.Language.Name))</p>
+                    <p><span class="label">@CDResource.SeciliTerminoloji:</span> @Model.Terminology.Name</p>
+                    <p><span class="label">@CDResource.SeciliCeviriKalitesi:</span> @Model.TranslationQuality.Name</p>
                     <div class="divider"></div>
-                    <h5>Fiyat Bilgileri</h5>
-                    <p><span class="label">Hesaplanan Fiyat:</span> @Model.CalculatedPrice</p>
-                    <p><span class="label">Vergi Oranı:</span> @Model.VatPrice</p>
+                    <h5>@CDResource.FiyatBilgileri</h5>
+                    <p><span class="label">@CDResource.HesaplananFiyat:</span> @Model.CalculatedPrice</p>
+                    <p><span class="label">@CDResource.VergiOrani:</span> @Model.VatPrice</p>
                     @if (Model.CampaignItem != null) {
                         <div class="divider"></div>
-                            <h5>Kampanya Bilgiler</h5>
-                            <p><span class="label">Uygulanan Kampanya Kodu:</span> @Model.CampaignItem.Code</p>
-                            <p><span class="label">Uygulanan Kampanya Açıklaması</span> @Model.CampaignItem.Description</p>
-                            <p><span class="label">Uygulanan Kampanya İndirim Yüzdesi</span> @Model.CampaignItem.DiscountRate</p>
+                            <h5>@CDResource.KampanyaBilgileri</h5>
+                            <p><span class="label">@CDResource.UygulananKampanyaKodu:</span> @Model.CampaignItem.Code</p>
+                            <p><span class="label">@CDResource.UygulananKampanyaAciklamasi</span> @Model.CampaignItem.Description</p>
+                            <p><span class="label">@CDResource.UygulananKampanyaIndirimYuzdesi</span> @Model.CampaignItem.DiscountRate</p>
                     }
                 </div>
                 <div id="details" class="col s12" style="display: none;">
                     @foreach (var orderDetailDto in Model.OrderDetails) {
-                        <p><span class="label">Çevirmen:</span> @orderDetailDto.TranslationOperation.Translator.Name - @orderDetailDto.TranslationOperation.Translator.SurName</p>
-                            <p><span class="label">Çevirmen Fiyat:</span> @orderDetailDto.AcceptedPrice</p>
-                            <p><span class="label">Editor:</span> @orderDetailDto.TranslationOperation.Editor.Name - @orderDetailDto.TranslationOperation.Editor.SurName</p>
-                            <p><span class="label">Editor Fiyat:</span> @orderDetailDto.EditorAcceptedPrice</p>
-                            <p><span class="label">Proof Reader:</span> @orderDetailDto.TranslationOperation.ProofReader.Name - @orderDetailDto.TranslationOperation.ProofReader.SurName</p>
-                            <p><span class="label">Proof Reader Fiyat:</span> @orderDetailDto.ProofReaderAcceptedPrice</p>
+                        <p><span class="label">@CDResource.Cevirmen:</span> @orderDetailDto.TranslationOperation.Translator.Name - @orderDetailDto.TranslationOperation.Translator.SurName</p>
+                            <p><span class="label">@CDResource.CevirmenFiyat:</span> @orderDetailDto.AcceptedPrice</p>
+                            <p><span class="label">@CDResource.Editor:</span> @orderDetailDto.TranslationOperation.Editor.Name - @orderDetailDto.TranslationOperation.Editor.SurName</p>
+                            <p><span class="label">@CDResource.EditorFiyat:</span> @orderDetailDto.EditorAcceptedPrice</p>
+                            <p><span class="label">@CDResource.ProofReader:</span> @orderDetailDto.TranslationOperation.ProofReader.Name - @orderDetailDto.TranslationOperation.ProofReader.SurName</p>
+                            <p><span class="label">@CDResource.ProofReaderFiyat:</span> @orderDetailDto.ProofReaderAcceptedPrice</p>
                             <div class="divider"></div>
-                            <p><span class="label">İşlem Durumu:</span> @orderDetailDto.TranslationOperation.TranslationOperationStatus.Name</p>
-                            <p><span class="label">İlerleme Durumu:</span> @orderDetailDto.TranslationOperation.TranslationProgressStatus.Name</p>
+                            <p><span class="label">@CDResource.IslemDurumu:</span> @orderDetailDto.TranslationOperation.TranslationOperationStatus.Name</p>
+                            <p><span class="label">@CDResource.IlerlemeDurumu:</span> @orderDetailDto.TranslationOperation.TranslationProgressStatus.Name</p>
                     }
                 </div>
             </div>
