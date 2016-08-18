@@ -2,231 +2,753 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link href="~/bower_components/select2/dist/css/select2.css" rel="stylesheet" />
+<link href="~/bower_components/dropzone/dist/basic.css" rel="stylesheet" />
+<link href="~/bower_components/dropzone/dist/dropzone.css" rel="stylesheet" />
 
-<div class="slider_alani">
-    <a onclick="sayfa_buton('.ceviriformu-baslik');" href="#" name="gonder" class="buton2 anasayfabutonu" style="width: 200px; text-align: -webkit-center; font-size: 28px">ÇEVİRİNİ BAŞLAT!</a>
-    <%--<input onClick="sayfa_buton('.ceviriformu-baslik');" type="submit" name="gonder" value="HEMEN ÇEVİRİNİ YOLLA" class="buton2 anasayfabutonu" />--%>
-</div>
-
-<div class="cevirinibaslat">
-    <center>
-        <img onClick="sayfa_buton('.ceviriformu-baslik');" src="~/Content/images/cevirinibaslat.png" alt="çeviri yaptır" width="596" height="143" style="cursor:pointer" />
-    </center>
-</div>
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="formblok">
-            <div class="daire">1</div>
-            <span class="baslik">DİL SEÇ</span>
-            <img src="~/Content/images/sari1.png" width="103" height="8" alt="çeviri dükkanı" style="float: right; margin-top: 22px;" />
-            <div class="clear"></div>
-            <b>KAYNAK DİL</b><br />
-            <div class="sourceLanguages"></div>
-            <br />
-            <br />
-            <b>KAYNAK DİL</b><br />
-            <div class="multiTargetLanguages"></div>
-        </div>
-
-        <div class="formblok" style="width: 356px;">
-            <div class="daire">2</div>
-            <span class="baslik">DOSYA YÜKLE</span><img src="~/Content/images/sari1.png" alt="çeviri dükkanı" style="float: right; margin-top: 22px;" />
-            <div class="clear"></div>
-            <div class="uploadOrWriteText"></div>
-        </div>
-
-        <div class="formblok" style="width: 256px;">
-            <div class="daire">3</div>
-            <span class="baslik">ALAN SEÇ</span><img src="~/Content/images/sari3.png" alt="çeviri dükkanı" style="float: right; margin-top: 22px; margin-right: -30px;" />
-            <div class="clear"></div>
-            <div class="alanlar"></div>
-
-            <div class="clear"></div>
-            <a href="#" class="continue"></a>
-        </div>
-
-        <div style="clear: both"></div>
+<!-- Welcome
+    ============================================= -->
+<section id="welcome">
+    <div class="container">
+        <h2>Welcome To <span>Rise</span></h2>
+        <hr class="sep">
+        <p>Make Yourself At Home Don't Be Shy</p>
+        <img class="img-responsive center-block wow fadeInUp" data-wow-delay=".3s" src="img/welcome/logo.png" alt="logo">
     </div>
-</div>
+</section>
 
-
-<div class="row">
-    <div class="col-md-12">
-        <div id="tab-head">
-            <ul>
-                <li><a href="javascript:;" data-tabid="#tab1">İndirim Fırsatı</a></li>
-                <li><a href="javascript:;" data-tabid="#tab2">Referanslarımız</a></li>
-                <li><a href="javascript:;" data-tabid="#tab3">Bize Katılın</a></li>
-            </ul>
-        </div>
-        <div style="clear: both;"></div>
-        <div id="tab-content">
-            <div id="tab1" class="content">
-                <div style="background: url(../../Content/images/tabsayfa1.jpg);"></div>
-                <div style="margin-left: 450px; margin-top: 100px; width: 440px; height: 200px; font-size: 15px">
-                    <span style="font-size: 19px; font-weight: bold">Daha önce bizimle hiçbir iş çevirmedin mi?</span><br />
-                    <br />
-                    İşte sana güzel bir fırsat!
-                    Çeviri Dükkanı sürpriz indirimlerinden faydalanmak için sitemizi takip etmeye devam edin.
+<!-- Services
+============================================= -->
+<section id="services">
+    <div class="container">
+        <h2>What We Do</h2>
+        <hr class="light-sep">
+        <p>We Can Do Crazy Things</p>
+        <div class="services-box">
+            <div class="row wow fadeInUp" data-wow-delay=".3s">
+                <div class="col-md-4">
+                    <div class="media-left"><span class="icon-lightbulb"></span></div>
+                    <div class="media-body">
+                        <h3>Creative Design</h3>
+                        <p>Fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend.</p>
+                    </div>
                 </div>
-            </div>
-            <div id="tab2" class="content">
-                <div style="background: url(../../Content/images/referanslarimiz.jpg);"></div>
-                <div style="margin-left: 170px; margin-top: 10px; font-size: 15px;">
-                    <span style="font-size: 22px; font-weight: bold">İşte bizimle iş çeviren markalardan sadece bazıları!</span>
-                </div>
-            </div>
-            <div id="tab3" class="content">
-                <style>
-                    .unknown {
-                        margin-left: 230px;
-                        margin-top: 23px;
-                        width: 440px;
-                        height: 200px;
-                        font-size: 15px;
-                        background-color: rgba(254,196,0,0.7);
-                        padding: 25px;
-                        color: #fff;
-                    }
-                </style>
+                <div class="col-md-4">
+                    <div class="media-left"><span class="icon-mobile"></span></div>
+                    <div class="media-body">
+                        <h3>Bootstrap</h3>
+                        <p>Fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend.</p>
+                    </div>
 
-                <div style="background: url(../../Content/images/bize-katil.jpg);"></div>
-                <div class="unknown">
-                    <span style="font-size: 19px; font-weight: bold">İş çevirme konusunda kendine güveniyor musun?</span><br />
-                    <br />
-                    Sana bir teklifimiz var!
-                    Çeviri ekibimizin bir parçası ol, en keyifli işleri birlikte çevirelim!<br />
-                    Çevirmen Başvuru Adresimiz: <a href="Tercuman-Ol-1" rel="external,nofollow"><u>Hemen Bize Katıl!</u></a>
+                </div>
+                <div class="col-md-4">
+                    <div class="media-left"><span class="icon-compass"></span></div>
+                    <div class="media-body">
+                        <h3>Sass &amp; Compass</h3>
+                        <p>Fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend.</p>
+                    </div>
+
+                </div>
+
+                <div class="row wow fadeInUp" data-wow-delay=".6s">
+                    <div class="col-md-4">
+                        <div class="media-left"><span class="icon-adjustments"></span></div>
+                        <div class="media-body">
+                            <h3>Easy To Customize</h3>
+                            <p>Fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend.</p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="media-left"><span class="icon-tools"></span></div>
+                        <div class="media-body">
+                            <h3>Photoshop</h3>
+                            <p>Fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend.</p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="media-left"><span class="icon-wallet"></span></div>
+                        <div class="media-body">
+                            <h3>Money Saver</h3>
+                            <p>Fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend.</p>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-
-<div class="row">
-    <div class="col-md-12">
-        <table style="text-align: center; margin-top: 0px;">
-            <tr>
-                <td valign="top" width="480" style="padding: 40px 40px 0 40px;">
-                    <h2 style="font-size: 17px">Yeminli çevirmenlerle işbirliği</h2>
-                    Dosyalarınızın öneminin farkındayız. Bu sebeple alanında uzman yeminli çevirmenlerle çalışıyoruz.
-                    <br />
-                    <img src="~/Content/images/iconset1.jpg" alt="yeminli çevirmenlerle iş birliği" width="120" style="margin-top: 20px;" />
-                </td>
-                <td valign="top" style="padding: 40px 40px 0 40px;">
-                    <h2 style="font-size: 17px">Noter onaylı kalite</h2>
-                    Kalitenin sizi temsil ettiğini biliyoruz. Çevirilerinizin kalite kontrol araçları ve uzman çevirmenlerce kontrolünü sağlıyor; noter onayına sunuyoruz.
-                    <br />
-                    <img src="~/Content/images/iconset2.jpg" alt="Noter onaylı kalite" width="120" style="margin-top: 20px;" />
-                </td>
-            </tr>
-            <tr>
-                <td valign="top" style="padding: 40px 40px 0 40px;">
-                    <h2 style="font-size: 17px">Zamanında teslimat</h2>
-                    İş planlamanıza önem veriyoruz. Planlamanızda sorun yaşamamanız için dosyalarınızı zamanında teslim ediyoruz.
-                    <br />
-                    <img src="~/Content/images/iconset3.jpg" alt="zamanında teslimat" width="120" style="margin-top: 20px;" />
-                </td>
-                <td valign="top" style="padding: 40px 40px 0 40px;">
-                    <h2 style="font-size: 17px">17 yıllık tecrübe</h2>
-                    Deneyimin önemini biliyoruz. 17 yıllık tecrübe ile çeviri teknolojilerini birleştiriyor; sizlere kaliteli hizmeti daha kısa sürede sunuyoruz.
-                    <br />
-                    <img src="~/Content/images/iconset5.jpg" alt="17 yıllık tecrübe" width="120" style="margin-top: 20px;" />
-                </td>
-            </tr>
-        </table>
+<!-- Portfolio
+============================================= -->
+<section id="portfolio">
+    <div class="container-fluid">
+        <h2>Our Work</h2>
+        <hr class="sep">
+        <p>Showcase Your Amazing Work With Us</p>
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+                <a class="portfolio-box" href="img/portfolio/1.jpg" data-lightbox="image-1" data-title="Your caption">
+                    <img src="img/portfolio/1.jpg" class="img-responsive" alt="1">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Category
+                            </div>
+                            <div class="project-name">
+                                Project Name
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+                <a href="img/portfolio/2.jpg" class="portfolio-box" data-lightbox="image-2" data-title="Your caption">
+                    <img src="img/portfolio/2.jpg" class="img-responsive" alt="2">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Category
+                            </div>
+                            <div class="project-name">
+                                Project Name
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+                <a href="img/portfolio/3.jpg" class="portfolio-box" data-lightbox="image-3" data-title="Your caption">
+                    <img src="img/portfolio/3.jpg" class="img-responsive" alt="3">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Category
+                            </div>
+                            <div class="project-name">
+                                Project Name
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+                <a href="img/portfolio/4.jpg" class="portfolio-box" data-lightbox="image-4" data-title="Your caption">
+                    <img src="img/portfolio/4.jpg" class="img-responsive" alt="4">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Category
+                            </div>
+                            <div class="project-name">
+                                Project Name
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+                <a href="img/portfolio/5.jpg" class="portfolio-box" data-lightbox="image-5" data-title="Your caption">
+                    <img src="img/portfolio/5.jpg" class="img-responsive" alt="5">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Category
+                            </div>
+                            <div class="project-name">
+                                Project Name
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+                <a href="img/portfolio/6.jpg" class="portfolio-box" data-lightbox="image-6" data-title="Your caption">
+                    <img src="img/portfolio/6.jpg" class="img-responsive" alt="6">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Category
+                            </div>
+                            <div class="project-name">
+                                Project Name
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
-</div>
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="bx-wrapper" style="max-width: 9690px; margin: 0px auto;">
-            <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 44px;">
-                <style>
-                    .sliderUnknown {
-                        width: 1215%;
-                        position: relative;
-                        -webkit-transition: 0.5s;
-                        -moz-transition: 0.5s;
-                        -ms-transition: 0.5s;
-                        -o-transition: 0.5s;
-                        transition: 0.5s;
-                        -webkit-transform: translate3d(-1940px, 0px, 0px);
-                        -moz-transform: translate3d(-1940px, 0px, 0px);
-                        -ms-transform: translate3d(-1940px, 0px, 0px);
-                        -o-transform: translate3d(-1940px, 0px, 0);
-                        transform: translate3d(-1940px, 0px, 0px);
-                    }
-                </style>
-                <div class="slider_logolar sliderUnknown">
-                    <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
-                        <img src="~/Content/images/referanslar/acibadem.jpg" alt="acıbadem">
-                    </div>
-                    <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
-                        <img src="~/Content/images/referanslar/adidas.jpg" alt="adidas">
-                    </div>
-                    <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
-                        <img src="~/Content/images/referanslar/coca-cola.jpg" alt="coca cola">
-                    </div>
-                    <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
-                        <img src="~/Content/images/referanslar/calik.jpg" alt="çalık holding">
-                    </div>
-                    <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
-                        <img src="~/Content/images/referanslar/ulker.jpg" alt="ülker">
-                    </div>
-                    <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
-                        <img src="~/Content/images/referanslar/turkish-airlines.jpg" alt="turkish airlines">
-                    </div>
-                    <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
-                        <img src="~/Content/images/referanslar/medicalpark.jpg" alt="medical park">
-                    </div>
-                    <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
-                        <img src="~/Content/images/referanslar/abdi-ibrahim.jpg" alt="abdi ibrahim">
-                    </div>
-                    <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
-                        <img src="~/Content/images/referanslar/turkcell.jpg" alt="turkcell">
-                    </div>
-                    <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
-                        <img src="~/Content/images/referanslar/siemens.jpg" alt="siemens">
-                    </div>
-                    <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
-                        <img src="~/Content/images/referanslar/bp.jpg" alt="bp">
-                    </div>
-                    <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
-                        <img src="~/Content/images/referanslar/anadolu.jpg" alt="anadolu">
-                    </div>
-                    <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
-                        <img src="~/Content/images/referanslar/avea.jpg" alt="avea">
-                    </div>
-                    <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
-                        <img src="~/Content/images/referanslar/beko.jpg" alt="beko">
-                    </div>
-                    <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
-                        <img src="~/Content/images/referanslar/bp.jpg" alt="bp">
-                    </div>
-                    <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
-                        <img src="~/Content/images/referanslar/canon.jpg" alt="canon">
-                    </div>
-                    <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
-                        <img src="~/Content/images/referanslar/ege-yapi.jpg" alt="ege yapı">
-                    </div>
-                    <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
-                        <img src="~/Content/images/referanslar/ergo.jpg" alt="ergo">
-                    </div>
-                    <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
-                        <img src="~/Content/images/referanslar/ericsson.jpg" alt="ericsson">
-                    </div>
-                    <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
-                        <img src="~/Content/images/referanslar/eti-maden.jpg" alt="eti maden">
+</section>
+<!-- Work Process
+============================================= -->
+<section id="work-process">
+    <div class="container">
+        <h2>Work Process</h2>
+        <hr class="sep">
+        <p>What Happen In The Background</p>
+        <div class="row wow fadeInUp" data-wow-delay=".3s">
+            <div class="col-lg-3">
+                <span class="icon-chat"></span>
+                <h4>1.Discuss</h4>
+            </div>
+            <div class="col-lg-3">
+                <span class="icon-circle-compass"></span>
+                <h4>2.Sketch</h4>
+            </div>
+            <div class="col-lg-3">
+                <span class="icon-browser"></span>
+                <h4>3.Make</h4>
+            </div>
+            <div class="col-lg-3">
+                <span class="icon-global"></span>
+                <h4>4.Publish</h4>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Some Fune Facts
+============================================= -->
+<section id="fun-facts">
+    <div class="container">
+        <h2>Some Fun Facts </h2>
+        <hr class="light-sep">
+        <p>Fun Facts</p>
+        <div class="row wow fadeInUp" data-wow-delay=".3s">
+            <div class="col-lg-3">
+                <span class="icon-happy"></span>
+                <h2 class="number timer">367</h2>
+                <h4>Happy Clients</h4>
+            </div>
+            <div class="col-lg-3">
+                <span class="icon-trophy"></span>
+                <h2 class="number timer">150</h2>
+                <h4>Project Done</h4>
+            </div>
+            <div class="col-lg-3">
+                <span class="icon-wine"></span>
+                <h2 class="number timer">121</h2>
+                <h4>Glass Of Wine</h4>
+            </div>
+            <div class="col-lg-3">
+                <span class="icon-documents"></span>
+                <h2 class="number timer">10000</h2>
+                <h4>Lines Of Code</h4>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Some Fune Facts
+============================================= -->
+<section id="team">
+    <div class="container">
+        <h2>Our Team</h2>
+        <hr class="sep">
+        <p>Designers Behind This Work</p>
+        <div class="row wow fadeInUp" data-wow-delay=".3s">
+            <div class="col-md-4">
+                <div class="team">
+                    <img class="img-responsive center-block" src="img/team/MariaDoe.jpg" alt="1">
+                    <h4>Maria Doe</h4>
+                    <p>Designer</p>
+                    <div class="team-social-icons">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="bx-controls bx-has-controls-direction">
-                <div class="bx-controls-direction"><a class="bx-prev disabled" href="">Prev</a><a class="bx-next disabled" href="">Next</a></div>
+            <div class="col-md-4">
+                <div class="team">
+                    <img class="img-responsive center-block" src="img/team/JasonDoe.jpg" alt="2">
+                    <h4>Jason Doe</h4>
+                    <p>Developer</p>
+                    <div class="team-social-icons">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team">
+                    <img class="img-responsive center-block" src="img/team/MikeDoe.jpg" alt="3">
+                    <h4>Mike Doe</h4>
+                    <p>Photographer</p>
+                    <div class="team-social-icons">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+</section>
+<!-- Testimonials
+============================================= -->
+<section id="testimonials">
+    <div class="container">
+        <h2>Testimonials</h2>
+        <hr class="light-sep">
+        <p>What Clients Say About Us</p>
+        <div id="owl-testi" class="owl-carousel owl-theme">
+            <div class="item">
+                <div class="quote">
+                    <i class="fa fa-quote-left left fa-2x"></i>
+                    <h5>
+                        I’am amazed, I should say thank you so much for your awesome template. Design is so
+                        good and neat, every detail has been taken care these team are realy amazing and talented! I will
+                        work only with <span>Rise</span>.<i class="fa fa-quote-right right fa-2x"></i>
+                    </h5>
 
+                </div>
+            </div>
+            <div class="item">
+                <div class="quote">
+                    <i class="fa fa-quote-left left fa-2x"></i>
+                    <h5>
+                        I’am amazed, I should say thank you so much for your awesome template. Design is so
+                        good and neat, every detail has been taken care these team are realy amazing and talented! I will
+                        work only with <span>Rise</span>.<i class="fa fa-quote-right right fa-2x"></i>
+                    </h5>
+
+                </div>
+            </div>
+            <div class="item">
+                <div class="quote">
+                    <i class="fa fa-quote-left left fa-2x"></i>
+                    <h5>
+                        I’am amazed, I should say thank you so much for your awesome template. Design is so
+                        good and neat, every detail has been taken care these team are realy amazing and talented! I will
+                        work only with <span>Rise</span>.<i class="fa fa-quote-right right fa-2x"></i>
+                    </h5>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Us
+============================================= -->
+<section id="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <hr class="sep">
+        <p>Get In Touch</p>
+        <div class="col-md-6 col-md-offset-3 wow fadeInUp" data-wow-delay=".3s">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="Name" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="Email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                </div>
+                <a href="#" class="btn-block">Send</a>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- Google Map
+============================================= -->
+<div id="map"></div>
+
+<div class="row">
+    <div class="col-md-12">
+        <form>
+            <div class="form-group row">
+                <label for="sourceLanguage" class="col-sm-2 col-form-label">Dil</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="sourceLanguage" placeholder="Dil Seçiniz">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="targetLanguages" class="col-sm-2 col-form-label">Çevirilecek Diller</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="targetLanguages" placeholder="Dil Seçiniz" multiple="multiple">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="targetLanguages" class="col-sm-2 col-form-label">Doküman</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control-file" id="file" placeholder="Doküman Yükleyiniz">
+                </div>
+            </div>
+            <label id="txtPageCount"></label>
+            <label id="txtCharCount"></label>
+            <label id="txtCharCountWithSpaces"></label>
+            <div class="form-group row">
+                <label for="targetLanguages" class="col-sm-2 col-form-label">Terminoloji</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="terminology" placeholder="Terminoloji Seçiniz" multiple="multiple">
+                </div>
+            </div>
+
+        </form>
     </div>
 </div>
+
+<script src="~/Content/plugins/owl-carousel/owl.carousel.min.js"></script>
+<script src="~/Content/js/jquery.easing.min.js"></script>
+<script src="~/Content/plugins/countTo/jquery.countTo.js"></script>
+<script src="~/Content/plugins/inview/jquery.inview.min.js"></script>
+<script src="~/Content/plugins/Lightbox/dist/js/lightbox.min.js"></script>
+<script src="~/Content/plugins/WOW/dist/wow.min.js"></script>
+
+<script>
+    var baseUrl = "/api/v1/commonapi/";
+    var myDropzone;
+    function initDropZone() {
+
+        myDropzone = new Dropzone("#file", {
+            url: "http://localhost:8003/api/documentapi/uploadTranslationDocument",
+            uploadMultiple: true,
+            parallelUploads: 1,
+            addRemoveLinks: '/Admin/Home/RemoveFile',
+            maxFiles: 1,
+            maxFilesize: 500000,
+            acceptedFiles: '.pdf, .docx, .doc, .txt',
+            dictDefaultMessage: 'Dosya yüklemek için tıklayın ya da dosyayı sürükleyip bırakın',
+            dictFallbackMessage: 'Tarayıcınız bu içeriği gösteremiyor',
+            dictFallbackText: '',
+            dictInvalidFileType: 'Uyumsuz dosya tipi',
+            dictFileTooBig: 'Dosya boyutu tanımlanandan yüksektir',
+            dictResponseError: 'Hata oluştu',
+            dictCancelUpload: 'Yüklemeyi iptal et',
+            dictCancelUploadConfirmation: 'İptal etmek istediğinize emin misiniz?',
+            dictRemoveFile: 'Dosya sil',
+            dictMaxFilesExceeded: 'Toplam yüklenebilir dosya sayısını aştınız'
+        });
+
+        myDropzone.on('success', function (evt, response) {
+            console.log(response);
+            var documentDto = {
+                Name: $("#txtName").val(),
+                Path: response.Data.FilePath,
+                PageCount: response.Data.PageCount,
+                CharCount: response.Data.CharCount,
+                CharCountWithSpaces: response.Data.CharCountWithSpaces
+            };
+
+            $('#txtPageCount').val(documentDto.PageCount);
+            $('#txtCharCount').val(documentDto.CharCount);
+            $('#txtCharCountWithSpaces').val(documentDto.CharCountWithSpaces);
+        });
+
+        myDropzone.on('sending', function (file) {
+            if (myDropzone.files.length > 1) {
+                myDropzone.cancelUpload(file);
+            }
+        });
+
+        myDropzone.on('removedfile', function (removeThumb) {
+            $('#txtPageCount').val("");
+            $('#txtCharCount').val("");
+            $('#txtCharCountWithSpaces').val("");
+        });
+
+    }
+
+    function convertToSelect2Data(data) {
+        var tempResult = [];
+        data.forEach(function (item) {
+            if (item.name) {
+                tempResult.push({ id: item.id, text: item.name });
+            } else {
+                tempResult.push({ id: item.id, text: item.description });
+            }
+            
+        });
+
+        return tempResult;
+    }
+
+
+    function getSourceLanguages() {
+        return $.ajax({
+            url: baseUrl + "getLanguages",
+            type: 'GET'
+        });
+    }
+
+    function getTargetLanguages(sourceLanguageId) {
+        return $.ajax({
+            url: baseUrl + "getTargetLanguages",
+            type: 'GET',
+            data: { sourceLanguageId: sourceLanguageId }
+        });
+    }
+
+    function getTerminologies() {
+        return $.ajax({
+            url: baseUrl + "getTerminologies",
+            type: 'GET'
+        });
+    }
+
+    $('#sourceLanguage').on('select2:select', function (e) {
+        getTargetLanguages(e.params.data.id).then(function (result) {
+            var morphedResult = [];
+            result.forEach(function(item) {
+                morphedResult.push(item.targetLanguage);
+            });
+
+            $('#targetLanguages').select2({
+                data: convertToSelect2Data(morphedResult)
+            });
+        });
+    });
+
+    $(function () {
+        initDropZone();
+        getSourceLanguages().then(function (result) {
+            $('#sourceLanguage').select2({
+                data: convertToSelect2Data(result)
+            });
+        });
+
+        getTerminologies().then(function (result) {
+            $('#terminology').select2({
+                data: convertToSelect2Data(result)
+            });
+        });
+    });
+</script>
+
+@*<div class="slider_alani">
+        <a onclick="sayfa_buton('.ceviriformu-baslik');" href="#" name="gonder" class="buton2 anasayfabutonu" style="width: 200px; text-align: -webkit-center; font-size: 28px">ÇEVİRİNİ BAŞLAT!</a>
+        <%--<input onClick="sayfa_buton('.ceviriformu-baslik');" type="submit" name="gonder" value="HEMEN ÇEVİRİNİ YOLLA" class="buton2 anasayfabutonu" />--%>
+    </div>
+
+    <div class="cevirinibaslat">
+        <center>
+            <img onClick="sayfa_buton('.ceviriformu-baslik');" src="~/Content/images/cevirinibaslat.png" alt="çeviri yaptır" width="596" height="143" style="cursor:pointer" />
+        </center>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="formblok">
+                <div class="daire">1</div>
+                <span class="baslik">DİL SEÇ</span>
+                <img src="~/Content/images/sari1.png" width="103" height="8" alt="çeviri dükkanı" style="float: right; margin-top: 22px;" />
+                <div class="clear"></div>
+                <b>KAYNAK DİL</b><br />
+                <div class="sourceLanguages"></div>
+                <br />
+                <br />
+                <b>KAYNAK DİL</b><br />
+                <div class="multiTargetLanguages"></div>
+            </div>
+
+            <div class="formblok" style="width: 356px;">
+                <div class="daire">2</div>
+                <span class="baslik">DOSYA YÜKLE</span><img src="~/Content/images/sari1.png" alt="çeviri dükkanı" style="float: right; margin-top: 22px;" />
+                <div class="clear"></div>
+                <div class="uploadOrWriteText"></div>
+            </div>
+
+            <div class="formblok" style="width: 256px;">
+                <div class="daire">3</div>
+                <span class="baslik">ALAN SEÇ</span><img src="~/Content/images/sari3.png" alt="çeviri dükkanı" style="float: right; margin-top: 22px; margin-right: -30px;" />
+                <div class="clear"></div>
+                <div class="alanlar"></div>
+
+                <div class="clear"></div>
+                <a href="#" class="continue"></a>
+            </div>
+
+            <div style="clear: both"></div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div id="tab-head">
+                <ul>
+                    <li><a href="javascript:;" data-tabid="#tab1">İndirim Fırsatı</a></li>
+                    <li><a href="javascript:;" data-tabid="#tab2">Referanslarımız</a></li>
+                    <li><a href="javascript:;" data-tabid="#tab3">Bize Katılın</a></li>
+                </ul>
+            </div>
+            <div style="clear: both;"></div>
+            <div id="tab-content">
+                <div id="tab1" class="content">
+                    <div style="background: url(../../Content/images/tabsayfa1.jpg);"></div>
+                    <div style="margin-left: 450px; margin-top: 100px; width: 440px; height: 200px; font-size: 15px">
+                        <span style="font-size: 19px; font-weight: bold">Daha önce bizimle hiçbir iş çevirmedin mi?</span><br />
+                        <br />
+                        İşte sana güzel bir fırsat!
+                        Çeviri Dükkanı sürpriz indirimlerinden faydalanmak için sitemizi takip etmeye devam edin.
+                    </div>
+                </div>
+                <div id="tab2" class="content">
+                    <div style="background: url(../../Content/images/referanslarimiz.jpg);"></div>
+                    <div style="margin-left: 170px; margin-top: 10px; font-size: 15px;">
+                        <span style="font-size: 22px; font-weight: bold">İşte bizimle iş çeviren markalardan sadece bazıları!</span>
+                    </div>
+                </div>
+                <div id="tab3" class="content">
+                    <style>
+                        .unknown {
+                            margin-left: 230px;
+                            margin-top: 23px;
+                            width: 440px;
+                            height: 200px;
+                            font-size: 15px;
+                            background-color: rgba(254,196,0,0.7);
+                            padding: 25px;
+                            color: #fff;
+                        }
+                    </style>
+
+                    <div style="background: url(../../Content/images/bize-katil.jpg);"></div>
+                    <div class="unknown">
+                        <span style="font-size: 19px; font-weight: bold">İş çevirme konusunda kendine güveniyor musun?</span><br />
+                        <br />
+                        Sana bir teklifimiz var!
+                        Çeviri ekibimizin bir parçası ol, en keyifli işleri birlikte çevirelim!<br />
+                        Çevirmen Başvuru Adresimiz: <a href="Tercuman-Ol-1" rel="external,nofollow"><u>Hemen Bize Katıl!</u></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <table style="text-align: center; margin-top: 0px;">
+                <tr>
+                    <td valign="top" width="480" style="padding: 40px 40px 0 40px;">
+                        <h2 style="font-size: 17px">Yeminli çevirmenlerle işbirliği</h2>
+                        Dosyalarınızın öneminin farkındayız. Bu sebeple alanında uzman yeminli çevirmenlerle çalışıyoruz.
+                        <br />
+                        <img src="~/Content/images/iconset1.jpg" alt="yeminli çevirmenlerle iş birliği" width="120" style="margin-top: 20px;" />
+                    </td>
+                    <td valign="top" style="padding: 40px 40px 0 40px;">
+                        <h2 style="font-size: 17px">Noter onaylı kalite</h2>
+                        Kalitenin sizi temsil ettiğini biliyoruz. Çevirilerinizin kalite kontrol araçları ve uzman çevirmenlerce kontrolünü sağlıyor; noter onayına sunuyoruz.
+                        <br />
+                        <img src="~/Content/images/iconset2.jpg" alt="Noter onaylı kalite" width="120" style="margin-top: 20px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top" style="padding: 40px 40px 0 40px;">
+                        <h2 style="font-size: 17px">Zamanında teslimat</h2>
+                        İş planlamanıza önem veriyoruz. Planlamanızda sorun yaşamamanız için dosyalarınızı zamanında teslim ediyoruz.
+                        <br />
+                        <img src="~/Content/images/iconset3.jpg" alt="zamanında teslimat" width="120" style="margin-top: 20px;" />
+                    </td>
+                    <td valign="top" style="padding: 40px 40px 0 40px;">
+                        <h2 style="font-size: 17px">17 yıllık tecrübe</h2>
+                        Deneyimin önemini biliyoruz. 17 yıllık tecrübe ile çeviri teknolojilerini birleştiriyor; sizlere kaliteli hizmeti daha kısa sürede sunuyoruz.
+                        <br />
+                        <img src="~/Content/images/iconset5.jpg" alt="17 yıllık tecrübe" width="120" style="margin-top: 20px;" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="bx-wrapper" style="max-width: 9690px; margin: 0px auto;">
+                <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 44px;">
+                    <style>
+                        .sliderUnknown {
+                            width: 1215%;
+                            position: relative;
+                            -webkit-transition: 0.5s;
+                            -moz-transition: 0.5s;
+                            -ms-transition: 0.5s;
+                            -o-transition: 0.5s;
+                            transition: 0.5s;
+                            -webkit-transform: translate3d(-1940px, 0px, 0px);
+                            -moz-transform: translate3d(-1940px, 0px, 0px);
+                            -ms-transform: translate3d(-1940px, 0px, 0px);
+                            -o-transform: translate3d(-1940px, 0px, 0);
+                            transform: translate3d(-1940px, 0px, 0px);
+                        }
+                    </style>
+                    <div class="slider_logolar sliderUnknown">
+                        <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                            <img src="~/Content/images/referanslar/acibadem.jpg" alt="acıbadem">
+                        </div>
+                        <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                            <img src="~/Content/images/referanslar/adidas.jpg" alt="adidas">
+                        </div>
+                        <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                            <img src="~/Content/images/referanslar/coca-cola.jpg" alt="coca cola">
+                        </div>
+                        <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                            <img src="~/Content/images/referanslar/calik.jpg" alt="çalık holding">
+                        </div>
+                        <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                            <img src="~/Content/images/referanslar/ulker.jpg" alt="ülker">
+                        </div>
+                        <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                            <img src="~/Content/images/referanslar/turkish-airlines.jpg" alt="turkish airlines">
+                        </div>
+                        <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                            <img src="~/Content/images/referanslar/medicalpark.jpg" alt="medical park">
+                        </div>
+                        <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                            <img src="~/Content/images/referanslar/abdi-ibrahim.jpg" alt="abdi ibrahim">
+                        </div>
+                        <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                            <img src="~/Content/images/referanslar/turkcell.jpg" alt="turkcell">
+                        </div>
+                        <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                            <img src="~/Content/images/referanslar/siemens.jpg" alt="siemens">
+                        </div>
+                        <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                            <img src="~/Content/images/referanslar/bp.jpg" alt="bp">
+                        </div>
+                        <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                            <img src="~/Content/images/referanslar/anadolu.jpg" alt="anadolu">
+                        </div>
+                        <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                            <img src="~/Content/images/referanslar/avea.jpg" alt="avea">
+                        </div>
+                        <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                            <img src="~/Content/images/referanslar/beko.jpg" alt="beko">
+                        </div>
+                        <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                            <img src="~/Content/images/referanslar/bp.jpg" alt="bp">
+                        </div>
+                        <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                            <img src="~/Content/images/referanslar/canon.jpg" alt="canon">
+                        </div>
+                        <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                            <img src="~/Content/images/referanslar/ege-yapi.jpg" alt="ege yapı">
+                        </div>
+                        <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                            <img src="~/Content/images/referanslar/ergo.jpg" alt="ergo">
+                        </div>
+                        <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                            <img src="~/Content/images/referanslar/ericsson.jpg" alt="ericsson">
+                        </div>
+                        <div class="slide" style="float: left; list-style: none; position: relative; width: 87px; margin-right: 10px;">
+                            <img src="~/Content/images/referanslar/eti-maden.jpg" alt="eti maden">
+                        </div>
+                    </div>
+                </div>
+                <div class="bx-controls bx-has-controls-direction">
+                    <div class="bx-controls-direction"><a class="bx-prev disabled" href="">Prev</a><a class="bx-next disabled" href="">Next</a></div>
+                </div>
+            </div>
+
+        </div>
+    </div>*@
+
+@section scripts{
+    <script src="~/bower_components/dropzone/dist/dropzone.js"></script>
+    <script src="~/bower_components/select2/dist/js/select2.full.min.js"></script>
+}

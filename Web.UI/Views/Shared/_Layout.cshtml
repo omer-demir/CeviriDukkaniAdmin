@@ -12,74 +12,49 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="Description" content="Türkiye'nin ilk online çeviri platformu. Profesyonel tercümanlardan 15 dilde kaliteli çeviri hizmeti. Dosyanı yükle,fiyat ve teslim tarihini gör,işi bize bırak!"/>
+    <meta name="Description" content="Türkiye'nin ilk online çeviri platformu. Profesyonel tercümanlardan 15 dilde kaliteli çeviri hizmeti. Dosyanı yükle,fiyat ve teslim tarihini gör,işi bize bırak!" />
     <title>Çeviri Dükkanı - Ana Dillerde Kaliteli Çeviri Hizmeti</title>
 
-    <link href="~/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="~/bower_components/tether/dist/css/tether.min.css" rel="stylesheet"/>
-    <link href="~/bower_components/tether/dist/css/tether-theme-basic.min.css" rel="stylesheet"/>
-    <link href="~/bower_components/tether/dist/css/tether-theme-arrows.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" type="text/css" href="~/Content/css/tooltipster.css"/>
-    <link rel="stylesheet" type="text/css" href="~/Content/css/jquery.bxslider.css"/>
-    <link href="~/Content/css/jquery.selectbox.css" type="text/css" rel="stylesheet"/>
-    <link rel="stylesheet" href="~/Content/css/multiple-select.css"/>
-    <link href="~/Content/Site.css" rel="stylesheet"/>
+    <link href="~/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/bower_components/tether/dist/css/tether.min.css" rel="stylesheet" />
+    <link href="~/bower_components/tether/dist/css/tether-theme-basic.min.css" rel="stylesheet" />
+    <link href="~/bower_components/tether/dist/css/tether-theme-arrows.min.css" rel="stylesheet" />
 
     <script src="~/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="~/bower_components/tether/dist/js/tether.min.js"></script>
     <script src="~/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
+    <!-- Icons Font -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <link href="~/Content/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="~/Content/plugins/owl-carousel/owl.theme.css" rel="stylesheet">
+    <link href="~/Content/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
+    <link href="~/Content/plugins/Lightbox/dist/css/lightbox.css" rel="stylesheet">
+    <link href="~/Content/plugins/Icons/et-line-font/style.css" rel="stylesheet">
+    <link href="~/Content/plugins/animate.css/animate.css" rel="stylesheet">
+    <link href="~/Content/css/main.css" rel="stylesheet">
+
+
+
 </head>
 <body>
-    <div class="telefon_widget">
-        <a href="/iletisim">
-            <img src="~/Content/images/telefon_widget.png" alt="Çeviri Dükkanı Telefonu" width="168" height="40" />
-        </a>
-    </div>
-    <div class="container-fluid">
-        <nav class="navbar navbar-light navbar-full bg-faded">
-            <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse"
-                    data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                &#9776;
-            </button>
-            <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-                <a class="navbar-brand" href="@Url.Action("Index", "Home")">
-                    <img src="~/Content/images/logo-yeni.png" alt="çeviri dükkanı logosu" />
-                </a>
-                @{Html.RenderAction("UserMenu", "Common");}
+    <div class="preloader"><i class="fa fa-circle-o-notch fa-spin fa-2x"></i></div>
+    @{Html.RenderAction("UserMenu", "Common");}
 
-            </div>
-        </nav>
+    @RenderBody()
 
-        @RenderBody()
+    <script src="~/Content/js/custom.js"></script>
 
-        <div class="footer">
-            @{Html.RenderAction("Footer", "Common");}
-        </div>
-    </div>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
 
-    <script type="text/javascript" src="~/Content/js/ceviri.js"></script>
-    <script type="text/javascript" src="~/Content/js/jquery.selectbox-0.2.min.js"></script>
-    <script type="text/javascript" src="~/Content/js/jquery.tooltipster.min.js"></script>
-    <script type="text/javascript" src="~/Content/js/ddaccordion.js"></script>
-    <script type="text/javascript" src="~/Content/js/jquery.bxslider.min.js"></script>
-    <script src="~/Content/js/myscript.js"></script>
-    <script src="~/Content/js/jquery.multiple.select.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.slider_logolar').bxSlider({
-                slideWidth: 960,
-                minSlides: 10,
-                maxSlides: 10,
-                slideMargin: 10,
-                pager: false,
-                auto: true
-            });
-        });
-    </script>
-
-
-    @RenderSection("scripts", false)
+@RenderSection("scripts", false)
 </body>
 </html>
