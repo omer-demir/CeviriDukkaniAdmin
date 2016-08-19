@@ -62,5 +62,11 @@ namespace Web.UI.Controllers {
         {
             return View();
         }
+
+        [Route("Tercuman-Ol-1")]
+        public ActionResult TranslatorSignUp()
+        {
+            return View();
+        }
     }
 }

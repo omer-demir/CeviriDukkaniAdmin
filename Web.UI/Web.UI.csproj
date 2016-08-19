@@ -1354,6 +1354,7 @@
     <Content Include="Areas\Admin\Theme\temp\js\materialize.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\css\main.css" />
+    <Content Include="Content\css\TranslatorSignUp.css" />
     <Content Include="Content\fonts\et-line.svg" />
     <Content Include="Content\images\adres.png" />
     <Content Include="Content\images\ajax-loader.gif" />
@@ -1520,6 +1521,9 @@
     <Content Include="Content\plugins\owl-carousel\owl.carousel.min.js" />
     <Content Include="Content\plugins\owl-carousel\owl.theme.css" />
     <Content Include="Content\plugins\owl-carousel\owl.transitions.css" />
+    <Content Include="Content\plugins\prettify\jquery.bootstrap.wizard.min.js" />
+    <Content Include="Content\plugins\prettify\prettify.css" />
+    <Content Include="Content\plugins\prettify\prettify.js" />
     <Content Include="Content\plugins\WOW\dist\wow.js" />
     <Content Include="Content\plugins\WOW\dist\wow.min.js" />
     <Content Include="favicon.ico" />
@@ -1867,6 +1871,7 @@
     <Content Include="Views\Home\ApplyForAJob.cshtml" />
     <Content Include="Views\Home\JobDetail.cshtml" />
     <Content Include="Views\Home\Translation.cshtml" />
+    <Content Include="Views\Home\TranslatorSignUp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Web.Business\Web.Business.csproj">
