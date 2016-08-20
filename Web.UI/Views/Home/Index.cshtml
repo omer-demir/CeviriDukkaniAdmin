@@ -5,17 +5,18 @@
 <link href="~/bower_components/select2/dist/css/select2.css" rel="stylesheet" />
 <link href="~/bower_components/dropzone/dist/basic.css" rel="stylesheet" />
 <link href="~/bower_components/dropzone/dist/dropzone.css" rel="stylesheet" />
+
 <section id="slider" class="slider-parallax swiper_wrapper clearfix">
 
-    <div class="slider-parallax-inner">
+    <div class="slider-parallax-inner" style="left:auto">
 
         <div class="swiper-container swiper-parent">
             <div class="swiper-wrapper">
-                <div class="swiper-slide dark" style="background-image: url('images/slider/swiper/1.jpg');">
+                <div class="swiper-slide dark" style="background-image: url('/Content/images/slider1-yeni.jpg');">
                     <div class="container clearfix">
                         <div class="slider-caption slider-caption-center">
-                            <h2 data-caption-animate="fadeInUp">Welcome to Canvas</h2>
-                            <p data-caption-animate="fadeInUp" data-caption-delay="200">Create just what you need for your Perfect Website. Choose from a wide range of Elements &amp; simply put them on our Canvas.</p>
+                            <h2 data-caption-animate="fadeInUp">@*Ne işler çevirdiğimizi bi' bilseniz...*@</h2>
+                            <p data-caption-animate="fadeInUp" data-caption-delay="200"><button class="btn btn-success">ÇEVİRİNİ BAŞLAT</button></p>
                         </div>
                     </div>
                 </div>
@@ -51,654 +52,294 @@
     </div>
 
 </section>
-
+<section>
+    
+</section>
 <!-- Content
 ============================================= -->
+
 <section id="content">
 
     <div class="content-wrap">
+        <div class="row">
+            <div class="col-md-12">
+                <form>
+                    <div class="form-group row">
+                        <label for="sourceLanguage" class="col-sm-2 col-form-label">Dil</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="sourceLanguage" placeholder="Dil Seçiniz">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="targetLanguages" class="col-sm-2 col-form-label">Çevirilecek Diller</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="targetLanguages" placeholder="Dil Seçiniz" multiple="multiple">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="targetLanguages" class="col-sm-2 col-form-label">Doküman</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control-file" id="file" placeholder="Doküman Yükleyiniz">
+                        </div>
+                    </div>
+                    <label id="txtPageCount"></label>
+                    <label id="txtCharCount"></label>
+                    <label id="txtCharCountWithSpaces"></label>
+                    <div class="form-group row">
+                        <label for="targetLanguages" class="col-sm-2 col-form-label">Terminoloji</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="terminology" placeholder="Terminoloji Seçiniz" multiple="multiple">
+                        </div>
+                    </div>
 
-        <div class="promo promo-light promo-full bottommargin-lg header-stick notopborder">
-            <div class="container clearfix">
-                <h3>Call us today at <span>+91.22.57412541</span> or Email us at <span>support@canvas.com</span></h3>
-                <span>We strive to provide Our Customers with Top Notch Support to make their Theme Experience Wonderful</span>
-                <a href="#" class="button button-dark button-xlarge button-rounded">Start Browsing</a>
+                </form>
             </div>
         </div>
-
         <div class="container clearfix">
 
-            <div class="col_one_fourth nobottommargin">
+            @*<div class="row">
+                    <div class="col-sm-4">
+                        <h4>DİL SEÇ</h4>
+
+                    </div>
+                    <div class="col-sm-4">
+                        <h4>DOSYA YÜKLE</h4>
+
+                    </div>
+                    <div class="col-sm-4">
+                        <h4>ALAN SEÇ</h4>
+
+                    </div>
+                </div>*@
+
+            <div class="col_half norightmargin">
                 <div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
                     <div class="fbox-icon">
-                        <a href="#"><i class="i-alt noborder icon-shop"></i></a>
+                        <a href="#"><img src="~/Content/images/iconset1.jpg" /></a>
                     </div>
-                    <h3>e-Commerce Solutions<span class="subtitle">Start your Own Shop today</span></h3>
+                    <h3>Yeminli çevirmenlerle işbirliği<span class="subtitle">Dosyalarınızın öneminin farkındayız. Bu sebeple alanında uzman yeminli çevirmenlerle çalışıyoruz.</span></h3>
                 </div>
             </div>
 
-            <div class="col_one_fourth nobottommargin">
+            <div class="col_half">
                 <div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
                     <div class="fbox-icon">
-                        <a href="#"><i class="i-alt noborder icon-wallet"></i></a>
+                        <a href="#"><img src="~/Content/images/iconset2.jpg" /></a>
                     </div>
-                    <h3>Easy Payment Options<span class="subtitle">Credit Cards &amp; PayPal Support</span></h3>
+                    <h3>Noter onaylı kalite<span class="subtitle">Kalitenin sizi temsil ettiğini biliyoruz. Çevirilerinizin kalite kontrol araçları ve uzman çevirmenlerce kontrolünü sağlıyor; noter onayına sunuyoruz. </span></h3>
                 </div>
             </div>
 
-            <div class="col_one_fourth nobottommargin">
+            <div class="col_half">
                 <div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
                     <div class="fbox-icon">
-                        <a href="#"><i class="i-alt noborder icon-megaphone"></i></a>
+                        <a href="#"><img src="~/Content/images/iconset3.jpg" /></a>
                     </div>
-                    <h3>Instant Notifications<span class="subtitle">Realtime Email &amp; SMS Support</span></h3>
+                    <h3>Zamanında teslimat<span class="subtitle">İş planlamanıza önem veriyoruz. Planlamanızda sorun yaşamamanız için dosyalarınızı zamanında teslim ediyoruz. </span></h3>
                 </div>
             </div>
 
-            <div class="col_one_fourth nobottommargin col_last">
+            <div class="col_half col_last">
                 <div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
                     <div class="fbox-icon">
-                        <a href="#"><i class="i-alt noborder icon-fire"></i></a>
+                        <a href="#"><img src="~/Content/images/iconset5.jpg" /></a>
                     </div>
-                    <h3>Hot Offers Daily<span class="subtitle">Upto 50% Discounts</span></h3>
+                    <h3>17 yıllık tecrübe<span class="subtitle">Deneyimin önemini biliyoruz. 17 yıllık tecrübe ile çeviri teknolojilerini birleştiriyor; sizlere kaliteli hizmeti daha kısa sürede sunuyoruz. </span></h3>
                 </div>
-            </div>
-
-            <div class="clear"></div><div class="line bottommargin-lg"></div>
-
-            <div class="col_two_fifth nobottommargin">
-                <a href="http://vimeo.com/101373765" data-lightbox="iframe">
-                    <img src="~/Content/images/others/1.jpg" alt="Image">
-                    <span class="i-overlay"><img src="~/Content/images/icons/play.png" alt="Play"></span>
-                </a>
-            </div>
-
-            <div class="col_three_fifth nobottommargin col_last">
-
-                <div class="heading-block">
-                    <h2>Globally Preferred Ecommerce Platform</h2>
-                </div>
-
-                <p>Worldwide John Lennon, mobilize humanitarian; emergency response donors; cause human experience effect. Volunteer Action Against Hunger Aga Khan safeguards women's.</p>
-
-                <div class="col_half nobottommargin">
-                    <ul class="iconlist iconlist-color nobottommargin">
-                        <li><i class="icon-caret-right"></i> Responsive Ready Layout</li>
-                        <li><i class="icon-caret-right"></i> Retina Display Supported</li>
-                        <li><i class="icon-caret-right"></i> Powerful &amp; Optimized Code</li>
-                        <li><i class="icon-caret-right"></i> 380+ Templates Included</li>
-                    </ul>
-                </div>
-
-                <div class="col_half nobottommargin col_last">
-                    <ul class="iconlist iconlist-color nobottommargin">
-                        <li><i class="icon-caret-right"></i> 12+ Headers &amp; Menu Designs</li>
-                        <li><i class="icon-caret-right"></i> Premium Sliders Included</li>
-                        <li><i class="icon-caret-right"></i> Light &amp; Dark Colors</li>
-                        <li><i class="icon-caret-right"></i> e-Commerce Design Included</li>
-                    </ul>
-                </div>
-
             </div>
 
             <div class="clear"></div>
 
         </div>
 
-        <div class="section topmargin-lg">
-            <div class="container clearfix">
+        <div class="tabs tabs-alt tabs-justify clearfix" id="tab-10">
+            <ul class="tab-nav clearfix">
+                <li><a href="#tabs-37">İndirim Fırsatı</a></li>
+                <li><a href="#tabs-38">Referanslarımız</a></li>
+                <li><a href="#tabs-39">Bize Katılın</a></li>
+            </ul>
 
-                <div class="heading-block center">
-                    <h2>Features that you are gonna Love</h2>
-                    <span>Canvas comes with 100+ Feature oriented Shortcodes that are easy to use too.</span>
+            <div class="tab-container">
+                <div class="tab-content clearfix" id="tabs-37" style="background: url('/Content/images/tabsayfa1.jpg'); background-size: cover;height: 500px;">
+                    <p>
+                        <h4>Daha önce bizimle hiçbir iş çevirmedin mi?</h4>
+
+                        İşte sana güzel bir fırsat! Çeviri Dükkanı sürpriz indirimlerinden faydalanmak için sitemizi takip etmeye devam edin.
+                    </p>
                 </div>
-
-                <div class="clear bottommargin-sm"></div>
-
-                <div class="col_one_third">
-                    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn">
-                        <div class="fbox-icon">
-                            <a href="#"><i class="icon-phone2"></i></a>
-                        </div>
-                        <h3>Responsive Layout</h3>
-                        <p>Powerful Layout with Responsive functionality that can be adapted to any screen size.</p>
-                    </div>
+                <div class="tab-content clearfix" id="tabs-38" style="background: url('/Content/images/referanslarimiz.jpg'); background-size: cover;height: 500px;">
+                    <h4>İşte bizimle iş çeviren markalardan sadece bazıları!</h4>
                 </div>
+                <div class="tab-content clearfix" id="tabs-39" style="background: url('/Content/images/bize-katil.jpg'); background-size: cover;height: 500px;">
+                    <p style="background-color: rgba(254,196,0,0.7)" class="col-sm-6">
+                        İş çevirme konusunda kendine güveniyor musun?
 
-                <div class="col_one_third">
-                    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="200">
-                        <div class="fbox-icon">
-                            <a href="#"><i class="icon-eye"></i></a>
-                        </div>
-                        <h3>Retina Ready Graphics</h3>
-                        <p>Looks beautiful &amp; ultra-sharp on Retina Displays with Retina Icons, Fonts &amp; Images.</p>
-                    </div>
+                        Sana bir teklifimiz var! Çeviri ekibimizin bir parçası ol, en keyifli işleri birlikte çevirelim!
+                        Çevirmen Başvuru Adresimiz: <a href="/Tercuman-Ol-1">Hemen Bize Katıl!</a>
+                    </p>
                 </div>
-
-                <div class="col_one_third col_last">
-                    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="400">
-                        <div class="fbox-icon">
-                            <a href="#"><i class="icon-star2"></i></a>
-                        </div>
-                        <h3>Powerful Performance</h3>
-                        <p>Optimized code that are completely customizable and deliver unmatched fast performance.</p>
-                    </div>
-                </div>
-
-                <div class="clear"></div>
-
-                <div class="col_one_third">
-                    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="600">
-                        <div class="fbox-icon">
-                            <a href="#"><i class="icon-video"></i></a>
-                        </div>
-                        <h3>HTML5 Video</h3>
-                        <p>Canvas provides support for Native HTML5 Videos that can be added to a Full Width Background.</p>
-                    </div>
-                </div>
-
-                <div class="col_one_third">
-                    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="800">
-                        <div class="fbox-icon">
-                            <a href="#"><i class="icon-params"></i></a>
-                        </div>
-                        <h3>Parallax Support</h3>
-                        <p>Display your Content attractively using Parallax Sections that have unlimited customizable areas.</p>
-                    </div>
-                </div>
-
-                <div class="col_one_third col_last">
-                    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="1000">
-                        <div class="fbox-icon">
-                            <a href="#"><i class="icon-fire"></i></a>
-                        </div>
-                        <h3>Endless Possibilities</h3>
-                        <p>Complete control on each &amp; every element that provides endless customization possibilities.</p>
-                    </div>
-                </div>
-
-                <div class="clear"></div>
-
-                <div class="col_one_third nobottommargin">
-                    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="1200">
-                        <div class="fbox-icon">
-                            <a href="#"><i class="icon-bulb"></i></a>
-                        </div>
-                        <h3>Light &amp; Dark Color Schemes</h3>
-                        <p>Change your Website's Primary Scheme instantly by simply adding the dark class to the body.</p>
-                    </div>
-                </div>
-
-                <div class="col_one_third nobottommargin">
-                    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="1400">
-                        <div class="fbox-icon">
-                            <a href="#"><i class="icon-heart2"></i></a>
-                        </div>
-                        <h3>Boxed &amp; Wide Layouts</h3>
-                        <p>Stretch your Website to the Full Width or make it boxed to surprise your visitors.</p>
-                    </div>
-                </div>
-
-                <div class="col_one_third nobottommargin col_last">
-                    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="1600">
-                        <div class="fbox-icon">
-                            <a href="#"><i class="icon-note"></i></a>
-                        </div>
-                        <h3>Extensive Documentation</h3>
-                        <p>We have covered each &amp; everything in our Documentation including Videos &amp; Screenshots.</p>
-                    </div>
-                </div>
-
-                <div class="clear"></div>
-
             </div>
-        </div>
-
-        <div class="container clearfix">
-
-            <div class="heading-block center">
-                <h3>Some of our <span>Featured</span> Works</h3>
-                <span>We have worked on some Awesome Projects that are worth boasting of.</span>
-            </div>
-
-            <div id="oc-portfolio" class="owl-carousel portfolio-carousel portfolio-nomargin carousel-widget" data-margin="1" data-pagi="false" data-autoplay="5000" data-items-xxs="1" data-items-xs="2" data-items-sm="3" data-items-lg="4">
-
-                <div class="oc-item">
-                    <div class="iportfolio">
-                        <div class="portfolio-image">
-                            <a href="portfolio-single.html">
-                                <img src="~/Content/images/portfolio/4/1.jpg" alt="Open Imagination">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <a href="~/Content/images/portfolio/full/1.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-                                <a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-desc">
-                            <h3><a href="portfolio-single.html">Open Imagination</a></h3>
-                            <span><a href="#">Media</a>, <a href="#">Icons</a></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="oc-item">
-                    <div class="iportfolio">
-                        <div class="portfolio-image">
-                            <a href="portfolio-single.html">
-                                <img src="~/Content/images/portfolio/4/2.jpg" alt="Locked Steel Gate">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <a href="~/Content/images/portfolio/full/2.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-                                <a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-desc">
-                            <h3><a href="portfolio-single.html">Locked Steel Gate</a></h3>
-                            <span><a href="#">Illustrations</a></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="oc-item">
-                    <div class="iportfolio">
-                        <div class="portfolio-image">
-                            <a href="#">
-                                <img src="~/Content/images/portfolio/4/3.jpg" alt="Mac Sunglasses">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <a href="http://vimeo.com/89396394" class="left-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
-                                <a href="portfolio-single-video.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-desc">
-                            <h3><a href="portfolio-single-video.html">Mac Sunglasses</a></h3>
-                            <span><a href="#">Graphics</a>, <a href="#">UI Elements</a></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="oc-item">
-                    <div class="iportfolio">
-                        <div class="portfolio-image">
-                            <a href="portfolio-single.html">
-                                <img src="~/Content/images/portfolio/4/5.jpg" alt="Console Activity">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <a href="~/Content/images/portfolio/full/5.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-                                <a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-desc">
-                            <h3><a href="portfolio-single.html">Console Activity</a></h3>
-                            <span><a href="#">UI Elements</a>, <a href="#">Media</a></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="oc-item">
-                    <div class="iportfolio">
-                        <div class="portfolio-image">
-                            <a href="portfolio-single-video.html">
-                                <img src="~/Content/images/portfolio/4/7.jpg" alt="Backpack Contents">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <a href="http://www.youtube.com/watch?v=kuceVNBTJio" class="left-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
-                                <a href="portfolio-single-video.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-desc">
-                            <h3><a href="portfolio-single-video.html">Backpack Contents</a></h3>
-                            <span><a href="#">UI Elements</a>, <a href="#">Icons</a></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="oc-item">
-                    <div class="iportfolio">
-                        <div class="portfolio-image">
-                            <a href="portfolio-single.html">
-                                <img src="~/Content/images/portfolio/4/8.jpg" alt="Sunset Bulb Glow">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <a href="~/Content/images/portfolio/full/8.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-                                <a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-desc">
-                            <h3><a href="portfolio-single.html">Sunset Bulb Glow</a></h3>
-                            <span><a href="#">Graphics</a></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="oc-item">
-                    <div class="iportfolio">
-                        <div class="portfolio-image">
-                            <a href="portfolio-single-video.html">
-                                <img src="~/Content/images/portfolio/4/10.jpg" alt="Study Table">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <a href="http://vimeo.com/91973305" class="left-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
-                                <a href="portfolio-single-video.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-desc">
-                            <h3><a href="portfolio-single-video.html">Study Table</a></h3>
-                            <span><a href="#">Graphics</a>, <a href="#">Media</a></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="oc-item">
-                    <div class="iportfolio">
-                        <div class="portfolio-image">
-                            <a href="portfolio-single.html">
-                                <img src="~/Content/images/portfolio/4/11.jpg" alt="Workspace Stuff">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <a href="~/Content/images/portfolio/full/11.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-                                <a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-desc">
-                            <h3><a href="portfolio-single.html">Workspace Stuff</a></h3>
-                            <span><a href="#">Media</a>, <a href="#">Icons</a></span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="section topmargin-sm nobottommargin">
-
-            <div class="container clearfix">
-
-                <div class="heading-block center">
-                    <h3>Testimonials</h3>
-                    <span>Check out some of our Client Reviews</span>
-                </div>
-
-                <ul class="testimonials-grid grid-3 clearfix nobottommargin">
-                    <li>
-                        <div class="testimonial">
-                            <div class="testi-image">
-                                <a href="#"><img src="~/Content/images/testimonials/1.jpg" alt="Customer Testimonails"></a>
-                            </div>
-                            <div class="testi-content">
-                                <p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum repellendus!</p>
-                                <div class="testi-meta">
-                                    John Doe
-                                    <span>XYZ Inc.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="testimonial">
-                            <div class="testi-image">
-                                <a href="#"><img src="~/Content/images/testimonials/2.jpg" alt="Customer Testimonails"></a>
-                            </div>
-                            <div class="testi-content">
-                                <p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id culpa corporis molestias.</p>
-                                <div class="testi-meta">
-                                    Collis Ta'eed
-                                    <span>Envato Inc.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="testimonial">
-                            <div class="testi-image">
-                                <a href="#"><img src="~/Content/images/testimonials/7.jpg" alt="Customer Testimonails"></a>
-                            </div>
-                            <div class="testi-content">
-                                <p>Fugit officia dolor sed harum excepturi ex iusto magnam asperiores molestiae qui natus obcaecati facere sint amet.</p>
-                                <div class="testi-meta">
-                                    Mary Jane
-                                    <span>Google Inc.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="testimonial">
-                            <div class="testi-image">
-                                <a href="#"><img src="~/Content/images/testimonials/3.jpg" alt="Customer Testimonails"></a>
-                            </div>
-                            <div class="testi-content">
-                                <p>Similique fugit repellendus expedita excepturi iure perferendis provident quia eaque. Repellendus, vero numquam?</p>
-                                <div class="testi-meta">
-                                    Steve Jobs
-                                    <span>Apple Inc.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="testimonial">
-                            <div class="testi-image">
-                                <a href="#"><img src="~/Content/images/testimonials/4.jpg" alt="Customer Testimonails"></a>
-                            </div>
-                            <div class="testi-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, perspiciatis illum totam dolore deleniti labore.</p>
-                                <div class="testi-meta">
-                                    Jamie Morrison
-                                    <span>Adobe Inc.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="testimonial">
-                            <div class="testi-image">
-                                <a href="#"><img src="~/Content/images/testimonials/8.jpg" alt="Customer Testimonails"></a>
-                            </div>
-                            <div class="testi-content">
-                                <p>Porro dolorem saepe reiciendis nihil minus neque. Ducimus rem necessitatibus repellat laborum nemo quod.</p>
-                                <div class="testi-meta">
-                                    Cyan Ta'eed
-                                    <span>Tutsplus</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-
-            </div>
-
         </div>
 
         <div class="container clearfix">
 
             <div id="oc-clients" class="owl-carousel owl-carousel-full image-carousel carousel-widget" data-margin="30" data-loop="true" data-nav="false" data-autoplay="5000" data-pagi="false" data-items-xxs="2" data-items-xs="3" data-items-sm="4" data-items-md="5" data-items-lg="6" style="padding: 20px 0;">
 
-                <div class="oc-item"><a href="http://logofury.com/"><img src="~/Content/images/clients/1.png" alt="Clients"></a></div>
-                <div class="oc-item"><a href="http://logofury.com/"><img src="~/Content/images/clients/2.png" alt="Clients"></a></div>
-                <div class="oc-item"><a href="http://logofury.com/"><img src="~/Content/images/clients/3.png" alt="Clients"></a></div>
-                <div class="oc-item"><a href="http://logofury.com/"><img src="~/Content/images/clients/4.png" alt="Clients"></a></div>
-                <div class="oc-item"><a href="http://logofury.com/"><img src="~/Content/images/clients/5.png" alt="Clients"></a></div>
-                <div class="oc-item"><a href="http://logofury.com/"><img src="~/Content/images/clients/6.png" alt="Clients"></a></div>
-                <div class="oc-item"><a href="http://logofury.com/"><img src="~/Content/images/clients/7.png" alt="Clients"></a></div>
-                <div class="oc-item"><a href="http://logofury.com/"><img src="~/Content/images/clients/8.png" alt="Clients"></a></div>
-                <div class="oc-item"><a href="http://logofury.com/"><img src="~/Content/images/clients/9.png" alt="Clients"></a></div>
-                <div class="oc-item"><a href="http://logofury.com/"><img src="~/Content/images/clients/10.png" alt="Clients"></a></div>
-
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/bp.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/anadolu.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/avea.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/beko.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/bp.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/canon.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/ege-yapi.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/ergo.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/ericsson.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/eti-maden.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/acibadem.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/eti-maden.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/adidas.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/coca-cola.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/calik.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/calik.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/calik.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/ulker.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/turkish-airlines.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/medicalpark.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/abdi-ibrahim.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/turkcell.jpg" alt="Clients"></a></div>
+                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/siemens.jpg" alt="Clients"></a></div>
             </div>
-
         </div>
-
-        <a class="button button-full center tright footer-stick">
-            <div class="container clearfix">
-                Canvas comes with Unlimited Customizations &amp; Options. <strong>Check Out</strong> <i class="icon-caret-right" style="top:4px;"></i>
-            </div>
-        </a>
 
     </div>
 
 </section><!-- #content end -->
 
 
-<div class="row">
-    <div class="col-md-12">
-        <form>
-            <div class="form-group row">
-                <label for="sourceLanguage" class="col-sm-2 col-form-label">Dil</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="sourceLanguage" placeholder="Dil Seçiniz">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="targetLanguages" class="col-sm-2 col-form-label">Çevirilecek Diller</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="targetLanguages" placeholder="Dil Seçiniz" multiple="multiple">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="targetLanguages" class="col-sm-2 col-form-label">Doküman</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control-file" id="file" placeholder="Doküman Yükleyiniz">
-                </div>
-            </div>
-            <label id="txtPageCount"></label>
-            <label id="txtCharCount"></label>
-            <label id="txtCharCountWithSpaces"></label>
-            <div class="form-group row">
-                <label for="targetLanguages" class="col-sm-2 col-form-label">Terminoloji</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="terminology" placeholder="Terminoloji Seçiniz" multiple="multiple">
-                </div>
-            </div>
-
-        </form>
-    </div>
-</div>
 
 
-
-<script>
-    var baseUrl = "/api/v1/commonapi/";
-    var myDropzone;
-    function initDropZone() {
-
-        myDropzone = new Dropzone("#file", {
-            url: "http://localhost:8003/api/documentapi/uploadTranslationDocument",
-            uploadMultiple: true,
-            parallelUploads: 1,
-            addRemoveLinks: '/Admin/Home/RemoveFile',
-            maxFiles: 1,
-            maxFilesize: 500000,
-            acceptedFiles: '.pdf, .docx, .doc, .txt',
-            dictDefaultMessage: 'Dosya yüklemek için tıklayın ya da dosyayı sürükleyip bırakın',
-            dictFallbackMessage: 'Tarayıcınız bu içeriği gösteremiyor',
-            dictFallbackText: '',
-            dictInvalidFileType: 'Uyumsuz dosya tipi',
-            dictFileTooBig: 'Dosya boyutu tanımlanandan yüksektir',
-            dictResponseError: 'Hata oluştu',
-            dictCancelUpload: 'Yüklemeyi iptal et',
-            dictCancelUploadConfirmation: 'İptal etmek istediğinize emin misiniz?',
-            dictRemoveFile: 'Dosya sil',
-            dictMaxFilesExceeded: 'Toplam yüklenebilir dosya sayısını aştınız'
-        });
-
-        myDropzone.on('success', function (evt, response) {
-            console.log(response);
-            var documentDto = {
-                Name: $("#txtName").val(),
-                Path: response.Data.FilePath,
-                PageCount: response.Data.PageCount,
-                CharCount: response.Data.CharCount,
-                CharCountWithSpaces: response.Data.CharCountWithSpaces
-            };
-
-            $('#txtPageCount').val(documentDto.PageCount);
-            $('#txtCharCount').val(documentDto.CharCount);
-            $('#txtCharCountWithSpaces').val(documentDto.CharCountWithSpaces);
-        });
-
-        myDropzone.on('sending', function (file) {
-            if (myDropzone.files.length > 1) {
-                myDropzone.cancelUpload(file);
-            }
-        });
-
-        myDropzone.on('removedfile', function (removeThumb) {
-            $('#txtPageCount').val("");
-            $('#txtCharCount').val("");
-            $('#txtCharCountWithSpaces').val("");
-        });
-
-    }
-
-    function convertToSelect2Data(data) {
-        var tempResult = [];
-        data.forEach(function (item) {
-            if (item.name) {
-                tempResult.push({ id: item.id, text: item.name });
-            } else {
-                tempResult.push({ id: item.id, text: item.description });
-            }
-            
-        });
-
-        return tempResult;
-    }
-
-
-    function getSourceLanguages() {
-        return $.ajax({
-            url: baseUrl + "getLanguages",
-            type: 'GET'
-        });
-    }
-
-    function getTargetLanguages(sourceLanguageId) {
-        return $.ajax({
-            url: baseUrl + "getTargetLanguages",
-            type: 'GET',
-            data: { sourceLanguageId: sourceLanguageId }
-        });
-    }
-
-    function getTerminologies() {
-        return $.ajax({
-            url: baseUrl + "getTerminologies",
-            type: 'GET'
-        });
-    }
-
-    $('#sourceLanguage').on('select2:select', function (e) {
-        getTargetLanguages(e.params.data.id).then(function (result) {
-            var morphedResult = [];
-            result.forEach(function(item) {
-                morphedResult.push(item.targetLanguage);
-            });
-
-            $('#targetLanguages').select2({
-                data: convertToSelect2Data(morphedResult)
-            });
-        });
-    });
-
-    $(function () {
-        initDropZone();
-        getSourceLanguages().then(function (result) {
-            $('#sourceLanguage').select2({
-                data: convertToSelect2Data(result)
-            });
-        });
-
-        getTerminologies().then(function (result) {
-            $('#terminology').select2({
-                data: convertToSelect2Data(result)
-            });
-        });
-    });
-</script>
 
 @section scripts{
     <script src="~/bower_components/dropzone/dist/dropzone.js"></script>
     <script src="~/bower_components/select2/dist/js/select2.full.min.js"></script>
+    <script>
+        var baseUrl = "/api/v1/commonapi/";
+        var myDropzone;
+        function initDropZone() {
+
+            myDropzone = new Dropzone("#file", {
+                url: "http://localhost:8003/api/documentapi/uploadTranslationDocument",
+                uploadMultiple: true,
+                parallelUploads: 1,
+                addRemoveLinks: '/Admin/Home/RemoveFile',
+                maxFiles: 1,
+                maxFilesize: 500000,
+                acceptedFiles: '.pdf, .docx, .doc, .txt',
+                dictDefaultMessage: 'Dosya yüklemek için tıklayın ya da dosyayı sürükleyip bırakın',
+                dictFallbackMessage: 'Tarayıcınız bu içeriği gösteremiyor',
+                dictFallbackText: '',
+                dictInvalidFileType: 'Uyumsuz dosya tipi',
+                dictFileTooBig: 'Dosya boyutu tanımlanandan yüksektir',
+                dictResponseError: 'Hata oluştu',
+                dictCancelUpload: 'Yüklemeyi iptal et',
+                dictCancelUploadConfirmation: 'İptal etmek istediğinize emin misiniz?',
+                dictRemoveFile: 'Dosya sil',
+                dictMaxFilesExceeded: 'Toplam yüklenebilir dosya sayısını aştınız'
+            });
+
+            myDropzone.on('success', function(evt, response) {
+                console.log(response);
+                var documentDto = {
+                    Name: $("#txtName").val(),
+                    Path: response.Data.FilePath,
+                    PageCount: response.Data.PageCount,
+                    CharCount: response.Data.CharCount,
+                    CharCountWithSpaces: response.Data.CharCountWithSpaces
+                };
+
+                $('#txtPageCount').val(documentDto.PageCount);
+                $('#txtCharCount').val(documentDto.CharCount);
+                $('#txtCharCountWithSpaces').val(documentDto.CharCountWithSpaces);
+            });
+
+            myDropzone.on('sending', function(file) {
+                if (myDropzone.files.length > 1) {
+                    myDropzone.cancelUpload(file);
+                }
+            });
+
+            myDropzone.on('removedfile', function(removeThumb) {
+                $('#txtPageCount').val("");
+                $('#txtCharCount').val("");
+                $('#txtCharCountWithSpaces').val("");
+            });
+
+        }
+
+        function convertToSelect2Data(data) {
+            var tempResult = [];
+            data.forEach(function(item) {
+                if (item.name) {
+                    tempResult.push({ id: item.id, text: item.name });
+                } else {
+                    tempResult.push({ id: item.id, text: item.description });
+                }
+
+            });
+
+            return tempResult;
+        }
+
+
+        function getSourceLanguages() {
+            return $.ajax({
+                url: baseUrl + "getLanguages",
+                type: 'GET'
+            });
+        }
+
+        function getTargetLanguages(sourceLanguageId) {
+            return $.ajax({
+                url: baseUrl + "getTargetLanguages",
+                type: 'GET',
+                data: { sourceLanguageId: sourceLanguageId }
+            });
+        }
+
+        function getTerminologies() {
+            return $.ajax({
+                url: baseUrl + "getTerminologies",
+                type: 'GET'
+            });
+        }
+
+        $('#sourceLanguage').on('select2:select', function(e) {
+            getTargetLanguages(e.params.data.id).then(function(result) {
+                var morphedResult = [];
+                result.forEach(function(item) {
+                    morphedResult.push(item.targetLanguage);
+                });
+
+                $('#targetLanguages').select2({
+                    data: convertToSelect2Data(morphedResult)
+                });
+            });
+        });
+
+        $(function() {
+            initDropZone();
+            getSourceLanguages().then(function(result) {
+                $('#sourceLanguage').select2({
+                    data: convertToSelect2Data(result)
+                });
+            });
+
+            getTerminologies().then(function(result) {
+                $('#terminology').select2({
+                    data: convertToSelect2Data(result)
+                });
+            });
+        });
+    </script>
+
 }
