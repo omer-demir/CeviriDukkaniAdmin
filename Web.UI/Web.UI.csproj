@@ -1354,6 +1354,7 @@
     <Content Include="Content\css\calendar.css" />
     <Content Include="Content\css\camera-rtl.css" />
     <Content Include="Content\css\camera.css" />
+    <Content Include="Content\css\cevirmenol.css" />
     <Content Include="Content\css\colors-rtl.css" />
     <Content Include="Content\css\colors.css" />
     <Content Include="Content\css\components\bs-datatable.css" />
@@ -1424,9 +1425,11 @@
     <Content Include="Content\css\intro-fonts.css" />
     <Content Include="Content\css\magnific-popup.css" />
     <Content Include="Content\css\nivo-slider.css" />
+    <Content Include="Content\css\prettify.css" />
     <Content Include="Content\css\responsive-rtl.css" />
     <Content Include="Content\css\responsive.css" />
     <Content Include="Content\css\swiper.css" />
+    <Content Include="Content\css\TranslatorSignUp.css" />
     <Content Include="Content\css\vmap.css" />
     <Content Include="Content\images\adres.png" />
     <Content Include="Content\images\ajax-loader.gif" />
@@ -1621,6 +1624,10 @@
     <Content Include="Content\js\plugins\jquery.twitterfeed.js" />
     <Content Include="Content\js\plugins\jquery.validation.js" />
     <Content Include="Content\js\plugins\jquery.youtube.js" />
+    <Content Include="Content\js\prettify.js" />
+    <Content Include="Content\plugins\prettify\jquery.bootstrap.wizard.min.js" />
+    <Content Include="Content\plugins\prettify\prettify.css" />
+    <Content Include="Content\plugins\prettify\prettify.js" />
     <Content Include="Content\style-import.css" />
     <Content Include="Content\style-rtl.css" />
     <Content Include="Content\style.css">
@@ -2013,6 +2020,7 @@
     <Content Include="Views\Home\Career.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\HowItWorks.cshtml" />
+    <Content Include="Views\Home\TranslatorSignUp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Web.Business\Web.Business.csproj">

@@ -19,6 +19,18 @@
         .sidebar-nav {
             padding: 9px 0;
         }
+
+        .no-margin {
+            margin: 0 !important;
+        }
+
+        .no-padding {
+            padding: 0 !important;
+        }
+
+        .no-padding-left {
+            padding-left: 0 !important;
+        }
     </style>
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/Content/plugins/prettify/prettify.css" rel="stylesheet" />
@@ -43,121 +55,255 @@
                         <li><a href="#tab4" data-toggle="tab">Tecnology</a></li>
                         <li><a href="#tab5" data-toggle="tab">Peyment</a></li>
                         <li><a href="#tab6" data-toggle="tab">Rates</a></li>
-                    </ul>                           
+                        <li><a href="#tab7" data-toggle="tab">Test</a></li>
+                    </ul>
                 </div>
             </div>
-                    
-            <div id="bar" class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
-            </div>
+
+
             <div class="row body">
                 <form action="#">
                     <div class="tab-content">
 
                         <div class="tab-pane" id="tab1">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Surname</label>
+                                <input type="text" class="form-control" id="Surname" placeholder="Surname">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="Mobile">Mobile Phone</label>
+                                <div class="row no-margin no-padding">
+                                    <div class="col-md-3 no-padding-left">
+                                        <input type="text" class="form-control" id="Mobile" placeholder="Area">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="Mobile2" placeholder="Number">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="repassword">Re-Password</label>
+                                <input type="password" class="form-control" id="repassword" placeholder="Re-Password">
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> I read the agreement (türkçe sözleşme)and I accept it.
+                                </label>
+                            </div>
+                            <div class="divider"></div>
 
-                            <ul>
-                                <li>
-                                    <p class="left">
-                                        <label for="name">Name</label>
-                                        <input type="text" name="name" placeholder="John" />
-                                    </p>
-                                    <p class="pull-right">
-                                        <label for="surname">Surname</label>
-                                        <input type="text" name="surname" placeholder="Smith" />
-                                    </p>
-                                </li>
-                                <li>
-                                    <p class="left">
-                                        <label for="email">email <span class="req">*</span></label>
-                                        <input type="email" name="email" placeholder="john.smith@gmail.com" />
-                                    </p>
-                                    <p class="pull-right">
-                                        <label for="mobilephone">Mobilephone <span class="req">*</span></label>
-                                        <select>
-                                            <option value="+90">+90</option>
-                                            <option value="+93">+93</option>
-                                        </select>
-                                        <input type="tel" name="mobilephone" placeholder="111 111-11 11" />
-                                    </p>
-                                </li>
-                                <li>
-
-                                </li>
-                                <li>
-                                    <p class="left">
-                                        <label for="pass">Password</label>
-                                        <input type="password" name="pass" placeholder="******" />
-                                    </p>
-                                    <p class="pull-right">
-                                        <label for="repass">Password</label>
-                                        <input type="password" name="repass" placeholder="******" />
-                                    </p>
-                                </li>
-                                <li>
-                                    <p>
-                                        <label>I read the agreement (türkçe sözleşme)and I accept it.</label>
-                                        <input type="checkbox" />
-                                    </p>
-                                </li>
-                                <li>
-                                    <div class="divider"></div>
-                                </li>
-                            </ul>
                         </div>
                         <div class="tab-pane" id="tab2">
-                            <ul>
-                                <li>
-                                    <p>
-                                        <label for="country">Country</label>
-                                        <select>
-                                            <option value="1">Turkey</option>
-                                        </select>
-                                    </p>
-                                </li>
-                                <li>
-                                    <p class="left">
-                                        <label for="city">City</label>
-                                        <input type="text" name="city" placeholder="İstanbul" />
-                                    </p>
-                                    <p class="pull-right">
-                                        <label for="province">Province</label>
-                                        <input type="text" name="province" placeholder="Kadıköy" />
-                                    </p>
-                                </li>
-                                <li>
-                                    <p>
-                                        <label for="address">Address</label>
-                                        <textarea cols="46" rows="3" name="address"></textarea>
-                                    </p>
-                                </li>
-                            </ul>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+                                    <input type="text" class="form-control" id="country" placeholder="Country">
+                                </div>
+                                <div class="form-group">
+                                    <label for="City">City</label>
+                                    <input type="text" class="form-control" id="City" placeholder="City">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Province">Province</label>
+                                    <input type="text" class="form-control" id="Province" placeholder="Province">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Address</label>
+                                    <textarea class="form-control" id="Address" placeholder="Address"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Postal">Postal Code</label>
+                                    <input type="text" class="form-control" id="Postal" placeholder="Postal Code">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Alternative">Alternative  Phone</label>
+                                    <div class="row no-margin no-padding">
+                                        <div class="col-md-3 no-padding-left">
+                                            <input type="text" class="form-control" id="Alternative" placeholder="Area">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" id="Alternative2" placeholder="Number">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Alternative21">Alternative Phone 2</label>
+                                    <div class="row no-margin no-padding">
+                                        <div class="col-md-3 no-padding-left">
+                                            <input type="text" class="form-control" id="Alternative21" placeholder="Area">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" id="Alternative212" placeholder="Number">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Fax">Fax</label>
+                                    <div class="row no-margin no-padding">
+                                        <div class="col-md-3 no-padding-left">
+                                            <input type="text" class="form-control" id="Fax" placeholder="Area">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" id="Fax2" placeholder="Number">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Skype">Skype</label>
+                                    <input type="text" class="form-control" id="Skype" placeholder="Skype">
+                                </div>
+                            </div>
+
                         </div>
                         <div class="tab-pane" id="tab3">
-                            3
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Nationality">Nationality</label>
+                                    <input type="text" class="form-control" id="Nationality" placeholder="Nationality">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Nationality2">Nationality2</label>
+                                    <input type="text" class="form-control" id="Nationality2" placeholder="Nationality2">
+                                </div>
+                                <div class="form-group">
+                                    <label for="MotherTongue">MotherTongue</label>
+                                    <input type="text" class="form-control" id="MotherTongue" placeholder="MotherTongue">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Tongue">Tongue</label>
+                                    <input class="form-control" id="Tongue" placeholder="Tongue" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="Experience">Experience</label>
+                                    <input type="text" class="form-control" id="Experience" placeholder="Experience">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="CompanyName">CompanyName</label>
+                                    <input type="email" class="form-control" id="CompanyName" placeholder="CompanyName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Title">Title</label>
+                                    <input type="text" class="form-control" id="Title" placeholder="Title">
+                                </div>
+                                <div class="form-group">
+                                    <label for="TimeZone">TimeZone</label>
+                                    <input type="text" class="form-control" id="TimeZone" placeholder="TimeZone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="WorkingDays">WorkingDays</label>
+                                    <input type="text" class="form-control" id="WorkingDays" placeholder="WorkingDays">
+                                </div>
+                                <div class="form-group">
+                                    <label for="WorkingHours">WorkingHours</label>
+                                    <input type="text" class="form-control" id="WorkingHours" placeholder="WorkingHours">
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Translation">Translation</label>
+                                    <input type="text" class="form-control" id="Translation" placeholder="Translation">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Review">Review</label>
+                                    <input type="text" class="form-control" id="Review" placeholder="Review">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Proofreading">Proofreading</label>
+                                    <input type="text" class="form-control" id="Proofreading" placeholder="Proofreading">
+                                </div>
+                                <div class="form-group">
+                                    <label for="EnsureQuality">EnsureQuality</label>
+                                    <input type="text" class="form-control" id="EnsureQuality" placeholder="EnsureQuality">
+                                </div>
+                                <div class="form-group">
+                                    <label for="AddtionalInfo">AddtionalInfo</label>
+                                    <input type="text" class="form-control" id="AddtionalInfo" placeholder="AddtionalInfo">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Qualifications">Qualifications</label>
+                                    <input type="text" class="form-control" id="Qualifications" placeholder="Qualifications">
+                                </div>
+                                <div class="form-group">
+                                    <label for="MainClients">MainClients</label>
+                                    <input type="text" class="form-control" id="MainClients" placeholder="MainClients">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Associations">Associations</label>
+                                    <input type="text" class="form-control" id="Associations" placeholder="Associations">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Specialization">Specialization </label>
+                                    <input type="text" class="form-control" id="Specialization " placeholder="Specialization ">
+                                </div>
+                                <div class="form-group">
+                                    <label for="WebSite">WebSite</label>
+                                    <input type="text" class="form-control" id="WebSite" placeholder="WebSite">
+                                </div>
+                                <div class="form-group">
+                                    <label for="IntroduceYourself">IntroduceYourself</label>
+                                    <input type="text" class="form-control" id="IntroduceYourself" placeholder="IntroduceYourself">
+                                </div>
+                            </div>
+
+
                         </div>
                         <div class="tab-pane" id="tab4">
-                            4
+                            <div class="form-group">
+                                <label for="Software">Software</label>
+                                <input type="text" class="form-control" id="Software" placeholder="Software">
+                            </div>
+                            <div class="form-group">
+                                <label for="Version">Version </label>
+                                <input type="text" class="form-control" id="Version " placeholder="Version ">
+                            </div>
+                            <div class="form-group">
+                                <label for="OperatingSystem">OperatingSystem</label>
+                                <input type="text" class="form-control" id="OperatingSystem" placeholder="OperatingSystem">
+                            </div>
+                            <div class="form-group">
+                                <label for="Rating">Rating</label>
+                                <input type="text" class="form-control" id="Rating" placeholder="Rating">
+                            </div>
                         </div>
                         <div class="tab-pane" id="tab5">
-                            5
+                            Payment
                         </div>
                         <div class="tab-pane" id="tab6">
-                            6
+                            Rates
                         </div>
                         <div class="tab-pane" id="tab7">
-                            <ul>
-                                <li>
-                                    <label for="comments">comments</label>
-                                    <textarea cols="46" rows="3" name="comments"></textarea>
-                                </li>
-
-                                <li>
-                                    <input class="btn btn-submit" type="submit" value="Submit" />
-                                    <small>or press <strong>enter</strong></small>
-                                </li>
-                            </ul>
-
+                            <div class="form-group">
+                                <label for="Test">Test</label>
+                                <textarea cols="46" rows="3" class="form-control" id="Test" placeholder="Test"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="TranslationResult">TranslationResult</label>
+                                <textarea cols="46" rows="3" class="form-control" id="TranslationResult" placeholder="TranslationResult"></textarea>
+                            </div>
                         </div>
 
                         <ul class="pager wizard">
@@ -167,12 +313,12 @@
                             <li class="next"><a href="#">Next</a></li>
                         </ul>
                     </div>
-                </form>  
-                    </div>          
+                </form>
+            </div>
         </div>
     </div>
 
-    <script src="http://code.jquery.com/jquery-latest.js"></script>    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
     <script src="~/Content/plugins/prettify/jquery.bootstrap.wizard.min.js"></script>
     <script>
