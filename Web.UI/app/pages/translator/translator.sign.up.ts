@@ -82,6 +82,12 @@ declare var $: JQueryStatic;
             var country = countriesCities.find((item: any) => (item.id == e.params.data.id));
             initCityWithData(country.cities);
         });
+
+        //save.click basılınca
+        //new User()
+        //user.email=$('#email').val();
+        //dataService.saveUser
+
     });
 
     //Nationality
