@@ -5,332 +5,280 @@
 
 <!DOCTYPE html>
 <html>
-
 <head>
 
     <title>Çeviri Dükkanı</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <style type="text/css">
-        body {
-            padding-top: 60px;
-            padding-bottom: 40px;
+        .padded-tab {
+            margin-top: 2rem;
+        }
+         .full-width {
+             width: 100% !important;
+         }
+
+        .select2-container {
+            width: 100% !important;
         }
 
-        .sidebar-nav {
-            padding: 9px 0;
-        }
-
-        .no-margin {
-            margin: 0 !important;
-        }
-
-        .no-padding {
-            padding: 0 !important;
-        }
-
-        .no-padding-left {
-            padding-left: 0 !important;
+        .select2-container .select2-search--inline .select2-search__field {
+            width: 100% !important;
         }
     </style>
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="~/Content/plugins/prettify/prettify.css" rel="stylesheet" />
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/Content/plugins/materialize/sass/materialize.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+
     <link href="~/Content/css/TranslatorSignUp.css" rel="stylesheet" />
 
 </head>
 
 <body>
 
-    <div class="container">
+    <div class="container z-depth-4">
         <div class="row header">
             <h1>Let's get to know you then</h1>
             <h3>So it seems you want to do a job with us..</h3>
         </div>
-        <div id="rootwizard">
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <ul>
-                        <li><a href="#tab1" data-toggle="tab">Membership</a></li>
-                        <li><a href="#tab2" data-toggle="tab">Contact</a></li>
-                        <li><a href="#tab3" data-toggle="tab">Ability</a></li>
-                        <li><a href="#tab4" data-toggle="tab">Tecnology</a></li>
-                        <li><a href="#tab5" data-toggle="tab">Peyment</a></li>
-                        <li><a href="#tab6" data-toggle="tab">Rates</a></li>
-                        <li><a href="#tab7" data-toggle="tab">Test</a></li>
-                    </ul>
+        <div class="row">
+            <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab col s3"><a href="#tab1">Membership</a></li>
+                    <li class="tab col s3"><a href="#tab2">Contact</a></li>
+                    <li class="tab col s3"><a href="#tab3">Ability</a></li>
+                    <li class="tab col s3"><a href="#tab4">Technology</a></li>
+                    <li class="tab col s3"><a href="#tab5">Payments</a></li>
+                    <li class="tab col s3"><a href="#tab6">Rates</a></li>
+                    <li class="tab col s3"><a href="#tab7">Test</a></li>
+                </ul>
+            </div>
+            <div id="tab1" class="col s12 padded-tab">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="name">Name</label>
+                        <input type="text" class="validate" id="name" placeholder="Name">
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="name">Surname</label>
+                        <input type="text" class="validate" id="Surname" placeholder="Surname">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="Email">Email address</label>
+                        <input type="email" class="validate" id="Email" placeholder="Email">
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="Mobile">Mobile Phone</label>
+                        <input type="text" class="validate" id="Mobile" placeholder="Number">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="password">Password</label>
+                        <input type="password" class="validate" id="password" placeholder="Password">
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="repassword">Re-Password</label>
+                        <input type="password" class="validate" id="repassword" placeholder="Re-Password">
+                    </div>
+                </div>
+                <div class="row">
+                    <p>
+                        <input type="checkbox" id="agreement" />
+                        <label for="agreement">I read the agreement (türkçe sözleşme)and I accept it.</label>
+                    </p>
                 </div>
             </div>
-
-
-            <div class="row body">
-                <form action="#">
-                    <div class="tab-content">
-
-                        <div class="tab-pane" id="tab1">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Surname</label>
-                                <input type="text" class="form-control" id="Surname" placeholder="Surname">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <label for="Mobile">Mobile Phone</label>
-                                <div class="row no-margin no-padding">
-                                    <div class="col-md-3 no-padding-left">
-                                        <input type="text" class="form-control" id="Mobile" placeholder="Area">
-                                    </div>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" id="Mobile2" placeholder="Number">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Password">
-                            </div>
-                            <div class="form-group">
-                                <label for="repassword">Re-Password</label>
-                                <input type="password" class="form-control" id="repassword" placeholder="Re-Password">
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> I read the agreement (türkçe sözleşme)and I accept it.
-                                </label>
-                            </div>
-                            <div class="divider"></div>
-
-                        </div>
-                        <div class="tab-pane" id="tab2">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="country">Country</label>
-                                    <input type="text" class="form-control" id="country" placeholder="Country">
-                                </div>
-                                <div class="form-group">
-                                    <label for="City">City</label>
-                                    <input type="text" class="form-control" id="City" placeholder="City">
-                                </div>
-                                <div class="form-group">
-                                    <label for="Province">Province</label>
-                                    <input type="text" class="form-control" id="Province" placeholder="Province">
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Address</label>
-                                    <textarea class="form-control" id="Address" placeholder="Address"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="Postal">Postal Code</label>
-                                    <input type="text" class="form-control" id="Postal" placeholder="Postal Code">
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="Alternative">Alternative  Phone</label>
-                                    <div class="row no-margin no-padding">
-                                        <div class="col-md-3 no-padding-left">
-                                            <input type="text" class="form-control" id="Alternative" placeholder="Area">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" id="Alternative2" placeholder="Number">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="Alternative21">Alternative Phone 2</label>
-                                    <div class="row no-margin no-padding">
-                                        <div class="col-md-3 no-padding-left">
-                                            <input type="text" class="form-control" id="Alternative21" placeholder="Area">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" id="Alternative212" placeholder="Number">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="Fax">Fax</label>
-                                    <div class="row no-margin no-padding">
-                                        <div class="col-md-3 no-padding-left">
-                                            <input type="text" class="form-control" id="Fax" placeholder="Area">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" id="Fax2" placeholder="Number">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="Skype">Skype</label>
-                                    <input type="text" class="form-control" id="Skype" placeholder="Skype">
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="tab-pane" id="tab3">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="Nationality">Nationality</label>
-                                    <input type="text" class="form-control" id="Nationality" placeholder="Nationality">
-                                </div>
-                                <div class="form-group">
-                                    <label for="Nationality2">Nationality2</label>
-                                    <input type="text" class="form-control" id="Nationality2" placeholder="Nationality2">
-                                </div>
-                                <div class="form-group">
-                                    <label for="MotherTongue">MotherTongue</label>
-                                    <input type="text" class="form-control" id="MotherTongue" placeholder="MotherTongue">
-                                </div>
-                                <div class="form-group">
-                                    <label for="Tongue">Tongue</label>
-                                    <input class="form-control" id="Tongue" placeholder="Tongue" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="Experience">Experience</label>
-                                    <input type="text" class="form-control" id="Experience" placeholder="Experience">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="CompanyName">CompanyName</label>
-                                    <input type="email" class="form-control" id="CompanyName" placeholder="CompanyName">
-                                </div>
-                                <div class="form-group">
-                                    <label for="Title">Title</label>
-                                    <input type="text" class="form-control" id="Title" placeholder="Title">
-                                </div>
-                                <div class="form-group">
-                                    <label for="TimeZone">TimeZone</label>
-                                    <input type="text" class="form-control" id="TimeZone" placeholder="TimeZone">
-                                </div>
-                                <div class="form-group">
-                                    <label for="WorkingDays">WorkingDays</label>
-                                    <input type="text" class="form-control" id="WorkingDays" placeholder="WorkingDays">
-                                </div>
-                                <div class="form-group">
-                                    <label for="WorkingHours">WorkingHours</label>
-                                    <input type="text" class="form-control" id="WorkingHours" placeholder="WorkingHours">
-                                </div>
-                            </div>
-                            <hr />
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="Translation">Translation</label>
-                                    <input type="text" class="form-control" id="Translation" placeholder="Translation">
-                                </div>
-                                <div class="form-group">
-                                    <label for="Review">Review</label>
-                                    <input type="text" class="form-control" id="Review" placeholder="Review">
-                                </div>
-                                <div class="form-group">
-                                    <label for="Proofreading">Proofreading</label>
-                                    <input type="text" class="form-control" id="Proofreading" placeholder="Proofreading">
-                                </div>
-                                <div class="form-group">
-                                    <label for="EnsureQuality">EnsureQuality</label>
-                                    <input type="text" class="form-control" id="EnsureQuality" placeholder="EnsureQuality">
-                                </div>
-                                <div class="form-group">
-                                    <label for="AddtionalInfo">AddtionalInfo</label>
-                                    <input type="text" class="form-control" id="AddtionalInfo" placeholder="AddtionalInfo">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="Qualifications">Qualifications</label>
-                                    <input type="text" class="form-control" id="Qualifications" placeholder="Qualifications">
-                                </div>
-                                <div class="form-group">
-                                    <label for="MainClients">MainClients</label>
-                                    <input type="text" class="form-control" id="MainClients" placeholder="MainClients">
-                                </div>
-                                <div class="form-group">
-                                    <label for="Associations">Associations</label>
-                                    <input type="text" class="form-control" id="Associations" placeholder="Associations">
-                                </div>
-                                <div class="form-group">
-                                    <label for="Specialization">Specialization </label>
-                                    <input type="text" class="form-control" id="Specialization " placeholder="Specialization ">
-                                </div>
-                                <div class="form-group">
-                                    <label for="WebSite">WebSite</label>
-                                    <input type="text" class="form-control" id="WebSite" placeholder="WebSite">
-                                </div>
-                                <div class="form-group">
-                                    <label for="IntroduceYourself">IntroduceYourself</label>
-                                    <input type="text" class="form-control" id="IntroduceYourself" placeholder="IntroduceYourself">
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="tab-pane" id="tab4">
-                            <div class="form-group">
-                                <label for="Software">Software</label>
-                                <input type="text" class="form-control" id="Software" placeholder="Software">
-                            </div>
-                            <div class="form-group">
-                                <label for="Version">Version </label>
-                                <input type="text" class="form-control" id="Version " placeholder="Version ">
-                            </div>
-                            <div class="form-group">
-                                <label for="OperatingSystem">OperatingSystem</label>
-                                <input type="text" class="form-control" id="OperatingSystem" placeholder="OperatingSystem">
-                            </div>
-                            <div class="form-group">
-                                <label for="Rating">Rating</label>
-                                <input type="text" class="form-control" id="Rating" placeholder="Rating">
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="tab5">
-                            Payment
-                        </div>
-                        <div class="tab-pane" id="tab6">
-                            Rates
-                        </div>
-                        <div class="tab-pane" id="tab7">
-                            <div class="form-group">
-                                <label for="Test">Test</label>
-                                <textarea cols="46" rows="3" class="form-control" id="Test" placeholder="Test"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="TranslationResult">TranslationResult</label>
-                                <textarea cols="46" rows="3" class="form-control" id="TranslationResult" placeholder="TranslationResult"></textarea>
-                            </div>
-                        </div>
-
-                        <ul class="pager wizard">
-                            <li class="previous first" style="display:none;"><a href="#">First</a></li>
-                            <li class="previous"><a href="#">Previous</a></li>
-                            <li class="next last" style="display:none;"><a href="#">Last</a></li>
-                            <li class="next"><a href="#">Next</a></li>
-                        </ul>
+            <div id="tab2" class="col s12 padded-tab">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <select id="country" class="full-width"></select>
                     </div>
-                </form>
+                    <div class="input-field col s6">
+                        <select id="City" class="full-width"></select>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="name">Address</label>
+                        <textarea class="materialize-textarea" id="Address" placeholder="Address"></textarea>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="Postal">Postal Code</label>
+                        <input type="text" class="validate" id="Postal" placeholder="Postal Code">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="Alternative">Alternative  Phone</label>
+                        <input type="text" class="validate" id="Alternative" placeholder="Area">
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="Alternative2">Alternative Phone 2</label>
+                        <input type="text" class="validate" id="Alternative2" placeholder="Area">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="Fax">Fax</label>
+                        <input type="text" class="validate" id="Fax" placeholder="Area">
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="Skype">Skype</label>
+                        <input type="text" class="validate" id="Skype" placeholder="Skype">
+                    </div>
+                </div>
+            </div>
+            <div id="tab3" class="col s12 padded-tab">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <select id="Nationality" class="full-width "></select>
+                    </div>
+                    <div class="input-field col s6">
+                        <select id="Nationality2" class="full-width "></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <select id="MotherTongue" class="full-width "></select>
+                    </div>
+                    <div class="input-field col s6">
+                        <select id="Tongue" class="full-width "></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="Experience">Experience</label>
+                        <input type="text" class="validate" id="Experience" placeholder="Experience">
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="CompanyName">CompanyName - For Freelance</label>
+                        <input type="email" class="validate" id="CompanyName" placeholder="Company Name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <select id="TimeZone" class="full-width "></select>
+                    </div>
+                    <div class="input-field col s6">
+                        <select id="WorkingDays" class="full-width"></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="WorkingHours">Working Hours</label>
+                        <input type="text" class="validate" id="WorkingHours" placeholder="WorkingHours">
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="Translation">Translation</label>
+                        <input type="text" class="validate" id="Translation" placeholder="Translation">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="Review">Review</label>
+                        <input type="text" class="validate" id="Review" placeholder="Review">
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="Proofreading">Proofreading</label>
+                        <input type="text" class="validate" id="Proofreading" placeholder="Proofreading">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="EnsureQuality">EnsureQuality</label>
+                        <input type="text" class="validate" id="EnsureQuality" placeholder="EnsureQuality">
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="AdditionalInfo">AdditionalInfo</label>
+                        <input type="text" class="validate" id="AdditionalInfo" placeholder="AdditionalInfo">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="Qualifications">Qualifications</label>
+                        <input type="text" class="validate" id="Qualifications" placeholder="Qualifications">
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="MainClients">MainClients</label>
+                        <input type="text" class="validate" id="MainClients" placeholder="MainClients">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="Associations">Associations</label>
+                        <input type="text" class="validate" id="Associations" placeholder="Associations">
+                    </div>
+                    <div class="input-field col s6">
+                        <select id="Specialization" class="full-width"></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="WebSite">WebSite</label>
+                        <input type="text" class="validate" id="WebSite" placeholder="WebSite">
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="IntroduceYourself">IntroduceYourself</label>
+                        <input type="text" class="validate" id="IntroduceYourself" placeholder="IntroduceYourself">
+                    </div>
+                </div>
+            </div>
+            <div id="tab4" class="col s12 padded-tab">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <select id="Software" class="full-width"></select>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="Version">Version </label>
+                        <input type="text" class="validate" id="Version " placeholder="Version ">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="OperatingSystem">OperatingSystem</label>
+                        <input type="text" class="validate" id="OperatingSystem" placeholder="OperatingSystem">
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="Rating">Rating</label>
+                        <input type="text" class="validate" id="Rating" placeholder="Rating">
+                    </div>
+                </div>
+            </div>
+            <div id="tab5" class="col s12 padded-tab">
+                Payment
+            </div>
+            <div id="tab6" class="col s12 padded-tab">
+                Rates
+            </div>
+            <div id="tab7" class="col s12 padded-tab">
+                <div class="input-field col s12">
+                    <label for="Test">Test</label>
+                    <textarea cols="46" rows="3" class="materialize-textarea" id="Test" placeholder="Test"></textarea>
+                </div>
+                <div class="input-field col s12">
+                    <label for="TranslationResult">TranslationResult</label>
+                    <textarea cols="46" rows="3" class="materialize-textarea" id="TranslationResult" placeholder="TranslationResult"></textarea>
+                </div>
             </div>
         </div>
     </div>
 
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-    <script src="~/Content/plugins/prettify/jquery.bootstrap.wizard.min.js"></script>
+    <script src="~/Content/plugins/materialize/js/materialize.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script src="~/dist/classes/ceviri.classes.js"></script>
+    <script src="~/dist/services/common.data.service.js"></script>
+    <script src="~/dist/pages/translator/translator.sign.up.js"></script>
     <script>
         $(document).ready(function () {
-            $('#rootwizard').bootstrapWizard({
-                onTabShow: function (tab, navigation, index) {
-                    var $total = navigation.find('li').length;
-                    var $current = index + 1;
-                    var $percent = ($current / $total) * 100;
-                    $('#rootwizard .progress-bar').css({ width: $percent + '%' });
-                }
-            });
+            $('ul.tabs').tabs();
         });
     </script>
 </body>

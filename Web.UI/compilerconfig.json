@@ -2,5 +2,9 @@
   {
     "outputFile": "Content/style.css",
     "inputFile": "Content/style.scss"
+  },
+  {
+    "outputFile": "Content/plugins/materialize/sass/materialize.css",
+    "inputFile": "Content/plugins/materialize/sass/materialize.scss"
   }
 ]
