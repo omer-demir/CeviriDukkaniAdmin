@@ -23,4 +23,38 @@ var Select2Data = (function () {
     }
     return Select2Data;
 }());
+var User = (function () {
+    function User() {
+    }
+    return User;
+}());
+var UserContact = (function () {
+    function UserContact() {
+    }
+    return UserContact;
+}());
+var UserAbility = (function () {
+    function UserAbility() {
+    }
+    return UserAbility;
+}());
+var Specialization = (function () {
+    function Specialization() {
+    }
+    return Specialization;
+}());
+var Capacity = (function () {
+    function Capacity() {
+    }
+    return Capacity;
+}());
+var UserPayment = (function () {
+    function UserPayment() {
+    }
+    return UserPayment;
+}());
+//public int ? UserRateId { get; set; }
+//public virtual UserRateDto UserRate { get; set; }
+//public int ? UserScoreId { get; set; }
+//public virtual UserScoreDto UserScore { get; set; } 
 //# sourceMappingURL=ceviri.classes.js.map
