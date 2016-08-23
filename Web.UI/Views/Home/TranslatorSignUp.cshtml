@@ -68,11 +68,11 @@
                 <div class="row">
                     <div class="input-field col s6">
                         <label for="Email">Email address</label>
-                        <input type="email" class="validate" id="Email" placeholder="Email">
+                        <input type="email" class="validate" id="email" placeholder="Email">
                     </div>
                     <div class="input-field col s6">
                         <label for="Mobile">Mobile Phone</label>
-                        <input type="text" class="validate" id="Mobile" placeholder="Number">
+                        <input type="text" class="validate" id="mobile" placeholder="Number">
                     </div>
                 </div>
                 <div class="row">
@@ -95,57 +95,68 @@
             <div id="tab2" class="col s12 padded-tab">
                 <div class="row">
                     <div class="input-field col s6">
+                        <label for="country">Country</label>
                         <select id="country" class="full-width"></select>
                     </div>
                     <div class="input-field col s6">
-                        <select id="City" class="full-width"></select>
+                        <label for="city">City</label>
+                        <select id="city" class="full-width"></select>
                     </div>
+                </div>
+                <div class="row">                    
+                    <div class="input-field col s6">
+                        <label for="district">District</label>
+                        <select id="district" class="full-width"></select>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="postalCode">Postal Code</label>
+                        <input type="text" class="validate" id="postalCode" placeholder="Postal Code">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="address">Address</label>
+                        <textarea class="materialize-textarea" id="address" placeholder="Address"></textarea>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="alternativeEmail">Alternative Email Address</label>
+                        <input type="text" class="validate" id="alternativeEmail" placeholder="Postal Code">
+                    </div>                    
+                </div>
 
-                </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <label for="name">Address</label>
-                        <textarea class="materialize-textarea" id="Address" placeholder="Address"></textarea>
+                        <label for="alternativePhone1">Alternative Phone</label>
+                        <input type="text" class="validate" id="alternativePhone1" placeholder="Area">
                     </div>
                     <div class="input-field col s6">
-                        <label for="Postal">Postal Code</label>
-                        <input type="text" class="validate" id="Postal" placeholder="Postal Code">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="Alternative">Alternative  Phone</label>
-                        <input type="text" class="validate" id="Alternative" placeholder="Area">
-                    </div>
-                    <div class="input-field col s6">
-                        <label for="Alternative2">Alternative Phone 2</label>
-                        <input type="text" class="validate" id="Alternative2" placeholder="Area">
+                        <label for="alternativePhone2">Alternative Phone 2</label>
+                        <input type="text" class="validate" id="alternativePhone2" placeholder="Area">
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <label for="Fax">Fax</label>
-                        <input type="text" class="validate" id="Fax" placeholder="Area">
+                        <label for="fax">Fax</label>
+                        <input type="text" class="validate" id="fax" placeholder="Area">
                     </div>
                     <div class="input-field col s6">
-                        <label for="Skype">Skype</label>
-                        <input type="text" class="validate" id="Skype" placeholder="Skype">
+                        <label for="skype">Skype</label>
+                        <input type="text" class="validate" id="skype" placeholder="Skype">
                     </div>
                 </div>
             </div>
             <div id="tab3" class="col s12 padded-tab">
                 <div class="row">
                     <div class="input-field col s6">
-                        <select id="Nationality" class="full-width "></select>
+                        <select id="nationality" class="full-width "></select>
                     </div>
                     <div class="input-field col s6">
-                        <select id="Nationality2" class="full-width "></select>
+                        <select id="nationality2" class="full-width "></select>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <select id="MotherTongue" class="full-width "></select>
+                        <select id="motherTongue" class="full-width "></select>
                     </div>
                     <div class="input-field col s6">
                         <select id="Tongue" class="full-width "></select>
@@ -266,7 +277,7 @@
                     <textarea cols="46" rows="3" class="materialize-textarea" id="TranslationResult" placeholder="TranslationResult"></textarea>
                 </div>
                 <div class="input-field col s12">
-                    <input type="button" id="btnSave" value="Save"/> 
+                    <input type="submit" id="btnSave" name="btnSave" value="Save"/> 
                 </div>
         </div>
     </div>

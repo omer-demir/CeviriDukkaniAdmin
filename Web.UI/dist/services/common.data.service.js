@@ -1,6 +1,7 @@
 var DataService = (function () {
     function DataService() {
         this.commonApiUrl = "/api/v1/commonapi/";
+        this.userApiUrl = "/api/v1/userapi/";
     }
     DataService.prototype.getNationalities = function (callback) {
         var settings = {
@@ -62,6 +63,15 @@ var DataService = (function () {
         var settings = {
             url: '/app/countriesToCities.json',
             type: 'GET',
+            success: callback
+        };
+        return $.ajax(settings);
+    };
+    DataService.prototype.saveUser = function (data, callback) {
+        var settings = {
+            url: this.userApiUrl + 'addUser',
+            type: 'POST',
+            data: data,
             success: callback
         };
         return $.ajax(settings);
