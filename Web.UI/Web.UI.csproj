@@ -138,7 +138,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="Tangent.CeviriDukkani.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CeviriDükkanıCommon.1.0.2.36\lib\Tangent.CeviriDukkani.Domain.dll</HintPath>
+      <HintPath>..\packages\CeviriDükkanıCommon.1.0.2.44\lib\Tangent.CeviriDukkani.Domain.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease">
@@ -249,6 +249,9 @@
     <Content Include="Areas\Admin\Scripts\app\page-scripts\document\index.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\campaign.update.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\campaign.list.page.js" />
+    <Content Include="Areas\Admin\Scripts\app\page-scripts\order\list.orderdetails.proofreader.page.js" />
+    <Content Include="Areas\Admin\Scripts\app\page-scripts\order\list.orderdetails.editor.page.js" />
+    <Content Include="Areas\Admin\Scripts\app\page-scripts\order\list.orderdetails.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\list.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\pending.response.order.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\waiting.order.page.js" />
@@ -1941,6 +1944,9 @@
     <Content Include="Content\sass\widgets.scss" />
     <Content Include="bower.json" />
     <Content Include="app\countriesToCities.json" />
+    <None Include="Areas\Admin\Views\Order\OrderDetailsList.cshtml" />
+    <None Include="Areas\Admin\Views\Order\OrderDetailsListAsEditor.cshtml" />
+    <None Include="Areas\Admin\Views\Order\OrderDetailsListAsProofReader.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>

@@ -82,7 +82,7 @@ declare var $: JQueryStatic;
             var country = countriesCities.find((item: any) => (item.id == e.params.data.id));
             initCityWithData(country.cities);
         });
-                
+
         $("#btnSave").on("click", (data: any) => {
             alert("ok");
             var user = new User();
@@ -134,7 +134,7 @@ declare var $: JQueryStatic;
             });
         });
 
-        
+
         //save.click basılınca
         //new User()
         //user.email=

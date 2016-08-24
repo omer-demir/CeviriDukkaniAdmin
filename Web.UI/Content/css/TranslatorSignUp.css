@@ -70,33 +70,6 @@ h3 {
     margin: 1em 0 0.4em 0;
 }
 
-.btn {
-    font-size: 1.0625em;
-    display: inline-block;
-    padding: 0.74em 1.5em;
-    margin: 1.5em 0 0;
-    color: #fff;
-    border-width: 0 0 0 0;
-    border-bottom: 5px solid;
-    text-transform: uppercase;
-    background-color: #b3b3b3;
-    border-bottom-color: #8c8c8c;
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-}
-
-    .btn:hover {
-        background-color: #bfbfbf;
-    }
-
-    .btn.btn-submit {
-        background-color: #4f6fad;
-        border-bottom-color: #374d78;
-    }
-
-        .btn.btn-submit:hover {
-            background-color: #5f7db6;
-        }
 
 form {
     max-width: 100%;
