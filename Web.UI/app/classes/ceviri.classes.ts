@@ -46,7 +46,8 @@ class UserContact {
 }
 
 class UserAbility {
-    motherTongueId:number;
+    motherTongueId: number;
+    tongue: number;
     bilingualTongueId: number;
     yearsOfExperience:number;
     capacity:Capacity;
@@ -67,15 +68,49 @@ class Capacity {
 }
 
 class UserPayment {
-    bankAccountId:number;
+    bankAccount: BankAccount;
     vatTaxNo: string;
     currencyId: number;
     workingTypeId: number;
     minimumChargeAmount: number;
 }
 
+class BankAccount {
+    bankAccountTypeId: number;
+    bankName: string;
+    accountHolderFullName: string;
+    IBAN: string;
+    paypalEmailAddress: string;
+    beneficiaryAddress: string;
+    accountNumber: string;
+    swiftBicCode: string;
+    cityCountryBank: string;
+    bankAddress: string;
+}
 
-//public int ? UserRateId { get; set; }
-//public virtual UserRateDto UserRate { get; set; }
-//public int ? UserScoreId { get; set; }
-//public virtual UserScoreDto UserScore { get; set; }
+class Rate{
+    RateItems: RateItemDto[];
+    DtpRate: number;
+    GlossaryCreationRate: number;
+    TranslationMemoryManagementRate: number;
+    TerminologyExtractionRate: number;
+    ReviewSmeRate: number;
+    LinguisticTestingRate: number;
+    ReviewLqaRate: number;
+    UserDocuments: UserDocumentDto[];
+    UserRateId: number;
+}
+
+class RateItemDto {
+    ServiceTypeId: number;
+    SourceLanguageId: number;
+    TargetLanguageId: number;
+    Price: number;
+    SwornOrCertified: boolean;
+    CertificateId: number;
+    UserRateId: number;
+}
+
+class UserDocumentDto {
+    UserDocumentTypeId: number;
+}

@@ -100,7 +100,7 @@ declare var $: JQueryStatic;
                 var user = new User();
                 user.name = $('#name').val();
                 user.surname = $('#surname').val();
-                user.genderId = $('#genderId').val();
+                user.genderId = $('input[name="gender"]:checked').val();                
                 user.mobilePhone = $('#mobilePhone').val();
                 user.password = $('#password').val();
 
@@ -116,10 +116,10 @@ declare var $: JQueryStatic;
                 user.userContact = userContact;
 
                 var userAbility = new UserAbility();
-                userAbility.motherTongueId = $('#motherTongueId').val();
-                userAbility.bilingualTongueId = $('#bilingualTongueId').val();
+                userAbility.motherTongueId = $('#motherTongue').val();
+                userAbility.tongue = $('#tongue').val();
+                userAbility.bilingualTongueId = $('#bilingualTongue').val();
                 userAbility.yearsOfExperience = $('#yearsOfExperience').val();
-
                 var capacity = new Capacity();
                 capacity.translation = $('#translation').val();
                 capacity.reviews = $('#reviews').val();
@@ -127,9 +127,8 @@ declare var $: JQueryStatic;
                 userAbility.capacity = capacity;
                 userAbility.qualityEnsureDescription = $('#qualityEnsureDescription').val();
                 userAbility.qualifications = $('#qualifications').val();
-                userAbility.qualifications = $('#qualifications').val();
                 userAbility.mainClients = $('#mainClients').val();
-                //userAbility.Specialization = $('#Specialization').val();            
+                userAbility.specializations = $('#specializations').val();            
                 user.userAbility = userAbility;
 
                 var userPayment = new UserPayment();

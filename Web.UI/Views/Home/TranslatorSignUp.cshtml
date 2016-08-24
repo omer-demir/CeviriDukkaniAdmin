@@ -77,6 +77,24 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
+                        <label for="Mobile">Gender<br /></label>
+                        
+                        <p>
+                            <input name="gender" type="radio" value="0" />
+                            <label for="test1">Female</label>
+                        </p>
+                        <p>
+                            <input name="gender" type="radio" value="1" />
+                            <label for="test1">Male</label>
+                        </p>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="repassword">Re-Password</label>
+                        <input type="password" class="validate" id="repassword" placeholder="Re-Password">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
                         <label for="password">Password</label>
                         <input type="password" class="validate" id="password" placeholder="Password">
                     </div>
@@ -148,99 +166,58 @@
             <div id="tab3" class="col s12 padded-tab">
                 <div class="row">
                     <div class="input-field col s6">
-                        <select id="nationality" class="full-width "></select>
-                    </div>
-                    <div class="input-field col s6">
-                        <select id="nationality2" class="full-width "></select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
                         <select id="motherTongue" class="full-width "></select>
                     </div>
                     <div class="input-field col s6">
-                        <select id="Tongue" class="full-width "></select>
+                        <select id="tongue" class="full-width "></select>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <label for="Experience">Experience</label>
-                        <input type="text" class="validate" id="Experience" placeholder="Experience">
+                        <select id="bilingualTongue" class="full-width "></select>
                     </div>
                     <div class="input-field col s6">
-                        <label for="CompanyName">CompanyName - For Freelance</label>
-                        <input type="email" class="validate" id="CompanyName" placeholder="Company Name">
+                        <label for="Experience">Years of experience in translation</label>
+                        <input type="text" class="validate" id="yearsOfExperience" placeholder="Years of experience in translation	">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s6">
-                        <select id="TimeZone" class="full-width "></select>
-                    </div>
-                    <div class="input-field col s6">
-                        <select id="WorkingDays" class="full-width"></select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="WorkingHours">Working Hours</label>
-                        <input type="text" class="validate" id="WorkingHours" placeholder="WorkingHours">
-                    </div>
                     <div class="input-field col s6">
                         <label for="Translation">Translation</label>
-                        <input type="text" class="validate" id="Translation" placeholder="Translation">
+                        <input type="text" class="validate" id="translation" placeholder="Translation">
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="EnsureQuality">EnsureQuality</label>
+                        <input type="text" class="validate" id="qualityEnsureDescription" placeholder="EnsureQuality">
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
                         <label for="Review">Review</label>
-                        <input type="text" class="validate" id="Review" placeholder="Review">
+                        <input type="text" class="validate" id="reviews" placeholder="Review">
                     </div>
                     <div class="input-field col s6">
                         <label for="Proofreading">Proofreading</label>
-                        <input type="text" class="validate" id="Proofreading" placeholder="Proofreading">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="EnsureQuality">EnsureQuality</label>
-                        <input type="text" class="validate" id="EnsureQuality" placeholder="EnsureQuality">
-                    </div>
-                    <div class="input-field col s6">
-                        <label for="AdditionalInfo">AdditionalInfo</label>
-                        <input type="text" class="validate" id="AdditionalInfo" placeholder="AdditionalInfo">
+                        <input type="text" class="validate" id="proofReading" placeholder="Proofreading">
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
                         <label for="Qualifications">Qualifications</label>
-                        <input type="text" class="validate" id="Qualifications" placeholder="Qualifications">
+                        <input type="text" class="validate" id="qualifications" placeholder="Qualifications">
                     </div>
                     <div class="input-field col s6">
                         <label for="MainClients">MainClients</label>
-                        <input type="text" class="validate" id="MainClients" placeholder="MainClients">
+                        <input type="text" class="validate" id="mainClients" placeholder="MainClients">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s6">
-                        <label for="Associations">Associations</label>
-                        <input type="text" class="validate" id="Associations" placeholder="Associations">
-                    </div>
                     <div class="input-field col s6">
                         <select id="Specialization" class="full-width"></select>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="WebSite">WebSite</label>
-                        <input type="text" class="validate" id="WebSite" placeholder="WebSite">
-                    </div>
-                    <div class="input-field col s6">
-                        <label for="IntroduceYourself">IntroduceYourself</label>
-                        <input type="text" class="validate" id="IntroduceYourself" placeholder="IntroduceYourself">
-                    </div>
-                </div>
             </div>
-            <div id="tab4" class="col s12 padded-tab">
+            @*<div id="tab4" class="col s12 padded-tab">
                 <div class="row">
                     <div class="input-field col s6">
                         <select id="Software" class="full-width"></select>
@@ -260,9 +237,31 @@
                         <input type="text" class="validate" id="Rating" placeholder="Rating">
                     </div>
                 </div>
-            </div>
+            </div>*@
             <div id="tab5" class="col s12 padded-tab">
-                Payment
+                userPayment.bankAccountId = $('#bankAccount').val();
+                userPayment.vatTaxNo = $('#vatTaxNo').val();
+                userPayment.currencyId = $('#currencyId').val();
+                userPayment.workingTypeId = $('#workingTypeId').val();
+                userPayment.minimumChargeAmount = $('#minimumChargeAmount').val();
+                <div class="row">
+                    <div class="input-field col s6">
+                        <select id="bankAccount" class="full-width "></select>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="Proofreading">VAT/TAX No</label>
+                        <input type="text" class="validate" id="vatTaxNo" placeholder="VAT/TAX No">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <select id="bankAccount" class="full-width "></select>
+                    </div>
+                    <div class="input-field col s6">
+                        <select id="currency" class="full-width "></select>
+                    </div>
+                </div>
+
             </div>
             <div id="tab6" class="col s12 padded-tab">
                 Rates
@@ -277,7 +276,7 @@
                     <textarea cols="46" rows="3" class="materialize-textarea" id="TranslationResult" placeholder="TranslationResult"></textarea>
                 </div>
                 <div class="input-field col s12">
-                    <input type="submit" id="btnSave" name="btnSave" value="Save"/> 
+                    <a class="waves-effect waves-light btn" id="btnSave"><i class="material-icons left">done</i>Save</a>
                 </div>
         </div>
     </div>
