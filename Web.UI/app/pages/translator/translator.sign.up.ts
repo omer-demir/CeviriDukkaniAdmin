@@ -83,55 +83,67 @@ declare var $: JQueryStatic;
             initCityWithData(country.cities);
         });
 
+        function PageValidations() {
+            if ($('#password').val() != $('#repassword').val()) {
+                alert("Please check password.");
+                return false;
+            }            
+            if (!$('#agreement').is(':checked')) {
+                alert("Please accept the agreement");
+                return false;
+            }
+            return true;
+        }
+
         $("#btnSave").on("click", (data: any) => {
-            alert("ok");
-            var user = new User();
-            user.name = $('#name').val();
-            user.surname = $('#surname').val();
-            user.surname = $('#surname').val();
-            user.genderId = $('#genderId').val();
-            user.mobilePhone = $('#mobilePhone').val();
-            user.password = $('#password').val();
+            if (PageValidations()) {
+                var user = new User();
+                user.name = $('#name').val();
+                user.surname = $('#surname').val();
+                user.genderId = $('#genderId').val();
+                user.mobilePhone = $('#mobilePhone').val();
+                user.password = $('#password').val();
 
-            var userContact = new UserContact();
-            userContact.address = $('#address').val();
-            userContact.postalCode = $('#postalCode').val();
-            userContact.alternativeEmail = $('#alternativeEmail').val();
-            userContact.alternativePhone1 = $('#alternativePhone1').val();
-            userContact.alternativePhone2 = $('#alternativePhone2').val();
-            userContact.fax = $('#fax').val();
-            userContact.skype = $('#skype').val();
-            userContact.districtId = $('#districtId').val();
-            user.userContact = userContact;
+                var userContact = new UserContact();
+                userContact.address = $('#address').val();
+                userContact.postalCode = $('#postalCode').val();
+                userContact.alternativeEmail = $('#alternativeEmail').val();
+                userContact.alternativePhone1 = $('#alternativePhone1').val();
+                userContact.alternativePhone2 = $('#alternativePhone2').val();
+                userContact.fax = $('#fax').val();
+                userContact.skype = $('#skype').val();
+                userContact.districtId = $('#district').val();
+                user.userContact = userContact;
 
-            var userAbility = new UserAbility();
-            userAbility.motherTongueId = $('#motherTongueId').val();
-            userAbility.bilingualTongueId = $('#bilingualTongueId').val();
-            userAbility.yearsOfExperience = $('#yearsOfExperience').val();
+                var userAbility = new UserAbility();
+                userAbility.motherTongueId = $('#motherTongueId').val();
+                userAbility.bilingualTongueId = $('#bilingualTongueId').val();
+                userAbility.yearsOfExperience = $('#yearsOfExperience').val();
 
-            var capacity = new Capacity();
-            capacity.translation = $('#translation').val();
-            capacity.reviews = $('#reviews').val();
-            capacity.proofReading = $('#proofReading').val();
-            userAbility.capacity = capacity;
-            userAbility.qualityEnsureDescription = $('#qualityEnsureDescription').val();
-            userAbility.qualifications = $('#qualifications').val();
-            userAbility.qualifications = $('#qualifications').val();
-            userAbility.mainClients = $('#mainClients').val();
-            //userAbility.Specialization = $('#Specialization').val();            
-            user.userAbility = userAbility;
+                var capacity = new Capacity();
+                capacity.translation = $('#translation').val();
+                capacity.reviews = $('#reviews').val();
+                capacity.proofReading = $('#proofReading').val();
+                userAbility.capacity = capacity;
+                userAbility.qualityEnsureDescription = $('#qualityEnsureDescription').val();
+                userAbility.qualifications = $('#qualifications').val();
+                userAbility.qualifications = $('#qualifications').val();
+                userAbility.mainClients = $('#mainClients').val();
+                //userAbility.Specialization = $('#Specialization').val();            
+                user.userAbility = userAbility;
 
-            var userPayment = new UserPayment();
-            userPayment.bankAccountId = $('#bankAccountId').val();
-            userPayment.vatTaxNo = $('#vatTaxNo').val();
-            userPayment.currencyId = $('#currencyId').val();
-            userPayment.workingTypeId = $('#workingTypeId').val();
-            userPayment.minimumChargeAmount = $('#minimumChargeAmount').val();
-            user.userPayment = userPayment;
+                var userPayment = new UserPayment();
+                userPayment.bankAccountId = $('#bankAccountId').val();
+                userPayment.vatTaxNo = $('#vatTaxNo').val();
+                userPayment.currencyId = $('#currencyId').val();
+                userPayment.workingTypeId = $('#workingTypeId').val();
+                userPayment.minimumChargeAmount = $('#minimumChargeAmount').val();
+                user.userPayment = userPayment;
 
-            dataService.saveUser(user, (data: any) => {
-                alert(data);
-            });
+                dataService.saveUser(user, (data: any) => {
+                    alert(data);
+                });
+            }
         });
 
 
