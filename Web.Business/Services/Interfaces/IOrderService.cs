@@ -18,5 +18,7 @@ namespace Web.Business.Services.Interfaces {
         ServiceResult<CampaignItemDto> GetCampaign(int campaingItemId);
         ServiceResult<CampaignItemDto> UpdateCampaign(CampaignItemDto campaignItem);
         ServiceResult DeleteCampaign(int campaingItemId);
+        ServiceResult<List<OrderDetailDto>> GetOrderDetailsByOrderId(int orderId);
+        ServiceResult AcceptOffer(AcceptOfferRequestDto request);
     }
 }

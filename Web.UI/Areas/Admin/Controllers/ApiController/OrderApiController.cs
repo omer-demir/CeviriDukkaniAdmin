@@ -94,6 +94,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController {
 
             return OK(serviceResult);
         }
+
         [HttpGet, Route("getCampaign")]
         public HttpResponseMessage GetCampaign([FromUri] int campaignId) {
             var serviceResult = _orderService.GetCampaign(campaignId);
@@ -103,6 +104,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController {
 
             return OK(serviceResult);
         }
+
         [HttpPost, Route("updateCampaign")]
         public HttpResponseMessage UpdateCampaign([FromBody]CampaignItemDto request) {
             var serviceResult = _orderService.UpdateCampaign(request);
@@ -112,6 +114,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController {
 
             return OK(serviceResult);
         }
+
         [HttpGet, Route("deleteCampaign")]
         public HttpResponseMessage DeleteCampaign([FromUri] int campaignId) {
             var serviceResult = _orderService.DeleteCampaign(campaignId);

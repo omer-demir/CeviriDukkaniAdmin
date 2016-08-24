@@ -69,6 +69,16 @@ namespace Web.Business.Services.Implementations {
             return GetAsAsync(httpClient, $"api/orderapi/DeleteCampaign?campaingItemId={campaingItemId}");
         }
 
+        public ServiceResult<List<OrderDetailDto>> GetOrderDetailsByOrderId(int orderId) {
+            var httpClient = GetClient(ServiceUrl.Oms);
+            return GetAsAsync<List<OrderDetailDto>>(httpClient, $"api/orderapi/getOrderDetailsByOrderId?orderId={orderId}");
+        }
+
+        public ServiceResult AcceptOffer(AcceptOfferRequestDto request) {
+            var httpClient = GetClient(ServiceUrl.Oms);
+            return PostAsAsync(httpClient, "api/orderapi/acceptOffer", request);
+        }
+
         #endregion
     }
 }

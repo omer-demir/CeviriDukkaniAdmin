@@ -145,7 +145,7 @@ declare var $: JQueryStatic;
             }
         });
 
-        
+
         //save.click basılınca
         //new User()
         //user.email=
