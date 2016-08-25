@@ -74,6 +74,17 @@
             }
             return true;
         }
+        $('input[type=radio][name=bankAccountType]').change(function () {
+            if (this.value == '0') {
+                alert("01");
+            }
+            else if (this.value == '1') {
+                alert("1");
+            }
+            else if (this.value == '2') {
+                alert("2");
+            }
+        });
         $("#btnSave").on("click", function (data) {
             if (PageValidations()) {
                 var user = new User();
@@ -93,8 +104,9 @@
                 userContact.districtId = $('#district').val();
                 user.userContact = userContact;
                 var userAbility = new UserAbility();
-                userAbility.motherTongueId = $('#motherTongueId').val();
-                userAbility.bilingualTongueId = $('#bilingualTongueId').val();
+                userAbility.motherTongueId = $('#motherTongue').val();
+                userAbility.tongue = $('#tongue').val();
+                userAbility.bilingualTongueId = $('#bilingualTongue').val();
                 userAbility.yearsOfExperience = $('#yearsOfExperience').val();
                 var capacity = new Capacity();
                 capacity.translation = $('#translation').val();
@@ -103,12 +115,22 @@
                 userAbility.capacity = capacity;
                 userAbility.qualityEnsureDescription = $('#qualityEnsureDescription').val();
                 userAbility.qualifications = $('#qualifications').val();
-                userAbility.qualifications = $('#qualifications').val();
                 userAbility.mainClients = $('#mainClients').val();
-                //userAbility.Specialization = $('#Specialization').val();            
+                userAbility.specializations = $('#specializations').val();
                 user.userAbility = userAbility;
                 var userPayment = new UserPayment();
-                userPayment.bankAccountId = $('#bankAccountId').val();
+                var bankAccount = new BankAccount();
+                bankAccount.bankAccountTypeId = $('#bankAccountType').val();
+                bankAccount.bankName = $('#bankName').val();
+                bankAccount.accountHolderFullName = $('#accountHolderFullName').val();
+                bankAccount.IBAN = $('#IBAN').val();
+                bankAccount.paypalEmailAddress = $('#paypalEmailAddress').val();
+                bankAccount.beneficiaryAddress = $('#beneficiaryAddress').val();
+                bankAccount.accountNumber = $('#accountNumber').val();
+                bankAccount.swiftBicCode = $('#swiftBicCode').val();
+                bankAccount.cityCountryBank = $('#cityCountryBank').val();
+                bankAccount.bankAddress = $('#bankAddress').val();
+                userPayment.bankAccount = bankAccount;
                 userPayment.vatTaxNo = $('#vatTaxNo').val();
                 userPayment.currencyId = $('#currencyId').val();
                 userPayment.workingTypeId = $('#workingTypeId').val();

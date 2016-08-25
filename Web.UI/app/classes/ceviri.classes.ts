@@ -26,6 +26,7 @@ class Select2Data {
 class User {
     name: string;
     surname: string;
+    email: string;
     genderId: number;
     mobilePhone: string;
     password: string;

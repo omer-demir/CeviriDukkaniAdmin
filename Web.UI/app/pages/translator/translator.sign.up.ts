@@ -95,11 +95,40 @@ declare var $: JQueryStatic;
             return true;
         }
 
+        $('input[type=radio][name=bankAccountType]').change(function () {
+            
+            ChangeVisibleByClassName("Turkish", false);
+            ChangeVisibleByClassName("European", false);
+            ChangeVisibleByClassName("PayPal", false);
+
+            $('#spnAccountTypeHeader').text(this.value);
+
+            if (this.value == 'Turkish') {
+                ChangeVisibleByClassName("Turkish", true);
+            }
+            else if (this.value == 'European') {
+                ChangeVisibleByClassName("European", true);
+            } else if (this.value == 'PayPal') {
+                ChangeVisibleByClassName("PayPal", true);
+            }
+        });
+
+        function ChangeVisibleByClassName(className: string, visible: boolean) {
+            let elements: NodeListOf<HTMLElement> = document.getElementsByClassName(className) as NodeListOf<HTMLElement>;
+
+            for (var i = 0; i < elements.length; i++) {
+                let element: HTMLElement = elements[i];
+                element.hidden = !visible;
+            }
+        }
+
+
         $("#btnSave").on("click", (data: any) => {
             if (PageValidations()) {
                 var user = new User();
                 user.name = $('#name').val();
                 user.surname = $('#surname').val();
+                user.email = $('#email').val();
                 user.genderId = $('input[name="gender"]:checked').val();                
                 user.mobilePhone = $('#mobilePhone').val();
                 user.password = $('#password').val();
@@ -132,7 +161,18 @@ declare var $: JQueryStatic;
                 user.userAbility = userAbility;
 
                 var userPayment = new UserPayment();
-                userPayment.bankAccountId = $('#bankAccountId').val();
+                var bankAccount = new BankAccount();
+                bankAccount.bankAccountTypeId = $('#bankAccountType').val();
+                bankAccount.bankName = $('#bankName').val();
+                bankAccount.accountHolderFullName = $('#accountHolderFullName').val();
+                bankAccount.IBAN = $('#IBAN').val();
+                bankAccount.paypalEmailAddress = $('#paypalEmailAddress').val();
+                bankAccount.beneficiaryAddress = $('#beneficiaryAddress').val();
+                bankAccount.accountNumber = $('#accountNumber').val();
+                bankAccount.swiftBicCode = $('#swiftBicCode').val();
+                bankAccount.cityCountryBank = $('#cityCountryBank').val();
+                bankAccount.bankAddress = $('#bankAddress').val();
+                userPayment.bankAccount = bankAccount;
                 userPayment.vatTaxNo = $('#vatTaxNo').val();
                 userPayment.currencyId = $('#currencyId').val();
                 userPayment.workingTypeId = $('#workingTypeId').val();
