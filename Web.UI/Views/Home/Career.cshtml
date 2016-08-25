@@ -2,10 +2,11 @@
 @{
     ViewBag.Title = "Bizimle çalışmak ister misiniz?";
 }
-    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700,300|Open+Sans:400,300,700,600|Bree+Serif&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oxygen:400,700,300|Open+Sans:400,300,700,600|Bree+Serif&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+@section scripts{
 
     <script>
-        $(function () {
+        $(function() {
             $('#ms').multipleSelect();
             $('#ms2').multipleSelect();
             $('.tooltip').tooltipster({
@@ -15,112 +16,121 @@
             });
         });
     </script>
-    <style>
-        .iBaslik {
-            font-family: "Arial Black", Gadget, sans-serif;
-            font-size: 17px;
-            color: #00d4d7;
+}
+<style>
+    .iBaslik {
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 17px;
+        color: #00d4d7;
+    }
+
+    .iBasliklar {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .iYazilar {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+    }
+
+    .iTrBg {
+        background-image: url(images/i-tr-bg.gif);
+    }
+
+    .iTrBgTop {
+        background-image: url(images/i-tr-bg-top.gif);
+    }
+</style>
+<script type="text/javascript">
+    function MM_swapImgRestore() { //v3.0
+        var i, x, a = document.MM_sr; for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
+    }
+    function MM_preloadImages() { //v3.0
+        var d = document; if (d.images) {
+            if (!d.MM_p) d.MM_p = new Array();
+            var i, j = d.MM_p.length, a = MM_preloadImages.arguments; for (i = 0; i < a.length; i++)
+                if (a[i].indexOf("#") != 0) { d.MM_p[j] = new Image; d.MM_p[j++].src = a[i]; }
         }
+    }
 
-        .iBasliklar {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 15px;
-            font-weight: bold;
+    function MM_findObj(n, d) { //v4.01
+        var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+            d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
         }
+        if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+        for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+        if (!x && d.getElementById) x = d.getElementById(n); return x;
+    }
 
-        .iYazilar {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 14px;
-        }
+    function MM_swapImage() { //v3.0
+        var i, j = 0, x, a = MM_swapImage.arguments; document.MM_sr = new Array; for (i = 0; i < (a.length - 2) ; i += 3)
+            if ((x = MM_findObj(a[i])) != null) { document.MM_sr[j++] = x; if (!x.oSrc) x.oSrc = x.src; x.src = a[i + 2]; }
+    }
+</script>
 
-        .iTrBg {
-            background-image: url(images/i-tr-bg.gif);
-        }
+<section id="content">
+    <div class="content-wrap">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="clear"></div>
+                <h1 class="ortala" style="color: #7f7f7f">Bizimle çalışmak ister misiniz?</h1>
+                <br />
+                <div class="ortala">
+                    <table class="iYazilar" width="960" border="0" align="center" cellpadding="7" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td align="left" valign="top"></td>
+                                <td width="320" align="left" valign="top"></td>
+                                <td align="left" valign="top"></td>
+                                <td align="left" valign="top"></td>
+                                <td align="left" valign="top"></td>
+                                <td align="left" valign="top"></td>
+                            </tr>
+                            <tr class="iTrBgTop">
+                                <td align="left" valign="top"></td>
+                                <td width="320" align="left" valign="top" class="iBasliklar">
+                                    İş Başlığı
+                                </td>
+                                <td align="left" valign="top" class="iBasliklar">
+                                    Yer
+                                </td>
+                                <td width="220" align="left" valign="top" class="iBasliklar">
+                                    Tarih
+                                </td>
+                                <td width="60" align="left" valign="top" class="iBasliklar">
+                                    Sayı
+                                </td>
+                                <td width="100" align="left" valign="top"></td>
+                            </tr>
+                            @foreach (var job in ViewBag.Jobs) {
 
-        .iTrBgTop {
-            background-image: url(images/i-tr-bg-top.gif);
-        }
-    </style>
-    <script type="text/javascript">
-        function MM_swapImgRestore() { //v3.0
-            var i, x, a = document.MM_sr; for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
-        }
-        function MM_preloadImages() { //v3.0
-            var d = document; if (d.images) {
-                if (!d.MM_p) d.MM_p = new Array();
-                var i, j = d.MM_p.length, a = MM_preloadImages.arguments; for (i = 0; i < a.length; i++)
-                    if (a[i].indexOf("#") != 0) { d.MM_p[j] = new Image; d.MM_p[j++].src = a[i]; }
-            }
-        }
+                                <tr class="iTrBg">
+                                    <td width="24" align="left" valign="middle"></td>
+                                    <td width="320" align="left" valign="middle" style="font-weight: bold; color: rgb(0, 197, 200);"><a href="isDetaylari?jid=@job.JobId">@job.JobTitle</a></td>
+                                    <td align="left" valign="middle">
+                                        @job.Location
+                                    </td>
+                                    <td width="220" align="left" valign="middle">
+                                        @job.PostedDate
+                                    </td>
+                                    <td>
+                                        @job.ArananKisiSayisi kişi
+                                    </td>
+                                    <td width="100" align="left" valign="middle">
+                                        <a href="Basvur?jid=@job.JobId" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('i1', '', '/Content/images/basvur-gold.png', 1)">
+                                            <img src="/Content/images/basvur.png" width="70" height="28" id="i1">
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
 
-        function MM_findObj(n, d) { //v4.01
-            var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
-                d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
-            }
-            if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
-            for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
-            if (!x && d.getElementById) x = d.getElementById(n); return x;
-        }
+                        </tbody>
+                    </table>
 
-        function MM_swapImage() { //v3.0
-            var i, j = 0, x, a = MM_swapImage.arguments; document.MM_sr = new Array; for (i = 0; i < (a.length - 2) ; i += 3)
-                if ((x = MM_findObj(a[i])) != null) { document.MM_sr[j++] = x; if (!x.oSrc) x.oSrc = x.src; x.src = a[i + 2]; }
-        }
-    </script>
-
-    <div class="clear"></div>
-    <h1 class="ortala" style="color: #7f7f7f">Bizimle çalışmak ister misiniz?</h1>
-    <br />
-    <div class="ortala">
-        <table class="iYazilar" width="960" border="0" align="center" cellpadding="7" cellspacing="0">
-            <tbody>
-                <tr>
-                    <td align="left" valign="top"></td>
-                    <td width="320" align="left" valign="top"></td>
-                    <td align="left" valign="top"></td>
-                    <td align="left" valign="top"></td>
-                    <td align="left" valign="top"></td>
-                    <td align="left" valign="top"></td>
-                </tr>
-            <tr class="iTrBgTop">
-                <td align="left" valign="top"></td>
-                <td width="320" align="left" valign="top" class="iBasliklar">
-                    İş Başlığı
-                </td>
-                <td align="left" valign="top" class="iBasliklar">
-                    Yer
-                </td>
-                <td width="220" align="left" valign="top" class="iBasliklar">
-                    Tarih
-                </td>
-                <td width="60" align="left" valign="top" class="iBasliklar">
-                    Sayı
-                </td>
-                <td width="100" align="left" valign="top"></td>
-            </tr>
-                @foreach (var job in ViewBag.Jobs)
-                {
-
-                    <tr class="iTrBg">
-                        <td width="24" align="left" valign="middle"></td>
-                        <td width="320" align="left" valign="middle" style="font-weight:bold;color: rgb(0, 197, 200);"><a href="isDetaylari?jid=@job.JobId">@job.JobTitle</a></td>
-                        <td align="left" valign="middle">
-                            @job.Location
-                        </td>
-                        <td width="220" align="left" valign="middle">
-                            @job.PostedDate
-                        </td>
-                        <td>@job.ArananKisiSayisi kişi
-                        </td>
-                        <td width="100" align="left" valign="middle">
-                            <a href="Basvur?jid=@job.JobId" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('i1','','/Content/images/basvur-gold.png',1)">
-                                <img src="/Content/images/basvur.png" width="70" height="28" id="i1">
-                            </a>
-                        </td>
-                    </tr>
-                }
-
-            </tbody>
-        </table>
-
+                </div>
+            </div>
+        </div>
     </div>
+</section>
