@@ -72,6 +72,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpPost, Route("addCompany")]
         public HttpResponseMessage AddCompany(CompanyDto companyDto)
         {
@@ -88,6 +89,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpPost, Route("editCompany")]
         public HttpResponseMessage EditCompany(CompanyDto companyDto)
         {
@@ -120,6 +122,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpPost, Route("addLanguage")]
         public HttpResponseMessage AddLanguage(LanguageDto languageDto)
         {
@@ -136,6 +139,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpPost, Route("editLanguage")]
         public HttpResponseMessage EditLanguage(LanguageDto languageDto)
         {
@@ -168,6 +172,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpPost, Route("addSourceTargetLanguages")]
         public HttpResponseMessage AddSourceTargetLanguages(SourceTargetLanguageDto sourceTargetLanguageDto)
         {
@@ -184,6 +189,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpPost, Route("deleteSourceTargetLanguages")]
         public HttpResponseMessage DeleteSourceTargetLanguages(SourceTargetLanguageDto sourceTargetLanguageDto)
         {
@@ -216,6 +222,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpPost, Route("addTerminology")]
         public HttpResponseMessage AddTerminology(TerminologyDto terminologyDto)
         {
@@ -232,6 +239,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpPost, Route("editTerminology")]
         public HttpResponseMessage EditTerminology(TerminologyDto terminologyDto)
         {
@@ -264,6 +272,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpPost, Route("addPriceList")]
         public HttpResponseMessage AddPriceList(PriceListDto priceListDto)
         {
@@ -280,6 +289,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpPost, Route("editPriceList")]
         public HttpResponseMessage UpdatePriceList(PriceListDto priceListDto)
         {
@@ -312,6 +322,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpPost, Route("addCompanyTerminology")]
         public HttpResponseMessage AddCompanyTerminology(CompanyTerminologyDto companyTerminologyDto)
         {
@@ -328,6 +339,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpPost, Route("editCompanyTerminology")]
         public HttpResponseMessage UpdateCompanyTerminology(CompanyTerminologyDto companyTerminologyDto)
         {
@@ -344,6 +356,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpGet, Route("deleteCompanyTerminology")]
         public HttpResponseMessage DeleteCompanyTerminology(int id)
         {
@@ -376,6 +389,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpGet, Route("getIncomingMessagesByUser")]
         public HttpResponseMessage GetIncomingMessagesByUser([FromUri]int userId)
         {
@@ -391,6 +405,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpGet, Route("getSentMessagesByUser")]
         public HttpResponseMessage GetSentMessagesByUser([FromUri]int userId)
         {
@@ -406,6 +421,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpGet, Route("getMessage")]
         public HttpResponseMessage GetMessage([FromUri]int messageId)
         {
@@ -421,6 +437,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpGet, Route("updateMessageForReadDate")]
         public HttpResponseMessage UpdateMessageForReadDate([FromUri]int messageId)
         {
@@ -436,6 +453,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpGet, Route("deleteSentMessage")]
         public HttpResponseMessage DeleteSentMessage([FromUri]int messageId)
         {
@@ -451,6 +469,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpGet, Route("deleteIncomingMessage")]
         public HttpResponseMessage DeleteIncomingMessage([FromUri]int messageId)
         {
@@ -514,6 +533,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpGet, Route("getDistrictByCityId")]
         public HttpResponseMessage GetDistrictByCityId([FromUri]int cityId)
         {
@@ -545,6 +565,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpGet, Route("getSpecializations")]
         public HttpResponseMessage GetSpecializations()
         {
@@ -560,6 +581,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpGet, Route("getSoftwares")]
         public HttpResponseMessage GetSoftwares()
         {

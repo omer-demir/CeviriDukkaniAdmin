@@ -212,3 +212,4 @@ _Pvt_Extensions/
 ModelManifest.xml
 /Web.UI/bower_components/bootstrap
 /Web.UI/bower_components
+/Web.UI/.tscache/default

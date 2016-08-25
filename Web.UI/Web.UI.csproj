@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -25,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -136,7 +138,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="Tangent.CeviriDukkani.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CeviriDükkanıCommon.1.0.2.36\lib\Tangent.CeviriDukkani.Domain.dll</HintPath>
+      <HintPath>..\packages\CeviriDükkanıCommon.1.0.2.44\lib\Tangent.CeviriDukkani.Domain.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease">
@@ -152,6 +154,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="dist\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -246,6 +249,9 @@
     <Content Include="Areas\Admin\Scripts\app\page-scripts\document\index.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\campaign.update.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\campaign.list.page.js" />
+    <Content Include="Areas\Admin\Scripts\app\page-scripts\order\list.orderdetails.proofreader.page.js" />
+    <Content Include="Areas\Admin\Scripts\app\page-scripts\order\list.orderdetails.editor.page.js" />
+    <Content Include="Areas\Admin\Scripts\app\page-scripts\order\list.orderdetails.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\list.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\pending.response.order.page.js" />
     <Content Include="Areas\Admin\Scripts\app\page-scripts\order\waiting.order.page.js" />
@@ -1625,9 +1631,44 @@
     <Content Include="Content\js\plugins\jquery.validation.js" />
     <Content Include="Content\js\plugins\jquery.youtube.js" />
     <Content Include="Content\js\prettify.js" />
-    <Content Include="Content\plugins\prettify\jquery.bootstrap.wizard.min.js" />
-    <Content Include="Content\plugins\prettify\prettify.css" />
-    <Content Include="Content\plugins\prettify\prettify.js" />
+    <Content Include="Content\plugins\materialize\js\animation.js" />
+    <Content Include="Content\plugins\materialize\js\materialize.js" />
+    <Content Include="Content\plugins\materialize\js\materialize.min.js" />
+    <Content Include="Content\plugins\materialize\js\buttons.js" />
+    <Content Include="Content\plugins\materialize\js\cards.js" />
+    <Content Include="Content\plugins\materialize\js\carousel.js" />
+    <Content Include="Content\plugins\materialize\js\character_counter.js" />
+    <Content Include="Content\plugins\materialize\js\chips.js" />
+    <Content Include="Content\plugins\materialize\js\collapsible.js" />
+    <Content Include="Content\plugins\materialize\js\date_picker\picker.date.js" />
+    <Content Include="Content\plugins\materialize\js\date_picker\picker.js" />
+    <Content Include="Content\plugins\materialize\js\dropdown.js" />
+    <Content Include="Content\plugins\materialize\js\forms.js" />
+    <Content Include="Content\plugins\materialize\js\global.js" />
+    <Content Include="Content\plugins\materialize\js\hammer.min.js" />
+    <Content Include="Content\plugins\materialize\js\initial.js" />
+    <Content Include="Content\plugins\materialize\js\jquery.easing.1.3.js" />
+    <Content Include="Content\plugins\materialize\js\jquery.hammer.js" />
+    <Content Include="Content\plugins\materialize\js\leanModal.js" />
+    <Content Include="Content\plugins\materialize\js\materialbox.js" />
+    <Content Include="Content\plugins\materialize\js\parallax.js" />
+    <Content Include="Content\plugins\materialize\js\pushpin.js" />
+    <Content Include="Content\plugins\materialize\js\scrollFire.js" />
+    <Content Include="Content\plugins\materialize\js\scrollspy.js" />
+    <Content Include="Content\plugins\materialize\js\sideNav.js" />
+    <Content Include="Content\plugins\materialize\js\slider.js" />
+    <Content Include="Content\plugins\materialize\js\tabs.js" />
+    <Content Include="Content\plugins\materialize\js\toasts.js" />
+    <Content Include="Content\plugins\materialize\js\tooltip.js" />
+    <Content Include="Content\plugins\materialize\js\transitions.js" />
+    <Content Include="Content\plugins\materialize\js\velocity.min.js" />
+    <Content Include="Content\plugins\materialize\js\waves.js" />
+    <Content Include="Content\plugins\materialize\sass\materialize.css">
+      <DependentUpon>materialize.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\plugins\materialize\sass\materialize.min.css">
+      <DependentUpon>materialize.css</DependentUpon>
+    </Content>
     <Content Include="Content\style-import.css" />
     <Content Include="Content\style-rtl.css" />
     <Content Include="Content\style.css">
@@ -1639,6 +1680,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Gruntfile.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -1900,10 +1942,74 @@
     <Content Include="Content\sass\typography.scss" />
     <Content Include="Content\sass\variables.scss" />
     <Content Include="Content\sass\widgets.scss" />
+    <Content Include="bower.json" />
+    <Content Include="app\countriesToCities.json" />
+    <None Include="Areas\Admin\Views\Order\OrderDetailsList.cshtml" />
+    <None Include="Areas\Admin\Views\Order\OrderDetailsListAsEditor.cshtml" />
+    <None Include="Areas\Admin\Views\Order\OrderDetailsListAsProofReader.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="Content\plugins\materialize\fonts\roboto\Roboto-Bold.eot" />
+    <Content Include="Content\plugins\materialize\fonts\roboto\Roboto-Bold.ttf" />
+    <Content Include="Content\plugins\materialize\fonts\roboto\Roboto-Bold.woff" />
+    <Content Include="Content\plugins\materialize\fonts\roboto\Roboto-Bold.woff2" />
+    <Content Include="Content\plugins\materialize\fonts\roboto\Roboto-Light.eot" />
+    <Content Include="Content\plugins\materialize\fonts\roboto\Roboto-Light.ttf" />
+    <Content Include="Content\plugins\materialize\fonts\roboto\Roboto-Light.woff" />
+    <Content Include="Content\plugins\materialize\fonts\roboto\Roboto-Light.woff2" />
+    <Content Include="Content\plugins\materialize\fonts\roboto\Roboto-Medium.eot" />
+    <Content Include="Content\plugins\materialize\fonts\roboto\Roboto-Medium.ttf" />
+    <Content Include="Content\plugins\materialize\fonts\roboto\Roboto-Medium.woff" />
+    <Content Include="Content\plugins\materialize\fonts\roboto\Roboto-Medium.woff2" />
+    <Content Include="Content\plugins\materialize\fonts\roboto\Roboto-Regular.eot" />
+    <Content Include="Content\plugins\materialize\fonts\roboto\Roboto-Regular.ttf" />
+    <Content Include="Content\plugins\materialize\fonts\roboto\Roboto-Regular.woff" />
+    <Content Include="Content\plugins\materialize\fonts\roboto\Roboto-Regular.woff2" />
+    <Content Include="Content\plugins\materialize\fonts\roboto\Roboto-Thin.eot" />
+    <Content Include="Content\plugins\materialize\fonts\roboto\Roboto-Thin.ttf" />
+    <Content Include="Content\plugins\materialize\fonts\roboto\Roboto-Thin.woff" />
+    <Content Include="Content\plugins\materialize\fonts\roboto\Roboto-Thin.woff2" />
+    <Content Include="Content\plugins\materialize\sass\components\date_picker\_default.date.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\date_picker\_default.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\date_picker\_default.time.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\forms\_checkboxes.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\forms\_file-input.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\forms\_forms.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\forms\_input-fields.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\forms\_radio-buttons.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\forms\_range.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\forms\_select.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\forms\_switches.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_buttons.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_cards.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_carousel.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_chips.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_collapsible.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_color.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_dropdown.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_global.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_grid.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_icons-material-design.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_materialbox.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_mixins.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_modal.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_navbar.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_normalize.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_prefixer.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_preloader.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_roboto.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_sideNav.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_slider.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_table_of_contents.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_tabs.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_toast.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_tooltip.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_typography.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_variables.scss" />
+    <Content Include="Content\plugins\materialize\sass\components\_waves.scss" />
+    <Content Include="Content\plugins\materialize\sass\materialize.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dx\css\dx.android5.light.css" />
     <Content Include="Scripts\dx\css\dx.common.css" />
@@ -2021,6 +2127,8 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\HowItWorks.cshtml" />
     <Content Include="Views\Home\TranslatorSignUp.cshtml" />
+    <Content Include="tsconfig.json" />
+    <Content Include="typings.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Web.Business\Web.Business.csproj">
@@ -2047,11 +2155,20 @@
       <LastGenOutput>CDResource.designer.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="app\classes\ceviri.classes.ts" />
+    <TypeScriptCompile Include="app\pages\translator\translator.sign.up.ts" />
+    <TypeScriptCompile Include="app\services\common.data.service.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">

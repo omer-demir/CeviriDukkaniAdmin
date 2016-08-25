@@ -825,4 +825,7 @@
   <data name="Uyari" xml:space="preserve">
     <value>UYARI</value>
   </data>
+  <data name="OrderDetailList" xml:space="preserve">
+    <value>List of Order Details</value>
+  </data>
 </root>
