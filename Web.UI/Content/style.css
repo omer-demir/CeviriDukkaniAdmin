@@ -222,6 +222,18 @@ span.middot {
 .clear-bottommargin {
   margin-bottom: -50px !important; }
 
+.allmargin-xs { margin: 15px !important; }
+
+.leftmargin-xs { margin-left: 15px !important; }
+
+.rightmargin-xs { margin-right: 15px !important; }
+
+.topmargin-xs { margin-top: 15px !important; }
+
+.bottommargin-xs { margin-bottom: 15px !important; }
+
+.clear-bottommargin-xs { margin-bottom: -15px !important; }
+
 .allmargin-sm {
   margin: 30px !important; }
 
@@ -302,6 +314,19 @@ span.middot {
 
 .noradius {
   border-radius: 0; }
+
+
+.allpadding-xs { padding: 15px !important; }
+
+.leftpadding-xs { padding-left: 15px !important; }
+
+.rightpadding-xs { padding-right: 15px !important; }
+
+.toppadding-xs { padding-top: 15px !important; }
+
+.bottompadding-xs { padding-bottom: 15px !important; }
+
+.clear-bottompadding-xs { padding-bottom: -15px !important; }
 
 .col-padding {
   padding: 60px; }
