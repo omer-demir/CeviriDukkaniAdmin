@@ -75,21 +75,33 @@
             return true;
         }
         $('input[type=radio][name=bankAccountType]').change(function () {
-            if (this.value == '0') {
-                alert("01");
+            ChangeVisibleByClassName("Turkish", false);
+            ChangeVisibleByClassName("European", false);
+            ChangeVisibleByClassName("PayPal", false);
+            $('#spnAccountTypeHeader').text(this.value);
+            if (this.value == 'Turkish') {
+                ChangeVisibleByClassName("Turkish", true);
             }
-            else if (this.value == '1') {
-                alert("1");
+            else if (this.value == 'European') {
+                ChangeVisibleByClassName("European", true);
             }
-            else if (this.value == '2') {
-                alert("2");
+            else if (this.value == 'PayPal') {
+                ChangeVisibleByClassName("PayPal", true);
             }
         });
+        function ChangeVisibleByClassName(className, visible) {
+            var elements = document.getElementsByClassName(className);
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i];
+                element.hidden = !visible;
+            }
+        }
         $("#btnSave").on("click", function (data) {
             if (PageValidations()) {
                 var user = new User();
                 user.name = $('#name').val();
                 user.surname = $('#surname').val();
+                user.email = $('#email').val();
                 user.genderId = $('input[name="gender"]:checked').val();
                 user.mobilePhone = $('#mobilePhone').val();
                 user.password = $('#password').val();

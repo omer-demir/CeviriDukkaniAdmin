@@ -62,17 +62,17 @@
                         <input type="text" class="validate" id="name" placeholder="Name">
                     </div>
                     <div class="input-field col s6">
-                        <label for="name">Surname</label>
-                        <input type="text" class="validate" id="Surname" placeholder="Surname">
+                        <label for="surname">Surname</label>
+                        <input type="text" class="validate" id="surname" placeholder="Surname">
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <label for="Email">Email address</label>
+                        <label for="email">Email address</label>
                         <input type="email" class="validate" id="email" placeholder="Email">
                     </div>
                     <div class="input-field col s6">
-                        <label for="Mobile">Mobile Phone</label>
+                        <label for="mobilePhone">Mobile Phone</label>
                         <input type="text" class="validate" id="mobilePhone" placeholder="Number">
                     </div>
                 </div>
@@ -80,11 +80,11 @@
                     <div class="col s6">
                         <label>Gender</label>
                         <p>
-                            <input name="gender" type="radio" id="gender0" />
+                            <input name="gender" type="radio" id="gender0" value="0" />
                             <label for="gender0">Female</label>
                         </p>
                         <p>
-                            <input name="gender" type="radio" id="gender1" />
+                            <input name="gender" type="radio" id="gender1" value="1"/>
                             <label for="gender1">Male</label>
                         </p>
                     </div>
@@ -172,40 +172,39 @@
                         <select id="bilingualTongue" class="full-width "></select>
                     </div>
                     <div class="input-field col s6">
-                        <label for="Experience">Years of experience in translation</label>
-                        <input type="text" class="validate" id="yearsOfExperience" placeholder="Years of experience in translation	">
+                        <label for="yearsOfExperience">Years of experience in translation</label>
+                        <input type="number" class="validate" min="0" id="yearsOfExperience" placeholder="Years of experience in translation	">
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col s12">
+                        <h4 class="header">Daily Capacity</h4>
+                    </div>   
                     <div class="input-field col s6">
-                        <label for="Translation">Translation</label>
-                        <input type="text" class="validate" id="translation" placeholder="Translation">
+                        <label for="translation">Translation(characters)</label>
+                        <input type="number" min="0" class="validate" id="translation" placeholder="characters ">
                     </div>
                     <div class="input-field col s6">
-                        <label for="EnsureQuality">EnsureQuality</label>
-                        <input type="text" class="validate" id="qualityEnsureDescription" placeholder="EnsureQuality">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="Review">Review</label>
-                        <input type="text" class="validate" id="reviews" placeholder="Review">
+                        <label for="reviews">Review(characters)</label>
+                        <input type="number" min="0" class="validate" id="reviews" placeholder="characters ">
                     </div>
                     <div class="input-field col s6">
-                        <label for="Proofreading">Proofreading</label>
-                        <input type="text" class="validate" id="proofReading" placeholder="Proofreading">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="Qualifications">Qualifications</label>
-                        <input type="text" class="validate" id="qualifications" placeholder="Qualifications">
+                        <label for="proofReading">Proofreading(characters)</label>
+                        <input type="number" min="0" class="validate" id="proofReading" placeholder="characters ">
                     </div>
                     <div class="input-field col s6">
-                        <label for="MainClients">MainClients</label>
-                        <input type="text" class="validate" id="mainClients" placeholder="MainClients">
+                        <label for="qualityEnsureDescription">How do you ensure the quality of your final work?</label>
+                        <textarea class="materialize-textarea" id="qualityEnsureDescription" placeholder="How do you ensure the quality of your final work?"></textarea>
                     </div>
-                </div>
+                    <div class="input-field col s6">
+                        <label for="qualifications">Qualifications</label>
+                        <textarea class="materialize-textarea" id="qualityEnsureDescription" placeholder="Qualifications"></textarea>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="mainClients">MainClients</label>
+                        <textarea class="materialize-textarea" id="mainClients" placeholder="Main Clients"></textarea>
+                    </div>
+                </div>               
                 <div class="row">
                     <div class="input-field col s6">
                         <select id="Specialization" class="full-width"></select>
@@ -318,20 +317,46 @@
 
             </div>
         </div>
-        <div id="tab6" class="col s12 padded-tab">
-            Rates
+        <div id="tab6" class="col s12 padded-tab">            
+            <div class="row">
+                <div class="input-field col s12">
+                    <select id="ServiceTypeId" class="full-width "></select>
+                </div>
+                <div class="input-field col s6">
+                    <select id="SourceLanguageId" class="full-width "></select>
+                </div>
+                <div class="input-field col s6">
+                    <select id="TargetLanguageId" class="full-width "></select>
+                </div>
+                <div class="input-field col s6">
+                    <label for="minimumChargeAmount">Price(TL/1000 chr.)</label>
+                    <input type="number" class="validate" id="Price" placeholder="TL/1000 chr.">
+                </div>
+                <div class="input-field col s6">
+                    <p>
+                        <input type="checkbox" id="SwornOrCertified" />
+                        <label for="agreement">Sworn/Certification?</label>
+                    </p>
+                </div>
+                @*ToDo CertificateId: number;
+        UserRateId: number;*@
+            </div>          
         </div>
         <div id="tab7" class="col s12 padded-tab">
-            <div class="input-field col s12">
-                <label for="Test">Test</label>
-                <textarea cols="46" rows="3" class="materialize-textarea" id="Test" placeholder="Test"></textarea>
-            </div>
-            <div class="input-field col s12">
-                <label for="TranslationResult">TranslationResult</label>
-                <textarea cols="46" rows="3" class="materialize-textarea" id="TranslationResult" placeholder="TranslationResult"></textarea>
-            </div>
-            <div class="input-field col s12">
-                <a class="waves-effect waves-light btn" id="btnSave"><i class="material-icons left">done</i>Save</a>
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="Test">Test</label>
+                    <textarea cols="46" rows="3" class="materialize-textarea" id="Test" placeholder="Test"></textarea>
+                </div>
+                <div class="input-field col s12">
+                    <label for="TranslationResult">TranslationResult</label>
+                    <textarea cols="46" rows="3" class="materialize-textarea" id="TranslationResult" placeholder="TranslationResult"></textarea>
+                </div>
+                <div class="input-field col s12">
+                    <a class="waves-effect waves-light btn" id="btnSave"><i class="material-icons left">done</i>Save</a>
+                </div>
+                
+               
             </div>
         </div>
     </div>

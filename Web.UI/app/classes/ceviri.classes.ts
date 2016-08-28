@@ -48,13 +48,16 @@ class UserContact {
 
 class UserAbility {
     motherTongueId: number;
-    tongue: number;
+    tongueId: number;
     bilingualTongueId: number;
-    yearsOfExperience:number;
-    capacity:Capacity;
-    qualityEnsureDescription: string;
+    yearsOfExperience: number;    
+    qualityEnsureDescription: string;  
     qualifications: string;
-    mainClients:string;
+    mainClients: string;
+    capacity:Capacity;
+    
+    
+    
     specializations: Specialization[];
 }
 

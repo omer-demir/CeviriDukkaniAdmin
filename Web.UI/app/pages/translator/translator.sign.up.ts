@@ -146,7 +146,7 @@ declare var $: JQueryStatic;
 
                 var userAbility = new UserAbility();
                 userAbility.motherTongueId = $('#motherTongue').val();
-                userAbility.tongue = $('#tongue').val();
+                userAbility.tongueId = $('#tongue').val();  
                 userAbility.bilingualTongueId = $('#bilingualTongue').val();
                 userAbility.yearsOfExperience = $('#yearsOfExperience').val();
                 var capacity = new Capacity();
@@ -163,19 +163,31 @@ declare var $: JQueryStatic;
                 var userPayment = new UserPayment();
                 var bankAccount = new BankAccount();
                 bankAccount.bankAccountTypeId = $('#bankAccountType').val();
-                bankAccount.bankName = $('#bankName').val();
-                bankAccount.accountHolderFullName = $('#accountHolderFullName').val();
-                bankAccount.IBAN = $('#IBAN').val();
-                bankAccount.paypalEmailAddress = $('#paypalEmailAddress').val();
-                bankAccount.beneficiaryAddress = $('#beneficiaryAddress').val();
-                bankAccount.accountNumber = $('#accountNumber').val();
-                bankAccount.swiftBicCode = $('#swiftBicCode').val();
-                bankAccount.cityCountryBank = $('#cityCountryBank').val();
-                bankAccount.bankAddress = $('#bankAddress').val();
+                switch (bankAccount.bankAccountTypeId) {
+                    case 1:
+                        bankAccount.bankName = $('#bankName').val();
+                        bankAccount.accountHolderFullName = $('#accountHolderFullName').val();
+                        bankAccount.IBAN = $('#IBAN').val();
+                        break;
+                    case 2:
+                        bankAccount.bankName = $('#bankName').val();
+                        bankAccount.accountHolderFullName = $('#accountHolderFullName').val();
+                        bankAccount.IBAN = $('#IBAN').val();
+                        bankAccount.beneficiaryAddress = $('#beneficiaryAddress').val();
+                        bankAccount.accountNumber = $('#accountNumber').val();
+                        bankAccount.swiftBicCode = $('#swiftBicCode').val();
+                        bankAccount.cityCountryBank = $('#cityCountryBank').val();
+                        bankAccount.bankAddress = $('#bankAddress').val();
+                        break;
+                    case 3:
+                        bankAccount.paypalEmailAddress = $('#paypalEmailAddress').val();
+                        break;
+                    default:
+                }            
                 userPayment.bankAccount = bankAccount;
                 userPayment.vatTaxNo = $('#vatTaxNo').val();
-                userPayment.currencyId = $('#currencyId').val();
-                userPayment.workingTypeId = $('#workingTypeId').val();
+                userPayment.currencyId = $('#currency').val();
+                userPayment.workingTypeId = $('#workingType').val();
                 userPayment.minimumChargeAmount = $('#minimumChargeAmount').val();
                 user.userPayment = userPayment;
 
