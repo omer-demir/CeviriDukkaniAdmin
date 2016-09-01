@@ -5,176 +5,194 @@
 <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700,300|Open+Sans:400,300,700,600|Bree+Serif&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <link href="/Content/css/font-faces.css" rel="stylesheet" type="text/css">
 
-<script async src="/Content/js/analytics.js"></script>
 <style>
-    [data-tip] { position: relative; }
-
-    [data-tip]:after {
-        display: none;
-        content: attr(data-tip);
-        position: absolute;
-        top: -35px;
-        left: 0px;
-        padding: 5px 8px;
-        background: #fec300;
-        color: #000;
-        z-index: 1019;
-        font-size: 0.8em;
-        font-family: arial;
-        height: 18px;
-        line-height: 18px;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 3px;
-        white-space: nowrap;
-        word-wrap: normal;
+    [data-tip] {
+        position: relative;
     }
 
-    [data-tip]:before {
-        content: '';
-        /* hides the tooltip when not hovered */
-        display: none;
-        content: '';
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        /* border-bottom: 5px solid #fec300;*/
-        border-top: 5px solid #fec300;
-        position: absolute;
-        top: -7px;
-        left: 35px;
-        z-index: 1018;
-        font-size: 0;
-        line-height: 0;
-        width: 0;
-        height: 0;
+        [data-tip]:after {
+            display: none;
+            content: attr(data-tip);
+            position: absolute;
+            top: -35px;
+            left: 0px;
+            padding: 5px 8px;
+            background: #fec300;
+            color: #000;
+            z-index: 1019;
+            font-size: 0.8em;
+            font-family: arial;
+            height: 18px;
+            line-height: 18px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            white-space: nowrap;
+            word-wrap: normal;
+        }
+
+        [data-tip]:before {
+            content: '';
+            /* hides the tooltip when not hovered */
+            display: none;
+            content: '';
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            /* border-bottom: 5px solid #fec300;*/
+            border-top: 5px solid #fec300;
+            position: absolute;
+            top: -7px;
+            left: 35px;
+            z-index: 1018;
+            font-size: 0;
+            line-height: 0;
+            width: 0;
+            height: 0;
+        }
+
+        [data-tip]:hover:before,
+        [data-tip]:hover:after {
+            display: block;
+        }
+
+    #ContentPlaceHolder1_drpSirketler select option {
+        font-weight: bold;
     }
-
-    [data-tip]:hover:before,
-    [data-tip]:hover:after { display: block; }
-
-    #ContentPlaceHolder1_drpSirketler select option { font-weight: bold; }
 </style>
-<script>
-    $(function() {
-        $('.ccInput')
-            .not(':last')
-            .keyup(function() {
-                if ($(this).val().length == Number($(this).attr('maxlength'))) {
-                    $(this).next('.ccInput').focus();
-                    $(this).next('.ccInput').select();
-                }
-            });
-    });
-</script>
+@section scripts{
 
-<div class="clear"></div>
-<h1 class="ortala" style="color: #00d4d7">Bizimle çalışmak keyif vericidir!</h1>
-<div class="ortala">
-    <h3 style="color: green">Tebrikler, başvurunuz başarılı bir şekilde alındı. Sonuç hakkında sizinle iletişime geçilecektir.</h3>
-    <br/>
-    <a href="is-firsatlari" class="buton2">Diğer Pozisyonlara Bak</a>
-</div>
-<div class="ortala">
-    <div class="uyelikformu-baslik">
-        <div style="clear: both"></div>
-        @(ViewBag.Job.JobTitle) Başvurusu
-        <div class="steps">
-            <div style="clear: both"></div>
-            <span class="ac-step"><a href="#">1. Bilgilerini Doldur</a></span><div style="clear: both"></div>
+    <script async src="/Content/js/analytics.js"></script>
+    <script>
+        $(function() {
+            $('.ccInput')
+                .not(':last')
+                .keyup(function() {
+                    if ($(this).val().length == Number($(this).attr('maxlength'))) {
+                        $(this).next('.ccInput').focus();
+                        $(this).next('.ccInput').select();
+                    }
+                });
+        });
+    </script>
+
+}
+
+<section id="content">
+    <div class="content-wrap">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="clear"></div>
+                <h1 class="ortala" style="color: #00d4d7">Bizimle çalışmak keyif vericidir!</h1>
+                <div class="ortala">
+                    <h3 style="color: green">Tebrikler, başvurunuz başarılı bir şekilde alındı. Sonuç hakkında sizinle iletişime geçilecektir.</h3>
+                    <br />
+                    <a href="is-firsatlari" class="buton2">Diğer Pozisyonlara Bak</a>
+                </div>
+                <div class="ortala">
+                    <div class="uyelikformu-baslik">
+                        <div style="clear: both"></div>
+                        @(ViewBag.Job.JobTitle) Başvurusu
+                        <div class="steps">
+                            <div style="clear: both"></div>
+                            <span class="ac-step"><a href="#">1. Bilgilerini Doldur</a></span><div style="clear: both"></div>
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+
+                    <div class="uyelikformu">
+                        <div style="clear: both"></div>
+                        <table border="0" cellspacing="0" cellpadding="5">
+                            <tr>
+                                <td width="138">
+                                    <b>Ad:</b>
+                                </td>
+                                <td width="549">
+                                    <input type="text" id="txtAd" class="sbHolder" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="138">
+                                    <b>Soyad:</b>
+                                </td>
+                                <td>
+                                    <input type="text" id="txtSoyad" class="sbHolder" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="138">
+                                    <b>Eposta:</b>
+                                </td>
+                                <td>
+                                    <input type="email" id="txtEposta" class="sbHolder" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="138">
+                                    <b>Sabit Telefon:</b>
+                                </td>
+                                <td>
+                                    <select id="drpSabitTelefonUlkeKodu" class="sbHolder dropdown" style="width: 70px">
+                                        @foreach (var code in ViewBag.PhoneCodes) {
+                                            <option value="@code.Id">@code.Text</option>
+                                        }
+                                    </select>
+                                    <input type="text" id="txtSabitTelefon" class="sbHolder" Width="175" MaxLength="10" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="138">
+                                    <b>Cep Telefonu:</b>
+                                </td>
+                                <td>
+                                    <select id="drpSabitTelefonUlkeKodu1" class="sbHolder dropdown" style="width: 70px">
+                                        @foreach (var code in ViewBag.PhoneCodes) {
+                                            <option value="@code.Id">@code.Text</option>
+                                        }
+                                    </select>
+                                    <input type="text" id="txtCepTelefonu" class="sbHolder" Width="175" MaxLength="10" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="138">
+                                    <b>Doğum Tarihi:</b>
+                                </td>
+                                <td>
+                                    <telerik:RadDatePicker ID="rdpDogumTarihi" runat="server" MinDate="01.01.1900"></telerik:RadDatePicker>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td width="138">
+                                    <b>CV Yükle:</b>
+                                </td>
+                                <td>
+                                    <asp:FileUpload ID="fuCv" runat="server" ClientIDMode="Static" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="138" style="vertical-align: top">
+                                    <b>Ön Yazı:</b>
+                                </td>
+                                <td>
+                                    <textarea id="fckOnYazi" Width="510px" Height="200px"></textarea>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td width="138">&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td width="138">&nbsp;</td>
+                                <td align="left">
+                                    <button id="btnNext" class="buton2" style="margin-top: 1px; margin-left: 150px; cursor: pointer" onclick="btnNext_Click">Kaydet</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="clear: both"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div style="clear: both"></div>
     </div>
-
-    <div class="uyelikformu">
-        <div style="clear: both"></div>
-        <table border="0" cellspacing="0" cellpadding="5">
-            <tr>
-                <td width="138">
-                    <b>Ad:</b>
-                </td>
-                <td width="549">
-                    <input type="text" id="txtAd" class="sbHolder"/>
-                </td>
-            </tr>
-            <tr>
-                <td width="138">
-                    <b>Soyad:</b>
-                </td>
-                <td>
-                    <input type="text" id="txtSoyad" class="sbHolder"/>
-                </td>
-            </tr>
-            <tr>
-                <td width="138">
-                    <b>Eposta:</b>
-                </td>
-                <td>
-                    <input type="email" id="txtEposta" class="sbHolder"/>
-                </td>
-            </tr>
-            <tr>
-                <td width="138">
-                    <b>Sabit Telefon:</b>
-                </td>
-                <td>
-                    <select id="drpSabitTelefonUlkeKodu" class="sbHolder dropdown" style="width: 70px">
-                        @foreach (var code in ViewBag.PhoneCodes) {
-                            <option value="@code.Id">@code.Text</option>
-                        }
-                    </select>
-                    <input type="text" id="txtSabitTelefon" class="sbHolder" Width="175" MaxLength="10"/>
-                </td>
-            </tr>
-            <tr>
-                <td width="138">
-                    <b>Cep Telefonu:</b>
-                </td>
-                <td>
-                    <select id="drpSabitTelefonUlkeKodu1" class="sbHolder dropdown" style="width: 70px">
-                        @foreach (var code in ViewBag.PhoneCodes) {
-                            <option value="@code.Id">@code.Text</option>
-                        }
-                    </select>
-                    <input type="text" id="txtCepTelefonu" class="sbHolder" Width="175" MaxLength="10"/>
-                </td>
-            </tr>
-            <tr>
-                <td width="138">
-                    <b>Doğum Tarihi:</b>
-                </td>
-                <td>
-                    <telerik:RadDatePicker ID="rdpDogumTarihi" runat="server" MinDate="01.01.1900"></telerik:RadDatePicker>
-                </td>
-            </tr>
-
-            <tr>
-                <td width="138">
-                    <b>CV Yükle:</b>
-                </td>
-                <td>
-                    <asp:FileUpload ID="fuCv" runat="server" ClientIDMode="Static"/>
-                </td>
-            </tr>
-            <tr>
-                <td width="138" style="vertical-align: top">
-                    <b>Ön Yazı:</b>
-                </td>
-                <td>
-                    <textarea id="fckOnYazi" Width="510px" Height="200px"></textarea>
-                </td>
-            </tr>
-
-            <tr>
-                <td width="138">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td width="138">&nbsp;</td>
-                <td align="left">
-                    <button id="btnNext" class="buton2" style="margin-top: 1px; margin-left: 150px; cursor: pointer" onclick="btnNext_Click">Kaydet</button>
-                </td>
-            </tr>
-        </table>
-        <div style="clear: both"></div>
-    </div>
-</div>
+</section>

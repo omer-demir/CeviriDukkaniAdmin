@@ -63,6 +63,18 @@ span.middot {
 
 .clear-bottommargin { margin-bottom: -50px !important; }
 
+.allmargin-xs { margin: 15px !important; }
+
+.leftmargin-xs { margin-left: 15px !important; }
+
+.rightmargin-xs { margin-right: 15px !important; }
+
+.topmargin-xs { margin-top: 15px !important; }
+
+.bottommargin-xs { margin-bottom: 15px !important; }
+
+.clear-bottommargin-xs { margin-bottom: -15px !important; }
+
 .allmargin-sm { margin: 30px !important; }
 
 .leftmargin-sm { margin-left: 30px !important; }

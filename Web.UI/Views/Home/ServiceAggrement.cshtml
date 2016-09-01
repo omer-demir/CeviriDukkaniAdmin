@@ -1,1059 +1,1062 @@
 ﻿@{
     ViewBag.Title = "Çeviri Dükkanı Hizmet Sözleşmesi";
 }
-    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700,300|Open+Sans:400,300,700,600|Bree+Serif&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oxygen:400,700,300|Open+Sans:400,300,700,600|Bree+Serif&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+@section scripts{
 
     <script>
-        $(function () {
+        $(function() {
             $('#ms').multipleSelect();
             $('#ms2').multipleSelect();
-            $('.tooltip').tooltipster({
-                contentAsHTML: true,
-                interactive: true,
-                content: $('<div style="width:180px; padding:5px; border-bottom:1px solid #000;"><a href="/#yeniis">Yeni Çeviri Gönder</a></div><div style="width:180px; padding:5px; border-bottom:1px solid #000;"><a href="/bireysel/Kullanici-Paneli">Kullanıcı Panelim</a></div><div style="width:180px; padding:5px; border-bottom:1px solid #000;"><a href="/bireysel/Profil-Bilgilerim">Profil Bilgileri</a></div><div style="width:180px; padding:5px;"><a href="/bireysel/Sifre-Degistir">Şifre Değiştir</a></div>')
-            });
+            $('.tooltip')
+                .tooltipster({
+                    contentAsHTML: true,
+                    interactive: true,
+                    content:
+                        $('<div style="width:180px; padding:5px; border-bottom:1px solid #000;"><a href="/#yeniis">Yeni Çeviri Gönder</a></div><div style="width:180px; padding:5px; border-bottom:1px solid #000;"><a href="/bireysel/Kullanici-Paneli">Kullanıcı Panelim</a></div><div style="width:180px; padding:5px; border-bottom:1px solid #000;"><a href="/bireysel/Profil-Bilgilerim">Profil Bilgileri</a></div><div style="width:180px; padding:5px;"><a href="/bireysel/Sifre-Degistir">Şifre Değiştir</a></div>')
+                });
         });
     </script>
+}
+<style type="text/css">
+    p.MsoNormal {
+        margin-bottom: .0001pt;
+        font-size: 12.0pt;
+        font-family: "Cambria","serif";
+        margin-left: 0cm;
+        margin-right: 0cm;
+        margin-top: 0cm;
+    }
 
-    <style type="text/css">
-        p.MsoNormal {
-            margin-bottom: .0001pt;
-            font-size: 12.0pt;
-            font-family: "Cambria","serif";
-            margin-left: 0cm;
-            margin-right: 0cm;
-            margin-top: 0cm;
-        }
+    p.MsoToc1 {
+        margin-top: 6.0pt;
+        margin-right: 0cm;
+        margin-bottom: 0cm;
+        margin-left: 0cm;
+        margin-bottom: .0001pt;
+        font-size: 12.0pt;
+        font-family: "Cambria","serif";
+        font-weight: bold;
+    }
+</style>
+<div class="clear"></div>
+<h1 class="ortala" style="color: #7f7f7f">HİZMET SÖZLEŞMESİ</h1>
 
-        p.MsoToc1 {
-            margin-top: 6.0pt;
-            margin-right: 0cm;
-            margin-bottom: 0cm;
-            margin-left: 0cm;
-            margin-bottom: .0001pt;
-            font-size: 12.0pt;
-            font-family: "Cambria","serif";
-            font-weight: bold;
-        }
-    </style>
+
+<div class="ortala">
+
+    <div style="width: 260px; padding: 70px 0 0 20px; line-height: 30px; height: 214px; color: #fff; font-size: 30px; float: left; background-color: #00d4e1">
+        HİZMET SÖZLEŞMESİ
+
+    </div>
+    <div style="float: left;">
+        <img src="/Content/images/sundugumuz-gorsel.png" />
+    </div>
+
     <div class="clear"></div>
-    <h1 class="ortala" style="color: #7f7f7f">HİZMET SÖZLEŞMESİ</h1>
 
+    <div class="sundugumuz_menu">
+        <div><a href="Kaliteli-Ceviri">Kaliteli Çeviri</a></div>
+        <div><a href="Guvenlik-ve-Gizlilik">Güvenlik ve Gizlilik</a></div>
+        <div><a href="Banka-Hesap-Bilgileri">Banka Hesap Bilgileri</a></div>
+        <div><a href="Hizmet-Sozlesmesi#iptal">İptal ve İade Koşulları</a></div>
+        <div class="aktif" style="border-bottom:none;"><a href="Hizmet-Sozlesmesi">Hizmet Sözleşmesi</a></div>
 
-    <div class="ortala">
-
-        <div style="width: 260px; padding: 70px 0 0 20px; line-height: 30px; height: 214px; color: #fff; font-size: 30px; float: left; background-color: #00d4e1">
-            HİZMET SÖZLEŞMESİ
-
-        </div>
-        <div style="float: left;">
-            <img src="/Content/images/sundugumuz-gorsel.png" />
-        </div>
-
-        <div class="clear"></div>
-
-        <div class="sundugumuz_menu">
-            <div><a href="Kaliteli-Ceviri">Kaliteli Çeviri</a></div>
-            <div><a href="Guvenlik-ve-Gizlilik">Güvenlik ve Gizlilik</a></div>
-            <div><a href="Banka-Hesap-Bilgileri">Banka Hesap Bilgileri</a></div>
-            <div><a href="Hizmet-Sozlesmesi#iptal">İptal ve İade Koşulları</a></div>
-            <div class="aktif" style="border-bottom:none;"><a href="Hizmet-Sozlesmesi">Hizmet Sözleşmesi</a></div>
-
-        </div>
-        <div style="float: left; width: 637px; margin-left: 20px;">
-            <h2>Hizmet Sözleşmesi</h2>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+    </div>
+    <div style="float: left; width: 637px; margin-left: 20px;">
+        <h2>Hizmet Sözleşmesi</h2>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm;line-height:150%;mso-pagination:none;mso-layout-grid-align:
 none;text-autospace:none">
-                <span>Hüküm ve Şartlar </span><span></span>
-            </p>
-            <p class="MsoToc1" style="tab-stops:24.0pt right dotted 414.5pt">
-                <span>
-                    1. Tanımlar/Genel
+            <span>Hüküm ve Şartlar </span><span></span>
+        </p>
+        <p class="MsoToc1" style="tab-stops:24.0pt right dotted 414.5pt">
+            <span>
+                1. Tanımlar/Genel
+            </span>
+        </p>
+        <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+            <span>2. Fiyatlandırmalar&nbsp;</span><span></span>
+        </p>
+        <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+            <span>
+                3. Fiyat ve Ödeme
+            </span><span></span>
+        </p>
+        <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+            <span>4. İşin Tamamlanması&nbsp;</span><span></span>
+        </p>
+        <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+            <span>
+                5. Sözlü Çeviri&nbsp;
+            </span><span></span>
+        </p>
+        <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+            <span>6. İptal ve askıya alma&nbsp;</span><span>
+
+            </span><span></span>
+        </p>
+        <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+            <span>7. Teslimat&nbsp;</span><span></span>
+        </p>
+        <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+            <span>8. Sorumluluk ve Yükümlülükler&nbsp;</span>
+
+            <span></span>
+        </p>
+        <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+            <span>
+                9. Çevirinin Özellikleri&nbsp;
+
+            </span><span></span>
+        </p>
+        <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+            <span>
+                10. Müşterinin Mülkleri&nbsp;
+            </span><span></span>
+        </p>
+        <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+            <span>
+                11. Gizlilik
+            </span><span></span>
+        </p>
+        <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+            <span>
+                12. Yasadışı Konular&nbsp;
+            </span><span></span>
+        </p>
+        <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+            <span>13. Fikri Mülkiyet ve Telif Hakları</span><span></span>
+        </p>
+        <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+            <span>14. Veri Koruma</span>
+            <span></span>
+        </p>
+        <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+            <span>15. Çeşitli Hükümler</span><span></span>
+        </p>
+        <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+            <span>16. Yetkili Mahkeme&nbsp;</span><span></span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:150%;mso-pagination:none;mso-layout-grid-align:
+none;text-autospace:none">
+            <span></span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                Müşteri, çeviri için bir metin göndererek veya Şirket tarafından yerine getirilecek herhangi başka bir iş göndererek işbu Şirket ile aşağıdaki hüküm ve şartlar kapsamında bağlayıcı bir sözleşme yapmış sayılır.&nbsp;
+
+
+
+            </span>
+        </p>
+        <h1>
+            <a name="_Toc314837059">
+                <span>1.&nbsp;&nbsp;&nbsp; </span><span>
+                    Tanımlar/Genel
+
                 </span>
-            </p>
-            <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
-                <span>2. Fiyatlandırmalar&nbsp;</span><span></span>
-            </p>
-            <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+            </a><span></span>
+        </h1>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm">
+            <span></span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                1.1&nbsp;&nbsp;&nbsp; &quot;Şirket&quot;, AIM Danışmanlık Ltd. Şti ve Şirketin altında faaliyet gösterdiği tüm diğer markaları ifade eder. &quot;İş&quot; Şirket tarafından üstlenilen herhangi bir çeviri ya da diğer işi veya Şirket tarafından sağlanan tüm hizmetleri ifade eder. &quot;Müşteri&quot; Şirketin işi tedarik edeceği tüm kişiler veya kurumları ifade eder.&nbsp;
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                1.2&nbsp;&nbsp;&nbsp; Şirket ile Müşteri arasındaki sözleşmenin tarafları arasında meydana gelebilecek herhangi bir ihtilafta taraflar arasındaki sözleşmeyi oluşturan belgeler aşağıdaki sırada öncelikli olacaktır
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                1.&nbsp;&nbsp;&nbsp; Taraflarca imzalanan (varsa) hizmet seviyesi sözleşmesi.
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                2.&nbsp;&nbsp;&nbsp; İşbu Hüküm ve Şartlar
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                3.&nbsp;&nbsp;&nbsp; E mailler ve yazışmalar
+
+            </span>
+        </p>
+        <h1>
+            <a name="_Toc314837060">
+                <span>
+                    2. Fiyatlandırmalar&nbsp;
+
+                </span>
+            </a><span></span>
+        </h1>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm">
+            <span></span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                2.1&nbsp;&nbsp;&nbsp; Sözlü verilen fiyatlar sadece fikir verme amacı taşır. Şirket üzerinde bağlayıcı değildirler ve çeviri metninin alınmasını istinaden yazılı onaya tabidirler. Yazılı fiyatlandırmalar, başka şekilde belirtilmedikçe gönderildikleri tarihten itibaren 30 gün için geçerlidir. Çevirinin maliyeti kaynak dildeki metin üzerinden boşluksuz 1000 karakter = 1 sayfa olarak hesaplanan sayfa sayısına dayanarak belirlenir.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                2.2&nbsp;&nbsp;&nbsp; Şirket, çeviri işleminin başlangıcından sonra Müşteri tarafından kaynak metinde değişiklik yapılması durumunda verilen fiyatlandırmaya ekleme yapma hakkını saklı tutar. Bu tür bir ekleme üzerinde Müşteri ile mutabık kalınacaktır.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                2.3&nbsp;&nbsp;&nbsp; Fiyatlandırma Terminolojisi:
+                &nbsp;“Çeviri” bir (kaynak) dilde yazılan bir metnin bir diğer (hedef) dile bir uzman ya da başka çevirmen tarafından bilinen dilbilgisi kurallarını ve kendi tecrübeleri veya sözlükler yolu ile edinilen gerekli kelime bilgilerini uygulayarak düz ve aşağı yukarı bire bir biçimde aktarılmasıdır. Copywriting ( senaryo yazımı )Müşteriden alınan bilgilendirme sonrasında kaynaksız ana dilde yazılan senaryo yu ifade eder, Tercüme -“Metin yazımı”, kaynak materyaldeki kavramların korunduğu, fakat ikna ediciliği en yüksek seviyeye çıkarabilmek için bunların ifade edilme biçiminin hedef dilde tamamen değişebileceği bir süreçtir.
+                Editing - “Düzenleme” kaynak belge ile tercüme edilmiş belgenin verilmek istenen mesajın her iki dilde de aynı olduğundan emin olmak için karşılaştırılması sürecidir. Proof reading -&nbsp; &quot;Bütünsel redaksiyon&quot;, çeviriyi gerçekleştiren çevirmen tarafından yapılan redaksiyon işlemidir.
+                İleri Proofreading - &quot;İleri
+                redaksiyon” ise profesyonel bir redaktör tarafından yapılan redaksiyon işlemini ifade eder. Desktop Publishing - “Masaüstü Yayıncılık/DTP”, dijital dosyaların baskı için düzgün bir biçimde teknik olarak birleştirilmesi işlemidir.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                2.4&nbsp;&nbsp;&nbsp; Sözleşme, satın alma siparişinizin, fiyatlandırma onayınızın veya İşe başlamamız için tarafınızdan alınacak bu tür herhangi bir bilginin alınması ve İşin tarafımızdan sağlanmasına başlanması ile yürürlüğe girecektir.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                2.5&nbsp;&nbsp;&nbsp; Sözleşme, işbu Hüküm ve Şartlara tabi olacaktır. Siparişte belirtilen veya sizin tarafınızdan başka bir biçimde iletilen hüküm ve şartların hükmü bulunmayacaktır.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                2.6&nbsp;&nbsp;&nbsp;&nbsp; Fiyatlandırmalar materyalin sizin tarafınızdan sağlanan tarifi, çevirinin amacı ve tüm diğer talimatlara dayalı olarak yapılacaktır. Bu tür fiyatlandırmalar, kaynak materyallerin tanımı, talimatlar veya diğer bileşenlerin önemli ölçüde yetersiz veya yanlış olduğuna dair görüşümüz oluşması durumunda değiştirilebilir.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>2.7&nbsp;&nbsp;&nbsp; Belgelerin çevirisi ve resmileştirilmesi (sertifikasyon, yeminli ifade, noterleme, apostilleme vs.) konusunda yetkili makam ile çevirinin kullanılacağı amaç için hangi resmileştirme seviyesinin uygun olacağını netleştirmek tamamen ve açıkça Müşterinin sorumluluğundadır.</span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>2.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hafta sonu/tatiller sırasında yapılması gereken İşler toplam miktar üzerinden %50 oranında ekstra hafta sonu fiyatlandırmasına tabi tutulacaktır.</span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>2.9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Şu hizmetler birbirinden ayrı olarak ücretlendirilecektir: Kaynak dilde metin yazımı. Çeviri,, Düzenleme, Redaksiyon, DTP, Baskı , Dağıtım.</span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                2.8&nbsp;&nbsp;&nbsp; İşbu Hüküm ve Şartlar tarafınıza sağlanan tüm İşlere uygulanacaktır.&nbsp;
+
+
+            </span>
+        </p>
+        <h1>
+            <a name="_Toc314837061">
                 <span>
                     3. Fiyat ve Ödeme
-                </span><span></span>
-            </p>
-            <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
-                <span>4. İşin Tamamlanması&nbsp;</span><span></span>
-            </p>
-            <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+
+                </span>
+            </a><span></span>
+        </h1>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm">
+            <span></span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                3.1&nbsp;&nbsp;&nbsp; Başka şekilde belirtilmediği müddetçe fiyatlar Türk Lirası cinsinden ifade edilir ve fiyatlara KDV ve diğer vergi ve harçlar dahil değildir. Tahsil etme yükümlülüğümüz bulunan tüm uygun vergiler ve masraflar için size fatura keseceğiz. Müşteri, bu tür vergiler üzerinde ödemeniz geciktiği için bizim ödemek durumunda kaldığımız tüm ceza ve faizleri tarafımıza ödemekle yükümlü olacaktır.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                3.2&nbsp;&nbsp;&nbsp; Tüm işlerin ödemeleri Şirket tarafından özellikle yazılı onay verilmedikçe fatura tarihinden itibaren 15 gün içinde yapılacaktır. Fakat bazı durumlarda işe başlamadan önce ödeme veya ödemenin bir kısmı talep edilebilir. Şirketin diğer haklarına halel getirmeksizin, vade tarihini geçen tüm bakiyeler üzerinde %8 oranında bir hizmet masrafı alma hakkını saklı tutar.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                3.3&nbsp;&nbsp;&nbsp; İşin aşamalar halinde ve/veya 60 (altmış) günden uzun bir zaman dilimi içinde sağlanması halinde, size işin her aşamasının bitiminde veya aylık dönemler halinde fatura kesme hakkımızı saklı tutarız.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                3.4&nbsp;&nbsp;&nbsp; Herhangi bir faturanın işbu koşullar veya Sözleşme’de öngörülen diğer koşullar ile uyumlu olarak ödenmemesi halinde hem aynı sipariş üzerinde hem de diğer siparişleriniz üzerindeki işleri askıya alma hakkımızı diğer haklarımıza halel getirmeksizin saklı tutarız.
+
+
+            </span>
+        </p>
+        <h1>
+            <a name="_Toc314837062">
+                <span>
+                    4. İşin Tamamlanması&nbsp;
+
+                </span>
+            </a><span></span>
+        </h1>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm">
+            <span></span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                4.1&nbsp;&nbsp;&nbsp; Şirketin hızlı teslim konusunda iyi bir itibarı olmasının ve İşin tamamlanması için son tarihlere uymak için çaba gösterecek olmasının yanı sıra, verilen tarih ve süreler sadece en iyi tahminlerdir ve şirket herhangi bir nedenle ortaya çıkabilecek herhangi bir gecikmenin sonuçları için sorumluluk kabul etmez. Özellikle, Müşterinin, Şirketin, Müşterinin sunucularında veya telekomünikasyon sistemlerinde Şirketin kontrolü dışında gelişen ve zaman zaman meydana geldiği bilinen arızalar nedeniyle ortaya çıkabilecek gecikme veya bilgi kayıplarından sorumlu olmadığını bilmelidir.&nbsp;
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                4.2&nbsp;&nbsp;&nbsp; Müşteri İşi verirken bir tamamlanma tarihi (belirliyse) belirtmelidir, fakat Şirketin Müşterinin taleplerini karşılayabilmek için akla uygun tüm çabaları sarf edecek olmasına rağmen İşin geç teslim edilmesi Müşteriye yapılan İşin ödemesini durdurma hakkı vermez.&nbsp;
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                4.3&nbsp;&nbsp;&nbsp; İş normal koşullarda Müşteriye elektronik dosya formunda (Word, rtf, pdf, MP3, wav, vs.) e-posta ile teslim edilecektir. Müşterinin İşin basılı kopya olarak posta yoluyla gönderilmesini talep etmesi halinde Şirket teslimattaki gecikmelerden ya da posta hizmetinden kaynaklanan teslimat sorunlarından sorumlu tutulamaz.&nbsp;
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                4.4&nbsp;&nbsp;&nbsp; İşin tamamlanmasının doğru üretim için gereken zamandan daha kısa bir zamanda gerçekleşmesi gerektiği durumlarda, Şirket fazla mesai gereksinimlerini veya ek masrafları karşılamak üzere ek acil hizmet masrafı alma hakkını saklı tutar. Herhangi bir başka masraf tahakkuk etmişse, Şirkete bunları da fatura etme hakkını saklı tutar. Hızlandırılmış olan tüm işler aşağıda yer alan 8.7 Maddesine tabidir.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                4.5&nbsp;&nbsp;&nbsp; Şirket, Müşteriden kaynaklanan herhangi bir nedenle İşin gecikmesinin sonuçlarından sorumluluk kabul etmez. Bu durumda üzerinde mutabık kalınmış tüm son tarihler ve teslim planları otomatik olarak geçersiz kalacak ve yeni tarihler üzerinde anlaşılması gerekecektir.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                4.6&nbsp;&nbsp;&nbsp; Şirket İşin tamamını ya da bir kısmını kendi seçeceği yüklenici ya da yüklenicilere ihale etme hakkını saklı tutar.&nbsp;
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>4.7&nbsp;&nbsp;&nbsp; Sertifikalı, resmileştirilmiş, noterlenmiş ve tüm diğer “resmi” çeviriler için, Şirket, kullanım için herhangi bir basılı belge üretmeden önce Müşteriden elektronik biçimde kendisine sağlanan çeviriyi titizlikle kontrol etmesini bekler. Tüm tashihler, değişiklikler, düzeltmeler vs. Şirket ve dil profesyonelleri tarafından kontrol edilecek ve kabul edilebilir ve üzerinde mutabık kalınmış ise belge güncellenecektir. Bu süreç birçok kez Müşteri tarafından kontrol edilmesini ve katkıda bulunulmasını gerektirebilir. Bu tür işlerin çevirmenler arasında paylaştırılması mümkün değildir ve paylaştırılmayacaktır bu nedenle teslim süresi Madde 8.7’de belirtilen günlük üretim miktarına göre hesaplanmalıdır.</span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>&nbsp;</span>
+        </p>
+        <h1>
+            <a name="_Toc314837063">
                 <span>
                     5. Sözlü Çeviri&nbsp;
-                </span><span></span>
-            </p>
-            <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
-                <span>6. İptal ve askıya alma&nbsp;</span><span>
-                   
-                </span><span></span>
-            </p>
-            <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
-                <span>7. Teslimat&nbsp;</span><span></span>
-            </p>
-            <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
-                <span>8. Sorumluluk ve Yükümlülükler&nbsp;</span>
-                
-                <span></span>
-            </p>
-            <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+
+                </span>
+            </a><span></span>
+        </h1>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm">
+            <span></span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                5.1&nbsp;&nbsp;&nbsp; Müşteri beklenmeyen bir biçimde gelmezse, Sözlü Çevirmen etkinlik yerinde üzerinde mutabık kalınan başlangıç saatine ilave olarak 30 dakika daha bekleyecektir. Müşteri bir etkinliğe katılmazsa Şirket beklenen saat için tüm hizmet ücreti ile birlikte masrafları da Müşteriden tahsil edecektir.&nbsp;
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                5.2&nbsp;&nbsp;&nbsp; Şirket, eğer bir Sözlü Çevirmen önceden görülemeyen sebepler dolayısıyla bir etkinliğe katılamazsa hizmet masrafı tahsil etmeyecektir: Şirket bu tür durumlarda başka bir Sözlü Çevirmen sağlamak ve ilgili tarafları en kısa zamanda haberdar etmek için çaba gösterecektir, fakat bunun olmaması durumunda Şirket sorumluluk kabul etmez.&nbsp;
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                5.3&nbsp;&nbsp;&nbsp; Sözlü Çevirmenin kaçınılmaz bir biçimde geç kalması fakat halen görevini yerine getirmesinin istenmesi durumunda Şirket hizmet ücretinin tamamını tahsil edecektir.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                5.4&nbsp;&nbsp;&nbsp; Şirket, üzerinde mutabık kalınan tarih/saatte hizmet vermek için elinden gelen tüm çabayı gösterecektir, fakat Şirketin kontrolü dışındaki olaylardan kaynaklanan sebeplerle işin tamamlanmasının gecikmesi halinde sorumlu olmayacaktır.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                5.5&nbsp;&nbsp;&nbsp; Şirket, Sözlü Çevirmenin Müşteriye karşı yükümlülüklerini yerine getirmemesinden sorumlu tutulamaz.
+
+
+
+            </span>
+        </p>
+        <h1>
+            <a id="iptal">
+                <span>
+                    6. İptal ve askıya alma&nbsp;
+
+                </span>
+            </a><span></span>
+        </h1>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm">
+            <span></span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                6.1&nbsp;&nbsp;&nbsp; Eğer müşteri herhangi bir sebeple vermiş olduğu İşleri iptal ederse iptal tarihine kadar tamamlanmış olan tüm İşlerin ücretleri ve bu iptal sonucu ortaya çıkabilecek diğer masraf ve ücretler (hazırlık işleri ve İşi gerçekleştirmek için harcanan zaman dahil olmak üzere) ödenecektir.&nbsp;
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                6.2&nbsp;&nbsp;&nbsp; Müşteri vermiş olduğu İşi askıya alır ya da ertelerse askıya alma ya da erteleme tarihine kadar verilen tüm İşler ile ilgili ücretler ve bu askıya alma nedeniyle ortaya çıkabilecek tüm diğer masraf ve ücretler ödenecektir.&nbsp;
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                6.3&nbsp;&nbsp;&nbsp; Mücbir Sebeplerin (Grev, Lokavt, Endüstriyel Kargaşalık, Halk Hareketleri, Doğal Afet, Savaş Halleri ve Şirketin üzerinde mutabık kalınan yükümlülüğü yerine getirmesini gözle görülür biçimde etkilediği belgelenen tüm diğer durumlar) meydana gelmesi halinde, Şirket gecikmeksizin Müşteriye şartları bildirecektir. Mücbir Sebepler hem Şirkete hem de Müşteriye yükümlülüğünden geri çekilme hakkını verir, fakat her durumda Müşteri tamamlanmış olan İşler için Şirkete ödeme yapmayı taahhüt eder. Bu durumda, Şirket Müşteriye İşi başka bir yere verme konusunda elinden geldiği ölçüde yardımcı olacaktır.&nbsp;
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                6.4&nbsp;&nbsp;&nbsp; Sözleşmenin herhangi bir biçimde feshedilmesi her iki tarafın da tahakkuk eden hak ve tedbirlerine halel getirmeyecektir.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>6.5&nbsp;&nbsp;&nbsp; Bir sözlü çeviri işinin veya bir dil uzmanının belirli bir saat, gün ya da süre için tutulmasını gerektiren diğer hizmetlerin iptali en az 7 iş günü önceden bildirilmediği takdirde %50 oranında faturalandırılacaktır.</span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>&nbsp;</span>
+        </p>
+        <h1>
+            <a name="_Toc314837065">
+                <span>
+                    7. Teslimat&nbsp;
+
+                </span>
+            </a><span></span>
+        </h1>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm">
+            <span></span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                7.1&nbsp;&nbsp;&nbsp; Gecikme veya teslimatın gerçekleşememesi tedarikçiler veya alt yüklenicilerin teslimatlarının veya performanslarının gecikmesi veya yerine getirilmemesi, işgücü azlığı, doğal afet, yangın, fırtına veya kötü hava şartları, endüstriyel eylemler, çatışmalar, hükümet emir veya müdahalesi (kanun kuvvetleriyle ya da değil) veya kontrolümüz ötesindeki beklenmeyen ve istisnai nedenlerden ötürü meydana gelirse bu teslimat ya da performans gecikmesi veya bunların yerine getirilememesinden Şirket sorumlu olmayacaktır.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                7.2&nbsp;&nbsp;&nbsp; Teslimatın duruma göre posta, faks veya bir taşıyıcıya elektronik teslimat yoluyla yapılması öngörülür ve teslimattan sonra riskler Müşteriye geçer.&nbsp;
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                7.3&nbsp;&nbsp;&nbsp; Fakat, Şirket dosyaların bir kopyasını saklayacak ve herhangi bir hasar ya da kayıp durumunda dosyaların bir kopyasını ücretsiz olarak gönderecektir.&nbsp;
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                7.4&nbsp;&nbsp;&nbsp; Müşterinin Şirketin bunlarla sınırlı olmaksızın Noter, Vekil veya Yabancılar ve Milletler Dairesi gibi üçüncü tarafları kullanmasını talep etmesi halinde Şirket işbu üçüncü tarafların teslimatındaki gecikmelerden veya performans göstermemesinden sorumlu tutulamaz.
+
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>7.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Şirket her çevirmen için günlük 15 sayfa (boşluksuz 15.000 karakter) esasına göre çalışır. Müşterinin bir gün içinde 15 sayfadan fazlasını talep etmesi halinde Müşterinin terminoloji kullanımında farklılıklar oluşabileceğini ve kalitenin garanti edilmediğini kabul ettiğine dair yazılı onay vermesi gerekir.</span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>7.6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Basılı belgeler için %30 ek çeviri süresi gerekmektedir.</span>
+        </p>
+        <h1>
+            <a name="_Toc314837066">
+                <span>
+                    8. Sorumluluk ve Yükümlülükler&nbsp;
+
+                </span>
+            </a><span></span>
+        </h1>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm">
+            <span></span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                8.1&nbsp;&nbsp;&nbsp; Şirket, bu yükümlülükleri yerine getirmenin kontrolü dışında olduğu tüm durumlarda ve bu seviyeye dek Müşteri’ye karşı olan tüm yükümlülüklerinden sorumluluklarından muaf tutulacaktır.&nbsp;
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                8.2&nbsp;&nbsp;&nbsp; Müşterinin herhangi bir İşle ilgili şikayeti Müşterinin İşi teslim almasından itibaren beş (5) gün içinde yazılı olarak Şirkete bildirilecektir. Projenin tamamlanmasının ardından, Şirket, kendi hatasından kaynaklanan yanlışları, hataları veya eksikleri ücretsiz olarak düzeltmeyi taahhüt eder. Yükümlülüğümüz sadece haklı olduğunu düşündüğümüz bu tür bahsi geçen yanlış, hata ve eksiklikleri kendi memnuniyetimize göre düzeltmekten ibaret olacaktır. Müşteri her zaman Şirkete çeviri ile ilgili bahsi geçen sorunları düzeltme fırsatı verecektir. Bu tür hatalar hiçbir zaman ödemenin gecikmesine sebep olmayacaktır.&nbsp;
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                8.3&nbsp;&nbsp;&nbsp; Şirket herhangi bir şart altında, çevrilmiş materyalin kullanımından meydana gelen herhangi bir hasar ya da kaybın (kar kaybı, iş, sözleşme, gelir, itibar veya şerefiye, beklenen tasarruf ve/veya tüm diğer dolaylı kayıp ya da hasarlar) tedarik edilen İşin sözleşme fiyatını aşan kısmından Müşteri ya da herhangi bir üçüncü tarafa karşı sorumlu olmayacaktır. Müşteri, Şirketi bu tür hasar ve kayıplar için yapılacak talep ve girişimlerden muaf tutacaktır.&nbsp;
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                8.4&nbsp;&nbsp;&nbsp; İşin kalitesi ve amaca uygunluğu hakkında belirtilen ya da ima edilen hiçbir şart, koşul ya da garanti işbu sözleşmede açıkça belirtilmedikçe verilmiş sayılmayacaktır.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                8.5&nbsp;&nbsp;&nbsp; Şirket, Müşterinin orijinal metninin doğru ve ifade tarzına uygun bir biçimde çevrilmesi için elinden gelen tüm çabayı göstermeyi taahhüt etmesine rağmen, Müşteri çevirinin iyi bir biçimde yazılmış orijinalden farklı olduğunu ve Şirketin reklam veya satış etkisinin yokluğu konusundaki iddialarda sorumluluk kabul etmediğini kabullenmek durumundadır.&nbsp;
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                8.6&nbsp;&nbsp;&nbsp; Şirket İşin özel şartlarınızı karşılayacağını ve İşin kesintisiz ve hatasız olacağını garanti etmez. Ayrıca, Şirket, sağlanan işin kullanımında tamlığı, doğruluğu güvenilirliği vb. konularda garanti vermez ve sorumluluk kabul etmez.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                8.7&nbsp;&nbsp;&nbsp; Aşağıdaki durumlarda:
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                8.7.1&nbsp;&nbsp;&nbsp; Müşterinin Şirketin acil İş çıkarmasını talep etmesi durumunda (çeviri işi için acil iş, standart belgeler için günlük 2500 kelime/15 sayfa/15.000 boşluksuz karakter üstü işler ve teknik belgeler için günlük 1500 kelime/10 sayfa/10.000 boşluksuz karakter üstü işler anlamına gelecektir) ve/veya
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:72.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                8.7.2&nbsp;&nbsp;&nbsp; Müşterinin taleplerini karşılamak adına başka bir hizmetimizi kullanmasını teklif ettiğimiz ve Müşterinin bunu yapmadığı durumlarda (Elite Gold Hizmeti her zaman Standard Silver hizmetine karşı tavsiye edilir),
+
+                İşin kalitesinin işimizin normal seyrinde sağladığımız yüksek standartlarda olmaması riski mevcut olabilir. Her şartta Şirket İş hakkında herhangi bir sorumluluk kabul etmez ve aşağıdakileri kabul etmiş sayılırsınız:
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:108.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                a)&nbsp;&nbsp;&nbsp; İş tarafımızdan Şirketin işlerinin normal seyrinde İş yaptığımız beceri ve dikkat seviyesini kullanarak yapılmayabilir;
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:108.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                b)&nbsp;&nbsp;&nbsp; İşin gerçekleştirilmesi sırasında, Müşteriye Sözleşmeyi feshetme veya İşin sağlanması ile ilgili tarafımıza ödeme yapmama hakkını tanımayacak olan bir takım hatalar veya eksikler meydana gelebilir; ve
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:108.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                c)&nbsp;&nbsp;&nbsp; Bu tür hata ya da eksikliklerden kaynaklanan herhangi bir tazminat talebi ya da kayıptan tarafımızı muaf tutacağınızı kabul edersiniz.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:108.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>d)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Terminoloji ve stil kullanımında farklılıklar olabilir.</span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                8.8&nbsp;&nbsp;&nbsp; Şirket tarafından başka şekilde açıkça ve yazılı olarak onay verilmedikçe, Müşteri (bu madde amaçları için tüm bağlı şirketleri, onların ya da sizin çalışanlarınızı, direktörleri, müdürleri veya hissedarları içerecektir) Sözleşmenin feshinden itibaren beş yıllık süre içinde, doğrudan ya da dolaylı olarak, kendi adınıza veya başka herhangi bir kişi, firma ya da şirket adına işbu Sözleşme altında Şirket adına Müşteriye İşi sağlayan çevirmeni, sözlü çevirmeni ya da herhangi bir diğer dil profesyonelini talep etmeyecek, çalıştırmayacak, Şirketten uzaklaştırmaya çalışmayacak veya hizmetlerinden faydalanmayacaktır. Bu maddenin ihlali durumunda Müşteri, Şirketin sizin Çevirmeni, Sözlü Çevirmen veya diğer dil profesyonelini çalıştırdığınız veya hizmetlerinden faydalandığınız tarihten önceki üç (3) yıl içinde Çevirmen, Sözlü Çevirmen ya da diğer dil profesyoneline ödediği tüm bedellere karşılık gelen miktarı Şirkete ödemeyi kabul eder.
+
+
+
+            </span>
+        </p>
+        <h1>
+            <a name="_Toc314837067">
                 <span>
                     9. Çevirinin Özellikleri&nbsp;
-                    
-                </span><span></span>
-            </p>
-            <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+
+                </span>
+            </a><span></span>
+        </h1>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm">
+            <span></span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                9.1&nbsp;&nbsp;&nbsp; Çeviri bir (kaynak) dilde yazılan bir metnin bir diğer (hedef) dile bir uzman ya da başka çevirmen tarafından bilinen dilbilgisi kurallarını ve kendi tecrübeleri veya sözlükler yolu ile edinilen gerekli kelime bilgilerini uygulayarak düz ve aşağı yukarı bire bir biçimde aktarılmasıdır. Fakat orijinal materyaldeki kavramların ne kadar az ya da çok korunduğundan emin olmak için Uyarlama ve Metin Yazımı ile karşılaştırmalıdır. Fakat bu kavramların ifade ediliş biçimi ikna ediciliği en yüksek seviyeye çıkarabilmek için hedef dilde tamamen değişebilir. Şirket işbu maddenin hükümleri çerçevesinde ve aşağıdaki maddeye tabi olarak çevrilecek materyalin doğru ve ifade tarzına uygun bir biçimde üretilmesi için elinden gelen tüm çabayı göstermeyi taahhüt eder.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                9.2&nbsp;&nbsp;&nbsp; Çeviri orijinal yazılı materyalin kalitesini yansıtır. Tercüme edilecek materyalde kavramlar zayıf bir biçimde ifade edilmiş, kullanılan dil yanlış seçilmişse, tipografik hatalar mevcutsa, metin eksik veya içerdiği gerçekler bakımından eksikse; bu durumların herhangi birinde veya hepsinde aynı yetersizlikler çeviride de meydana gelir.&nbsp; Şirket çevirideki metni iyileştirmek veya orijinal metindeki geçişleri açıklığa kavuşturmak adına Müşteri adına bu tür değişiklikler yapma hakkına sahip değildir, fakat Müşteri’yi bu yanlışlar konusunda bilgilendirebilir. Şirket bu nedenle, bu sorunların var olduğu herhangi bir çeviri ile ilgili hiçbir eleştiriyi kabul etmeyecektir.&nbsp;
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                9.3&nbsp;&nbsp;&nbsp; Yazılı bir materyalin bir parçasının doğru bir biçimde tercüme edilmesi için sektör terminolojisinin daha iyi bilinmesi bununla sınırlandırılmaksızın, örneğin sadece belirli bir Müşteri şirket ya da kurum tarafından bilinebilecek bilgiler gerekiyorsa, Şirketin bu bilgilere sahip olduğu varsayılamaz. Bu durumda, materyalin doğru çevirisi için gereken talimatları Şirkete tekil sözlükler veya diğer çeviriye yardımcı araçlar şeklinde sağlamak Müşterinin yükümlülüğüdür. Fakat, Şirket her zaman bu uzmanlık alanında deneyimli/kalifiye tercümanları görevlendirerek uzman bir çeviri sağlamak için çaba gösterecektir.&nbsp;
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                9.4&nbsp;&nbsp;&nbsp; Bir müşterinin çeviri İşi için özel bir kullanım belirtmesi ve daha sonra bu kullanım için tedarik edilen İşi başka bir amaç için kullanmayı istemesi halinde, Müşteri, işin yeni kullanıma uygunluğu konusunda Şirketin onayını almalıdır. Şirket bir çevirinin tedarik edildiği kullanımdan başka bir amaç için kullanılmasından herhangi bir sorumluluk kabul etmez ve çevirinin gerektirebileceği değişiklikleri yapmak için ücretlendirme hakkını saklı tutar.&nbsp;
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                9.5&nbsp;&nbsp;&nbsp; İş Sözleşmesinin taslakların veya metnin Müşteriye onaylatılmasını sağlaması halinde, Şirket müşteri tarafından verilen taslak ya da metinler üzerinde yapılacak değişikliklerden ve düzeltmelerden sorumlu olmayacaktır.&nbsp;
+
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>9.6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Şirket ahlaki inanışlara ve etiğe aykırı olduğunu, insanlığa zarar vermeyi desteklediğini veya müstehcen içerik içerdiğini düşündüğü herhangi bir belgeyi reddetme hakkını saklı tutar.</span>
+        </p>
+        <h1>
+            <a name="_Toc314837068">
                 <span>
                     10. Müşterinin Mülkleri&nbsp;
-                </span><span></span>
-            </p>
-            <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+
+                </span>
+            </a><span></span>
+        </h1>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm">
+            <span></span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                10.1&nbsp;&nbsp;&nbsp; Şirkete teslim edilen tüm belgeler ve diğer mülkler Şirket tarafından Müşteri’nin riskinde tutulacak ve kullanılacaktır ve Şirket bunlara gelebilecek hasar veya kayıplarından sorumlu olmayacaktır.&nbsp;
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                10.2&nbsp;&nbsp;&nbsp; Şirket, bağlı olduğu İşin tamamlanmasından itibaren oni ki (12) aydan uzun süredir kendinde bulunan tüm belgeleri veya Müşteri’nin diğer mülkiyetlerini imha etme veya başka türlü bertarafı etme hakkını saklı tutar.&nbsp;
+
+
+
+            </span>
+        </p>
+        <h1>
+            <a name="_Toc314837069">
                 <span>
                     11. Gizlilik
-                </span><span></span>
-            </p>
-            <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
+
+                </span>
+            </a><span></span>
+        </h1>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm">
+            <span></span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                11.1&nbsp;&nbsp;&nbsp; Madde 11.3’e tabi olarak ve (bizim tarafımızdan) İşi sağlamak için gerekli olduğu durumlar haricinde, her iki taraf da bir diğerinin Gizli Bilgilerinin ((herhangi bir biçimde) Şirket ya da Müşteri için gizli olan ve Şirket ya da Müşterinin İşimiz ile bağlantılı olarak açıklamış olduğu tüm bilgiler) herhangi bir bölümünü kullanamaz.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                11.2&nbsp;&nbsp;&nbsp;Madde 11.3’e tabi olarak, her iki taraf da diğer tarafın Gizli Bilgilerinin herhangi bir bölümünü başka herhangi bir kişiye açıklayamaz.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                11.3&nbsp;&nbsp;&nbsp; Her iki taraf da birbirinin Gizli Bilgilerini aşağıdaki durumlarda ve taraflara açıklayabilir:
+                &nbsp;&nbsp;&nbsp;
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                11.3.1&nbsp;&nbsp;&nbsp; Kanun ya da diğer yetkili kurumlar tarafından bu şekilde yapılması istendiğinde, Gizli Bilgileri açıklaması istenen taraf, bunu yapmak yasal ve uygulanabilir olduğu takdirde:
+                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                a)&nbsp;&nbsp;&nbsp; Bilgilerin hak sahibini bu tür bir gereklilikten derhal haberdar edecek; ve
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                b)&nbsp;&nbsp;&nbsp; Bu tür bir açıklamanın veya bilginin sahibinin bu tür bir gerekliliğin geçerliliği üzerinde yapacağı herhangi bir girişimin biçimi, kapsamı veya zamanlaması hakkında bilginin sahibi ile işbirliği yapacaktır.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                11.3.2&nbsp;&nbsp;&nbsp; Kendisinin (ya da bağlı şirketlerinden herhangi birinin), alt yüklenicisinin çalışanlarına veya görevi gereği bu tür bir açıklamaya gerek duyan diğer kişilere, açıklamayı yapan tarafın açıklamanın yapıldığı tarafın aşağıdakilere haiz olduğundan emin olması şartıyla:
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                a)&nbsp;&nbsp;&nbsp; İşbu Hüküm ve Şartlar altındaki gizlilik zorunlulukları konusunda bilgilendirilmiş olmak; ve
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                b)&nbsp;&nbsp;&nbsp; Bu zorunluluklara kendisi üzerinde bağlayıcı olduğunu varsayarak uymak.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>
+                11.4&nbsp;&nbsp;&nbsp; İşbu Madde 11’de belirtilen gizlilik zorunluluğu Sözleşmenin herhangi bir nedenle sona ermesinden sonra da geçerli kalacaktır.
+
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
+150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
+            <span>11.5&nbsp;&nbsp;&nbsp; Her iki taraf da işbu Madde 11 altındaki yükümlülüklerinin açıklama yapan tarafı korumak için gerekli ve makul olduğunu kabul eder ve zararların telafisini açıklayan tarafın, açıklanan tarafın işbu Madde 11 altındaki zorunluluklarını ihlal etmesinden doğacak zararlarını telafi etmeye yererli olmayacağını kabul eder. &nbsp;Buna göre, her iki taraf da mevcut diğer telafilerin yanı sıra açıklayan tarafın işbu Sözleşmenin ihlali tehdidi veya bu ihlalin devamı halinde maddi hasarları kanıtlamaya ihtiyaç duymaksızın ihtiyati tedbir almaya hakkı olduğunu kabul ederler.</span>
+        </p>
+        <h1>
+            <a name="_Toc314837070">
                 <span>
                     12. Yasadışı Konular&nbsp;
-                </span><span></span>
-            </p>
-            <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
-                <span>13. Fikri Mülkiyet ve Telif Hakları</span><span></span>
-            </p>
-            <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
-                <span>14. Veri Koruma</span>
-                <span></span>
-            </p>
-            <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
-                <span>15. Çeşitli Hükümler</span><span></span>
-            </p>
-            <p class="MsoToc1" style="tab-stops:right dotted 414.5pt">
-                <span>16. Yetkili Mahkeme&nbsp;</span><span></span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm;line-height:150%;mso-pagination:none;mso-layout-grid-align:
-none;text-autospace:none">
-                <span></span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    Müşteri, çeviri için bir metin göndererek veya Şirket tarafından yerine getirilecek herhangi başka bir iş göndererek işbu Şirket ile aşağıdaki hüküm ve şartlar kapsamında bağlayıcı bir sözleşme yapmış sayılır.&nbsp;
 
-
-                    
                 </span>
-            </p>
-            <h1>
-                <a name="_Toc314837059">
-                  <span>1.&nbsp;&nbsp;&nbsp; </span><span>
-                        Tanımlar/Genel
-
-                    </span>
-                </a><span></span>
-            </h1>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+            </a><span></span>
+        </h1>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm">
-                <span></span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    1.1&nbsp;&nbsp;&nbsp; &quot;Şirket&quot;, AIM Danışmanlık Ltd. Şti ve Şirketin altında faaliyet gösterdiği tüm diğer markaları ifade eder. &quot;İş&quot; Şirket tarafından üstlenilen herhangi bir çeviri ya da diğer işi veya Şirket tarafından sağlanan tüm hizmetleri ifade eder. &quot;Müşteri&quot; Şirketin işi tedarik edeceği tüm kişiler veya kurumları ifade eder.&nbsp;
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    1.2&nbsp;&nbsp;&nbsp; Şirket ile Müşteri arasındaki sözleşmenin tarafları arasında meydana gelebilecek herhangi bir ihtilafta taraflar arasındaki sözleşmeyi oluşturan belgeler aşağıdaki sırada öncelikli olacaktır
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:72.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    1.&nbsp;&nbsp;&nbsp; Taraflarca imzalanan (varsa) hizmet seviyesi sözleşmesi.
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:72.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    2.&nbsp;&nbsp;&nbsp; İşbu Hüküm ve Şartlar
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:72.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    3.&nbsp;&nbsp;&nbsp; E mailler ve yazışmalar
-                    
-                </span>
-            </p>
-            <h1>
-                <a name="_Toc314837060">
-                    <span>
-                        2. Fiyatlandırmalar&nbsp;
-
-                    </span>
-                </a><span></span>
-            </h1>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm">
-                <span></span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    2.1&nbsp;&nbsp;&nbsp; Sözlü verilen fiyatlar sadece fikir verme amacı taşır. Şirket üzerinde bağlayıcı değildirler ve çeviri metninin alınmasını istinaden yazılı onaya tabidirler. Yazılı fiyatlandırmalar, başka şekilde belirtilmedikçe gönderildikleri tarihten itibaren 30 gün için geçerlidir. Çevirinin maliyeti kaynak dildeki metin üzerinden boşluksuz 1000 karakter = 1 sayfa olarak hesaplanan sayfa sayısına dayanarak belirlenir.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    2.2&nbsp;&nbsp;&nbsp; Şirket, çeviri işleminin başlangıcından sonra Müşteri tarafından kaynak metinde değişiklik yapılması durumunda verilen fiyatlandırmaya ekleme yapma hakkını saklı tutar. Bu tür bir ekleme üzerinde Müşteri ile mutabık kalınacaktır.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    2.3&nbsp;&nbsp;&nbsp; Fiyatlandırma Terminolojisi:
-                    &nbsp;“Çeviri” bir (kaynak) dilde yazılan bir metnin bir diğer (hedef) dile bir uzman ya da başka çevirmen tarafından bilinen dilbilgisi kurallarını ve kendi tecrübeleri veya sözlükler yolu ile edinilen gerekli kelime bilgilerini uygulayarak düz ve aşağı yukarı bire bir biçimde aktarılmasıdır. Copywriting ( senaryo yazımı )Müşteriden alınan bilgilendirme sonrasında kaynaksız ana dilde yazılan senaryo yu ifade eder, Tercüme -“Metin yazımı”, kaynak materyaldeki kavramların korunduğu, fakat ikna ediciliği en yüksek seviyeye çıkarabilmek için bunların ifade edilme biçiminin hedef dilde tamamen değişebileceği bir süreçtir.
-                    Editing - “Düzenleme” kaynak belge ile tercüme edilmiş belgenin verilmek istenen mesajın her iki dilde de aynı olduğundan emin olmak için karşılaştırılması sürecidir. Proof reading -&nbsp; &quot;Bütünsel redaksiyon&quot;, çeviriyi gerçekleştiren çevirmen tarafından yapılan redaksiyon işlemidir.
-                    İleri Proofreading - &quot;İleri
-                    redaksiyon” ise profesyonel bir redaktör tarafından yapılan redaksiyon işlemini ifade eder. Desktop Publishing - “Masaüstü Yayıncılık/DTP”, dijital dosyaların baskı için düzgün bir biçimde teknik olarak birleştirilmesi işlemidir.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    2.4&nbsp;&nbsp;&nbsp; Sözleşme, satın alma siparişinizin, fiyatlandırma onayınızın veya İşe başlamamız için tarafınızdan alınacak bu tür herhangi bir bilginin alınması ve İşin tarafımızdan sağlanmasına başlanması ile yürürlüğe girecektir.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    2.5&nbsp;&nbsp;&nbsp; Sözleşme, işbu Hüküm ve Şartlara tabi olacaktır. Siparişte belirtilen veya sizin tarafınızdan başka bir biçimde iletilen hüküm ve şartların hükmü bulunmayacaktır.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    2.6&nbsp;&nbsp;&nbsp;&nbsp; Fiyatlandırmalar materyalin sizin tarafınızdan sağlanan tarifi, çevirinin amacı ve tüm diğer talimatlara dayalı olarak yapılacaktır. Bu tür fiyatlandırmalar, kaynak materyallerin tanımı, talimatlar veya diğer bileşenlerin önemli ölçüde yetersiz veya yanlış olduğuna dair görüşümüz oluşması durumunda değiştirilebilir.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>2.7&nbsp;&nbsp;&nbsp; Belgelerin çevirisi ve resmileştirilmesi (sertifikasyon, yeminli ifade, noterleme, apostilleme vs.) konusunda yetkili makam ile çevirinin kullanılacağı amaç için hangi resmileştirme seviyesinin uygun olacağını netleştirmek tamamen ve açıkça Müşterinin sorumluluğundadır.</span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>2.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hafta sonu/tatiller sırasında yapılması gereken İşler toplam miktar üzerinden %50 oranında ekstra hafta sonu fiyatlandırmasına tabi tutulacaktır.</span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>2.9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Şu hizmetler birbirinden ayrı olarak ücretlendirilecektir: Kaynak dilde metin yazımı. Çeviri,, Düzenleme, Redaksiyon, DTP, Baskı , Dağıtım.</span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    2.8&nbsp;&nbsp;&nbsp; İşbu Hüküm ve Şartlar tarafınıza sağlanan tüm İşlere uygulanacaktır.&nbsp;
-
-                    
-                </span>
-            </p>
-            <h1>
-                <a name="_Toc314837061">
-                    <span>
-                        3. Fiyat ve Ödeme
-
-                    </span>
-                </a><span></span>
-            </h1>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm">
-                <span></span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    3.1&nbsp;&nbsp;&nbsp; Başka şekilde belirtilmediği müddetçe fiyatlar Türk Lirası cinsinden ifade edilir ve fiyatlara KDV ve diğer vergi ve harçlar dahil değildir. Tahsil etme yükümlülüğümüz bulunan tüm uygun vergiler ve masraflar için size fatura keseceğiz. Müşteri, bu tür vergiler üzerinde ödemeniz geciktiği için bizim ödemek durumunda kaldığımız tüm ceza ve faizleri tarafımıza ödemekle yükümlü olacaktır.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    3.2&nbsp;&nbsp;&nbsp; Tüm işlerin ödemeleri Şirket tarafından özellikle yazılı onay verilmedikçe fatura tarihinden itibaren 15 gün içinde yapılacaktır. Fakat bazı durumlarda işe başlamadan önce ödeme veya ödemenin bir kısmı talep edilebilir. Şirketin diğer haklarına halel getirmeksizin, vade tarihini geçen tüm bakiyeler üzerinde %8 oranında bir hizmet masrafı alma hakkını saklı tutar.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    3.3&nbsp;&nbsp;&nbsp; İşin aşamalar halinde ve/veya 60 (altmış) günden uzun bir zaman dilimi içinde sağlanması halinde, size işin her aşamasının bitiminde veya aylık dönemler halinde fatura kesme hakkımızı saklı tutarız.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    3.4&nbsp;&nbsp;&nbsp; Herhangi bir faturanın işbu koşullar veya Sözleşme’de öngörülen diğer koşullar ile uyumlu olarak ödenmemesi halinde hem aynı sipariş üzerinde hem de diğer siparişleriniz üzerindeki işleri askıya alma hakkımızı diğer haklarımıza halel getirmeksizin saklı tutarız.
-
-                    
-                </span>
-            </p>
-            <h1>
-                <a name="_Toc314837062">
-                    <span>
-                        4. İşin Tamamlanması&nbsp;
-
-                    </span>
-                </a><span></span>
-            </h1>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm">
-                <span></span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    4.1&nbsp;&nbsp;&nbsp; Şirketin hızlı teslim konusunda iyi bir itibarı olmasının ve İşin tamamlanması için son tarihlere uymak için çaba gösterecek olmasının yanı sıra, verilen tarih ve süreler sadece en iyi tahminlerdir ve şirket herhangi bir nedenle ortaya çıkabilecek herhangi bir gecikmenin sonuçları için sorumluluk kabul etmez. Özellikle, Müşterinin, Şirketin, Müşterinin sunucularında veya telekomünikasyon sistemlerinde Şirketin kontrolü dışında gelişen ve zaman zaman meydana geldiği bilinen arızalar nedeniyle ortaya çıkabilecek gecikme veya bilgi kayıplarından sorumlu olmadığını bilmelidir.&nbsp;
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    4.2&nbsp;&nbsp;&nbsp; Müşteri İşi verirken bir tamamlanma tarihi (belirliyse) belirtmelidir, fakat Şirketin Müşterinin taleplerini karşılayabilmek için akla uygun tüm çabaları sarf edecek olmasına rağmen İşin geç teslim edilmesi Müşteriye yapılan İşin ödemesini durdurma hakkı vermez.&nbsp;
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    4.3&nbsp;&nbsp;&nbsp; İş normal koşullarda Müşteriye elektronik dosya formunda (Word, rtf, pdf, MP3, wav, vs.) e-posta ile teslim edilecektir. Müşterinin İşin basılı kopya olarak posta yoluyla gönderilmesini talep etmesi halinde Şirket teslimattaki gecikmelerden ya da posta hizmetinden kaynaklanan teslimat sorunlarından sorumlu tutulamaz.&nbsp;
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    4.4&nbsp;&nbsp;&nbsp; İşin tamamlanmasının doğru üretim için gereken zamandan daha kısa bir zamanda gerçekleşmesi gerektiği durumlarda, Şirket fazla mesai gereksinimlerini veya ek masrafları karşılamak üzere ek acil hizmet masrafı alma hakkını saklı tutar. Herhangi bir başka masraf tahakkuk etmişse, Şirkete bunları da fatura etme hakkını saklı tutar. Hızlandırılmış olan tüm işler aşağıda yer alan 8.7 Maddesine tabidir.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    4.5&nbsp;&nbsp;&nbsp; Şirket, Müşteriden kaynaklanan herhangi bir nedenle İşin gecikmesinin sonuçlarından sorumluluk kabul etmez. Bu durumda üzerinde mutabık kalınmış tüm son tarihler ve teslim planları otomatik olarak geçersiz kalacak ve yeni tarihler üzerinde anlaşılması gerekecektir.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    4.6&nbsp;&nbsp;&nbsp; Şirket İşin tamamını ya da bir kısmını kendi seçeceği yüklenici ya da yüklenicilere ihale etme hakkını saklı tutar.&nbsp;
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>4.7&nbsp;&nbsp;&nbsp; Sertifikalı, resmileştirilmiş, noterlenmiş ve tüm diğer “resmi” çeviriler için, Şirket, kullanım için herhangi bir basılı belge üretmeden önce Müşteriden elektronik biçimde kendisine sağlanan çeviriyi titizlikle kontrol etmesini bekler. Tüm tashihler, değişiklikler, düzeltmeler vs. Şirket ve dil profesyonelleri tarafından kontrol edilecek ve kabul edilebilir ve üzerinde mutabık kalınmış ise belge güncellenecektir. Bu süreç birçok kez Müşteri tarafından kontrol edilmesini ve katkıda bulunulmasını gerektirebilir. Bu tür işlerin çevirmenler arasında paylaştırılması mümkün değildir ve paylaştırılmayacaktır bu nedenle teslim süresi Madde 8.7’de belirtilen günlük üretim miktarına göre hesaplanmalıdır.</span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>&nbsp;</span>
-            </p>
-            <h1>
-                <a name="_Toc314837063">
-                    <span>
-                        5. Sözlü Çeviri&nbsp;
-
-                    </span>
-                </a><span></span>
-            </h1>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm">
-                <span></span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    5.1&nbsp;&nbsp;&nbsp; Müşteri beklenmeyen bir biçimde gelmezse, Sözlü Çevirmen etkinlik yerinde üzerinde mutabık kalınan başlangıç saatine ilave olarak 30 dakika daha bekleyecektir. Müşteri bir etkinliğe katılmazsa Şirket beklenen saat için tüm hizmet ücreti ile birlikte masrafları da Müşteriden tahsil edecektir.&nbsp;
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    5.2&nbsp;&nbsp;&nbsp; Şirket, eğer bir Sözlü Çevirmen önceden görülemeyen sebepler dolayısıyla bir etkinliğe katılamazsa hizmet masrafı tahsil etmeyecektir: Şirket bu tür durumlarda başka bir Sözlü Çevirmen sağlamak ve ilgili tarafları en kısa zamanda haberdar etmek için çaba gösterecektir, fakat bunun olmaması durumunda Şirket sorumluluk kabul etmez.&nbsp;
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    5.3&nbsp;&nbsp;&nbsp; Sözlü Çevirmenin kaçınılmaz bir biçimde geç kalması fakat halen görevini yerine getirmesinin istenmesi durumunda Şirket hizmet ücretinin tamamını tahsil edecektir.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    5.4&nbsp;&nbsp;&nbsp; Şirket, üzerinde mutabık kalınan tarih/saatte hizmet vermek için elinden gelen tüm çabayı gösterecektir, fakat Şirketin kontrolü dışındaki olaylardan kaynaklanan sebeplerle işin tamamlanmasının gecikmesi halinde sorumlu olmayacaktır.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    5.5&nbsp;&nbsp;&nbsp; Şirket, Sözlü Çevirmenin Müşteriye karşı yükümlülüklerini yerine getirmemesinden sorumlu tutulamaz.
-
-
-                    
-                </span>
-            </p>
-            <h1>
-                <a id="iptal">
-                    <span>
-                        6. İptal ve askıya alma&nbsp;
-
-                    </span>
-                </a><span></span>
-            </h1>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm">
-                <span></span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    6.1&nbsp;&nbsp;&nbsp; Eğer müşteri herhangi bir sebeple vermiş olduğu İşleri iptal ederse iptal tarihine kadar tamamlanmış olan tüm İşlerin ücretleri ve bu iptal sonucu ortaya çıkabilecek diğer masraf ve ücretler (hazırlık işleri ve İşi gerçekleştirmek için harcanan zaman dahil olmak üzere) ödenecektir.&nbsp;
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    6.2&nbsp;&nbsp;&nbsp; Müşteri vermiş olduğu İşi askıya alır ya da ertelerse askıya alma ya da erteleme tarihine kadar verilen tüm İşler ile ilgili ücretler ve bu askıya alma nedeniyle ortaya çıkabilecek tüm diğer masraf ve ücretler ödenecektir.&nbsp;
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    6.3&nbsp;&nbsp;&nbsp; Mücbir Sebeplerin (Grev, Lokavt, Endüstriyel Kargaşalık, Halk Hareketleri, Doğal Afet, Savaş Halleri ve Şirketin üzerinde mutabık kalınan yükümlülüğü yerine getirmesini gözle görülür biçimde etkilediği belgelenen tüm diğer durumlar) meydana gelmesi halinde, Şirket gecikmeksizin Müşteriye şartları bildirecektir. Mücbir Sebepler hem Şirkete hem de Müşteriye yükümlülüğünden geri çekilme hakkını verir, fakat her durumda Müşteri tamamlanmış olan İşler için Şirkete ödeme yapmayı taahhüt eder. Bu durumda, Şirket Müşteriye İşi başka bir yere verme konusunda elinden geldiği ölçüde yardımcı olacaktır.&nbsp;
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    6.4&nbsp;&nbsp;&nbsp; Sözleşmenin herhangi bir biçimde feshedilmesi her iki tarafın da tahakkuk eden hak ve tedbirlerine halel getirmeyecektir.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>6.5&nbsp;&nbsp;&nbsp; Bir sözlü çeviri işinin veya bir dil uzmanının belirli bir saat, gün ya da süre için tutulmasını gerektiren diğer hizmetlerin iptali en az 7 iş günü önceden bildirilmediği takdirde %50 oranında faturalandırılacaktır.</span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>&nbsp;</span>
-            </p>
-            <h1>
-                <a name="_Toc314837065">
-                    <span>
-                        7. Teslimat&nbsp;
-
-                    </span>
-                </a><span></span>
-            </h1>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm">
-                <span></span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    7.1&nbsp;&nbsp;&nbsp; Gecikme veya teslimatın gerçekleşememesi tedarikçiler veya alt yüklenicilerin teslimatlarının veya performanslarının gecikmesi veya yerine getirilmemesi, işgücü azlığı, doğal afet, yangın, fırtına veya kötü hava şartları, endüstriyel eylemler, çatışmalar, hükümet emir veya müdahalesi (kanun kuvvetleriyle ya da değil) veya kontrolümüz ötesindeki beklenmeyen ve istisnai nedenlerden ötürü meydana gelirse bu teslimat ya da performans gecikmesi veya bunların yerine getirilememesinden Şirket sorumlu olmayacaktır.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    7.2&nbsp;&nbsp;&nbsp; Teslimatın duruma göre posta, faks veya bir taşıyıcıya elektronik teslimat yoluyla yapılması öngörülür ve teslimattan sonra riskler Müşteriye geçer.&nbsp;
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    7.3&nbsp;&nbsp;&nbsp; Fakat, Şirket dosyaların bir kopyasını saklayacak ve herhangi bir hasar ya da kayıp durumunda dosyaların bir kopyasını ücretsiz olarak gönderecektir.&nbsp;
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    7.4&nbsp;&nbsp;&nbsp; Müşterinin Şirketin bunlarla sınırlı olmaksızın Noter, Vekil veya Yabancılar ve Milletler Dairesi gibi üçüncü tarafları kullanmasını talep etmesi halinde Şirket işbu üçüncü tarafların teslimatındaki gecikmelerden veya performans göstermemesinden sorumlu tutulamaz.
-
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>7.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Şirket her çevirmen için günlük 15 sayfa (boşluksuz 15.000 karakter) esasına göre çalışır. Müşterinin bir gün içinde 15 sayfadan fazlasını talep etmesi halinde Müşterinin terminoloji kullanımında farklılıklar oluşabileceğini ve kalitenin garanti edilmediğini kabul ettiğine dair yazılı onay vermesi gerekir.</span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>7.6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Basılı belgeler için %30 ek çeviri süresi gerekmektedir.</span>
-            </p>
-            <h1>
-                <a name="_Toc314837066">
-                    <span>
-                        8. Sorumluluk ve Yükümlülükler&nbsp;
-
-                    </span>
-                </a><span></span>
-            </h1>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm">
-                <span></span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    8.1&nbsp;&nbsp;&nbsp; Şirket, bu yükümlülükleri yerine getirmenin kontrolü dışında olduğu tüm durumlarda ve bu seviyeye dek Müşteri’ye karşı olan tüm yükümlülüklerinden sorumluluklarından muaf tutulacaktır.&nbsp;
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    8.2&nbsp;&nbsp;&nbsp; Müşterinin herhangi bir İşle ilgili şikayeti Müşterinin İşi teslim almasından itibaren beş (5) gün içinde yazılı olarak Şirkete bildirilecektir. Projenin tamamlanmasının ardından, Şirket, kendi hatasından kaynaklanan yanlışları, hataları veya eksikleri ücretsiz olarak düzeltmeyi taahhüt eder. Yükümlülüğümüz sadece haklı olduğunu düşündüğümüz bu tür bahsi geçen yanlış, hata ve eksiklikleri kendi memnuniyetimize göre düzeltmekten ibaret olacaktır. Müşteri her zaman Şirkete çeviri ile ilgili bahsi geçen sorunları düzeltme fırsatı verecektir. Bu tür hatalar hiçbir zaman ödemenin gecikmesine sebep olmayacaktır.&nbsp;
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    8.3&nbsp;&nbsp;&nbsp; Şirket herhangi bir şart altında, çevrilmiş materyalin kullanımından meydana gelen herhangi bir hasar ya da kaybın (kar kaybı, iş, sözleşme, gelir, itibar veya şerefiye, beklenen tasarruf ve/veya tüm diğer dolaylı kayıp ya da hasarlar) tedarik edilen İşin sözleşme fiyatını aşan kısmından Müşteri ya da herhangi bir üçüncü tarafa karşı sorumlu olmayacaktır. Müşteri, Şirketi bu tür hasar ve kayıplar için yapılacak talep ve girişimlerden muaf tutacaktır.&nbsp;
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    8.4&nbsp;&nbsp;&nbsp; İşin kalitesi ve amaca uygunluğu hakkında belirtilen ya da ima edilen hiçbir şart, koşul ya da garanti işbu sözleşmede açıkça belirtilmedikçe verilmiş sayılmayacaktır.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    8.5&nbsp;&nbsp;&nbsp; Şirket, Müşterinin orijinal metninin doğru ve ifade tarzına uygun bir biçimde çevrilmesi için elinden gelen tüm çabayı göstermeyi taahhüt etmesine rağmen, Müşteri çevirinin iyi bir biçimde yazılmış orijinalden farklı olduğunu ve Şirketin reklam veya satış etkisinin yokluğu konusundaki iddialarda sorumluluk kabul etmediğini kabullenmek durumundadır.&nbsp;
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    8.6&nbsp;&nbsp;&nbsp; Şirket İşin özel şartlarınızı karşılayacağını ve İşin kesintisiz ve hatasız olacağını garanti etmez. Ayrıca, Şirket, sağlanan işin kullanımında tamlığı, doğruluğu güvenilirliği vb. konularda garanti vermez ve sorumluluk kabul etmez.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    8.7&nbsp;&nbsp;&nbsp; Aşağıdaki durumlarda:
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:72.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    8.7.1&nbsp;&nbsp;&nbsp; Müşterinin Şirketin acil İş çıkarmasını talep etmesi durumunda (çeviri işi için acil iş, standart belgeler için günlük 2500 kelime/15 sayfa/15.000 boşluksuz karakter üstü işler ve teknik belgeler için günlük 1500 kelime/10 sayfa/10.000 boşluksuz karakter üstü işler anlamına gelecektir) ve/veya
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:72.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    8.7.2&nbsp;&nbsp;&nbsp; Müşterinin taleplerini karşılamak adına başka bir hizmetimizi kullanmasını teklif ettiğimiz ve Müşterinin bunu yapmadığı durumlarda (Elite Gold Hizmeti her zaman Standard Silver hizmetine karşı tavsiye edilir),
-
-                    İşin kalitesinin işimizin normal seyrinde sağladığımız yüksek standartlarda olmaması riski mevcut olabilir. Her şartta Şirket İş hakkında herhangi bir sorumluluk kabul etmez ve aşağıdakileri kabul etmiş sayılırsınız:
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:108.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    a)&nbsp;&nbsp;&nbsp; İş tarafımızdan Şirketin işlerinin normal seyrinde İş yaptığımız beceri ve dikkat seviyesini kullanarak yapılmayabilir;
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:108.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    b)&nbsp;&nbsp;&nbsp; İşin gerçekleştirilmesi sırasında, Müşteriye Sözleşmeyi feshetme veya İşin sağlanması ile ilgili tarafımıza ödeme yapmama hakkını tanımayacak olan bir takım hatalar veya eksikler meydana gelebilir; ve
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:108.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    c)&nbsp;&nbsp;&nbsp; Bu tür hata ya da eksikliklerden kaynaklanan herhangi bir tazminat talebi ya da kayıptan tarafımızı muaf tutacağınızı kabul edersiniz.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:108.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>d)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Terminoloji ve stil kullanımında farklılıklar olabilir.</span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    8.8&nbsp;&nbsp;&nbsp; Şirket tarafından başka şekilde açıkça ve yazılı olarak onay verilmedikçe, Müşteri (bu madde amaçları için tüm bağlı şirketleri, onların ya da sizin çalışanlarınızı, direktörleri, müdürleri veya hissedarları içerecektir) Sözleşmenin feshinden itibaren beş yıllık süre içinde, doğrudan ya da dolaylı olarak, kendi adınıza veya başka herhangi bir kişi, firma ya da şirket adına işbu Sözleşme altında Şirket adına Müşteriye İşi sağlayan çevirmeni, sözlü çevirmeni ya da herhangi bir diğer dil profesyonelini talep etmeyecek, çalıştırmayacak, Şirketten uzaklaştırmaya çalışmayacak veya hizmetlerinden faydalanmayacaktır. Bu maddenin ihlali durumunda Müşteri, Şirketin sizin Çevirmeni, Sözlü Çevirmen veya diğer dil profesyonelini çalıştırdığınız veya hizmetlerinden faydalandığınız tarihten önceki üç (3) yıl içinde Çevirmen, Sözlü Çevirmen ya da diğer dil profesyoneline ödediği tüm bedellere karşılık gelen miktarı Şirkete ödemeyi kabul eder.
-
-
-                    
-                </span>
-            </p>
-            <h1>
-                <a name="_Toc314837067">
-                    <span>
-                        9. Çevirinin Özellikleri&nbsp;
-
-                    </span>
-                </a><span></span>
-            </h1>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm">
-                <span></span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    9.1&nbsp;&nbsp;&nbsp; Çeviri bir (kaynak) dilde yazılan bir metnin bir diğer (hedef) dile bir uzman ya da başka çevirmen tarafından bilinen dilbilgisi kurallarını ve kendi tecrübeleri veya sözlükler yolu ile edinilen gerekli kelime bilgilerini uygulayarak düz ve aşağı yukarı bire bir biçimde aktarılmasıdır. Fakat orijinal materyaldeki kavramların ne kadar az ya da çok korunduğundan emin olmak için Uyarlama ve Metin Yazımı ile karşılaştırmalıdır. Fakat bu kavramların ifade ediliş biçimi ikna ediciliği en yüksek seviyeye çıkarabilmek için hedef dilde tamamen değişebilir. Şirket işbu maddenin hükümleri çerçevesinde ve aşağıdaki maddeye tabi olarak çevrilecek materyalin doğru ve ifade tarzına uygun bir biçimde üretilmesi için elinden gelen tüm çabayı göstermeyi taahhüt eder.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    9.2&nbsp;&nbsp;&nbsp; Çeviri orijinal yazılı materyalin kalitesini yansıtır. Tercüme edilecek materyalde kavramlar zayıf bir biçimde ifade edilmiş, kullanılan dil yanlış seçilmişse, tipografik hatalar mevcutsa, metin eksik veya içerdiği gerçekler bakımından eksikse; bu durumların herhangi birinde veya hepsinde aynı yetersizlikler çeviride de meydana gelir.&nbsp; Şirket çevirideki metni iyileştirmek veya orijinal metindeki geçişleri açıklığa kavuşturmak adına Müşteri adına bu tür değişiklikler yapma hakkına sahip değildir, fakat Müşteri’yi bu yanlışlar konusunda bilgilendirebilir. Şirket bu nedenle, bu sorunların var olduğu herhangi bir çeviri ile ilgili hiçbir eleştiriyi kabul etmeyecektir.&nbsp;
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    9.3&nbsp;&nbsp;&nbsp; Yazılı bir materyalin bir parçasının doğru bir biçimde tercüme edilmesi için sektör terminolojisinin daha iyi bilinmesi bununla sınırlandırılmaksızın, örneğin sadece belirli bir Müşteri şirket ya da kurum tarafından bilinebilecek bilgiler gerekiyorsa, Şirketin bu bilgilere sahip olduğu varsayılamaz. Bu durumda, materyalin doğru çevirisi için gereken talimatları Şirkete tekil sözlükler veya diğer çeviriye yardımcı araçlar şeklinde sağlamak Müşterinin yükümlülüğüdür. Fakat, Şirket her zaman bu uzmanlık alanında deneyimli/kalifiye tercümanları görevlendirerek uzman bir çeviri sağlamak için çaba gösterecektir.&nbsp;
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    9.4&nbsp;&nbsp;&nbsp; Bir müşterinin çeviri İşi için özel bir kullanım belirtmesi ve daha sonra bu kullanım için tedarik edilen İşi başka bir amaç için kullanmayı istemesi halinde, Müşteri, işin yeni kullanıma uygunluğu konusunda Şirketin onayını almalıdır. Şirket bir çevirinin tedarik edildiği kullanımdan başka bir amaç için kullanılmasından herhangi bir sorumluluk kabul etmez ve çevirinin gerektirebileceği değişiklikleri yapmak için ücretlendirme hakkını saklı tutar.&nbsp;
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    9.5&nbsp;&nbsp;&nbsp; İş Sözleşmesinin taslakların veya metnin Müşteriye onaylatılmasını sağlaması halinde, Şirket müşteri tarafından verilen taslak ya da metinler üzerinde yapılacak değişikliklerden ve düzeltmelerden sorumlu olmayacaktır.&nbsp;
-
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>9.6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Şirket ahlaki inanışlara ve etiğe aykırı olduğunu, insanlığa zarar vermeyi desteklediğini veya müstehcen içerik içerdiğini düşündüğü herhangi bir belgeyi reddetme hakkını saklı tutar.</span>
-            </p>
-            <h1>
-                <a name="_Toc314837068">
-                    <span>
-                        10. Müşterinin Mülkleri&nbsp;
-
-                    </span>
-                </a><span></span>
-            </h1>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm">
-                <span></span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    10.1&nbsp;&nbsp;&nbsp; Şirkete teslim edilen tüm belgeler ve diğer mülkler Şirket tarafından Müşteri’nin riskinde tutulacak ve kullanılacaktır ve Şirket bunlara gelebilecek hasar veya kayıplarından sorumlu olmayacaktır.&nbsp;
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    10.2&nbsp;&nbsp;&nbsp; Şirket, bağlı olduğu İşin tamamlanmasından itibaren oni ki (12) aydan uzun süredir kendinde bulunan tüm belgeleri veya Müşteri’nin diğer mülkiyetlerini imha etme veya başka türlü bertarafı etme hakkını saklı tutar.&nbsp;
-
-
-                    
-                </span>
-            </p>
-            <h1>
-                <a name="_Toc314837069">
-                    <span>
-                        11. Gizlilik
-
-                    </span>
-                </a><span></span>
-            </h1>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm">
-                <span></span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    11.1&nbsp;&nbsp;&nbsp; Madde 11.3’e tabi olarak ve (bizim tarafımızdan) İşi sağlamak için gerekli olduğu durumlar haricinde, her iki taraf da bir diğerinin Gizli Bilgilerinin ((herhangi bir biçimde) Şirket ya da Müşteri için gizli olan ve Şirket ya da Müşterinin İşimiz ile bağlantılı olarak açıklamış olduğu tüm bilgiler) herhangi bir bölümünü kullanamaz.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    11.2&nbsp;&nbsp;&nbsp;Madde 11.3’e tabi olarak, her iki taraf da diğer tarafın Gizli Bilgilerinin herhangi bir bölümünü başka herhangi bir kişiye açıklayamaz.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    11.3&nbsp;&nbsp;&nbsp; Her iki taraf da birbirinin Gizli Bilgilerini aşağıdaki durumlarda ve taraflara açıklayabilir:
-                    &nbsp;&nbsp;&nbsp; 
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    11.3.1&nbsp;&nbsp;&nbsp; Kanun ya da diğer yetkili kurumlar tarafından bu şekilde yapılması istendiğinde, Gizli Bilgileri açıklaması istenen taraf, bunu yapmak yasal ve uygulanabilir olduğu takdirde:
-                    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    a)&nbsp;&nbsp;&nbsp; Bilgilerin hak sahibini bu tür bir gereklilikten derhal haberdar edecek; ve
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    b)&nbsp;&nbsp;&nbsp; Bu tür bir açıklamanın veya bilginin sahibinin bu tür bir gerekliliğin geçerliliği üzerinde yapacağı herhangi bir girişimin biçimi, kapsamı veya zamanlaması hakkında bilginin sahibi ile işbirliği yapacaktır.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    11.3.2&nbsp;&nbsp;&nbsp; Kendisinin (ya da bağlı şirketlerinden herhangi birinin), alt yüklenicisinin çalışanlarına veya görevi gereği bu tür bir açıklamaya gerek duyan diğer kişilere, açıklamayı yapan tarafın açıklamanın yapıldığı tarafın aşağıdakilere haiz olduğundan emin olması şartıyla:
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    a)&nbsp;&nbsp;&nbsp; İşbu Hüküm ve Şartlar altındaki gizlilik zorunlulukları konusunda bilgilendirilmiş olmak; ve
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    b)&nbsp;&nbsp;&nbsp; Bu zorunluluklara kendisi üzerinde bağlayıcı olduğunu varsayarak uymak.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>
-                    11.4&nbsp;&nbsp;&nbsp; İşbu Madde 11’de belirtilen gizlilik zorunluluğu Sözleşmenin herhangi bir nedenle sona ermesinden sonra da geçerli kalacaktır.
-
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:36.0pt;text-align:justify;text-justify:inter-ideograph;line-height:
-150%;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">
-                <span>11.5&nbsp;&nbsp;&nbsp; Her iki taraf da işbu Madde 11 altındaki yükümlülüklerinin açıklama yapan tarafı korumak için gerekli ve makul olduğunu kabul eder ve zararların telafisini açıklayan tarafın, açıklanan tarafın işbu Madde 11 altındaki zorunluluklarını ihlal etmesinden doğacak zararlarını telafi etmeye yererli olmayacağını kabul eder. &nbsp;Buna göre, her iki taraf da mevcut diğer telafilerin yanı sıra açıklayan tarafın işbu Sözleşmenin ihlali tehdidi veya bu ihlalin devamı halinde maddi hasarları kanıtlamaya ihtiyaç duymaksızın ihtiyati tedbir almaya hakkı olduğunu kabul ederler.</span>
-            </p>
-            <h1>
-                <a name="_Toc314837070">
-                    <span>
-                        12. Yasadışı Konular&nbsp;
-
-                    </span>
-                </a><span></span>
-            </h1>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
-margin-left:0cm">
-                <span></span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+            <span></span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:36.0pt;line-height:150%">
-                <span>
-                    12.1&nbsp;&nbsp;&nbsp; Şirketten, kendi görüşüne göre yasadışı ya da hakaret içeren bir materyali tercüme etmesi istenmeyecektir. Şirket tarafından tercüme edilecek metinler üzerinde telif hakkı bulunduğu takdirde, Müşteri bu tercümenin yapılması için gerekli tüm izinleri almış olduğunu garanti eder.&nbsp;
+            <span>
+                12.1&nbsp;&nbsp;&nbsp; Şirketten, kendi görüşüne göre yasadışı ya da hakaret içeren bir materyali tercüme etmesi istenmeyecektir. Şirket tarafından tercüme edilecek metinler üzerinde telif hakkı bulunduğu takdirde, Müşteri bu tercümenin yapılması için gerekli tüm izinleri almış olduğunu garanti eder.&nbsp;
 
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:36.0pt;line-height:150%">
+            <span>
+                12.2&nbsp;&nbsp;&nbsp;Müşteri, Şirketi kendisi için basılan ya da yayınlanan herhangi bir hakaret içeren materyal ya da telif hakkı, Fikri Mülkiyet Hakkı, patent, tasarım ya da üçüncü taraf hakkı ihlali ile ilgili tüm tazminat taleplerinden, davalardan, masraflardan ve harcamalardan beri tutacaktır. Bu liste bunlarla sınırlı değildir.
+
+
+
+            </span>
+        </p>
+        <h1>
+            <a name="_Toc314837071">
                 <span>
-                    12.2&nbsp;&nbsp;&nbsp;Müşteri, Şirketi kendisi için basılan ya da yayınlanan herhangi bir hakaret içeren materyal ya da telif hakkı, Fikri Mülkiyet Hakkı, patent, tasarım ya da üçüncü taraf hakkı ihlali ile ilgili tüm tazminat taleplerinden, davalardan, masraflardan ve harcamalardan beri tutacaktır. Bu liste bunlarla sınırlı değildir.
+                    13. Fikri Mülkiyet ve Telif Hakları
 
-
-                    
                 </span>
-            </p>
-            <h1>
-                <a name="_Toc314837071">
-                    <span>
-                        13. Fikri Mülkiyet ve Telif Hakları
-
-                    </span>
-                </a><span></span>
-            </h1>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+            </a><span></span>
+        </h1>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm">
-                <span></span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+            <span></span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:36.0pt;line-height:150%">
-                <span>
-                    13.1&nbsp;&nbsp;&nbsp; Çevirinin telif hakları Şirkete aittir ve Müşteriye sadece İş için ödemenin tamamı yapıldığında transfer edilecektir.&nbsp;
+            <span>
+                13.1&nbsp;&nbsp;&nbsp; Çevirinin telif hakları Şirkete aittir ve Müşteriye sadece İş için ödemenin tamamı yapıldığında transfer edilecektir.&nbsp;
 
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:36.0pt;line-height:150%">
+            <span>
+                13.2&nbsp;&nbsp;&nbsp; İş için ödeme yapıldığında Orijinal İşler ve İşlerdeki tüm Fikri Mülkiyet Hakları (telif hakkı bununla sınırlandırılmaksızın dahil olmak üzere) Müşteriye (ya da lisans veren kişilere) geçecektir, fakat şüphelerden kaçınmak üzere, işbu belge ile Şirkete (ve alt yüklenicilerimize) Orijinal İşlerin kopyalarını Sözleşme süresi boyunca ve Müşteriye İş sağlama amacı ile saklama ve kullanma izni vermiş sayılırısınız.
+
+
+
+            </span>
+        </p>
+        <h1>
+            <a name="_Toc314837072">
                 <span>
-                    13.2&nbsp;&nbsp;&nbsp; İş için ödeme yapıldığında Orijinal İşler ve İşlerdeki tüm Fikri Mülkiyet Hakları (telif hakkı bununla sınırlandırılmaksızın dahil olmak üzere) Müşteriye (ya da lisans veren kişilere) geçecektir, fakat şüphelerden kaçınmak üzere, işbu belge ile Şirkete (ve alt yüklenicilerimize) Orijinal İşlerin kopyalarını Sözleşme süresi boyunca ve Müşteriye İş sağlama amacı ile saklama ve kullanma izni vermiş sayılırısınız.
+                    14. Veri Koruma
 
-
-                    
                 </span>
-            </p>
-            <h1>
-                <a name="_Toc314837072">
-                    <span>
-                        14. Veri Koruma
-
-                    </span>
-                </a><span></span>
-            </h1>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+            </a><span></span>
+        </h1>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm">
-                <span></span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+            <span></span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:36.0pt;line-height:150%">
+            <span>
+                14.1&nbsp;&nbsp;&nbsp; Şirket, İşi sağlama sırasında herhangi bir veriyi işlememiz gerekirse bunu sadece Müşterinin talimatlarına göre yapacağımızı beyan eder.
+
+
+
+            </span>
+        </p>
+        <h1>
+            <a name="_Toc314837073">
                 <span>
-                    14.1&nbsp;&nbsp;&nbsp; Şirket, İşi sağlama sırasında herhangi bir veriyi işlememiz gerekirse bunu sadece Müşterinin talimatlarına göre yapacağımızı beyan eder.
+                    15. Çeşitli Hükümler
 
-
-                    
                 </span>
-            </p>
-            <h1>
-                <a name="_Toc314837073">
-                    <span>
-                        15. Çeşitli Hükümler
-
-                    </span>
-                </a><span></span>
-            </h1>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+            </a><span></span>
+        </h1>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm">
-                <span></span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+            <span></span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:36.0pt;line-height:150%">
-                <span>
-                    15.1&nbsp;&nbsp;&nbsp; İşbu Hüküm ve Şartların herhangi bir hükmü geçersiz ya da uygulanamaz hale gelirse Hüküm ve Şartların geri kalanından ayrılarak geçersiz ve uygulanamaz olduğu ölçüde etkisi kalkacak ve Hüküm ve Şartların diğer hükümleri geçersiz ya da uygulanamaz sayılmayacak veya başka türlü etkilenmeyecektir.
+            <span>
+                15.1&nbsp;&nbsp;&nbsp; İşbu Hüküm ve Şartların herhangi bir hükmü geçersiz ya da uygulanamaz hale gelirse Hüküm ve Şartların geri kalanından ayrılarak geçersiz ve uygulanamaz olduğu ölçüde etkisi kalkacak ve Hüküm ve Şartların diğer hükümleri geçersiz ya da uygulanamaz sayılmayacak veya başka türlü etkilenmeyecektir.
 
-                    
-                </span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+
+            </span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:36.0pt;line-height:150%">
+            <span>
+                15.2&nbsp;&nbsp;&nbsp; İşbu Hüküm ve Şartlar ya da Sözleşmedeki herhangi bir hüküm taraflar arasında ortaklık ya da ortaklık girişim kurmak ya da herhangi bir tarafın diğerinin aracısı olarak hareket etmesine izin vermek anlamına gelmez ve bu şekilde oluşturulmamıştır. Taraflardan herhangi biri, bir diğeri adına veya hesabına hareket etme ya da başka bir biçimde temsil etme &nbsp;(herhangi bir temsilde bulunma, garanti verme, herhangi bir zorunluluk ya da yükümlülük üstlenme veya herhangi bir hak ya da gücü kullanma bunlarla sınırlı olmaksızın dahil olmak üzere) hakkına sahip değildir.
+
+
+
+            </span>
+        </p>
+        <h1>
+            <a name="_Toc314837074">
                 <span>
-                    15.2&nbsp;&nbsp;&nbsp; İşbu Hüküm ve Şartlar ya da Sözleşmedeki herhangi bir hüküm taraflar arasında ortaklık ya da ortaklık girişim kurmak ya da herhangi bir tarafın diğerinin aracısı olarak hareket etmesine izin vermek anlamına gelmez ve bu şekilde oluşturulmamıştır. Taraflardan herhangi biri, bir diğeri adına veya hesabına hareket etme ya da başka bir biçimde temsil etme &nbsp;(herhangi bir temsilde bulunma, garanti verme, herhangi bir zorunluluk ya da yükümlülük üstlenme veya herhangi bir hak ya da gücü kullanma bunlarla sınırlı olmaksızın dahil olmak üzere) hakkına sahip değildir.
+                    16. Yetkili Mahkeme&nbsp;
 
-
-                    
                 </span>
-            </p>
-            <h1>
-                <a name="_Toc314837074">
-                    <span>
-                        16. Yetkili Mahkeme&nbsp;
-
-                    </span>
-                </a><span></span>
-            </h1>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+            </a><span></span>
+        </h1>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:0cm">
-                <span></span>
-            </p>
-            <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+            <span></span>
+        </p>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
 margin-left:36.0pt;line-height:150%">
-                <span>16.1&nbsp;&nbsp;&nbsp; Bu şartlar Türk Kanunları altında uygulanacaktır ve Şirket ve Müşteri Türk Mahkemelerinin tam yetkili olduğunu gayri kabili rücu olarak kabul ve beyan ederler.</span>
-            </p>
-            &nbsp;
-        </div>
+            <span>16.1&nbsp;&nbsp;&nbsp; Bu şartlar Türk Kanunları altında uygulanacaktır ve Şirket ve Müşteri Türk Mahkemelerinin tam yetkili olduğunu gayri kabili rücu olarak kabul ve beyan ederler.</span>
+        </p>
+        &nbsp;
     </div>
+</div>

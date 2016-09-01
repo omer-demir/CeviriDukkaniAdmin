@@ -53,8 +53,24 @@ var UserPayment = (function () {
     }
     return UserPayment;
 }());
-//public int ? UserRateId { get; set; }
-//public virtual UserRateDto UserRate { get; set; }
-//public int ? UserScoreId { get; set; }
-//public virtual UserScoreDto UserScore { get; set; } 
+var BankAccount = (function () {
+    function BankAccount() {
+    }
+    return BankAccount;
+}());
+var Rate = (function () {
+    function Rate() {
+    }
+    return Rate;
+}());
+var RateItemDto = (function () {
+    function RateItemDto() {
+    }
+    return RateItemDto;
+}());
+var UserDocumentDto = (function () {
+    function UserDocumentDto() {
+    }
+    return UserDocumentDto;
+}());
 //# sourceMappingURL=ceviri.classes.js.map

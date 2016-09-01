@@ -56,12 +56,35 @@
             }
             return true;
         }
+        $('input[type=radio][name=bankAccountType]').change(function () {
+            ChangeVisibleByClassName("Turkish", false);
+            ChangeVisibleByClassName("European", false);
+            ChangeVisibleByClassName("PayPal", false);
+            $('#spnAccountTypeHeader').text(this.value);
+            if (this.value == 'Turkish') {
+                ChangeVisibleByClassName("Turkish", true);
+            }
+            else if (this.value == 'European') {
+                ChangeVisibleByClassName("European", true);
+            }
+            else if (this.value == 'PayPal') {
+                ChangeVisibleByClassName("PayPal", true);
+            }
+        });
+        function ChangeVisibleByClassName(className, visible) {
+            var elements = document.getElementsByClassName(className);
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i];
+                element.hidden = !visible;
+            }
+        }
         $("#btnSave").on("click", function (data) {
             if (PageValidations()) {
                 var user = new User();
                 user.name = $('#name').val();
                 user.surname = $('#surname').val();
-                user.genderId = $('#genderId').val();
+                user.email = $('#email').val();
+                user.genderId = $('input[name="gender"]:checked').val();
                 user.mobilePhone = $('#mobilePhone').val();
                 user.password = $('#password').val();
                 var userContact = new UserContact();
@@ -75,8 +98,9 @@
                 userContact.districtId = $('#district').val();
                 user.userContact = userContact;
                 var userAbility = new UserAbility();
-                userAbility.motherTongueId = $('#motherTongueId').val();
-                userAbility.bilingualTongueId = $('#bilingualTongueId').val();
+                userAbility.motherTongueId = $('#motherTongue').val();
+                userAbility.tongue = $('#tongue').val();
+                userAbility.bilingualTongueId = $('#bilingualTongue').val();
                 userAbility.yearsOfExperience = $('#yearsOfExperience').val();
                 var capacity = new Capacity();
                 capacity.translation = $('#translation').val();
@@ -85,11 +109,22 @@
                 userAbility.capacity = capacity;
                 userAbility.qualityEnsureDescription = $('#qualityEnsureDescription').val();
                 userAbility.qualifications = $('#qualifications').val();
-                userAbility.qualifications = $('#qualifications').val();
                 userAbility.mainClients = $('#mainClients').val();
+                userAbility.specializations = $('#specializations').val();
                 user.userAbility = userAbility;
                 var userPayment = new UserPayment();
-                userPayment.bankAccountId = $('#bankAccountId').val();
+                var bankAccount = new BankAccount();
+                bankAccount.bankAccountTypeId = $('#bankAccountType').val();
+                bankAccount.bankName = $('#bankName').val();
+                bankAccount.accountHolderFullName = $('#accountHolderFullName').val();
+                bankAccount.IBAN = $('#IBAN').val();
+                bankAccount.paypalEmailAddress = $('#paypalEmailAddress').val();
+                bankAccount.beneficiaryAddress = $('#beneficiaryAddress').val();
+                bankAccount.accountNumber = $('#accountNumber').val();
+                bankAccount.swiftBicCode = $('#swiftBicCode').val();
+                bankAccount.cityCountryBank = $('#cityCountryBank').val();
+                bankAccount.bankAddress = $('#bankAddress').val();
+                userPayment.bankAccount = bankAccount;
                 userPayment.vatTaxNo = $('#vatTaxNo').val();
                 userPayment.currencyId = $('#currencyId').val();
                 userPayment.workingTypeId = $('#workingTypeId').val();
