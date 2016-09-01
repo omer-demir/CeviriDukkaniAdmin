@@ -6,6 +6,45 @@
 <link href="~/bower_components/dropzone/dist/basic.css" rel="stylesheet" />
 <link href="~/bower_components/dropzone/dist/dropzone.css" rel="stylesheet" />
 
+<style>
+    .process-steps li {
+        width: 33%;
+    }
+
+    .tab-input {
+        margin-bottom: 35px !important;
+    }
+
+    .div-line {
+        width: 96%;
+        margin-left: auto;
+        margin-right: auto;
+        border-top: 2px solid #EEE;
+        margin: 60px 0;
+        clear: both;
+        position: relative;
+    }
+
+    .custom-dropzone {
+        width: 100%;
+        min-height: 150px;
+        border: 2px dashed rgba(0, 0, 0, 0.3);
+        background: #EEE;
+        padding: 20px 20px;
+        text-align: center;
+        cursor: pointer;
+        font-size: 26px;
+    }
+
+    .m-zero {
+        margin: 0 !important;
+    }
+
+    p .count {
+        font-weight: bold;
+    }
+</style>
+
 <section id="slider" class="slider-parallax swiper_wrapper clearfix">
 
     <div class="slider-parallax-inner" style="left:auto">
@@ -28,21 +67,21 @@
                         </div>
                     </div>
                     <div class="video-wrap">
-                        <video poster="~/Content/images/videos/explore.jpg" preload="auto" loop autoplay muted>
-                            <source src='images/videos/explore.mp4' type='video/mp4' />
-                            <source src='images/videos/explore.webm' type='video/webm' />
-                        </video>
+                        @*<video poster="~/Content/images/videos/explore.jpg" preload="auto" loop autoplay muted>
+                                <source src='images/videos/explore.mp4' type='video/mp4' />
+                                <source src='images/videos/explore.webm' type='video/webm' />
+                            </video>*@
                         <div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
                     </div>
                 </div>
-                <div class="swiper-slide" style="background-image: url('images/slider/swiper/3.jpg'); background-position: center top;">
-                    <div class="container clearfix">
-                        <div class="slider-caption">
-                            <h2 data-caption-animate="fadeInUp">Great Performance</h2>
-                            <p data-caption-animate="fadeInUp" data-caption-delay="200">You'll be surprised to see the Final Results of your Creation &amp; would crave for more.</p>
+                @*<div class="swiper-slide" style="background-image: url('images/slider/swiper/3.jpg'); background-position: center top;">
+                        <div class="container clearfix">
+                            <div class="slider-caption">
+                                <h2 data-caption-animate="fadeInUp">Great Performance</h2>
+                                <p data-caption-animate="fadeInUp" data-caption-delay="200">You'll be surprised to see the Final Results of your Creation &amp; would crave for more.</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </div>*@
             </div>
             <div id="slider-arrow-left"><i class="icon-angle-left"></i></div>
             <div id="slider-arrow-right"><i class="icon-angle-right"></i></div>
@@ -52,49 +91,87 @@
     </div>
 
 </section>
-<section>
-    
-</section>
+<section></section>
 <!-- Content
 ============================================= -->
 
 <section id="content">
 
     <div class="content-wrap">
-        <div class="row">
-            <div class="col-md-12">
-                <form>
-                    <div class="form-group row">
-                        <label for="sourceLanguage" class="col-sm-2 col-form-label">Dil</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="sourceLanguage" placeholder="Dil Seçiniz">
+        <div class="container">
+            <div id="processTabs">
+                <ul class="process-steps bottommargin clearfix">
+                    <li>
+                        <a href="#ptab1" class="i-circled i-bordered i-alt divcenter">1</a>
+                        <h5>Dil ve Alan Seç</h5>
+                    </li>
+                    <li>
+                        <a href="#ptab2" class="i-circled i-bordered i-alt divcenter">2</a>
+                        <h5>Dosyanı Yükle</h5>
+                    </li>
+                    <li>
+                        <a href="#ptab3" class="i-circled i-bordered i-alt divcenter">3</a>
+                        <h5>Teklifleri Bekle</h5>
+                    </li>
+                </ul>
+                <div>
+                    <div id="ptab1">
+                        <div class="col-md-6 tab-input">
+                            <label for="">Kaynak Dil</label>
+                            <select class="select form-control" id="sourceLanguage" placeholder="Dil Seçiniz"></select>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="targetLanguages" class="col-sm-2 col-form-label">Çevirilecek Diller</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="targetLanguages" placeholder="Dil Seçiniz" multiple="multiple">
+                        <div class="col-md-6 tab-input">
+                            <label for="">Çevirelecek Diller</label>
+                            <select class="select form-control" id="targetLanguages" placeholder="Dil Seçiniz"></select>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="targetLanguages" class="col-sm-2 col-form-label">Doküman</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control-file" id="file" placeholder="Doküman Yükleyiniz">
+                        <div class="line"></div>
+                        <div class="col-md-12  tab-input">
+                            <label for="">Kaynak Dokümanın Alanı</label>
+                            <select class="select form-control" id="terminology" placeholder="Alan Seçiniz"></select>
                         </div>
-                    </div>
-                    <label id="txtPageCount"></label>
-                    <label id="txtCharCount"></label>
-                    <label id="txtCharCountWithSpaces"></label>
-                    <div class="form-group row">
-                        <label for="targetLanguages" class="col-sm-2 col-form-label">Terminoloji</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="terminology" placeholder="Terminoloji Seçiniz" multiple="multiple">
+                        <div class="line"></div>
+                        <div class="col-md-12  tab-input">
+                            <label for="">Çeviri Kalitesi</label>
+                            <select class="select form-control" id="translationQuality" placeholder="Kalite Seçiniz"></select>
                         </div>
-                    </div>
 
-                </form>
+
+                        <a href="#" class="button button-3d nomargin fright tab-linker" rel="2">Devam</a>
+                    </div>
+                    <div id="ptab2">
+
+                        <div class="col-md-12">
+                            <label for="">Doküman</label>
+                            <div class="detail">
+                                <p class="m-zero">
+                                    Sayfa Sayısı:
+                                    <span id="txtPageCount" class="count"></span>
+                                </p>
+                                <p class="m-zero">
+                                    Karakter Sayısı:
+                                    <span id="txtCharCountWithSpaces" class="count"></span>
+                                </p>
+                            </div>
+                            <div class="tab-input">
+                                <div class="form-control-file tab-input custom-dropzone " id="file">
+                                    Döküman'ı sürekleyip bırakınız!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                        <a href="#" class="button button-3d nomargin tab-linker" rel="1">Geri</a>
+                        <a href="#" class="button button-3d nomargin fright tab-linker" rel="3">Teklif İste</a>
+                    </div>
+                    <div id="ptab3">
+                        <div class="line"></div>
+                        <a href="#" class="button button-3d nomargin tab-linker" rel="2">Geri</a>
+                        @*<a href="#" class="button button-3d nomargin fright tab-linker" rel="4">Teklifi</a>*@
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="line"></div>
+
         <div class="container clearfix">
 
             @*<div class="row">
@@ -222,124 +299,5 @@
 @section scripts{
     <script src="~/bower_components/dropzone/dist/dropzone.js"></script>
     <script src="~/bower_components/select2/dist/js/select2.full.min.js"></script>
-    <script>
-        var baseUrl = "/api/v1/commonapi/";
-        var myDropzone;
-        function initDropZone() {
-
-            myDropzone = new Dropzone("#file", {
-                url: "http://localhost:8003/api/documentapi/uploadTranslationDocument",
-                uploadMultiple: true,
-                parallelUploads: 1,
-                addRemoveLinks: '/Admin/Home/RemoveFile',
-                maxFiles: 1,
-                maxFilesize: 500000,
-                acceptedFiles: '.pdf, .docx, .doc, .txt',
-                dictDefaultMessage: 'Dosya yüklemek için tıklayın ya da dosyayı sürükleyip bırakın',
-                dictFallbackMessage: 'Tarayıcınız bu içeriği gösteremiyor',
-                dictFallbackText: '',
-                dictInvalidFileType: 'Uyumsuz dosya tipi',
-                dictFileTooBig: 'Dosya boyutu tanımlanandan yüksektir',
-                dictResponseError: 'Hata oluştu',
-                dictCancelUpload: 'Yüklemeyi iptal et',
-                dictCancelUploadConfirmation: 'İptal etmek istediğinize emin misiniz?',
-                dictRemoveFile: 'Dosya sil',
-                dictMaxFilesExceeded: 'Toplam yüklenebilir dosya sayısını aştınız'
-            });
-
-            myDropzone.on('success', function(evt, response) {
-                console.log(response);
-                var documentDto = {
-                    Name: $("#txtName").val(),
-                    Path: response.Data.FilePath,
-                    PageCount: response.Data.PageCount,
-                    CharCount: response.Data.CharCount,
-                    CharCountWithSpaces: response.Data.CharCountWithSpaces
-                };
-
-                $('#txtPageCount').val(documentDto.PageCount);
-                $('#txtCharCount').val(documentDto.CharCount);
-                $('#txtCharCountWithSpaces').val(documentDto.CharCountWithSpaces);
-            });
-
-            myDropzone.on('sending', function(file) {
-                if (myDropzone.files.length > 1) {
-                    myDropzone.cancelUpload(file);
-                }
-            });
-
-            myDropzone.on('removedfile', function(removeThumb) {
-                $('#txtPageCount').val("");
-                $('#txtCharCount').val("");
-                $('#txtCharCountWithSpaces').val("");
-            });
-
-        }
-
-        function convertToSelect2Data(data) {
-            var tempResult = [];
-            data.forEach(function(item) {
-                if (item.name) {
-                    tempResult.push({ id: item.id, text: item.name });
-                } else {
-                    tempResult.push({ id: item.id, text: item.description });
-                }
-
-            });
-
-            return tempResult;
-        }
-
-
-        function getSourceLanguages() {
-            return $.ajax({
-                url: baseUrl + "getLanguages",
-                type: 'GET'
-            });
-        }
-
-        function getTargetLanguages(sourceLanguageId) {
-            return $.ajax({
-                url: baseUrl + "getTargetLanguages",
-                type: 'GET',
-                data: { sourceLanguageId: sourceLanguageId }
-            });
-        }
-
-        function getTerminologies() {
-            return $.ajax({
-                url: baseUrl + "getTerminologies",
-                type: 'GET'
-            });
-        }
-
-        $('#sourceLanguage').on('select2:select', function(e) {
-            getTargetLanguages(e.params.data.id).then(function(result) {
-                var morphedResult = [];
-                result.forEach(function(item) {
-                    morphedResult.push(item.targetLanguage);
-                });
-
-                $('#targetLanguages').select2({
-                    data: convertToSelect2Data(morphedResult)
-                });
-            });
-        });
-
-        $(function() {
-            initDropZone();
-            getSourceLanguages().then(function(result) {
-                $('#sourceLanguage').select2({
-                    data: convertToSelect2Data(result)
-                });
-            });
-
-            getTerminologies().then(function(result) {
-                $('#terminology').select2({
-                    data: convertToSelect2Data(result)
-                });
-            });
-        });
-    </script>
-
+    <script src="~/dist/pages/index/index.page.js"></script>
 }

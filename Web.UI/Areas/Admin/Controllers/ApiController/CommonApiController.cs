@@ -598,5 +598,19 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             return response;
         }
 
+        [HttpGet, Route("getTranslationQualities")]
+        public HttpResponseMessage GetTranslationQualities() {
+            var response = new HttpResponseMessage();
+            var serviceResult = _commonService.GetTranslationQualities();
+            if (serviceResult.ServiceResultType != ServiceResultType.Success) {
+                response.StatusCode = HttpStatusCode.InternalServerError;
+                return response;
+            }
+
+            response.StatusCode = HttpStatusCode.OK;
+            response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
+            return response;
+        }
+
     }
 }

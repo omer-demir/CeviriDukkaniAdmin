@@ -1,16 +1,10 @@
 /// <reference path="../../../typings/index.d.ts" />
 /// <reference path="../../services/common.data.service.ts" />
+/// <reference path="../../classes/util.ts" />
 /// <reference path="../../classes/ceviri.classes.ts" />
 ((function () {
     var dataService = new DataService;
     var countriesCities = [];
-    function getAsSelectData(data) {
-        var castedData = data;
-        var selectData = castedData.map(function (c) {
-            return ({ id: c.id, text: c.name });
-        });
-        return selectData;
-    }
     function getAsData(data) {
         var result = [];
         var i = 1;
@@ -25,40 +19,32 @@
         }
         return result;
     }
-    function extendOptions(data, options) {
-        var baseOptions = options || {};
-        baseOptions.data = data;
-        baseOptions.width = "element";
-        baseOptions.placeholder = 'Select an option';
-        baseOptions.allowClear = true;
-        return baseOptions;
-    }
     function initCityWithData(data) {
-        $('#City').select2(extendOptions(data));
+        $('#City').select2(Util.extendOptions(data));
     }
     $(function () {
         $('select').select2();
         dataService.getCountries(function (data) {
-            $("#Nationality").select2(extendOptions(getAsSelectData(data)));
-            $("#Nationality2").select2(extendOptions(getAsSelectData(data)));
+            $("#Nationality").select2(Util.extendOptions(Util.getAsSelectData(data)));
+            $("#Nationality2").select2(Util.extendOptions(Util.getAsSelectData(data)));
         });
         dataService.getTongues(function (data) {
-            $("#MotherTongue").select2(extendOptions(getAsSelectData(data)));
-            $("#Tongue").select2(extendOptions(getAsSelectData(data)));
+            $("#MotherTongue").select2(Util.extendOptions(Util.getAsSelectData(data)));
+            $("#Tongue").select2(Util.extendOptions(Util.getAsSelectData(data)));
         });
         dataService.getCountriesAndCity(function (data) {
             countriesCities = getAsData(data);
-            var opt = extendOptions(countriesCities);
+            var opt = Util.extendOptions(countriesCities);
             $('#country').select2(opt);
             $('#Resident').select2(opt);
         });
         dataService.getSoftwares(function (data) {
-            $("#Software").select2(extendOptions(getAsSelectData(data), { multiple: true }));
+            $("#Software").select2(Util.extendOptions(Util.getAsSelectData(data), { multiple: true }));
         });
         dataService.getSpecialization(function (data) {
-            $("#Specialization").select2(extendOptions(getAsSelectData(data), { multiple: true }));
+            $("#Specialization").select2(Util.extendOptions(Util.getAsSelectData(data), { multiple: true }));
         });
-        $('#WorkingDays').select2(extendOptions(Constants.Days, { multiple: true }));
+        $('#WorkingDays').select2(Util.extendOptions(Constants.Days, { multiple: true }));
         $('#country').on('select2:select', function (e) {
             var country = countriesCities.find(function (item) { return (item.id == e.params.data.id); });
             initCityWithData(country.cities);

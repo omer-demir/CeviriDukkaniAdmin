@@ -154,6 +154,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Content\images\icons\" />
     <Folder Include="dist\" />
     <Folder Include="Models\" />
   </ItemGroup>
@@ -1508,8 +1509,13 @@
     <Content Include="Content\images\no-photo.png" />
     <Content Include="Content\images\odeme-bekleyen.png" />
     <Content Include="Content\images\oku.png" />
+    <Content Include="Content\images\pattern.png" />
+    <Content Include="Content\images\pattern2.png" />
     <Content Include="Content\images\pdf.jpg" />
     <Content Include="Content\images\powerpoint_ikon.jpg" />
+    <Content Include="Content\images\preloader%402x.gif" />
+    <Content Include="Content\images\preloader-dark.gif" />
+    <Content Include="Content\images\preloader.gif" />
     <Content Include="Content\images\profil.png" />
     <Content Include="Content\images\profil_fotografi.png" />
     <Content Include="Content\images\puan_ikon.png" />
@@ -2157,6 +2163,8 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\classes\ceviri.classes.ts" />
+    <TypeScriptCompile Include="app\classes\util.ts" />
+    <TypeScriptCompile Include="app\pages\index\index.page.ts" />
     <TypeScriptCompile Include="app\pages\translator\translator.sign.up.ts" />
     <TypeScriptCompile Include="app\services\common.data.service.ts" />
   </ItemGroup>

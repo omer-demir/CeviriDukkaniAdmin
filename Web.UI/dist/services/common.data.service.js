@@ -3,6 +3,31 @@ var DataService = (function () {
         this.commonApiUrl = "/api/v1/commonapi/";
         this.userApiUrl = "/api/v1/userapi/";
     }
+    DataService.prototype.getLanguages = function (callback) {
+        var settings = {
+            url: this.commonApiUrl + 'getLanguages',
+            type: 'GET',
+            success: callback
+        };
+        return $.ajax(settings);
+    };
+    DataService.prototype.getTargetLanguages = function (sourceLanguageId, callback) {
+        var settings = {
+            url: this.commonApiUrl + 'getTargetLanguages',
+            type: 'GET',
+            success: callback,
+            data: { sourceLanguageId: sourceLanguageId }
+        };
+        return $.ajax(settings);
+    };
+    DataService.prototype.getTerminologies = function (callback) {
+        var settings = {
+            url: this.commonApiUrl + 'getTerminologies',
+            type: 'GET',
+            success: callback
+        };
+        return $.ajax(settings);
+    };
     DataService.prototype.getNationalities = function (callback) {
         var settings = {
             url: this.commonApiUrl + 'getCountries',

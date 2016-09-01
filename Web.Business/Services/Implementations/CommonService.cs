@@ -242,6 +242,11 @@ namespace Web.Business.Services.Implementations {
             return GetAsAsync<List<ServiceTypeDto>>(httpClient, "api/commonapi/getServiceTypes");
         }
 
+        public ServiceResult<List<TranslationQualityDto>> GetTranslationQualities() {
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync<List<TranslationQualityDto>>(httpClient, "api/commonapi/getTranslationQualities");
+        }
+
         #endregion
     }
 }

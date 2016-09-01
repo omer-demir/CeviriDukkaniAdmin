@@ -64,5 +64,6 @@ namespace Web.Business.Services.Interfaces {
         ServiceResult<List<CurrencyDto>> GetCurrencies();
         ServiceResult<List<WorkingTypeDto>> GetWorkingTypes();
         ServiceResult<List<ServiceTypeDto>> GetServiceTypes();
+        ServiceResult<List<TranslationQualityDto>> GetTranslationQualities();
     }
 }
