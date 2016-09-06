@@ -76,23 +76,38 @@ declare var $: JQueryStatic;
         });
 
         dataService.getSoftwares((data: any) => {
-            $("#Software").select2(Util.extendOptions(Util.getAsSelectData(data), { multiple: true }));
+            $("#Software").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select software' }));
         });
 
         dataService.getSpecialization((data: any) => {
             $("#Specialization").select2(Util.extendOptions(Util.getAsSelectData(data), { multiple: true }));
         });
 
+        dataService.getLanguages((data: any) => {
+            $("#SourceLanguageId").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select source language' }));
+        });
+
         $('#WorkingDays').select2(Util.extendOptions(Constants.Days, { multiple: true }));
-        
+
 
         $('#country').on({
             'select2:select': (e: any) => {
                 var country = countriesCities.find((item: any) => (item.id == e.params.data.id));
                 initCityWithData(country.cities);
             },
-            'select2:unselect':() => {
+            'select2:unselect': () => {
                 $('#City').select2("val", "-1");
+            }
+        });
+
+        $('#SourceLanguageId').on({
+            'select2:select': (e: any) => {
+                dataService.getTargetLanguages(e.params.data.id, (data: any) => {
+                    $("#TargetLanguageId").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select target language' }));
+                });
+            },
+            'select2:unselect': () => {
+                $('#TargetLanguageId').select2("val", "-1");
             }
         });
 
@@ -224,6 +239,36 @@ declare var $: JQueryStatic;
                 });
             }
         });
+
+        $('#addSoftware').on('click', () => {
+            var $table = $('#softwareKnowledge');
+            var $tableBody = $table.find('tbody');
+
+            var software = $('#Software').select2('data')[0].text;
+            var version = $('#Version').val();
+            var operatingSystem = $('#OperatingSystem').val();
+            var rating = $('#Rating').val();
+
+            var itemTemplate = `<tr><td>${software}</td><td>${version}</td><td>${operatingSystem}</td><td>${rating}</td></tr>`;
+            $(itemTemplate).appendTo($tableBody);
+
+        });
+
+        $('#addRate').on('click', () => {
+            var $table = $('#translatorRate');
+            var $tableBody = $table.find('tbody');
+
+            var service = $('#ServiceTypeId').select2('data')[0].text;
+            var sourceLanguage = $('#SourceLanguageId').select2('data')[0].text;
+            var targetLanguage = $('#TargetLanguageId').select2('data')[0].text;
+            var price = $('#Price').val();
+            var sworn = $('#SwornOrCertified').prop('checked');
+
+            var itemTemplate = `<tr><td>${service}</td><td>${sourceLanguage}</td><td>${targetLanguage}</td><td>${price}</td><td>${sworn}</td></tr>`;
+            $(itemTemplate).appendTo($tableBody);
+
+        });
+
 
     });
 

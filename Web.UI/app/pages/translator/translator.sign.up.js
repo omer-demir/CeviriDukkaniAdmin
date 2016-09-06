@@ -21,6 +21,7 @@
     }
     function initCityWithData(data) {
         $('#City').select2(Util.extendOptions(data, { placeholder: 'Please select your city' }));
+        $("#City").select2("val", "-1");
     }
     function pageValidations() {
         if ($('#password').val() != $('#repassword').val()) {
@@ -60,15 +61,20 @@
             $("#Resident").select2("val", "-1");
         });
         dataService.getSoftwares(function (data) {
-            $("#Software").select2(Util.extendOptions(Util.getAsSelectData(data), { multiple: true }));
+            $("#Software").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select software' }));
         });
         dataService.getSpecialization(function (data) {
             $("#Specialization").select2(Util.extendOptions(Util.getAsSelectData(data), { multiple: true }));
         });
         $('#WorkingDays').select2(Util.extendOptions(Constants.Days, { multiple: true }));
-        $('#country').on('select2:select', function (e) {
-            var country = countriesCities.find(function (item) { return (item.id == e.params.data.id); });
-            initCityWithData(country.cities);
+        $('#country').on({
+            'select2:select': function (e) {
+                var country = countriesCities.find(function (item) { return (item.id == e.params.data.id); });
+                initCityWithData(country.cities);
+            },
+            'select2:unselect': function () {
+                $('#City').select2("val", "-1");
+            }
         });
         $('#nextTo2').on('click', function () {
             var rules = {
@@ -188,6 +194,16 @@
                     alert(data);
                 });
             }
+        });
+        $('#addSoftware').on('click', function () {
+            var $table = $('#softwareKnowledge');
+            var $tableBody = $table.find('tbody');
+            var software = $('#Software').val();
+            var version = $('#Version').val();
+            var operatingSystem = $('#OperatingSystem').val();
+            var rating = $('#Rating').val();
+            var itemTemplate = "<tr><td>" + software + "</td><td>" + version + "</td><td>" + operatingSystem + "</td><td>" + rating + "</td></tr>";
+            $(itemTemplate).appendTo($tableBody);
         });
     });
 })());
