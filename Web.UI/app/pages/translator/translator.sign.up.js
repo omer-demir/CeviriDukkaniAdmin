@@ -21,6 +21,7 @@
     }
     function initCityWithData(data) {
         $('#City').select2(Util.extendOptions(data, { placeholder: 'Please select your city' }));
+        $("#City").select2("val", "-1");
     }
     function pageValidations() {
         if ($('#password').val() != $('#repassword').val()) {
@@ -66,9 +67,14 @@
             $("#Specialization").select2(Util.extendOptions(Util.getAsSelectData(data), { multiple: true }));
         });
         $('#WorkingDays').select2(Util.extendOptions(Constants.Days, { multiple: true }));
-        $('#country').on('select2:select', function (e) {
-            var country = countriesCities.find(function (item) { return (item.id == e.params.data.id); });
-            initCityWithData(country.cities);
+        $('#country').on({
+            'select2:select': function (e) {
+                var country = countriesCities.find(function (item) { return (item.id == e.params.data.id); });
+                initCityWithData(country.cities);
+            },
+            'select2:unselect': function () {
+                $('#City').select2("val", "-1");
+            }
         });
         $('#nextTo2').on('click', function () {
             var rules = {
@@ -86,24 +92,101 @@
             }
         });
         $('#nextTo3').on('click', function () {
-            //validate
-            $('ul.tabs').tabs('select_tab', 'tab3');
+            var rules = {
+                country: { required: true },
+                City: { required: true },
+                district: { required: true },
+                address: { required: true }
+            };
+            Util.handleValidationForm('form', rules, function (a) { $('ul.tabs').tabs('select_tab', 'tab3'); });
+            if ($('#form').valid()) {
+                $('ul.tabs').tabs('select_tab', 'tab3');
+            }
         });
         $('#nextTo4').on('click', function () {
-            //validate
-            $('ul.tabs').tabs('select_tab', 'tab4');
+            var rules = {
+                motherTongue: { required: true },
+                tongue: { required: true },
+                translation: { required: true },
+                reviews: { required: true },
+                proofReading: { required: true },
+                qualityEnsureDescription: { required: true },
+                qualifications: { required: true },
+                Specialization: { required: true }
+            };
+            Util.handleValidationForm('form', rules, function (a) { $('ul.tabs').tabs('select_tab', 'tab4'); });
+            if ($('#form').valid()) {
+                $('ul.tabs').tabs('select_tab', 'tab4');
+            }
         });
         $('#nextTo5').on('click', function () {
-            //validate
-            $('ul.tabs').tabs('select_tab', 'tab5');
+            //var rules = {
+            //    motherTongue: { required: true },
+            //    tongue: { required: true },
+            //    translation: { required: true },
+            //    reviews: { required: true },
+            //    proofReading: { required: true },
+            //    qualityEnsureDescription: { required: true },
+            //    qualifications: { required: true },
+            //    Specialization: { required: true }
+            //};
+            //Util.handleValidationForm('form', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'tab5'); });
+            //if ($('#form').valid()) {
+            //    $('ul.tabs').tabs('select_tab', 'tab5');
+            //}
         });
         $('#nextTo6').on('click', function () {
-            //validate
-            $('ul.tabs').tabs('select_tab', 'tab6');
+            switch ($('#bankAccountType').val()) {
+                case 1:
+                    var rules = {
+                        bankName: { required: true },
+                        accountHolderFullName: { required: true },
+                        IBAN: { required: true },
+                        minimumChargeAmount: { required: true }
+                    };
+                    Util.handleValidationForm('form', rules, function (a) { $('ul.tabs').tabs('select_tab', 'nextTo6'); });
+                    break;
+                case 2:
+                    var rules2 = {
+                        bankName: { required: true },
+                        accountHolderFullName: { required: true },
+                        beneficiaryAddress: { required: true },
+                        accountNumber: { required: true },
+                        swiftBicCode: { required: true },
+                        cityCountryBank: { required: true },
+                        bankAddress: { required: true },
+                        minimumChargeAmount: { required: true }
+                    };
+                    Util.handleValidationForm('form', rules2, function (a) { $('ul.tabs').tabs('select_tab', 'nextTo6'); });
+                    break;
+                case 3:
+                    var rules3 = {
+                        paypalEmailAddress: { required: true, email: true },
+                        minimumChargeAmount: { required: true }
+                    };
+                    Util.handleValidationForm('form', rules3, function (a) { $('ul.tabs').tabs('select_tab', 'nextTo6'); });
+                    break;
+                default:
+            }
+            if ($('#form').valid()) {
+                $('ul.tabs').tabs('select_tab', 'tab6');
+            }
         });
         $('#nextTo7').on('click', function () {
-            //validate
-            $('ul.tabs').tabs('select_tab', 'tab7');
+            var rules = {
+                motherTongue: { required: true },
+                tongue: { required: true },
+                translation: { required: true },
+                reviews: { required: true },
+                proofReading: { required: true },
+                qualityEnsureDescription: { required: true },
+                qualifications: { required: true },
+                Specialization: { required: true }
+            };
+            Util.handleValidationForm('form', rules, function (a) { $('ul.tabs').tabs('select_tab', 'tab4'); });
+            if ($('#form').valid()) {
+                $('ul.tabs').tabs('select_tab', 'tab7');
+            }
         });
         $('input[type=radio][name=bankAccountType]').change(function () {
             changeVisibleByClassName("Turkish", false);

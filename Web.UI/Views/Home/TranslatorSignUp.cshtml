@@ -347,53 +347,52 @@
                     <a class="waves-effect waves-light btn right" id="nextTo6">Next<i class="material-icons right">play_arrow</i></a>
                 </div>
             </div>
-
-        </div>
-        <div id="tab6" class="col s12 padded-tab">
-            <div class="row">
-                <div class="input-field col s12">
-                    <select id="ServiceTypeId" class="full-width "></select>
+            <div id="tab6" class="col s12 padded-tab">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select id="ServiceType" class="full-width "></select>
+                    </div>
+                    <div class="input-field col s6">
+                        <select id="SourceLanguage" class="full-width "></select>
+                    </div>
+                    <div class="input-field col s6">
+                        <select id="TargetLanguage" class="full-width "></select>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="minimumChargeAmount">Price(TL/1000 chr.)</label>
+                        <input type="number" class="validate" id="Price" placeholder="TL/1000 chr.">
+                    </div>
+                    <div class="input-field col s6">
+                        <p>
+                            <input type="checkbox" id="SwornOrCertified" />
+                            <label for="agreement">Sworn/Certification?</label>
+                        </p>
+                    </div>
+                    @*ToDo CertificateId: number;
+                UserRateId: number;*@
                 </div>
-                <div class="input-field col s6">
-                    <select id="SourceLanguageId" class="full-width "></select>
+                <div class="row">
+                    <a class="waves-effect waves-light btn right" id="nextTo7">Next<i class="material-icons right">play_arrow</i></a>
                 </div>
-                <div class="input-field col s6">
-                    <select id="TargetLanguageId" class="full-width "></select>
-                </div>
-                <div class="input-field col s6">
-                    <label for="minimumChargeAmount">Price(TL/1000 chr.)</label>
-                    <input type="number" class="validate" id="Price" placeholder="TL/1000 chr.">
-                </div>
-                <div class="input-field col s6">
-                    <p>
-                        <input type="checkbox" id="SwornOrCertified" />
-                        <label for="agreement">Sworn/Certification?</label>
-                    </p>
-                </div>
-                @*ToDo CertificateId: number;
-                    UserRateId: number;*@
             </div>
-            <div class="row">
-                <a class="waves-effect waves-light btn right" id="nextTo7">Next<i class="material-icons right">play_arrow</i></a>
-            </div>
-        </div>
-        <div id="tab7" class="col s12 padded-tab">
-            <div class="row">
-                <div class="input-field col s12">
-                    <label for="Test">Test</label>
-                    <textarea cols="46" rows="3" class="materialize-textarea" id="Test" placeholder="Test"></textarea>
-                </div>
-                <div class="input-field col s12">
-                    <label for="TranslationResult">TranslationResult</label>
-                    <textarea cols="46" rows="3" class="materialize-textarea" id="TranslationResult" placeholder="TranslationResult"></textarea>
-                </div>
-                <div class="input-field col s12">
-                    <a class="waves-effect waves-light btn" id="btnSave"><i class="material-icons left">done</i>Save</a>
-                </div>
+            <div id="tab7" class="col s12 padded-tab">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <label for="Test">Test</label>
+                        <textarea cols="46" rows="3" class="materialize-textarea" id="Test" placeholder="Test"></textarea>
+                    </div>
+                    <div class="input-field col s12">
+                        <label for="TranslationResult">TranslationResult</label>
+                        <textarea cols="46" rows="3" class="materialize-textarea" id="TranslationResult" placeholder="TranslationResult"></textarea>
+                    </div>
+                    <div class="input-field col s12">
+                        <a class="waves-effect waves-light btn" id="btnSave"><i class="material-icons left">done</i>Save</a>
+                    </div>
 
 
+                </div>
             </div>
-        </div>
+        </div>        
     </div>
 
     <script src="http://code.jquery.com/jquery-latest.js"></script>
