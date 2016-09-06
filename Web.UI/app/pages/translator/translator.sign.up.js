@@ -66,6 +66,9 @@
         dataService.getSpecialization(function (data) {
             $("#Specialization").select2(Util.extendOptions(Util.getAsSelectData(data), { multiple: true }));
         });
+        dataService.getLanguages(function (data) {
+            $("#SourceLanguageId").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select source language' }));
+        });
         $('#WorkingDays').select2(Util.extendOptions(Constants.Days, { multiple: true }));
         $('#country').on({
             'select2:select': function (e) {
@@ -74,6 +77,16 @@
             },
             'select2:unselect': function () {
                 $('#City').select2("val", "-1");
+            }
+        });
+        $('#SourceLanguageId').on({
+            'select2:select': function (e) {
+                dataService.getTargetLanguages(e.params.data.id, function (data) {
+                    $("#TargetLanguageId").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select target language' }));
+                });
+            },
+            'select2:unselect': function () {
+                $('#TargetLanguageId').select2("val", "-1");
             }
         });
         $('#nextTo2').on('click', function () {
@@ -174,14 +187,10 @@
         });
         $('#nextTo7').on('click', function () {
             var rules = {
-                motherTongue: { required: true },
-                tongue: { required: true },
-                translation: { required: true },
-                reviews: { required: true },
-                proofReading: { required: true },
-                qualityEnsureDescription: { required: true },
-                qualifications: { required: true },
-                Specialization: { required: true }
+                ServiceType: { required: true },
+                SourceLanguage: { required: true },
+                TargetLanguage: { required: true },
+                minimumChargeAmount: { required: true }
             };
             Util.handleValidationForm('form', rules, function (a) { $('ul.tabs').tabs('select_tab', 'tab4'); });
             if ($('#form').valid()) {
@@ -275,11 +284,22 @@
         $('#addSoftware').on('click', function () {
             var $table = $('#softwareKnowledge');
             var $tableBody = $table.find('tbody');
-            var software = $('#Software').val();
+            var software = $('#Software').select2('data')[0].text;
             var version = $('#Version').val();
             var operatingSystem = $('#OperatingSystem').val();
             var rating = $('#Rating').val();
             var itemTemplate = "<tr><td>" + software + "</td><td>" + version + "</td><td>" + operatingSystem + "</td><td>" + rating + "</td></tr>";
+            $(itemTemplate).appendTo($tableBody);
+        });
+        $('#addRate').on('click', function () {
+            var $table = $('#translatorRate');
+            var $tableBody = $table.find('tbody');
+            var service = $('#ServiceTypeId').select2('data')[0].text;
+            var sourceLanguage = $('#SourceLanguageId').select2('data')[0].text;
+            var targetLanguage = $('#TargetLanguageId').select2('data')[0].text;
+            var price = $('#Price').val();
+            var sworn = $('#SwornOrCertified').prop('checked');
+            var itemTemplate = "<tr><td>" + service + "</td><td>" + sourceLanguage + "</td><td>" + targetLanguage + "</td><td>" + price + "</td><td>" + sworn + "</td></tr>";
             $(itemTemplate).appendTo($tableBody);
         });
     });
