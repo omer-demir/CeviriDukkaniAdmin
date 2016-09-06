@@ -70,57 +70,18 @@
             var country = countriesCities.find(function (item) { return (item.id == e.params.data.id); });
             initCityWithData(country.cities);
         });
-        function validateEmail(email) {
-            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            return re.test(email);
-        }
-        function showError(selector, message) {
-            $('#' + selector).removeClass('valid').removeClass('invalid').addClass('invalid');
-            $('#' + selector).siblings('label[for="' + selector + '"]').attr('data-error', message);
-        }
         $('#nextTo2').on('click', function () {
-            //validate
-            var requiredErrorMessage = 'Please enter value';
-            var emailErrorMessage = 'Please enter valid email';
-            var rePasswordErrorMessage = 'Please enter the same value';
-            var error = false;
-            if (!$('#name').val()) {
-                showError('name', requiredErrorMessage);
-                error = true;
-            }
-            if (!$('#surname').val()) {
-                showError('surname', requiredErrorMessage);
-                error = true;
-            }
-            if (!$('#email').val()) {
-                showError('email', requiredErrorMessage);
-                error = true;
-            }
-            if (!validateEmail($('#email').val())) {
-                showError('email', emailErrorMessage);
-                error = true;
-            }
-            if (!$('#mobilePhone').val()) {
-                showError('mobilePhone', requiredErrorMessage);
-                error = true;
-            }
-            if (!$('#password').val()) {
-                showError('password', requiredErrorMessage);
-                error = true;
-            }
-            if (!$('#repassword').val()) {
-                showError('repassword', requiredErrorMessage);
-                error = true;
-            }
-            if ($('#repassword').val() !== $('#password').val()) {
-                showError('repassword', rePasswordErrorMessage);
-                error = true;
-            }
-            if (!$('#agreement').val()) {
-                showError('agreement', requiredErrorMessage);
-                error = true;
-            }
-            if (!error) {
+            var rules = {
+                name: { required: true },
+                surname: { required: true },
+                email: { required: true, email: true },
+                mobilePhone: { required: true },
+                password: { required: true, minlength: 4, maxlength: 8 },
+                repassword: { required: true, minlength: 4, maxlength: 8, equalTo: '#password' },
+                agreement: { checkbox: true }
+            };
+            Util.handleValidationForm('form', rules, function (a) { $('ul.tabs').tabs('select_tab', 'tab2'); });
+            if ($('#form').valid()) {
                 $('ul.tabs').tabs('select_tab', 'tab2');
             }
         });
@@ -144,18 +105,6 @@
             //validate
             $('ul.tabs').tabs('select_tab', 'tab7');
         });
-        $('#repassword').on('keyup', function (e) {
-            var $elem = $(e.target);
-            var currentVal = $elem.val();
-            var passwordVal = $('#password').val();
-            if (currentVal !== passwordVal) {
-                $elem.removeClass('valid').addClass('invalid');
-            }
-            else {
-                $elem.removeClass('invalid').addClass('valid');
-            }
-        });
-        //
         $('input[type=radio][name=bankAccountType]').change(function () {
             changeVisibleByClassName("Turkish", false);
             changeVisibleByClassName("European", false);
@@ -240,16 +189,6 @@
                 });
             }
         });
-        //save.click basılınca
-        //new User()
-        //user.email=
-        //dataService.saveUser
     });
-    //Nationality
-    //Nationality2
-    //MotherTongue
-    //Tongue
-    //Resident
-    //TimeZone
 })());
 //# sourceMappingURL=translator.sign.up.js.map

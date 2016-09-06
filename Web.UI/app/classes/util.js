@@ -1,4 +1,10 @@
 /// <reference path="../../typings/globals/jquery.validation/index.d.ts" />
+$.validator.addMethod('checkbox', function (value, element, param) {
+    if ($(element).prop('checked')) {
+        return true;
+    }
+    return false;
+}, 'This field is required');
 var Util = (function () {
     function Util() {
     }
@@ -44,12 +50,16 @@ var Util = (function () {
         var form2 = $(elem);
         form2.validate({
             errorClass: 'invalid',
-            validClass: "valid",
+            validClass: 'valid',
             focusInvalid: false,
             ignore: "",
             rules: rules,
             errorPlacement: function (error, element) {
-                $(element).find("label[for='" + element.attr("id") + "']").attr('data-error', error.text());
+                $(element).siblings("label[for='" + element.attr("id") + "']").attr('data-error', error.text());
+            },
+            success: function (label, element) {
+                var $elem = $(element);
+                $(element).siblings("label[for='" + $elem.attr("id") + "']").attr('data-error', '');
             },
             submitHandler: callback
         });

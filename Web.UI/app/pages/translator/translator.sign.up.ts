@@ -25,6 +25,7 @@ declare var $: JQueryStatic;
     }
     function initCityWithData(data: any[]) {
         $('#City').select2(Util.extendOptions(data, { placeholder: 'Please select your city' }));
+        $("#City").select2("val", "-1");
     }
     function pageValidations() {
         if ($('#password').val() != $('#repassword').val()) {
@@ -85,9 +86,14 @@ declare var $: JQueryStatic;
         $('#WorkingDays').select2(Util.extendOptions(Constants.Days, { multiple: true }));
         
 
-        $('#country').on('select2:select', (e: any) => {
-            var country = countriesCities.find((item: any) => (item.id == e.params.data.id));
-            initCityWithData(country.cities);
+        $('#country').on({
+            'select2:select': (e: any) => {
+                var country = countriesCities.find((item: any) => (item.id == e.params.data.id));
+                initCityWithData(country.cities);
+            },
+            'select2:unselect':() => {
+                $('#City').select2("val", "-1");
+            }
         });
 
 
