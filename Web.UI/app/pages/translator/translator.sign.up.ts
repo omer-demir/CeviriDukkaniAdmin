@@ -23,13 +23,33 @@ declare var $: JQueryStatic;
         }
         return result;
     }
-    
     function initCityWithData(data: any[]) {
-        $('#City').select2(Util.extendOptions(data));
+        $('#City').select2(Util.extendOptions(data, { placeholder: 'Please select your city' }));
+    }
+    function pageValidations() {
+        if ($('#password').val() != $('#repassword').val()) {
+            alert("Please check password.");
+            return false;
+        }
+        if (!$('#agreement').is(':checked')) {
+            alert("Please accept the agreement");
+            return false;
+        }
+        return true;
+    }
+    function changeVisibleByClassName(className: string, visible: boolean) {
+        let elements: NodeListOf<HTMLElement> = document.getElementsByClassName(className) as NodeListOf<HTMLElement>;
+
+        for (var i = 0; i < elements.length; i++) {
+            let element: HTMLElement = elements[i];
+            element.hidden = !visible;
+        }
     }
 
     $(() => {
-        $('select').select2();
+        $('ul.tabs').tabs();
+
+        $('select').select2({ placeholder: 'Please select any option' });
 
         dataService.getCountries((data: any) => {
 
@@ -45,9 +65,13 @@ declare var $: JQueryStatic;
 
         dataService.getCountriesAndCity((data: any) => {
             countriesCities = getAsData(data);
-            var opt = Util.extendOptions(countriesCities);
+            var opt = Util.extendOptions(countriesCities, { placeholder: 'Please select country' });
             $('#country').select2(opt);
             $('#Resident').select2(opt);
+
+
+            $("#country").select2("val", "-1");
+            $("#Resident").select2("val", "-1");
         });
 
         dataService.getSoftwares((data: any) => {
@@ -59,59 +83,75 @@ declare var $: JQueryStatic;
         });
 
         $('#WorkingDays').select2(Util.extendOptions(Constants.Days, { multiple: true }));
+        
 
         $('#country').on('select2:select', (e: any) => {
             var country = countriesCities.find((item: any) => (item.id == e.params.data.id));
             initCityWithData(country.cities);
         });
 
-        function PageValidations() {
-            if ($('#password').val() != $('#repassword').val()) {
-                alert("Please check password.");
-                return false;
-            }            
-            if (!$('#agreement').is(':checked')) {
-                alert("Please accept the agreement");
-                return false;
+
+        $('#nextTo2').on('click', () => {
+            var rules = {
+                name: { required: true },
+                surname: { required: true },
+                email: { required: true, email: true },
+                mobilePhone: { required: true },
+                password: { required: true, minlength: 4, maxlength: 8 },
+                repassword: { required: true, minlength: 4, maxlength: 8, equalTo: '#password' },
+                agreement: { checkbox: true }
+            };
+
+            Util.handleValidationForm('form', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'tab2'); });
+            if ($('#form').valid()) {
+                $('ul.tabs').tabs('select_tab', 'tab2');
             }
-            return true;
-        }
+        });
+        $('#nextTo3').on('click', () => {
+            //validate
+            $('ul.tabs').tabs('select_tab', 'tab3');
+        });
+        $('#nextTo4').on('click', () => {
+            //validate
+            $('ul.tabs').tabs('select_tab', 'tab4');
+        });
+        $('#nextTo5').on('click', () => {
+            //validate
+            $('ul.tabs').tabs('select_tab', 'tab5');
+        });
+        $('#nextTo6').on('click', () => {
+            //validate
+            $('ul.tabs').tabs('select_tab', 'tab6');
+        });
+        $('#nextTo7').on('click', () => {
+            //validate
+            $('ul.tabs').tabs('select_tab', 'tab7');
+        });
 
         $('input[type=radio][name=bankAccountType]').change(function () {
-            
-            ChangeVisibleByClassName("Turkish", false);
-            ChangeVisibleByClassName("European", false);
-            ChangeVisibleByClassName("PayPal", false);
+
+            changeVisibleByClassName("Turkish", false);
+            changeVisibleByClassName("European", false);
+            changeVisibleByClassName("PayPal", false);
 
             $('#spnAccountTypeHeader').text(this.value);
 
             if (this.value == 'Turkish') {
-                ChangeVisibleByClassName("Turkish", true);
+                changeVisibleByClassName("Turkish", true);
             }
             else if (this.value == 'European') {
-                ChangeVisibleByClassName("European", true);
+                changeVisibleByClassName("European", true);
             } else if (this.value == 'PayPal') {
-                ChangeVisibleByClassName("PayPal", true);
+                changeVisibleByClassName("PayPal", true);
             }
         });
-
-        function ChangeVisibleByClassName(className: string, visible: boolean) {
-            let elements: NodeListOf<HTMLElement> = document.getElementsByClassName(className) as NodeListOf<HTMLElement>;
-
-            for (var i = 0; i < elements.length; i++) {
-                let element: HTMLElement = elements[i];
-                element.hidden = !visible;
-            }
-        }
-
-
         $("#btnSave").on("click", (data: any) => {
-            if (PageValidations()) {
+            if (pageValidations()) {
                 var user = new User();
                 user.name = $('#name').val();
                 user.surname = $('#surname').val();
                 user.email = $('#email').val();
-                user.genderId = $('input[name="gender"]:checked').val();                
+                user.genderId = $('input[name="gender"]:checked').val();
                 user.mobilePhone = $('#mobilePhone').val();
                 user.password = $('#password').val();
 
@@ -128,7 +168,7 @@ declare var $: JQueryStatic;
 
                 var userAbility = new UserAbility();
                 userAbility.motherTongueId = $('#motherTongue').val();
-                userAbility.tongueId = $('#tongue').val();  
+                userAbility.tongueId = $('#tongue').val();
                 userAbility.bilingualTongueId = $('#bilingualTongue').val();
                 userAbility.yearsOfExperience = $('#yearsOfExperience').val();
                 var capacity = new Capacity();
@@ -139,7 +179,7 @@ declare var $: JQueryStatic;
                 userAbility.qualityEnsureDescription = $('#qualityEnsureDescription').val();
                 userAbility.qualifications = $('#qualifications').val();
                 userAbility.mainClients = $('#mainClients').val();
-                userAbility.specializations = $('#specializations').val();            
+                userAbility.specializations = $('#specializations').val();
                 user.userAbility = userAbility;
 
                 var userPayment = new UserPayment();
@@ -165,7 +205,7 @@ declare var $: JQueryStatic;
                         bankAccount.paypalEmailAddress = $('#paypalEmailAddress').val();
                         break;
                     default:
-                }            
+                }
                 userPayment.bankAccount = bankAccount;
                 userPayment.vatTaxNo = $('#vatTaxNo').val();
                 userPayment.currencyId = $('#currency').val();
@@ -179,20 +219,7 @@ declare var $: JQueryStatic;
             }
         });
 
-
-        //save.click basılınca
-        //new User()
-        //user.email=
-        //dataService.saveUser
-
     });
-
-    //Nationality
-    //Nationality2
-    //MotherTongue
-    //Tongue
-    //Resident
-    //TimeZone
 
 })());
 

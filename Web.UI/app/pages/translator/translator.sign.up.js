@@ -20,10 +20,29 @@
         return result;
     }
     function initCityWithData(data) {
-        $('#City').select2(Util.extendOptions(data));
+        $('#City').select2(Util.extendOptions(data, { placeholder: 'Please select your city' }));
+    }
+    function pageValidations() {
+        if ($('#password').val() != $('#repassword').val()) {
+            alert("Please check password.");
+            return false;
+        }
+        if (!$('#agreement').is(':checked')) {
+            alert("Please accept the agreement");
+            return false;
+        }
+        return true;
+    }
+    function changeVisibleByClassName(className, visible) {
+        var elements = document.getElementsByClassName(className);
+        for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+            element.hidden = !visible;
+        }
     }
     $(function () {
-        $('select').select2();
+        $('ul.tabs').tabs();
+        $('select').select2({ placeholder: 'Please select any option' });
         dataService.getCountries(function (data) {
             $("#Nationality").select2(Util.extendOptions(Util.getAsSelectData(data)));
             $("#Nationality2").select2(Util.extendOptions(Util.getAsSelectData(data)));
@@ -34,9 +53,11 @@
         });
         dataService.getCountriesAndCity(function (data) {
             countriesCities = getAsData(data);
-            var opt = Util.extendOptions(countriesCities);
+            var opt = Util.extendOptions(countriesCities, { placeholder: 'Please select country' });
             $('#country').select2(opt);
             $('#Resident').select2(opt);
+            $("#country").select2("val", "-1");
+            $("#Resident").select2("val", "-1");
         });
         dataService.getSoftwares(function (data) {
             $("#Software").select2(Util.extendOptions(Util.getAsSelectData(data), { multiple: true }));
@@ -49,41 +70,109 @@
             var country = countriesCities.find(function (item) { return (item.id == e.params.data.id); });
             initCityWithData(country.cities);
         });
-        function PageValidations() {
-            if ($('#password').val() != $('#repassword').val()) {
-                alert("Please check password.");
-                return false;
-            }
-            if (!$('#agreement').is(':checked')) {
-                alert("Please accept the agreement");
-                return false;
-            }
-            return true;
+        function validateEmail(email) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
         }
-        $('input[type=radio][name=bankAccountType]').change(function () {
-            ChangeVisibleByClassName("Turkish", false);
-            ChangeVisibleByClassName("European", false);
-            ChangeVisibleByClassName("PayPal", false);
-            $('#spnAccountTypeHeader').text(this.value);
-            if (this.value == 'Turkish') {
-                ChangeVisibleByClassName("Turkish", true);
+        function showError(selector, message) {
+            $('#' + selector).removeClass('valid').removeClass('invalid').addClass('invalid');
+            $('#' + selector).siblings('label[for="' + selector + '"]').attr('data-error', message);
+        }
+        $('#nextTo2').on('click', function () {
+            //validate
+            var requiredErrorMessage = 'Please enter value';
+            var emailErrorMessage = 'Please enter valid email';
+            var rePasswordErrorMessage = 'Please enter the same value';
+            var error = false;
+            if (!$('#name').val()) {
+                showError('name', requiredErrorMessage);
+                error = true;
             }
-            else if (this.value == 'European') {
-                ChangeVisibleByClassName("European", true);
+            if (!$('#surname').val()) {
+                showError('surname', requiredErrorMessage);
+                error = true;
             }
-            else if (this.value == 'PayPal') {
-                ChangeVisibleByClassName("PayPal", true);
+            if (!$('#email').val()) {
+                showError('email', requiredErrorMessage);
+                error = true;
+            }
+            if (!validateEmail($('#email').val())) {
+                showError('email', emailErrorMessage);
+                error = true;
+            }
+            if (!$('#mobilePhone').val()) {
+                showError('mobilePhone', requiredErrorMessage);
+                error = true;
+            }
+            if (!$('#password').val()) {
+                showError('password', requiredErrorMessage);
+                error = true;
+            }
+            if (!$('#repassword').val()) {
+                showError('repassword', requiredErrorMessage);
+                error = true;
+            }
+            if ($('#repassword').val() !== $('#password').val()) {
+                showError('repassword', rePasswordErrorMessage);
+                error = true;
+            }
+            if (!$('#agreement').val()) {
+                showError('agreement', requiredErrorMessage);
+                error = true;
+            }
+            if (!error) {
+                $('ul.tabs').tabs('select_tab', 'tab2');
             }
         });
-        function ChangeVisibleByClassName(className, visible) {
-            var elements = document.getElementsByClassName(className);
-            for (var i = 0; i < elements.length; i++) {
-                var element = elements[i];
-                element.hidden = !visible;
+        $('#nextTo3').on('click', function () {
+            //validate
+            $('ul.tabs').tabs('select_tab', 'tab3');
+        });
+        $('#nextTo4').on('click', function () {
+            //validate
+            $('ul.tabs').tabs('select_tab', 'tab4');
+        });
+        $('#nextTo5').on('click', function () {
+            //validate
+            $('ul.tabs').tabs('select_tab', 'tab5');
+        });
+        $('#nextTo6').on('click', function () {
+            //validate
+            $('ul.tabs').tabs('select_tab', 'tab6');
+        });
+        $('#nextTo7').on('click', function () {
+            //validate
+            $('ul.tabs').tabs('select_tab', 'tab7');
+        });
+        $('#repassword').on('keyup', function (e) {
+            var $elem = $(e.target);
+            var currentVal = $elem.val();
+            var passwordVal = $('#password').val();
+            if (currentVal !== passwordVal) {
+                $elem.removeClass('valid').addClass('invalid');
             }
-        }
+            else {
+                $elem.removeClass('invalid').addClass('valid');
+            }
+        });
+        //
+        $('input[type=radio][name=bankAccountType]').change(function () {
+            changeVisibleByClassName("Turkish", false);
+            changeVisibleByClassName("European", false);
+            changeVisibleByClassName("PayPal", false);
+            $('#spnAccountTypeHeader').text(this.value);
+            if (this.value == 'Turkish') {
+                changeVisibleByClassName("Turkish", true);
+            }
+            else if (this.value == 'European') {
+                changeVisibleByClassName("European", true);
+            }
+            else if (this.value == 'PayPal') {
+                changeVisibleByClassName("PayPal", true);
+            }
+        });
         $("#btnSave").on("click", function (data) {
-            if (PageValidations()) {
+            if (pageValidations()) {
                 var user = new User();
                 user.name = $('#name').val();
                 user.surname = $('#surname').val();
@@ -103,7 +192,7 @@
                 user.userContact = userContact;
                 var userAbility = new UserAbility();
                 userAbility.motherTongueId = $('#motherTongue').val();
-                userAbility.tongue = $('#tongue').val();
+                userAbility.tongueId = $('#tongue').val();
                 userAbility.bilingualTongueId = $('#bilingualTongue').val();
                 userAbility.yearsOfExperience = $('#yearsOfExperience').val();
                 var capacity = new Capacity();
@@ -119,19 +208,31 @@
                 var userPayment = new UserPayment();
                 var bankAccount = new BankAccount();
                 bankAccount.bankAccountTypeId = $('#bankAccountType').val();
-                bankAccount.bankName = $('#bankName').val();
-                bankAccount.accountHolderFullName = $('#accountHolderFullName').val();
-                bankAccount.IBAN = $('#IBAN').val();
-                bankAccount.paypalEmailAddress = $('#paypalEmailAddress').val();
-                bankAccount.beneficiaryAddress = $('#beneficiaryAddress').val();
-                bankAccount.accountNumber = $('#accountNumber').val();
-                bankAccount.swiftBicCode = $('#swiftBicCode').val();
-                bankAccount.cityCountryBank = $('#cityCountryBank').val();
-                bankAccount.bankAddress = $('#bankAddress').val();
+                switch (bankAccount.bankAccountTypeId) {
+                    case 1:
+                        bankAccount.bankName = $('#bankName').val();
+                        bankAccount.accountHolderFullName = $('#accountHolderFullName').val();
+                        bankAccount.IBAN = $('#IBAN').val();
+                        break;
+                    case 2:
+                        bankAccount.bankName = $('#bankName').val();
+                        bankAccount.accountHolderFullName = $('#accountHolderFullName').val();
+                        bankAccount.IBAN = $('#IBAN').val();
+                        bankAccount.beneficiaryAddress = $('#beneficiaryAddress').val();
+                        bankAccount.accountNumber = $('#accountNumber').val();
+                        bankAccount.swiftBicCode = $('#swiftBicCode').val();
+                        bankAccount.cityCountryBank = $('#cityCountryBank').val();
+                        bankAccount.bankAddress = $('#bankAddress').val();
+                        break;
+                    case 3:
+                        bankAccount.paypalEmailAddress = $('#paypalEmailAddress').val();
+                        break;
+                    default:
+                }
                 userPayment.bankAccount = bankAccount;
                 userPayment.vatTaxNo = $('#vatTaxNo').val();
-                userPayment.currencyId = $('#currencyId').val();
-                userPayment.workingTypeId = $('#workingTypeId').val();
+                userPayment.currencyId = $('#currency').val();
+                userPayment.workingTypeId = $('#workingType').val();
                 userPayment.minimumChargeAmount = $('#minimumChargeAmount').val();
                 user.userPayment = userPayment;
                 dataService.saveUser(user, function (data) {

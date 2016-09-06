@@ -1,3 +1,4 @@
+/// <reference path="../../typings/globals/jquery.validation/index.d.ts" />
 var Util = (function () {
     function Util() {
     }
@@ -18,7 +19,16 @@ var Util = (function () {
         baseOptions.data = data;
         baseOptions.width = "element";
         if (!options || !options.placeholder) {
-            baseOptions.placeholder = 'Select an option';
+            baseOptions.placeholder = {
+                id: '-1',
+                text: 'Select an option'
+            };
+        }
+        else {
+            baseOptions.placeholder = {
+                id: '-1',
+                text: options.placeholder
+            };
         }
         baseOptions.allowClear = true;
         return baseOptions;
@@ -29,6 +39,20 @@ var Util = (function () {
             return ({ id: c.id, text: c.name });
         });
         return selectData;
+    };
+    Util.handleValidationForm = function (elem, rules, callback) {
+        var form2 = $(elem);
+        form2.validate({
+            errorClass: 'invalid',
+            validClass: "valid",
+            focusInvalid: false,
+            ignore: "",
+            rules: rules,
+            errorPlacement: function (error, element) {
+                $(element).find("label[for='" + element.attr("id") + "']").attr('data-error', error.text());
+            },
+            submitHandler: callback
+        });
     };
     return Util;
 }());
