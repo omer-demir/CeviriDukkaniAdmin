@@ -54,10 +54,8 @@ class UserAbility {
     qualityEnsureDescription: string;  
     qualifications: string;
     mainClients: string;
-    capacity:Capacity;
-    
-    
-    
+    capacity: Capacity;
+    technologyKnowledges: TechnologyKnowledge[];
     specializations: Specialization[];
 }
 
@@ -77,6 +75,14 @@ class UserPayment {
     currencyId: number;
     workingTypeId: number;
     minimumChargeAmount: number;
+}
+
+class TechnologyKnowledge {
+    SoftwareId: number;
+    SoftwareVersion: string;
+    OperatingSystem: string;
+    Rating: number;
+    UserAbilityId: number;
 }
 
 class BankAccount {

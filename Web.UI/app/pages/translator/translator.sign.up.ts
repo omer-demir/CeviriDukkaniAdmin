@@ -8,7 +8,7 @@ declare var $: JQueryStatic;
 ((() => {
     var dataService = new DataService;
     var countriesCities: any = [];
-
+    var technologyKnowledges: Array<TechnologyKnowledge> = new Array<TechnologyKnowledge>();
     function getAsData(data: any) {
         var result: any = [];
         var i: number = 1;
@@ -88,8 +88,7 @@ declare var $: JQueryStatic;
         });
 
         $('#WorkingDays').select2(Util.extendOptions(Constants.Days, { multiple: true }));
-
-
+        
         $('#country').on({
             'select2:select': (e: any) => {
                 var country = countriesCities.find((item: any) => (item.id == e.params.data.id));
@@ -110,8 +109,7 @@ declare var $: JQueryStatic;
                 $('#TargetLanguageId').select2("val", "-1");
             }
         });
-
-
+        
         $('#nextTo2').on('click', () => {
             var rules = {
                 name: { required: true },
@@ -123,8 +121,8 @@ declare var $: JQueryStatic;
                 agreement: { checkbox: true }
             };
 
-            Util.handleValidationForm('form', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'tab2'); });
-            if ($('#form').valid()) {
+            Util.handleValidationForm('form1', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'tab2'); });
+            if ($('#form1').valid()) {
                 $('ul.tabs').tabs('select_tab', 'tab2');
             }
         });
@@ -136,8 +134,8 @@ declare var $: JQueryStatic;
                 address: { required: true }
             };
 
-            Util.handleValidationForm('form', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'tab3'); });
-            if ($('#form').valid()) {
+            Util.handleValidationForm('form2', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'tab3'); });
+            if ($('#form2').valid()) {
                 $('ul.tabs').tabs('select_tab', 'tab3');
             }
         });
@@ -153,28 +151,39 @@ declare var $: JQueryStatic;
                 Specialization: { required: true}
             };
 
-            Util.handleValidationForm('form', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'tab4'); });
-            if ($('#form').valid()) {
+            Util.handleValidationForm('form3', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'tab4'); });
+            if ($('#form3').valid()) {
                 $('ul.tabs').tabs('select_tab', 'tab4');
             }
         });
-        $('#nextTo5').on('click', () => {
-            //var rules = {
-            //    motherTongue: { required: true },
-            //    tongue: { required: true },
-            //    translation: { required: true },
-            //    reviews: { required: true },
-            //    proofReading: { required: true },
-            //    qualityEnsureDescription: { required: true },
-            //    qualifications: { required: true },
-            //    Specialization: { required: true }
-            //};
 
-            //Util.handleValidationForm('form', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'tab5'); });
-            //if ($('#form').valid()) {
-            //    $('ul.tabs').tabs('select_tab', 'tab5');
-            //}
+        $('#addSoftware').on('click', () => {
+            var rules = {
+                Software: { required: true }
+            };
+
+            Util.handleValidationForm('form4', rules, (a: any) => { });
+            if ($('#form4').valid()) {
+
+                var software = $('#Software').select2('data')[0].text;
+                var technologyKnowledge = new TechnologyKnowledge();
+                technologyKnowledge.SoftwareId = $('#Software').val();
+                technologyKnowledge.SoftwareVersion = $('#Version').val();
+                technologyKnowledge.OperatingSystem = $('#OperatingSystem').val();
+                technologyKnowledge.Rating = $('#Rating').val();
+                //software.UserAbilityId = $('#mobilePhone').val();
+                technologyKnowledges.push(technologyKnowledge);
+
+                var $table = $('#softwareKnowledge');
+                var $tableBody = $table.find('tbody');
+
+                var itemTemplate = `<tr><td>${software}</td><td>${technologyKnowledge.SoftwareVersion}</td><td>${technologyKnowledge.OperatingSystem}</td><td>${technologyKnowledge.Rating}</td></tr>`;
+                $(itemTemplate).appendTo($tableBody);
+            }
         });
+
+        
+        
         $('#nextTo6').on('click', () => {
             switch ($('#bankAccountType').val()) {
                 case 1:
@@ -184,7 +193,7 @@ declare var $: JQueryStatic;
                         IBAN: { required: true },
                         minimumChargeAmount: { required: true }
                     };
-                    Util.handleValidationForm('form', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'nextTo6'); });
+                    Util.handleValidationForm('form5', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'nextTo6'); });
                     break;
                 case 2:
                     var rules2 = {
@@ -197,21 +206,37 @@ declare var $: JQueryStatic;
                         bankAddress: { required: true },
                         minimumChargeAmount: { required: true }
                     };
-                    Util.handleValidationForm('form', rules2, (a: any) => { $('ul.tabs').tabs('select_tab', 'nextTo6'); });
+                    Util.handleValidationForm('form5', rules2, (a: any) => { $('ul.tabs').tabs('select_tab', 'nextTo6'); });
                     break;
                 case 3:
                     var rules3 = {
                         paypalEmailAddress: { required: true, email: true },
                         minimumChargeAmount: { required: true }
                     };
-                    Util.handleValidationForm('form', rules3, (a: any) => { $('ul.tabs').tabs('select_tab', 'nextTo6'); });
+                    Util.handleValidationForm('form5', rules3, (a: any) => { $('ul.tabs').tabs('select_tab', 'nextTo6'); });
                     break;
                 default:
             }
-            if ($('#form').valid()) {
-                $('ul.tabs').tabs('select_tab', 'tab6');
+            if ($('#form4').valid()) {
+                $('ul.tabs').tabs('select_tab', 'tab5');
             }
         });
+
+        $('#addRate').on('click', () => {
+            var $table = $('#translatorRate');
+            var $tableBody = $table.find('tbody');
+
+            var service = $('#ServiceTypeId').select2('data')[0].text;
+            var sourceLanguage = $('#SourceLanguageId').select2('data')[0].text;
+            var targetLanguage = $('#TargetLanguageId').select2('data')[0].text;
+            var price = $('#Price').val();
+            var sworn = $('#SwornOrCertified').prop('checked');
+
+            var itemTemplate = `<tr><td>${service}</td><td>${sourceLanguage}</td><td>${targetLanguage}</td><td>${price}</td><td>${sworn}</td></tr>`;
+            $(itemTemplate).appendTo($tableBody);
+
+        });
+
         $('#nextTo7').on('click', () => {
             var rules = {
                 ServiceType: { required: true },
@@ -220,8 +245,8 @@ declare var $: JQueryStatic;
                 minimumChargeAmount: { required: true }                
             };
 
-            Util.handleValidationForm('form', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'tab4'); });
-            if ($('#form').valid()) {
+            Util.handleValidationForm('form6', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'tab4'); });
+            if ($('#form6').valid()) {
                 $('ul.tabs').tabs('select_tab', 'tab7');
             }
         });
@@ -269,6 +294,8 @@ declare var $: JQueryStatic;
                 userAbility.tongueId = $('#tongue').val();
                 userAbility.bilingualTongueId = $('#bilingualTongue').val();
                 userAbility.yearsOfExperience = $('#yearsOfExperience').val();
+                userAbility.technologyKnowledges = technologyKnowledges;
+
                 var capacity = new Capacity();
                 capacity.translation = $('#translation').val();
                 capacity.reviews = $('#reviews').val();
@@ -317,34 +344,7 @@ declare var $: JQueryStatic;
             }
         });
 
-        $('#addSoftware').on('click', () => {
-            var $table = $('#softwareKnowledge');
-            var $tableBody = $table.find('tbody');
-
-            var software = $('#Software').select2('data')[0].text;
-            var version = $('#Version').val();
-            var operatingSystem = $('#OperatingSystem').val();
-            var rating = $('#Rating').val();
-
-            var itemTemplate = `<tr><td>${software}</td><td>${version}</td><td>${operatingSystem}</td><td>${rating}</td></tr>`;
-            $(itemTemplate).appendTo($tableBody);
-
-        });
-
-        $('#addRate').on('click', () => {
-            var $table = $('#translatorRate');
-            var $tableBody = $table.find('tbody');
-
-            var service = $('#ServiceTypeId').select2('data')[0].text;
-            var sourceLanguage = $('#SourceLanguageId').select2('data')[0].text;
-            var targetLanguage = $('#TargetLanguageId').select2('data')[0].text;
-            var price = $('#Price').val();
-            var sworn = $('#SwornOrCertified').prop('checked');
-
-            var itemTemplate = `<tr><td>${service}</td><td>${sourceLanguage}</td><td>${targetLanguage}</td><td>${price}</td><td>${sworn}</td></tr>`;
-            $(itemTemplate).appendTo($tableBody);
-
-        });
+        
 
 
     });

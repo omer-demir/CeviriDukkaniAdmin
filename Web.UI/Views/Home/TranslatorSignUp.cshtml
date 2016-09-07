@@ -66,7 +66,7 @@
                 </ul>
             </div>
             <div id="tab1" class="col s12 padded-tab">
-                <form id="form" novalidate="novalidate">
+                <form id="form1" novalidate="novalidate">
                     <div class="row">
                         <div class="input-field col s6">
                             <label for="name">Name</label>
@@ -126,311 +126,320 @@
                 </div>
             </div>
             <div id="tab2" class="col s12 padded-tab">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="country">Country</label>
-                        <select id="country" class="full-width" name="country"></select>
+                <form id="form2" novalidate="novalidate">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label for="country">Country</label>
+                            <select id="country" class="full-width" name="country"></select>
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="City">City</label>
+                            <select id="City" class="full-width" name="City"></select>
+                        </div>
                     </div>
-                    <div class="input-field col s6">
-                        <label for="City">City</label>
-                        <select id="City" class="full-width" name="City"></select>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label for="district">District</label>
+                            <select id="district" class="full-width" name="district"></select>
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="postalCode">Postal Code</label>
+                            <input type="text" class="validate" id="postalCode" placeholder="Postal Code" name="postalCode">
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="district">District</label>
-                        <select id="district" class="full-width" name="district"></select>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label for="address">Address</label>
+                            <textarea class="materialize-textarea" id="address" placeholder="Address" name="address"></textarea>
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="alternativeEmail">Alternative Email Address</label>
+                            <input type="text" class="validate" id="alternativeEmail" placeholder="Alternative Email Address" name="alternativeEmail">
+                        </div>
                     </div>
-                    <div class="input-field col s6">
-                        <label for="postalCode">Postal Code</label>
-                        <input type="text" class="validate" id="postalCode" placeholder="Postal Code" name="postalCode">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label for="alternativePhone1">Alternative Phone</label>
+                            <input type="text" class="validate" id="alternativePhone1" placeholder="Alternative Phone" name="alternativePhone1">
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="alternativePhone2">Alternative Phone 2</label>
+                            <input type="text" class="validate" id="alternativePhone2" placeholder="Alternative Phone 2" name="alternativePhone2">
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="address">Address</label>
-                        <textarea class="materialize-textarea" id="address" placeholder="Address" name="address"></textarea>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label for="fax">Fax</label>
+                            <input type="text" class="validate" id="fax" placeholder="Fax" name="fax">
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="skype">Skype</label>
+                            <input type="text" class="validate" id="skype" placeholder="Skype" name="skype">
+                        </div>
                     </div>
-                    <div class="input-field col s6">
-                        <label for="alternativeEmail">Alternative Email Address</label>
-                        <input type="text" class="validate" id="alternativeEmail" placeholder="Alternative Email Address" name="alternativeEmail">
+                    <div class="row">
+                        <a class="waves-effect waves-light btn right" id="nextTo3">Next<i class="material-icons right">play_arrow</i></a>
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="alternativePhone1">Alternative Phone</label>
-                        <input type="text" class="validate" id="alternativePhone1" placeholder="Alternative Phone" name="alternativePhone1">
-                    </div>
-                    <div class="input-field col s6">
-                        <label for="alternativePhone2">Alternative Phone 2</label>
-                        <input type="text" class="validate" id="alternativePhone2" placeholder="Alternative Phone 2" name="alternativePhone2">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="fax">Fax</label>
-                        <input type="text" class="validate" id="fax" placeholder="Fax" name="fax">
-                    </div>
-                    <div class="input-field col s6">
-                        <label for="skype">Skype</label>
-                        <input type="text" class="validate" id="skype" placeholder="Skype" name="skype">
-                    </div>
-                </div>
-                <div class="row">
-                    <a class="waves-effect waves-light btn right" id="nextTo3">Next<i class="material-icons right">play_arrow</i></a>
-                </div>
+                </form>
             </div>
             <div id="tab3" class="col s12 padded-tab">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <select id="motherTongue" class="full-width "></select>
+                <form id="form3" novalidate="novalidate">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <select id="motherTongue" class="full-width "></select>
+                        </div>
+                        <div class="input-field col s6">
+                            <select id="tongue" class="full-width "></select>
+                        </div>
                     </div>
-                    <div class="input-field col s6">
-                        <select id="tongue" class="full-width "></select>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <select id="bilingualTongue" class="full-width "></select>
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="yearsOfExperience">Years of experience in translation</label>
+                            <input type="number" class="validate" min="0" id="yearsOfExperience" placeholder="Years of experience in translation	">
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <select id="bilingualTongue" class="full-width "></select>
+                    <div class="row">
+                        <div class="col s12">
+                            <h4 class="header">Daily Capacity</h4>
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="translation">Translation(characters)</label>
+                            <input type="number" min="0" class="validate" id="translation" placeholder="characters ">
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="reviews">Review(characters)</label>
+                            <input type="number" min="0" class="validate" id="reviews" placeholder="characters ">
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="proofReading">Proofreading(characters)</label>
+                            <input type="number" min="0" class="validate" id="proofReading" placeholder="characters ">
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="qualityEnsureDescription">How do you ensure the quality of your final work?</label>
+                            <textarea class="materialize-textarea" id="qualityEnsureDescription" placeholder="How do you ensure the quality of your final work?"></textarea>
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="qualifications">Qualifications</label>
+                            <textarea class="materialize-textarea" id="qualifications" placeholder="Qualifications"></textarea>
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="mainClients">MainClients</label>
+                            <textarea class="materialize-textarea" id="mainClients" placeholder="Main Clients"></textarea>
+                        </div>
                     </div>
-                    <div class="input-field col s6">
-                        <label for="yearsOfExperience">Years of experience in translation</label>
-                        <input type="number" class="validate" min="0" id="yearsOfExperience" placeholder="Years of experience in translation	">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <select id="Specialization" class="full-width"></select>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col s12">
-                        <h4 class="header">Daily Capacity</h4>
+                    <div class="row">
+                        <a class="waves-effect waves-light btn right" id="nextTo4">Next<i class="material-icons right">play_arrow</i></a>
                     </div>
-                    <div class="input-field col s6">
-                        <label for="translation">Translation(characters)</label>
-                        <input type="number" min="0" class="validate" id="translation" placeholder="characters ">
-                    </div>
-                    <div class="input-field col s6">
-                        <label for="reviews">Review(characters)</label>
-                        <input type="number" min="0" class="validate" id="reviews" placeholder="characters ">
-                    </div>
-                    <div class="input-field col s6">
-                        <label for="proofReading">Proofreading(characters)</label>
-                        <input type="number" min="0" class="validate" id="proofReading" placeholder="characters ">
-                    </div>
-                    <div class="input-field col s6">
-                        <label for="qualityEnsureDescription">How do you ensure the quality of your final work?</label>
-                        <textarea class="materialize-textarea" id="qualityEnsureDescription" placeholder="How do you ensure the quality of your final work?"></textarea>
-                    </div>
-                    <div class="input-field col s6">
-                        <label for="qualifications">Qualifications</label>
-                        <textarea class="materialize-textarea" id="qualifications" placeholder="Qualifications"></textarea>
-                    </div>
-                    <div class="input-field col s6">
-                        <label for="mainClients">MainClients</label>
-                        <textarea class="materialize-textarea" id="mainClients" placeholder="Main Clients"></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <select id="Specialization" class="full-width"></select>
-                    </div>
-                </div>
-                <div class="row">
-                    <a class="waves-effect waves-light btn right" id="nextTo4">Next<i class="material-icons right">play_arrow</i></a>
-                </div>
+                </form>
             </div>
             <div id="tab4" class="col s12 padded-tab">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <select id="Software" class="full-width"></select>
+                <form id="form4" novalidate="novalidate">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <select id="Software" class="full-width"></select>
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="Version">Version </label>
+                            <input type="text" class="validate" id="Version" placeholder="Version ">
+                        </div>
                     </div>
-                    <div class="input-field col s6">
-                        <label for="Version">Version </label>
-                        <input type="text" class="validate" id="Version" placeholder="Version ">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label for="OperatingSystem">Operating System</label>
+                            <input type="text" class="validate" id="OperatingSystem" placeholder="Operating System">
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="Rating">Rating</label>
+                            <input type="text" class="validate" id="Rating" placeholder="Rating">
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="OperatingSystem">Operating System</label>
-                        <input type="text" class="validate" id="OperatingSystem" placeholder="Operating System">
+                    <div class="row">
+                        <a class="waves-effect waves-light btn right" id="addSoftware">Add<i class="material-icons right">note_add</i></a>
                     </div>
-                    <div class="input-field col s6">
-                        <label for="Rating">Rating</label>
-                        <input type="text" class="validate" id="Rating" placeholder="Rating">
+                    <hr />
+                    <div class="row">
+                        <div class="col s12">
+                            <table class="highlight responsive-table" id="softwareKnowledge">
+                                <thead>
+                                    <tr>
+                                        <th data-field="software">Software</th>
+                                        <th data-field="version">Version</th>
+                                        <th data-field="operatingSystem">Operating System</th>
+                                        <th data-field="rating">Rating</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <a class="waves-effect waves-light btn right" id="addSoftware">Add<i class="material-icons right">note_add</i></a>
-                </div>
-                <hr />
-                <div class="row">
-                    <div class="col s12">
-                        <table class="highlight responsive-table" id="softwareKnowledge">
-                            <thead>
-                                <tr>
-                                    <th data-field="software">Software</th>
-                                    <th data-field="version">Version</th>
-                                    <th data-field="operatingSystem">Operating System</th>
-                                    <th data-field="rating">Rating</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
+                    <div class="row">
+                        <a class="waves-effect waves-light btn right" id="nextTo5">Next<i class="material-icons right">play_arrow</i></a>
                     </div>
-                </div>
-                <div class="row">
-                    <a class="waves-effect waves-light btn right" id="nextTo5">Next<i class="material-icons right">play_arrow</i></a>
-                </div>
+                </form>
             </div>
             <div id="tab5" class="col s12 padded-tab">
-                <div class="row">
-                    <div class="col s12">
-                        <h4 class="header">I have</h4>
-                    </div>
-                    <p>
-                        <input name="bankAccountType" type="radio" id="bankAccountType0" value="Turkish" />
-                        <label for="bankAccountType0">a Turkish Account</label>
-                    </p>
-                    <p>
-                        <input name="bankAccountType" type="radio" id="bankAccountType1" value="European" />
-                        <label for="bankAccountType1">a European or Outside of Turkey Accoun</label>
-                    </p>
-                    <p>
-                        <input name="bankAccountType" type="radio" id="bankAccountType2" value="PayPal" />
-                        <label for="bankAccountType2">a PayPal Account</label>
-                    </p>
-                </div>
-                <div class="row">
-                    <div class="col s12">
-                        <h4 class="header"><span id="spnAccountTypeHeader"></span> Account</h4>
-                    </div>
-                    <div class="input-field col s6 Turkish European">
-                        <label for="bankName">Bank Name</label>
-                        <input type="text" class="validate" id="bankName" placeholder="Bank Name" />
-                    </div>
-                    <div class="input-field col s6 Turkish European">
-                        <label for="accountHolderFullName">Account Holder Full Name</label>
-                        <input type="text" class="validate" id="accountHolderFullName" placeholder="accountHolderFullName" />
-                    </div>
-
-                    <div class="input-field col s6 European">
-                        <label for="beneficiaryAddress">Beneficiary Address</label>
-                        <input type="text" class="validate" id="beneficiaryAddress" placeholder="Beneficiary Address" />
-                    </div>
-                    <div class="input-field col s6 Turkish European">
-                        <label for="IBAN">IBAN</label>
-                        <input type="text" class="validate" id="IBAN" placeholder="IBAN" />
-                    </div>
-                    <div class="input-field col s6 European">
-                        <label for="accountNumber">AccountNumber</label>
-                        <input type="text" class="validate" id="accountNumber" placeholder="AccountNumber">
-                    </div>
-                    <div class="input-field col s6 European">
-                        <label for="swiftBicCode">Swift / BIC Code</label>
-                        <input type="text" class="validate" id="swiftBicCode" placeholder="Swift / BIC Code">
-                    </div>
-                    <div class="input-field col s6 European">
-                        <label for="cityCountryBank">City and Country of the Bank</label>
-                        <input type="text" class="validate" id="cityCountryBank" placeholder="City and Country of the Bank">
-                    </div>
-                    <div class="input-field col s6 European">
-                        <label for="bankAddress">Bank Address</label>
-                        <input type="text" class="validate" id="bankAddress" placeholder="City and Country of the Bank">
-                    </div>
-                    <div class="input-field col s6 PayPal">
-                        <label for="paypalEmailAddress">PayPal Email Address</label>
-                        <input type="text" class="validate" id="paypalEmailAddress" placeholder="Paypal Email Address">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col s12">
-                        <h4 class="header">Payment Details</h4>
-                    </div>
-                    <div class="input-field col s6">
-                        <label for="vatTaxNo">VAT/TAX No</label>
-                        <input type="text" class="validate" id="vatTaxNo" placeholder="VAT/TAX No">
-                    </div>
-                    <div class="input-field col s6">
-                        <label for="minimumChargeAmount">Min. Charge Amount</label>
-                        <input type="text" class="validate" id="minimumChargeAmount" placeholder="Min. Charge Amount">
-                    </div>
-                    <div class="input-field col s6">
-                        <select id="currency" class="full-width "></select>
-                    </div>
-                    <div class="input-field col s6">
-                        <select id="workingType" class="full-width "></select>
-                    </div>
-
-
-                </div>
-                <div class="row">
-                    <a class="waves-effect waves-light btn right" id="nextTo6">Next<i class="material-icons right">play_arrow</i></a>
-                </div>
-            </div>
-
-            <div id="tab6" class="col s12 padded-tab">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <select id="ServiceTypeId" class="full-width "></select>
-                    </div>
-                    <div class="input-field col s6">
-                        <select id="SourceLanguageId" class="full-width "></select>
-                    </div>
-                    <div class="input-field col s6">
-                        <select id="TargetLanguageId" class="full-width "></select>
-                    </div>
-                    <div class="input-field col s6">
-                        <label for="minimumChargeAmount">Price(TL/1000 chr.)</label>
-                        <input type="number" class="validate" id="Price" placeholder="TL/1000 chr.">
-                    </div>
-                    <div class="input-field col s6">
+                <form id="form1" novalidate="novalidate">
+                    <div class="row">
+                        <div class="col s12">
+                            <h4 class="header">I have</h4>
+                        </div>
                         <p>
-                            <input type="checkbox" id="SwornOrCertified" />
-                            <label for="SwornOrCertified">Sworn/Certification?</label>
+                            <input name="bankAccountType" type="radio" id="bankAccountType0" value="Turkish" />
+                            <label for="bankAccountType0">a Turkish Account</label>
+                        </p>
+                        <p>
+                            <input name="bankAccountType" type="radio" id="bankAccountType1" value="European" />
+                            <label for="bankAccountType1">a European or Outside of Turkey Accoun</label>
+                        </p>
+                        <p>
+                            <input name="bankAccountType" type="radio" id="bankAccountType2" value="PayPal" />
+                            <label for="bankAccountType2">a PayPal Account</label>
                         </p>
                     </div>
-                    @*ToDo CertificateId: number;
+                    <div class="row">
+                        <div class="col s12">
+                            <h4 class="header"><span id="spnAccountTypeHeader"></span> Account</h4>
+                        </div>
+                        <div class="input-field col s6 Turkish European">
+                            <label for="bankName">Bank Name</label>
+                            <input type="text" class="validate" id="bankName" placeholder="Bank Name" />
+                        </div>
+                        <div class="input-field col s6 Turkish European">
+                            <label for="accountHolderFullName">Account Holder Full Name</label>
+                            <input type="text" class="validate" id="accountHolderFullName" placeholder="accountHolderFullName" />
+                        </div>
+
+                        <div class="input-field col s6 European">
+                            <label for="beneficiaryAddress">Beneficiary Address</label>
+                            <input type="text" class="validate" id="beneficiaryAddress" placeholder="Beneficiary Address" />
+                        </div>
+                        <div class="input-field col s6 Turkish European">
+                            <label for="IBAN">IBAN</label>
+                            <input type="text" class="validate" id="IBAN" placeholder="IBAN" />
+                        </div>
+                        <div class="input-field col s6 European">
+                            <label for="accountNumber">AccountNumber</label>
+                            <input type="text" class="validate" id="accountNumber" placeholder="AccountNumber">
+                        </div>
+                        <div class="input-field col s6 European">
+                            <label for="swiftBicCode">Swift / BIC Code</label>
+                            <input type="text" class="validate" id="swiftBicCode" placeholder="Swift / BIC Code">
+                        </div>
+                        <div class="input-field col s6 European">
+                            <label for="cityCountryBank">City and Country of the Bank</label>
+                            <input type="text" class="validate" id="cityCountryBank" placeholder="City and Country of the Bank">
+                        </div>
+                        <div class="input-field col s6 European">
+                            <label for="bankAddress">Bank Address</label>
+                            <input type="text" class="validate" id="bankAddress" placeholder="City and Country of the Bank">
+                        </div>
+                        <div class="input-field col s6 PayPal">
+                            <label for="paypalEmailAddress">PayPal Email Address</label>
+                            <input type="text" class="validate" id="paypalEmailAddress" placeholder="Paypal Email Address">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <h4 class="header">Payment Details</h4>
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="vatTaxNo">VAT/TAX No</label>
+                            <input type="text" class="validate" id="vatTaxNo" placeholder="VAT/TAX No">
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="minimumChargeAmount">Min. Charge Amount</label>
+                            <input type="text" class="validate" id="minimumChargeAmount" placeholder="Min. Charge Amount">
+                        </div>
+                        <div class="input-field col s6">
+                            <select id="currency" class="full-width "></select>
+                        </div>
+                        <div class="input-field col s6">
+                            <select id="workingType" class="full-width "></select>
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <a class="waves-effect waves-light btn right" id="nextTo6">Next<i class="material-icons right">play_arrow</i></a>
+                    </div>
+                </form>
+</div>
+            <div id="tab6" class="col s12 padded-tab">
+                <form id="form6" novalidate="novalidate">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select id="ServiceTypeId" class="full-width "></select>
+                        </div>
+                        <div class="input-field col s6">
+                            <select id="SourceLanguageId" class="full-width "></select>
+                        </div>
+                        <div class="input-field col s6">
+                            <select id="TargetLanguageId" class="full-width "></select>
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="minimumChargeAmount">Price(TL/1000 chr.)</label>
+                            <input type="number" class="validate" id="Price" placeholder="TL/1000 chr.">
+                        </div>
+                        <div class="input-field col s6">
+                            <p>
+                                <input type="checkbox" id="SwornOrCertified" />
+                                <label for="SwornOrCertified">Sworn/Certification?</label>
+                            </p>
+                        </div>
+                        @*ToDo CertificateId: number;
                 UserRateId: number;*@
-                </div>
-                <div class="row">
-                    <a class="waves-effect waves-light btn right" id="addRate">Add<i class="material-icons right">note_add</i></a>
-                </div>
-                <hr />
-                <div class="row">
-                    <div class="col s12">
-                        <table class="highlight responsive-table" id="translatorRate">
-                            <thead>
-                                <tr>
-                                    <th data-field="serviceType">Service Type</th>
-                                    <th data-field="sourceLanguage">Source Language</th>
-                                    <th data-field="targetLanguage">Target Language</th>
-                                    <th data-field="price">Price</th>
-                                    <th data-field="swornCertification">Sworn/Certification</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
                     </div>
-                </div>
-                <div class="row">
-                    <a class="waves-effect waves-light btn right" id="nextTo7">Next<i class="material-icons right">play_arrow</i></a>
-                </div>
-            </div>
+                    <div class="row">
+                        <a class="waves-effect waves-light btn right" id="addRate">Add<i class="material-icons right">note_add</i></a>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col s12">
+                            <table class="highlight responsive-table" id="translatorRate">
+                                <thead>
+                                    <tr>
+                                        <th data-field="serviceType">Service Type</th>
+                                        <th data-field="sourceLanguage">Source Language</th>
+                                        <th data-field="targetLanguage">Target Language</th>
+                                        <th data-field="price">Price</th>
+                                        <th data-field="swornCertification">Sworn/Certification</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <a class="waves-effect waves-light btn right" id="nextTo7">Next<i class="material-icons right">play_arrow</i></a>
+                    </div>
+                </form>
+</div>
             <div id="tab7" class="col s12 padded-tab">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <label for="Test">Test</label>
-                        <textarea cols="46" rows="3" class="materialize-textarea" id="Test" placeholder="Test"></textarea>
-                    </div>
-                    <div class="input-field col s12">
-                        <label for="TranslationResult">TranslationResult</label>
-                        <textarea cols="46" rows="3" class="materialize-textarea" id="TranslationResult" placeholder="TranslationResult"></textarea>
-                    </div>
-                    <div class="input-field col s12">
-                        <a class="waves-effect waves-light btn" id="btnSave"><i class="material-icons left">done</i>Save</a>
-                    </div>
+                <form id="form7" novalidate="novalidate">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="Test">Test</label>
+                            <textarea cols="46" rows="3" class="materialize-textarea" id="Test" placeholder="Test"></textarea>
+                        </div>
+                        <div class="input-field col s12">
+                            <label for="TranslationResult">TranslationResult</label>
+                            <textarea cols="46" rows="3" class="materialize-textarea" id="TranslationResult" placeholder="TranslationResult"></textarea>
+                        </div>
+                        <div class="input-field col s12">
+                            <a class="waves-effect waves-light btn" id="btnSave"><i class="material-icons left">done</i>Save</a>
+                        </div>
 
 
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

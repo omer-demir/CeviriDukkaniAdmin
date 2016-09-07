@@ -53,6 +53,11 @@ var UserPayment = (function () {
     }
     return UserPayment;
 }());
+var TechnologyKnowledge = (function () {
+    function TechnologyKnowledge() {
+    }
+    return TechnologyKnowledge;
+}());
 var BankAccount = (function () {
     function BankAccount() {
     }
