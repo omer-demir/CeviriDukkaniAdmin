@@ -76,23 +76,38 @@ declare var $: JQueryStatic;
         });
 
         dataService.getSoftwares((data: any) => {
-            $("#Software").select2(Util.extendOptions(Util.getAsSelectData(data), { multiple: true }));
+            $("#Software").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select software' }));
         });
 
         dataService.getSpecialization((data: any) => {
             $("#Specialization").select2(Util.extendOptions(Util.getAsSelectData(data), { multiple: true }));
         });
 
+        dataService.getLanguages((data: any) => {
+            $("#SourceLanguageId").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select source language' }));
+        });
+
         $('#WorkingDays').select2(Util.extendOptions(Constants.Days, { multiple: true }));
-        
+
 
         $('#country').on({
             'select2:select': (e: any) => {
                 var country = countriesCities.find((item: any) => (item.id == e.params.data.id));
                 initCityWithData(country.cities);
             },
-            'select2:unselect':() => {
+            'select2:unselect': () => {
                 $('#City').select2("val", "-1");
+            }
+        });
+
+        $('#SourceLanguageId').on({
+            'select2:select': (e: any) => {
+                dataService.getTargetLanguages(e.params.data.id, (data: any) => {
+                    $("#TargetLanguageId").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select target language' }));
+                });
+            },
+            'select2:unselect': () => {
+                $('#TargetLanguageId').select2("val", "-1");
             }
         });
 
@@ -114,24 +129,101 @@ declare var $: JQueryStatic;
             }
         });
         $('#nextTo3').on('click', () => {
-            //validate
-            $('ul.tabs').tabs('select_tab', 'tab3');
+            var rules = {
+                country: { required: true },
+                City: { required: true },
+                district: { required: true },
+                address: { required: true }
+            };
+
+            Util.handleValidationForm('form', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'tab3'); });
+            if ($('#form').valid()) {
+                $('ul.tabs').tabs('select_tab', 'tab3');
+            }
         });
         $('#nextTo4').on('click', () => {
-            //validate
-            $('ul.tabs').tabs('select_tab', 'tab4');
+            var rules = {
+                motherTongue: { required: true },
+                tongue: { required: true },
+                translation: { required: true },
+                reviews: { required: true },
+                proofReading: { required: true },
+                qualityEnsureDescription: { required: true },
+                qualifications: { required: true },
+                Specialization: { required: true}
+            };
+
+            Util.handleValidationForm('form', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'tab4'); });
+            if ($('#form').valid()) {
+                $('ul.tabs').tabs('select_tab', 'tab4');
+            }
         });
         $('#nextTo5').on('click', () => {
-            //validate
-            $('ul.tabs').tabs('select_tab', 'tab5');
+            //var rules = {
+            //    motherTongue: { required: true },
+            //    tongue: { required: true },
+            //    translation: { required: true },
+            //    reviews: { required: true },
+            //    proofReading: { required: true },
+            //    qualityEnsureDescription: { required: true },
+            //    qualifications: { required: true },
+            //    Specialization: { required: true }
+            //};
+
+            //Util.handleValidationForm('form', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'tab5'); });
+            //if ($('#form').valid()) {
+            //    $('ul.tabs').tabs('select_tab', 'tab5');
+            //}
         });
         $('#nextTo6').on('click', () => {
-            //validate
-            $('ul.tabs').tabs('select_tab', 'tab6');
+            switch ($('#bankAccountType').val()) {
+                case 1:
+                    var rules = {
+                        bankName: { required: true },
+                        accountHolderFullName: { required: true },
+                        IBAN: { required: true },
+                        minimumChargeAmount: { required: true }
+                    };
+                    Util.handleValidationForm('form', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'nextTo6'); });
+                    break;
+                case 2:
+                    var rules2 = {
+                        bankName: { required: true },
+                        accountHolderFullName: { required: true },
+                        beneficiaryAddress: { required: true },
+                        accountNumber: { required: true },
+                        swiftBicCode: { required: true },
+                        cityCountryBank: { required: true },
+                        bankAddress: { required: true },
+                        minimumChargeAmount: { required: true }
+                    };
+                    Util.handleValidationForm('form', rules2, (a: any) => { $('ul.tabs').tabs('select_tab', 'nextTo6'); });
+                    break;
+                case 3:
+                    var rules3 = {
+                        paypalEmailAddress: { required: true, email: true },
+                        minimumChargeAmount: { required: true }
+                    };
+                    Util.handleValidationForm('form', rules3, (a: any) => { $('ul.tabs').tabs('select_tab', 'nextTo6'); });
+                    break;
+                default:
+            }
+            if ($('#form').valid()) {
+                $('ul.tabs').tabs('select_tab', 'tab6');
+            }
         });
         $('#nextTo7').on('click', () => {
-            //validate
-            $('ul.tabs').tabs('select_tab', 'tab7');
+            var rules = {
+                ServiceType: { required: true },
+                SourceLanguage: { required: true },
+                TargetLanguage: { required: true },
+                minimumChargeAmount: { required: true }                
+            };
+
+            Util.handleValidationForm('form', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'tab4'); });
+            if ($('#form').valid()) {
+                $('ul.tabs').tabs('select_tab', 'tab7');
+            }
         });
 
         $('input[type=radio][name=bankAccountType]').change(function () {
@@ -224,6 +316,36 @@ declare var $: JQueryStatic;
                 });
             }
         });
+
+        $('#addSoftware').on('click', () => {
+            var $table = $('#softwareKnowledge');
+            var $tableBody = $table.find('tbody');
+
+            var software = $('#Software').select2('data')[0].text;
+            var version = $('#Version').val();
+            var operatingSystem = $('#OperatingSystem').val();
+            var rating = $('#Rating').val();
+
+            var itemTemplate = `<tr><td>${software}</td><td>${version}</td><td>${operatingSystem}</td><td>${rating}</td></tr>`;
+            $(itemTemplate).appendTo($tableBody);
+
+        });
+
+        $('#addRate').on('click', () => {
+            var $table = $('#translatorRate');
+            var $tableBody = $table.find('tbody');
+
+            var service = $('#ServiceTypeId').select2('data')[0].text;
+            var sourceLanguage = $('#SourceLanguageId').select2('data')[0].text;
+            var targetLanguage = $('#TargetLanguageId').select2('data')[0].text;
+            var price = $('#Price').val();
+            var sworn = $('#SwornOrCertified').prop('checked');
+
+            var itemTemplate = `<tr><td>${service}</td><td>${sourceLanguage}</td><td>${targetLanguage}</td><td>${price}</td><td>${sworn}</td></tr>`;
+            $(itemTemplate).appendTo($tableBody);
+
+        });
+
 
     });
 

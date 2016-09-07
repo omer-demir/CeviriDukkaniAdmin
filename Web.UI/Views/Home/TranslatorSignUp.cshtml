@@ -27,7 +27,7 @@
                 width: 100% !important;
             }
 
-        label:after,input[type="checkbox"] + label:after {
+        label:after, input[type="checkbox"] + label:after {
             content: attr(data-error);
             color: #F44336;
             opacity: 1;
@@ -70,27 +70,27 @@
                     <div class="row">
                         <div class="input-field col s6">
                             <label for="name">Name</label>
-                            <input type="text" id="name" placeholder="Name" name="name" >
+                            <input type="text" id="name" placeholder="Name" name="name">
                         </div>
                         <div class="input-field col s6">
                             <label for="surname">Surname</label>
-                            <input type="text" id="surname" placeholder="Surname" name="surname" >
+                            <input type="text" id="surname" placeholder="Surname" name="surname">
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
                             <label for="email">Email address</label>
-                            <input type="email" id="email" placeholder="Email" name="email" >
+                            <input type="email" id="email" placeholder="Email" name="email">
                         </div>
                         <div class="input-field col s6">
                             <label for="mobilePhone">Mobile Phone</label>
-                            <input type="text" id="mobilePhone" placeholder="Mobile Phone" name="mobilePhone" >
+                            <input type="text" id="mobilePhone" placeholder="Mobile Phone" name="mobilePhone">
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
                             <label for="password">Password</label>
-                            <input type="password" id="password" placeholder="Password" name="password" >
+                            <input type="password" id="password" placeholder="Password" name="password">
                         </div>
                         <div class="input-field col s6">
                             <label for="repassword">Re-Password</label>
@@ -244,17 +244,36 @@
                     </div>
                     <div class="input-field col s6">
                         <label for="Version">Version </label>
-                        <input type="text" class="validate" id="Version " placeholder="Version ">
+                        <input type="text" class="validate" id="Version" placeholder="Version ">
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <label for="OperatingSystem">OperatingSystem</label>
-                        <input type="text" class="validate" id="OperatingSystem" placeholder="OperatingSystem">
+                        <label for="OperatingSystem">Operating System</label>
+                        <input type="text" class="validate" id="OperatingSystem" placeholder="Operating System">
                     </div>
                     <div class="input-field col s6">
                         <label for="Rating">Rating</label>
                         <input type="text" class="validate" id="Rating" placeholder="Rating">
+                    </div>
+                </div>
+                <div class="row">
+                    <a class="waves-effect waves-light btn right" id="addSoftware">Add<i class="material-icons right">note_add</i></a>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col s12">
+                        <table class="highlight responsive-table" id="softwareKnowledge">
+                            <thead>
+                                <tr>
+                                    <th data-field="software">Software</th>
+                                    <th data-field="version">Version</th>
+                                    <th data-field="operatingSystem">Operating System</th>
+                                    <th data-field="rating">Rating</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="row">
@@ -348,50 +367,70 @@
                 </div>
             </div>
 
-        </div>
-        <div id="tab6" class="col s12 padded-tab">
-            <div class="row">
-                <div class="input-field col s12">
-                    <select id="ServiceTypeId" class="full-width "></select>
+            <div id="tab6" class="col s12 padded-tab">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select id="ServiceTypeId" class="full-width "></select>
+                    </div>
+                    <div class="input-field col s6">
+                        <select id="SourceLanguageId" class="full-width "></select>
+                    </div>
+                    <div class="input-field col s6">
+                        <select id="TargetLanguageId" class="full-width "></select>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="minimumChargeAmount">Price(TL/1000 chr.)</label>
+                        <input type="number" class="validate" id="Price" placeholder="TL/1000 chr.">
+                    </div>
+                    <div class="input-field col s6">
+                        <p>
+                            <input type="checkbox" id="SwornOrCertified" />
+                            <label for="SwornOrCertified">Sworn/Certification?</label>
+                        </p>
+                    </div>
+                    @*ToDo CertificateId: number;
+                UserRateId: number;*@
                 </div>
-                <div class="input-field col s6">
-                    <select id="SourceLanguageId" class="full-width "></select>
+                <div class="row">
+                    <a class="waves-effect waves-light btn right" id="addRate">Add<i class="material-icons right">note_add</i></a>
                 </div>
-                <div class="input-field col s6">
-                    <select id="TargetLanguageId" class="full-width "></select>
+                <hr />
+                <div class="row">
+                    <div class="col s12">
+                        <table class="highlight responsive-table" id="translatorRate">
+                            <thead>
+                                <tr>
+                                    <th data-field="serviceType">Service Type</th>
+                                    <th data-field="sourceLanguage">Source Language</th>
+                                    <th data-field="targetLanguage">Target Language</th>
+                                    <th data-field="price">Price</th>
+                                    <th data-field="swornCertification">Sworn/Certification</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="input-field col s6">
-                    <label for="minimumChargeAmount">Price(TL/1000 chr.)</label>
-                    <input type="number" class="validate" id="Price" placeholder="TL/1000 chr.">
+                <div class="row">
+                    <a class="waves-effect waves-light btn right" id="nextTo7">Next<i class="material-icons right">play_arrow</i></a>
                 </div>
-                <div class="input-field col s6">
-                    <p>
-                        <input type="checkbox" id="SwornOrCertified" />
-                        <label for="agreement">Sworn/Certification?</label>
-                    </p>
-                </div>
-                @*ToDo CertificateId: number;
-                    UserRateId: number;*@
             </div>
-            <div class="row">
-                <a class="waves-effect waves-light btn right" id="nextTo7">Next<i class="material-icons right">play_arrow</i></a>
-            </div>
-        </div>
-        <div id="tab7" class="col s12 padded-tab">
-            <div class="row">
-                <div class="input-field col s12">
-                    <label for="Test">Test</label>
-                    <textarea cols="46" rows="3" class="materialize-textarea" id="Test" placeholder="Test"></textarea>
-                </div>
-                <div class="input-field col s12">
-                    <label for="TranslationResult">TranslationResult</label>
-                    <textarea cols="46" rows="3" class="materialize-textarea" id="TranslationResult" placeholder="TranslationResult"></textarea>
-                </div>
-                <div class="input-field col s12">
-                    <a class="waves-effect waves-light btn" id="btnSave"><i class="material-icons left">done</i>Save</a>
-                </div>
+            <div id="tab7" class="col s12 padded-tab">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <label for="Test">Test</label>
+                        <textarea cols="46" rows="3" class="materialize-textarea" id="Test" placeholder="Test"></textarea>
+                    </div>
+                    <div class="input-field col s12">
+                        <label for="TranslationResult">TranslationResult</label>
+                        <textarea cols="46" rows="3" class="materialize-textarea" id="TranslationResult" placeholder="TranslationResult"></textarea>
+                    </div>
+                    <div class="input-field col s12">
+                        <a class="waves-effect waves-light btn" id="btnSave"><i class="material-icons left">done</i>Save</a>
+                    </div>
 
 
+                </div>
             </div>
         </div>
     </div>
