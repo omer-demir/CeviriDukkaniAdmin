@@ -10,7 +10,7 @@ interface IDataService {
     getTranslationSoftwares(callback: any): void;
     getCurrencies(callback: any): void;
     getLanguages(callback: any): void;
-    getTargetLanguages(sourceLanguageId: number,callback: any): void;
+    getTargetLanguages(sourceLanguageId: number, callback: any): void;
     getTerminologies(callback: any): void;
 }
 
@@ -122,6 +122,16 @@ class DataService implements IDataService {
     getCountriesAndCity(callback: any) {
         var settings: JQueryAjaxSettings = {
             url: '/app/countriesToCities.json',
+            type: 'GET',
+            success: callback
+        };
+
+        return $.ajax(settings);
+    }
+
+    getTranslationQualities(callback: any) {
+        var settings: JQueryAjaxSettings = {
+            url: this.commonApiUrl + 'getTranslationQualities',
             type: 'GET',
             success: callback
         };
