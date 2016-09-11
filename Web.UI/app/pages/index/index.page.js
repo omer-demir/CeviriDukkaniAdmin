@@ -5,6 +5,7 @@
 (function () {
     var dropzoneElement;
     var dataService = new DataService();
+    var document;
     function initializeDropzone() {
         var dropzoneOpt = {
             url: "http://localhost:8003/api/documentapi/uploadTranslationDocument",
@@ -32,6 +33,7 @@
                     CharCount: response.Data.CharCount,
                     CharCountWithSpaces: response.Data.CharCountWithSpaces
                 };
+                document = documentDto;
                 $('.dz-error-mark').hide();
                 $('#txtPageCount').text(documentDto.PageCount);
                 $('#txtCharCount').text(documentDto.CharCount);
@@ -46,22 +48,13 @@
                 $('#txtPageCount').val("");
                 $('#txtCharCount').val("");
                 $('#txtCharCountWithSpaces').val("");
+                document = null;
             }
         };
         dropzoneElement = new Dropzone("#file", dropzoneOpt);
     }
     $('#sourceLanguage').on('select2:select', function (e) {
-        dataService.getTargetLanguages(e.params.data.id, function (result) {
-            var morphedResult = [];
-            result.forEach(function (item) {
-                morphedResult.push(item.targetLanguage);
-            });
-            var opt = Util.extendOptions(Util.convertToSelect2Data(morphedResult), {
-                placeholder: 'Lütfen seçim yapınız',
-                multiple: true
-            });
-            $('#targetLanguages').select2(opt);
-        });
+        updateTargetLanguagesDropdown(e.params.data.id);
     });
     $(function () {
         $("#processTabs").tabs({ show: { effect: "fade", duration: 400 } });
@@ -73,16 +66,47 @@
         $('.select').select2(Util.extendOptions([]));
         initializeDropzone();
         dataService.getLanguages(function (result) {
-            var opt = Util.extendOptions(Util.convertToSelect2Data(result), {
-                placeholder: 'Lütfen seçim yapınız'
-            });
-            $('#sourceLanguage').select2(opt);
+            initSourceLanguageDropdown(result);
         });
         dataService.getTerminologies(function (result) {
-            $('#terminology').select2({
-                data: Util.convertToSelect2Data(result)
-            });
+            initTerminologiesDropdown(result);
+        });
+        dataService.getTranslationQualities(function (result) {
+            initTranslationQualitiesDropdown(result);
         });
     });
+    function initSourceLanguageDropdown(data) {
+        var opt = Util.extendOptions(Util.convertToSelect2Data(data), {
+            placeholder: 'Lütfen seçim yapınız'
+        });
+        $('#sourceLanguage').select2(opt);
+    }
+    ;
+    function initTerminologiesDropdown(data) {
+        $('#terminology').select2({
+            data: Util.convertToSelect2Data(data)
+        });
+    }
+    ;
+    function initTranslationQualitiesDropdown(data) {
+        $('#translationQuality').select2({
+            data: Util.convertToSelect2Data(data)
+        });
+    }
+    ;
+    function updateTargetLanguagesDropdown(id) {
+        dataService.getTargetLanguages(id, function (result) {
+            var morphedResult = [];
+            result.forEach(function (item) {
+                morphedResult.push(item.targetLanguage);
+            });
+            var opt = Util.extendOptions(Util.convertToSelect2Data(morphedResult), {
+                placeholder: 'Lütfen seçim yapınız',
+                multiple: true
+            });
+            $('#targetLanguages').select2(opt);
+        });
+    }
+    ;
 })();
 //# sourceMappingURL=index.page.js.map

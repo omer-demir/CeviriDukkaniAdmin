@@ -28,6 +28,11 @@ var User = (function () {
     }
     return User;
 }());
+var UserRole = (function () {
+    function UserRole() {
+    }
+    return UserRole;
+}());
 var UserContact = (function () {
     function UserContact() {
     }
@@ -68,14 +73,14 @@ var Rate = (function () {
     }
     return Rate;
 }());
-var RateItemDto = (function () {
-    function RateItemDto() {
+var RateItem = (function () {
+    function RateItem() {
     }
-    return RateItemDto;
+    return RateItem;
 }());
-var UserDocumentDto = (function () {
-    function UserDocumentDto() {
+var UserDocument = (function () {
+    function UserDocument() {
     }
-    return UserDocumentDto;
+    return UserDocument;
 }());
 //# sourceMappingURL=ceviri.classes.js.map

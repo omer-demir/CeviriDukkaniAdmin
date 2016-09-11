@@ -55,11 +55,24 @@ var Util = (function () {
             ignore: "",
             rules: rules,
             errorPlacement: function (error, element) {
-                $(element).siblings("label[for='" + element.attr("id") + "']").attr('data-error', error.text());
+                var $elem = $(element);
+                var $label = $(element).siblings("label[for='" + $elem.attr("id") + "']");
+                if ($label.length > 0) {
+                    $label.attr('data-error', error.text());
+                }
+                else {
+                    $elem.siblings('.select2').css('border', '1px solid red');
+                }
             },
             success: function (label, element) {
                 var $elem = $(element);
-                $(element).siblings("label[for='" + $elem.attr("id") + "']").attr('data-error', '');
+                var $label = $(element).siblings("label[for='" + $elem.attr("id") + "']");
+                if ($label.length > 0) {
+                    $label.attr('data-error', '');
+                }
+                else {
+                    $elem.siblings('.select2').css('border', 'none');
+                }
             },
             submitHandler: callback
         });

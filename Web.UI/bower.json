@@ -20,6 +20,7 @@
     "lodash": "^4.15.0",
     "bootstrap": "4.0.0-alpha.3",
     "select2": "^4.0.3",
-    "dropzone": "^4.3.0"
+    "dropzone": "^4.3.0",
+    "toastr": "^2.1.3"
   }
 }

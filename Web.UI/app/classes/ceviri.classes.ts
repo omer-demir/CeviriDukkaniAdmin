@@ -33,6 +33,14 @@ class User {
     userContact: UserContact;
     userAbility: UserAbility;
     userPayment: UserPayment;
+    userRoles: Array<UserRole>;
+    userRate: Rate;
+}
+
+
+class UserRole {
+    userId: number;
+    userRoleTypeId: number;
 }
 
 class UserContact {
@@ -60,7 +68,8 @@ class UserAbility {
 }
 
 class Specialization {
-    id:number;
+    userAbilityId: number;
+    terminologyId:number;
 }
 
 class Capacity {
@@ -78,11 +87,11 @@ class UserPayment {
 }
 
 class TechnologyKnowledge {
-    SoftwareId: number;
-    SoftwareVersion: string;
-    OperatingSystem: string;
-    Rating: number;
-    UserAbilityId: number;
+    softwareId: number;
+    softwareVersion: string;
+    operatingSystem: string;
+    rating: number;
+    userAbilityId: number;
 }
 
 class BankAccount {
@@ -99,28 +108,28 @@ class BankAccount {
 }
 
 class Rate{
-    RateItems: RateItemDto[];
-    DtpRate: number;
-    GlossaryCreationRate: number;
-    TranslationMemoryManagementRate: number;
-    TerminologyExtractionRate: number;
-    ReviewSmeRate: number;
-    LinguisticTestingRate: number;
-    ReviewLqaRate: number;
-    UserDocuments: UserDocumentDto[];
-    UserRateId: number;
+    rateItems: RateItem[];
+    dtpRate: number;
+    glossaryCreationRate: number;
+    translationMemoryManagementRate: number;
+    terminologyExtractionRate: number;
+    reviewSmeRate: number;
+    linguisticTestingRate: number;
+    reviewLqaRate: number;
+    userDocuments: UserDocument[];
+    userRateId: number;
 }
 
-class RateItemDto {
-    ServiceTypeId: number;
-    SourceLanguageId: number;
-    TargetLanguageId: number;
-    Price: number;
-    SwornOrCertified: boolean;
-    CertificateId: number;
-    UserRateId: number;
+class RateItem {
+    serviceTypeId: number;
+    sourceLanguageId: number;
+    targetLanguageId: number;
+    price: number;
+    swornOrCertified: boolean;
+    certificateId: number;
+    userRateId: number;
 }
 
-class UserDocumentDto {
-    UserDocumentTypeId: number;
+class UserDocument {
+    userDocumentTypeId: number;
 }

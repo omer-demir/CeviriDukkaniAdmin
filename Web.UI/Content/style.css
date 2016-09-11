@@ -222,18 +222,6 @@ span.middot {
 .clear-bottommargin {
   margin-bottom: -50px !important; }
 
-.allmargin-xs { margin: 15px !important; }
-
-.leftmargin-xs { margin-left: 15px !important; }
-
-.rightmargin-xs { margin-right: 15px !important; }
-
-.topmargin-xs { margin-top: 15px !important; }
-
-.bottommargin-xs { margin-bottom: 15px !important; }
-
-.clear-bottommargin-xs { margin-bottom: -15px !important; }
-
 .allmargin-sm {
   margin: 30px !important; }
 
@@ -314,19 +302,6 @@ span.middot {
 
 .noradius {
   border-radius: 0; }
-
-
-.allpadding-xs { padding: 15px !important; }
-
-.leftpadding-xs { padding-left: 15px !important; }
-
-.rightpadding-xs { padding-right: 15px !important; }
-
-.toppadding-xs { padding-top: 15px !important; }
-
-.bottompadding-xs { padding-bottom: 15px !important; }
-
-.clear-bottompadding-xs { padding-bottom: -15px !important; }
 
 .col-padding {
   padding: 60px; }
@@ -831,8 +806,7 @@ body.stretched #header.full-header .container {
 
 #header.full-header #logo {
   padding-right: 30px;
-  margin-right: 30px;
-  border-right: 1px solid #EEE; }
+  margin-right: 30px; }
 
 #header.transparent-header.full-header #logo {
   border-right-color: rgba(0, 0, 0, 0.1); }
@@ -893,8 +867,7 @@ body.stretched #header.full-header .container {
 #header.full-header #primary-menu > ul {
   float: left;
   padding-right: 15px;
-  margin-right: 15px;
-  border-right: 1px solid #EEE; }
+  margin-right: 15px; }
 
 #header.transparent-header.full-header #primary-menu > ul {
   border-right-color: rgba(0, 0, 0, 0.1); }
@@ -12208,4 +12181,45 @@ body:not(.no-transition) #wrapper,
     opacity: 0.7; }
   100% {
     opacity: 0.0; } }
+
+.control {
+  display: inline-block;
+  /*width: 130px;*/
+  vertical-align: middle; }
+
+.clock {
+  position: relative;
+  height: 200px;
+  max-width: 700px;
+  width: 100%;
+  display: block;
+  margin: 50px auto;
+  font-size: 150px;
+  color: #0277BD;
+  text-align: center;
+  line-height: 200px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.4s ease-in, box-shadow 0.2s; }
+
+.clock.inactive {
+  color: #9e9e9e; }
+
+.clock .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.timer-btn {
+  font-size: 32px;
+  cursor: pointer; }
+
+@media (max-width: 800px) {
+  .clock {
+    font-size: 60px;
+    height: 180px;
+    line-height: 180px;
+    margin-top: 20px; } }
 

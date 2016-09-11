@@ -93,6 +93,14 @@ var DataService = (function () {
         };
         return $.ajax(settings);
     };
+    DataService.prototype.getTranslationQualities = function (callback) {
+        var settings = {
+            url: this.commonApiUrl + 'getTranslationQualities',
+            type: 'GET',
+            success: callback
+        };
+        return $.ajax(settings);
+    };
     DataService.prototype.saveUser = function (data, callback) {
         var settings = {
             url: this.userApiUrl + 'addUser',

@@ -42,27 +42,43 @@ namespace Web.Business.Services {
         }
 
         protected ServiceResult PostAsAsync(HttpClient httpClient, string action, object data, int userId = 0) {
-            EnchaneRequestWithUserInfo(httpClient, userId);
-            var response = httpClient.PostAsJsonAsync(action, data).Result;
-            return GetContentAsServiceResult(response);
+            try {
+                EnchaneRequestWithUserInfo(httpClient, userId);
+                var response = httpClient.PostAsJsonAsync(action, data).Result;
+                return GetContentAsServiceResult(response);
+            } catch (Exception exc) {
+                return new ServiceResult { Exception = exc, ExceptionCode = "General", ServiceResultType = ServiceResultType.Fail };
+            }
         }
 
         protected ServiceResult GetAsAsync(HttpClient httpClient, string action, int userId = 0) {
-            EnchaneRequestWithUserInfo(httpClient, userId);
-            var response = httpClient.GetAsync(action).Result;
-            return GetContentAsServiceResult(response);
+            try {
+                EnchaneRequestWithUserInfo(httpClient, userId);
+                var response = httpClient.GetAsync(action).Result;
+                return GetContentAsServiceResult(response);
+            } catch (Exception exc) {
+                return new ServiceResult { Exception = exc, ExceptionCode = "General", ServiceResultType = ServiceResultType.Fail };
+            }
         }
 
         protected ServiceResult<T> GetAsAsync<T>(HttpClient httpClient, string action, int userId = 0) where T : class {
-            EnchaneRequestWithUserInfo(httpClient, userId);
-            var response = httpClient.GetAsync(action).Result;
-            return GetContentAsServiceResult<T>(response);
+            try {
+                EnchaneRequestWithUserInfo(httpClient, userId);
+                var response = httpClient.GetAsync(action).Result;
+                return GetContentAsServiceResult<T>(response);
+            } catch (Exception exc) {
+                return new ServiceResult<T> { Exception = exc, ExceptionCode = "General", ServiceResultType = ServiceResultType.Fail };
+            }
         }
 
         protected ServiceResult<T> PostAsAsync<T>(HttpClient httpClient, string action, object data, int userId = 0) where T : class {
-            EnchaneRequestWithUserInfo(httpClient, userId);
-            var response = httpClient.PostAsJsonAsync(action, data).Result;
-            return GetContentAsServiceResult<T>(response);
+            try {
+                EnchaneRequestWithUserInfo(httpClient, userId);
+                var response = httpClient.PostAsJsonAsync(action, data).Result;
+                return GetContentAsServiceResult<T>(response);
+            } catch (Exception exc) {
+                return new ServiceResult<T> { Exception = exc, ExceptionCode = "General", ServiceResultType = ServiceResultType.Fail };
+            }
         }
 
         protected enum ServiceUrl {
@@ -75,7 +91,7 @@ namespace Web.Business.Services {
         }
 
         private ServiceResult GetContentAsServiceResult(HttpResponseMessage response) {
-            var result= Regex.Unescape(response.Content.ReadAsStringAsync().Result.Replace(@"\", ""));
+            var result = Regex.Unescape(response.Content.ReadAsStringAsync().Result.Replace(@"\", ""));
             var deserializedObject = new JavaScriptSerializer().Deserialize<ServiceResult>(result);
             return deserializedObject;
         }

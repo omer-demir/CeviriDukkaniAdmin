@@ -155,7 +155,6 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Content\images\icons\" />
-    <Folder Include="dist\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -226,6 +225,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CustomRoute.cs" />
+    <Compile Include="Helpers\CustomRouteHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1637,6 +1638,8 @@
     <Content Include="Content\js\plugins\jquery.validation.js" />
     <Content Include="Content\js\plugins\jquery.youtube.js" />
     <Content Include="Content\js\prettify.js" />
+    <Content Include="Content\plugins\materialize\fonts\material-design-icons\LICENSE.txt" />
+    <Content Include="Content\plugins\materialize\fonts\material-design-icons\Material-Design-Icons.svg" />
     <Content Include="Content\plugins\materialize\js\animation.js" />
     <Content Include="Content\plugins\materialize\js\materialize.js" />
     <Content Include="Content\plugins\materialize\js\materialize.min.js" />
@@ -1674,6 +1677,15 @@
     </Content>
     <Content Include="Content\plugins\materialize\sass\materialize.min.css">
       <DependentUpon>materialize.css</DependentUpon>
+    </Content>
+    <Content Include="Content\plugins\timer\hammer.js" />
+    <Content Include="Content\plugins\timer\script.js" />
+    <Content Include="Content\plugins\timer\timer.js" />
+    <Content Include="Content\sass\custom.css">
+      <DependentUpon>custom.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\sass\custom.min.css">
+      <DependentUpon>custom.css</DependentUpon>
     </Content>
     <Content Include="Content\style-import.css" />
     <Content Include="Content\style-rtl.css" />
@@ -2016,6 +2028,10 @@
     <Content Include="Content\plugins\materialize\sass\components\_variables.scss" />
     <Content Include="Content\plugins\materialize\sass\components\_waves.scss" />
     <Content Include="Content\plugins\materialize\sass\materialize.scss" />
+    <Content Include="Content\sass\custom.scss" />
+    <Content Include="Content\plugins\materialize\fonts\material-design-icons\Material-Design-Icons.eot" />
+    <Content Include="Content\plugins\materialize\fonts\material-design-icons\Material-Design-Icons.ttf" />
+    <Content Include="Content\plugins\materialize\fonts\material-design-icons\Material-Design-Icons.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dx\css\dx.android5.light.css" />
     <Content Include="Scripts\dx\css\dx.common.css" />
