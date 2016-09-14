@@ -612,5 +612,32 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             return response;
         }
 
+        [HttpGet, Route("getWorkingTypes")]
+        public HttpResponseMessage GetWorkingTypes() {
+            var response = new HttpResponseMessage();
+            var serviceResult = _commonService.GetWorkingTypes();
+            if (serviceResult.ServiceResultType != ServiceResultType.Success) {
+                response.StatusCode = HttpStatusCode.InternalServerError;
+                return response;
+            }
+
+            response.StatusCode = HttpStatusCode.OK;
+            response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
+            return response;
+        }
+        [HttpGet, Route("getServiceTypes")]
+        public HttpResponseMessage GetServiceTypes() {
+            var response = new HttpResponseMessage();
+            var serviceResult = _commonService.GetServiceTypes();
+            if (serviceResult.ServiceResultType != ServiceResultType.Success) {
+                response.StatusCode = HttpStatusCode.InternalServerError;
+                return response;
+            }
+
+            response.StatusCode = HttpStatusCode.OK;
+            response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
+            return response;
+        }
+
     }
 }

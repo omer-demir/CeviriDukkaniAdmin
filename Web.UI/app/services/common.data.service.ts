@@ -69,16 +69,6 @@ class DataService implements IDataService {
         return $.ajax(settings);
     }
 
-    getCountries(callback: any) {
-        var settings: JQueryAjaxSettings = {
-            url: this.commonApiUrl + 'getCountries',
-            type: 'GET',
-            success: callback
-        };
-
-        return $.ajax(settings);
-    }
-
     getSoftwares(callback: any) {
         var settings: JQueryAjaxSettings = {
             url: this.commonApiUrl + 'getSoftwares',
@@ -129,9 +119,61 @@ class DataService implements IDataService {
         return $.ajax(settings);
     }
 
+    getCountries(callback: any) {
+        var settings: JQueryAjaxSettings = {
+            url: this.commonApiUrl + 'getCountries',
+            type: 'GET',
+            success: callback
+        };
+
+        return $.ajax(settings);
+    }
+
+    getCitiesByCountryId(callback: any,countryId:number) {
+        var settings: JQueryAjaxSettings = {
+            url: this.commonApiUrl + 'getCitiesByCountryId',
+            type: 'GET',
+            success: callback,
+            data: { countryId: countryId}
+        };
+
+        return $.ajax(settings);
+    }
+
+    getDistrictsByCityId(callback: any,cityId:number) {
+        var settings: JQueryAjaxSettings = {
+            url: this.commonApiUrl + 'getDistrictByCityId',
+            type: 'GET',
+            success: callback,
+            data: { cityId: cityId }
+        };
+
+        return $.ajax(settings);
+    }
+
     getTranslationQualities(callback: any) {
         var settings: JQueryAjaxSettings = {
             url: this.commonApiUrl + 'getTranslationQualities',
+            type: 'GET',
+            success: callback
+        };
+
+        return $.ajax(settings);
+    }
+
+    getWorkingTypes(callback: any) {
+        var settings: JQueryAjaxSettings = {
+            url: this.commonApiUrl + 'getWorkingTypes',
+            type: 'GET',
+            success: callback
+        };
+
+        return $.ajax(settings);
+    }
+
+    getServiceTypes(callback: any) {
+        var settings: JQueryAjaxSettings = {
+            url: this.commonApiUrl + 'getServiceTypes',
             type: 'GET',
             success: callback
         };

@@ -1,5 +1,5 @@
 ﻿/// <reference path="../../typings/globals/jquery.validation/index.d.ts" />
-$.validator.addMethod('checkbox', (value:any, element:any, param:any) => {
+$.validator.addMethod('checkbox', (value: any, element: any, param: any) => {
     if ($(element).prop('checked')) {
         return true;
     }
@@ -42,16 +42,42 @@ class Util {
         return baseOptions;
     }
 
-    static getAsSelectData(data: any) {
-        var castedData = <Array<KeyValue>>data;
-        var selectData = castedData.map(c => {
-            return ({ id: c.id, text: c.name });
-        });
+    static getAsSelectData(data: any, relatedKey?: string) {
 
+        var selectData: { id: number; text: string }[];
+        if (relatedKey) {
+            var casted2Data = <Array<any>>data;
+            selectData = casted2Data.map(c => {
+                var val:any;
+                if (relatedKey.indexOf(".") > -1) {
+                    var splitted = relatedKey.split('.');
+                    var tempVal:any;
+                    for (var i = 0; i < splitted.length; i++) {
+                        if (tempVal) {
+                            tempVal = tempVal[splitted[i]];
+                        } else {
+                            tempVal = c[splitted[i]];    
+                        }
+                        
+                    }
+                    val = tempVal;
+                } else {
+                    val = c[relatedKey];
+                }
+
+                return ({ id: c.id, text: val });
+            });
+        } else {
+            var castedData = <Array<KeyValue>>data;
+            selectData = castedData.map(c => {
+                return ({ id: c.id, text: c.name });
+            });
+        }
         return selectData;
+
     }
 
-    static handleValidationForm(elem: string, rules: any, callback: (form: any)=>void) {
+    static handleValidationForm(elem: string, rules: any, callback: (form: any) => void) {
         var form2 = $(elem);
 
         form2.validate({
@@ -60,7 +86,7 @@ class Util {
             focusInvalid: false,
             ignore: "",
             rules: rules,
-            errorPlacement: (error:any, element:any) => { // render error placement for each input type
+            errorPlacement: (error: any, element: any) => { // render error placement for each input type
                 var $elem = $(element);
                 var $label = $(element).siblings("label[for='" + $elem.attr("id") + "']");
                 if ($label.length > 0) {
@@ -77,7 +103,7 @@ class Util {
                 } else {
                     $elem.siblings('.select2').css('border', 'none');
                 }
-                
+
             },
             submitHandler: callback
         });

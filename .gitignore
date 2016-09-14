@@ -214,3 +214,15 @@ ModelManifest.xml
 /Web.UI/bower_components
 /Web.UI/.tscache/default
 dist
+/Web.UI/app/*.js
+/Web.UI/app/*.map
+/Web.UI/app/classes/util.js.map
+/Web.UI/app/classes/util.js
+/Web.UI/app/classes/ceviri.classes.js.map
+/Web.UI/app/classes/ceviri.classes.js
+translator.sign.up.js.map
+translator.sign.up.js
+index.page.js.map
+index.page.js
+common.data.service.js.map
+common.data.service.js

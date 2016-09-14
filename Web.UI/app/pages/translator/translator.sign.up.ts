@@ -8,26 +8,16 @@ declare var $: JQueryStatic;
 
 ((() => {
     var dataService = new DataService;
-    var countriesCities: any = [];
     var technologyKnowledges: Array<TechnologyKnowledge> = new Array<TechnologyKnowledge>();
     var rateItems: Array<RateItem> = new Array<RateItem>();
-    function getAsData(data: any) {
-        var result: any = [];
-        var i: number = 1;
-        for (var prop in data) {
-            if (data.hasOwnProperty(prop)) {
-                result.push({
-                    id: i,
-                    text: prop,
-                    cities: data[prop]
-                });
-            }
-        }
-        return result;
-    }
+
     function initCityWithData(data: any[]) {
-        $('#City').select2(Util.extendOptions(data, { placeholder: 'Please select your city' }));
+        $("#City").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select your city' }));
         $("#City").select2("val", "-1");
+    }
+    function initDistrictWithData(data: any[]) {
+        $("#district").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select your district/county' }));
+        $("#district").select2("val", "-1");
     }
     function changeVisibleByClassName(className: string, visible: boolean) {
         let elements: NodeListOf<HTMLElement> = document.getElementsByClassName(className) as NodeListOf<HTMLElement>;
@@ -42,40 +32,59 @@ declare var $: JQueryStatic;
 
         dataService.getCountries((data: any) => {
 
-            $("#Nationality").select2(Util.extendOptions(Util.getAsSelectData(data)));
-            $("#Nationality2").select2(Util.extendOptions(Util.getAsSelectData(data)));
-        });
+            $("#Nationality").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select your nationality' }));
+            $("#Nationality2").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select your second nationality' }));
 
-        dataService.getTongues((data: any) => {
-            $("#MotherTongue").select2(Util.extendOptions(Util.getAsSelectData(data)));
-            $("#Tongue").select2(Util.extendOptions(Util.getAsSelectData(data)));
-
-        });
-
-        dataService.getCountriesAndCity((data: any) => {
-            countriesCities = getAsData(data);
-            var opt = Util.extendOptions(countriesCities, { placeholder: 'Please select country' });
-            $('#country').select2(opt);
-            $('#Resident').select2(opt);
-
+            $("#country").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select country' }));
+            $('#Resident').select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select residency' }));
 
             $("#country").select2("val", "-1");
             $("#Resident").select2("val", "-1");
         });
 
+        dataService.getTongues((data: any) => {
+            $("#motherTongue").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select your mother tongue' }));
+            $("#tongue").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select your other languages' }));
+            $("#bilingualTongue").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select your bilingual tongue' }));
+
+            $("#motherTongue").select2("val", "-1");
+            $("#tongue").select2("val", "-1");
+            $("#bilingualTongue").select2("val", "-1");
+        });
+
         dataService.getSoftwares((data: any) => {
             $("#Software").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select software' }));
+            $("#Software").select2("val", "-1");
+
         });
 
         dataService.getSpecialization((data: any) => {
-            $("#Specialization").select2(Util.extendOptions(Util.getAsSelectData(data), { multiple: true }));
+            $("#Specialization").select2(Util.extendOptions(Util.getAsSelectData(data), { multiple: true, placeholder: 'Please select your specialized languages' }));
+            $("#Specialization").select2("val", "-1");
         });
 
         dataService.getLanguages((data: any) => {
             $("#SourceLanguageId").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select source language' }));
+            $("#SourceLanguageId").select2("val", "-1");
+        });
+
+        dataService.getCurrencies((data: any) => {
+            $("#currency").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select currency' }));
+            $("#currency").select2("val", "-1");
+        });
+
+        dataService.getWorkingTypes((data: any) => {
+            $("#workingType").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select working type' }));
+            $("#workingType").select2("val", "-1");
+        });
+
+        dataService.getServiceTypes((data: any) => {
+            $("#ServiceTypeId").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select service type' }));
+            $("#ServiceTypeId").select2("val", "-1");
         });
 
         $('#WorkingDays').select2(Util.extendOptions(Constants.Days, { multiple: true }));
+        $("#WorkingDays").select2("val", "-1");
     }
 
     function addSoftware() {
@@ -138,17 +147,32 @@ declare var $: JQueryStatic;
          */
         $('#country').on({
             'select2:select': (e: any) => {
-                var country = countriesCities.find((item: any) => (item.id == e.params.data.id));
-                initCityWithData(country.cities);
+                dataService.getCitiesByCountryId((data: any) => {
+                    initCityWithData(data);
+
+                }, e.params.data.id);
             },
             'select2:unselect': () => {
                 $('#City').select2("val", "-1");
             }
         });
+
+        $('#City').on({
+            'select2:select': (e: any) => {
+                dataService.getDistrictsByCityId((data: any) => {
+                    initDistrictWithData(data);
+
+                }, e.params.data.id);
+            },
+            'select2:unselect': () => {
+                $('#district').select2("val", "-1");
+            }
+        });
         $('#SourceLanguageId').on({
             'select2:select': (e: any) => {
                 dataService.getTargetLanguages(e.params.data.id, (data: any) => {
-                    $("#TargetLanguageId").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select target language' }));
+                    $("#TargetLanguageId").select2(Util.extendOptions(Util.getAsSelectData(data,"targetLanguage.name"), { placeholder: 'Please select target language' }));
+                    $("#TargetLanguageId").select2("val", "-1");
                 });
             },
             'select2:unselect': () => {
