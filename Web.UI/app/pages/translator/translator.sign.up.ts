@@ -58,8 +58,8 @@ declare var $: JQueryStatic;
 
         });
 
-        dataService.getSpecialization((data: any) => {
-            $("#Specialization").select2(Util.extendOptions(Util.getAsSelectData(data), { multiple: true, placeholder: 'Please select your specialized languages' }));
+        dataService.getTerminologies((data: any) => {
+            $("#Specialization").select2(Util.extendOptions(Util.getAsSelectData(data), { multiple: true, placeholder: 'Please select your specialized field' }));
             $("#Specialization").select2("val", "-1");
         });
 
@@ -323,7 +323,7 @@ declare var $: JQueryStatic;
             }
 
 
-            var user = new User();
+            let user = new User();
             user.name = $('#name').val();
             user.surname = $('#surname').val();
             user.email = $('#email').val();
@@ -331,12 +331,13 @@ declare var $: JQueryStatic;
             user.mobilePhone = $('#mobilePhone').val();
             user.password = $('#password').val();
 
-            var defaultUserRole = new UserRole();
+            let defaultUserRole = new UserRole();
             defaultUserRole.userRoleTypeId = 1;
+            user.userRoles = new Array<UserRole>();
             user.userRoles.push(defaultUserRole);
 
 
-            var userContact = new UserContact();
+            let userContact = new UserContact();
             userContact.address = $('#address').val();
             userContact.postalCode = $('#postalCode').val();
             userContact.alternativeEmail = $('#alternativeEmail').val();
@@ -347,14 +348,14 @@ declare var $: JQueryStatic;
             userContact.districtId = $('#district').val();
             user.userContact = userContact;
 
-            var userAbility = new UserAbility();
+            let userAbility = new UserAbility();
             userAbility.motherTongueId = $('#motherTongue').val();
             userAbility.tongueId = $('#tongue').val();
             userAbility.bilingualTongueId = $('#bilingualTongue').val();
             userAbility.yearsOfExperience = $('#yearsOfExperience').val();
             userAbility.technologyKnowledges = technologyKnowledges;
 
-            var capacity = new Capacity();
+            let capacity = new Capacity();
             capacity.translation = $('#translation').val();
             capacity.reviews = $('#reviews').val();
             capacity.proofReading = $('#proofReading').val();
@@ -364,18 +365,18 @@ declare var $: JQueryStatic;
             userAbility.qualifications = $('#qualifications').val();
             userAbility.mainClients = $('#mainClients').val();
 
-            var specializations =<Array<any>> $('#Specialization').val();
-            var arrayOfSpecs = new Array<Specialization>();
+            let specializations =<Array<any>> $('#Specialization').val();
+            let arrayOfSpecs = new Array<Specialization>();
             specializations.forEach((item: any) => {
                 var spec = new Specialization();
-                spec.terminologyId = item.id;
+                spec.terminologyId = item;
                 arrayOfSpecs.push(spec);
             });
             userAbility.specializations = arrayOfSpecs;
             user.userAbility = userAbility;
 
-            var userPayment = new UserPayment();
-            var bankAccount = new BankAccount();
+            let userPayment = new UserPayment();
+            let bankAccount = new BankAccount();
 
             if ($('#bankAccountType0').prop('checked')) {
                 bankAccount.bankAccountTypeId =1;    
@@ -414,7 +415,7 @@ declare var $: JQueryStatic;
             userPayment.minimumChargeAmount = $('#minimumChargeAmount').val();
             user.userPayment = userPayment;
 
-            var rate = new Rate();
+            let rate = new Rate();
             rate.rateItems = rateItems;
             user.userRate = rate;
 

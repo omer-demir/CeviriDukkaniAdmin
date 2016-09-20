@@ -81,7 +81,7 @@ class DataService implements IDataService {
 
     getSpecialization(callback: any) {
         var settings: JQueryAjaxSettings = {
-            url: this.commonApiUrl + 'getCountries',
+            url: this.commonApiUrl + 'getSpecializations',
             type: 'GET',
             success: callback
         };
@@ -91,7 +91,7 @@ class DataService implements IDataService {
 
     getTranslationSoftwares(callback: any) {
         var settings: JQueryAjaxSettings = {
-            url: this.commonApiUrl + 'getCountries',
+            url: this.commonApiUrl + 'getSoftwares',
             type: 'GET',
             success: callback
         };
@@ -101,7 +101,7 @@ class DataService implements IDataService {
 
     getCurrencies(callback: any) {
         var settings: JQueryAjaxSettings = {
-            url: this.commonApiUrl + 'getCountries',
+            url: this.commonApiUrl + 'getCurrencies',
             type: 'GET',
             success: callback
         };

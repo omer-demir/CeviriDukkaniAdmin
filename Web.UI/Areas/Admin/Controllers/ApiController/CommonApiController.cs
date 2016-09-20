@@ -625,6 +625,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
         [HttpGet, Route("getServiceTypes")]
         public HttpResponseMessage GetServiceTypes() {
             var response = new HttpResponseMessage();
@@ -639,5 +640,18 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             return response;
         }
 
+        [HttpGet, Route("getCurrencies")]
+        public HttpResponseMessage GetCurrencies() {
+            var response = new HttpResponseMessage();
+            var serviceResult = _commonService.GetCurrencies();
+            if (serviceResult.ServiceResultType != ServiceResultType.Success) {
+                response.StatusCode = HttpStatusCode.InternalServerError;
+                return response;
+            }
+
+            response.StatusCode = HttpStatusCode.OK;
+            response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
+            return response;
+        }
     }
 }
