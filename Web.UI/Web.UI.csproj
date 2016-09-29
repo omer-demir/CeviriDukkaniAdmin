@@ -527,14 +527,12 @@
     <Content Include="Areas\Admin\Theme\images\flag-icons\Tonga.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\Trinidad-and-Tobago.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\Tunisia.png" />
-    <Content Include="Areas\Admin\Theme\images\flag-icons\Turkey.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\Turkmenistan.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\Turks-and-Caicos-Islands.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\Tuvalu.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\Uganda.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\Ukraine.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\United-Arab-Emirates.png" />
-    <Content Include="Areas\Admin\Theme\images\flag-icons\United-Kingdom.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\United-Nations.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\United-States.png" />
     <Content Include="Areas\Admin\Theme\images\flag-icons\Unknown.png" />
@@ -1904,7 +1902,6 @@
     <Content Include="Areas\Admin\Views\Order\Campaigns.cshtml" />
     <Content Include="Areas\Admin\Views\Order\CampaignDetail.cshtml" />
     <Content Include="Areas\Admin\Views\Order\UpdateCampaign.cshtml" />
-    <Content Include="Content\images\referanslar\Thumbs.db" />
     <Content Include="Content\css\colors-rtl.php" />
     <Content Include="Content\css\colors.php" />
     <Content Include="Content\style.scss" />
@@ -2032,6 +2029,7 @@
     <Content Include="Content\plugins\materialize\fonts\material-design-icons\Material-Design-Icons.eot" />
     <Content Include="Content\plugins\materialize\fonts\material-design-icons\Material-Design-Icons.ttf" />
     <Content Include="Content\plugins\materialize\fonts\material-design-icons\Material-Design-Icons.woff" />
+    <None Include="Properties\PublishProfiles\file.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dx\css\dx.android5.light.css" />
     <Content Include="Scripts\dx\css\dx.common.css" />

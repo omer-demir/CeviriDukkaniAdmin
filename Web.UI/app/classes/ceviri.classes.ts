@@ -6,7 +6,13 @@
         { id: 4, text: 'Thursday' },
         { id: 5, text: 'Friday' },
         { id: 6, text: 'Saturday' },
-        { id: 7, text: 'Sunday' }]
+        { id: 7, text: 'Sunday' }];
+
+    static Rates: any[] = [
+        { id: 1, text: 'Beginner' },
+        { id: 2, text: 'Intermediate' },
+        { id: 3, text: 'Professional' }
+    ];
 }
 
 class KeyValue {

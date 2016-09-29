@@ -59,8 +59,8 @@ declare var $: JQueryStatic;
         });
 
         dataService.getTerminologies((data: any) => {
-            $("#Specialization").select2(Util.extendOptions(Util.getAsSelectData(data), { multiple: true, placeholder: 'Please select your specialized field' }));
-            $("#Specialization").select2("val", "-1");
+            $("#SpecializationIhave").select2(Util.extendOptions(Util.getAsSelectData(data), { multiple: true, placeholder: 'Please select your specialized field' }));
+            $("#SpecializationIhave").select2("val", "-1");
         });
 
         dataService.getLanguages((data: any) => {
@@ -83,15 +83,19 @@ declare var $: JQueryStatic;
             $("#ServiceTypeId").select2("val", "-1");
         });
 
-        $('#WorkingDays').select2(Util.extendOptions(Constants.Days, { multiple: true }));
+        $('#WorkingDays').select2(Util.extendOptions(Constants.Days, { multiple: true,placeholder: 'Please select working type' }));
         $("#WorkingDays").select2("val", "-1");
+
+        $('#Rating').select2(Util.extendOptions(Constants.Rates), { placeholder: 'Please select rating' });
+        $("#Rating").select2("val", "-1");
+        
     }
 
     function addSoftware() {
         var software = $('#Software').select2('data')[0].text;
         var softwareVersion = $('#Version').val();
         var operatingSystem = $('#OperatingSystem').val();
-        var rating = $('#Rating').val();
+        var rating = $('#Rating').select2('data')[0].text;
         if (!software && !rating) {
             toastr.error('Please enter software and rating information', 'Error');
             return;
@@ -365,7 +369,7 @@ declare var $: JQueryStatic;
             userAbility.qualifications = $('#qualifications').val();
             userAbility.mainClients = $('#mainClients').val();
 
-            let specializations =<Array<any>> $('#Specialization').val();
+            let specializations = <Array<any>>$('#SpecializationIhave').val();
             let arrayOfSpecs = new Array<Specialization>();
             specializations.forEach((item: any) => {
                 var spec = new Specialization();
