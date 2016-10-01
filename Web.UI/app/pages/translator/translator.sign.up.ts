@@ -83,12 +83,12 @@ declare var $: JQueryStatic;
             $("#ServiceTypeId").select2("val", "-1");
         });
 
-        $('#WorkingDays').select2(Util.extendOptions(Constants.Days, { multiple: true,placeholder: 'Please select working type' }));
+        $('#WorkingDays').select2(Util.extendOptions(Constants.Days, { multiple: true, placeholder: 'Please select working type' }));
         $("#WorkingDays").select2("val", "-1");
 
         $('#Rating').select2(Util.extendOptions(Constants.Rates), { placeholder: 'Please select rating' });
         $("#Rating").select2("val", "-1");
-        
+
     }
 
     function addSoftware() {
@@ -118,7 +118,7 @@ declare var $: JQueryStatic;
         var $table = $('#translatorRate');
         var $tableBody = $table.find('tbody');
 
-        
+
 
         var service = $('#ServiceTypeId').select2('data')[0];
         var sourceLanguage = $('#SourceLanguageId').select2('data')[0];
@@ -175,7 +175,7 @@ declare var $: JQueryStatic;
         $('#SourceLanguageId').on({
             'select2:select': (e: any) => {
                 dataService.getTargetLanguages(e.params.data.id, (data: any) => {
-                    $("#TargetLanguageId").select2(Util.extendOptions(Util.getAsSelectData(data,"targetLanguage.name"), { placeholder: 'Please select target language' }));
+                    $("#TargetLanguageId").select2(Util.extendOptions(Util.getAsSelectData(data, "targetLanguage.name"), { placeholder: 'Please select target language' }));
                     $("#TargetLanguageId").select2("val", "-1");
                 });
             },
@@ -194,6 +194,22 @@ declare var $: JQueryStatic;
          * Wizard events
          */
         $('#nextTo2').on('click', () => {
+            if (isForm1Valid()) {
+                $('ul.tabs').tabs('select_tab', 'tab2');
+            }
+        });
+        $('#saveAndContinueLater').on('click', () => {
+            if (isForm1Valid()) {
+                let user = getUserFromForm();
+                dataService.saveUser(user, (result: any) => {
+                    if (result.IsSuccess) {
+                        toastr.success("Perfect! We saved your profile. You can continue filling up your account details later.");
+                    }
+                });
+            }
+        });
+
+        function isForm1Valid(): Boolean {
             var rules = {
                 name: { required: true },
                 surname: { required: true },
@@ -205,10 +221,9 @@ declare var $: JQueryStatic;
             };
 
             Util.handleValidationForm('#form1', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'tab2'); });
-            if ($('#form1').valid()) {
-                $('ul.tabs').tabs('select_tab', 'tab2');
-            }
-        });
+            return $("#form1").valid();
+        }
+
         $('#nextTo3').on('click', () => {
             var rules = {
                 country: { required: true },
@@ -281,12 +296,6 @@ declare var $: JQueryStatic;
             } else {
                 //show message
             }
-
-
-
-
-
-
         });
         $('#nextTo7').on('click', () => {
             var rules = {
@@ -302,6 +311,17 @@ declare var $: JQueryStatic;
             }
         });
 
+        function getUserFromForm(): User {
+            let user = new User();
+
+            user.name = $('#name').val();
+            user.surname = $('#surname').val();
+            user.email = $('#email').val();
+            user.genderId = $('input[name="gender"]:checked').val();
+            user.mobilePhone = $('#mobilePhone').val();
+            user.password = $('#password').val();
+            return user;
+        }
 
         $('input[type=radio][name=bankAccountType]').change(function () {
 
@@ -326,14 +346,7 @@ declare var $: JQueryStatic;
                 return;
             }
 
-
-            let user = new User();
-            user.name = $('#name').val();
-            user.surname = $('#surname').val();
-            user.email = $('#email').val();
-            user.genderId = $('input[name="gender"]:checked').val();
-            user.mobilePhone = $('#mobilePhone').val();
-            user.password = $('#password').val();
+            let user = getUserFromForm();
 
             let defaultUserRole = new UserRole();
             defaultUserRole.userRoleTypeId = 1;
@@ -383,14 +396,14 @@ declare var $: JQueryStatic;
             let bankAccount = new BankAccount();
 
             if ($('#bankAccountType0').prop('checked')) {
-                bankAccount.bankAccountTypeId =1;    
-            }else if ($('#bankAccountType1').prop('checked')) {
+                bankAccount.bankAccountTypeId = 1;
+            } else if ($('#bankAccountType1').prop('checked')) {
                 bankAccount.bankAccountTypeId = 2;
-            }else if ($('#bankAccountType2').prop('checked')) {
+            } else if ($('#bankAccountType2').prop('checked')) {
                 bankAccount.bankAccountTypeId = 3;
             }
 
-            
+
             switch (bankAccount.bankAccountTypeId) {
                 case 1:
                     bankAccount.bankName = $('#bankName').val();
