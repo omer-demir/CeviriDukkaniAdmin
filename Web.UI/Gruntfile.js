@@ -21,8 +21,7 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: 'sass',
-                    src: ['**/*.scss'],
+                    src: ['Content/**/*.scss'],
                     dest: 'dist',
                     ext: '.css'
                 }]
@@ -59,5 +58,5 @@ module.exports = function (grunt) {
 
     // define the default task that can be run just by typing "grunt" on the command line
     // the array should contains the names of the tasks to run
-    grunt.registerTask('default', ["ts", "watch", "sass"]);
+    grunt.registerTask('default', ["ts", "sass", "watch"]);
 };

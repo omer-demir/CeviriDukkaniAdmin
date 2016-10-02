@@ -8,7 +8,8 @@
 /* ----------------------------------------------------------------
 	Footer
 -----------------------------------------------------------------*/
-
+@import "variables.scss";
+@import "mixins.scss";
 #footer {
 	position: relative;
 	background-color: #EEE;

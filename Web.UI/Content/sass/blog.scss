@@ -9,6 +9,9 @@
 	Blog
 -----------------------------------------------------------------*/
 
+@import "variables.scss";
+@import "mixins.scss";
+
 #posts {
 	position: relative;
 	.entry-content {

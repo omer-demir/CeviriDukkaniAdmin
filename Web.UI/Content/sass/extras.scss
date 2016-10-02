@@ -8,7 +8,8 @@
 /* ----------------------------------------------------------------
 	Bootstrap Specific
 -----------------------------------------------------------------*/
-
+@import "variables.scss";
+@import "mixins.scss";
 .table {
 	.success {
 		color: $success;

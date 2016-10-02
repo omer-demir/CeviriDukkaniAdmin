@@ -8,7 +8,9 @@
 /* ----------------------------------------------------------------
 	Widgets
 -----------------------------------------------------------------*/
+@import "variables.scss";
 
+@import "mixins.scss";
 .widget {
 	position: relative;
 	margin-top: 50px;

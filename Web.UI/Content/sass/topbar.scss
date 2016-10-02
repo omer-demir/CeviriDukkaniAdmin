@@ -4,8 +4,9 @@
 	topbar.scss
 
 -----------------------------------------------------------------*/
+@import "variables.scss";
 
-
+@import "mixins.scss";
 #top-bar {
 	position: relative;
 	border-bottom: 1px solid #EEE;

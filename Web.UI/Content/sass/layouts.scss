@@ -9,7 +9,8 @@
 /* ----------------------------------------------------------------
 	Sections
 -----------------------------------------------------------------*/
-
+@import "variables.scss";
+@import "mixins.scss";
 .section {
 	position: relative;
 	margin: $section-margin 0;

@@ -8,7 +8,8 @@
 /* ----------------------------------------------------------------
 	Shop
 -----------------------------------------------------------------*/
-
+@import "variables.scss";
+@import "mixins.scss";
 .shop {
 	position: relative;
 	margin: 0 -$shop-4-margin -$shop-4-margin 0;

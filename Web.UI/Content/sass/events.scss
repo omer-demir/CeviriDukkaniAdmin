@@ -9,7 +9,8 @@
 	Events
 -----------------------------------------------------------------*/
 
-
+@import "variables.scss";
+@import "mixins.scss";
 .events .entry,
 .ievent {
 	padding: 20px;
