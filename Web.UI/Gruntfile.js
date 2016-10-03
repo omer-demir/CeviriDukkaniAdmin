@@ -19,10 +19,11 @@ module.exports = function (grunt) {
                 options: {
                     sourcemap: 'none'
                 },
+                //files: { 'Content/style.scss': 'dist/style.css' }
                 files: [{
                     expand: true,
-                    src: ['Content/**/*.scss'],
-                    dest: 'dist',
+                    src: ['Content/*.scss'],
+                    dest: 'dist/',
                     ext: '.css'
                 }]
             }

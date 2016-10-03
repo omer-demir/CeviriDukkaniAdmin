@@ -146,6 +146,66 @@ declare var $: JQueryStatic;
         $('ul.tabs').tabs();
         initializeDropdowns();
 
+        var formRules: any = {
+            form1: {
+                name: { required: true },
+                surname: { required: true },
+                email: { required: true, email: true },
+                mobilePhone: { required: true },
+                password: { required: true, minlength: 4, maxlength: 8 },
+                repassword: { required: true, minlength: 4, maxlength: 8, equalTo: '#password' },
+                agreement: { checkbox: true }
+            },
+            form2: {
+                country: { required: true },
+                City: { required: true },
+                district: { required: true },
+                address: { required: true }
+            },
+            form3: {
+                motherTongue: { required: true },
+                tongue: { required: true },
+                translation: { required: true },
+                reviews: { required: true },
+                proofReading: { required: true },
+                qualityEnsureDescription: { required: true },
+                qualifications: { required: true },
+                Specialization: { required: true }
+            },
+            form51: {
+                bankName: { required: true },
+                accountHolderFullName: { required: true },
+                IBAN: { required: true },
+                minimumChargeAmount: { required: true }
+            },
+            form52: {
+                bankName: { required: true },
+                accountHolderFullName: { required: true },
+                beneficiaryAddress: { required: true },
+                accountNumber: { required: true },
+                swiftBicCode: { required: true },
+                cityCountryBank: { required: true },
+                bankAddress: { required: true },
+                minimumChargeAmount: { required: true }
+            },
+            form53: {
+                paypalEmailAddress: { required: true, email: true },
+                minimumChargeAmount: { required: true }
+            },
+            form6: {
+                ServiceType: { required: true },
+                SourceLanguage: { required: true },
+                TargetLanguage: { required: true },
+                minimumChargeAmount: { required: true }
+            }
+        };
+
+        function validateForm(formElement: string, rules: any[],successCallback:()=>void) {
+            Util.handleValidationForm(formElement, rules, successCallback);
+            return $(formElement).valid();
+        }
+
+
         /**
          * Events
          */
@@ -194,35 +254,32 @@ declare var $: JQueryStatic;
          * Wizard events
          */
         $('#nextTo2').on('click', () => {
-            if (isForm1Valid()) {
+            var result=validateForm('#form1', formRules.form1, () => { $('ul.tabs').tabs('select_tab', 'tab2');});
+
+            if (result) {
                 $('ul.tabs').tabs('select_tab', 'tab2');
             }
         });
         $('#saveAndContinueLater').on('click', () => {
-            if (isForm1Valid()) {
+            var selectedTab = $('ul.tabs').tabs('selected');
+            
+            let callback = () => {
                 let user = getUserFromForm();
                 dataService.saveUser(user, (result: any) => {
                     if (result.IsSuccess) {
                         toastr.success("Perfect! We saved your profile. You can continue filling up your account details later.");
                     }
                 });
-            }
-        });
-
-        function isForm1Valid(): Boolean {
-            var rules = {
-                name: { required: true },
-                surname: { required: true },
-                email: { required: true, email: true },
-                mobilePhone: { required: true },
-                password: { required: true, minlength: 4, maxlength: 8 },
-                repassword: { required: true, minlength: 4, maxlength: 8, equalTo: '#password' },
-                agreement: { checkbox: true }
             };
 
-            Util.handleValidationForm('#form1', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'tab2'); });
-            return $("#form1").valid();
-        }
+            var result = validateForm('#form1', formRules.form1, callback);
+
+            if (result) {
+                callback();
+            }
+            
+        });
+        
 
         $('#nextTo3').on('click', () => {
             var rules = {
