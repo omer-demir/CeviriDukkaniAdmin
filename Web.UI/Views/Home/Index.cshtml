@@ -43,19 +43,54 @@
     p .count {
         font-weight: bold;
     }
+
+    .vcenter {
+        display: inline-block;
+        vertical-align: middle;
+        float: none;
+    }
+  .buton2 {
+    background: #28BFB6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 10px 20px;
+    font-family: Oxygen,sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    -webkit-box-shadow: 1px 1px 1px 0 rgba(0,0,0,.5);
+    -moz-box-shadow: 1px 1px 1px 0 rgba(0,0,0,.5);
+    box-shadow: 1px 1px 1px 0 rgba(0,0,0,.5);
+}
+
+    .anasayfabutonu {
+        text-align: center;
+        transform: rotate(-8deg);
+        -ms-transform: rotate(-8deg);
+        -webkit-transform: rotate(-8deg);
+        display: inline-block;
+            width: 200px;
+    text-align: -webkit-center;
+    font-size: 28px;
+    }
+
+    .anasayfabutonu:hover {
+        background-color: #fec300;
+    }
 </style>
 
 <section id="slider" class="slider-parallax swiper_wrapper clearfix">
-
     <div class="slider-parallax-inner" style="left:auto">
-
         <div class="swiper-container swiper-parent">
             <div class="swiper-wrapper">
                 <div class="swiper-slide dark" style="background-image: url('/Content/images/slider1-yeni.jpg');">
                     <div class="container clearfix">
-                        <div class="slider-caption slider-caption-center">
+                        @*<div class="">*@
+                        <div class="col-lg-offset-3 col-lg-9 col-md-offset-2 col-md-10 hidden-sm hidden-xs slider-caption">
                             <h2 data-caption-animate="fadeInUp">@*Ne işler çevirdiğimizi bi' bilseniz...*@</h2>
-                            <p data-caption-animate="fadeInUp" data-caption-delay="200"><button class="btn btn-success">ÇEVİRİNİ BAŞLAT</button></p>
+                            <p data-caption-animate="fadeInUp" data-caption-delay="200"><button class="buton2 anasayfabutonu">ÇEVİRİNİ BAŞLAT</button></p>
                         </div>
                     </div>
                 </div>
@@ -96,9 +131,8 @@
 ============================================= -->
 
 <section id="content">
-
     <div class="content-wrap">
-        <div class="container">
+        <div id="yeniis" class="container well">
             <div id="processTabs">
                 <ul class="process-steps bottommargin clearfix">
                     <li>
@@ -125,12 +159,11 @@
                             <select class="select form-control" id="targetLanguages" placeholder="Dil Seçiniz"></select>
                         </div>
                         <div class="line"></div>
-                        <div class="col-md-12  tab-input">
+                        <div class="col-md-6  tab-input">
                             <label for="">Kaynak Dokümanın Alanı</label>
                             <select class="select form-control" id="terminology" placeholder="Alan Seçiniz"></select>
                         </div>
-                        <div class="line"></div>
-                        <div class="col-md-12  tab-input">
+                        <div class="col-md-6  tab-input">
                             <label for="">Çeviri Kalitesi</label>
                             <select class="select form-control" id="translationQuality" placeholder="Kalite Seçiniz"></select>
                         </div>
@@ -171,7 +204,32 @@
             </div>
         </div>
         <div class="line"></div>
+        <div class="tabs tabs-alt tabs-justify clearfix" id="tab-10">
+            <ul class="tab-nav clearfix">
+                <li><a href="#tabs-37">İndirim Fırsatı</a></li>
+                <li><a href="#tabs-38">Referanslarımız</a></li>
+                <li><a href="#tabs-39">Bize Katılın</a></li>
+            </ul>
 
+            <div class="tab-container">
+                <div class="tab-content clearfix embed-responsive-item" id="tabs-37" style="background: url('/Content/images/tabsayfa1.jpg'); background-size: cover;height: 500px;">
+                    <div class="col-lg-6 col-md-6 pull-right" style="color:white!important;margin-top:200px">
+                        <h3 style="color:white!important">Daha önce bizimle hiçbir iş çevirmedin mi?</h3>
+                        <p class="lead">İşte sana güzel bir fırsat! Çeviri Dükkanı sürpriz indirimlerinden faydalanmak için sitemizi takip etmeye devam edin.</p>
+                    </div>
+                </div>
+                <div class="tab-content clearfix embed-responsive-item" id="tabs-38" style="background: url('/Content/images/referanslarimiz.jpg'); background-size: cover;height: 500px;">
+                    <h2 style="color:white!important;margin-top:50px" class="center">İşte bizimle iş çeviren markalardan sadece bazıları!</h2>
+                </div>
+                <div class="tab-content clearfix embed-responsive-item" id="tabs-39" style="background: url('/Content/images/bize-katil.jpg'); background-size: cover;height: 500px;">
+                    <div class="col-lg-6 col-md-8 col-lg-offset-3 col-md-offset-2" style="color:white!important;margin-top:20px; background-color: rgba(26, 188, 156, 0.8)">
+                        <h3 style="color:white!important">İş çevirme konusunda kendine güveniyor musun?</h3>
+                        <p class="lead"> Sana bir teklifimiz var! Çeviri ekibimizin bir parçası ol, en keyifli işleri birlikte çevirelim!
+                            Çevirmen Başvuru Adresimiz: <a href="/Tercuman-Ol-1" style="color:white;">Hemen Bize Katıl!</a></p>
+                    </div>                    
+                </div>
+            </div>
+        </div>
         <div class="container clearfix">
 
             @*<div class="row">
@@ -229,34 +287,7 @@
 
         </div>
 
-        <div class="tabs tabs-alt tabs-justify clearfix" id="tab-10">
-            <ul class="tab-nav clearfix">
-                <li><a href="#tabs-37">İndirim Fırsatı</a></li>
-                <li><a href="#tabs-38">Referanslarımız</a></li>
-                <li><a href="#tabs-39">Bize Katılın</a></li>
-            </ul>
-
-            <div class="tab-container">
-                <div class="tab-content clearfix" id="tabs-37" style="background: url('/Content/images/tabsayfa1.jpg'); background-size: cover;height: 500px;">
-                    <p>
-                        <h4>Daha önce bizimle hiçbir iş çevirmedin mi?</h4>
-
-                        İşte sana güzel bir fırsat! Çeviri Dükkanı sürpriz indirimlerinden faydalanmak için sitemizi takip etmeye devam edin.
-                    </p>
-                </div>
-                <div class="tab-content clearfix" id="tabs-38" style="background: url('/Content/images/referanslarimiz.jpg'); background-size: cover;height: 500px;">
-                    <h4>İşte bizimle iş çeviren markalardan sadece bazıları!</h4>
-                </div>
-                <div class="tab-content clearfix" id="tabs-39" style="background: url('/Content/images/bize-katil.jpg'); background-size: cover;height: 500px;">
-                    <p style="background-color: rgba(254,196,0,0.7)" class="col-sm-6">
-                        İş çevirme konusunda kendine güveniyor musun?
-
-                        Sana bir teklifimiz var! Çeviri ekibimizin bir parçası ol, en keyifli işleri birlikte çevirelim!
-                        Çevirmen Başvuru Adresimiz: <a href="/Tercuman-Ol-1">Hemen Bize Katıl!</a>
-                    </p>
-                </div>
-            </div>
-        </div>
+       
 
         <div class="container clearfix">
 
@@ -266,18 +297,14 @@
                 <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/anadolu.jpg" alt="Clients"></a></div>
                 <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/avea.jpg" alt="Clients"></a></div>
                 <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/beko.jpg" alt="Clients"></a></div>
-                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/bp.jpg" alt="Clients"></a></div>
                 <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/canon.jpg" alt="Clients"></a></div>
                 <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/ege-yapi.jpg" alt="Clients"></a></div>
                 <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/ergo.jpg" alt="Clients"></a></div>
                 <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/ericsson.jpg" alt="Clients"></a></div>
-                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/eti-maden.jpg" alt="Clients"></a></div>
                 <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/acibadem.jpg" alt="Clients"></a></div>
                 <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/eti-maden.jpg" alt="Clients"></a></div>
                 <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/adidas.jpg" alt="Clients"></a></div>
                 <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/coca-cola.jpg" alt="Clients"></a></div>
-                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/calik.jpg" alt="Clients"></a></div>
-                <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/calik.jpg" alt="Clients"></a></div>
                 <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/calik.jpg" alt="Clients"></a></div>
                 <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/ulker.jpg" alt="Clients"></a></div>
                 <div class="oc-item"><a href="#"><img src="~/Content/images/referanslar/turkish-airlines.jpg" alt="Clients"></a></div>
