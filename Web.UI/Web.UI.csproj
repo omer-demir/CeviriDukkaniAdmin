@@ -2149,6 +2149,7 @@
     <Content Include="Views\Home\TranslatorSignUp.cshtml" />
     <Content Include="tsconfig.json" />
     <Content Include="typings.json" />
+    <Content Include="Views\Home\SignUp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Web.Business\Web.Business.csproj">

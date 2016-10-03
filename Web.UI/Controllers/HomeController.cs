@@ -1,7 +1,17 @@
 ﻿using System.Web.Mvc;
+using Web.Business.Services.Interfaces;
 
 namespace Web.UI.Controllers {
     public class HomeController : Controller {
+
+        // GET: Admin/Account
+        private readonly ICommonService _commonService;
+
+        public HomeController(ICommonService commonService)
+        {
+            _commonService = commonService;
+        }
+
         // GET: Home
         [Route("")]
         public ActionResult Index() {
@@ -45,6 +55,7 @@ namespace Web.UI.Controllers {
 
         [Route("is-firsatlari")]
         public ActionResult Career() {
+
             return View();
         }
 
