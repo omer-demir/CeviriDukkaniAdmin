@@ -191,4 +191,15 @@ class DataService implements IDataService {
 
         return $.ajax(settings);
     }
+
+    updateUserRegistration(data: UpdateUserStep, callback: any) {
+        var settings: JQueryAjaxSettings = {
+            url: this.userApiUrl + 'updateUserRegistration',
+            type: 'POST',
+            data: data,
+            success: callback
+        };
+
+        return $.ajax(settings);
+    }
 }

@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Tangent.CeviriDukkani.Domain.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Enums;
+using Tangent.CeviriDukkani.Domain.Dto.Request;
 using Tangent.CeviriDukkani.Domain.Dto.System;
 using Web.Business.Services.Interfaces;
 
@@ -26,6 +27,21 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             var serviceResult = _userService.AddUser(userDto, 1);
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
             {
+                response.StatusCode = HttpStatusCode.InternalServerError;
+                return response;
+            }
+
+
+            response.StatusCode = HttpStatusCode.OK;
+            response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
+            return response;
+        }
+
+        [HttpPost, Route("updateUserRegistration")]
+        public HttpResponseMessage UpdateUserRegistration(UpdateUserStepRequestDto request) {
+            var response = new HttpResponseMessage();
+            var serviceResult = _userService.UpdateUserRegistration(request);
+            if (serviceResult.ServiceResultType != ServiceResultType.Success) {
                 response.StatusCode = HttpStatusCode.InternalServerError;
                 return response;
             }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Tangent.CeviriDukkani.Domain.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Enums;
+using Tangent.CeviriDukkani.Domain.Dto.Request;
 using Tangent.CeviriDukkani.Domain.Dto.System;
 
 namespace Web.Business.Services.Interfaces {
@@ -17,5 +18,6 @@ namespace Web.Business.Services.Interfaces {
         ServiceResult<UserDto> AddOrUpdateUserRate(UserDto userDto, int createdBy);
         ServiceResult<List<TechnologyKnowledgeDto>> GetTechnologyKnowledgesByUserAbilityId(int userAbilityId);
         ServiceResult<List<RateItemDto>> GetRateItemsByUserRateId(int userRateId);
+        ServiceResult<UserDto> UpdateUserRegistration(UpdateUserStepRequestDto request);
     }
 }

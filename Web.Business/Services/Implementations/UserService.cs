@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Tangent.CeviriDukkani.Domain.Common;
+using Tangent.CeviriDukkani.Domain.Dto.Request;
 using Tangent.CeviriDukkani.Domain.Dto.System;
 using Web.Business.Services.Interfaces;
 
@@ -66,6 +67,11 @@ namespace Web.Business.Services.Implementations {
         public ServiceResult<List<RateItemDto>> GetRateItemsByUserRateId(int userRateId) {
             var httpClient = GetClient(ServiceUrl.System);
             return GetAsAsync<List<RateItemDto>>(httpClient, $"api/userapi/getRateItemsByUserRateId?userRateId={userRateId}");
+        }
+
+        public ServiceResult<UserDto> UpdateUserRegistration(UpdateUserStepRequestDto request) {
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync<UserDto>(httpClient, "api/userapi/updateUserRegistration", request);
         }
 
         #endregion

@@ -29,6 +29,15 @@ class Select2Data {
     }
 }
 
+class UpdateUserStep {
+    user: User;
+    step: number;
+    public constructor(user: User, step: number) {
+        this.user = user;
+        this.step = step;
+    }
+}
+
 class User {
     name: string;
     surname: string;
