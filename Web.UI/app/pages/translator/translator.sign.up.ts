@@ -1,7 +1,7 @@
 ﻿/// <reference path="../../../typings/index.d.ts" />
 /// <reference path="../../services/common.data.service.ts" />
 /// <reference path="../../classes/util.ts" />
-/// <reference path="../../../typings/globals/toastr/index.d.ts" />
+/// <reference path="../../../typings/globals/pickadate/index.d.ts" />
 /// <reference path="../../classes/ceviri.classes.ts" />
 declare var $: JQueryStatic;
 
@@ -79,16 +79,27 @@ declare var $: JQueryStatic;
         });
 
         dataService.getServiceTypes((data: any) => {
+            $("#Timezone").select2(Util.extendOptions(Util.getAsSelectDataWithKeys(data,"value","text"), { placeholder: 'Please select service type' }));
+            $("#Timezone").select2("val", "-1");
+        });
+
+
+        dataService.getTimezones((data: any) => {
             $("#ServiceTypeId").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select service type' }));
             $("#ServiceTypeId").select2("val", "-1");
         });
 
-        $('#WorkingDays').select2(Util.extendOptions(Constants.Days, { multiple: true, placeholder: 'Please select working type' }));
-        $("#WorkingDays").select2("val", "-1");
+        $('#workingType').select2(Util.extendOptions(Constants.Days, { placeholder: 'Please select working type' }));
+        $("#workingType").select2("val", "-1");
 
         $('#Rating').select2(Util.extendOptions(Constants.Rates), { placeholder: 'Please select rating' });
         $("#Rating").select2("val", "-1");
 
+        $('#WorkingDays').select2(Util.extendOptions(Constants.WorkingDays), { placeholder: 'Please select working days',multiple:true });
+        $("#WorkingDays").select2("val", "-1");
+
+        $('#WorkingHoursStart').pickatime();
+        $('#WorkingHoursEnd').pickatime();
     }
 
     function addSoftware() {
@@ -424,6 +435,13 @@ declare var $: JQueryStatic;
             userAbility.tongueId = $('#tongue').val();
             userAbility.bilingualTongueId = $('#bilingualTongue').val();
             userAbility.yearsOfExperience = $('#yearsOfExperience').val();
+            userAbility.freelanceCompanyName = $('#FreelanceCompanyName').val();
+            userAbility.title = $('#Title').val();
+            userAbility.timezone = $('#Timezone').select2('data')[0];
+            userAbility.workingDays = $('#WorkingDays').select2('data').join(',');
+            userAbility.workingDays = $('#WorkingHoursStart').val();
+            userAbility.workingDays = $('#WorkingHoursEnd').val();
+
             userAbility.technologyKnowledges = technologyKnowledges;
 
             let capacity = new Capacity();
@@ -488,7 +506,15 @@ declare var $: JQueryStatic;
 
             let rate = new Rate();
             rate.rateItems = rateItems;
+            rate.dtpRate = $('#DtpRate').val();
+            rate.glossaryCreationRate = $('#GlossaryCreationRate').val();
+            rate.translationMemoryManagementRate = $('#TranslationMemoryManagementRate').val();
+            rate.terminologyExtractionRate = $('#TerminologyExtractionRate').val();
+            rate.reviewSmeRate = $('#ReviewSmeRate').val();
+            rate.linguisticTestingRate = $('#LinguisticTestingRate').val();
+            rate.reviewLqaRate = $('#ReviewLqaRate').val();
             user.userRate = rate;
+
 
 
             dataService.saveUser(user, (data: any) => {

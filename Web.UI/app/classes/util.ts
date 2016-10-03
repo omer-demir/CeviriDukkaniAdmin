@@ -42,6 +42,19 @@ class Util {
         return baseOptions;
     }
 
+    static getAsSelectDataWithKeys(data: any, keyField: string, textField: string) {
+        var casted2Data = <Array<any>>data;
+
+        var selectData: { id: number; text: string }[] = casted2Data.map(c => {
+            var key = c[keyField];
+            var val = c[textField];
+
+            return ({ id: key, text: val });
+        });
+
+        return selectData;
+    }
+
     static getAsSelectData(data: any, relatedKey?: string) {
 
         var selectData: { id: number; text: string }[];

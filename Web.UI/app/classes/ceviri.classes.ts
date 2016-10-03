@@ -13,6 +13,16 @@
         { id: 2, text: 'Intermediate' },
         { id: 3, text: 'Professional' }
     ];
+
+    static WorkingDays: any[] = [
+        { id: 1, text: "Monday" },
+        { id: 2, text: "Tuesday" },
+        { id: 3, text: "Wednesday" },
+        { id: 4, text: "Thursday" },
+        { id: 5, text: "Friday" },
+        { id: 6, text: "Saturday" },
+        { id: 7, text: "Sunday" }
+    ];
 }
 
 class KeyValue {
@@ -61,30 +71,36 @@ class UserRole {
 class UserContact {
     address: string;
     postalCode: string;
-    alternativeEmail:string;
+    alternativeEmail: string;
     alternativePhone1: string;
     alternativePhone2: string;
     fax: string;
     skype: string;
-    districtId:number;
+    districtId: number;
 }
 
 class UserAbility {
     motherTongueId: number;
     tongueId: number;
     bilingualTongueId: number;
-    yearsOfExperience: number;    
-    qualityEnsureDescription: string;  
+    yearsOfExperience: number;
+    qualityEnsureDescription: string;
     qualifications: string;
     mainClients: string;
     capacity: Capacity;
     technologyKnowledges: TechnologyKnowledge[];
     specializations: Specialization[];
+    freelanceCompanyName: string;
+    title: string;
+    timezone: string;
+    workingDays: string;
+    workingHoursStart: string;
+    workingHoursEnd: string;
 }
 
 class Specialization {
     userAbilityId: number;
-    terminologyId:number;
+    terminologyId: number;
 }
 
 class Capacity {
@@ -122,7 +138,7 @@ class BankAccount {
     bankAddress: string;
 }
 
-class Rate{
+class Rate {
     rateItems: RateItem[];
     dtpRate: number;
     glossaryCreationRate: number;

@@ -5,7 +5,8 @@
   "main": "Gruntfile.js",
   "dependencies": {
     "grunt": "^1.0.1",
-    "grunt-ts": "^6.0.0-beta.3"
+    "grunt-ts": "^6.0.0-beta.3",
+    "timezones.json": "^1.1.0"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
