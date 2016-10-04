@@ -123,7 +123,6 @@
                     </div>
                 </form>
                 <div class="row">
-                    <a class="waves-effect waves-light btn" id="saveAndContinueLater">Save and Continue Later<i class="material-icons right">play_arrow</i></a>
                     <a class="waves-effect waves-light btn right" id="nextTo2">Next<i class="material-icons right">play_arrow</i></a>
                 </div>
             </div>
@@ -190,6 +189,35 @@
                         <div class="input-field col s6">
                             <label for="yearsOfExperience">Years of experience in translation</label>
                             <input type="number" class="validate" min="0" id="yearsOfExperience" placeholder="Years of experience in translation	" name="yearsOfExperience">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label for="FreelanceCompanyName">Freelance Company Name</label>
+                            <input type="text" id="FreelanceCompanyName" placeholder="Freelance Company Name" name="FreelanceCompanyName">
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="Title">Title</label>
+                            <input type="text" id="Title" placeholder="Title" name="Title">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <select id="Timezone" class="full-width " name="Timezone"></select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <select id="WorkingDays" class="full-width " name="WorkingDays"></select>
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="WorkingHoursStart">Working Hours Start</label>
+                            <input type="text" id="WorkingHoursStart" name="WorkingHoursStart">
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="WorkingHoursEnd">Working Hours End</label>
+                            <input type="text" id="WorkingHoursEnd" name="WorkingHoursEnd">
                         </div>
                     </div>
                     <div class="row">
@@ -408,6 +436,36 @@
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label for="DtpRate">Dtp Rate</label>
+                            <input type="number" class="validate" id="DtpRate" placeholder="Dtp Rate">
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="GlossaryCreationRate">Glossary Creation Rate</label>
+                            <input type="number" class="validate" id="GlossaryCreationRate" placeholder="Glossary Creation Rate">
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="TranslationMemoryManagementRate">Translation Memory Management Rate</label>
+                            <input type="number" class="validate" id="TranslationMemoryManagementRate" placeholder="Translation Memory Management Rate">
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="TerminologyExtractionRate">Terminology Extraction Rate</label>
+                            <input type="number" class="validate" id="TerminologyExtractionRate" placeholder="Terminology Extraction Rate">
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="ReviewSmeRate">Review Sme Rate</label>
+                            <input type="number" class="validate" id="ReviewSmeRate" placeholder="Review Sme Rate">
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="LinguisticTestingRate">Linguistic Testing Rate</label>
+                            <input type="number" class="validate" id="LinguisticTestingRate" placeholder="Linguistic Testing Rate">
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="ReviewLqaRate">Review Lqa Rate</label>
+                            <input type="number" class="validate" id="ReviewLqaRate" placeholder="Review Lqa Rate">
+                        </div>
+                    </div>
                 </form>
                 <div class="row">
                     <a class="waves-effect waves-light btn right" id="nextTo7">Next<i class="material-icons right">play_arrow</i></a>
@@ -431,6 +489,9 @@
                     </div>
                 </form>
             </div>
+            <div class="row">
+                <a class="waves-effect waves-light btn" id="saveAndContinueLater">Save and Continue Later<i class="material-icons right">restore</i></a>
+            </div>
         </div>
     </div>
 
@@ -442,6 +503,7 @@
     <script src="~/Content/plugins/timer/script.js"></script>
     <script src="~/Content/js/plugins/jquery.validation.js"></script>
     <script src="~/bower_components/toastr/toastr.js"></script>
+    <script src="~/bower_components/pickadate/lib/picker.time.js"></script>
 
     <script src="~/dist/classes/ceviri.classes.js"></script>
     <script src="~/dist/classes/util.js"></script>

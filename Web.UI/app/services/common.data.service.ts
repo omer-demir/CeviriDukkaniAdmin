@@ -119,6 +119,16 @@ class DataService implements IDataService {
         return $.ajax(settings);
     }
 
+    getTimezones(callback: any) {
+        var settings: JQueryAjaxSettings = {
+            url: '/node_modules/timezones.json/timezones.json',
+            type: 'GET',
+            success: callback
+        };
+
+        return $.ajax(settings);
+    }
+
     getCountries(callback: any) {
         var settings: JQueryAjaxSettings = {
             url: this.commonApiUrl + 'getCountries',
@@ -184,6 +194,17 @@ class DataService implements IDataService {
     saveUser(data: User, callback: any) {
         var settings: JQueryAjaxSettings = {
             url: this.userApiUrl + 'addUser',
+            type: 'POST',
+            data: data,
+            success: callback
+        };
+
+        return $.ajax(settings);
+    }
+
+    updateUserRegistration(data: UpdateUserStep, callback: any) {
+        var settings: JQueryAjaxSettings = {
+            url: this.userApiUrl + 'updateUserRegistration',
             type: 'POST',
             data: data,
             success: callback

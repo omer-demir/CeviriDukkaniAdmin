@@ -1,7 +1,7 @@
 ﻿/// <reference path="../../../typings/index.d.ts" />
 /// <reference path="../../services/common.data.service.ts" />
 /// <reference path="../../classes/util.ts" />
-/// <reference path="../../../typings/globals/toastr/index.d.ts" />
+/// <reference path="../../../typings/globals/pickadate/index.d.ts" />
 /// <reference path="../../classes/ceviri.classes.ts" />
 declare var $: JQueryStatic;
 
@@ -79,16 +79,27 @@ declare var $: JQueryStatic;
         });
 
         dataService.getServiceTypes((data: any) => {
+            $("#Timezone").select2(Util.extendOptions(Util.getAsSelectDataWithKeys(data,"value","text"), { placeholder: 'Please select service type' }));
+            $("#Timezone").select2("val", "-1");
+        });
+
+
+        dataService.getTimezones((data: any) => {
             $("#ServiceTypeId").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select service type' }));
             $("#ServiceTypeId").select2("val", "-1");
         });
 
-        $('#WorkingDays').select2(Util.extendOptions(Constants.Days, { multiple: true, placeholder: 'Please select working type' }));
-        $("#WorkingDays").select2("val", "-1");
+        $('#workingType').select2(Util.extendOptions(Constants.Days, { placeholder: 'Please select working type' }));
+        $("#workingType").select2("val", "-1");
 
         $('#Rating').select2(Util.extendOptions(Constants.Rates), { placeholder: 'Please select rating' });
         $("#Rating").select2("val", "-1");
 
+        $('#WorkingDays').select2(Util.extendOptions(Constants.WorkingDays), { placeholder: 'Please select working days',multiple:true });
+        $("#WorkingDays").select2("val", "-1");
+
+        $('#WorkingHoursStart').pickatime();
+        $('#WorkingHoursEnd').pickatime();
     }
 
     function addSoftware() {
@@ -142,6 +153,48 @@ declare var $: JQueryStatic;
         var itemTemplate = `<tr><td>${service.text}</td><td>${sourceLanguage.text}</td><td>${targetLanguage.text}</td><td>${price}</td><td>${sworn}</td></tr>`;
         $(itemTemplate).appendTo($tableBody);
     }
+
+    function getUserFromForm(): User {
+        let user = new User();
+
+        user.name = $('#name').val();
+        user.surname = $('#surname').val();
+        user.email = $('#email').val();
+        user.genderId = $('input[name="gender"]:checked').val();
+        user.mobilePhone = $('#mobilePhone').val();
+        user.password = $('#password').val();
+        return user;
+    }
+    function saveCurrentStepCallback(step: number) {
+        let userStep = new UpdateUserStep(getCurrentStepData(step), step);
+        dataService.updateUserRegistration(userStep, (result: any) => {
+            if (result.IsSuccess) {
+                toastr.success("Perfect! We saved your profile. You can continue filling up your account details later.");
+            }
+        });
+    }
+    function getCurrentStepData(step: number): User {
+        let user = new User();
+        switch (step) {
+            case 1:
+                user.name = $('#name').val();
+                user.surname = $('#surname').val();
+                user.email = $('#email').val();
+                user.genderId = $('input[name="gender"]:checked').val();
+                user.mobilePhone = $('#mobilePhone').val();
+                user.password = $('#password').val();
+                break;
+            default:
+                break;
+        }
+
+        return user;
+    }
+    function validateForm(formElement: string, rules: any[], successCallback: (param: number) => void) {
+        Util.handleValidationForm(formElement, rules, successCallback);
+        return $(formElement).valid();
+    }
+
     $(() => {
         $('ul.tabs').tabs();
         initializeDropdowns();
@@ -200,12 +253,6 @@ declare var $: JQueryStatic;
             }
         };
 
-        function validateForm(formElement: string, rules: any[],successCallback:()=>void) {
-            Util.handleValidationForm(formElement, rules, successCallback);
-            return $(formElement).valid();
-        }
-
-
         /**
          * Events
          */
@@ -218,9 +265,9 @@ declare var $: JQueryStatic;
             },
             'select2:unselect': () => {
                 $('#City').select2("val", "-1");
+                $('#district').select2("val", "-1");
             }
         });
-
         $('#City').on({
             'select2:select': (e: any) => {
                 dataService.getDistrictsByCityId((data: any) => {
@@ -250,64 +297,68 @@ declare var $: JQueryStatic;
             $elem.css('border', 'none');
         });
 
+
+
         /**
          * Wizard events
          */
-        $('#nextTo2').on('click', () => {
-            var result=validateForm('#form1', formRules.form1, () => { $('ul.tabs').tabs('select_tab', 'tab2');});
+        $('#saveAndContinueLater').on('click', () => {
+            var selectedTabHref = $('ul.tabs').tabs('selected').toString();
+            var selectedTab = parseInt(selectedTabHref.substring(selectedTabHref.length - 1, 1), 10);
+            var result: boolean = false;
+            var callback = () => {
+                saveCurrentStepCallback(selectedTab);
+            };
 
+            switch (selectedTab) {
+                case 1:
+                    result = validateForm('#form1', formRules.form1, callback);
+                    break;
+                case 2:
+                    result = validateForm('#form2', formRules.form2, callback);
+                    break;
+                case 3:
+                    result = validateForm('#form3', formRules.form3, callback);
+                    break;
+                case 4:
+                    result = validateForm('#form4', formRules.form4, callback);
+                    break;
+                case 5:
+                    if ($('#bankAccountType0').prop('checked')) {
+                        result = validateForm('#form5', formRules.form51, () => { $('ul.tabs').tabs('select_tab', 'tab6'); });
+                    } else if ($('#bankAccountType1').prop('checked')) {
+                        result = validateForm('#form5', formRules.form52, () => { $('ul.tabs').tabs('select_tab', 'tab6'); });
+                    } else if ($('#bankAccountType2').prop('checked')) {
+                        result = validateForm('#form5', formRules.form53, () => { $('ul.tabs').tabs('select_tab', 'tab6'); });
+                    }
+                    break;
+                case 6:
+                    result = validateForm('#form6', formRules.form6, callback);
+                    break;
+                default:
+                    break;
+            }
+            if (result) {
+                callback();
+            }
+
+        });
+
+        $('#nextTo2').on('click', () => {
+            var result = validateForm('#form1', formRules.form1, () => { $('ul.tabs').tabs('select_tab', 'tab2'); });
             if (result) {
                 $('ul.tabs').tabs('select_tab', 'tab2');
             }
         });
-        $('#saveAndContinueLater').on('click', () => {
-            var selectedTab = $('ul.tabs').tabs('selected');
-            
-            let callback = () => {
-                let user = getUserFromForm();
-                dataService.saveUser(user, (result: any) => {
-                    if (result.IsSuccess) {
-                        toastr.success("Perfect! We saved your profile. You can continue filling up your account details later.");
-                    }
-                });
-            };
-
-            var result = validateForm('#form1', formRules.form1, callback);
-
-            if (result) {
-                callback();
-            }
-            
-        });
-        
-
         $('#nextTo3').on('click', () => {
-            var rules = {
-                country: { required: true },
-                City: { required: true },
-                district: { required: true },
-                address: { required: true }
-            };
-
-            Util.handleValidationForm('#form2', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'tab3'); });
-            if ($('#form2').valid()) {
+            var result = validateForm('#form2', formRules.form2, () => { $('ul.tabs').tabs('select_tab', 'tab3'); });
+            if (result) {
                 $('ul.tabs').tabs('select_tab', 'tab3');
             }
         });
         $('#nextTo4').on('click', () => {
-            var rules = {
-                motherTongue: { required: true },
-                tongue: { required: true },
-                translation: { required: true },
-                reviews: { required: true },
-                proofReading: { required: true },
-                qualityEnsureDescription: { required: true },
-                qualifications: { required: true },
-                Specialization: { required: true }
-            };
-
-            Util.handleValidationForm('#form3', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'tab4'); });
-            if ($('#form3').valid()) {
+            var result = validateForm('#form3', formRules.form3, () => { $('ul.tabs').tabs('select_tab', 'tab4'); });
+            if (result) {
                 $('ul.tabs').tabs('select_tab', 'tab4');
             }
         });
@@ -315,70 +366,27 @@ declare var $: JQueryStatic;
             $('ul.tabs').tabs('select_tab', 'tab5');
         });
         $('#nextTo6').on('click', () => {
+            var result: boolean;
             if ($('#bankAccountType0').prop('checked')) {
-                var rules = {
-                    bankName: { required: true },
-                    accountHolderFullName: { required: true },
-                    IBAN: { required: true },
-                    minimumChargeAmount: { required: true }
-                };
-                Util.handleValidationForm('#form5', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'nextTo6'); });
-                if ($('#form5').valid()) {
-                    $('ul.tabs').tabs('select_tab', 'tab6');
-                }
+                result = validateForm('#form5', formRules.form51, () => { $('ul.tabs').tabs('select_tab', 'tab6'); });
             } else if ($('#bankAccountType1').prop('checked')) {
-                var rules2 = {
-                    bankName: { required: true },
-                    accountHolderFullName: { required: true },
-                    beneficiaryAddress: { required: true },
-                    accountNumber: { required: true },
-                    swiftBicCode: { required: true },
-                    cityCountryBank: { required: true },
-                    bankAddress: { required: true },
-                    minimumChargeAmount: { required: true }
-                };
-                Util.handleValidationForm('form5', rules2, (a: any) => { $('ul.tabs').tabs('select_tab', 'nextTo6'); });
-                if ($('#form5').valid()) {
-                    $('ul.tabs').tabs('select_tab', 'tab6');
-                }
+                result = validateForm('#form5', formRules.form52, () => { $('ul.tabs').tabs('select_tab', 'tab6'); });
             } else if ($('#bankAccountType2').prop('checked')) {
-                var rules3 = {
-                    paypalEmailAddress: { required: true, email: true },
-                    minimumChargeAmount: { required: true }
-                };
-                Util.handleValidationForm('form5', rules3, (a: any) => { $('ul.tabs').tabs('select_tab', 'nextTo6'); });
-                if ($('#form5').valid()) {
-                    $('ul.tabs').tabs('select_tab', 'tab6');
-                }
+                result = validateForm('#form5', formRules.form53, () => { $('ul.tabs').tabs('select_tab', 'tab6'); });
             } else {
                 //show message
             }
+
+            if (result) {
+                $('ul.tabs').tabs('select_tab', 'tab6');
+            }
         });
         $('#nextTo7').on('click', () => {
-            var rules = {
-                ServiceType: { required: true },
-                SourceLanguage: { required: true },
-                TargetLanguage: { required: true },
-                minimumChargeAmount: { required: true }
-            };
-
-            Util.handleValidationForm('#form6', rules, (a: any) => { $('ul.tabs').tabs('select_tab', 'tab7'); });
-            if ($('#form6').valid()) {
+            var result = validateForm('#form6', formRules.form6, () => { $('ul.tabs').tabs('select_tab', 'tab7'); });
+            if (result) {
                 $('ul.tabs').tabs('select_tab', 'tab7');
             }
         });
-
-        function getUserFromForm(): User {
-            let user = new User();
-
-            user.name = $('#name').val();
-            user.surname = $('#surname').val();
-            user.email = $('#email').val();
-            user.genderId = $('input[name="gender"]:checked').val();
-            user.mobilePhone = $('#mobilePhone').val();
-            user.password = $('#password').val();
-            return user;
-        }
 
         $('input[type=radio][name=bankAccountType]').change(function () {
 
@@ -427,6 +435,13 @@ declare var $: JQueryStatic;
             userAbility.tongueId = $('#tongue').val();
             userAbility.bilingualTongueId = $('#bilingualTongue').val();
             userAbility.yearsOfExperience = $('#yearsOfExperience').val();
+            userAbility.freelanceCompanyName = $('#FreelanceCompanyName').val();
+            userAbility.title = $('#Title').val();
+            userAbility.timezone = $('#Timezone').select2('data')[0];
+            userAbility.workingDays = $('#WorkingDays').select2('data').join(',');
+            userAbility.workingDays = $('#WorkingHoursStart').val();
+            userAbility.workingDays = $('#WorkingHoursEnd').val();
+
             userAbility.technologyKnowledges = technologyKnowledges;
 
             let capacity = new Capacity();
@@ -491,17 +506,21 @@ declare var $: JQueryStatic;
 
             let rate = new Rate();
             rate.rateItems = rateItems;
+            rate.dtpRate = $('#DtpRate').val();
+            rate.glossaryCreationRate = $('#GlossaryCreationRate').val();
+            rate.translationMemoryManagementRate = $('#TranslationMemoryManagementRate').val();
+            rate.terminologyExtractionRate = $('#TerminologyExtractionRate').val();
+            rate.reviewSmeRate = $('#ReviewSmeRate').val();
+            rate.linguisticTestingRate = $('#LinguisticTestingRate').val();
+            rate.reviewLqaRate = $('#ReviewLqaRate').val();
             user.userRate = rate;
+
 
 
             dataService.saveUser(user, (data: any) => {
                 toastr.info('Your registration saved. We will get in touch with you soon.', 'Information');
             });
         });
-
-
-
-
     });
 
 })());
