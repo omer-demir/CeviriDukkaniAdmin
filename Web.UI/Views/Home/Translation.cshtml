@@ -4,148 +4,55 @@
     ViewBag.MetaDescription = "Tercüme ve Tercüme ihtiyacına çözümler.. Çeviri Dükkanı";
 }
 
-<link href='https://fonts.googleapis.com/css?family=Oxygen:400,700,300|Open+Sans:400,300,700,600|Bree+Serif&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
-@section scripts{
-    <script>
-        $(function() {
-            $('#ms').multipleSelect();
-            $('#ms2').multipleSelect();
-            $('.tooltip')
-                .tooltipster({
-                    contentAsHTML: true,
-                    interactive: true,
-                    content:
-                        $('<div style="width:180px; padding:5px; border-bottom:1px solid #000;"><a href="/#yeniis">Yeni Çeviri Gönder</a></div><div style="width:180px; padding:5px; border-bottom:1px solid #000;"><a href="/bireysel/Kullanici-Paneli">Kullanıcı Panelim</a></div><div style="width:180px; padding:5px; border-bottom:1px solid #000;"><a href="/bireysel/Profil-Bilgilerim">Profil Bilgileri</a></div><div style="width:180px; padding:5px;"><a href="/bireysel/Sifre-Degistir">Şifre Değiştir</a></div>')
-                });
-        });
-    </script>
-}
-<style type="text/css">
-    p.MsoNormal {
-        margin-bottom: .0001pt;
-        font-size: 12.0pt;
-        font-family: "Trebuchet MS","sans-serif";
-        color: black;
-        margin-left: 0cm;
-        margin-right: 0cm;
-        margin-top: 0cm;
-    }
+<section id="content">
+    <div class="content-wrap">
+        <div class="container clearfix">
+            <div class="row">
+                <div class="col-sm-12">
+                    @{Html.RenderAction("InnerTopBar", "Partials", new { header = "Tercüme", SubTitle = "Tercüme serüveni" }); }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 norightpadding">
+                    @{Html.RenderAction("InnerLeftMenu", "Partials"); }
+                </div>
+                <div class="col-md-9">
 
-    p.MsoBodyText2 {
-        margin-top: 0cm;
-        margin-right: 0cm;
-        margin-bottom: 6.0pt;
-        margin-left: 0cm;
-        line-height: 200%;
-        font-size: 12.0pt;
-        font-family: "Trebuchet MS","sans-serif";
-        color: black;
-    }
+                    <h3 style="font-size: 18px">Geçmişten günümüze tercüme</h3>
+                    <p class="fnt" style="mso-layout-grid-align: none; text-autospace: none">
+                        İsanlık tarihinin en köklü iletişim sorunlarından birisi <strong>dil</strong> sorunu olmuştur. Herhangi bir konuda fikir alışverişinin yapılabilmesi ya da ihtiyaç duyulan ürünlerin ticaretinin gerçekleşmesi esnasında farklı dillleri konuşuyor olmak, toplumlar arası geçişkenliği sınırlandırmıştır.<br />
+                        <br />
+                    </p>
 
-    p.MsoHeading7 {
-        margin-top: 12.0pt;
-        margin-right: 0cm;
-        margin-bottom: 3.0pt;
-        margin-left: 0cm;
-        font-size: 12.0pt;
-        font-family: "Times New Roman","serif";
-        color: black;
-    }
+                    <h3><strong>Toplumlar arası iletişim sorunu çözümü: Tercüme</strong></h3>
+                    <p class="fnt" style="mso-layout-grid-align: none; text-autospace: none">
+                        Farklı dilleri aynı anda konuşan kişilerin varlığının giderek daha kuvvetli bir ihtiyaç haline gelmesi <strong>tercümanlık</strong> mesleğinin doğmasına sebebp olmuştur. İki veya daha fazla sayıda dil bilen insanların, öncelikle insanı ihtiyaçlar temelinde ve sonra ticari faaliyetler alanında konuşmalarda ve yazışmalarda aracılık yapması, tercümanlığı gün geçtikçe daha popüler hale getirmiştir.<br />
+                        <br />
+                        Ancak bir süre sonra bireysel tercümanlıkların, devamlık ve istikrarında baş gösteren aksamalar, mutahab kayıpları ile başlayan dengesizlikler; iletişim alanında ciddi sorun ve kayıplara sebep olduğu gibi, şirketler için de maddi zararlara sebebiyet vermiştir.<br />
+                    </p>
 
-    table.MsoNormalTable {
-        font-size: 10.0pt;
-        font-family: "Times New Roman","serif";
-    }
-
-    .auto-style1 {
-        text-decoration: underline;
-        color: teal;
-    }
-
-    .fnt {
-        font-family: Cambria, serif;
-        font-size: 16px;
-    }
-
-    .bld {
-        font-weight: bold;
-    }
-
-    .mrg {
-        margin-left: 1em;
-    }
-
-    .bslk {
-        font-size: 1em;
-        font-family: Tahoma, Geneva, sans-serif;
-    }
-</style>
-<div class="clear"></div>
-<h1 class="ortala" style="color:#7f7f7f">Tercüme</h1>
+                    <h3><strong>Kurumsal Tercüme</strong></h3>
+                    <p class="fnt" style="mso-layout-grid-align: none; text-autospace: none">
+                        Özellikle devletlerin, büyük-orta ölçekli şirketlerin ve  kısmen küçük şirketlerin, yakın ve uzak coğrafyalardaki toplumlarla yaptıkları ithalat ihracat, hizmet satın alımları ve bilgi paylaşımı konularındaki çeviri ihtiyaçları, onları; kendileri ile uzun süreli çalışacak muhataplar aramaya itmiştir. Bu noktada, <strong>çevirinin</strong> ne derece önemli bir ihtiyaç olduğunu bilen aynı zamanda konunun yeri geldiğinde bir <em>harf ölçeğinde</em> bile hasas olduğunun farkında olan, kurumsal <em>tercüme büroları</em>, sektörün bu sorunlarına çözüm olarak doğmuştur.<br />
+                        <br />
+                        Farklı küçük toplumlar dünyasından, 21. yüzyılın baş döndüren, hızlı, global dünyasına kadar her zaman varlığını sürdüren farklı diller arasıki iletişim ihtiyacı sorununa,<br />
+                        <u><strong><a href="https://www.ceviridukkani.com/">Çeviri Dükkanı</a></strong></u> olarak günümüze uygun en ideal çözümü sunmuş olmaktan gurur duyuyoruz.<br />
+                    </p>
 
 
-<div class="ortala">
 
-    <div style="width:260px; padding:70px 0 0 20px; line-height:30px; height:214px; color:#fff; font-size:30px; float:left; background-color:#00d4e1">
-        <h2 style=" font-size:20px">Tercüme serüveni</h2>
+                    <h3><strong>Çeviri Dükkanı</strong></h3>
+                    <p class="fnt" style="mso-layout-grid-align: none; text-autospace: none">
+                        Dijital bir çağı yaşadığımız şu günlerde, çeviri dünyası <strong></strong>da ister istemez teknoloji ile buluşmaya ve gelişmeye devam ediyor. Öncenin posta ile evrak gönderme, sonra yeniden geri postalanması vb. işlemler, yerini ikibinli yılların başından bu yana e-mail'e bırakmış durumda. Bununla birlikte,  türcümenin hangi dilden hangi dile yapılacağı, teslim tarihi ve <span class="fnt" style="mso-layout-grid-align: none; text-autospace: none">
+                            artık sektör standartı haline gelen karekter sayımı üzerinden fiyat teklifi verme ve bu teklifler üzerinden yeniden mail ve telefon trafiğinin yaşanması, hız dünyasında iş yapan pek çok firma hem zaman hem de nakit kaybı demek.<br />
+                            <br />
+                            <strong>Çeviri Dükkanı</strong> tam da bu noktada devreye girerek, ticaretin, teknolojinin ve bilgi çağının hakkını veren
+                        </span>iş modeli ile bireylerin ve kurumsal firmaların bu kayıplarını kazançlarına dönüştürmekte. Zira <strong>Çeviri Dükkanı</strong>'nında, dokümanlarınızı online gönderebilir, kaç karekterden oluştuğunu anında görebilir, kaynak dil ve hedef dil seçebilirsiniz. Seçtiğiniz opsiyonlara göre herşey otomatik olarak hesaplanır ve tercümenin teslim tarihi ile birlikte ücretinin ne kadar olduğunu anında görebilirsiniz. Geriye kalan tek şey onay düğmesine basmanızdır. Sizin onayınızla birlikte dosyanız yine online olarak tercümanlara düşer, tercüman çevirisini bitirdiğinde sisteme yükler. Bu kez çevrilmiş evrak yine online olarak kontol editörlerinin önüne düşer. Editör onayladığı anda ise <strong></strong>dosyanız otomatik olarak size e-mail atılır. Ayrıca işlemlerinizin bittiğine dair sms alırsınız. <em>Kaliteli ve hızlı çevirinin tadını hissedersiniz</em>.<br />
+                        <br />
+                        <span class="fnt" style="mso-layout-grid-align: none; text-autospace: none"><strong>Çevir Dükkanı</strong>'nında işlerin nasıl işlediğini görmek için <u><a href="https://www.ceviridukkani.com/Nasil-Calisiyor">buraya</a></u>,  online doküman göndermek için <u><a href="https://www.ceviridukkani.com/#yeniis">buraya</a></u> tıklayabilirsiniz.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div style="float:left;">
-        <img alt="tercüme" src="/Content/images/sundugumuz-gorsel.png" />
-    </div>
-
-    <div class="clear"></div>
-
-    <div class="sundugumuz_menu">
-        <div class="aktif"><a href="Tercume">Tercüme</a></div>
-        <div><a href="Kaliteli-Ceviri">Kaliteli Çeviri</a></div>
-        <div><a href="Guvenlik-ve-Gizlilik">Güvenlik ve Gizlilik</a></div>
-        <div><a href="Banka-Hesap-Bilgileri">Banka Hesap Bilgileri</a></div>
-        <div><a href="Hizmet-Sozlesmesi#iptal">İptal ve İade Koşulları</a></div>
-        <div style="border-bottom:none;"><a href="Hizmet-Sozlesmesi">Hizmet Sözleşmesi</a></div>
-    </div>
-
-
-    <div style="float:left; width:637px; margin-left:20px;">
-
-        <h3 style="font-size:18px">Geçmişten günümüze tercüme</h3>
-        <p class="fnt" style="mso-layout-grid-align:none;text-autospace:none">
-
-            İsanlık tarihinin en köklü iletişim sorunlarından birisi <strong>dil</strong> sorunu olmuştur. Herhangi bir konuda fikir alışverişinin yapılabilmesi ya da ihtiyaç duyulan ürünlerin ticaretinin gerçekleşmesi esnasında farklı dillleri konuşuyor olmak, toplumlar arası geçişkenliği sınırlandırmıştır.<br />
-            <br />
-        </p>
-
-        <h3><strong>Toplumlar arası iletişim sorunu çözümü: Tercüme</strong></h3>
-        <p class="fnt" style="mso-layout-grid-align:none;text-autospace:none">
-            Farklı dilleri aynı anda konuşan kişilerin varlığının giderek daha kuvvetli bir ihtiyaç haline gelmesi <strong>tercümanlık</strong> mesleğinin doğmasına sebebp olmuştur. İki veya daha fazla sayıda dil bilen insanların, öncelikle insanı ihtiyaçlar temelinde ve sonra ticari faaliyetler alanında konuşmalarda ve yazışmalarda aracılık yapması, tercümanlığı gün geçtikçe daha popüler hale getirmiştir.<br />
-            <br />
-            Ancak bir süre sonra bireysel tercümanlıkların, devamlık ve istikrarında baş gösteren aksamalar, mutahab kayıpları ile başlayan dengesizlikler; iletişim alanında ciddi sorun ve kayıplara sebep olduğu gibi, şirketler için de maddi zararlara sebebiyet vermiştir.<br />
-        </p>
-
-        <h3><strong>Kurumsal Tercüme</strong></h3>
-        <p class="fnt" style="mso-layout-grid-align:none;text-autospace:none">
-            Özellikle devletlerin, büyük-orta ölçekli şirketlerin ve  kısmen küçük şirketlerin, yakın ve uzak coğrafyalardaki toplumlarla yaptıkları ithalat ihracat, hizmet satın alımları ve bilgi paylaşımı konularındaki çeviri ihtiyaçları, onları; kendileri ile uzun süreli çalışacak muhataplar aramaya itmiştir. Bu noktada, <strong>çevirinin</strong> ne derece önemli bir ihtiyaç olduğunu bilen aynı zamanda konunun yeri geldiğinde bir <em>harf ölçeğinde</em> bile hasas olduğunun farkında olan, kurumsal <em>tercüme büroları</em>, sektörün bu sorunlarına çözüm olarak doğmuştur.<br />
-            <br />
-            Farklı küçük toplumlar dünyasından, 21. yüzyılın baş döndüren, hızlı, global dünyasına kadar her zaman varlığını sürdüren farklı diller arasıki iletişim ihtiyacı sorununa,<br />
-            <u><strong><a href="https://www.ceviridukkani.com/">Çeviri Dükkanı</a></strong></u> olarak günümüze uygun en ideal çözümü sunmuş olmaktan gurur duyuyoruz.<br />
-        </p>
-
-
-
-        <h3><strong>Çeviri Dükkanı</strong></h3>
-        <p class="fnt" style="mso-layout-grid-align:none;text-autospace:none">
-            Dijital bir çağı yaşadığımız şu günlerde, çeviri dünyası <strong></strong>da ister istemez teknoloji ile buluşmaya ve gelişmeye devam ediyor. Öncenin posta ile evrak gönderme, sonra yeniden geri postalanması vb. işlemler, yerini ikibinli yılların başından bu yana e-mail'e bırakmış durumda. Bununla birlikte,  türcümenin hangi dilden hangi dile yapılacağı, teslim tarihi ve <span class="fnt" style="mso-layout-grid-align:none;text-autospace:none">
-                artık sektör standartı haline gelen karekter sayımı üzerinden fiyat teklifi verme ve bu teklifler üzerinden yeniden mail ve telefon trafiğinin yaşanması, hız dünyasında iş yapan pek çok firma hem zaman hem de nakit kaybı demek.<br />
-                <br />
-                <strong>Çeviri Dükkanı</strong> tam da bu noktada devreye girerek, ticaretin, teknolojinin ve bilgi çağının hakkını veren
-            </span>iş modeli ile bireylerin ve kurumsal firmaların bu kayıplarını kazançlarına dönüştürmekte. Zira <strong>Çeviri Dükkanı</strong>'nında, dokümanlarınızı online gönderebilir, kaç karekterden oluştuğunu anında görebilir, kaynak dil ve hedef dil seçebilirsiniz. Seçtiğiniz opsiyonlara göre herşey otomatik olarak hesaplanır ve tercümenin teslim tarihi ile birlikte ücretinin ne kadar olduğunu anında görebilirsiniz. Geriye kalan tek şey onay düğmesine basmanızdır. Sizin onayınızla birlikte dosyanız yine online olarak tercümanlara düşer, tercüman çevirisini bitirdiğinde sisteme yükler. Bu kez çevrilmiş evrak yine online olarak kontol editörlerinin önüne düşer. Editör onayladığı anda ise <strong></strong> dosyanız otomatik olarak size e-mail atılır. Ayrıca işlemlerinizin bittiğine dair sms alırsınız. <em>Kaliteli ve hızlı çevirinin tadını hissedersiniz</em>.<br />
-            <br />
-            <span class="fnt" style="mso-layout-grid-align:none;text-autospace:none"><strong>Çevir Dükkanı</strong>'nında işlerin nasıl işlediğini görmek için <u><a href="https://www.ceviridukkani.com/Nasil-Calisiyor">buraya</a></u>,  online doküman göndermek için <u><a href="https://www.ceviridukkani.com/#yeniis">buraya</a></u> tıklayabilirsiniz.</span>
-        </p>
-
-        <br /><br />
-
-    </div>
-
-
-
-</div>
+</section>

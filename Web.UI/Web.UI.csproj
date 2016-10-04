@@ -2154,6 +2154,12 @@
     <Content Include="Views\Partials\InnerLeftMenu.cshtml" />
     <Content Include="Views\Shared\_Content.cshtml" />
     <Content Include="Views\Partials\InnerTopBar.cshtml" />
+    <Content Include="Views\Home\TranslatingOffice.cshtml" />
+    <Content Include="Views\Home\TurkishEnglishTranslation.cshtml" />
+    <Content Include="Views\Home\EnglishTurkishTranslation.cshtml" />
+    <Content Include="Views\Home\ProfessionalTranslation.cshtml" />
+    <Content Include="Views\Home\QuickTranslation.cshtml" />
+    <Content Include="Views\Home\MakeTranslating.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Web.Business\Web.Business.csproj">

@@ -18,11 +18,66 @@ namespace Web.UI.Controllers {
             return View();
         }
 
-        [Route("Kaliteli-Ceviri")]
-        public ActionResult QualityTranslation() {
+        [Route("tercume")]
+        public ActionResult Translation()
+        {
             return View();
         }
 
+        [Route("Ceviri-Burosu")]
+        public ActionResult TranslatingOffice()
+        {
+            return View();
+        }
+
+        [Route("Ingilizce-Turkce-Tercume")]
+        public ActionResult EnglishTurkishTranslation()
+        {
+            return View();
+        }
+
+        [Route("Turkce-Ingilizce-Ceviri")]
+        public ActionResult TurkishEnglishTranslation()
+        {
+            return View();
+        }
+
+        [Route("Profesyonel-Ceviri")]
+        public ActionResult ProfessionalTranslation()
+        {
+            return View();
+        }
+
+        [Route("Hizli-Ceviri")]
+        public ActionResult QuickTranslation()
+        {
+            return View();
+        }
+
+        [Route("Kaliteli-Ceviri")]
+        public ActionResult QualityTranslation()
+        {
+            return View();
+        }
+
+        [Route("Ingilizce-Ceviri")]
+        public ActionResult EnglishTranslation()
+        {
+            return View();
+        }
+
+        [Route("Turkce-Ceviri")]
+        public ActionResult TurkishTranslation()
+        {
+            return View();
+        }
+
+        [Route("Ceviri-Yaptir")]
+        public ActionResult MakeTranslating()
+        {
+            return View();
+        }
+        
         [Route("Guvenlik-ve-Gizlilik")]
         public ActionResult SecurityAndPrivacy() {
             return View();
@@ -68,13 +123,7 @@ namespace Web.UI.Controllers {
         public ActionResult JobDetail(int jid) {
             return View();
         }
-
-        [Route("tercume")]
-        public ActionResult Translation()
-        {
-            return View();
-        }
-
+        
         [Route("Tercuman-Ol-1")]
         public ActionResult TranslatorSignUp()
         {

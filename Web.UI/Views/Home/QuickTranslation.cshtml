@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "QuickTranslation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="content">
+    <div class="content-wrap">
+        <div class="container clearfix">
+            <div class="row">
+                <div class="col-sm-12">
+                    @{Html.RenderAction("InnerTopBar", "Partials", new { header = "Hızlı Çeviri", SubTitle = "Titiz ve Hızlı Çeviri" }); }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 norightpadding">
+                    @{Html.RenderAction("InnerLeftMenu", "Partials"); }
+                </div>
+                <div class="col-md-9">
+                    <h3 style="font-size: 18px">Hızlı çeviri ve zaman yarışı</h3>
+                    <p class="fnt" style="mso-layout-grid-align: none; text-autospace: none">
+                        Hemen her hastanenin Acil ünitesi vardır. Burası beklenmedik, plansız ve anlık gelişen hadiseler ve kazalar sonucu oluşan rahatsızlıklar için kullanılır.  Dileylim ki; diz ameliyatı olacak bir hasta var. Belki kendimiz hiç ameliyat olmamış olabiliriz ama hepimiz biliyoruz ki bu hasta hastaneye gittiği saat içinde ameliyat olmaz. Filmler çekilir, tahliller yapılır ameliyatı yapacak doktor(lar) ve ekibi için terminler oluşturulur. 3-5 gün belki de 3-5 hafta sonrası için gün verilir. Bahsi geçen ameliyat bu şekilde planlanmış olan tarihte geçekleştirilir.<br />
+                        <br />
+                        Buradan çok net bir şekilde şu sonucu çıkarabiliriz, sağlık gibi önemli konularda bile &quot;Acil&quot; demek aslında &quot;Planlanmamış&quot; demektir. Bireysel olarak günlük işlerinizde ve şirketinizde elbette ki bazı zamanlar, bazı durumlar için hızlı ve acil çözümler bulmak gerekebilir. Ancak hemen gün, &quot;<em>o iş acil, bu iş acil, şu iş de acil</em>&quot; şeklinde geçiyorsa; ortada yanlış bir şeyler var demektir. Ve burada şirketiniz ve şahsınız için öncelikle çek etmeniz gereken konu; iş planlamasıdır. Yapılacak işleri önem ve gereklilik sırasına göre puanlamak, birisi bitmeden diğerine başlamamak, araya yeni işler almamak bu konuda size hayli yardımcı olacaktır.
+                        <br />
+                        <br />
+                        Heyecan ve telaş psikolojisi ile kendi planlarınızı yine kendinizin sabote etmesini, bilgisayar dünyasından örneklendirecek olursak, durumunuz şuna benzer;<br />
+                        Bir şeyler yapmak için bilgisayarınızda bir yere tıklıyorsunuz ama henüz o işlem gerçekleşmeden daha hızlı olması içi yeniden tıklıyorsunuz. Hızlanmasını istedikçe daha çok tıklıyorsunuz. Buna benzer olay yaşamış hemen herkes bilir ki; Aslında bunu her yapışınızda, amacınıza ulaşmayı daha fazla ötelemiş oluyorsunuz.<br />
+                        Resim gayet net: &quot;<em>Acele ettikçe, yavaşlıyorsunuz</em>.&quot;<br />
+
+                        <br />
+                        <img alt="hızlı çeviri" src="images/hizli-ceviri.jpg" width="633" height="215" /><br />
+
+                    </p>
+
+                    <h3><strong>Planlanmış hızlı çeviri</strong></h3>
+                    <p class="fnt" style="mso-layout-grid-align: none; text-autospace: none">
+                        Yukarıda bahsi geçen plansızlıklar dışında, bulunduğunuz sektöre göre hızlı bir iş trafiğine sahip olabilirsiniz. Medyadan medikale, resmiyet ve siyasetten teknik tercümelere pek çok alanda işin doğası gereği <em><strong>hızlı tercüme</strong></em> ihtiyacı olabilir. Böyle durumlarda çevrisi yapılmış dokümanlarınızı teslim alma tarihiniz kadar dikkat etmeniz gereken bir husus daha vardır; <em><strong>Doğru çeviri</strong></em>.
+                        <br />
+                        İnsanoğlunun fiziksel sınırları dolayısıyla, hızı arttıkça hassasiyeti düşebilmektedir. Yürürken değil de koşarken düşme oranları  bu yüzden yüksektir. Hız güzel olmakla birlikte, çeşitli aksamalar ve hataları da beraberinde getirebilir. Şayet çabuk teslim edilmesini istediğiniz bir tercümeniz varsa, size bakan yönü ile bunun önceden planlamasını yapmak ve doküman hazır olduğunda hızlı bir şekilde tercümanlara ulaştırmak; işe erken başlanmasını dolayısıyla <em><strong>erken teslim</strong></em> alma şansınızı  artttıracaktır.<br />
+                    </p>
+
+
+                    <h3><strong>Elektron hızında teslimat</strong></h3>
+                    <p class="fnt" style="mso-layout-grid-align: none; text-autospace: none">
+                        Mümkün olduğunca planlı hareket ettiniz ancak doğru tercümanı bulmak, karakter sayımı, teslim tarihi ve fiyatta anlaşabileceğiniz doğru <a href="Ceviri-Burosu"><strong><u>çeviri bürosunu</u></strong></a> bulmak için görüşmeler yapmak, dokümanları posta ya da e-mail ile göndermek, benzer işlemlerin çeviri sonrası yeniden tekrarlanması.. Tüm bu süreçlerden kurtulmak ve işlerinizi hızlandırmak isterseniz sizi <a href="http://www.ceviridukkani.com/" title="Çeviri Dükkanı"><u><em><strong>ÇeviriDükkanı'na alalım</strong></em></u></a>.
+                        <br />
+                        <br />
+                        <strong>ÇeviriDükkanı</strong>'nında bahsi geçen trafikle boğuşmazsınız, dokümanlarınızı online olarak sisteme yükleyebilirsiniz. Karakter sayısı, fiyat bilgisi ve teslim süresini
+                        yüklediğiniz anda görebilirsiniz. Şayet daha <strong>hızlı</strong> ve erken teslim almak istiyorsanız (örn. hafta sonunda da çeviriniz devam etsin, fazla mesai yapılsın vb.) buna göre seçim yapabilirsiniz. Ödeme sonrası dokümanınız online olarak tercümanlara düşecektir. Çevirisi biten doküman sisteme yüklendiğinde bu kez kontrol editörlerine düşecektir. Editör onaya bastığı anda ise çevirisi yapılmış dokümanınız size iletilecektir.<br />
+                        <br />
+                        Gördüğünüz gibi <strong>ÇeviriDükkanı</strong>'ında işler, elektron hızında işler ;)<br />
+                        <br />
+                        <br />
+                        <br />
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
