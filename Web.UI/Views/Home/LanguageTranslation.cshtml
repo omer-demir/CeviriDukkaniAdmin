@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "LanguageTranslation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section id="content">
+    <div class="content-wrap">
+        <div class="container clearfix">
+            <div class="row">
+                <div class="col-sm-12">
+                    @{Html.RenderAction("InnerTopBar", "Partials", new { header = "Dil Çevirisi", SubTitle = "Yaşayan Dil Çevirisi" }); }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 norightpadding">
+                    @{Html.RenderAction("InnerLeftMenu", "Partials"); }
+                </div>
+                <div class="col-md-9">
+
+                    <h3 style="font-size:18px">Akraba Diller ve Dil Çevirisi</h3>
+                    <p class="fnt" style="mso-layout-grid-align:none;text-autospace:none">
+
+                        Gelişmiş bir lisanı iletişim aracı olarak kullanabilme yetisi, kuşkusuz insanı diğer canlılardan ayıran önemli faktörlerden birisidir. Bununla birlikte farklı farklı lisanların var oluşu, bazı dillerin birbirlerine benzemesi "<em>Diller ilk olarak nasıl ortaya çıkmıştır?</em>" sorusunu akla getirmektedir. Henüz bir zaman makinemiz olmadığı için bu tür uzak tarihi ilgilendiren sorular için ancak teoriler üzerinden yanıt verebiliyoruz. Dillerin oluşumuyla ilgili pek çok teori olmakla birlikte 3 tanesi daha öne çıkmaktadır:<br>
+                        <br>
+                        <strong>1) Yansıma Teorisi:</strong> Dillerin ilk insanların doğadaki ve etraflarındaki sesleri taklit etmeliyle başladığını ve zamanla geliştiğini savunur. Yansıma teorisini destekler nitelikte hemen her dilde pek çok kelime vardır.<br>
+                        Splash, sniff, boom, crunch, havlamak, takırtı, gümbürtü, horlama vb. pek çok örnek verilebilir. Dıt Kartlar ve Flickr* gibi örnekler düşünüldüğünde yansıma teorisinin sadece ilk zamanlar için değil günümüzde de geçerli olduğu durumlar mevcuttur denilebilir.<br>
+                        * Fotoğraf makinalarında açılıp kapanan örtücü perdenin çıkardığı sesten üretilmiş flick kelimesini kullan web 2.0 sitesi.<br>
+                        <br>
+                        <img alt="Dil Çevirisi Dil Aileleri" src="images/dil-ailesi.jpg" width="633" height="483"><br><br>
+                        <strong>2) Tanrısal Teori:</strong> Yaklaşık olarak ilahi metinlerde geçen haliyle; Allah meleklere yeryüzünde bir halife yaratacağını söyler, melekler de "Bizler seni takdis edip dururken, fesat çıkaracak, kan dökecek insanı mı halife kılıyorsun" derler. Allah Hz. Adem'e isimleri öğretir. Hz. Adem eşyanın isimlerini meleklere anlatır. Ve Allah meleklerden Hz. Adem'e secde etmelerini ister...<br>
+                        Böylece her şeyin ismi bilinir hale gelmiş ve bir dil ortaya çıkmıştır. Bu teori, tüm dillerin tek bir dil ailesinden hatta tek bir dilden geldiği görüşünü de destekler.<br><br>
+                        <strong>3) Ünlemler Teorisi:</strong> İlk insanlar, korktuklarında, acı hissettiklerinde ve sevindiklerinde farklı sesler çıkarmışlardır. Bu seslerin sistemli kullanımı ile diller oluşmuştur.<br>
+                        <br>
+                    </p>
+                    <h3><strong>Modern dünyanın ihtiyacı: Dil Çevirisi</strong></h3>
+                    <p class="fnt" style="mso-layout-grid-align:none;text-autospace:none">
+                        Günümüze gelecek olursak, Birleşmiş Milletler bünyesinde 193 ülke olmasına rağmen bir milyondan fazla yerel konuşanı olan dillerin sayısı <u><a href="https://tr.wikipedia.org/wiki/Dil_sıralaması" target="_blank">267'dir</a></u>. Bir biri ile daha sıkı iletişim kurmaya çalışan modern dünya için hayli yüksek bir rakam denilebilir.<br>
+                        <br>
+                        Görülüyor ki, ülkeler ve kültürler arası iletişim için <strong><em>dil çevirisi</em></strong> olmazsa olmaz bir ihtiyaç. Hatta öyle sınırlar ötesine geçmeden aynı ülke içinde konuşulan diller için, veri görselleştirme yoluyla elde edilmiş çalışmalara baktığımızda; <br>
+                        <br>
+                        <a href="http://twitter.mappinglondon.co.uk/" target="_blank"><img border="0" style="border:0" src="images/coklu-dil-tweet.jpg" alt="Londra'da atılan tweetlerin dillere göre dağılımı" width="633" height="248"></a>
+                        <br>
+                        <br>
+                        hemen yakınlarımızda birden fazla dilin konuşulduğunu rahatlıkla görebiliriz. Ki küreselleşen dünyada bu durumun daha da yoğunlaşacağı söylenebilir. Hal böyle iken gelecekte daha iyi bir konumda yer almak için, aynı anda onlarca dili öğrenip kullanmanız hayli zor olacağı için ve onlarca personel çalıştırmak da hayli maliyetli olacağından, şimdiden çoklu dillerde çeviri hizmeti sunan kaliteli bir <u><strong><a href="https://www.ceviridukkani.com/">çeviri bürosu</a></strong></u> ile çalışmaya başlamanızda fayda var.<br>
+                        <br>
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -2160,6 +2160,9 @@
     <Content Include="Views\Home\ProfessionalTranslation.cshtml" />
     <Content Include="Views\Home\QuickTranslation.cshtml" />
     <Content Include="Views\Home\MakeTranslating.cshtml" />
+    <Content Include="Views\Home\LanguageTranslation.cshtml" />
+    <Content Include="Views\Home\EnglishTranslation.cshtml" />
+    <Content Include="Views\Home\TurkishTranslation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Web.Business\Web.Business.csproj">

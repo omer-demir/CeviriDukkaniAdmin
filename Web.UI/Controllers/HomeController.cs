@@ -77,7 +77,13 @@ namespace Web.UI.Controllers {
         {
             return View();
         }
-        
+
+        [Route("Dil-Cevirisi")]
+        public ActionResult LanguageTranslation()
+        {
+            return View();
+        }
+
         [Route("Guvenlik-ve-Gizlilik")]
         public ActionResult SecurityAndPrivacy() {
             return View();
