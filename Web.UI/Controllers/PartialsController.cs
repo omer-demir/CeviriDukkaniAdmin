@@ -14,9 +14,10 @@ namespace Web.UI.Controllers
             return PartialView();
         }
 
-        public ActionResult InnerTopBar(string header)
+        public ActionResult InnerTopBar(string header,string subTitle)
         {
             ViewBag.Header = header;
+            ViewBag.SubTitle = subTitle;
             return View();
         }
     }

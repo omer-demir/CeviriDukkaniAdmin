@@ -1,422 +1,345 @@
 ﻿@{
     ViewBag.Title = "Güvenlik ve Gizlilik Politikası | Çeviri Dükkanı";
 }
-<link href='https://fonts.googleapis.com/css?family=Oxygen:400,700,300|Open+Sans:400,300,700,600|Bree+Serif&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
-<style type="text/css">
-    p.MsoNormal {
-        margin-bottom: .0001pt;
-        font-size: 12.0pt;
-        font-family: "Trebuchet MS", "sans-serif";
-        color: black;
-        margin-left: 0cm;
-        margin-right: 0cm;
-        margin-top: 0cm;
-    }
-
-    p.MsoBodyText2 {
-        margin-top: 0cm;
-        margin-right: 0cm;
-        margin-bottom: 6.0pt;
-        margin-left: 0cm;
-        line-height: 200%;
-        font-size: 12.0pt;
-        font-family: "Trebuchet MS", "sans-serif";
-        color: black;
-    }
-
-    p.MsoHeading7 {
-        margin-top: 12.0pt;
-        margin-right: 0cm;
-        margin-bottom: 3.0pt;
-        margin-left: 0cm;
-        font-size: 12.0pt;
-        font-family: "Times New Roman", "serif";
-        color: black;
-    }
-
-    table.MsoNormalTable {
-        font-size: 10.0pt;
-        font-family: "Times New Roman", "serif";
-    }
-
-    .auto-style1 {
-        text-decoration: underline;
-        color: teal;
-    }
-</style>
-
-@section scripts{
-    <script>
-        $(function() {
-            $('#ms').multipleSelect();
-            $('#ms2').multipleSelect();
-            $('.tooltip')
-                .tooltipster({
-                    contentAsHTML: true,
-                    interactive: true,
-                    content:
-                        $('<div style="width:180px; padding:5px; border-bottom:1px solid #000;"><a href="/#yeniis">Yeni Çeviri Gönder</a></div><div style="width:180px; padding:5px; border-bottom:1px solid #000;"><a href="/bireysel/Kullanici-Paneli">Kullanıcı Panelim</a></div><div style="width:180px; padding:5px; border-bottom:1px solid #000;"><a href="/bireysel/Profil-Bilgilerim">Profil Bilgileri</a></div><div style="width:180px; padding:5px;"><a href="/bireysel/Sifre-Degistir">Şifre Değiştir</a></div>')
-                });
-        });
-    </script>
-}
-<div class="clear"></div>
-<h1 class="ortala" style="color: #7f7f7f">GÜVENLİK ve GİZLİLİK POLİTİKASI</h1>
-
-
-<div class="ortala">
-
-    <div style="width: 260px; padding: 70px 0 0 20px; line-height: 30px; height: 214px; color: #fff; font-size: 30px; float: left; background-color: #00d4e1">
-        GÜVENLİK ve GİZLİLİK
-    </div>
-    <div style="float: left;">
-        <img src="/Content/images/sundugumuz-gorsel.png" />
-    </div>
-
-    <div class="clear"></div>
-
-    <div class="sundugumuz_menu">
-        <div>
-            <a href="Kaliteli-Ceviri">Kaliteli Çeviri</a>
-        </div>
-        <div class="aktif">
-            <a href="Guvenlik-ve-Gizlilik">Güvenlik ve Gizlilik</a>
-        </div>
-        <div>
-            <a href="Banka-Hesap-Bilgileri">Banka Hesap Bilgileri</a>
-        </div>
-        <div>
-            <a href="Hizmet-Sozlesmesi#iptal">İptal ve İade Koşulları</a>
-        </div>
-        <div style="border-bottom: none;">
-            <a href="Hizmet-Sozlesmesi">Hizmet Sözleşmesi</a>
-        </div>
-    </div>
-    <div style="float: left; width: 637px; margin-left: 20px;">
-        <h2>Güvenlik ve Gizlilik Politikası</h2>
-        <p class="MsoNormal" style="margin-left: 180.0pt; text-align: justify; mso-pagination:
+<section id="content">
+    <div class="content-wrap">
+        <div class="container clearfix">
+            <div class="row">
+                <div class="col-sm-12">
+                    @{Html.RenderAction("InnerTopBar", "Partials", new { header = "GÜVENLİK ve GİZLİLİK POLİTİKASI", SubTitle = "GÜVENLİK ve GİZLİLİK" }); }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 norightpadding">
+                    @{Html.RenderAction("InnerLeftMenu", "Partials"); }
+                </div>
+                <div class="col-md-9">
+                        <h2>Güvenlik ve Gizlilik Politikası</h2>
+                        <p class="MsoNormal" style="margin-left: 180.0pt; text-align: justify; mso-pagination:
                                                                                            none">
-            <b>
-                <span>GİZLİLİK SÖZLEŞMESİ</span>
-            </b>
-        </p>
-        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
-            <b>
-                <span>I. TARAFLAR</span>
-            </b>
-        </p>
-        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
-            <b>
-                <span></span>
-            </b>
-        </p>
-        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
-            <b>
-                <span>1. AIM DANIŞMANLIK VE DIŞ TİCARET LTD..ŞTİ</span>
-            </b>
-        </p>
-        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
-            <b>
-                <span>Dr.Kemal Akgüder Cad.Kurukaya Sok.Koç Apt.No.5/A Bostancı - İSTANBUL</span>
-            </b>
-        </p>
-        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
-            <span>(Bundan sonra <b>“AIM DANIŞMANLIK” </b>olarak anılacaktır.)</span>
-        </p>
-        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
-            <b>
-                <span></span>
-            </b>
-        </p>
-        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
-            <b>
-                <span>2. [Şirket adı]……………………………………………………………………………………………………………………</span>
-            </b>
-        </p>
-        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
-            <span>
-                [Adres]................................................................................................. (Bundan sonra <b>“Şirket” </b>olarak anılacaktır.)
+                            <b>
+                                <span>GİZLİLİK SÖZLEŞMESİ</span>
+                            </b>
+                        </p>
+                        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
+                            <b>
+                                <span>I. TARAFLAR</span>
+                            </b>
+                        </p>
+                        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
+                            <b>
+                                <span></span>
+                            </b>
+                        </p>
+                        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
+                            <b>
+                                <span>1. AIM DANIŞMANLIK VE DIŞ TİCARET LTD..ŞTİ</span>
+                            </b>
+                        </p>
+                        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
+                            <b>
+                                <span>Dr.Kemal Akgüder Cad.Kurukaya Sok.Koç Apt.No.5/A Bostancı - İSTANBUL</span>
+                            </b>
+                        </p>
+                        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
+                            <span>(Bundan sonra <b>“AIM DANIŞMANLIK” </b>olarak anılacaktır.)</span>
+                        </p>
+                        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
+                            <b>
+                                <span></span>
+                            </b>
+                        </p>
+                        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
+                            <b>
+                                <span>2. [Şirket adı]……………………………………………………………………………………………………………………</span>
+                            </b>
+                        </p>
+                        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
+                            <span>
+                                [Adres]................................................................................................. (Bundan sonra <b>“Şirket” </b>olarak anılacaktır.)
 
-            </span>
-        </p>
-        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
-            <span></span>
-        </p>
-        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
-            <b>
-                <span>AIM DANIŞMANLIK </span>
-            </b><span>ile <b>Şirket </b>işbu Sözleşme’de bir arada <b>“Taraflar” </b>ayrı ayrı “<b>Taraf” </b>olarak</span>
-        </p>
-        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
-            <span>anılacaklardır.</span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
-            <b>
-                <span></span>
-            </b>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
-            <b>
-                <span>II. SÖZLEŞME KONUSU</span>
-            </b>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
-            <span></span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <span>İşbu Sözleşme ile, &nbsp;“TERCÜME VE LOKALİZASYON HİZMETLERİ” ne yönelik hususlar ve her iki Taraf’ın riayet etmesi gereken konular düzenlenmektedir. Sözleşme verilecek hizmet amacı ile ifşa edilen bilgilere ilişkin gizlilik taahhüdünü içermektedir. Genel anlamda işbu Sözleşme’nin konusu; TERCÜME VE LOKALİZASYON HİZMETLERİ kapsamında AIM DANIŞMANLIK’ın yürüttüğü çalışmalar ile ilgili olarak, kendisine ŞİRKET tarafından verilen, açıklanan, gizlilik içeren herhangi bir bilgi ve belgenin daha açık bir ifade ile Gizli Bilgi’nin ŞİRKET’NIN onayı alınmadıkça herhangi bir 3. gerçek ve/veya tüzel kişiye açıklanmamasının sağlanması, işbu Sözleşme hükümlerine uygun davranarak açıklanan tüm Gizli Bilgi’lerin korunması, Tarafların karşılıklı hak ve yükümlülüklerinin, gizliliğin sınırlarının ve koşullarının belirlenmesidir. </span>
-        </p>
-        <p class="MsoBodyText2" style="margin-bottom: 0cm; margin-bottom: .0001pt;
+                            </span>
+                        </p>
+                        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
+                            <span></span>
+                        </p>
+                        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
+                            <b>
+                                <span>AIM DANIŞMANLIK </span>
+                            </b><span>ile <b>Şirket </b>işbu Sözleşme’de bir arada <b>“Taraflar” </b>ayrı ayrı “<b>Taraf” </b>olarak</span>
+                        </p>
+                        <p class="MsoNormal" style="mso-layout-grid-align: none; text-autospace: none">
+                            <span>anılacaklardır.</span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
+                            <b>
+                                <span></span>
+                            </b>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
+                            <b>
+                                <span>II. SÖZLEŞME KONUSU</span>
+                            </b>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
+                            <span></span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <span>İşbu Sözleşme ile, &nbsp;“TERCÜME VE LOKALİZASYON HİZMETLERİ” ne yönelik hususlar ve her iki Taraf’ın riayet etmesi gereken konular düzenlenmektedir. Sözleşme verilecek hizmet amacı ile ifşa edilen bilgilere ilişkin gizlilik taahhüdünü içermektedir. Genel anlamda işbu Sözleşme’nin konusu; TERCÜME VE LOKALİZASYON HİZMETLERİ kapsamında AIM DANIŞMANLIK’ın yürüttüğü çalışmalar ile ilgili olarak, kendisine ŞİRKET tarafından verilen, açıklanan, gizlilik içeren herhangi bir bilgi ve belgenin daha açık bir ifade ile Gizli Bilgi’nin ŞİRKET’NIN onayı alınmadıkça herhangi bir 3. gerçek ve/veya tüzel kişiye açıklanmamasının sağlanması, işbu Sözleşme hükümlerine uygun davranarak açıklanan tüm Gizli Bilgi’lerin korunması, Tarafların karşılıklı hak ve yükümlülüklerinin, gizliliğin sınırlarının ve koşullarının belirlenmesidir. </span>
+                        </p>
+                        <p class="MsoBodyText2" style="margin-bottom: 0cm; margin-bottom: .0001pt;
                                                                          text-align: justify; line-height: normal">
-            <span></span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
-            <b>
-                <span>III. TANIMLAR</span>
-            </b>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
-            <span></span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
-            <b>
-                <span>3.1</span>
-            </b><span>. İşbu Sözleşme’nin Gizli Bilgi’lerin saklanması yükümlülükleri kapsamında; </span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
-            <span></span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
-            <span>İfşa Eden: Gizli Bilgi’leri Sözleşme’nin diğer akidine/Taraf’ına ifşa eden taraftır. </span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
-            <span>Bilgiyi Alan: İfşa edilen yani Sözleşme çerçevesinde diğer akitten/Taraf’tan Gizli Bilgiyi alan, kendisine açıklanması sureti ile öğrenen, yahut Gizli Bilgi’yi herhangi bir şekilde öğrenen taraftır.</span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <span></span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
-            <span>TERCÜME VE LOKALİZASYON HİZMETLERİ: şirket&nbsp; tarafından verilecek dökümanların tercümesi yapıldıktan sonra, uzman kişilerce&nbsp;edit, kontrol ve düzeltme işlemlerini takiben AIM DANIŞMANLIK tarafından &nbsp;daha önceden belirtilmiş ve ŞİRKET’nin da onayladığı tarihte teslimi yapılacaktır<span class="auto-style1" style="text-underline: single;"><ins cite="mailto:iyazgan" datetime="2012-07-27T14:36"></ins></span></span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
-            <span></span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
-            <span>Taraflar’dan her biri İfşa Eden yahut Bilgiyi Alan konumu ile tanımlanabilecek ve bu kapsamdaki yükümlülüklere tabi olacaktır.</span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
-            <span></span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-layout-grid-align: none;
+                            <span></span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
+                            <b>
+                                <span>III. TANIMLAR</span>
+                            </b>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
+                            <span></span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
+                            <b>
+                                <span>3.1</span>
+                            </b><span>. İşbu Sözleşme’nin Gizli Bilgi’lerin saklanması yükümlülükleri kapsamında; </span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
+                            <span></span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
+                            <span>İfşa Eden: Gizli Bilgi’leri Sözleşme’nin diğer akidine/Taraf’ına ifşa eden taraftır. </span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
+                            <span>Bilgiyi Alan: İfşa edilen yani Sözleşme çerçevesinde diğer akitten/Taraf’tan Gizli Bilgiyi alan, kendisine açıklanması sureti ile öğrenen, yahut Gizli Bilgi’yi herhangi bir şekilde öğrenen taraftır.</span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <span></span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
+                            <span>TERCÜME VE LOKALİZASYON HİZMETLERİ: şirket&nbsp; tarafından verilecek dökümanların tercümesi yapıldıktan sonra, uzman kişilerce&nbsp;edit, kontrol ve düzeltme işlemlerini takiben AIM DANIŞMANLIK tarafından &nbsp;daha önceden belirtilmiş ve ŞİRKET’nin da onayladığı tarihte teslimi yapılacaktır<span class="auto-style1" style="text-underline: single;"><ins cite="mailto:iyazgan" datetime="2012-07-27T14:36"></ins></span></span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
+                            <span></span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
+                            <span>Taraflar’dan her biri İfşa Eden yahut Bilgiyi Alan konumu ile tanımlanabilecek ve bu kapsamdaki yükümlülüklere tabi olacaktır.</span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
+                            <span></span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-layout-grid-align: none;
                                                                                                                 text-autospace: none">
-            <b>
-                <span>3.2.</span>
-            </b><span> ŞİRKET ve/veya bağlı ortaklıkları tarafından, Bilgiyi Alan Taraf’a herhangi bir biçimde, sözlü ve/veya yazılı olarak ve/veya bilgisayar (internet dahil) ortamında aktarılan ve ŞİRKET’NIN ve/veya bağlı ortaklıklarının işiyle, personeliyle, danışmanlarıyla ve/veya iş ortaklarıyla ilgili olabilecek olan, herhangi bir şekilde aktarılması esnasında özel olarak, gizli olduğu ya da “gizli bilgi” niteliğinin bulunduğunun açıklanmasına gerek olmayan, manada anlaşılacak olan her türlü bilgi ve belge,&nbsp; fikir, proje, buluş, iş, metod, ilerleme ve patent, telif hakkı, marka, müşteri listeleri, müşteri kontratlarının isimleri, iş planları, teknik veriler, ürün fikirleri, personel, kontratlar ve mali bilgiler, ticari sır ya da diğer yasal korunmaya konu olan ya da olmayan her türlü yenilik, ticari mali ve teknik bilgiler ve konuşma bilgileri sır olarak kabul edilir ve bundan böyle <b>“Gizli Bilgiler”</b> olarak anılacaktır. </span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-layout-grid-align: none;
+                            <b>
+                                <span>3.2.</span>
+                            </b><span> ŞİRKET ve/veya bağlı ortaklıkları tarafından, Bilgiyi Alan Taraf’a herhangi bir biçimde, sözlü ve/veya yazılı olarak ve/veya bilgisayar (internet dahil) ortamında aktarılan ve ŞİRKET’NIN ve/veya bağlı ortaklıklarının işiyle, personeliyle, danışmanlarıyla ve/veya iş ortaklarıyla ilgili olabilecek olan, herhangi bir şekilde aktarılması esnasında özel olarak, gizli olduğu ya da “gizli bilgi” niteliğinin bulunduğunun açıklanmasına gerek olmayan, manada anlaşılacak olan her türlü bilgi ve belge,&nbsp; fikir, proje, buluş, iş, metod, ilerleme ve patent, telif hakkı, marka, müşteri listeleri, müşteri kontratlarının isimleri, iş planları, teknik veriler, ürün fikirleri, personel, kontratlar ve mali bilgiler, ticari sır ya da diğer yasal korunmaya konu olan ya da olmayan her türlü yenilik, ticari mali ve teknik bilgiler ve konuşma bilgileri sır olarak kabul edilir ve bundan böyle <b>“Gizli Bilgiler”</b> olarak anılacaktır. </span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-layout-grid-align: none;
                                                                                                                    text-autospace: none">
-            <span></span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-layout-grid-align: none;
+                            <span></span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-layout-grid-align: none;
                                                                                                                       text-autospace: none">
-            <span>Bilgiyi Alan, İfşa Eden&#39;den öğrendiği her türlü Gizli Bilgi’yi koşulların gerektirdiği ölçüde ve 4. Madde’de belirtilen istisnalar saklı kalmak kaydı ile korumak ve saklamak, üçüncü kişilere vermemek, açıklamamak, kamuya duyurmamak, değiştirmemek ve bu şekilde sonuçlanacak sair davranışlardan kaçınacağını taahhüt eder. </span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
-            <span></span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
-            <b>
-                <span>IV: SÖZLEŞME HÜKÜMLERİ</span>
-            </b>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
-            <span></span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-layout-grid-align: none;
+                            <span>Bilgiyi Alan, İfşa Eden&#39;den öğrendiği her türlü Gizli Bilgi’yi koşulların gerektirdiği ölçüde ve 4. Madde’de belirtilen istisnalar saklı kalmak kaydı ile korumak ve saklamak, üçüncü kişilere vermemek, açıklamamak, kamuya duyurmamak, değiştirmemek ve bu şekilde sonuçlanacak sair davranışlardan kaçınacağını taahhüt eder. </span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
+                            <span></span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
+                            <b>
+                                <span>IV: SÖZLEŞME HÜKÜMLERİ</span>
+                            </b>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
+                            <span></span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-layout-grid-align: none;
                                                                                                                                   text-autospace: none">
-            <b>
-                <span>4.1.</span>
-            </b><span> İşbu Sözleşme ilişkisi devam ederken ve sürenin herhangi bir nedenle sona ermesinden sonraki beş(5)</span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-layout-grid-align: none;
+                            <b>
+                                <span>4.1.</span>
+                            </b><span> İşbu Sözleşme ilişkisi devam ederken ve sürenin herhangi bir nedenle sona ermesinden sonraki beş(5)</span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-layout-grid-align: none;
                                                                                                                                      text-autospace: none">
-            <span>yıl süresince, Bilgiyi Alan Taraf, bütün Gizli Bilgileri tamamen saklı tutacak, hiçbir Gizli Bilgi’yi herhangi bir üçüncü tarafa aktarmayacak ve personelinin ve yardımcı şahıslarının da bu yükümlülüğe aynen riayet etmesini sağlayacak ve bu anlamda her türlü tedbiri alacaktır.</span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-layout-grid-align: none;
+                            <span>yıl süresince, Bilgiyi Alan Taraf, bütün Gizli Bilgileri tamamen saklı tutacak, hiçbir Gizli Bilgi’yi herhangi bir üçüncü tarafa aktarmayacak ve personelinin ve yardımcı şahıslarının da bu yükümlülüğe aynen riayet etmesini sağlayacak ve bu anlamda her türlü tedbiri alacaktır.</span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-layout-grid-align: none;
                                                                                                                                         text-autospace: none">
-            <span></span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-layout-grid-align: none;
+                            <span></span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-layout-grid-align: none;
                                                                                                                                            text-autospace: none">
-            <b>
-                <span>4.2.</span>
-            </b><span> Bilgiyi Alan Taraf, bu Gizli Bilgi’lere TERCÜME VE LOKALİZASYON HİZMETLERİ işi kapsamında AIM DANIŞMANLIK’a verilen tercüme ve sair hizmet ile ilgili ve sınırlı olarak vakıftır ve bunları yine aynı sınırlamalar dahilinde, bu bilgileri bilme ihtiyacında olan Bilgiyi Alan Taraf personeline ve ancak bu kimsenin işi ifa etmesi için ihtiyaç duyacağı kapsamda ve işbu Sözleşme’de belirtilen aynı koşullara tabi olarak ifşa edebilecek olup, bu kapsamda oluşması muhtemel tüm uyuşmazlıklardan bizzat kendisi gibi sorumlu tutulacaktır. Bilgiyi Alan Taraf’ın emrinde veya kendisiyle birlikte çalışanlarının ve yardımcı şahıslarının da Gizli Bilgileri Bilgiyi Alan Taraf gibi gizli tutma zorunlulukları olduğunu ve bu kimselerin bu yükümlülüğe uyacağını ve kendisinin bunu sağlayacağını Bilgiyi Alan Taraf kabul ve beyan eder.</span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-layout-grid-align: none;
+                            <b>
+                                <span>4.2.</span>
+                            </b><span> Bilgiyi Alan Taraf, bu Gizli Bilgi’lere TERCÜME VE LOKALİZASYON HİZMETLERİ işi kapsamında AIM DANIŞMANLIK’a verilen tercüme ve sair hizmet ile ilgili ve sınırlı olarak vakıftır ve bunları yine aynı sınırlamalar dahilinde, bu bilgileri bilme ihtiyacında olan Bilgiyi Alan Taraf personeline ve ancak bu kimsenin işi ifa etmesi için ihtiyaç duyacağı kapsamda ve işbu Sözleşme’de belirtilen aynı koşullara tabi olarak ifşa edebilecek olup, bu kapsamda oluşması muhtemel tüm uyuşmazlıklardan bizzat kendisi gibi sorumlu tutulacaktır. Bilgiyi Alan Taraf’ın emrinde veya kendisiyle birlikte çalışanlarının ve yardımcı şahıslarının da Gizli Bilgileri Bilgiyi Alan Taraf gibi gizli tutma zorunlulukları olduğunu ve bu kimselerin bu yükümlülüğe uyacağını ve kendisinin bunu sağlayacağını Bilgiyi Alan Taraf kabul ve beyan eder.</span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-layout-grid-align: none;
                                                                                                                                               text-autospace: none">
-            <span></span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-layout-grid-align: none;
+                            <span></span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-layout-grid-align: none;
                                                                                                                                                  text-autospace: none">
-            <b>
-                <span>4.3</span>
-            </b><span>. Bilgiyi Alan Taraf, ŞİRKET’NIN hiçbir Gizli Bilgi’sini, ŞİRKET’e hizmet verme dışında, kendi kişisel ve/veya 3. şahısların çıkarı veya amacı için kullanmayacak ve kullandırmayacaktır.</span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <span></span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <b>
-                <span>4.4. </span>
-            </b><span>Bilgiyi Alan sorumlu olduğu kişilerce diğer Taraf’a ait Gizli Bilgi’lerin Sözleşme’ye aykırı biçimde açıklandığından haberdar olduğunda, derhal ve yazılı olarak İfşa Eden’e durumu bildirmekle yükümlü olup, bu bağlamda İfşa Eden/Şirket’in bu durumdan doğan zarar, ziyan ve sorumluluklarını Şirket’in yapacağı ilk talep üzerine tazmin edecektir.</span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <b>
-                <span></span>
-            </b>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <b>
-                <span>4.5. </span>
-            </b><span>ŞİRKET tarafından AIM DANIŞMANLIK’a temin edilmiş TERCÜME VE LOKALİZASYON HİZMETLERİ kapsamında ki &nbsp;belge ve bilginin, ŞİRKET’NIN rızası haricinde Sözleşme’ye aykırı olarak ifşa edilmesi halinde,AIM DANIŞMANLIK bundan dolayı sorumlu olacaktır.&nbsp; AIM DANIŞMANLIK bu bilgi ve belgelerin 3. şahıslara iletilmemesi için gerekli her türlü tedbiri almayı taahhüt ettiği gibi, her türlü tedbiri almasına rağmen, bu bilgi ve belgelerin yayılmasına mani olamadığını ve/veya kusuru olmadığını ileri sürerek sorumluluktan kurtulamayacak olup, bu anlamda İfşa Eden/Şirket nezdinde oluşabilecek tüm zarar ve masrafları derhal tazmin etmekle yükümlü olacaktır. &nbsp;</span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <b>
-                <span></span>
-            </b>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <b>
-                <span>4.6.</span>
-            </b><span> Gizli Bilgi’lerin Sözleşme’ye aykırı olarak açıklanması halinde İfşa Eden, bu bildirim üzerine veya kendiliğinden masrafları diğer tarafa ait olmak kaydıyla tüm yasal yollara başvurma ve uğradığı her türlü zararın giderimini diğer taraftan talep etme hakkına sahiptir. Bilgiyi Alan söz konusu bedelleri İfşa Eden’in/Şirket’in ilk yazılı talebi üzerine derhal, nakden ve defaten ödeyeceğini kabul eder.</span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <span></span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <b>
-                <span>4.7. </span>
-            </b><span>İşbu Sözleşme hükümleri Taraflar arasında önceden yapılmış ve sonradan yapılacak tüm Sözleşmeleri bağlar niteliktedir.</span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <span></span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <span>4.8. İşbu Sözleşme ilişkisinin herhangi bir sebeple sona ermesi üzerine veya ŞİRKET’NIN Sözleşme süresince herhangi bir andaki talebi üzerine, Bilgiyi Alan Taraf, Gizli Bilgiler içeren veya Gizli Bilgilerden oluşan bütün malzemeleri (yazılı, elektronik veya</span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
-            <span>herhangi başka türdeki) hiçbir kopya tutmaksızın, derhal ŞİRKET</span><span lang="EN-US">’e</span><span> iade edecektir </span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <span></span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <b>
-                <span>4.9.</span>
-            </b><span> İşbu Sözleşme’ye ait maddelerden herhangi biri mevzuat gereğince uygulanabilirliğini kaybeder ise, bu maddenin işbu Sözleşme’den ayrı tutulduğu kabul edilecek ve Sözleşme’nin diğer hükümleri geçerliliğini aynen koruyacaktır. Aynı zamanda, işbu Sözleşme yürürlüğe girdikten sonra Sözleşme hükümlerine ilişkin Taraflarca değişiklik yapılması istenir ise sadece ve önceden Taraflar’ın yetkili temsilcileri tarafından imzalanmış yazılı onayları ile gerçekleştirilebilir.</span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <b>
-                <span></span>
-            </b>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <b>
-                <span>V. SÜRE</span>
-            </b>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <span></span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <b>
-                <span>5.</span>
-            </b><span> İşbu Sözleşme imza tarihinden itibaren yürürlüğe girer ve 26/02/2014 tarihinde sona erecek şekilde (“Vade Sonu Tarihi”)1 yıl süre ile yürürlükte kalır. Vade Sonu Tarihi bitimi itibari ile herhangi bir ihbar ve/veya ihtarda bulunulmasına gerek kalmaksızın işbu Sözleşme hukuken geçersiz olacaktır. Ancak, Taraflar karşılıklı mutabakat ile Sözleşme süresini yenileyebilirler. Taraflar arasındaki ticari ilişki sona erse dahi işbu Sözleşme’deki gizlilik yükümlülükleri Gizli Bilgi’nin öğrenildiği tarihten itibaren başlamak üzere 2 yıl geçerli olmaya devam edecek ve söz konusu 2 yıllık sürenin bitimi itibari ile sona erecektir. Bu sözleşmeden doğmuş ve/veya doğacak her türlü hak, alacak veya yükümlülükler tamamen ya da kısmen karşı Taraf’ın yazılı onayı alınmaksızın üçüncü kişilere devir ve/veya temlik edilemezler.</span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <span></span>
-        </p>
-        <p class="MsoHeading7" style="margin: 0cm; margin-bottom: .0001pt; text-align: justify">
-            <b>
-                <span>VI. TEBLİGAT </span>
-            </b>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <b>
-                <span></span>
-            </b>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <b>
-                <span>6. </span>
-            </b><span>İşbu Sözleşme uyarınca yapılacak olan her çeşit ihbar ve bildirimler, Tarafların işbu Sözleşme de belirttikleri tebligat adreslerine yapılacaktır. Taraflar, tebligat adreslerinde oluşan değişiklikleri karşı tarafa değişikliğin gerçekleşme tarihinden itibaren (3) gün içerisinde yazılı bir şekilde bildirmeyi aksi halde bu adreslere yapılacak tebligatların hukuken geçerli olacağını kabul ederler. Taraflar arası bildirimler yazılı şekille yapılır. </span>
-        </p>
-        <p class="MsoHeading7" style="margin: 0cm; margin-bottom: .0001pt; text-align: justify">
-            <b>
-                <span></span>
-            </b>
-        </p>
-        <p class="MsoHeading7" style="margin: 0cm; margin-bottom: .0001pt; text-align: justify">
-            <b>
-                <span>VII. UYGULANACAK HUKUK VE UYUŞMAZLIKLARIN ÇÖZÜMÜ </span>
-            </b>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <b>
-                <span></span>
-            </b>
-        </p>
-        <p class="MsoBodyText2" style="margin-bottom: 0cm; margin-bottom: .0001pt;
+                            <b>
+                                <span>4.3</span>
+                            </b><span>. Bilgiyi Alan Taraf, ŞİRKET’NIN hiçbir Gizli Bilgi’sini, ŞİRKET’e hizmet verme dışında, kendi kişisel ve/veya 3. şahısların çıkarı veya amacı için kullanmayacak ve kullandırmayacaktır.</span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <span></span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <b>
+                                <span>4.4. </span>
+                            </b><span>Bilgiyi Alan sorumlu olduğu kişilerce diğer Taraf’a ait Gizli Bilgi’lerin Sözleşme’ye aykırı biçimde açıklandığından haberdar olduğunda, derhal ve yazılı olarak İfşa Eden’e durumu bildirmekle yükümlü olup, bu bağlamda İfşa Eden/Şirket’in bu durumdan doğan zarar, ziyan ve sorumluluklarını Şirket’in yapacağı ilk talep üzerine tazmin edecektir.</span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <b>
+                                <span></span>
+                            </b>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <b>
+                                <span>4.5. </span>
+                            </b><span>ŞİRKET tarafından AIM DANIŞMANLIK’a temin edilmiş TERCÜME VE LOKALİZASYON HİZMETLERİ kapsamında ki &nbsp;belge ve bilginin, ŞİRKET’NIN rızası haricinde Sözleşme’ye aykırı olarak ifşa edilmesi halinde,AIM DANIŞMANLIK bundan dolayı sorumlu olacaktır.&nbsp; AIM DANIŞMANLIK bu bilgi ve belgelerin 3. şahıslara iletilmemesi için gerekli her türlü tedbiri almayı taahhüt ettiği gibi, her türlü tedbiri almasına rağmen, bu bilgi ve belgelerin yayılmasına mani olamadığını ve/veya kusuru olmadığını ileri sürerek sorumluluktan kurtulamayacak olup, bu anlamda İfşa Eden/Şirket nezdinde oluşabilecek tüm zarar ve masrafları derhal tazmin etmekle yükümlü olacaktır. &nbsp;</span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <b>
+                                <span></span>
+                            </b>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <b>
+                                <span>4.6.</span>
+                            </b><span> Gizli Bilgi’lerin Sözleşme’ye aykırı olarak açıklanması halinde İfşa Eden, bu bildirim üzerine veya kendiliğinden masrafları diğer tarafa ait olmak kaydıyla tüm yasal yollara başvurma ve uğradığı her türlü zararın giderimini diğer taraftan talep etme hakkına sahiptir. Bilgiyi Alan söz konusu bedelleri İfşa Eden’in/Şirket’in ilk yazılı talebi üzerine derhal, nakden ve defaten ödeyeceğini kabul eder.</span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <span></span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <b>
+                                <span>4.7. </span>
+                            </b><span>İşbu Sözleşme hükümleri Taraflar arasında önceden yapılmış ve sonradan yapılacak tüm Sözleşmeleri bağlar niteliktedir.</span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <span></span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <span>4.8. İşbu Sözleşme ilişkisinin herhangi bir sebeple sona ermesi üzerine veya ŞİRKET’NIN Sözleşme süresince herhangi bir andaki talebi üzerine, Bilgiyi Alan Taraf, Gizli Bilgiler içeren veya Gizli Bilgilerden oluşan bütün malzemeleri (yazılı, elektronik veya</span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify; mso-pagination: none">
+                            <span>herhangi başka türdeki) hiçbir kopya tutmaksızın, derhal ŞİRKET</span><span lang="EN-US">’e</span><span> iade edecektir </span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <span></span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <b>
+                                <span>4.9.</span>
+                            </b><span> İşbu Sözleşme’ye ait maddelerden herhangi biri mevzuat gereğince uygulanabilirliğini kaybeder ise, bu maddenin işbu Sözleşme’den ayrı tutulduğu kabul edilecek ve Sözleşme’nin diğer hükümleri geçerliliğini aynen koruyacaktır. Aynı zamanda, işbu Sözleşme yürürlüğe girdikten sonra Sözleşme hükümlerine ilişkin Taraflarca değişiklik yapılması istenir ise sadece ve önceden Taraflar’ın yetkili temsilcileri tarafından imzalanmış yazılı onayları ile gerçekleştirilebilir.</span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <b>
+                                <span></span>
+                            </b>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <b>
+                                <span>V. SÜRE</span>
+                            </b>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <span></span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <b>
+                                <span>5.</span>
+                            </b><span> İşbu Sözleşme imza tarihinden itibaren yürürlüğe girer ve 26/02/2014 tarihinde sona erecek şekilde (“Vade Sonu Tarihi”)1 yıl süre ile yürürlükte kalır. Vade Sonu Tarihi bitimi itibari ile herhangi bir ihbar ve/veya ihtarda bulunulmasına gerek kalmaksızın işbu Sözleşme hukuken geçersiz olacaktır. Ancak, Taraflar karşılıklı mutabakat ile Sözleşme süresini yenileyebilirler. Taraflar arasındaki ticari ilişki sona erse dahi işbu Sözleşme’deki gizlilik yükümlülükleri Gizli Bilgi’nin öğrenildiği tarihten itibaren başlamak üzere 2 yıl geçerli olmaya devam edecek ve söz konusu 2 yıllık sürenin bitimi itibari ile sona erecektir. Bu sözleşmeden doğmuş ve/veya doğacak her türlü hak, alacak veya yükümlülükler tamamen ya da kısmen karşı Taraf’ın yazılı onayı alınmaksızın üçüncü kişilere devir ve/veya temlik edilemezler.</span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <span></span>
+                        </p>
+                        <p class="MsoHeading7" style="margin: 0cm; margin-bottom: .0001pt; text-align: justify">
+                            <b>
+                                <span>VI. TEBLİGAT </span>
+                            </b>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <b>
+                                <span></span>
+                            </b>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <b>
+                                <span>6. </span>
+                            </b><span>İşbu Sözleşme uyarınca yapılacak olan her çeşit ihbar ve bildirimler, Tarafların işbu Sözleşme de belirttikleri tebligat adreslerine yapılacaktır. Taraflar, tebligat adreslerinde oluşan değişiklikleri karşı tarafa değişikliğin gerçekleşme tarihinden itibaren (3) gün içerisinde yazılı bir şekilde bildirmeyi aksi halde bu adreslere yapılacak tebligatların hukuken geçerli olacağını kabul ederler. Taraflar arası bildirimler yazılı şekille yapılır. </span>
+                        </p>
+                        <p class="MsoHeading7" style="margin: 0cm; margin-bottom: .0001pt; text-align: justify">
+                            <b>
+                                <span></span>
+                            </b>
+                        </p>
+                        <p class="MsoHeading7" style="margin: 0cm; margin-bottom: .0001pt; text-align: justify">
+                            <b>
+                                <span>VII. UYGULANACAK HUKUK VE UYUŞMAZLIKLARIN ÇÖZÜMÜ </span>
+                            </b>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <b>
+                                <span></span>
+                            </b>
+                        </p>
+                        <p class="MsoBodyText2" style="margin-bottom: 0cm; margin-bottom: .0001pt;
                                                                                                                                                                                                                             text-align: justify; line-height: normal">
-            <b>
-                <span>7. </span>
-            </b><span>Sözleşmenin uygulanması sırasında ortaya çıkabilecek uyuşmazlıklarda Taraflar öncelikle uyuşmazlıkların sulhen çözümlenebilmesi yoluna gideceklerdir. Uyuşmazlığın, sulhen çözümlenememesi halinde; uyuşmazlıklarda yetkili mahkeme ve icra dairesi İstanbul (Merkez) mahkemeleri ve icra daireleri olup, uyuşmazlığın çözümünde Türk Hukuku uygulanacaktır.</span>
-        </p>
-        <p class="MsoHeading7" style="margin: 0cm; margin-bottom: .0001pt; text-align: justify">
-            <b>
-                <span></span>
-            </b>
-        </p>
-        <p class="MsoHeading7" style="margin: 0cm; margin-bottom: .0001pt; text-align: justify">
-            <b>
-                <span>VIII. SÖZLEŞME’NİN YÜRÜRLÜĞE GİRMESİ</span>
-            </b>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <b>
-                <span></span>
-            </b>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <b>
-                <span>8.</span>
-            </b><span> İşbu sözleşme 7(yedi) maddeden müteşşekkil olup imzalanmasıyla birlikte Taraflar arasında imzalanmış ve imzalanacak olan tüm sözleşme ve anlaşma hükümlerini bağlar niteliktedir. </span>
-        </p>
-        <p class="MsoNormal" style="text-align: justify">
-            <span>&nbsp;</span>
-        </p>
-        <table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="margin-left: 5.4pt; border-collapse: collapse; mso-table-layout-alt: fixed;
+                            <b>
+                                <span>7. </span>
+                            </b><span>Sözleşmenin uygulanması sırasında ortaya çıkabilecek uyuşmazlıklarda Taraflar öncelikle uyuşmazlıkların sulhen çözümlenebilmesi yoluna gideceklerdir. Uyuşmazlığın, sulhen çözümlenememesi halinde; uyuşmazlıklarda yetkili mahkeme ve icra dairesi İstanbul (Merkez) mahkemeleri ve icra daireleri olup, uyuşmazlığın çözümünde Türk Hukuku uygulanacaktır.</span>
+                        </p>
+                        <p class="MsoHeading7" style="margin: 0cm; margin-bottom: .0001pt; text-align: justify">
+                            <b>
+                                <span></span>
+                            </b>
+                        </p>
+                        <p class="MsoHeading7" style="margin: 0cm; margin-bottom: .0001pt; text-align: justify">
+                            <b>
+                                <span>VIII. SÖZLEŞME’NİN YÜRÜRLÜĞE GİRMESİ</span>
+                            </b>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <b>
+                                <span></span>
+                            </b>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <b>
+                                <span>8.</span>
+                            </b><span> İşbu sözleşme 7(yedi) maddeden müteşşekkil olup imzalanmasıyla birlikte Taraflar arasında imzalanmış ve imzalanacak olan tüm sözleşme ve anlaşma hükümlerini bağlar niteliktedir. </span>
+                        </p>
+                        <p class="MsoNormal" style="text-align: justify">
+                            <span>&nbsp;</span>
+                        </p>
+                        <table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="margin-left: 5.4pt; border-collapse: collapse; mso-table-layout-alt: fixed;
                                                                                                                                                                                                                                               border: none; mso-border-alt: solid windowtext .5pt; mso-yfti-tbllook: 160;
                                                                                                                                                                                                                                               mso-padding-alt: 0cm 5.4pt 0cm 5.4pt; mso-border-insideh: .5pt solid windowtext;
                                                                                                                                                                                                                                               mso-border-insidev: .5pt solid windowtext" width="643">
-            <tr height="100px">
-                <td valign="top" width="321">
-                    <p class="MsoNormal" style="text-align: justify">
-                        <b>
-                            <span>AIM DANIŞMANLIK VE DIŞ TİCARET LTD..ŞTİ</span>
-                        </b>
-                    </p>
-                </td>
-                <td valign="top" width="321">
-                    <p class="MsoNormal" style="text-align: justify">
-                        <b>
-                            <span>…………………………………………………………………</span>
-                        </b>
-                    </p>
-                </td>
-            </tr>
-        </table>
-        &nbsp;
+                            <tr height="100px">
+                                <td valign="top" width="321">
+                                    <p class="MsoNormal" style="text-align: justify">
+                                        <b>
+                                            <span>AIM DANIŞMANLIK VE DIŞ TİCARET LTD..ŞTİ</span>
+                                        </b>
+                                    </p>
+                                </td>
+                                <td valign="top" width="321">
+                                    <p class="MsoNormal" style="text-align: justify">
+                                        <b>
+                                            <span>…………………………………………………………………</span>
+                                        </b>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</section>

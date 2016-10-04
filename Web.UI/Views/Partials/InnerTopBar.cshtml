@@ -2,6 +2,65 @@
     Layout = null;
 }
 
+@section scripts{
+    <script>
+        $(function() {
+            $('#ms').multipleSelect();
+            $('#ms2').multipleSelect();
+            $('.tooltip')
+                .tooltipster({
+                    contentAsHTML: true,
+                    interactive: true,
+                    content:
+                        $('<div style="width:180px; padding:5px; border-bottom:1px solid #000;"><a href="/#yeniis">Yeni Çeviri Gönder</a></div><div style="width:180px; padding:5px; border-bottom:1px solid #000;"><a href="/bireysel/Kullanici-Paneli">Kullanıcı Panelim</a></div><div style="width:180px; padding:5px; border-bottom:1px solid #000;"><a href="/bireysel/Profil-Bilgilerim">Profil Bilgileri</a></div><div style="width:180px; padding:5px;"><a href="/bireysel/Sifre-Degistir">Şifre Değiştir</a></div>')
+                });
+        });
+    </script>
+}
+
+<style type="text/css">
+    p.MsoNormal {
+        margin-bottom: .0001pt;
+        font-size: 12.0pt;
+        font-family: "Trebuchet MS", "sans-serif";
+        color: black;
+        margin-left: 0cm;
+        margin-right: 0cm;
+        margin-top: 0cm;
+    }
+
+    p.MsoBodyText2 {
+        margin-top: 0cm;
+        margin-right: 0cm;
+        margin-bottom: 6.0pt;
+        margin-left: 0cm;
+        line-height: 200%;
+        font-size: 12.0pt;
+        font-family: "Trebuchet MS", "sans-serif";
+        color: black;
+    }
+
+    p.MsoHeading7 {
+        margin-top: 12.0pt;
+        margin-right: 0cm;
+        margin-bottom: 3.0pt;
+        margin-left: 0cm;
+        font-size: 12.0pt;
+        font-family: "Times New Roman", "serif";
+        color: black;
+    }
+
+    table.MsoNormalTable {
+        font-size: 10.0pt;
+        font-family: "Times New Roman", "serif";
+    }
+
+    .auto-style1 {
+        text-decoration: underline;
+        color: teal;
+    }
+</style>
+
 
 <div class="heading-block noborder">
     <h3>@ViewBag.Header</h3>
@@ -9,8 +68,8 @@
 <div class="clear"></div>
 <div class="row clearfix">
     <div class="col-md-3  norightpadding">
-        <div style="width: 100%; padding: 70px 0 0 20px; line-height: 30px; height: 214px; color: #fff; font-size: 30px; float: left; background-color: #00d4e1">
-            Kaliteli Çeviri
+        <div style="width: 100%; padding: 70px 0 0 20px; line-height: 30px; height: 214px; color: #fff; font-size: 30px; background-color: #00d4e1">
+            @ViewBag.SubTitle
         </div>
     </div>
     <div class="col-md-9  noleftpadding">
