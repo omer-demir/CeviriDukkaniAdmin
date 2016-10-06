@@ -13,7 +13,7 @@ using Tangent.CeviriDukkani.Domain.Entities.Common;
 using Web.Business.Services.Interfaces;
 
 namespace Web.Business.Services.Implementations {
-    public class CommonService : BaseService,ICommonService {
+    public class CommonService : BaseService, ICommonService {
         #region Implementation of ICommonService
 
         public ServiceResult<UserDto> Login(LoginRequestDto loginRequest) {
@@ -46,8 +46,7 @@ namespace Web.Business.Services.Implementations {
             return GetAsAsync<MessageDto>(httpClient, $"api/commonapi/getMessage?messageId={messageId}");
         }
 
-        public ServiceResult<List<MessageDto>> GetMessageByQuery(Expression<Func<Message, bool>> expression)
-        {
+        public ServiceResult<List<MessageDto>> GetMessageByQuery(Expression<Func<Message, bool>> expression) {
             var httpClient = GetClient(ServiceUrl.System);
             return PostAsAsync<List<MessageDto>>(httpClient, "api/commonapi/getMessageByQuery", expression);
         }
@@ -74,12 +73,12 @@ namespace Web.Business.Services.Implementations {
 
         public ServiceResult<CompanyDto> AddCompany(CompanyDto companyDto, int userId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return PostAsAsync<CompanyDto>(httpClient, "api/commonapi/addCompany", companyDto,userId);
+            return PostAsAsync<CompanyDto>(httpClient, "api/commonapi/addCompany", companyDto, userId);
         }
 
         public ServiceResult<CompanyDto> UpdateCompany(CompanyDto companyDto, int userId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return PostAsAsync<CompanyDto>(httpClient, "api/commonapi/editCompany", companyDto,userId);
+            return PostAsAsync<CompanyDto>(httpClient, "api/commonapi/editCompany", companyDto, userId);
         }
 
         public ServiceResult<CompanyDto> GetCompany(int companyId) {
@@ -94,7 +93,7 @@ namespace Web.Business.Services.Implementations {
 
         public ServiceResult<LanguageDto> AddLanguage(LanguageDto languageDto, int createdBy) {
             var httpClient = GetClient(ServiceUrl.System);
-            return PostAsAsync<LanguageDto>(httpClient, "api/commonapi/addLanguage", languageDto,createdBy);
+            return PostAsAsync<LanguageDto>(httpClient, "api/commonapi/addLanguage", languageDto, createdBy);
         }
 
         public ServiceResult<LanguageDto> UpdateLanguage(LanguageDto languageDto, int createdBy) {
@@ -245,6 +244,26 @@ namespace Web.Business.Services.Implementations {
         public ServiceResult<List<TranslationQualityDto>> GetTranslationQualities() {
             var httpClient = GetClient(ServiceUrl.System);
             return GetAsAsync<List<TranslationQualityDto>>(httpClient, "api/commonapi/getTranslationQualities");
+        }
+
+        public ServiceResult<CareerItemDto> SaveCareerItem(CareerItemDto careerItem) {
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync<CareerItemDto>(httpClient, "api/commonapi/saveCareerItem", careerItem, 1);
+        }
+
+        public ServiceResult<List<CareerItemDto>> GetCareerItems() {
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync<List<CareerItemDto>>(httpClient, "api/commonapi/getCareerItems");
+        }
+
+        public ServiceResult<CareerItemDto> GetCareerItem(int id) {
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync<CareerItemDto>(httpClient, "api/commonapi/getCareerItem?id=" + id);
+        }
+
+        public ServiceResult<CareerItemDto> UpdateCareerItem(CareerItemDto careerItem) {
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync<CareerItemDto>(httpClient, "api/commonapi/updateCareerItem", careerItem, 1);
         }
 
         #endregion
