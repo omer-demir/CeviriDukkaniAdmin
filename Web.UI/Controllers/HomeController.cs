@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using Tangent.CeviriDukkani.Domain.Common;
 using Web.Business.Services.Interfaces;
 
 namespace Web.UI.Controllers {
@@ -116,8 +117,13 @@ namespace Web.UI.Controllers {
 
         [Route("is-firsatlari")]
         public ActionResult Career() {
+            var jobResult = _commonService.GetCareerItems();
+            if (jobResult.ServiceResultType!=ServiceResultType.Success) {
+                ViewBag.Error = jobResult.ExceptionCode;
+                return View();
+            }
 
-            return View();
+            return View(jobResult.Data);
         }
 
         [Route("Basvur")]
@@ -127,11 +133,17 @@ namespace Web.UI.Controllers {
 
         [Route("isDetaylari")]
         public ActionResult JobDetail(int jid) {
-            return View();
+            var jobResult = _commonService.GetCareerItem(jid);
+            if (jobResult.ServiceResultType != ServiceResultType.Success) {
+                ViewBag.Error = jobResult.ExceptionCode;
+                return View();
+            }
+
+            return View(jobResult.Data);
         }
         
-        [Route("Tercuman-Ol-1")]
-        public ActionResult TranslatorSignUp()
+        [Route("Tercuman-Ol")]
+        public ActionResult TranslatorSignUp(string leftOffHash)
         {
             return View();
         }

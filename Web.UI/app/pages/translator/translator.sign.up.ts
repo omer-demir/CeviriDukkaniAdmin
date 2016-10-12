@@ -32,14 +32,14 @@ declare var $: JQueryStatic;
 
         dataService.getCountries((data: any) => {
 
-            $("#Nationality").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select your nationality' }));
-            $("#Nationality2").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select your second nationality' }));
+            $("#nationality").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select your nationality' }));
+            //$("#Nationality2").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select your second nationality' }));
 
-            $("#country").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select country' }));
-            $('#Resident').select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select residency' }));
+            $("#residency").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select country' }));
+            //$('#residency').select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select residency' }));
 
-            $("#country").select2("val", "-1");
-            $("#Resident").select2("val", "-1");
+            $("#nationality").select2("val", "-1");
+            $("#residency").select2("val", "-1");
         });
 
         dataService.getTongues((data: any) => {
@@ -78,24 +78,24 @@ declare var $: JQueryStatic;
             $("#workingType").select2("val", "-1");
         });
 
-        dataService.getServiceTypes((data: any) => {
-            $("#Timezone").select2(Util.extendOptions(Util.getAsSelectDataWithKeys(data,"value","text"), { placeholder: 'Please select service type' }));
+        dataService.getTimezones((data: any) => {
+            $("#Timezone").select2(Util.extendOptions(Util.getAsSelectDataWithKeys(data,"value","text"), { placeholder: 'Please select timezones' }));
             $("#Timezone").select2("val", "-1");
         });
+        
 
-
-        dataService.getTimezones((data: any) => {
+        dataService.getServiceTypes((data: any) => {
             $("#ServiceTypeId").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select service type' }));
             $("#ServiceTypeId").select2("val", "-1");
         });
 
-        $('#workingType').select2(Util.extendOptions(Constants.Days, { placeholder: 'Please select working type' }));
-        $("#workingType").select2("val", "-1");
+        //$('#workingType').select2(Util.extendOptions(Constants.Days, { placeholder: 'Please select working type' }));
+        //$("#workingType").select2("val", "-1");
 
         $('#Rating').select2(Util.extendOptions(Constants.Rates), { placeholder: 'Please select rating' });
         $("#Rating").select2("val", "-1");
 
-        $('#WorkingDays').select2(Util.extendOptions(Constants.WorkingDays), { placeholder: 'Please select working days',multiple:true });
+        $('#WorkingDays').select2(Util.extendOptions(Constants.WorkingDays), { multiple: true, placeholder: 'Please select working days' });
         $("#WorkingDays").select2("val", "-1");
 
         $('#WorkingHoursStart').pickatime();
@@ -128,8 +128,6 @@ declare var $: JQueryStatic;
     function addRate() {
         var $table = $('#translatorRate');
         var $tableBody = $table.find('tbody');
-
-
 
         var service = $('#ServiceTypeId').select2('data')[0];
         var sourceLanguage = $('#SourceLanguageId').select2('data')[0];
@@ -193,6 +191,10 @@ declare var $: JQueryStatic;
     function validateForm(formElement: string, rules: any[], successCallback: (param: number) => void) {
         Util.handleValidationForm(formElement, rules, successCallback);
         return $(formElement).valid();
+    }
+
+    function getSelectedTab() {
+        return $('ul.tabs').find('li a.active').attr('href');
     }
 
     $(() => {
@@ -303,8 +305,8 @@ declare var $: JQueryStatic;
          * Wizard events
          */
         $('#saveAndContinueLater').on('click', () => {
-            var selectedTabHref = $('ul.tabs').tabs('selected').toString();
-            var selectedTab = parseInt(selectedTabHref.substring(selectedTabHref.length - 1, 1), 10);
+            var selectedTabHref = getSelectedTab().toString();
+            var selectedTab = parseInt(selectedTabHref.substring(selectedTabHref.length - 1, selectedTabHref.length), 10);
             var result: boolean = false;
             var callback = () => {
                 saveCurrentStepCallback(selectedTab);

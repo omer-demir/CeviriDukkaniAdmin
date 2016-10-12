@@ -1,89 +1,36 @@
-﻿
+﻿@model Tangent.CeviriDukkani.Domain.Dto.Common.CareerItemDto
+
+
 @{
     ViewBag.Title = "title";
 }
 
-<link href='https://fonts.googleapis.com/css?family=Oxygen:400,700,300|Open+Sans:400,300,700,600|Bree+Serif&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
-<link href="/Content/css/font-faces.css" rel="stylesheet" type="text/css">
-
-<script async src="/Content/js/analytics.js"></script>
 <style>
-    [data-tip] {
-        position: relative;
-    }
-
-        [data-tip]:after {
-            display: none;
-            content: attr(data-tip);
-            position: absolute;
-            top: -35px;
-            left: 0px;
-            padding: 5px 8px;
-            background: #fec300;
-            color: #000;
-            z-index: 1019;
-            font-size: 0.8em;
-            font-family: arial;
-            height: 18px;
-            line-height: 18px;
-            -webkit-border-radius: 3px;
-            -moz-border-radius: 3px;
-            border-radius: 3px;
-            white-space: nowrap;
-            word-wrap: normal;
-        }
-
-        [data-tip]:before {
-            content: '';
-            /* hides the tooltip when not hovered */
-            display: none;
-            content: '';
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            /* border-bottom: 5px solid #fec300;*/
-            border-top: 5px solid #fec300;
-            position: absolute;
-            top: -7px;
-            left: 35px;
-            z-index: 1018;
-            font-size: 0;
-            line-height: 0;
-            width: 0;
-            height: 0;
-        }
-
-        [data-tip]:hover:before,
-        [data-tip]:hover:after {
-            display: block;
-        }
-
-    #ContentPlaceHolder1_drpSirketler select option {
-        font-weight: bold;
+    .txt-align-center {
+        text-align: center;
     }
 </style>
 
-@section scripts{
-    
-    <script>
 
-        $(function() {
+<section class="content">
+    <div class="content-wrap">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="txt-align-center" style="color: #00d4d7">Bizimle çalışmak keyif vericidir!</h1>
+            </div>
+            <div class="col-md-12">
+                
+            </div>
+        </div>
+    </div>
+</section>
 
-            $('.ccInput').not(':last').keyup(function() {
-                if ($(this).val().length == Number($(this).attr('maxlength'))) {
-                    $(this).next('.ccInput').focus();
-                    $(this).next('.ccInput').select();
-                }
-            });
-        });
-    </script>
-}
 <div class="clear"></div>
 <h1 class="ortala" style="color: #00d4d7">Bizimle çalışmak keyif vericidir!</h1>
 <div class="ortala">
     <div class="uyelikformu-baslik">
         <div style="clear: both"></div>
-        @ViewBag.Job.Title
+        @Model.Title
         Detayları
         <div class="steps">
             <div style="clear: both"></div>
@@ -98,31 +45,25 @@
             <tr>
                 <td width="100" style="font-weight:bold">İş Ünvanı: </td>
                 <td width="549">
-                    @ViewBag.Job.Title
-                </td>
-            </tr>
-            <tr>
-                <td width="100" style="font-weight:bold">İş Başlığı:</td>
-                <td>
-                    @ViewBag.Job.Function
+                    @Model.Title
                 </td>
             </tr>
             <tr>
                 <td width="100" style="font-weight:bold">Lokasyon: </td>
                 <td>
-                    @ViewBag.Job.Location
+                    @Model.Location
                 </td>
             </tr>
             <tr>
                 <td width="100" style="font-weight:bold">Alınacak Kişi:</td>
                 <td>
-                    @ViewBag.Job.KisiSayisi
+                    @Model.PersonCount
                 </td>
             </tr>
             <tr>
                 <td width="100" style="font-weight:bold;vertical-align:top">İş Detayları:</td>
                 <td>
-                    @ViewBag.Job.Detail
+                    @Model.Detail
                 </td>
             </tr>
             <tr>

@@ -176,6 +176,14 @@
                 <form id="form3" novalidate="novalidate">
                     <div class="row">
                         <div class="input-field col s6">
+                            <select id="nationality" class="full-width " name="nationality"></select>
+                        </div>
+                        <div class="input-field col s6">
+                            <select id="residency" class="full-width " name="residency"></select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
                             <select id="motherTongue" class="full-width " name="motherTongue"></select>
                         </div>
                         <div class="input-field col s6">
@@ -188,7 +196,7 @@
                         </div>
                         <div class="input-field col s6">
                             <label for="yearsOfExperience">Years of experience in translation</label>
-                            <input type="number" class="validate" min="0" id="yearsOfExperience" placeholder="Years of experience in translation	" name="yearsOfExperience">
+                            <input type="number" class="validate" min="0" id="yearsOfExperience" placeholder="Years of experience in translation" name="yearsOfExperience">
                         </div>
                     </div>
                     <div class="row">
@@ -206,18 +214,19 @@
                         <div class="input-field col s6">
                             <select id="Timezone" class="full-width " name="Timezone"></select>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="input-field col s6">
                             <select id="WorkingDays" class="full-width " name="WorkingDays"></select>
                         </div>
+                    </div>
+                    <div class="row">
+
                         <div class="input-field col s6">
                             <label for="WorkingHoursStart">Working Hours Start</label>
-                            <input type="text" id="WorkingHoursStart" name="WorkingHoursStart">
+                            <input type="text" id="WorkingHoursStart" name="WorkingHoursStart" placeholder="Working Hours Start">
                         </div>
                         <div class="input-field col s6">
                             <label for="WorkingHoursEnd">Working Hours End</label>
-                            <input type="text" id="WorkingHoursEnd" name="WorkingHoursEnd">
+                            <input type="text" id="WorkingHoursEnd" name="WorkingHoursEnd"  placeholder="Working Hours End">
                         </div>
                     </div>
                     <div class="row">
@@ -317,7 +326,7 @@
                         </p>
                         <p>
                             <input name="bankAccountType" type="radio" id="bankAccountType1" value="European" />
-                            <label for="bankAccountType1">I have an International Bank Accoun</label>
+                            <label for="bankAccountType1">I have an International Bank Account</label>
                         </p>
                         @*<p>
                                 <input name="bankAccountType" type="radio" id="bankAccountType2" value="PayPal" />
@@ -438,32 +447,32 @@
 
                     <div class="row">
                         <div class="input-field col s6">
-                            <label for="DtpRate">Dtp Rate</label>
-                            <input type="number" class="validate" id="DtpRate" placeholder="Dtp Rate">
+                            <label for="DtpRate">Dtp(Desktop Publishing) Rate</label>
+                            <input type="number" class="validate" id="DtpRate" placeholder="Dtp Rate / Page">
                         </div>
                         <div class="input-field col s6">
                             <label for="GlossaryCreationRate">Glossary Creation Rate</label>
-                            <input type="number" class="validate" id="GlossaryCreationRate" placeholder="Glossary Creation Rate">
+                            <input type="number" class="validate" id="GlossaryCreationRate" placeholder="Glossary Creation Rate / hour">
                         </div>
                         <div class="input-field col s6">
                             <label for="TranslationMemoryManagementRate">Translation Memory Management Rate</label>
-                            <input type="number" class="validate" id="TranslationMemoryManagementRate" placeholder="Translation Memory Management Rate">
+                            <input type="number" class="validate" id="TranslationMemoryManagementRate" placeholder="Translation Memory Management Rate / hour">
                         </div>
                         <div class="input-field col s6">
                             <label for="TerminologyExtractionRate">Terminology Extraction Rate</label>
-                            <input type="number" class="validate" id="TerminologyExtractionRate" placeholder="Terminology Extraction Rate">
+                            <input type="number" class="validate" id="TerminologyExtractionRate" placeholder="Terminology Extraction Rate / hour">
                         </div>
                         <div class="input-field col s6">
-                            <label for="ReviewSmeRate">Review Sme Rate</label>
-                            <input type="number" class="validate" id="ReviewSmeRate" placeholder="Review Sme Rate">
+                            <label for="ReviewSmeRate">Review Sme(Subject Matter Expert) Rate</label>
+                            <input type="number" class="validate" id="ReviewSmeRate" placeholder="Review Sme Rate / hour">
                         </div>
                         <div class="input-field col s6">
                             <label for="LinguisticTestingRate">Linguistic Testing Rate</label>
-                            <input type="number" class="validate" id="LinguisticTestingRate" placeholder="Linguistic Testing Rate">
+                            <input type="number" class="validate" id="LinguisticTestingRate" placeholder="Linguistic Testing Rate / hour">
                         </div>
                         <div class="input-field col s6">
-                            <label for="ReviewLqaRate">Review Lqa Rate</label>
-                            <input type="number" class="validate" id="ReviewLqaRate" placeholder="Review Lqa Rate">
+                            <label for="ReviewLqaRate">Review Lqa(Language Quality Assurance) Rate</label>
+                            <input type="number" class="validate" id="ReviewLqaRate" placeholder="Review Lqa Rate / hour">
                         </div>
                     </div>
                 </form>
@@ -495,7 +504,9 @@
         </div>
     </div>
 
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    @*<script src="http://code.jquery.com/jquery-latest.js"></script>*@
+    <script src="~/Content/js/jquery.js"></script>
+    <script src="~/Content/plugins/materialize/js/tabs.js"></script>
     <script src="~/Content/plugins/materialize/js/materialize.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.js"></script>
