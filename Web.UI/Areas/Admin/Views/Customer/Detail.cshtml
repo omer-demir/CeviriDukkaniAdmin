@@ -1,8 +1,95 @@
-﻿
+﻿@using Resources;
+@using Tangent.CeviriDukkani.Domain.Dto.Common
+@model Tangent.CeviriDukkani.Domain.Dto.Sale.CustomerDto
 @{
-    ViewBag.Title = "Detail";
+    ViewBag.Title = CDResource.MusteriDuzenle;
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+<link href="~/Areas/Admin/css/validate.css" rel="stylesheet" />
+@section breadcrumbs{
+    <div id="breadcrumbs-wrapper">
+        <!-- Search for small screen -->
+        <div class="header-search-wrapper grey hide-on-large-only">
+            <i class="mdi-action-search active"></i>
+            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <h5 class="breadcrumbs-title">@CDResource.Musteri</h5>
+                    <ol class="breadcrumbs">
+                        <li>
+                            <a href="/Admin/Home">@CDResource.Anasayfa</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index")">@CDResource.MusteriListesi</a>
+                        </li>
+                        <li class="active">@CDResource.Musteri</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="section">
+    <p class="caption">@CDResource.MusteriBilgileri</p>
+    <div class="divider"></div>
+    <div id="basic-form" class="section">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="card-panel">
+                    <h4 class="header2">@CDResource.Musteri</h4>
+                    <div class="row">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <label for="Name">@CDResource.Adi *</label>
+                                <p>@Model.Name</p>
+                            </div>
+                            <div class="input-field col s12">
+                                <label for="SurName">@CDResource.Soyadi *</label>
+                                <p>@Model.Surname</p>
+                            </div>
+                            <div class="input-field col s12">
+                                <label for="Email">@CDResource.EMail *</label>
+                                <p>@Model.Email</p>
+                            </div>
+                            <div class="input-field col s12">
+                                <label for="MobilePhone">@CDResource.CepTelefonu</label>
+                                <p>@Model.MobilePhone</p>
+                            </div>
 
-<h2>Detail</h2>
+                            <div class="input-field col s12">
+                                <label for="password">@CDResource.Sifre *</label>
+                                <p>@Model.Password</p>
+                            </div>
+                            <div class="col s12">
+                                <label for="role">@CDResource.MusteriTipi *</label>
+                                @Html.DropDownListFor(m => m.MembershipTypeId, new List<SelectListItem>
+                                    {
+                                        new SelectListItem { Text = CDResource.Bireysel, Value = "1" },
+                                        new SelectListItem { Text = CDResource.Kurumsal, Value = "2" }
+                                    }, new { id = "ddlRole", @class = "error browser-default", data_error = ".errorTxt6" })
+                                <div class="input-field"><div class="errorTxt6"></div></div>
+                            </div>
+                            <div class="col s12">
+                                <label for="role">@CDResource.Sirket *</label>
+                                @{
+                                    var companies = new List<SelectListItem> { new SelectListItem { Value = "", Text = CDResource.LutfenSeciniz } };
+                                    foreach (var item in (List<CompanyDto>)ViewBag.Companies) {
+                                        companies.Add(new SelectListItem { Value = item.Id.ToString(), Text = item.Name });
+                                    }
+                                }
 
+                                @Html.DropDownListFor(m => m.CompanyId, companies, new { id = "ddlCompanies", @class = "error browser-default", data_error = ".errorTxt7" })
+                                <div class="input-field"><div class="errorTxt7"></div></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

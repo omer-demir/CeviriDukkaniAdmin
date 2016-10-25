@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using Tangent.CeviriDukkani.Domain.Common;
+using Web.Business.Extensions;
 using Web.Business.Services.Interfaces;
 
 namespace Web.UI.Controllers {
@@ -7,81 +8,70 @@ namespace Web.UI.Controllers {
 
         // GET: Admin/Account
         private readonly ICommonService _commonService;
+        private readonly IUserService _userService;
 
-        public HomeController(ICommonService commonService)
-        {
+        public HomeController(ICommonService commonService,IUserService userService) {
             _commonService = commonService;
+            _userService = userService;
         }
 
-        // GET: Home
         [Route("")]
         public ActionResult Index() {
             return View();
         }
 
         [Route("tercume")]
-        public ActionResult Translation()
-        {
+        public ActionResult Translation() {
             return View();
         }
 
         [Route("Ceviri-Burosu")]
-        public ActionResult TranslatingOffice()
-        {
+        public ActionResult TranslatingOffice() {
             return View();
         }
 
         [Route("Ingilizce-Turkce-Tercume")]
-        public ActionResult EnglishTurkishTranslation()
-        {
+        public ActionResult EnglishTurkishTranslation() {
             return View();
         }
 
         [Route("Turkce-Ingilizce-Ceviri")]
-        public ActionResult TurkishEnglishTranslation()
-        {
+        public ActionResult TurkishEnglishTranslation() {
             return View();
         }
 
         [Route("Profesyonel-Ceviri")]
-        public ActionResult ProfessionalTranslation()
-        {
+        public ActionResult ProfessionalTranslation() {
             return View();
         }
 
         [Route("Hizli-Ceviri")]
-        public ActionResult QuickTranslation()
-        {
+        public ActionResult QuickTranslation() {
             return View();
         }
 
         [Route("Kaliteli-Ceviri")]
-        public ActionResult QualityTranslation()
-        {
+        public ActionResult QualityTranslation() {
             return View();
         }
 
         [Route("Ingilizce-Ceviri")]
-        public ActionResult EnglishTranslation()
-        {
+        public ActionResult EnglishTranslation() {
             return View();
         }
 
         [Route("Turkce-Ceviri")]
-        public ActionResult TurkishTranslation()
-        {
+        public ActionResult TurkishTranslation() {
             return View();
         }
 
         [Route("Ceviri-Yaptir")]
-        public ActionResult MakeTranslating()
-        {
+        public ActionResult MakeTranslating() {
             return View();
         }
 
         [Route("Dil-Cevirisi")]
-        public ActionResult LanguageTranslation()
-        {
+        public ActionResult LanguageTranslation() {
             return View();
         }
 
@@ -118,7 +108,7 @@ namespace Web.UI.Controllers {
         [Route("is-firsatlari")]
         public ActionResult Career() {
             var jobResult = _commonService.GetCareerItems();
-            if (jobResult.ServiceResultType!=ServiceResultType.Success) {
+            if (jobResult.ServiceResultType != ServiceResultType.Success) {
                 ViewBag.Error = jobResult.ExceptionCode;
                 return View();
             }
@@ -141,10 +131,9 @@ namespace Web.UI.Controllers {
 
             return View(jobResult.Data);
         }
-        
+
         [Route("Tercuman-Ol")]
-        public ActionResult TranslatorSignUp(string leftOffHash)
-        {
+        public ActionResult TranslatorSignUp(string leftOffHash) {
             return View();
         }
     }

@@ -74,6 +74,11 @@ namespace Web.Business.Services.Implementations {
             return PostAsAsync<UserDto>(httpClient, "api/userapi/updateUserRegistration", request);
         }
 
+        public ServiceResult<UpdateUserStepRequestDto> GetUserRegistration(int id) {
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync<UpdateUserStepRequestDto>(httpClient, $"api/userapi/getUserRegistration?userId={id}");
+        }
+
         #endregion
     }
 }

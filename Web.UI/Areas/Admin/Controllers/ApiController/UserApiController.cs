@@ -6,6 +6,7 @@ using Tangent.CeviriDukkani.Domain.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Enums;
 using Tangent.CeviriDukkani.Domain.Dto.Request;
 using Tangent.CeviriDukkani.Domain.Dto.System;
+using Web.Business.Extensions;
 using Web.Business.Services.Interfaces;
 
 namespace Web.UI.Areas.Admin.Controllers.ApiController
@@ -50,6 +51,18 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.StatusCode = HttpStatusCode.OK;
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
+        }
+
+        [HttpGet, Route("getUserRegistration")]
+        public HttpResponseMessage GetUserRegistration([FromUri] string leftOffHash) {
+            var hashedId = leftOffHash.GetHashAsId();
+            var result = _userService.GetUserRegistration(hashedId);
+
+            if (result.ServiceResultType != ServiceResultType.Success) {
+                return Error(result);
+            }
+
+            return OK(result);
         }
 
         [HttpPost, Route("editUser")]

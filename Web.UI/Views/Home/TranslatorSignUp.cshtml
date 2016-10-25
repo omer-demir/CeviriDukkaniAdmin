@@ -51,7 +51,7 @@
 
     <div class="container z-depth-4">
         <div class="row header">
-            <h1>Do you have what it takes to join crew?</h1>
+            <h1>Do you have what it takes to join the crew?</h1>
             <h3>Fill out the form and let us know why you should be a member of our team</h3>
         </div>
         <div class="row">
@@ -142,7 +142,8 @@
                             <select id="City" class="full-width" name="City"></select>
                         </div>
                         <div class="input-field col s4">
-                            <select id="district" class="full-width" name="district"></select>
+                            <label for="districtText">District</label>
+                            <input type="text" class="validate" id="districtText" placeholder="District" name="districtText">
                         </div>
                     </div>
                     <div class="row">
@@ -513,6 +514,7 @@
     <script src="~/Content/plugins/timer/timer.js"></script>
     <script src="~/Content/plugins/timer/script.js"></script>
     <script src="~/Content/js/plugins/jquery.validation.js"></script>
+    <script src="~/bower_components/lodash/dist/lodash.min.js"></script>
     <script src="~/bower_components/toastr/toastr.js"></script>
     <script src="~/bower_components/pickadate/lib/picker.time.js"></script>
 

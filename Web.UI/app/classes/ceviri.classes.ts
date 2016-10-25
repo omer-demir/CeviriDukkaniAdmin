@@ -77,6 +77,12 @@ class UserContact {
     fax: string;
     skype: string;
     districtId: number;
+    district:District;
+}
+
+class District {
+    name: String;
+    cityId:number;
 }
 
 class UserAbility {
