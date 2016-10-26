@@ -1,7 +1,6 @@
 ﻿using System.Web.Mvc;
 using Tangent.CeviriDukkani.Domain.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Enums;
-using Tangent.CeviriDukkani.Domain.Dto.System;
 using Web.Business.Services.Interfaces;
 using Web.UI.Areas.Admin.Helpers;
 

@@ -83,7 +83,7 @@ namespace Web.Business.Services.Implementations {
 
         public ServiceResult<CompanyDto> GetCompany(int companyId) {
             var httpClient = GetClient(ServiceUrl.System);
-            return GetAsAsync<CompanyDto>(httpClient, $"api/commonapi/getCompany?companyId={companyId}");
+            return GetAsAsync<CompanyDto>(httpClient, $"api/commonapi/getCompany?id={companyId}");
         }
 
         public ServiceResult<List<LanguageDto>> GetLanguages() {

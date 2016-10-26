@@ -8,6 +8,7 @@ using Tangent.CeviriDukkani.Domain.Dto.Request;
 using Tangent.CeviriDukkani.Domain.Dto.System;
 using Web.Business.Extensions;
 using Web.Business.Services.Interfaces;
+using Web.UI.Areas.Admin.Helpers;
 
 namespace Web.UI.Areas.Admin.Controllers.ApiController
 {
@@ -39,10 +40,12 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
         }
 
         [HttpPost, Route("updateUserRegistration")]
-        public HttpResponseMessage UpdateUserRegistration(UpdateUserStepRequestDto request) {
+        public HttpResponseMessage UpdateUserRegistration(UpdateUserStepRequestDto request)
+        {
             var response = new HttpResponseMessage();
             var serviceResult = _userService.UpdateUserRegistration(request);
-            if (serviceResult.ServiceResultType != ServiceResultType.Success) {
+            if (serviceResult.ServiceResultType != ServiceResultType.Success)
+            {
                 response.StatusCode = HttpStatusCode.InternalServerError;
                 return response;
             }
@@ -54,11 +57,13 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
         }
 
         [HttpGet, Route("getUserRegistration")]
-        public HttpResponseMessage GetUserRegistration([FromUri] string leftOffHash) {
+        public HttpResponseMessage GetUserRegistration([FromUri] string leftOffHash)
+        {
             var hashedId = leftOffHash.GetHashAsId();
             var result = _userService.GetUserRegistration(hashedId);
 
-            if (result.ServiceResultType != ServiceResultType.Success) {
+            if (result.ServiceResultType != ServiceResultType.Success)
+            {
                 return Error(result);
             }
 
@@ -210,6 +215,25 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
                 response.StatusCode = HttpStatusCode.InternalServerError;
                 return response;
             }
+
+            response.StatusCode = HttpStatusCode.OK;
+            response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
+            return response;
+        }
+
+      
+
+        [HttpPost, Route("setActive")]
+        public HttpResponseMessage SetActive(UserDto userDto)
+        {
+            var response = new HttpResponseMessage();
+            var serviceResult = _userService.SetActive(userDto.Id, userDto.Active, SessionUser.User.Id);
+            if (serviceResult.ServiceResultType != ServiceResultType.Success)
+            {
+                response.StatusCode = HttpStatusCode.InternalServerError;
+                return response;
+            }
+
 
             response.StatusCode = HttpStatusCode.OK;
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);

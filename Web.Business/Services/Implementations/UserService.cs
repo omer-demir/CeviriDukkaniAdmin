@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Tangent.CeviriDukkani.Domain.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Request;
 using Tangent.CeviriDukkani.Domain.Dto.System;
@@ -77,6 +78,12 @@ namespace Web.Business.Services.Implementations {
         public ServiceResult<UpdateUserStepRequestDto> GetUserRegistration(int id) {
             var httpClient = GetClient(ServiceUrl.System);
             return GetAsAsync<UpdateUserStepRequestDto>(httpClient, $"api/userapi/getUserRegistration?userId={id}");
+        }
+
+        public ServiceResult<UserDto> SetActive(int id, bool active, int updatedBy)
+        {
+            var httpClient = GetClient(ServiceUrl.System);
+            return GetAsAsync<UserDto>(httpClient, $"api/userapi/SetActive?id={id}&active={active}&updatedBy={updatedBy}");
         }
 
         #endregion

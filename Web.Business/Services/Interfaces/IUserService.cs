@@ -20,5 +20,6 @@ namespace Web.Business.Services.Interfaces {
         ServiceResult<List<RateItemDto>> GetRateItemsByUserRateId(int userRateId);
         ServiceResult<UserDto> UpdateUserRegistration(UpdateUserStepRequestDto request);
         ServiceResult<UpdateUserStepRequestDto> GetUserRegistration(int id);
+        ServiceResult<UserDto> SetActive(int id,bool active,int updatedBy);
     }
 }
