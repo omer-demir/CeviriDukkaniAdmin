@@ -141,11 +141,19 @@ namespace Web.UI.Controllers {
 
             return View(jobResult.Data);
         }
-        
+
         [Route("Tercuman-Ol")]
         public ActionResult TranslatorSignUp(string leftOffHash)
         {
             return View();
         }
+
+        [Route("Uye-Ol")]
+        public ActionResult SignUp()
+        {
+            return View();
+        }
+
+
     }
 }
