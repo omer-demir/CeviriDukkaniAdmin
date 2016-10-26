@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "jquery": "^1.11.3",
-    "lodash": "^4.15.0",
+    "lodash": "^4.16.4",
     "bootstrap": "4.0.0-alpha.3",
     "select2": "^4.0.3",
     "dropzone": "^4.3.0",

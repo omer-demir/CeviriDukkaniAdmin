@@ -1,10 +1,9 @@
 ﻿/// <reference path="../../../typings/index.d.ts" />
 /// <reference path="../../services/common.data.service.ts" />
 /// <reference path="../../classes/util.ts" />
-/// <reference path="../../../typings/globals/pickadate/index.d.ts" />
 /// <reference path="../../classes/ceviri.classes.ts" />
+/// <reference path="../../../typings/globals/lodash/index.d.ts" />
 declare var $: JQueryStatic;
-
 
 ((() => {
     var dataService = new DataService;
@@ -31,21 +30,26 @@ declare var $: JQueryStatic;
         $('select').select2({ placeholder: 'Please select any option' });
 
         dataService.getCountries((data: any) => {
+            var orderedData = _.orderBy(data, ["name"], ["asc"]);
 
-            $("#nationality").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select your nationality' }));
+            $("#nationality").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select your nationality' }));
             //$("#Nationality2").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select your second nationality' }));
 
-            $("#residency").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select country' }));
+            $("#residency").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select country' }));
+            $("#country").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select country' }));
             //$('#residency').select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select residency' }));
 
             $("#nationality").select2("val", "-1");
             $("#residency").select2("val", "-1");
+            $("#country").select2("val", "-1");
         });
 
         dataService.getTongues((data: any) => {
-            $("#motherTongue").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select your mother tongue' }));
-            $("#tongue").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select your other languages' }));
-            $("#bilingualTongue").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select your bilingual tongue' }));
+            var orderedData = _.orderBy(data, ["name"], ["asc"]);
+
+            $("#motherTongue").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select your mother tongue' }));
+            $("#tongue").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select your other languages' }));
+            $("#bilingualTongue").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select your bilingual tongue' }));
 
             $("#motherTongue").select2("val", "-1");
             $("#tongue").select2("val", "-1");
@@ -53,39 +57,51 @@ declare var $: JQueryStatic;
         });
 
         dataService.getSoftwares((data: any) => {
-            $("#Software").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select software' }));
+            var orderedData = _.orderBy(data, ["name"], ["asc"]);
+
+            $("#Software").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select software' }));
             $("#Software").select2("val", "-1");
 
         });
 
         dataService.getTerminologies((data: any) => {
-            $("#SpecializationIhave").select2(Util.extendOptions(Util.getAsSelectData(data), { multiple: true, placeholder: 'Please select your specialized field' }));
+            var orderedData = _.orderBy(data, ["name"], ["asc"]);
+            $("#SpecializationIhave").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { multiple: true, placeholder: 'Please select your specialized field' }));
             $("#SpecializationIhave").select2("val", "-1");
         });
 
         dataService.getLanguages((data: any) => {
-            $("#SourceLanguageId").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select source language' }));
+            var orderedData = _.orderBy(data, ["name"], ["asc"]);
+            $("#SourceLanguageId").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select source language' }));
             $("#SourceLanguageId").select2("val", "-1");
         });
 
         dataService.getCurrencies((data: any) => {
-            $("#currency").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select currency' }));
+
+            var orderedData = _.orderBy(data, ["name"], ["asc"]);
+
+            $("#currency").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select currency' }));
             $("#currency").select2("val", "-1");
         });
 
         dataService.getWorkingTypes((data: any) => {
-            $("#workingType").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select working type' }));
+
+            var orderedData = _.orderBy(data, ["name"], ["asc"]);
+            $("#workingType").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select working type' }));
             $("#workingType").select2("val", "-1");
         });
 
         dataService.getTimezones((data: any) => {
-            $("#Timezone").select2(Util.extendOptions(Util.getAsSelectDataWithKeys(data,"value","text"), { placeholder: 'Please select timezones' }));
+
+            var orderedData = _.orderBy(data, ["text"], ["asc"]);
+            $("#Timezone").select2(Util.extendOptions(Util.getAsSelectDataWithKeys(orderedData,"value","text"), { placeholder: 'Please select timezones' }));
             $("#Timezone").select2("val", "-1");
         });
         
 
         dataService.getServiceTypes((data: any) => {
-            $("#ServiceTypeId").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select service type' }));
+            var orderedData = _.orderBy(data, ["name"], ["asc"]);
+            $("#ServiceTypeId").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select service type' }));
             $("#ServiceTypeId").select2("val", "-1");
         });
 
@@ -197,7 +213,20 @@ declare var $: JQueryStatic;
         return $('ul.tabs').find('li a.active').attr('href');
     }
 
+    function getHashedValue():string {
+        var href = window.location.href.split('/');
+        return href[href.length - 1];
+    }  
+
     $(() => {
+
+        var hashedValue = getHashedValue();
+        if (hashedValue.indexOf("Translation")>-1) {
+            dataService.getUserRegistration((data: any) => {
+                
+            }, hashedValue);
+        }
+
         $('ul.tabs').tabs();
         initializeDropdowns();
 
@@ -429,13 +458,18 @@ declare var $: JQueryStatic;
             userContact.alternativePhone2 = $('#alternativePhone2').val();
             userContact.fax = $('#fax').val();
             userContact.skype = $('#skype').val();
-            userContact.districtId = $('#district').val();
+
+            var district = new District();
+            district.name = $('#districtText').val();
+            district.cityId = $('#City').select2('data')[0];
+            userContact.district = district;
+
             user.userContact = userContact;
 
             let userAbility = new UserAbility();
-            userAbility.motherTongueId = $('#motherTongue').val();
-            userAbility.tongueId = $('#tongue').val();
-            userAbility.bilingualTongueId = $('#bilingualTongue').val();
+            userAbility.motherTongueId = $('#motherTongue').select2('data')[0];
+            userAbility.tongueId = $('#tongue').select2('data')[0];
+            userAbility.bilingualTongueId = $('#bilingualTongue').select2('data')[0];
             userAbility.yearsOfExperience = $('#yearsOfExperience').val();
             userAbility.freelanceCompanyName = $('#FreelanceCompanyName').val();
             userAbility.title = $('#Title').val();
@@ -501,8 +535,8 @@ declare var $: JQueryStatic;
             }
             userPayment.bankAccount = bankAccount;
             userPayment.vatTaxNo = $('#vatTaxNo').val();
-            userPayment.currencyId = $('#currency').val();
-            userPayment.workingTypeId = $('#workingType').val();
+            userPayment.currencyId = $('#currency').select2('data')[0];
+            userPayment.workingTypeId = $('#workingType').select2('data')[0];
             userPayment.minimumChargeAmount = $('#minimumChargeAmount').val();
             user.userPayment = userPayment;
 

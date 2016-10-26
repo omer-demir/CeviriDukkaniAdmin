@@ -212,4 +212,16 @@ class DataService implements IDataService {
 
         return $.ajax(settings);
     }
+
+    getUserRegistration(callback: any, leftOffHash: string) {
+        var settings: JQueryAjaxSettings = {
+            url: this.userApiUrl + 'getUserRegistration',
+            type: 'GET',
+            success: callback,
+            data: { leftOffHash: leftOffHash }
+        };
+
+        return $.ajax(settings);
+        
+    }
 }

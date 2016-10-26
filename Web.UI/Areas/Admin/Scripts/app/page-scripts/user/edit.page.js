@@ -286,7 +286,7 @@
             $('#btnSave').click(function () {
                 if ($("#formValidate").valid()) {
                     var userDto = {
-                        Id: $('#hdnUserId').val(),
+                        Id: $('.formValidate #hdnUserId').val(),
                         Name: $('#txtName').val(),
                         SurName: $('#txtSurname').val(),
                         GenderId: $("input[type='radio'][name='GenderType']:checked").data('value'),
@@ -308,7 +308,7 @@
             $('#btnSaveContact').click(function () {
                 if ($("#formValidateContact").valid()) {
                     var userDto = {
-                        Id: $('#hdnUserId').val(),
+                        Id: $('.formValidate #hdnUserId').val(),
                         UserContact: {
                             Id: $('#hdnUserContactId').val(),
                             Address: $('#txtAddress').val(),
@@ -331,7 +331,7 @@
             $('#btnSaveAbility').click(function () {
                 if ($("#formValidateAbility").valid()) {
                     var userDto = {
-                        Id: $('#hdnUserId').val(),
+                        Id: $('.formValidate #hdnUserId').val(),
                         UserAbility: {
                             Id: $('#hdnUserAbilityId').val(),
                             MotherTongueId: $('#ddlMotherTongue').val(),
@@ -362,7 +362,7 @@
                 if ($("#formValidatePayment").valid()) {
                     var bankAccountTypeId = $('input[name="BankAccountType"]:checked').val();
                     var userDto = {
-                        Id: $('#hdnUserId').val(),
+                        Id: $('.formValidate #hdnUserId').val(),
                         UserPayment: {
                             Id: $('#hdnUserPaymentId').val(),
                             VatTaxNo: $('#txtVatTaxNo').val(),
@@ -411,7 +411,7 @@
             $('#btnSaveRates').click(function () {
                 if ($("#formValidateRates").valid()) {
                     var userDto = {
-                        Id: $('#hdnUserId').val(),
+                        Id: $('.formValidate #hdnUserId').val(),
                         UserRate: {
                             Id: $('#hdnUserRateId').val(),
                             DtpRate: $('#txtDtpRate').val(),

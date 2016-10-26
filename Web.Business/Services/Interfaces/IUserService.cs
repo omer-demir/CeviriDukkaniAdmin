@@ -19,5 +19,6 @@ namespace Web.Business.Services.Interfaces {
         ServiceResult<List<TechnologyKnowledgeDto>> GetTechnologyKnowledgesByUserAbilityId(int userAbilityId);
         ServiceResult<List<RateItemDto>> GetRateItemsByUserRateId(int userRateId);
         ServiceResult<UserDto> UpdateUserRegistration(UpdateUserStepRequestDto request);
+        ServiceResult<UpdateUserStepRequestDto> GetUserRegistration(int id);
     }
 }
