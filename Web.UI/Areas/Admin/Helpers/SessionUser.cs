@@ -12,6 +12,7 @@ namespace Web.UI.Areas.Admin.Helpers
             get
             {
                 var sessionUser = HttpContext.Current.Session["user"];
+               
                 return sessionUser as UserDto;
             }
         }

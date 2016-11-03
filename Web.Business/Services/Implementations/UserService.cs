@@ -80,7 +80,7 @@ namespace Web.Business.Services.Implementations {
             return GetAsAsync<UpdateUserStepRequestDto>(httpClient, $"api/userapi/getUserRegistration?userId={id}");
         }
 
-        public ServiceResult<UserDto> SetActive(int id, bool active, int updatedBy)
+        public ServiceResult<UserDto> SetActive(int id, bool active, int? updatedBy)
         {
             var httpClient = GetClient(ServiceUrl.System);
             return GetAsAsync<UserDto>(httpClient, $"api/userapi/SetActive?id={id}&active={active}&updatedBy={updatedBy}");

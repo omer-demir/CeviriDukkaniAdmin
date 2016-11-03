@@ -227,7 +227,7 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
         public HttpResponseMessage SetActive(UserDto userDto)
         {
             var response = new HttpResponseMessage();
-            var serviceResult = _userService.SetActive(userDto.Id, userDto.Active, SessionUser.User.Id);
+            var serviceResult = _userService.SetActive(userDto.Id, userDto.Active, 1);
             if (serviceResult.ServiceResultType != ServiceResultType.Success)
             {
                 response.StatusCode = HttpStatusCode.InternalServerError;

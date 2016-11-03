@@ -4,6 +4,12 @@
             function (utility) {
                 $(function () {
 
+                    $('.passive').click(function () {
+                        alert("oldu");
+                    });
+
+
+
                     //variables
                     var utilityObj = new utility();
                     var dataGrid;
@@ -83,13 +89,17 @@
                                             alignment: 'left',
                                             cellTemplate: function (container, cellInfo) {
                                                 var actions = "";
+                                                var hiddenActive = "";
+                                                var hiddenPassive = "";
                                                 if (cellInfo.data.active) {
-                                                    actions = '<a class="custom-link" href="/Admin/User/Edit/{userId}" title="Kullanıcı bilgilerini düzenle"><i class="mdi-editor-mode-edit"></i></a>' +
-                                                                '<a class="custom-link" href="javascript:Passive({userId})" title="Kullanıcı bilgilerini sil"><i class="mdi-action-delete"></i></a>';
+                                                    hiddenPassive = "hide";
                                                 } else {
-                                                    actions = '<a class="custom-link" href="javascript:Active({userId})" title="Kullanıcı bilgilerini aktif et"><i class="mdi-content-undo"></i></a>';
+                                                    hiddenActive = "hide";
                                                 }
-                                                   
+                                                actions = '<a class="custom-link" href="/Admin/User/Edit/{userId}" title="Kullanıcı bilgilerini düzenle"><i class="mdi-editor-mode-edit"></i></a>' +
+                                                            '<a id="btnPassive{userId}" class="custom-link userPassive ' + hiddenPassive + '" href="javascript:void(0)" title="Kullanıcı bilgilerini sil" data-id="{userId}"><i class="mdi-action-delete"></i></a>' +
+                                                            '<a id="btnActive{userId}" class="custom-link userActive ' + hiddenActive + '" href="javascript:void(0)" title="Kullanıcı bilgilerini aktif et" data-id="{userId}"><i class="mdi-content-undo"></i></a>';
+
                                                 $(actions.supplant({ userId: cellInfo.value })).appendTo(container);
                                             }
                                         }
@@ -111,33 +121,31 @@
 
                     initPage();
 
+                    $(document).on('click', '.userPassive', function () {
+                        var userId = $(this).attr("data-id");
 
-                    function Passive(id) {
-
-                        setActive(id, false).success(function (user) {
+                        setActive(userId, true).success(function (user) {
+                            $("#btnPassive" + user.id).addClass("hide");
+                            $("#btnActive" + user.id).removeClass("hide");
                             Materialize.toast('Kayıt pasif edildi.', 3000);
-
-                            //window.location.href = "/Admin/User";
                         }).fail(function (err) {
+                            Materialize.toast('Hata Oluştu.', 3000);
                             console.log(err);
                         });
+                    });
 
-                    }
-
-                    function Active(id) {
-
-                        setActive(id, false).success(function (user) {
+                    $(document).on('click', '.userActive', function () {
+                        var userId = $(this).attr("data-id");
+                        setActive(userId, false).success(function (user) {
+                            $("#btnActive" + user.id).addClass("hide");
+                            $("#btnPassive" + user.id).removeClass("hide");
                             Materialize.toast('Kayıt aktif edildi.', 3000);
 
-                            //window.location.href = "/Admin/User";
                         }).fail(function (err) {
+                            Materialize.toast('Hata Oluştu.', 3000);
                             console.log(err);
                         });
-
-                    }
-                   
+                    });
                 });
-
-                
             });
     });
