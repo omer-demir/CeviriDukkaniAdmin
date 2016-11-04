@@ -86,6 +86,12 @@ namespace Web.Business.Services.Implementations {
             return GetAsAsync<UserDto>(httpClient, $"api/userapi/SetActive?id={id}&active={active}&updatedBy={updatedBy}");
         }
 
+        public ServiceResult<UserDto> SetActive(UserDto userDto)
+        {
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync<UserDto>(httpClient, "api/userapi/setActive", userDto);
+        }
+
         #endregion
     }
 }

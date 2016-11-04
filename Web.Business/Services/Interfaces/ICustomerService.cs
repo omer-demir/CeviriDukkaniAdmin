@@ -9,5 +9,6 @@ namespace Web.Business.Services.Interfaces {
         ServiceResult<CustomerDto> EditCustomer(CustomerDto customerDto, int createdBy);
         ServiceResult<List<CustomerDto>> GetCustomers();
         ServiceResult<List<CustomerDto>> GetCustomersByCompanyId(int companyId);
+        ServiceResult<CustomerDto> SetActive(CustomerDto customerDto);
     }
 }

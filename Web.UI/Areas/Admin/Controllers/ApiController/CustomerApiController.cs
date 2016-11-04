@@ -83,5 +83,22 @@ namespace Web.UI.Areas.Admin.Controllers.ApiController
             response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
             return response;
         }
+
+        [HttpPost, Route("setActive")]
+        public HttpResponseMessage SetActive(CustomerDto customerDto)
+        {
+            var response = new HttpResponseMessage();
+            var serviceResult = _customerService.SetActive(customerDto);
+            if (serviceResult.ServiceResultType != ServiceResultType.Success)
+            {
+                response.StatusCode = HttpStatusCode.InternalServerError;
+                return response;
+            }
+
+
+            response.StatusCode = HttpStatusCode.OK;
+            response.Content = new ObjectContent(serviceResult.Data.GetType(), serviceResult.Data, Formatter);
+            return response;
+        }
     }
 }

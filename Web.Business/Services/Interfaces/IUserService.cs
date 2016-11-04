@@ -21,5 +21,6 @@ namespace Web.Business.Services.Interfaces {
         ServiceResult<UserDto> UpdateUserRegistration(UpdateUserStepRequestDto request);
         ServiceResult<UpdateUserStepRequestDto> GetUserRegistration(int id);
         ServiceResult<UserDto> SetActive(int id,bool active,int? updatedBy);
+        ServiceResult<UserDto> SetActive(UserDto userDto);
     }
 }

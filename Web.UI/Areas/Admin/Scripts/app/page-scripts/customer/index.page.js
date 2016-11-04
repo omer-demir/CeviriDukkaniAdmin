@@ -30,6 +30,20 @@
                                 companies = data;
                             });
                     };
+
+                    var setActive = function (id, active) {
+                        var userDto = {
+                            Id: id,
+                            Active: active
+                        };
+
+                        return $.ajax({
+                            url: '/api/v1/customerapi/setActive',
+                            type: 'POST',
+                            data: userDto
+                        });
+                    };
+
                     var initPage = function () {
                         setCompanies();
                         companyId = $('#hdnCompanyId').val();
@@ -93,7 +107,16 @@
                                             caption: resources.aksiyon,
                                             alignment: 'left',
                                             cellTemplate: function (container, cellInfo) {
-                                                var actions = '<a class="custom-link" href="/Admin/Customer/Edit/{customerId}" title="{title}"><i class="mdi-editor-mode-edit"></i></a>';
+                                                var hiddenActive = "";
+                                                var hiddenPassive = "";
+                                                if (cellInfo.data.active) {
+                                                    hiddenActive = "hide";
+                                                } else {
+                                                    hiddenPassive = "hide";
+                                                }
+                                                var actions = '<a class="custom-link" href="/Admin/Customer/Edit/{customerId}" title="{title}"><i class="mdi-editor-mode-edit"></i></a>'+
+                                                '<a id="btnPassive{customerId}" class="custom-link btnPassive ' + hiddenPassive + '" href="javascript:void(0)" title="Müşteri bilgilerini pasif et" data-id="{customerId}"><i class="mdi-action-delete"></i></a>' +
+                                                '<a id="btnActive{customerId}" class="custom-link btnActive ' + hiddenActive + '" href="javascript:void(0)" title="Müşteri bilgilerini aktif et" data-id="{customerId}"><i class="mdi-content-undo"></i></a>';
                                                 $(actions.supplant({ customerId: cellInfo.value, title: resources.musteriBilgileriniDuzenle })).appendTo(container);
                                             }
                                         }
@@ -110,6 +133,32 @@
                                 dataGrid = $('#customerListGrid').dxDataGrid('instance');
                             });
                     };
+
+                    $(document).on('click', '.btnPassive', function () {
+                        var userId = $(this).attr("data-id");
+
+                        setActive(userId, false).success(function (user) {
+                            $("#btnPassive" + user.id).addClass("hide");
+                            $("#btnActive" + user.id).removeClass("hide");
+                            Materialize.toast('Kayıt pasif edildi.', 3000);
+                        }).fail(function (err) {
+                            Materialize.toast('Hata Oluştu.', 3000);
+                            console.log(err);
+                        });
+                    });
+
+                    $(document).on('click', '.btnActive', function () {
+                        var userId = $(this).attr("data-id");
+                        setActive(userId, true).success(function (user) {
+                            $("#btnActive" + user.id).addClass("hide");
+                            $("#btnPassive" + user.id).removeClass("hide");
+                            Materialize.toast('Kayıt aktif edildi.', 3000);
+
+                        }).fail(function (err) {
+                            Materialize.toast('Hata Oluştu.', 3000);
+                            console.log(err);
+                        });
+                    });
 
                     var getResources = function () {
                         var keyList = [

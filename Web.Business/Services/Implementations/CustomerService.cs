@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Tangent.CeviriDukkani.Domain.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Sale;
 using Tangent.CeviriDukkani.Domain.Dto.Translation;
@@ -31,6 +32,12 @@ namespace Web.Business.Services.Implementations {
         public ServiceResult<List<CustomerDto>> GetCustomersByCompanyId(int companyId) {
             var httpClient = GetClient(BaseService.ServiceUrl.System);
             return GetAsAsync<List<CustomerDto>>(httpClient, $"api/customerapi/getCustomersByCompanyId?companyId={companyId}");
+        }
+         
+        public ServiceResult<CustomerDto> SetActive(CustomerDto customerDto)
+        {
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync<CustomerDto>(httpClient, $"api/customerapi/setActive", customerDto);
         }
 
         #endregion
