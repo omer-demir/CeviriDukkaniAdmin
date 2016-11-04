@@ -26,6 +26,7 @@ namespace Web.Business.Services.Interfaces {
         ServiceResult<CompanyDto> AddCompany(CompanyDto companyDto, int userId);
         ServiceResult<CompanyDto> UpdateCompany(CompanyDto companyDto, int userId);
         ServiceResult<CompanyDto> GetCompany(int companyId);
+        ServiceResult<CompanyDto> SetCompanyActive(CompanyDto companyDto);
 
         ServiceResult<List<LanguageDto>> GetLanguages();
         ServiceResult<LanguageDto> AddLanguage(LanguageDto languageDto, int createdBy);

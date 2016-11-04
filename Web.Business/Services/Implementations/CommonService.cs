@@ -266,6 +266,12 @@ namespace Web.Business.Services.Implementations {
             return PostAsAsync<CareerItemDto>(httpClient, "api/commonapi/updateCareerItem", careerItem, 1);
         }
 
+        public ServiceResult<CompanyDto> SetCompanyActive(CompanyDto companyDto)
+        {
+            var httpClient = GetClient(ServiceUrl.System);
+            return PostAsAsync<CompanyDto>(httpClient, "api/commonapi/setCompanyActive", companyDto);
+        }
+
         #endregion
     }
 }
