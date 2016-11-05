@@ -2192,6 +2192,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\classes\ceviri.classes.ts" />
     <TypeScriptCompile Include="app\classes\util.ts" />
+    <TypeScriptCompile Include="app\pages\home\SignUp.ts" />
     <TypeScriptCompile Include="app\pages\index\index.page.ts" />
     <TypeScriptCompile Include="app\pages\translator\translator.sign.up.ts" />
     <TypeScriptCompile Include="app\services\common.data.service.ts" />
