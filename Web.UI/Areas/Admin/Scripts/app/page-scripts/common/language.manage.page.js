@@ -62,11 +62,11 @@
                                             validationRules: [
                                             {
                                                 type: 'required',
-                                                message: resources.dilAdiAlaniBosOlamaz
+                                                message: resources.adiAlaniBosOlamaz
                                             },
                                             {
                                                 type: 'custom',
-                                                message: resources.dilAdiAlaniHerKayitIcinTekOlmalidir,
+                                                message: resources.adiAlaniHerKayitIcinTekOlmalidir,
                                                 validationCallback: function (o) {
                                                     if (_.filter(languages, function (item) { return item !== editLang && item.name.toLocaleLowerCase() === o.value.toLocaleLowerCase() }).length > 0) {
                                                         return false;
@@ -74,6 +74,10 @@
                                                     return true;
                                                 }
                                             }]
+                                        },
+                                        {
+                                            dataField: 'active',
+                                            caption: resources.durum                      
                                         }
                                     ],
                                     onRowInserted: function (e) {
@@ -108,6 +112,7 @@
                     var getResources = function () {
                         var keyList = [
                             'Adi',
+                            'Durum',
                             'DilAdiAlaniBosOlamaz',
                             'DilAdiAlaniHerKayitIcinTekOlmalidir',
                             'KayitBasarili',

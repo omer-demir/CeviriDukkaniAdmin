@@ -828,4 +828,13 @@
   <data name="OrderDetailList" xml:space="preserve">
     <value>List of Order Details</value>
   </data>
+  <data name="Durum" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="AdiAlaniBosOlamaz" xml:space="preserve">
+    <value>The name field can not be empty.</value>
+  </data>
+  <data name="AdiAlaniHerKayitIcinTekOlmalidir" xml:space="preserve">
+    <value>The name field must be unique for each record.</value>
+  </data>
 </root>

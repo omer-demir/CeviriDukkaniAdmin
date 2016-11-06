@@ -1,7 +1,7 @@
 ﻿require(['../../common'],
     function (common) {
-        require(['utility', 'dxdatagrid'],
-            function (utility) {
+        require(['utility', 'lodash','dxdatagrid'],
+            function (utility, _) {
                 
                 $(function () {
 
@@ -9,7 +9,7 @@
                     var utilityObj = new utility();
                     var dataGrid;
                     var resources = null;
-
+                    var editName;
                     //private funcs
                     var getTerminologies = function () {
                         return $.ajax({
@@ -57,14 +57,36 @@
                                         },
                                         {
                                             dataField: 'name',
-                                            caption: resources.adi
-                                        }
+                                            caption: resources.adi,
+                                            validationRules: [
+                                            {
+                                                type: 'required',
+                                                message: resources.adiAlaniBosOlamaz
+                                            },
+                                            {
+                                                type: 'custom',
+                                                message: resources.adiAlaniHerKayitIcinTekOlmalidir,
+                                                validationCallback: function (o) {
+                                                    if (_.filter(list, function (item) { return item !== editName && item.name.toLocaleLowerCase() === o.value.toLocaleLowerCase() }).length > 0) {
+                                                        return false;
+                                                    }
+                                                    return true;
+                                                }
+                                            }]
+                                        },
+                                         {
+                                             dataField: 'active',
+                                             caption: resources.durum
+                                         }
                                     ],
                                     onRowInserted: function (e) {
                                         addTerminology(e.data).success(function (terminology) {
                                             //initPage();
                                             Materialize.toast(resources.kayitBasarili, 3000);
                                         });
+                                    },
+                                    onEditingStart: function (info) {
+                                        editName = info.data;
                                     },
                                     onRowUpdated: function (e) {
                                         editTerminology(e.key).success(function (terminology) {
@@ -91,7 +113,10 @@
                     var getResources = function () {
                         var keyList = [
                             'Adi',
+                            'AdiAlaniBosOlamaz',
+                            'AdiAlaniHerKayitIcinTekOlmalidir',
                             'KayitBasarili',
+                            'Durum',
                             'Duzenle',
                             'Kaydet',
                             'Iptal'

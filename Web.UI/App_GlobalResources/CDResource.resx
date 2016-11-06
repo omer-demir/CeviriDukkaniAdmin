@@ -876,4 +876,13 @@
   <data name="OrderDetailList" xml:space="preserve">
     <value>Sipariş Detay Listesi</value>
   </data>
+  <data name="Durum" xml:space="preserve">
+    <value>Durum</value>
+  </data>
+  <data name="AdiAlaniBosOlamaz" xml:space="preserve">
+    <value>Adı alanı boş olamaz.</value>
+  </data>
+  <data name="AdiAlaniHerKayitIcinTekOlmalidir" xml:space="preserve">
+    <value>Adı alanı her kayıt için tek olmalıdır.</value>
+  </data>
 </root>

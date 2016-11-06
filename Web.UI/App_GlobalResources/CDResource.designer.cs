@@ -106,6 +106,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adı alanı boş olamaz..
+        /// </summary>
+        internal static string AdiAlaniBosOlamaz {
+            get {
+                return ResourceManager.GetString("AdiAlaniBosOlamaz", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adı alanı her kayıt için tek olmalıdır..
+        /// </summary>
+        internal static string AdiAlaniHerKayitIcinTekOlmalidir {
+            get {
+                return ResourceManager.GetString("AdiAlaniHerKayitIcinTekOlmalidir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Adres.
         /// </summary>
         internal static string Adres {
@@ -642,6 +660,15 @@ namespace Resources {
         internal static string DTPDesktopPublishing {
             get {
                 return ResourceManager.GetString("DTPDesktopPublishing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Durum.
+        /// </summary>
+        internal static string Durum {
+            get {
+                return ResourceManager.GetString("Durum", resourceCulture);
             }
         }
         
