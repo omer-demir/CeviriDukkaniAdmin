@@ -17,24 +17,27 @@
 <section id="content">
 
     <div class="content-wrap">
-
         <div class="container clearfix">
-
+            @if (@ViewBag.Error != null)
+            {
+                <div class="alert alert-danger" role="alert">@ViewBag.Error</div>
+            }            
             <div class="col_one_third nobottommargin">
-
-                <div class="well well-lg nobottommargin">
-                    <form id="login-form" name="login-form" class="nobottommargin" action="#" method="post">
+                <div class="well well-lg nobottommargin">                    
+                    <form class="login-form" id="login-form" action="/Home/SignUp" method="post" class="nobottommargin">
 
                         <h3>Üye girişi yap, fırsatları kaçırma!</h3>
 
                         <div class="col_full">
-                            <label for="login-form-username">E-Posta:</label>
-                            <input type="text" id="login-form-username" name="login-form-username" value="" class="form-control" />
+                            <label for="email">E-Posta:</label>
+                            <input id="email" type="email" name="email" class="form-control"  data-error=".errorTxt1">
+                            <div class="errorTxt1" style="margin-left: 3rem;"></div>
                         </div>
 
                         <div class="col_full">
                             <label for="login-form-password">Şifre:</label>
-                            <input type="password" id="login-form-password" name="login-form-password" value="" class="form-control" />
+                            <input id="password" type="password" name="password" class="form-control" data-error=".errorTxt2">
+                            <div class="errorTxt2" style="margin-left: 3rem;"></div>
                         </div>
 
                         <div class="col_full nobottommargin">

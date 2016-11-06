@@ -1,5 +1,8 @@
-﻿using System.Web.Mvc;
+﻿using System.Configuration;
+using System.Web.Mvc;
 using Tangent.CeviriDukkani.Domain.Common;
+using Tangent.CeviriDukkani.Domain.Dto.Request;
+using Tangent.CeviriDukkani.Domain.Exceptions.ExceptionCodes;
 using Web.Business.Extensions;
 using Web.Business.Services.Interfaces;
 
@@ -141,6 +144,36 @@ namespace Web.UI.Controllers {
         public ActionResult SignUp()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult SignUp(LoginRequestDto model)
+        {
+            var result = _commonService.Login(model);
+            if (result.ServiceResultType != ServiceResultType.Success)
+            {
+                switch (result.ExceptionCode)
+                {
+                    case ExceptionCodes.UserLockedOut:
+                        ViewBag.Error = "Parolanızı yanlış girme limitine ulaştığınızdan giriş yapamazsınız.";
+                        break;
+                    case ExceptionCodes.PassiveUser:
+                        ViewBag.Error = "Kullanıcınız kilitlenmiştir.";
+                        break;
+                    case ExceptionCodes.WrongPasswordForUser:
+                        var passwordRetryCount = int.Parse(ConfigurationManager.AppSettings["PasswordRetryCount"]);
+                        ViewBag.Error = $"Parola hatalı. {passwordRetryCount - result.Data.PasswordRetryCount} defa daha yanlış girdiğiniz takdirde kullanıcınız kilitlenecektir.";
+                        break;
+                    default:
+                        ViewBag.Error = "Kullanıcı adı hatalı";
+                        break;
+                }
+                return View();
+            }
+
+            Session["user"] = result.Data;
+
+            return RedirectToAction("Index", "Home", new { Area = "Admin" });
         }
 
 

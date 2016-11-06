@@ -45,16 +45,18 @@
                     <div class="top-links">
                         <ul>
                             <li>
-                                <a href="login-register.html">Üye Girişi</a>
+                                <a href="@Url.Action("SignUp","Home")">Üye Girişi</a>
                                 <div class="top-link-section">
-                                    <form id="top-login" role="form">
+                                    <form class="login-form" id="menu-login-form" action="/Home/SignUp" method="post">
                                         <div class="input-group" id="top-login-username">
-                                            <span class="input-group-addon"><i class="icon-user"></i></span>
-                                            <input type="email" class="form-control" placeholder="E-Posta" required="">
+                                            <span class="input-group-addon"><i class="icon-user"></i></span>                                            
+                                            <input id="email" type="email" name="email" class="form-control" placeholder="E-Posta" data-error=".errorTxt1">
+                                            <div class="errorTxt1" style="margin-left: 3rem;"></div>
                                         </div>
                                         <div class="input-group" id="top-login-password">
-                                            <span class="input-group-addon"><i class="icon-key"></i></span>
-                                            <input type="password" class="form-control" placeholder="Parola" required="">
+                                            <span class="input-group-addon"><i class="icon-key"></i></span>               
+                                            <input id="password" type="password" name="password" class="form-control" placeholder="Şifre" data-error=".errorTxt2">
+                                            <div class="errorTxt2" style="margin-left: 3rem;"></div>
                                         </div>
                                         <label class="checkbox">
                                             <input type="checkbox" value="remember-me"> Beni Hatırla
@@ -222,6 +224,43 @@
     <script src="~/dist/classes/ceviri.classes.js"></script>
     <script src="~/dist/classes/util.js"></script>
     <script src="~/dist/services/common.data.service.js"></script>
+
+    <script>
+    $(function () {
+        if ($("#password").val().length > 0) {
+            $("label[for='password']").addClass("active");
+        }
+        if ($("#email").val().length > 0) {
+            $("label[for='email']").addClass("active");
+        }
+        $("#login-form").validate({
+            rules: {
+                password: {
+                    required: true
+                },
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            //For custom messages
+            messages: {
+                Name: {
+                    required: "Enter a username",
+                }
+            },
+            errorElement: 'div',
+            errorPlacement: function (error, element) {
+                var placement = $(element).data('error');
+                if (placement) {
+                    $(placement).append(error);
+                } else {
+                    error.insertAfter(element);
+                }
+            }
+        });
+    });
+    </script>
 
     @RenderSection("scripts", false)
 </body>
