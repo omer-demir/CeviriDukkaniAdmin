@@ -224,4 +224,15 @@ class DataService implements IDataService {
         return $.ajax(settings);
         
     }
+
+    saveCustomer(data: Customer, callback: any) {
+        var settings: JQueryAjaxSettings = {
+            url: this.userApiUrl + 'addCustomer',
+            type: 'POST',
+            data: data,
+            success: callback
+        };
+
+        return $.ajax(settings);
+    }
 }

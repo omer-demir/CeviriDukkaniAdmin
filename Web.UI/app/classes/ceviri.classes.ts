@@ -77,12 +77,12 @@ class UserContact {
     fax: string;
     skype: string;
     districtId: number;
-    district:District;
+    district: District;
 }
 
 class District {
     name: String;
-    cityId:number;
+    cityId: number;
 }
 
 class UserAbility {
@@ -169,4 +169,31 @@ class RateItem {
 
 class UserDocument {
     userDocumentTypeId: number;
+}
+
+class Company {
+    accountingEmail: string;
+    address: string;
+    authorizedEmail: string;
+    authorizedFullName: string;
+    authorizedMobilePhone: string;
+    extensionNumber: string;
+    isContractPrice: boolean
+    isUsingPo: boolean;
+    name: string;
+    phone: string;
+    taxNumber: string;
+    taxOffice: string;
+}
+
+class Customer {
+    company: Company;
+    companyId: number;
+    email: string;    
+    institutionCode: string;
+    membershipTypeId: number;
+    mobilePhone: string;
+    name: string;
+    password: string;
+    surname: string;
 }
