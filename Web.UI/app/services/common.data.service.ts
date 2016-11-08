@@ -17,6 +17,7 @@ interface IDataService {
 class DataService implements IDataService {
     private commonApiUrl: string = "/api/v1/commonapi/";
     private userApiUrl: string = "/api/v1/userapi/";
+    private customerApiUrl: string = "/api/v1/customerapi/";
 
     getLanguages(callback: any) {
         var settings: JQueryAjaxSettings = {
@@ -227,7 +228,7 @@ class DataService implements IDataService {
 
     saveCustomer(data: Customer, callback: any) {
         var settings: JQueryAjaxSettings = {
-            url: this.userApiUrl + 'addCustomer',
+            url: this.customerApiUrl + 'addCustomer',
             type: 'POST',
             data: data,
             success: callback

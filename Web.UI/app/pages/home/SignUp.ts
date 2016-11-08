@@ -25,33 +25,38 @@ declare var $: JQueryStatic;
     function getCustomerFromForm(): Customer {
         let customer = new Customer();
 
-        customer.company = geCompanyFromForm();
-        customer.companyId = $('#companyId').val();
-        customer.email = $('#email').val();
-        customer.institutionCode = $('#institutionCode').val();
-        customer.membershipTypeId = $('input[name="membershipTypeId"]:checked').val();;
-        customer.mobilePhone = $('#mobilePhone').val();
-        customer.name = $('#name').val();
-        customer.password = $('#password').val();
-        customer.surname = $('#surname').val();
+        if ($('input[name="rbCustomerType"]:checked').val() == "customer") {
+            customer.membershipTypeId = 1;
+        }
+        else {
+            customer.membershipTypeId = 2;
+            customer.company = geCompanyFromForm();
+            customer.companyId = $('#company-Id').val();
+            customer.institutionCode = $('#institutionCode').val();
+        }
+        customer.name = $('#customer-name').val();
+        customer.surname = $('#customer-surname').val();
+        customer.mobilePhone = $('#customer-cellphone_1').val() + $('#customer-cellphone_2').val() + $('#customer-cellphone_3').val() + $('#customer-cellphone_4').val();
+        customer.email = $('#customer-email').val();
+        customer.password = $('#customer-password').val();
+
         return customer;
     }
 
     function geCompanyFromForm(): Company {
         let company = new Company();
-
-        company.accountingEmail = $('#accountingEmail').val();
-        company.address = $('#address').val();
-        company.authorizedEmail = $('#authorizedEmail').val();
-        company.authorizedFullName = $('#authorizedFullName').val();
-        company.authorizedMobilePhone = $('#authorizedMobilePhone').val();
-        company.extensionNumber = $('#extensionNumber').val();
-        company.isContractPrice = $('#isContractPrice').val();
-        company.isUsingPo = $('#isUsingPo').val();
-        company.name = $('#name').val();
-        company.phone = $('#phone').val();
-        company.taxNumber = $('#taxNumber').val();
-        company.taxOffice = $('#taxOffice').val();
+        company.name = $('#company-name').val();
+        company.taxNumber = $('#company-taxNumber').val();
+        company.taxOffice = $('#company-taxOffice').val();
+        company.phone = $('#company-phone_1').val() + $('#company-phone_2').val() + $('#company-phone_3').val() + $('#company-phone_4').val();
+        company.extensionNumber = $('#company-extensionNumber').val();
+        company.accountingEmail = $('#company-accountingEmail').val();
+        company.address = $('#company-address').val();
+        //company.authorizedEmail = $('#company-authorizedEmail').val();
+        //company.authorizedFullName = $('#company-authorizedFullName').val();
+        //company.authorizedMobilePhone = $('#company-authorizedMobilePhone').val();
+        //company.isContractPrice = $('#company-isContractPrice').val();
+        //company.isUsingPo = $('#company-isUsingPo').val();        
         return company;
     }
     function validateForm(formElement: string, rules: any[], successCallback: (param: number) => void) {
@@ -88,6 +93,16 @@ declare var $: JQueryStatic;
         /**
          * Events
          */
+
+        $('input[type=radio][name=rbCustomerType]').change(function () {
+
+            if (this.value == 'customer') {
+                changeVisibleByClassName("company", false);
+            }
+            else {
+                changeVisibleByClassName("company", true);
+            }
+        });
 
         $('#companyId').on({
             'select2:select': (e: any) => {

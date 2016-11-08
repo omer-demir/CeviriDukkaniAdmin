@@ -74,51 +74,51 @@
                     </div>
 
                     <div class="col_half">
-                        <label for="name">Adınız:</label>
-                        <input type="text" id="name" name="name" value="" class="form-control" />
+                        <label for="customer-name">Adınız:</label>
+                        <input type="text" id="customer-name" name="customer-name" value="" class="form-control" />
                     </div>
 
                     <div class="col_half col_last">
-                        <label for="surname">Soyadınız:</label>
-                        <input type="text" id="surname" name="surname" value="" class="form-control" />
+                        <label for="customer-surname">Soyadınız:</label>
+                        <input type="text" id="customer-surname" name="customer-surname" value="" class="form-control" />
                     </div>
 
                     <div class="col_half">
-                        <label for="register-form-surname">Cep Telefonunuz:</label>
+                        <label for="customer-cellphone_1">Cep Telefonunuz:</label>
                         <div class="input-group">
-                            <input type="number" id="cellphone_1" name="cellphone_1" class="form-control" placeholder="500" aria-describedby="basic-addon2" maxlength="3">
+                            <input type="number" id="customer-cellphone_1" name="customer-cellphone_1" class="form-control" placeholder="500" aria-describedby="basic-addon2" min="0" max="599">
                             <span class="input-group-addon" id="basic-addon2">-</span>
-                            <input type="number" id="cellphone_2" name="cellphone_2" class="form-control" placeholder="000" aria-describedby="basic-addon2" maxlength="3">
+                            <input type="number" id="customer-cellphone_2" name="customer-cellphone_2" class="form-control" placeholder="000" aria-describedby="basic-addon2" min="0" max="999">
                             <span class="input-group-addon" id="basic-addon2">-</span>
-                            <input type="number" id="cellphone_3" name="cellphone_3" class="form-control" placeholder="00" aria-describedby="basic-addon2" maxlength="2">
+                            <input type="number" id="customer-cellphone_3" name="customer-cellphone_3" class="form-control" placeholder="00" aria-describedby="basic-addon2" min="0" max="99">
                             <span class="input-group-addon" id="basic-addon2">-</span>
-                            <input type="number" id="cellphone_4" name="cellphone_4" class="form-control" placeholder="00" aria-describedby="basic-addon2" maxlength="2">
+                            <input type="number" id="customer-cellphone_4" name="customer-cellphone_4" class="form-control" placeholder="00" aria-describedby="basic-addon2" min="0" max="99">
                         </div>
                     </div>
 
                     <div class="col_half col_last">
-                        <label for="email">E-Posta Adresiniz:</label>
-                        <input type="email" id="email" name="email" value="" class="form-control" />
+                        <label for="customer-email">E-Posta Adresiniz:</label>
+                        <input type="email" id="customer-email" name="customer-email" value="" class="form-control" />
                     </div>
 
                     <div class="clear"></div>
 
-                    <div class="company">
+                    <div class="company" hidden>
                         <div class="col_half">
-                            <label for="companyId">Şirketinizi Seçiniz:</label>
-                            <select id="companyId" class="form-control" name="companyId"></select>
+                            <label for="company-Id">Şirketinizi Seçiniz:</label>
+                            <select id="company-Id" class="form-control" name="company-Id"></select>
                         </div>
                         <div class="col_half col_last compnayInfo">
                             <label for="company-name">Şirket Adı:</label>
                             <input type="text" id="company-name" name="company-name" value="" class="form-control" />
                         </div>
                         <div class="col_half compnayInfo">
-                            <label for="company-VergiNumarasi">Şirket Vergi Numarası:</label>
-                            <select id="company-VergiNumarasi" class="form-control" name="company-VergiNumarasi"></select>
+                            <label for="company-taxNumber">Şirket Vergi Numarası:</label>
+                            <select id="company-taxNumber" class="form-control" name="company-taxNumber"></select>
                         </div>
                         <div class="col_half col_last compnayInfo">
                             <label for="company-VergiDairesi">Şirket Vergi Dairesi:</label>
-                            <input type="text" id="company-VergiDairesi" name="company-VergiDairesi" value="" class="form-control" />
+                            <input type="text" id="company-taxOffice" name="company-taxOffice" value="" class="form-control" />
                         </div>
                         <div class="col_half compnayInfo">
                             <label for="register-form-surname">Şirket Sabit Telefon Numaranız:</label>
@@ -135,11 +135,11 @@
 
                         <div class="col_half col_last">
                             <label for="company-intercom">Dahili Numaranız:</label>
-                            <input type="text" id="company-intercom" name="company-intercom" value="" class="form-control" />
+                            <input type="text" id="company-intercom" name="company-extensionNumber" value="" class="form-control" />
                         </div>
                         <div class="col_half">
-                            <label for="register-form-email">Şirket E-Posta Adresiniz:</label>
-                            <input type="email" id="company-email" name="company-email" value="" class="form-control" />
+                            <label for="company-accountingEmail">Şirket E-Posta Adresiniz:</label>
+                            <input type="email" id="company-accountingEmail" name="company-accountingEmail" value="" class="form-control" />
                         </div>
                         <div class="col_half col_last">
                             <label for="company-address">Şirket Adresiniz:</label>
@@ -151,19 +151,19 @@
                     <div class="clear"></div>
 
                     <div class="col_half">
-                        <label for="register-form-password">Şifre:</label>
-                        <input type="password" id="password" name="password" value="" class="form-control" />
+                        <label for="customer-password">Şifre:</label>
+                        <input type="password" id="customer-password" name="customer-password" value="" class="form-control" />
                     </div>
 
                     <div class="col_half col_last">
-                        <label for="register-form-repassword">Şifre Tekrar:</label>
-                        <input type="password" id="repassword" name="repassword" value="" class="form-control" />
+                        <label for="customer-repassword">Şifre Tekrar:</label>
+                        <input type="password" id="customer-repassword" name="customer-repassword" value="" class="form-control" />
                     </div>
 
                     <div class="clear"></div>
 
                     <div class="col_full nobottommargin">
-                        <button class="button button-3d button-black nomargin" id="register-form-submit" name="register-form-submit" value="register">Şimdi Kaydol</button>
+                        <a class="button button-3d button-black nomargin" id="btnSave" name="btnSave" href="javascript:void(0);">Şimdi Kaydol</a>
                     </div>
 
                 </form>

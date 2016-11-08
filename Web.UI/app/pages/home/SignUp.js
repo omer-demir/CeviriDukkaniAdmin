@@ -17,32 +17,36 @@
     }
     function getCustomerFromForm() {
         var customer = new Customer();
-        customer.company = geCompanyFromForm();
-        customer.companyId = $('#name').val();
-        customer.email = $('#name').val();
-        customer.InstitutionCode = $('#name').val();
-        customer.membershipTypeId = $('input[name="cmbCustomerType"]:checked').val();
-        ;
-        customer.mobilePhone = $('#name').val();
-        customer.name = $('#name').val();
-        customer.password = $('#name').val();
-        customer.surname = $('#name').val();
+        if ($('input[name="rbCustomerType"]:checked').val() == "customer") {
+            customer.membershipTypeId = 1;
+        }
+        else {
+            customer.membershipTypeId = 2;
+            customer.company = geCompanyFromForm();
+            customer.companyId = $('#company-Id').val();
+            customer.institutionCode = $('#institutionCode').val();
+        }
+        customer.name = $('#customer-name').val();
+        customer.surname = $('#customer-surname').val();
+        customer.mobilePhone = $('#customer-cellphone_1').val() + $('#customer-cellphone_2').val() + $('#customer-cellphone_3').val() + $('#customer-cellphone_4').val();
+        customer.email = $('#customer-email').val();
+        customer.password = $('#customer-password').val();
         return customer;
     }
     function geCompanyFromForm() {
         var company = new Company();
-        company.accountingEmail = $('#name').val();
-        company.address = $('#name').val();
-        company.authorizedEmail = $('#name').val();
-        company.authorizedFullName = $('#name').val();
-        company.authorizedMobilePhone = $('#name').val();
-        company.extensionNumber = $('#name').val();
-        company.isContractPrice = $('#name').val();
-        company.isUsingPo = $('#name').val();
-        company.name = $('#name').val();
-        company.phone = $('#name').val();
-        company.taxNumber = $('#name').val();
-        company.taxOffice = $('#name').val();
+        company.name = $('#company-name').val();
+        company.taxNumber = $('#company-taxNumber').val();
+        company.taxOffice = $('#company-taxOffice').val();
+        company.phone = $('#company-phone_1').val() + $('#company-phone_2').val() + $('#company-phone_3').val() + $('#company-phone_4').val();
+        company.extensionNumber = $('#company-extensionNumber').val();
+        company.accountingEmail = $('#company-accountingEmail').val();
+        company.address = $('#company-address').val();
+        //company.authorizedEmail = $('#company-authorizedEmail').val();
+        //company.authorizedFullName = $('#company-authorizedFullName').val();
+        //company.authorizedMobilePhone = $('#company-authorizedMobilePhone').val();
+        //company.isContractPrice = $('#company-isContractPrice').val();
+        //company.isUsingPo = $('#company-isUsingPo').val();        
         return company;
     }
     function validateForm(formElement, rules, successCallback) {
@@ -75,6 +79,14 @@
         /**
          * Events
          */
+        $('input[type=radio][name=rbCustomerType]').change(function () {
+            if (this.value == 'customer') {
+                changeVisibleByClassName("company", false);
+            }
+            else {
+                changeVisibleByClassName("company", true);
+            }
+        });
         $('#companyId').on({
             'select2:select': function (e) {
                 if (e.params.data.id == 0) {
