@@ -12,7 +12,10 @@ module.exports = function (grunt) {
         },
         watch: {
             files: ["app/**/*.ts"],
-            tasks: ["ts"]
+            tasks: ["ts"],
+            options: {
+                livereload: true,
+            }
         },
         sass: {
             dist: {
