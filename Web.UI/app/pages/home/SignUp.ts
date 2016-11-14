@@ -18,8 +18,20 @@ declare var $: JQueryStatic;
     }
     function initializeDropdowns() {
         $('select').select2({ placeholder: 'Please select any option' });
+
+        dataService.getCompanies((data: any) => {
+            var orderedData = _.orderBy(data, ["name"], ["asc"]);
+            var comp = new Company();
+            comp.id = -1;
+            comp.name = "Firma Ekle";
+            orderedData.unshift(comp);
+            $("#company-Id").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Şirket Seçiniz' }));
+            $("#company-Id").select2("val", -1);
+
+        });
     }
 
+    
 
 
     function getCustomerFromForm(): Customer {
@@ -104,17 +116,17 @@ declare var $: JQueryStatic;
             }
         });
 
-        $('#companyId').on({
+        $('#company-Id').on({
             'select2:select': (e: any) => {
-                if (e.params.data.id == 0) {
-                    changeVisibleByClassName("companyinfo", false);
+                if (e.params.data.id == -1) {
+                    changeVisibleByClassName("companyInfo", true);
                 }
                 else {
-                    changeVisibleByClassName("companyinfo", true);
+                    changeVisibleByClassName("companyInfo", false);
                 }
             },
             'select2:unselect': () => {
-                changeVisibleByClassName("companyinfo", true);
+                changeVisibleByClassName("companyInfo", true);
             }
         });
 

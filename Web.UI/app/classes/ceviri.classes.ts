@@ -172,6 +172,7 @@ class UserDocument {
 }
 
 class Company {
+    id: number;
     accountingEmail: string;
     address: string;
     authorizedEmail: string;
