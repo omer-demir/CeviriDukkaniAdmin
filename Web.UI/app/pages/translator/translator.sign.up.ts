@@ -461,19 +461,19 @@ declare var $: JQueryStatic;
 
             var district = new District();
             district.name = $('#districtText').val();
-            district.cityId = $('#City').select2('data')[0];
+            district.cityId = $('#City').select2('data')[0].id;
             userContact.district = district;
 
             user.userContact = userContact;
 
             let userAbility = new UserAbility();
-            userAbility.motherTongueId = $('#motherTongue').select2('data')[0];
-            userAbility.tongueId = $('#tongue').select2('data')[0];
-            userAbility.bilingualTongueId = $('#bilingualTongue').select2('data')[0];
+            userAbility.motherTongueId = $('#motherTongue').select2('data')[0].id;
+            userAbility.tongueId = $('#tongue').select2('data')[0].id;
+            userAbility.bilingualTongueId = $('#bilingualTongue').select2('data')[0].id;
             userAbility.yearsOfExperience = $('#yearsOfExperience').val();
             userAbility.freelanceCompanyName = $('#FreelanceCompanyName').val();
             userAbility.title = $('#Title').val();
-            userAbility.timezone = $('#Timezone').select2('data')[0];
+            userAbility.timezone = $('#Timezone').select2('data')[0].id;
             userAbility.workingDays = $('#WorkingDays').select2('data').join(',');
             userAbility.workingDays = $('#WorkingHoursStart').val();
             userAbility.workingDays = $('#WorkingHoursEnd').val();
@@ -535,8 +535,8 @@ declare var $: JQueryStatic;
             }
             userPayment.bankAccount = bankAccount;
             userPayment.vatTaxNo = $('#vatTaxNo').val();
-            userPayment.currencyId = $('#currency').select2('data')[0];
-            userPayment.workingTypeId = $('#workingType').select2('data')[0];
+            userPayment.currencyId = $('#currency').select2('data')[0].id;
+            userPayment.workingTypeId = $('#workingType').select2('data')[0].id;
             userPayment.minimumChargeAmount = $('#minimumChargeAmount').val();
             user.userPayment = userPayment;
 
