@@ -108,10 +108,10 @@ declare var $: JQueryStatic;
         //$('#workingType').select2(Util.extendOptions(Constants.Days, { placeholder: 'Please select working type' }));
         //$("#workingType").select2("val", "-1");
 
-        $('#Rating').select2(Util.extendOptions(Constants.Rates), { placeholder: 'Please select rating' });
+        $('#Rating').select2(Util.extendOptions(Constants.Rates, { placeholder: 'Please select rating' }));
         $("#Rating").select2("val", "-1");
 
-        $('#WorkingDays').select2(Util.extendOptions(Constants.WorkingDays), { multiple: true, placeholder: 'Please select working days' });
+        $('#WorkingDays').select2(Util.extendOptions(Constants.WorkingDays, { multiple: true, placeholder: 'Please select working days' }));
         $("#WorkingDays").select2("val", "-1");
 
         $('#WorkingHoursStart').pickatime();
