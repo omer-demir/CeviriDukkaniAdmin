@@ -42,8 +42,12 @@ declare var $: JQueryStatic;
         }
         else {
             customer.membershipTypeId = 2;
-            customer.company = geCompanyFromForm();
             customer.companyId = $('#company-Id').val();
+            if (customer.companyId == null)
+            {
+                customer.company = geCompanyFromForm();
+            }
+            
             customer.institutionCode = $('#institutionCode').val();
         }
         customer.name = $('#customer-name').val();
