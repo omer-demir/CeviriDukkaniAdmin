@@ -65,8 +65,8 @@ declare var $: JQueryStatic;
         });
 
         dataService.getTerminologies((data: any) => {
-            var orderedData = _.orderBy(data, ["name"], ["asc"]);
-            $("#SpecializationIhave").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { multiple: true, placeholder: 'Please select your specialized field' }));
+            var orderedData = _.orderBy(data, ["name"], ["asc"]);         
+            $("#SpecializationIhave").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { maximumSelectionLength:4,multiple: true, placeholder: 'Please select your specialized field' }));
             $("#SpecializationIhave").select2("val", "-1");
         });
 
@@ -154,6 +154,15 @@ declare var $: JQueryStatic;
         if (!service && !sourceLanguage && !targetLanguage && !price) {
             toastr.error('Please enter service,language information', 'Error');
             return;
+        }
+        
+        for (let item of rateItems) {
+            if (item.serviceTypeId == service.id &&
+                item.sourceLanguageId == sourceLanguage.id &&
+                item.targetLanguageId == targetLanguage.id) {
+                toastr.error('You can not add more than the same record', 'Error');
+                return;
+            }
         }
 
         var rate = new RateItem();
