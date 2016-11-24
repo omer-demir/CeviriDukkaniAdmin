@@ -154,10 +154,12 @@ class Rate {
     linguisticTestingRate: number;
     reviewLqaRate: number;
     userDocuments: UserDocument[];
-    userRateId: number;
+    userRateId: number;   
 }
 
 class RateItem {
+    id: number;
+    name: string;
     serviceTypeId: number;
     sourceLanguageId: number;
     targetLanguageId: number;

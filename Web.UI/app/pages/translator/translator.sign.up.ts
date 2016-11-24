@@ -98,7 +98,6 @@ declare var $: JQueryStatic;
             $("#Timezone").select2("val", "-1");
         });
         
-
         dataService.getServiceTypes((data: any) => {
             var orderedData = _.orderBy(data, ["name"], ["asc"]);
             $("#ServiceTypeId").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select service type' }));
@@ -166,11 +165,13 @@ declare var $: JQueryStatic;
         }
 
         var rate = new RateItem();
+        rate.id = rateItems.length;
         rate.serviceTypeId = service.id;
         rate.sourceLanguageId = sourceLanguage.id;
         rate.targetLanguageId = targetLanguage.id;
         rate.price = price;
         rate.swornOrCertified = sworn;
+        rate.name = sourceLanguage.text + "-" + targetLanguage.text;
         rateItems.push(rate);
 
         var itemTemplate = `<tr><td>${service.text}</td><td>${sourceLanguage.text}</td><td>${targetLanguage.text}</td><td>${price}</td><td>${sworn}</td></tr>`;
@@ -425,6 +426,10 @@ declare var $: JQueryStatic;
             var result = validateForm('#form6', formRules.form6, () => { $('ul.tabs').tabs('select_tab', 'tab7'); });
             if (result) {
                 $('ul.tabs').tabs('select_tab', 'tab7');
+
+                var orderedData = _.orderBy(rateItems, ["name"], ["asc"]);
+                $("#TestTypeId").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select Test type' }));
+                $("#TestTypeId").select2("val", "-1");                
             }
         });
 
