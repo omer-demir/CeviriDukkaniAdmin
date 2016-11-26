@@ -5,6 +5,7 @@ $.validator.addMethod('checkbox', (value: any, element: any, param: any) => {
     }
     return false;
 }, 'This field is required');
+
 class Util {
     static convertToSelect2Data(data: any) {
         var tempResult = new Array();

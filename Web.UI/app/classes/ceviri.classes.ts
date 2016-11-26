@@ -111,8 +111,11 @@ class Specialization {
 
 class Capacity {
     translation: number;
+    translationWorkingTypeId:number;
     reviews: number;
+    reviewsWorkingTypeId: number;
     proofReading: number;
+    proofReadingWorkingTypeId: number;
 }
 
 class UserPayment {
@@ -165,6 +168,7 @@ class RateItem {
     swornOrCertified: boolean;
     certificateId: number;
     userRateId: number;
+    currencyId:number;
 }
 
 class UserDocument {

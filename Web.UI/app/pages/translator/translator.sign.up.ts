@@ -9,6 +9,9 @@ declare var $: JQueryStatic;
     var dataService = new DataService;
     var technologyKnowledges: Array<TechnologyKnowledge> = new Array<TechnologyKnowledge>();
     var rateItems: Array<RateItem> = new Array<RateItem>();
+    var pairs = new Array<any>();
+    var translationResultView = new Array<any>();
+    var translationTestView = new Array<any>();
 
     function initCityWithData(data: any[]) {
         $("#City").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select your city' }));
@@ -35,7 +38,7 @@ declare var $: JQueryStatic;
             $("#nationality").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select your nationality' }));
             //$("#Nationality2").select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select your second nationality' }));
 
-            $("#residency").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select country' }));
+            $("#residency").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select country of residence' }));
             $("#country").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select country' }));
             //$('#residency').select2(Util.extendOptions(Util.getAsSelectData(data), { placeholder: 'Please select residency' }));
 
@@ -48,7 +51,7 @@ declare var $: JQueryStatic;
             var orderedData = _.orderBy(data, ["name"], ["asc"]);
 
             $("#motherTongue").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select your mother tongue' }));
-            $("#tongue").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select your other languages' }));
+            $("#tongue").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select your other languages', multiple: true }));
             $("#bilingualTongue").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select your bilingual tongue' }));
 
             $("#motherTongue").select2("val", "-1");
@@ -66,7 +69,8 @@ declare var $: JQueryStatic;
 
         dataService.getTerminologies((data: any) => {
             var orderedData = _.orderBy(data, ["name"], ["asc"]);
-            $("#SpecializationIhave").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { multiple: true, placeholder: 'Please select your specialized field' }));
+            $("#SpecializationIhave").select2(Util.extendOptions(Util.getAsSelectData(orderedData),
+                { multiple: true, placeholder: 'Please select your specialized fields', maximumSelectionLength: 3 }));
             $("#SpecializationIhave").select2("val", "-1");
         });
 
@@ -82,6 +86,9 @@ declare var $: JQueryStatic;
 
             $("#currency").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select currency' }));
             $("#currency").select2("val", "-1");
+
+            $("#currencyPrice").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select currency' }));
+            $("#currencyPrice").select2("val", "-1");
         });
 
         dataService.getWorkingTypes((data: any) => {
@@ -89,15 +96,23 @@ declare var $: JQueryStatic;
             var orderedData = _.orderBy(data, ["name"], ["asc"]);
             $("#workingType").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select working type' }));
             $("#workingType").select2("val", "-1");
+
+            $('#translationWorkingType').select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select working type' }));
+            $('#reviewWorkingType').select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select working type' }));
+            $('#proofWorkingType').select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select working type' }));
+
+            $('#translationWorkingType').select2("val", "-1");
+            $('#reviewWorkingType').select2("val", "-1");
+            $('#proofWorkingType').select2("val", "-1");
         });
 
         dataService.getTimezones((data: any) => {
 
             var orderedData = _.orderBy(data, ["text"], ["asc"]);
-            $("#Timezone").select2(Util.extendOptions(Util.getAsSelectDataWithKeys(orderedData,"value","text"), { placeholder: 'Please select timezones' }));
+            $("#Timezone").select2(Util.extendOptions(Util.getAsSelectDataWithKeys(orderedData, "value", "text"), { placeholder: 'Please select timezones' }));
             $("#Timezone").select2("val", "-1");
         });
-        
+
 
         dataService.getServiceTypes((data: any) => {
             var orderedData = _.orderBy(data, ["name"], ["asc"]);
@@ -117,7 +132,7 @@ declare var $: JQueryStatic;
         $('#WorkingHoursStart').pickatime();
         $('#WorkingHoursEnd').pickatime();
     }
-
+    //
     function addSoftware() {
         var software = $('#Software').select2('data')[0].text;
         var softwareVersion = $('#Version').val();
@@ -148,6 +163,7 @@ declare var $: JQueryStatic;
         var service = $('#ServiceTypeId').select2('data')[0];
         var sourceLanguage = $('#SourceLanguageId').select2('data')[0];
         var targetLanguage = $('#TargetLanguageId').select2('data')[0];
+        var priceCurrency = $('#currencyPrice').select2('data')[0];
         var price = $('#Price').val();
         var sworn = $('#SwornOrCertified').prop('checked');
 
@@ -160,11 +176,16 @@ declare var $: JQueryStatic;
         rate.serviceTypeId = service.id;
         rate.sourceLanguageId = sourceLanguage.id;
         rate.targetLanguageId = targetLanguage.id;
+        rate.currencyId = priceCurrency.id;
         rate.price = price;
         rate.swornOrCertified = sworn;
         rateItems.push(rate);
 
-        var itemTemplate = `<tr><td>${service.text}</td><td>${sourceLanguage.text}</td><td>${targetLanguage.text}</td><td>${price}</td><td>${sworn}</td></tr>`;
+        pairs.push({
+            text: $('#SourceLanguageId').select2('data')[0].text + '-' + $('#TargetLanguageId').select2('data')[0].text
+        });
+
+        var itemTemplate = `<tr><td>${service.text}</td><td>${sourceLanguage.text}</td><td>${targetLanguage.text}</td><td>${price}</td><td>${priceCurrency.text}</td><td>${sworn}</td></tr>`;
         $(itemTemplate).appendTo($tableBody);
     }
 
@@ -213,17 +234,17 @@ declare var $: JQueryStatic;
         return $('ul.tabs').find('li a.active').attr('href');
     }
 
-    function getHashedValue():string {
+    function getHashedValue(): string {
         var href = window.location.href.split('/');
         return href[href.length - 1];
-    }  
+    }
 
     $(() => {
 
         var hashedValue = getHashedValue();
-        if (hashedValue.indexOf("Translation")>-1) {
+        if (hashedValue.indexOf("Translation") > -1) {
             dataService.getUserRegistration((data: any) => {
-                
+
             }, hashedValue);
         }
 
@@ -250,8 +271,11 @@ declare var $: JQueryStatic;
                 motherTongue: { required: true },
                 tongue: { required: true },
                 translation: { required: true },
+                translationWorkingType: { required: true },
                 reviews: { required: true },
+                reviewWorkingType: { required: true },
                 proofReading: { required: true },
+                proofWorkingType: { required: true },
                 qualityEnsureDescription: { required: true },
                 qualifications: { required: true },
                 Specialization: { required: true }
@@ -323,6 +347,25 @@ declare var $: JQueryStatic;
         });
         $('#addSoftware').on('click', addSoftware);
         $('#addRate').on('click', addRate);
+        $('#TargetSourcePairs').on({
+            'select2:select': (e: any) => {
+                var template = $('#testTemplate').html();
+                var templatedData = (<any>template).supplant({ id: e.params.data.id });
+                $('#testPlace').append(templatedData);
+
+                $('label[for=Test' + e.params.data.id + ']').text('');
+                $('#Test' + e.params.data.id).val('Sample text for selected pair');
+
+                translationResultView.push('#TranslationResult' + e.params.data.id);
+                translationTestView.push('#Test' + e.params.data.id);
+            },
+            'select2:unselect': (e: any) => {
+                var id = e.params.data.id;
+                $('#testHolder' + id).remove();
+                $('#resultHolder' + id).remove();
+                $('#templateDivider' + id).remove();
+            }
+        });
         $(document).on('select2:select', (e: any, args: any) => {
             var $elem = $(e.target).siblings('.select2');
             $elem.css('border', 'none');
@@ -416,6 +459,18 @@ declare var $: JQueryStatic;
             var result = validateForm('#form6', formRules.form6, () => { $('ul.tabs').tabs('select_tab', 'tab7'); });
             if (result) {
                 $('ul.tabs').tabs('select_tab', 'tab7');
+
+                //TargetSourcePairs
+
+                var morphedData = new Array<any>();
+                pairs.forEach((item: any, index: number) => {
+                    morphedData.push({
+                        id: index,
+                        text: item.text
+                    });
+                });
+
+                $('#TargetSourcePairs').select2(Util.extendOptions(morphedData, { placeholder: 'Please select your source-target pairs to test', multiple: true }));
             }
         });
 
@@ -437,11 +492,13 @@ declare var $: JQueryStatic;
             }
         });
         $("#btnSave").on("click", (data: any) => {
-            if ($('#TranslationResult').val().length < 1) {
-                toastr.error('Please translate the test content', 'Error');
-                return;
+            for (var i = 0; i < translationResultView.length; i++) {
+                if ($(translationResultView[i]).val().length < 1) {
+                    toastr.error('Please translate the test content', 'Error');
+                    return;
+                }
             }
-
+            
             let user = getUserFromForm();
 
             let defaultUserRole = new UserRole();
@@ -482,8 +539,11 @@ declare var $: JQueryStatic;
 
             let capacity = new Capacity();
             capacity.translation = $('#translation').val();
+            capacity.translationWorkingTypeId = $('#translationWorkingType').select2('data')[0].id;
             capacity.reviews = $('#reviews').val();
+            capacity.reviewsWorkingTypeId = $('#reviewWorkingType').select2('data')[0].id;
             capacity.proofReading = $('#proofReading').val();
+            capacity.proofReadingWorkingTypeId = $('#proofWorkingType').select2('data')[0].id;
 
             userAbility.capacity = capacity;
             userAbility.qualityEnsureDescription = $('#qualityEnsureDescription').val();

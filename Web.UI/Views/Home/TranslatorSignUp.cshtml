@@ -227,25 +227,42 @@
                         </div>
                         <div class="input-field col s6">
                             <label for="WorkingHoursEnd">Working Hours End</label>
-                            <input type="text" id="WorkingHoursEnd" name="WorkingHoursEnd"  placeholder="Working Hours End">
+                            <input type="text" id="WorkingHoursEnd" name="WorkingHoursEnd" placeholder="Working Hours End">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col s12">
                             <h4 class="header">Daily Capacity</h4>
                         </div>
-                        <div class="input-field col s6">
-                            <label for="translation">Translation(characters)*</label>
-                            <input type="number" min="0" class="validate" id="translation" placeholder="characters " name="translation">
+                        <div class="col s6">
+                            <div class="input-field col s6">
+                                <label for="translation">Translation*</label>
+                                <input type="number" min="0" class="validate" id="translation" placeholder="count " name="translation">
+                            </div>
+                            <div class="input-field col s6">
+                                <select id="translationWorkingType" class="full-width " name="translationWorkingType"></select>
+                            </div>
                         </div>
-                        <div class="input-field col s6">
-                            <label for="reviews">Review(characters)*</label>
-                            <input type="number" min="0" class="validate" id="reviews" placeholder="characters " name="reviews">
+                        <div class="col s6">
+                            <div class="input-field col s6">
+                                <label for="reviews">Review*</label>
+                                <input type="number" min="0" class="validate" id="reviews" placeholder="count " name="reviews">
+                            </div>
+                            <div class="input-field col s6">
+                                <select id="reviewWorkingType" class="full-width " name="reviewWorkingType"></select>
+                            </div>
                         </div>
-                        <div class="input-field col s6">
-                            <label for="proofReading">Proofreading(characters)*</label>
-                            <input type="number" min="0" class="validate" id="proofReading" placeholder="characters " name="proofReading">
+                        <div class="col s6">
+                            <div class="input-field col s6">
+                                <label for="proofReading">Proofreading*</label>
+                                <input type="number" min="0" class="validate" id="proofReading" placeholder="count " name="proofReading">
+                            </div>
+                            <div class="input-field col s6">
+                                <select id="proofWorkingType" class="full-width " name="proofWorkingType"></select>
+                            </div>
                         </div>
+                        
+                        
                         <div class="input-field col s6">
                             <label for="qualityEnsureDescription">How do you ensure the quality of your final work?</label>
                             <textarea class="materialize-textarea" id="qualityEnsureDescription" placeholder="How do you ensure the quality of your final work?" name="qualityEnsureDescription"></textarea>
@@ -412,11 +429,14 @@
                         <div class="input-field col s6">
                             <select id="TargetLanguageId" class="full-width "></select>
                         </div>
-                        <div class="input-field col s6">
-                            <label for="minimumChargeAmount">Price(TL/1000 chr.)</label>
-                            <input type="number" class="validate" id="Price" placeholder="TL/1000 chr.">
+                        <div class="input-field col s4">
+                            <label for="minimumChargeAmount">Price(1000 chr.)</label>
+                            <input type="number" class="validate" id="Price" placeholder="1000 chr.">
                         </div>
-                        <div class="input-field col s6">
+                        <div class="input-field col s4">
+                            <select id="currencyPrice" class="full-width "></select>
+                        </div>
+                        <div class="input-field col s4">
                             <p>
                                 <input type="checkbox" id="SwornOrCertified" />
                                 <label for="SwornOrCertified">Sworn/Certification?</label>
@@ -438,6 +458,7 @@
                                         <th data-field="sourceLanguage">Source Language</th>
                                         <th data-field="targetLanguage">Target Language</th>
                                         <th data-field="price">Price</th>
+                                        <th data-field="priceCurrency">Currency</th>
                                         <th data-field="swornCertification">Sworn/Certification</th>
                                     </tr>
                                 </thead>
@@ -486,13 +507,9 @@
                     <div class="clock inactive z-depth-1 waves-effect">0:00</div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <label for="Test">Test</label>
-                            <textarea cols="46" rows="3" class="materialize-textarea" id="Test" placeholder="Test" disabled="" name="Test"></textarea>
+                            <select id="TargetSourcePairs" class="full-width "></select>
                         </div>
-                        <div class="input-field col s12">
-                            <label for="TranslationResult">TranslationResult</label>
-                            <textarea cols="46" rows="3" class="materialize-textarea" id="TranslationResult" placeholder="TranslationResult" name="TranslationResult"></textarea>
-                        </div>
+                        <div id="testPlace"></div>
                         <div class="input-field col s12">
                             <a class="waves-effect waves-light btn" id="btnSave"><i class="material-icons left">done</i>Save</a>
                         </div>
@@ -504,6 +521,31 @@
             </div>
         </div>
     </div>
+
+    <script type="text/html" id="testTemplate">
+        <div class="input-field col s12" id="testHolder{id}">
+            <label for="Test{id}">Test</label>
+            <textarea cols="46" rows="3" class="materialize-textarea" id="Test{id}" placeholder="Test" disabled="" name="Test"></textarea>
+        </div>
+        <div class="input-field col s12" id="resultHolder{id}">
+            <label for="TranslationResult{id}">TranslationResult</label>
+            <textarea cols="46" rows="3" class="materialize-textarea" id="TranslationResult{id}" placeholder="TranslationResult" name="TranslationResult"></textarea>
+        </div>
+        <hr id="templateDivider{id}"/>
+    </script>
+    <script>
+        if (!String.prototype.supplant) {
+            String.prototype.supplant = function (o) {
+                return this.replace(
+                    /\{([^{}]*)\}/g,
+                    function (a, b) {
+                        var r = o[b];
+                        return typeof r === 'string' || typeof r === 'number' ? r : a;
+                    }
+                );
+            };
+        }
+    </script>
 
     @*<script src="http://code.jquery.com/jquery-latest.js"></script>*@
     <script src="~/Content/js/jquery.js"></script>
