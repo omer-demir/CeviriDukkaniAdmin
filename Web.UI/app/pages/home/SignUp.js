@@ -14,6 +14,15 @@
     }
     function initializeDropdowns() {
         $('select').select2({ placeholder: 'Please select any option' });
+        dataService.getCompanies(function (data) {
+            var orderedData = _.orderBy(data, ["name"], ["asc"]);
+            var comp = new Company();
+            comp.id = -1;
+            comp.name = "Firma Ekle";
+            orderedData.unshift(comp);
+            $("#company-Id").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Şirket Seçiniz' }));
+            $("#company-Id").select2("val", -1);
+        });
     }
     function getCustomerFromForm() {
         var customer = new Customer();
@@ -22,8 +31,10 @@
         }
         else {
             customer.membershipTypeId = 2;
-            customer.company = geCompanyFromForm();
             customer.companyId = $('#company-Id').val();
+            if (customer.companyId == null) {
+                customer.company = geCompanyFromForm();
+            }
             customer.institutionCode = $('#institutionCode').val();
         }
         customer.name = $('#customer-name').val();
@@ -87,17 +98,17 @@
                 changeVisibleByClassName("company", true);
             }
         });
-        $('#companyId').on({
+        $('#company-Id').on({
             'select2:select': function (e) {
-                if (e.params.data.id == 0) {
-                    changeVisibleByClassName("companyinfo", false);
+                if (e.params.data.id == -1) {
+                    changeVisibleByClassName("companyInfo", true);
                 }
                 else {
-                    changeVisibleByClassName("companyinfo", true);
+                    changeVisibleByClassName("companyInfo", false);
                 }
             },
             'select2:unselect': function () {
-                changeVisibleByClassName("companyinfo", true);
+                changeVisibleByClassName("companyInfo", true);
             }
         });
         /**

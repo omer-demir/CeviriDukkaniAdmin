@@ -157,10 +157,12 @@ class Rate {
     linguisticTestingRate: number;
     reviewLqaRate: number;
     userDocuments: UserDocument[];
-    userRateId: number;
+    userRateId: number;   
 }
 
 class RateItem {
+    id: number;
+    name: string;
     serviceTypeId: number;
     sourceLanguageId: number;
     targetLanguageId: number;
@@ -176,6 +178,7 @@ class UserDocument {
 }
 
 class Company {
+    id: number;
     accountingEmail: string;
     address: string;
     authorizedEmail: string;

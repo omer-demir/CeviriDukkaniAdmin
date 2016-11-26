@@ -113,7 +113,6 @@ declare var $: JQueryStatic;
             $("#Timezone").select2("val", "-1");
         });
 
-
         dataService.getServiceTypes((data: any) => {
             var orderedData = _.orderBy(data, ["name"], ["asc"]);
             $("#ServiceTypeId").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select service type' }));
@@ -171,14 +170,25 @@ declare var $: JQueryStatic;
             toastr.error('Please enter service,language information', 'Error');
             return;
         }
+        
+        for (let item of rateItems) {
+            if (item.serviceTypeId == service.id &&
+                item.sourceLanguageId == sourceLanguage.id &&
+                item.targetLanguageId == targetLanguage.id) {
+                toastr.error('You can not add more than the same record', 'Error');
+                return;
+            }
+        }
 
         var rate = new RateItem();
+        rate.id = rateItems.length;
         rate.serviceTypeId = service.id;
         rate.sourceLanguageId = sourceLanguage.id;
         rate.targetLanguageId = targetLanguage.id;
         rate.currencyId = priceCurrency.id;
         rate.price = price;
         rate.swornOrCertified = sworn;
+        rate.name = sourceLanguage.text + "-" + targetLanguage.text;
         rateItems.push(rate);
 
         pairs.push({
@@ -471,6 +481,10 @@ declare var $: JQueryStatic;
                 });
 
                 $('#TargetSourcePairs').select2(Util.extendOptions(morphedData, { placeholder: 'Please select your source-target pairs to test', multiple: true }));
+
+                var orderedData = _.orderBy(rateItems, ["name"], ["asc"]);
+                $("#TestTypeId").select2(Util.extendOptions(Util.getAsSelectData(orderedData), { placeholder: 'Please select Test type' }));
+                $("#TestTypeId").select2("val", "-1");                
             }
         });
 

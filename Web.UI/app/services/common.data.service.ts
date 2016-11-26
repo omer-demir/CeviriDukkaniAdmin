@@ -79,7 +79,7 @@ class DataService implements IDataService {
 
         return $.ajax(settings);
     }
-
+    
     getSpecialization(callback: any) {
         var settings: JQueryAjaxSettings = {
             url: this.commonApiUrl + 'getSpecializations',
@@ -224,6 +224,16 @@ class DataService implements IDataService {
 
         return $.ajax(settings);
         
+    }
+
+    getCompanies(callback: any) {
+        var settings: JQueryAjaxSettings = {
+            url: this.commonApiUrl + 'getCompanies',
+            type: 'GET',
+            success: callback
+        };
+
+        return $.ajax(settings);
     }
 
     saveCustomer(data: Customer, callback: any) {

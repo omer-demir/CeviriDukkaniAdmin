@@ -3,6 +3,7 @@
 }
 
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 <!-- Page Title
         ============================================= -->
 <section id="page-title">
@@ -108,44 +109,47 @@
                             <label for="company-Id">Şirketinizi Seçiniz:</label>
                             <select id="company-Id" class="form-control" name="company-Id"></select>
                         </div>
-                        <div class="col_half col_last compnayInfo">
-                            <label for="company-name">Şirket Adı:</label>
-                            <input type="text" id="company-name" name="company-name" value="" class="form-control" />
-                        </div>
-                        <div class="col_half compnayInfo">
-                            <label for="company-taxNumber">Şirket Vergi Numarası:</label>
-                            <select id="company-taxNumber" class="form-control" name="company-taxNumber"></select>
-                        </div>
-                        <div class="col_half col_last compnayInfo">
-                            <label for="company-VergiDairesi">Şirket Vergi Dairesi:</label>
-                            <input type="text" id="company-taxOffice" name="company-taxOffice" value="" class="form-control" />
-                        </div>
-                        <div class="col_half compnayInfo">
-                            <label for="register-form-surname">Şirket Sabit Telefon Numaranız:</label>
-                            <div class="input-group">
-                                <input type="number" id="company-phone_1" name="company-phone_1" class="form-control" placeholder="500" aria-describedby="basic-addon2" maxlength="3">
-                                <span class="input-group-addon" id="basic-addon2">-</span>
-                                <input type="number" id="company-phone_2" name="company-phone_2" class="form-control" placeholder="000" aria-describedby="basic-addon2" maxlength="3">
-                                <span class="input-group-addon" id="basic-addon2">-</span>
-                                <input type="number" id="company-phone_3" name="company-phone_3" class="form-control" placeholder="00" aria-describedby="basic-addon2" maxlength="2">
-                                <span class="input-group-addon" id="basic-addon2">-</span>
-                                <input type="number" id="company-phone_4" name="company-phone_4" class="form-control" placeholder="00" aria-describedby="basic-addon2" maxlength="2">
+                        <div class="companyInfo">
+                            <div class="col_half col_last">
+                                <label for="company-name">Şirket Adı:</label>
+                                <input type="text" id="company-name" name="company-name" value="" class="form-control" />
+                            </div>
+                            <div class="col_half">
+                                <label for="company-taxNumber">Şirket Vergi Numarası:</label>
+                                <input type="text" id="company-taxNumber" name="company-taxNumber" value="" class="form-control" />
+                            </div>
+                            <div class="col_half col_last">
+                                <label for="company-VergiDairesi">Şirket Vergi Dairesi:</label>
+                                <input type="text" id="company-taxOffice" name="company-taxOffice" value="" class="form-control" />
+                            </div>
+                            <div class="col_half">
+                                <label for="register-form-surname">Şirket Sabit Telefon Numaranız:</label>
+                                <div class="input-group">
+                                    <input type="number" id="company-phone_1" name="company-phone_1" class="form-control" placeholder="500" aria-describedby="basic-addon2" maxlength="3">
+                                    <span class="input-group-addon" id="basic-addon2">-</span>
+                                    <input type="number" id="company-phone_2" name="company-phone_2" class="form-control" placeholder="000" aria-describedby="basic-addon2" maxlength="3">
+                                    <span class="input-group-addon" id="basic-addon2">-</span>
+                                    <input type="number" id="company-phone_3" name="company-phone_3" class="form-control" placeholder="00" aria-describedby="basic-addon2" maxlength="2">
+                                    <span class="input-group-addon" id="basic-addon2">-</span>
+                                    <input type="number" id="company-phone_4" name="company-phone_4" class="form-control" placeholder="00" aria-describedby="basic-addon2" maxlength="2">
+                                </div>
+                            </div>
+
+                            <div class="col_half col_last">
+                                <label for="company-intercom">Dahili Numaranız:</label>
+                                <input type="text" id="company-intercom" name="company-extensionNumber" value="" class="form-control" />
+                            </div>
+                            <div class="col_half">
+                                <label for="company-accountingEmail">Şirket E-Posta Adresiniz:</label>
+                                <input type="email" id="company-accountingEmail" name="company-accountingEmail" value="" class="form-control" />
+                            </div>
+                            <div class="col_half col_last">
+                                <label for="company-address">Şirket Adresiniz:</label>
+                                <textarea id="company-address" name="company-address" cols="46" rows="3" class="form-control" placeholder="Test"></textarea>
+                                @*<textarea id="register-form-company-address" name="register-form-email" class="form-control" rows="3" cols="20" />*@
                             </div>
                         </div>
 
-                        <div class="col_half col_last">
-                            <label for="company-intercom">Dahili Numaranız:</label>
-                            <input type="text" id="company-intercom" name="company-extensionNumber" value="" class="form-control" />
-                        </div>
-                        <div class="col_half">
-                            <label for="company-accountingEmail">Şirket E-Posta Adresiniz:</label>
-                            <input type="email" id="company-accountingEmail" name="company-accountingEmail" value="" class="form-control" />
-                        </div>
-                        <div class="col_half col_last">
-                            <label for="company-address">Şirket Adresiniz:</label>
-                            <textarea id="company-address" name="company-address" cols="46" rows="3" class="form-control" placeholder="Test"></textarea>
-                            @*<textarea id="register-form-company-address" name="register-form-email" class="form-control" rows="3" cols="20" />*@
-                        </div>
                     </div>
 
                     <div class="clear"></div>
@@ -175,6 +179,7 @@
     </div>
 
     @section scripts{
+        <script src="~/bower_components/lodash/dist/lodash.min.js"></script>
         <script src="~/bower_components/select2/dist/js/select2.full.min.js"></script>
         <script src="~/dist/services/common.data.service.js"></script>
         <script src="~/app/pages/home/SignUp.js"></script>
