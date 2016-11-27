@@ -229,7 +229,7 @@
     <value>Ekle</value>
   </data>
   <data name="EMail" xml:space="preserve">
-    <value>E-Mail</value>
+    <value>E-Posta</value>
   </data>
   <data name="EuropeanAccounts" xml:space="preserve">
     <value>European Accounts</value>
@@ -884,5 +884,11 @@
   </data>
   <data name="AdiAlaniHerKayitIcinTekOlmalidir" xml:space="preserve">
     <value>Adı alanı her kayıt için tek olmalıdır.</value>
+  </data>
+  <data name="SirketKodu" xml:space="preserve">
+    <value>Şirket Kodu</value>
+  </data>
+  <data name="Telefon" xml:space="preserve">
+    <value>Telefon</value>
   </data>
 </root>

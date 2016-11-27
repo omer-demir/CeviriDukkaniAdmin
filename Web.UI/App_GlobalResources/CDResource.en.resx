@@ -837,4 +837,10 @@
   <data name="AdiAlaniHerKayitIcinTekOlmalidir" xml:space="preserve">
     <value>The name field must be unique for each record.</value>
   </data>
+  <data name="SirketKodu" xml:space="preserve">
+    <value>Şirket Kodu</value>
+  </data>
+  <data name="Telefon" xml:space="preserve">
+    <value>Phone</value>
+  </data>
 </root>

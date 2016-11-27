@@ -18,6 +18,7 @@
             };
             var initPage = function () {
 
+
                 memberShipTypeControl();
 
                 //validator

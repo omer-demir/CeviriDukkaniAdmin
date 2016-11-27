@@ -1,0 +1,263 @@
+#EXTM3U
+#EXTINF:1,TRT 1
+http://trtcanlitv-lh.akamaihd.net/i/TRT1HD_1@181842/master.m3u8
+#EXTM3U
+#EXTINF:1,TRT 1
+KANAL D HD
+http://media.netd.com.tr/S1/HLS_LIVE/kanald/1500/prog_index.m3u8
+#EXTM3U
+#EXTINF:1,TRT 1
+STAR TV 
+rtmp://$OPT:rtmp-raw=rtmp://144.76.96.37:1935/liveedge playpath=star.stream swfUrl=http://www.canlitv.io/player.swf live=1 pageUrl=http://www.canlitv.io/startv-canli
+#EXTM3U
+#EXTINF:1,TRT 1
+ATV
+http://hls.turkuvazgroup.net/atv-hls/smil:atv.smil/chunklist_w314793428_b396000.m3u8
+#EXTM3U
+#EXTINF:1,TRT 1
+ATV AVRUPA
+http://hls.turkuvazgroup.net/atveu/atveu3/playlist.m3u8
+#EXTM3U
+#EXTINF:1,TRT 1
+SHOW TV
+rtmp://$OPT:rtmp-raw=rtmp://mn-l.mncdn.com/showtv playpath=showtv2 swfUrl=http://static.oroll.com/p.swf live=1
+#EXTM3U
+#EXTINF:1,TRT 1
+SHOWTÜRK TV
+http://mn-l.mncdn.com/showturktv/showturktv2/media_w575322760.m3u8
+#EXTM3U
+#EXTINF:1,TRT 1
+FOX TV 
+rtmp://$OPT:rtmp-raw=rtmp://188.40.90.135:1935/liveedge playpath=fox.stream swfUrl=http://www.canlitv.io/player.swf live=1 pageUrl=http://www.canlitv.io/fox-tv
+#EXTM3U
+#EXTINF:1,TRT 1
+KANAL 7
+http://livetr.gostream.nl/kanal7hq/kanal7hq/media_w65933969.m3u8
+
+KANAL 7 AVRUPA
+http://livetr.gostream.nl/kanal7int/kanal7int/gkn89.m3u8
+
+TV8
+rtmp://$OPT:rtmp-raw=rtmp://mn-l.mncdn.com/tv8/ playpath=tv8_live3 swfUrl=http://static.oroll.com/p.swf live=1 pageUrl=http://www.tv8.com.tr/canli-yayin
+
+KANALTÜRK
+http://127.0.0.1:6498/ms2/1370004179881/0MediaPlayer 0 /octoshape hVV octoshape.ercdn.com V kanalturk V live V kanalturk V abr/kanalturklivekanalturkabr
+
+SAMANYOLU TV
+rtmp://$OPT:rtmp-raw=rtmp://5.9.77.137:1935/live/stv.stream swfUrl=http://www.tvport.com/playercan.swf live=1 pageUrl=http://www.tvport.com/kanal/samanyolu-tv.html
+
+FLASH TV
+http://174.127.77.205:1935/flashtv/flashtv/media.m3u8?wowzasessionid=1543146266
+
+TV2
+http://live.netd.com.tr/S1/HLS_LIVE/tv2/1000/prog_index.m3u8
+
+TV EM
+http://mn-l.mncdn.com/tvem_live/tvem3/gkn89.m3u8
+
+ARTI 1 TV
+http://stream-ak.vty.dmcdn.net/05/dm/1/x1144mw/live.isml/events.m3u8
+
+BEYAZ TV
+rtmp://beyaztv.mediatriple.net:1935/beyazliveedge/beyaztv1
+
+BRT 1
+rtmp://sponsored.ncbtv.com:1835/live/42e_brt1
+
+BRT 2
+rtmp://sponsored.ncbtv.com:1835/live/42e_brt2
+
+BRT 2 
+http://wms.brtk.net:1935/live/brt2/gkn89.m3u8
+
+KANAL SOKAK
+http://stream.farm.cdnline.com/bmg/sokak/playlist.m3u8
+
+KANAL AVRUPA
+rtmp://$OPT:rtmp-raw=rtmp://kanal-avrupalivefs.fplive.net/kanal-avrupalive-live/_definst_/ playpath=stream1 swfUrl=http://player.longtailvideo.com/player.swf pageUrl=http://radyodelisi.blogspot.com/2009/08/kanal-avrupa.html swfVfy=1 live=true
+
+BENGÜTÜRK TV
+rtmp://yayin8.canliyayin.org/benguturk/benguturk
+
+MELTEM TV
+http://hd.yayin3.canlitv.mobi:7777/MeltemTV_HD/MeltemTV_High.m3u8?session=633943f9de0afca9b439d0fcb2d3f0926d74bfc2809f4f50d1dac8ca1516f0afa299017ce29bf1aa
+
+MESAJ TV
+http://hd.yayin3.canlitv.mobi:7777/Mesaj_HD/Mesaj_High.m3u8?session=633943f9de0afca9b439d0fcb2d3f0926d74bfc2809f4f50d1dac8ca1516f0afa299017ce29bf1aa
+
+KANAL A
+rtmp://$OPT:rtmp-raw=rtmp://yayin.yayin.tv.tr:1935/kanala/ playpath=kanala2 swfUrl=http://player.longtailvideo.com/player.swf pageUrl=http://www.yayin.tv.tr/yayin-frame.php swfVfy=1 live=true
+
+BEN TV
+rtmp://$OPT:rtmp-raw=rtmp://kanalben.cubecdn.net/live/kanalben1 swfUrl=http://www.kanalben.com/player/player.swf?939811664 pageUrl=http://www.kanalben.com/
+
+VTV
+rtmp://stream2.taksimbilisim.com/kanalvip/bant1
+
+TÜRKMENELÝ TV
+mms://213.142.142.213/turkmenelitv
+
+AKILLI TV
+rtmp://37.75.10.20:1935/akillitv/akilli
+
+STRÝCTLY BELLY DANCÝNG TV
+rtsp://46.249.213.87/broadcast/strictlybellydancing-tablet.3gp
+
+TV5
+mmsh://yayin3.canliyayin.org/tv5
+
+PLANET MUTFAK
+rtmp://77.223.146.117/live/planetm
+
+TRT HD
+http://trtcanlitv-lh.akamaihd.net/i/TRTHD_1@182045/master.m3u8
+
+TRT TÜRK
+http://trtcanlitv-lh.akamaihd.net/i/TRTTURK_1@182144/master.m3u8
+
+TRT AVAZ
+http://trtcanlitv-lh.akamaihd.net/i/TRTAVAZ_1@182244/index_1200.m3u8
+
+TRT DÝYANET
+http://trtcanlitv-lh.akamaihd.net/i/TRTDIYANET_1@182344/index_1200.m3u8
+
+TRT 6
+http://trtcanlitv-lh.akamaihd.net/i/TRT6_1@181944/index_1200.m3u8
+
+TRT ARAPÇA
+http://trtcanlitv-lh.akamaihd.net/i/TRTARAPCA_1@181945/index_1200.m3u8
+
+TRT OKUL
+http://trtcanlitv-lh.akamaihd.net/i/TRTOKUL_1@182245/index_1200.m3u8
+
+TBMM TV
+http://meclistv-lh.akamaihd.net/i/event_1@190503/index_1200.m3u8
+
+KANAL T
+http://148.251.53.81:1935/live/kanalt1/radyodelisi.m3u8
+
+TÜRKSHOW TV
+http://62.113.210.6/telebazaar-live/livestream/gkn89.m3u8?ext=.mp4
+
+HABER HD
+http://trtcanlitv-lh.akamaihd.net/i/TRTHABERHD_1@181942/master.m3u8
+
+CNN TÜRK
+http://live.netd.com.tr/S1/HLS_LIVE/cnn_turk/1000/prog_index.m3u8
+
+HABERTÜRK
+http://strm-i.glb.pr.medianova.tv:1935/haberturk/haberturk2/gkn89.m3u8
+
+A HABER
+rtmp://$OPT:rtmp-raw=rtmp://rtmp.turkuvazgroup.net/ahaber/ playpath=ahaber3 swfUrl=http://i.tmgrup.com.tr/p/flowplayer-3.2.9.swf?i=2 pageUrl=http://www.ahaber.com.tr/webtv/videoizle/ahaber/canli_yayin
+
+24
+http://mn-l.mncdn.com/kanal24/kanal243/gkn89.m3u8
+
+KANAL B
+http://212.174.233.129/hls-live/livepkgr/_definst_/liveevent/mylivestream.m3u8
+
+ULUSAL KANAL
+rtmp://174.127.77.205/ulusaltv/livestream
+
+HALK HABER
+rtmp://37.77.2.234:1935/redirect/live
+
+ON 4
+rtmp://yayin.netradyom.com/live/on4
+
+ÇAPUL TV
+rtmp://s9.tilda.com.tr:80/live/Stream1
+
+TGRT HABER
+rtmp://tgrthaber.mediatriple.net:1935/tgrtliveedge/tgrt3
+
+SAMANYOLU HABER
+http://hd.yayin3.canlitv.mobi:7777/SamanyoluHaber_HD/SamanyoluHaber_High.m3u8?session=83407450c15868080976492ac3cfba2e509b5ce7a7931807553176589d7ed86fa299017ce29bf1aa
+
+ÜLKE TV
+http://livetr.gostream.nl/ulketvhq/ulketvhq/gkn89.m3u8
+
+TVNET
+rtmp://91.93.118.165/tvnet/livestream
+
+BLOOMBERG HT
+http://mn-l.mncdn.com/bloomberght/bloomberght2/gkn89.m3u8
+
+BUGÜN TV
+http://127.0.0.1:6498/ms2/1370004179881/0MediaPlayer 0 /octoshape hVV octoshape.ercdn.com V kanalturk V live V buguntv V abr/kanalturklivebuguntvabr
+
+EURONEWS TÜRKÇE
+http://hd.yayin3.canlitv.mobi:7777/EuroNewsTurkce_HD/EuroNewsTurkce_High.m3u8?session=83407450c15868080976492ac3cfba2e509b5ce7a7931807553176589d7ed86fa299017ce29bf1aa
+
+HABER 61 TV
+rtmp://win8.yayinda.org/haber61tv/haber61tv
+
+SKY NEWS
+mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k
+
+RUS TODAY
+http://rt.com/s/rtplayer/playlists/rt_global.m3u8
+
+FRANCE 24 English
+http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/france24_en/ls_satlink/b_828.m3u8
+
+CHANNEL NEWS ASÝA
+http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/cna/ls_ip/b_528.m3u8
+
+CNN
+http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/cnn/ls_satlink/b_828.m3u8
+
+AL JAZEERA English
+http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/aljazeera_en/ls_satlink/b_828.m3u8
+
+ALJAZEERA DOCUMENTARY TV
+rtmp://aljazeeraflashlivefs.fplive.net:1935/aljazeeraflashlive-live/aljazeera_doc_high
+
+ND TV
+http://bglive-a.bitgravity.com/ndtv/247hi/live/native
+
+TRT SPOR
+http://trtcanlitv-lh.akamaihd.net/i/TRTSPOR1_1@182042/master.m3u8
+
+ASPOR
+http://hls.turkuvazgroup.net/aspor/aspor3/playlist.m3u8
+
+FANATÝK TV
+http://fanatik.hls.cubecdn.net/fanatik.m3u8
+
+GS TV
+http://stream-l3-4.vty.dmcdn.net/16/dm/1/xne3bf/live.isml/events.m3u8
+
+SPORTS TV
+rtmp://stream.sportstv.com.tr/sportstv/SportsTV3
+
+BURSASPOR TV
+http://stream.yayindayiz.biz/Bursaspor/bursaspor/radyodelisi.m3u8
+
+FENERBAHÇE TV
+rtmp://$OPT:rtmp-raw=rtmp://live.master.cubecdn.net/fbtv playpath=stream1 swfUrl=http://live.master.cubecdn.net/player/stml/swf/flowplayer.commercial-3.2.16.swf live=true pageUrl=http://www.fbtvonline.com/
+
+TJK TV
+http://stream.farm.cdnline.com/liveedge/tjk.stream_512k/playlist.m3u8
+
+TRT MÜZÝK
+http://trtcanlitv-lh.akamaihd.net/i/TRTMUZIK_1@181845/master.m3u8
+
+VATAN TV
+rtmp://188.124.1.135:1935/vatan/vatan
+
+MMC TV
+http://livetr.gostream.nl/armaholding/mmctv/gkn89.m3u8
+
+KRAL POP TV
+http://85.132.44.99:1935/turktv/kralpop.sdp/playlist.m3u8
+
+SÜPER TV
+rtmp://balgurup.garantisistem.com/Super_Tv/Super_Tv
+
+YURDUM TV
+http://livetr.gostream.nl/armaholding/yurdumtv/gkn89.m3u8
+
+MUZ TV Azerbaycan
+rtmp://85.132.78.6:1935/live/muztv.stream

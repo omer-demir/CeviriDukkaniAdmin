@@ -239,6 +239,11 @@
                 }
             };
             var initPage = function () {
+                
+                $('#txtMobilePhone').formatter({
+                    'pattern': '({{999}})-{{999}}-{{99}}-{{99}}',
+                });
+
                 setUserRoles();
                 setCountries();
                 setTongues();

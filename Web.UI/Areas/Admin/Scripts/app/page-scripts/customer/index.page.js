@@ -164,7 +164,7 @@
                         var keyList = [
                             'Adi',
                             'Soyadi',
-                            'Email',
+                            'EMail',
                             'Telefon',
                             'SirketKodu',
                             'Firma',

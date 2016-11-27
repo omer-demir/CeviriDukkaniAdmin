@@ -130,7 +130,7 @@
     //};
 
     //events
-    $('#btnSave').click(function () {
+        $('#btnMessageSave').click(function () {
         if ($("#formValidate").valid()) {
             var messageDto = {
                 email: $('#txtEmail').val(),

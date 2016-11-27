@@ -101,6 +101,12 @@
                                             saveRowChanges: resources.kaydet,
                                             cancelRowChanges: resources.iptal
                                         }
+                                    },
+                                    onInitNewRow: function (options) {
+                                        setTimeout(function () {
+                                            options.component.editCell(0, 1);
+                                            options.component.getCellElement(0, 1).find("input").focus().trigger("dxclick");
+                                        });
                                     }
                                 }, utilityObj.baseGridOptions);
 

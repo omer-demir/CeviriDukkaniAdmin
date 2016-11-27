@@ -84,11 +84,11 @@
                             <a href="@Url.Action("ChangeCulture","Home", new {cultureName = "tr-TR"})"><img src="~/Areas/Admin/Theme/images/flag-icons/culture_tr-TR.png" alt="Turkish" />  <span class="language-select">Türkçe</span></a>
                         </li>
                         @*<li>
-                            <a href="#!"><img src="~/Areas/Admin/Theme/images/flag-icons/China.png" alt="Chinese" />  <span class="language-select">Chinese</span></a>
-                        </li>
-                        <li>
-                            <a href="#!"><img src="~/Areas/Admin/Theme/images/flag-icons/Germany.png" alt="German" />  <span class="language-select">German</span></a>
-                        </li>*@
+                                <a href="#!"><img src="~/Areas/Admin/Theme/images/flag-icons/China.png" alt="Chinese" />  <span class="language-select">Chinese</span></a>
+                            </li>
+                            <li>
+                                <a href="#!"><img src="~/Areas/Admin/Theme/images/flag-icons/Germany.png" alt="German" />  <span class="language-select">German</span></a>
+                            </li>*@
                     </ul>
                     <!-- notifications-dropdown -->
                     <ul id="notifications-dropdown" class="dropdown-content">
@@ -164,7 +164,8 @@
                     <li class="bold">
                         <a href="@Url.Action("Index","Home")" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> @CDResource.Anasayfa</a>
                     </li>
-                    @if (SessionUser.IsAdmin) {
+                    @if (SessionUser.IsAdmin)
+                    {
                         <li class="no-padding">
                             <ul class="collapsible collapsible-accordion">
                                 <li class="bold">
@@ -266,8 +267,8 @@
                                                 <a href="/Admin/Document/Index">@CDResource.DokumanYonetimi</a>
                                             </li>
                                             @*<li>
-                                                <a href="/Admin/Document/Create">@CDResource.DokumanEkle</a>
-                                            </li>*@
+                                                    <a href="/Admin/Document/Create">@CDResource.DokumanEkle</a>
+                                                </li>*@
                                         </ul>
                                     </div>
                                 </li>
@@ -613,10 +614,10 @@
                         <div id="right-search" class="row">
                             <div class="col s12">
                                 @*<div class="input-field">
-                                <i class="mdi-action-search prefix"></i>
-                                <input id="icon_prefix" type="text" class="validate">
-                                <label for="icon_prefix">Search</label>
-                            </div>*@
+                                        <i class="mdi-action-search prefix"></i>
+                                        <input id="icon_prefix" type="text" class="validate">
+                                        <label for="icon_prefix">Search</label>
+                                    </div>*@
                                 <p><a class="waves-effect waves-light btn modal-trigger  teal " href="#new-message">@CDResource.YeniMesaj</a>
                             </div>
                         </div>
@@ -630,13 +631,13 @@
                                 <div class="collapsible-body favorite-associates">
                                     <div class="favorite-associate-list chat-out-list row" id="incoming-message">
                                         @*<div class="col s4">
-                                        <img src="~/Areas/Admin/Theme/images/avatar.jpg" alt="" class="circle responsive-img online-user valign profile-image">
-                                    </div>*@
+                                                <img src="~/Areas/Admin/Theme/images/avatar.jpg" alt="" class="circle responsive-img online-user valign profile-image">
+                                            </div>*@
                                         @*<div class="col s8">
-                                        <p>Eileen Sideways</p>
-                                        <p>Eileen Sideways</p>
-                                        <p class="place">Los Angeles, CA</p>
-                                    </div>*@
+                                                <p>Eileen Sideways</p>
+                                                <p>Eileen Sideways</p>
+                                                <p class="place">Los Angeles, CA</p>
+                                            </div>*@
                                         @CDResource.GelenKutusuBos
                                     </div>
                                 </div>
@@ -646,13 +647,13 @@
                                 <div class="collapsible-body favorite-associates">
                                     <div class="favorite-associate-list chat-out-list row" id="sent-message">
                                         @*<div class="col s4">
-                                        <img src="~/Areas/Admin/Theme/images/avatar.jpg" alt="" class="circle responsive-img online-user valign profile-image">
-                                    </div>*@
+                                                <img src="~/Areas/Admin/Theme/images/avatar.jpg" alt="" class="circle responsive-img online-user valign profile-image">
+                                            </div>*@
                                         @*<div class="col s8">
-                                        <p>Eileen Sideways</p>
-                                        <p>Eileen Sideways</p>
-                                        <p class="place">Los Angeles, CA</p>
-                                    </div>*@
+                                                <p>Eileen Sideways</p>
+                                                <p>Eileen Sideways</p>
+                                                <p class="place">Los Angeles, CA</p>
+                                            </div>*@
                                         @CDResource.GonderilenKutusuBos
                                     </div>
                                 </div>
@@ -691,7 +692,7 @@
             </div>
         </div>
     </footer>
-<!-- END FOOTER -->
+    <!-- END FOOTER -->
     <div id="new-message" class="modal">
         <div class="modal-content white-text" style="padding: 0; color: black !important;">
             <div id="basic-form" class="section">
@@ -725,7 +726,7 @@
             </div>
         </div>
         <div class="modal-footer lighten-4">
-            <a href="#" class="waves-effect waves-red btn-flat" id="btnSave">@CDResource.Gonder<i class="mdi-content-send right"></i></a>
+            <a href="#" class="waves-effect waves-red btn-flat" id="btnMessageSave">@CDResource.Gonder<i class="mdi-content-send right"></i></a>
             <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">@CDResource.Kapat</a>
         </div>
     </div>
@@ -769,7 +770,7 @@
     <script src="~/Areas/Admin/Theme/js/plugins/core/libraries/jquery.min.js"></script>
     <script src="~/Areas/Admin/Theme/js/plugins/core/libraries/bootstrap.min.js"></script>
     <script src="~/Areas/Admin/Theme/js/plugins/core/libraries/jasny_bootstrap.min.js"></script>
-@*<script src="~/Areas/Admin/Theme/js/plugins/core/app.js"></script>*@
+    @*<script src="~/Areas/Admin/Theme/js/plugins/core/app.js"></script>*@
 
     <script src="~/Areas/Admin/Theme/js/plugins/jquery-validation/jquery.validate.min.js"></script>
     <script type="text/javascript" src="~/Areas/Admin/Theme/js/materialize.js"></script>
@@ -777,6 +778,7 @@
     <script type="text/javascript" src="~/Areas/Admin/Theme/js/plugins.js"></script>
     <script type="text/javascript" src="~/Areas/Admin/Theme/js/custom-script.js"></script>
     <script type="text/javascript" src="~/Areas/Admin/Theme/js/plugins/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="~/Areas/Admin/Theme/js/plugins/formatter/formatter.min.js"></script>
     <script src="~/Scripts/dx/js/globalize.min.js"></script>
     <script src="~/Scripts/dx/js/globalize.culture.tr.js"></script>
     <script src="~/Scripts/dx/js/globalize.culture.tr-TR.js"></script>
@@ -787,6 +789,8 @@
     <script src="~/Areas/Admin/Theme/js/plugins/ui/ripple.min.js"></script>
     <script src="~/Areas/Admin/Theme/js/plugins/loaders/pace.min.js"></script>
     <script type="text/javascript" src="~/Areas/Admin/Theme/js/plugins/loaders/blockui.min.js"></script>
+
+    <script src="~/Areas/Admin/Theme/js/plugins/formatter/jquery.formatter.min.js"></script>
     <script type="text/javascript" src="~/Areas/Admin/Theme/js/plugins/ui/prism.min.js"></script>
 
     <script src="~/Areas/Admin/Scripts/app/page-scripts/common/layout.page.js"></script>
@@ -807,6 +811,6 @@
     @RenderSection("scripts", false)
     @*<script data-main="/Areas/Admin/Scripts/app/page-scripts/common/layout.page.js" src="~/Scripts/require.js"></script>*@
     <!-- Toast Notification -->
-    
+
 </body>
 </html>

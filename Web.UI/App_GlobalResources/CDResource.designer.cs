@@ -745,7 +745,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-Mail.
+        ///   Looks up a localized string similar to E-Posta.
         /// </summary>
         internal static string EMail {
             get {
@@ -1852,6 +1852,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Şirket Kodu.
+        /// </summary>
+        internal static string SirketKodu {
+            get {
+                return ResourceManager.GetString("SirketKodu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Şirket Listesi.
         /// </summary>
         internal static string SirketListesi {
@@ -2001,6 +2010,15 @@ namespace Resources {
         internal static string TargetLanguage {
             get {
                 return ResourceManager.GetString("TargetLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telefon.
+        /// </summary>
+        internal static string Telefon {
+            get {
+                return ResourceManager.GetString("Telefon", resourceCulture);
             }
         }
         
