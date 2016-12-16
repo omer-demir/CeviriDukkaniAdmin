@@ -70,6 +70,9 @@
                                                 dataField: 'taxNumber',
                                                 caption: resources.vergiNumarasi
                                             }, {
+                                                dataField: 'address',
+                                                caption: resources.adres
+                                            }, {
                                                 dataField: 'id',
                                                 caption: resources.aksiyon,
                                                 alignment: 'left',

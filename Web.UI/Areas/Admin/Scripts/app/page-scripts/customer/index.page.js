@@ -82,10 +82,10 @@
                                             caption: resources.email
                                         }, {
                                             dataField: 'mobilePhone',
-                                            caption: resources.telefon
+                                            caption: 'Telefon'
                                         }, {
                                             dataField: 'institutionCode',
-                                            caption: resources.sirketKodu
+                                            caption: 'Kurum Kodu'
                                         }, {
                                             dataField: 'companyId',
                                             caption: resources.firma,

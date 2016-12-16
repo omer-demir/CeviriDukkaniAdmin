@@ -19,14 +19,14 @@ namespace Web.Business.Services.Implementations {
             throw new NotImplementedException();
         }
 
-        public ServiceResult<List<OrderDto>> GetOrders() {
+        public ServiceResult<List<TranslatingOrderDto>> GetOrders() {
             var httpClient = GetClient(ServiceUrl.Oms);
-            return GetAsAsync<List<OrderDto>>(httpClient, "api/orderapi/getOrders");
+            return GetAsAsync<List<TranslatingOrderDto>>(httpClient, "api/orderapi/getOrders");
         }
 
-        public ServiceResult<OrderDto> GetOrderById(int orderId) {
+        public ServiceResult<TranslatingOrderDto> GetOrderById(int orderId) {
             var httpClient = GetClient(ServiceUrl.Oms);
-            return GetAsAsync<OrderDto>(httpClient, $"api/orderapi/getOrderById?orderId={orderId}");
+            return GetAsAsync<TranslatingOrderDto>(httpClient, $"api/orderapi/getOrderById?orderId={orderId}");
         }
 
         public ServiceResult<OrderDto> UpdateOrder(OrderDto order) {
